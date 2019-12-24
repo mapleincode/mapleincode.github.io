@@ -359,6 +359,80 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/13/2019-07/xms/" >
+            
+                <span>Xms Xmx PermSize MaxPermSize 的含义</span>
+        </a>
+        <div class="abstract-content">
+            转载
+参数的含义
+
+-vmargs -Xms128M -Xmx512M -XX:PermSize=64M-XX:MaxPermSize=128M-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了-Xms128m JVM初始分配的堆内存-Xmx512m JVM最大允许分配的堆内存，按需分配-XX:PermSize=64M JVM初始分配的非堆内存-XX:MaxPermSize=128M JVM最大允许分配的非堆内存，按需分配
+
+我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。
+堆(Heap)和非堆(Non-heap)内存按照官方的说法：“Java 虚...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/12/2019-07/object-define-properity/" >
+            
+                <span>Vue.js 数据绑定原理</span>
+        </a>
+        <div class="abstract-content">
+            作为一个后端开发，对于set 和get一般都不会陌生。在面向对象开发中，一个对象一般都有 get 和 set 的属性，赋值既是set，得值就是get。刚接触 JavaScript 的时候，似乎还没有这个特性（也可能自己太菜），随着 Vue.js 的流行慢慢火热起来。其实原理很简单，就是看怎么搞。
+对象描述类型通俗的来说就是一个对象假设 var obj = { a: 1 }，有一种东东叫做属性描述对象，用于解释 obj.a的一些属性。
+有且只有两种类型: 
+
+数据型描述符
+控制型描述符
+
+所有对象的 key 的描述对象类型必须是两者之一。
+数据型描述符(data descriptors)也...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue.js">Vue.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/04/12/2019-07/shell-place/" >
             
                 <span>Shell 获取文件地址</span>
@@ -618,72 +692,6 @@ G...
         <a class="post-tag" href="javascript:void(0);" data-tags = "Expect">Expect</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN">OpenVPN</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/21/2019-07/node-install/" >
-            
-                <span>Ubuntu 安装 Node.js 环境</span>
-        </a>
-        <div class="abstract-content">
-            官方编译版本安装使用官方预先编译好的二进制安装包进行安装。
-从https://nodejs.org/en/download/选择对应的版本的二进制包，下载到 Linux 上。
-123456789101112# 下载wget https://nodejs.org/dist/&#123;version&#125;/node-&#123;version&#125;-linux-x64.tar.xz# 解压tar -xvf node-&#123;version&#125;-linux-x64.tar.xz# 进入文件夹cd node-&#123;version&#125;-linux-x64/#...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/11/2019-07/auto-restart/" >
-            
-                <span>Shell 自动重启进程</span>
-        </a>
-        <div class="abstract-content">
-            将 OpenVPN 搭建在一台服务器上，因为服务器设置了会话过期，所以服务每天都会在 24 小时后自动断开，因此需要一个类似守护进程的脚本来进行自动重启。
-网上找到了一个简单的脚本:
-12345678910#!/bin/bashwhile truedo    procnum=` ps -ef|grep "openvpn"|grep -v grep|wc -l`   if [ $procnum -eq 0 ]; then       ./openvpn   fi   sleep 30done
-其方式是每 30 秒通过 ps 命令来检查对应名称的进程是否存在，如果不存在，则重新启动进程。
-因...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
     
 </div>
             
@@ -2281,9 +2289,83 @@ G...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 90
         </div>
         <!-- search  -->
         
@@ -2296,6 +2378,16 @@ G...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2453,12 +2545,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2855,6 +2947,8 @@ G...
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
+    
+        <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

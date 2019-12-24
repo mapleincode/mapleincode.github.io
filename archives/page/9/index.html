@@ -346,6 +346,92 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/09/2019-07/docker/docker-user/" >
+            
+                <span>Docker 普通用户操作不用 sudo 权限</span>
+        </a>
+        <div class="abstract-content">
+            Docker 的服务本来是要 root 权限或者 docker 组的权限。只要将当前用户加入 docker 组即可以在不使用sudo 的前提下运行 Docker 指令。
+
+新建 docker 组
+
+一般情况下，在安装 Docker 的时候已经创建好了。
+
+
+
+1sudo groupadd docker
+
+将当前用户加入 docker 组
+
+1sudo gpasswd -a $&#123;USER&#125; docker
+​    或者
+1sudo usermod -aG docker $&#123;USER&#125;
+
+退出 ssh 或者重启 docker 服务
+
+1sudo sys...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/06/2019-07/ubuntu-swap/" >
+            
+                <span>Ubuntu 新增 swap</span>
+        </a>
+        <div class="abstract-content">
+            更换权限sudo su
+创建 swap 文件fallocate -l 1G /swapfile
+修改访问权限
+12chown root:root /swapfilechmod 0600 /swapfile
+启动 swap 分区
+1mkswap /swapfile
+返回信息
+12Setting up swapspace version 1, size = 8 GiB (8589930496 bytes)no label, UUID=f1f74673-d41b-4b06-a80c-15a6b449a1fe
+激活 swap 分区
+1swapon /swapfile
+然后修改开机载入1vim /...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/11/24/2019-07/comand-control/" >
             
                 <span>命令执行控制 &amp;&amp; 与 ||(转)</span>
@@ -2152,9 +2238,83 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 90
         </div>
         <!-- search  -->
         
@@ -2167,6 +2327,16 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2324,12 +2494,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2726,6 +2896,8 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
+    
+        <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

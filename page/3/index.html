@@ -359,6 +359,77 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/14/2019-07/analysis-of-redis-performance/" >
+            
+                <span>Redis 性能问题分析（转载）</span>
+        </a>
+        <div class="abstract-content">
+            Redis 性能问题分析（转载）原文: https://www.jianshu.com/p/67093716547b
+
+
+在一些网络服务的系统中，Redis 的性能，可能是比 MySQL 等硬盘数据库的性能更重要的课题。比如微博，把热点微博[1]，最新的用户关系[2]，都存储在 Redis 中，大量的查询击中 Redis，而不走 MySQL。
+那么，针对 Redis 服务，我们能做哪些性能优化呢？或者说，应该避免哪些性能浪费呢？
+Redis 性能的基本面在讨论优化之前，我们需要知道，Redis 服务本身就有一些特性，比如单线程运行。除非修改 Redis 的源代码，不然这些特性，就是我们思...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Redis">Redis</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2019/03/13/2019-07/redis-concurrence/" >
+            
+                <span>node.js 请求 redis 的性能优化和 redis 的管道和事务机制</span>
+        </a>
+        <div class="abstract-content">
+            最近做了一个项目，涉及了大量的 redis IO 读写。
+原先的方式采用了单命令，一个操作往往涉及多个请求，写入和读取数据的效率十分低。因此，期望通过打包命令的方式，来减少网络请求 IO 对效率的影响
+在网上找到某大佬关于 redis 单条命令请求效率低的解释:
+
+
+socket IO 导致的上下文切换开销
+熟悉 OS／Linux 的童鞋都知道，一次 redis 请求在客户端和服务端分别至少会存在一次 read() 和一次 write() ，作为系统调用，read／write 的成本高于普通的函数调用，因此，在单个命令重复调用场景下，大量的 read/write 系统调用会产生明显的系统...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Redis">Redis</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/02/25/2019-07/mc-server-input-error/" >
             
                 <span>MC 服务器启动之后无法在服务端输入指令</span>
@@ -622,67 +693,6 @@ B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/01/2019-07/vmware-market-expansion/" >
-            
-                <span>VMware 虚拟机硬盘文件扩容</span>
-        </a>
-        <div class="abstract-content">
-            因为开发和测试需要，在家里常年跑了 vmware 虚拟机。然后通过 MAC 端的 VMware Fusion 对其进行连接。在上面操作。
-前段时间 win10 推送了一个大版本更新，需要升级大版本就要把老的数据备份，然而我之前分配的硬盘空间不足以进行升级。而我实在不想把开虚拟机的电脑接到显示器上，尤其是我知道那张显卡已经基本无法显示了。
-我想到了 VMware 一向都有完善的命令行工具，是否可以通过命令行工具来实现对硬盘文件的扩容。查阅了网上资料，卧槽，还真的可以的。
-123456789101112131415161718192021222324252627282930313233343...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "VMware">VMware</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/11/01/editing/editing-flow/" >
-            
-                <span>前端页面布局 flow 学习</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "前端">前端</a>
     
 </div>
             
@@ -2280,9 +2290,83 @@ B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 90
         </div>
         <!-- search  -->
         
@@ -2295,6 +2379,16 @@ B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2452,12 +2546,12 @@ B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2854,6 +2948,8 @@ B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
+    
+        <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

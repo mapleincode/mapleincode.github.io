@@ -359,6 +359,71 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/22/2019-07/babel/" >
+            
+                <span>Babel 学习笔记</span>
+        </a>
+        <div class="abstract-content">
+            Babel  学习前段时间学习写 React.js ，使用了了 Dva.js 框架。然后在 npm run dev可以运行的情况下。发现静态文件编译一直出问题。提示 Uglify 打包失败。定位问题是使用了 ES6 写的包 https://github.com/sorrycc/blog/issues/68。
+因为那个包是我自己写的，本来就是用于 Node 的包，这样就需要用 Babel 将 es6 转成 es5。
+创建 .babelrc在项目名称创建配置文件。
+格式: 
+1234&#123;  "presets": [],  "plugins": []&#125;
+presets 就是转...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Babel">Babel</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/22/2019-07/ubuntu-language/" >
+            
+                <span>Ubuntu 安装中文语言包</span>
+        </a>
+        <div class="abstract-content">
+            1sudo apt-get install language-pack-zh-hans
+解决未安装语言包导致系统应用无法识别 zh_CN.UTF-8
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/05/22/2019-07/docker/docker-prune/" >
             
                 <span>Docker 运行文件清理工具 prune</span>
@@ -641,80 +706,6 @@ systemctl status httpd.service （服务详细信息） systemct...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/13/2019-07/xms/" >
-            
-                <span>Xms Xmx PermSize MaxPermSize 的含义</span>
-        </a>
-        <div class="abstract-content">
-            转载
-参数的含义
-
--vmargs -Xms128M -Xmx512M -XX:PermSize=64M-XX:MaxPermSize=128M-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了-Xms128m JVM初始分配的堆内存-Xmx512m JVM最大允许分配的堆内存，按需分配-XX:PermSize=64M JVM初始分配的非堆内存-XX:MaxPermSize=128M JVM最大允许分配的非堆内存，按需分配
-
-我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。
-堆(Heap)和非堆(Non-heap)内存按照官方的说法：“Java 虚...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/12/2019-07/object-define-properity/" >
-            
-                <span>Vue.js 数据绑定原理</span>
-        </a>
-        <div class="abstract-content">
-            作为一个后端开发，对于set 和get一般都不会陌生。在面向对象开发中，一个对象一般都有 get 和 set 的属性，赋值既是set，得值就是get。刚接触 JavaScript 的时候，似乎还没有这个特性（也可能自己太菜），随着 Vue.js 的流行慢慢火热起来。其实原理很简单，就是看怎么搞。
-对象描述类型通俗的来说就是一个对象假设 var obj = { a: 1 }，有一种东东叫做属性描述对象，用于解释 obj.a的一些属性。
-有且只有两种类型: 
-
-数据型描述符
-控制型描述符
-
-所有对象的 key 的描述对象类型必须是两者之一。
-数据型描述符(data descriptors)也...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue.js">Vue.js</a>
     
 </div>
             
@@ -2312,9 +2303,83 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 88
+        Total : 90
         </div>
         <!-- search  -->
         
@@ -2327,6 +2392,16 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2484,12 +2559,12 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2886,6 +2961,8 @@ systemctl status httpd.service （服务详细信息） systemct...
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
+    
+        <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
