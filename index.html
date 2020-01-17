@@ -359,6 +359,115 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/18/2020-01/java/" >
+            
+                <span>Java 学习路线</span>
+        </a>
+        <div class="abstract-content">
+            基友推荐的 Java 教程，源地址:
+https://www.bilibili.com/read/cv3560825
+目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
+1. 基础阶段1.1 必选
+Java 语言：https://www.bilibili.com/video/av59529105/
+
+MySQL 数据库：https://www.bilibili.com/video/av59623481/
+
+JDBC：https://www.bilibili.com/video/av59534040/
+
+Java Web：https://www.bilibili...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/18/2020-01/pivpn/" >
+            
+                <span>树莓派安装 PIVPN</span>
+        </a>
+        <div class="abstract-content">
+            在树莓派上安装 OpenVPN。
+虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
+核心安装就只有一条命令:
+1curl -L https://install.pivpn.io | bash
+具体过程可以参考
+http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
+这位大佬安装过程讲解的十分详细 = - =。
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN, Raspberry">OpenVPN, Raspberry</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/18/2020-01/disable-systemd-resolved/" >
+            
+                <span>nameserver 127.0.0.53</span>
+        </a>
+        <div class="abstract-content">
+            Ubuntu 升级到 16.04 还是 18.04 的时候，默认会启动 NetWorkManage 的一个功能，即把 /etc/resolv.conf 的 dns 地址配置成
+1nameserver 127.0.0.53
+正常情况下不会有影响，但是如果想要关闭这个功能，设置
+12$ sudo systemctl disable systemd-resolved$ sudo reboot
+参考: https://www.hiroom2.com/2017/08/24/ubuntu-1610-nameserver-127-0-0-53-en/
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/01/07/2020-01/km3/" >
             
                 <span>杭州科目三</span>
@@ -616,105 +725,6 @@ Kibana 可谓 Elastic Stack 的窗户。探索...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "ELK">ELK</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/11/2019-11/arp/" >
-            
-                <span>ARP</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/11/2019-11/passwd/" >
-            
-                <span>Shell 自动输入 sudo 密码</span>
-        </a>
-        <div class="abstract-content">
-            
-使用 echo 和管道命令
-
-12#!/bin/bashecho password | sudo -S service runtime* status
-
-使用文本块输入重定向
-
-
-发现这个命令不能用在 shell 的判断条件里
-
-1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
-
-第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
-
-参考:
-
-https://blog.csdn.net/qiyueqinglian/article/details/48...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/11/2019-11/vCenter/" >
-            
-                <span>vCenter 和 vCSA 对比</span>
-        </a>
-        <div class="abstract-content">
-            vCenter Server与vCenter Server Virtual Appliance（vCSA）都提供对企业中VMware vSphere部署的集中管理。虽然拥有相同的功能，两者安装却不同，所支持的功能也不同。
-vCSA不支持的功能
-vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSphere许可。VCSA 5.0.1及以后版本运行PostgreSQL数据库，而之前版本运行的是IBM DB2数据库。VCSA只支持PostgreSQL数据库，所以如果Microsoft SQL Server或者IBM DB2更能轻松集成在环境...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "VMware">VMware</a>
     
 </div>
             
@@ -2439,9 +2449,77 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 91
+        Total : 93
         </div>
         <!-- search  -->
         
@@ -2454,6 +2532,21 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/disable-systemd-resolved/" >nameserver 127.0.0.53</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2471,12 +2564,12 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
@@ -2497,11 +2590,6 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/12</span><a class="archive-post-title" href= "/2019/11/12/2019-11/ELK/" >ELK 搭建</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/11</span><a class="archive-post-title" href= "/2019/11/11/2019-11/arp/" >ARP</a>
         </li>
     
     
@@ -2630,17 +2718,17 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/editing/editing-flow/" >前端页面布局 flow 学习</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -3039,6 +3127,8 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
     
         <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
+    
+        <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
