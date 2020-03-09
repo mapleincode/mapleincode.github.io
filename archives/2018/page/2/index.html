@@ -346,87 +346,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/26/2019-07/mysql-engines/" >
-            
-                <span>MySQL 引擎</span>
-        </a>
-        <div class="abstract-content">
-            ISAM优点：
-读取速度快，不占用大量内存与存储资源。
-缺点：
-不能够容错，不支持事务处理。
-ISAM 设计为了那些读取比较频繁，但是写入比较少的操作，例如数据中心。它可以占用较少的内存和资源对数据进行读取。但是相应的缺少了一些机制，比如事务和容错性。尤其是容错性，硬盘的错误会导致整个库的数据都被丢失。
-其次是加锁和并发问题，一旦涉及数据写入，整张表都会被进行加锁，这样一旦有一个数据被修改，其他数据哪怕不是同一行，修改操作都会被堵塞。
-MYISAM：优点：
-
-是 ISAM 的扩展，提供了 ISAM 所没有的索引和字段管理。
-使用一种表格锁定机制，来优化并发读写。
-拥有一些有用的扩展，如修...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/23/2019-07/http2/" >
-            
-                <span>在树莓派上升级 Nginx 开启 HTTP/2</span>
-        </a>
-        <div class="abstract-content">
-            因为家里的路由器支持的 NAT 端口的数量只能有限的 20 个。随着自己乱七八糟的服务越来越多，不得不用家里的树莓派靠 Nginx 做了一层反向代理。支持根据域名访问不同的地址。
-随着 Chrome 开始推荐 Https，用了自签证书搞了 Https。
-然后看到了  HTTP/2。心想反正搞干脆搞好点。然后用我那个树莓派来折腾 HTTP/2。
-
-不得不说树莓派真的适合学习 Linux。
-
-关于 HTTP/2HTTP/2 （原名HTTP/2.0）即超文本传输协议 2.0，是下一代HTTP协议。(From 百度百科)。
-
-支持异步连接多路复用
-头部压缩
-请求 / 响应管线化
-保持与 HTTP...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "HTTP/2">HTTP/2</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树莓派">树莓派</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/08/09/2019-07/node-buffer/" >
             
                 <span>Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</span>
@@ -683,6 +602,67 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "C++">C++</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/29/2019-07/macos-pac/" >
+            
+                <span>MAC OS 通过脚本配置自动代理 &amp; 关闭自动代理</span>
+        </a>
+        <div class="abstract-content">
+            因为在家里搞了一个 PAC 文件用来科学上网。但是上班用的 MAC 因为要带到公司，所以在公司用的是 Sha*socks。因为启用  SS 会覆盖原有的配置，而如果已经有了 PAC 配置，在不消除设置的情况下，在外网同样也是无法上网的。
+所以找了一个网上的教程，搞到了两个配置:
+设置自动代理setpac.sh
+123456789101112131415161718192021222324252627282930313233343536373839404142#!/bin/sh#########################################################...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MACOS">MACOS</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/28/2019-07/xp-x64/" >
+            
+                <span>MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</span>
+        </a>
+        <div class="abstract-content">
+            简介12345678910111213141516171819202122232425262728293031323334353637[资源名称]---Windows XP Professional x64 Edition with SP2 - VL (English)[资源类型]---ISO镜像[资源语言]---英语+简体中文[杀毒状况]---NOD32+KAV2009[共享时间]---时间不定[安装测试]---刻盘+硬盘安装通过[版权声明]---软件版权归原作者及原软件公司所有，仅供测试所用，请勿用于商业用途，如果你喜欢，请购买正版软件[资源介绍] Windows XP Profes...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "XP">XP</a>
     
 </div>
             
@@ -2374,43 +2354,9 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 91
         </div>
         <!-- search  -->
         
@@ -2604,22 +2550,12 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/05</span><a class="archive-post-title" href= "/2018/11/05/editing/editing-async-hooks/" >async-hooks</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/editing/editing-flow/" >前端页面布局 flow 学习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
@@ -2714,12 +2650,12 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     

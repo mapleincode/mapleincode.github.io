@@ -346,98 +346,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/08/2019-07/react-note/" >
-            
-                <span>React.js 小书 - 第三阶段 - 学习笔记</span>
-        </a>
-        <div class="abstract-content">
-            
-React.js 小书
-
-第三阶段Lesson 28 - 高阶组件(Higher-Order Components)
-高阶组件是函数。
-
-高阶组件的作用是提高代码复用度。
-
-高阶组件基本结构
-123456789101112export default (某个子组件, 其他参数) &#123;    class NewComponet extends Componet &#123;        // 各种可复用的逻辑，比如请求服务器、读取缓存        // 也可以修改其他参数然后传到子组件中        // const 修改后的参数 = 处理函数(其他参数)        /...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "React.js">React.js</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Redux">Redux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/04/23/2019-07/systemctl/" >
-            
-                <span>systemctl 命令(转)</span>
-        </a>
-        <div class="abstract-content">
-            systemctl命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。
-
-
-
-任务
-旧指令
-新指令
-
-
-
-
-使某服务自动启动
-chkconfig –level 3 httpd on
-systemctl enable httpd.service
-
-
-使某服务不自动启动
-chkconfig –level 3 httpd off
-systemctl disable httpd.service
-
-
-检查服务状态
-service httpd status
-systemctl status httpd.service （服务详细信息） systemct...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2018/04/13/2019-07/xms/" >
             
                 <span>Xms Xmx PermSize MaxPermSize 的含义</span>
@@ -702,6 +610,75 @@ G...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "License">License</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/02/26/2019-07/san/" >
+            
+                <span>生成 SAN 证书并自签</span>
+        </a>
+        <div class="abstract-content">
+            生成 SAN 证书。因为群晖的证书生成有个 BUG， 创造多域名证书居然不能输入*。只好网上找资料手动创建多域名证书 SAN certificater(SubjectAltName Certificater)。
+工作文件夹12345678910├── ca.srl├── certs│   ├── ca.cer # ca 证书│   └── server.cer # server 证书├── private│   ├── ca.csr # ca csr 文件│   ├── ca.pem # ca 私钥│   ├── server.pem # server 私钥 │   └── server...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenSSL">OpenSSL</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SAN">SAN</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/02/22/2019-07/openvpn-login-auto/" >
+            
+                <span>使用 Expect 自动登录 OpenVPN</span>
+        </a>
+        <div class="abstract-content">
+            公司使用 OpenVPN 作为外网办公网络，本来只设置了用户名密码，但是为了安全，公司的网(yun)管(wei)同事升级了安全配置，添加了谷歌验证的输入需求。
+谷歌验证是一种将预先生成秘钥和时间戳，通过一种开源算法计算出若干位的数字的安全方案。在 VPN 配置界面，会提供一个二维码(即为秘钥)，然后在手机上安装 APP，扫码二维码并保存，可以获得一个动态刷新的验证码。然后在登录界面输入账号密码和动态验证码即可登录 VPN。
+作为一个电脑党，每次登录 VPN 都需要满世界找手机，真的让人觉得麻烦。因为谷歌验证是开源的，所以 gayhub 上到处都有各个编程语言支持的包。如果可以运行一套程序...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Expect">Expect</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN">OpenVPN</a>
     
 </div>
             
@@ -2393,43 +2370,9 @@ G...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 91
         </div>
         <!-- search  -->
         
@@ -2623,22 +2566,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/05</span><a class="archive-post-title" href= "/2018/11/05/editing/editing-async-hooks/" >async-hooks</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/editing/editing-flow/" >前端页面布局 flow 学习</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
@@ -2733,12 +2666,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
