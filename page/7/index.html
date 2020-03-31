@@ -359,6 +359,83 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/13/2019-07/react-reudx-note-new-md/" >
+            
+                <span>React-Redux 笔记 - 其他</span>
+        </a>
+        <div class="abstract-content">
+            
+参考了阮一峰老师的文章
+
+combineReducersUsage123const &#123; combineReducers &#125; from &apos;redux&apos;;const * as reducers from &apos;./reduces&apos;;const reducer = combineReducer(reducers);
+
+方便管理 reducer，可以按内容分类 reducer
+reducer 数据也独立，每个 reducer 所能获取和修改的 state 都是独立的。
+获取数据应该要通过 state.xxx.yyy。
+当然要跟着修改的地方...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "React.js">React.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/08/2019-07/react-note/" >
+            
+                <span>React.js 小书 - 第三阶段 - 学习笔记</span>
+        </a>
+        <div class="abstract-content">
+            
+React.js 小书
+
+第三阶段Lesson 28 - 高阶组件(Higher-Order Components)
+高阶组件是函数。
+
+高阶组件的作用是提高代码复用度。
+
+高阶组件基本结构
+123456789101112export default (某个子组件, 其他参数) &#123;    class NewComponet extends Componet &#123;        // 各种可复用的逻辑，比如请求服务器、读取缓存        // 也可以修改其他参数然后传到子组件中        // const 修改后的参数 = 处理函数(其他参数)        /...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "React.js">React.js</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Redux">Redux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/04/23/2019-07/systemctl/" >
             
                 <span>systemctl 命令(转)</span>
@@ -643,70 +720,6 @@ systemctl status httpd.service （服务详细信息） systemct...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "oh-my-zsh">oh-my-zsh</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/05/2019-07/public-license/" >
-            
-                <span>五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</span>
-        </a>
-        <div class="abstract-content">
-            什么是许可协议？什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。
-不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。
-而开源许可协议使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。
-G...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "License">License</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/26/2019-07/san/" >
-            
-                <span>生成 SAN 证书并自签</span>
-        </a>
-        <div class="abstract-content">
-            生成 SAN 证书。因为群晖的证书生成有个 BUG， 创造多域名证书居然不能输入*。只好网上找资料手动创建多域名证书 SAN certificater(SubjectAltName Certificater)。
-工作文件夹12345678910├── ca.srl├── certs│   ├── ca.cer # ca 证书│   └── server.cer # server 证书├── private│   ├── ca.csr # ca csr 文件│   ├── ca.pem # ca 私钥│   ├── server.pem # server 私钥 │   └── server...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenSSL">OpenSSL</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "SAN">SAN</a>
     
 </div>
             
@@ -2465,9 +2478,11 @@ G...
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 91
+        Total : 93
         </div>
         <!-- search  -->
         
@@ -2480,6 +2495,16 @@ G...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/wordpress-domain/" >WordPress 绑定多域名</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span><a class="archive-post-title" href= "/2020/03/10/2020-01/nginx-cache/" >Nginx 降低 IO 负荷</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2661,12 +2686,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
@@ -2910,12 +2935,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
@@ -3067,6 +3092,8 @@ G...
         <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
     
         <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
