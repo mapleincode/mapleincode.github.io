@@ -346,6 +346,109 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/21/2019-07/order/" >
+            
+                <span>订单的几种类型</span>
+        </a>
+        <div class="abstract-content">
+            订单的几种类型
+充值购买，分次扣钱。
+充值积分， 分次扣积分。
+充值次数，分次扣次数。
+永久买入
+按月买入（时间）
+月结
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/21</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/17/2019-07/openvpn-make/" >
+            
+                <span>编译 OpenVPN 及解决相关依赖问题</span>
+        </a>
+        <div class="abstract-content">
+            
+OpenVPN 是全功能的 SSL VPN，它使用行业标准 SSL/TLS 协议实现 OSI 第 2 层或第 3 层安全网络扩展，支持基于证书，智能卡和/或用户名/密码凭据的灵活的客户端认证方法，并允许用户或使用防火墙规则应用于 VPN 虚拟接口的组专用访问控制策略。OpenVPN 不是 Web 应用程序代理，不通过 Web 浏览器进行操作。
+
+在 OpenVpn 官网下载最新版本的源码包，解压后按开始编译
+123$ ./configure$ make$ sudo make install
+configure 过程中会出现相关依赖未安装的错误提示
+
+configure: error: ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN">OpenVPN</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/05/16/2019-07/react-nginx/" >
+            
+                <span>Nginx 部署 react 项目返回 404</span>
+        </a>
+        <div class="abstract-content">
+            前端时间苦学 React.js，作为愚蠢的后端开发，在面对如此复杂的前端框架，真的是…
+用 dva.js 算是完成了第一个可以用的小工具，在树莓派上编译成 html ，然后新建一个 nginx server，部署。
+直接进根目录是没有问题的，但是如果我直接选择子目录类似: /utils。却返回了 404。
+查了下百度，说法是因为 Nginx 是根据路径去查找文件，但是 react-router 默认编译后只有一个 index.html。
+所以办法是修改 nginx.conf
+123456server &#123;    ...  location / &#123;    try_file...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Nginx">Nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "React.js">React.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/05/13/2019-07/react-reudx-note-new-md/" >
             
                 <span>React-Redux 笔记 - 其他</span>
@@ -600,113 +703,6 @@ systemctl status httpd.service （服务详细信息） systemct...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "黑群辉">黑群辉</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/28/2019-07/static-ip/" >
-            
-                <span>Linux 静态 IP 设置</span>
-        </a>
-        <div class="abstract-content">
-            整理虚拟机的 IP。
-路由器原来的 IP 段是192.168.2.0。为了方便管理，想把所有主机的 IP 改成 192.168.1.x。
-子网掩码虽然大学教过但是完全不知道这是什么东西。
-抽空看了一个小时基本理解了他的作用。
-将子网掩码从255.255.255.0改成255.255.252.0，这样就可以接受 192.168.0.x -&gt; 192.168.3.x的 IP 了。
-配置静态 IPUbuntu 下配置 IP 的文件是/etc/network/interfaces。
-默认配置为:
-123# The primary network interfaceauto ens32ifa...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/18/2019-07/unixbench/" >
-            
-                <span>使用 Unixbench 测试 CPU 性能</span>
-        </a>
-        <div class="abstract-content">
-            Unixbench 是 Linux 用来测试 CPU 综合性能的工具。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849#! /bin/bash#==============================================================##   Description:  Unixbench script                             ##   Author: Teddysun &lt;i@teddy...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "CPU">CPU</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/03/18/2019-07/zsh-autosuggestions/" >
-            
-                <span>oh-my-zsh 安装 zsh-autosuggestions 插件</span>
-        </a>
-        <div class="abstract-content">
-            zsh-autosuggestions 是 oh-my-zsh 的一个试用插件，可以实现动态显示历史输入记录的效果。
-
-和 oh-my-zsh 一般的内置插件不一样，不能通过光改动~/.zshrc来启动，需要额外配置。
-
-  树莓派上安装这个插件，bash 输入变得十分卡顿，因此对于性能较差的机子(尤其是硬盘速度)，不建议使用这个插件。
-
-安装插件从 GitHub 上 clone 插件。
-1git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-启动插件1source ~/.z...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "oh-my-zsh">oh-my-zsh</a>
     
 </div>
             
@@ -2400,9 +2396,38 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 96
         </div>
         <!-- search  -->
         
@@ -2418,7 +2443,22 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/wordpress-domain/" >WordPress 绑定多域名</a>
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2020/05/08/2020-05/zfs/" >初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/2020-05/Synology Drive/" >群晖 Drive 反复同步问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href= "/2020/04/15/2020-01/java-mode/" >类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/2020-01/wordpress-domain/" >WordPress 绑定多域名</a>
         </li>
     
     
@@ -2428,12 +2468,12 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
@@ -2457,12 +2497,12 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2606,12 +2646,12 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2855,12 +2895,12 @@ systemctl status httpd.service （服务详细信息） systemct...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
@@ -3014,6 +3054,10 @@ systemctl status httpd.service （服务详细信息） systemct...
         <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Synology"><span class="iconfont-archer">&#xe606;</span>Synology</span>
+    
+        <span class="sidebar-tag-name" data-tags="zfs"><span class="iconfont-archer">&#xe606;</span>zfs</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

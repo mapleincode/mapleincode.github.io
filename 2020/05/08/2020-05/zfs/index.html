@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>WordPress 绑定多域名 · Maple&#39;s Blog</title>
+    <title>初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载) · Maple&#39;s Blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Maple&#39;s Blog.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">WordPress 绑定多域名</a>
+                <a href="#" class="post-name">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            WordPress 绑定多域名
+            初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "zfs">zfs</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">188</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.1k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/04/01</span>
+                    <span class="post-intro-time">2020/05/08</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,28 +401,56 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。</p>
-<p>而域名绑定也被写入 SQL，包括 <code>WP_SITEURL</code> 和 <code>WP_HOME</code> 两个参数。</p>
-<p>但是有些时候，WP 可能会拥有多个域名。所以需要对 <code>wp-config.php</code> 进行改动来实现。</p>
-<p>首先找到 <code>wp-config.php</code>配置文件，在<strong>define(‘WP_DEBUG’, false);</strong>  加入</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="string">'WP_SITEURL'</span>, <span class="string">'http://'</span> . $_SERVER[<span class="string">'HTTP_HOST'</span>]);</span><br><span class="line">define(<span class="string">'WP_HOME'</span>, <span class="string">'http://'</span> . $_SERVER[<span class="string">'HTTP_HOST'</span>]);</span><br></pre></td></tr></table></figure>
-<p>如果需要从特定的域名进行访问，可以这么修改:</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$domain = <span class="keyword">array</span>(<span class="string">"www.a.com"</span>, <span class="string">"www.b.com"</span>, <span class="string">"www.c.com"</span>); </span><br><span class="line"><span class="keyword">if</span>(in_array($_SERVER[<span class="string">'HTTP_HOST'</span>], $domain))&#123;</span><br><span class="line">    define(<span class="string">'WP_SITEURL'</span>, <span class="string">'http://'</span> . $_SERVER[<span class="string">'HTTP_HOST'</span>]);</span><br><span class="line">    define(<span class="string">'WP_HOME'</span>, <span class="string">'http://'</span> . $_SERVER[<span class="string">'HTTP_HOST'</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>除了配置之外，还有静态资源的地址，可以修改成根目录的方式</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define( <span class="string">'WP_CONTENT_URL'</span>, <span class="string">'/wp-content'</span>);</span><br></pre></td></tr></table></figure>
-<p>参考:</p>
-<ol>
-<li><a href="https://www.wpcom.cn/tutorial/7.html" target="_blank" rel="noopener">https://www.wpcom.cn/tutorial/7.html</a></li>
-</ol>
+        <blockquote>
+<p>原文: <a href="https://zhuanlan.zhihu.com/p/45137745" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/45137745</a></p>
+</blockquote>
+<p>今天，我们来谈论一下 ZFS，一个先进的文件系统。我们将讨论 ZFS 从何而来，它是什么，以及为什么它在科技界和企业界如此受欢迎。</p>
+<p>虽然我是一个美国人，但我更喜欢读成 ZedFS 而不是 ZeeFS，因为前者听起来更酷一些。你可以根据你的个人喜好来发音。</p>
+<blockquote>
+<p>注意：在这篇文章中，你将会看到 ZFS 被提到很多次。当我在谈论特性和安装的时候，我所指的是 OpenZFS 。自从 <em>甲骨文(Oracle)</em>公司放弃 OpenSolaris 项目之后，ZFS（由甲骨文公司开发）和 OpenZFS 已经走向了不同的发展道路。</p>
+</blockquote>
+<h2 id="ZFS-的历史"><a href="#ZFS-的历史" class="headerlink" title="ZFS 的历史"></a><strong>ZFS 的历史</strong></h2><p><em>Z 文件系统(Z File System)</em>（ZFS）是由 <a href="https://link.zhihu.com/?target=https%3A//wiki.gentoo.org/wiki/ZFS" target="_blank" rel="noopener">Matthew Ahrens 和 Jeff Bonwick</a> 在 2001 年开发的。ZFS 是作为a href=”<a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Sun_Microsystems" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Sun_Microsystems</a>“&gt; 太阳微系统(Sun MicroSystem) 公司的 <a href="https://link.zhihu.com/?target=http%3A//en.wikipedia.org/wiki/Opensolaris" target="_blank" rel="noopener">OpenSolaris</a> 的下一代文件系统而设计的。在 2008 年，ZFS 被移植到了 FreeBSD 。同一年，一个移植 <a href="https://link.zhihu.com/?target=https%3A//zfsonlinux.org/" target="_blank" rel="noopener">ZFS 到 Linux</a> 的项目也启动了。然而，由于 ZFS 是 <em><a href="https://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Common_Development_and_Distribution_License" target="_blank" rel="noopener">通用开发和发布许可证</a>(Common Development and Distribution License)</em>（CDDL）许可的，它和 <a href="https://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/GNU_General_Public_License" target="_blank" rel="noopener">GNU 通用公共许可证</a> 不兼容，因此不能将它迁移到 Linux 内核中。为了解决这个问题，绝大多数 Linux 发行版提供了一些方法来安装 ZFS　。</p>
+<p>在甲骨文公司收购太阳微系统公司之后不久，OpenSolaris 就闭源了，这使得 ZFS 的之后的开发也变成闭源的了。许多 ZFS 开发者对这件事情非常不满。<a href="https://link.zhihu.com/?target=https%3A//wiki.gentoo.org/wiki/ZFS" target="_blank" rel="noopener">三分之二的 ZFS 核心开发者</a>，包括 Ahrens 和 Bonwick，因为这个决定而离开了甲骨文公司。他们加入了其它公司，并于 2013 年 9 月创立了 <a href="https://link.zhihu.com/?target=http%3A//www.open-zfs.org/wiki/Main_Page" target="_blank" rel="noopener">OpenZFS</a> 这一项目。该项目引领着 ZFS 的开源开发。</p>
+<p>让我们回到上面提到的许可证问题上。既然 OpenZFS 项目已经和 Oracle 公司分离开了，有人可能好奇他们为什么不使用和 GPL 兼容的许可证，这样就可以把它加入到 Linux 内核中了。根据 <a href="https://link.zhihu.com/?target=http%3A//www.open-zfs.org/wiki/FAQ%23Do_you_plan_to_release_OpenZFS_under_a_license_other_than_the_CDDL.3F" target="_blank" rel="noopener">OpenZFS 官网</a> 的介绍，更改许可证需要联系所有为当前 OpenZFS 实现贡献过代码的人（包括初始的公共 ZFS 代码以及 OpenSolaris 代码），并得到他们的许可才行。这几乎是不可能的（因为一些贡献者可能已经去世了或者很难找到），因此他们决定保留原来的许可证。</p>
+<h2 id="ZFS-是什么，它有什么特性？"><a href="#ZFS-是什么，它有什么特性？" class="headerlink" title="ZFS 是什么，它有什么特性？"></a><strong>ZFS 是什么，它有什么特性？</strong></h2><p>正如前面所说过的，ZFS 是一个先进的文件系统。因此，它有一些有趣的<a href="https://link.zhihu.com/?target=https%3A//wiki.archlinux.org/index.php/ZFS" target="_blank" rel="noopener">特性</a>。比如：</p>
+<ul>
+<li>存储池</li>
+<li>写时拷贝</li>
+<li>快照</li>
+<li>数据完整性验证和自动修复</li>
+<li>RAID-Z</li>
+<li>最大单个文件大小为 16 EB（1 EB = 1024 PB）</li>
+<li>最大 256 千万亿（256*1015 ）的 ZB（1 ZB = 1024 EB）的存储</li>
+</ul>
+<p>让我们来深入了解一下其中一些特性。</p>
+<h2 id="存储池"><a href="#存储池" class="headerlink" title="存储池"></a><code>存储池</code></h2><p>与大多数文件系统不同，ZFS 结合了文件系统和卷管理器的特性。这意味着，它与其他文件系统不同，ZFS 可以创建跨越一系列硬盘或池的文件系统。不仅如此，你还可以通过添加硬盘来增大池的存储容量。ZFS 可以进行<a href="https://link.zhihu.com/?target=https%3A//www.howtogeek.com/175159/an-introduction-to-the-z-file-system-zfs-for-linux/" target="_blank" rel="noopener">分区和格式化</a>。</p>
+<p><img src="https://raw.githubusercontent.com/mapleincode/images/master/img/20200508110217.jpg" alt="img"></p>
+<p><em>ZFS 存储池</em></p>
+<h2 id="写时拷贝"><a href="#写时拷贝" class="headerlink" title="写时拷贝"></a><code>写时拷贝</code></h2><p><em><a href="https://link.zhihu.com/?target=https%3A//www.freebsd.org/doc/handbook/zfs-term.html" target="_blank" rel="noopener">写时拷贝</a>(Copy-on-write)</em>是另一个有趣并且很酷的特性。在大多数文件系统上，当数据被重写时，它将永久丢失。而在 ZFS 中，新数据会写到不同的块。写完成之后，更新文件系统元数据信息，使之指向新的数据块（LCTT 译注：更新之后，原数据块成为磁盘上的垃圾，需要有对应的垃圾回收机制）。这确保了如果在写新数据的时候系统崩溃（或者发生其它事，比如突然断电），那么原数据将会保存下来。这也意味着，在系统发生崩溃之后，不需要运行 <a href="https://link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Fsck" target="_blank" rel="noopener">fsck</a> 来检查和修复文件系统。</p>
+<h2 id="快照"><a href="#快照" class="headerlink" title="快照"></a><code>快照</code></h2><p>写时拷贝使得 ZFS 有了另一个特性： <em>快照(snapshots)</em>。ZFS 使用快照来跟踪文件系统中的更改。<a href="https://link.zhihu.com/?target=https%3A//www.freebsd.org/doc/handbook/zfs-term.html" target="_blank" rel="noopener">快照</a>包含文件系统的原始版本（文件系统的一个只读版本），实时文件系统则包含了自从快照创建之后的任何更改。没有使用额外的空间。因为新数据将会写到实时文件系统新分配的块上。如果一个文件被删除了，那么它在快照中的索引也会被删除。所以，快照主要是用来跟踪文件的更改，而不是文件的增加和创建。</p>
+<p>快照可以挂载成只读的，以用来恢复一个文件的过去版本。实时文件系统也可以回滚到之前的快照。回滚之后，自从快照创建之后的所有更改将会丢失。</p>
+<h2 id="数据完整性验证和自动修复"><a href="#数据完整性验证和自动修复" class="headerlink" title="数据完整性验证和自动修复"></a><code>数据完整性验证和自动修复</code></h2><p>当向 ZFS 写入新数据时，会创建该数据的校验和。在读取数据的时候，使用校验和进行验证。如果前后校验和不匹配，那么就说明检测到了错误，然后，ZFS 会尝试自动修正错误。</p>
+<h2 id="RAID-Z"><a href="#RAID-Z" class="headerlink" title="RAID-Z"></a><code>RAID-Z</code></h2><p>ZFS 不需要任何额外软件或硬件就可以处理 RAID（磁盘阵列）。毫不奇怪，因为 ZFS 有自己的 RAID 实现：RAID-Z 。RAID-Z 是 RAID-5 的一个变种，不过它克服了 RAID-5 的写漏洞：意外重启之后，数据和校验信息会变得不同步（LCTT 译注：RAID-5 的条带在正写入数据时，如果这时候电源中断，那么奇偶校验数据将跟该部分数据不同步，因此前边的写无效；RAID-Z 用了 “可变宽的 RAID 条带” 技术，因此所有的写都是全条带写入）。为了使用<a href="https://link.zhihu.com/?target=https%3A//wiki.archlinux.org/index.php/ZFS/Virtual_disks%23Creating_and_Destroying_Zpools" target="_blank" rel="noopener">基本级别的 RAID-Z</a>（RAID-Z1），你需要至少三块磁盘，其中两块用来存储数据，另外一块用来存储<a href="https://link.zhihu.com/?target=https%3A//www.pcmag.com/encyclopedia/term/60364/raid-parity" target="_blank" rel="noopener">奇偶校验信息</a>。而 RAID-Z2 需要至少两块磁盘存储数据以及两块磁盘存储校验信息。RAID-Z3 需要至少两块磁盘存储数据以及三块磁盘存储校验信息。另外，只能向 RAID-Z 池中加入偶数倍的磁盘，而不能是奇数倍的。</p>
+<h2 id="巨大的存储潜力"><a href="#巨大的存储潜力" class="headerlink" title="巨大的存储潜力"></a><code>巨大的存储潜力</code></h2><p>创建 ZFS 的时候，它是作为<a href="https://link.zhihu.com/?target=https%3A//web.archive.org/web/20060428092023/http%3A//www.sun.com/2004-0914/feature/" target="_blank" rel="noopener">最后一个文件系统</a>而设计的 。那时候，大多数文件系统都是 64 位的，ZFS 的创建者决定直接跳到 128 位，等到将来再来证明这是对的。这意味着 ZFS 的容量大小是 32 位或 64 位文件系统的 1600 亿亿倍。事实上，Jeff Bonwick（其中一个创建者）说：“完全填满一个 128 位的存储池所需要的<a href="https://link.zhihu.com/?target=https%3A//blogs.oracle.com/bonwick/128-bit-storage%3A-are-you-high" target="_blank" rel="noopener">能量</a>，从字面上讲，比煮沸海洋需要的还多。”</p>
+<h2 id="如何安装-ZFS？"><a href="#如何安装-ZFS？" class="headerlink" title="如何安装 ZFS？"></a><strong>如何安装 ZFS？</strong></h2><p>如果你想立刻使用 ZFS（开箱即用），那么你需要安装 <a href="https://link.zhihu.com/?target=https%3A//www.freebsd.org/" target="_blank" rel="noopener">FreeBSD</a> 或一个<a href="https://link.zhihu.com/?target=https%3A//wiki.illumos.org/display/illumos/Distributions" target="_blank" rel="noopener">使用 illumos 内核的操作系统</a>。<a href="https://link.zhihu.com/?target=https%3A//wiki.illumos.org/display/illumos/illumos%2BHome" target="_blank" rel="noopener">illumos</a> 是 OpenSolaris 内核的一个克隆版本。</p>
+<p>事实上，支持 <a href="https://link.zhihu.com/?target=https%3A//itsfoss.com/why-use-bsd/" target="_blank" rel="noopener">ZFS 是一些有经验的 Linux 用户选择 BSD 的主要原因</a>。</p>
+<p>如果你想在 Linux 上尝试 ZFS，那么只能在存储文件系统上使用。据我所知，没有任何 Linux 发行版可以在根目录上安装 ZFS，实现开箱即用。如果你对在 Linux 上尝试 ZFS 感兴趣，那么 <a href="https://link.zhihu.com/?target=https%3A//zfsonlinux.org/" target="_blank" rel="noopener">ZFS on Linux 项目</a> 上有大量的教程可以指导你怎么做。</p>
+<h2 id="附加说明"><a href="#附加说明" class="headerlink" title="附加说明"></a><strong>附加说明</strong></h2><p>这篇文章论述了 ZFS 的优点。现在，让我来告诉你一个关于 ZFS 很现实的问题。使用 RAID-Z <a href="https://link.zhihu.com/?target=http%3A//louwrentius.com/the-hidden-cost-of-using-zfs-for-your-home-nas.html" target="_blank" rel="noopener">会很贵</a>，因为你需要购买大量的磁盘来增大存储空间。</p>
+<p>你已经使用过 ZFS 了吗？你的使用经验是什么样的？请在下面的评论中告诉我们。</p>
+<p>如果你觉得这篇文章有趣，请花一分钟的时间把它分享到社交媒体、极客新闻或 <a href="https://link.zhihu.com/?target=http%3A//reddit.com/r/linuxusersgroup" target="_blank" rel="noopener">Reddit</a> 。</p>
+<hr>
+<p>via: <a href="https://link.zhihu.com/?target=https%3A//itsfoss.com/what-is-zfs/" target="_blank" rel="noopener">https://itsfoss.com/what-is-zfs/</a></p>
+<p>作者：<a href="https://link.zhihu.com/?target=https%3A//itsfoss.com/author/john/" target="_blank" rel="noopener">John Paul</a> 选题：<a href="https://link.zhihu.com/?target=https%3A//github.com/lujun9972" target="_blank" rel="noopener">lujun9972</a> 译者：<a href="https://link.zhihu.com/?target=https%3A//github.com/ucasFL" target="_blank" rel="noopener">ucasFL</a> 校对：<a href="https://link.zhihu.com/?target=https%3A//github.com/wxy" target="_blank" rel="noopener">wxy</a></p>
+<p>本文由 <a href="https://link.zhihu.com/?target=https%3A//github.com/LCTT/TranslateProject" target="_blank" rel="noopener">LCTT</a> 原创编译，<a href="https://link.zhihu.com/?target=https%3A//linux.cn/" target="_blank" rel="noopener">Linux中国</a> 荣誉推出</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://blog.mapleincode.com">Maple</a>
-            <p>原文链接：<a href="http://blog.mapleincode.com/2020/04/01/wordpress-domain/">http://blog.mapleincode.com/2020/04/01/wordpress-domain/</a>
-            <p>发表日期：<a href="http://blog.mapleincode.com/2020/04/01/wordpress-domain/">April 1st 2020, 12:37:26 am</a>
-            <p>更新日期：<a href="http://blog.mapleincode.com/2020/04/01/wordpress-domain/">March 31st 2020, 7:05:13 pm</a>
+            <p>原文链接：<a href="http://blog.mapleincode.com/2020/05/08/2020-05/zfs/">http://blog.mapleincode.com/2020/05/08/2020-05/zfs/</a>
+            <p>发表日期：<a href="http://blog.mapleincode.com/2020/05/08/2020-05/zfs/">May 8th 2020, 11:03:09 am</a>
+            <p>更新日期：<a href="http://blog.mapleincode.com/2020/05/08/2020-05/zfs/">May 8th 2020, 4:23:03 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -434,8 +462,8 @@ height:50vh;
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2020/03/10/2020-01/nginx-cache/" title= "Nginx 降低 IO 负荷">
-                    <div class="prevTitle">Nginx 降低 IO 负荷</div>
+                <a href= "/2020/05/02/2020-05/Synology Drive/" title= "群晖 Drive 反复同步问题">
+                    <div class="prevTitle">群晖 Drive 反复同步问题</div>
                 </a>
             
         </li>
@@ -452,8 +480,8 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://blog.mapleincode.com/2020/04/01/wordpress-domain/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = "WordPress 绑定多域名"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = "http://blog.mapleincode.com/2020/05/08/2020-05/zfs/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
         (function () { // DON'T EDIT BELOW THIS LINE
@@ -568,7 +596,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZFS-的历史"><span class="toc-number">1.</span> <span class="toc-text">ZFS 的历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ZFS-是什么，它有什么特性？"><span class="toc-number">2.</span> <span class="toc-text">ZFS 是什么，它有什么特性？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#存储池"><span class="toc-number">3.</span> <span class="toc-text">存储池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写时拷贝"><span class="toc-number">4.</span> <span class="toc-text">写时拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快照"><span class="toc-number">5.</span> <span class="toc-text">快照</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据完整性验证和自动修复"><span class="toc-number">6.</span> <span class="toc-text">数据完整性验证和自动修复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RAID-Z"><span class="toc-number">7.</span> <span class="toc-text">RAID-Z</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#巨大的存储潜力"><span class="toc-number">8.</span> <span class="toc-text">巨大的存储潜力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何安装-ZFS？"><span class="toc-number">9.</span> <span class="toc-text">如何安装 ZFS？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附加说明"><span class="toc-number">10.</span> <span class="toc-text">附加说明</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -2174,9 +2202,38 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 96
         </div>
         <!-- search  -->
         
@@ -2192,7 +2249,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/wordpress-domain/" >WordPress 绑定多域名</a>
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2020/05/08/2020-05/zfs/" >初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/2020-05/Synology Drive/" >群晖 Drive 反复同步问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href= "/2020/04/15/2020-01/java-mode/" >类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/2020-01/wordpress-domain/" >WordPress 绑定多域名</a>
         </li>
     
     
@@ -2202,12 +2274,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
@@ -2231,12 +2303,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2380,12 +2452,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2629,12 +2701,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
@@ -2788,6 +2860,10 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Synology"><span class="iconfont-archer">&#xe606;</span>Synology</span>
+    
+        <span class="sidebar-tag-name" data-tags="zfs"><span class="iconfont-archer">&#xe606;</span>zfs</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

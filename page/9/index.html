@@ -359,6 +359,115 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/29/2019-07/virtual-dom/" >
+            
+                <span>深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
+        </a>
+        <div class="abstract-content">
+            作者：戴嘉华
+转载请注明出处并保留原文链接(#13)和作者信息。
+目录：
+1 前言
+2 对前端应用状态管理思考
+3 Virtual DOM 算法
+4 算法实现
+4.1 步骤一：用JS对象模拟DOM树
+4.2 步骤二：比较两棵虚拟DOM树的差异
+4.3 步骤三：把差异应用到真正的DOM树上
+
+
+5 结语
+6 References
+
+1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
+本文...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DOM">DOM</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/26/2019-07/git-no-ff/" >
+            
+                <span>git merge --no-ff</span>
+        </a>
+        <div class="abstract-content">
+            --no-ff 指的是强行关闭fast-forward方式。
+fast-forward方式就是当条件允许的时候，git 直接把 HEAD 指针指向合并分支的头，完成合并。属于“快进方式”，不过这种情况如果删除分支，则会丢失分支信息。因为在这个过程中没有创建 commit。
+git merge --squash 是用来把一些不必要 commit 进行压缩，比如说，你的 feature 在开发的时候写的 commit 很乱，那么我们合并的时候不希望把这些历史 commit 带过来，于是使用--squash进行合并，此时文件已经同合并后一样了，但不移动 HEAD，不提交。需要进行一次额外的 c...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/21/2019-07/gulp/" >
+            
+                <span>Gulp 常用插件(转)</span>
+        </a>
+        <div class="abstract-content">
+            Gulp 常用插件(转)原文地址
+
+  本文主要展示的是gulp常用插件的使用方法和用途，通过对插件的熟练运用达到精通gulp。不定期更新。可以到github上面下载DEMO。
+
+匹配符 *、**、！、{}1234gulp.src(&apos;./js/*.js&apos;)               // * 匹配js文件夹下所有.js格式的文件gulp.src(&apos;./js/**/*.js&apos;)            // ** 匹配js文件夹的0个或多个子文件夹gulp.src([&apos;./js/*.js&apos;,&apos;!./js/index.js...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Gulp.js">Gulp.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/12/14/2019-07/gulp-autoprefixer/" >
             
                 <span>gulp-autoprefixer 基本使用</span>
@@ -609,109 +718,6 @@ MySQL安装1sudo apt install mysql-server
         <a class="post-tag" href="javascript:void(0);" data-tags = "Redis">Redis</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Memcache">Memcache</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/11/20/2019-07/inode/" >
-            
-                <span>优化 Ext4 分区 inode 占用空间问题</span>
-        </a>
-        <div class="abstract-content">
-            
-  对乱七八糟的知识点整理，方便下次使用
-
-
-  去年年底购入了渣雷的下载宝，用  ntfs 格式化后，性能一直不佳(后面发现是因为那个渣系统会索引文件)，后用 ext4 格式，但是格式之后发现居然少了 15G 左右。
-
-inodeinode是指在许多“类Unix文件系统”中的一种数据结构。每个inode保存了文件系统中的一个文件系统对象（包括文件、目录)、设备文件、socket、管道), 等等）的元信息数据，但不包括数据内容或者文件名。(from: 维基百科)
-通俗的说，inode 其实就是文件的索引值。
-inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统自动将硬盘分成两个...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/11/03/2019-07/mysql-config/" >
-            
-                <span>my.cnf 参数解释 &amp; 优化 (转载)</span>
-        </a>
-        <div class="abstract-content">
-            my.cnf 参数解析
-转载 From
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/11/03/2019-07/gitlab/gitlab-upgrade-3/" >
-            
-                <span>GitLab 推送了更新(三) - Nginx 反向代理</span>
-        </a>
-        <div class="abstract-content">
-            
-GitLab 搭建在家里的一台服务器上，并没有直接暴露到外网。为了可以外网访问，所以需要把端口转发到内网(NAT)。因为用了渣 TP 路由器，只支持转发 20 个端口到外网。为了节省端口资源，所以打算使用树莓派上的 Nginx 作为反向代理，使多个 Domain 同时使用一个端口。
-
-Nginx 安装无脑安装:
-12sudo apt update;sudo apt install nginx;
-查看 nginx 服务运行状态:
-123456789maple@localhost:~/$ sudo service nginx status● nginx.service - A high p...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Nginx">Nginx</a>
     
 </div>
             
@@ -2472,9 +2478,38 @@ Nginx 安装无脑安装:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 93
+        Total : 96
         </div>
         <!-- search  -->
         
@@ -2490,7 +2525,22 @@ Nginx 安装无脑安装:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/wordpress-domain/" >WordPress 绑定多域名</a>
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2020/05/08/2020-05/zfs/" >初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/2020-05/Synology Drive/" >群晖 Drive 反复同步问题</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span><a class="archive-post-title" href= "/2020/04/15/2020-01/java-mode/" >类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span><a class="archive-post-title" href= "/2020/04/01/2020-01/wordpress-domain/" >WordPress 绑定多域名</a>
         </li>
     
     
@@ -2500,12 +2550,12 @@ Nginx 安装无脑安装:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
@@ -2529,12 +2579,12 @@ Nginx 安装无脑安装:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2678,12 +2728,12 @@ Nginx 安装无脑安装:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
@@ -2927,12 +2977,12 @@ Nginx 安装无脑安装:
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
@@ -3086,6 +3136,10 @@ Nginx 安装无脑安装:
         <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
     
         <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+        <span class="sidebar-tag-name" data-tags="Synology"><span class="iconfont-archer">&#xe606;</span>Synology</span>
+    
+        <span class="sidebar-tag-name" data-tags="zfs"><span class="iconfont-archer">&#xe606;</span>zfs</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
