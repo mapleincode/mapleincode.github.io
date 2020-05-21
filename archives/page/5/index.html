@@ -346,6 +346,77 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/01/2019-07/node-proxy/" >
+            
+                <span>JavaScript Proxy 对象</span>
+        </a>
+        <div class="abstract-content">
+            Usage123let target = &#123;&#125;;let handler = &#123;&#125;;let p = new Proxy(target, handler);
+target: 目标对象。可以是任何类型的对象，甚至是另一个代理。
+handler: 一个对象，其属性是当实行一个操作是定义代理的行为的函数。
+Example12345678910111213let handler = &#123;    get: function(target, name) &#123;        return name in target ? target[name] :...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/01/2019-07/kafka-auto-offset-reset/" >
+            
+                <span>Kafka auto.offset.reset 值</span>
+        </a>
+        <div class="abstract-content">
+            首先附上别人的文章：
+earliest当各分区下有已提交的 offset 时，从提交的 offset 开始消费；无提交的 offset 时，从头开始消费 
+latest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
+nonetopic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的 offset，则抛出异常
+
+
+作者：lishuangzhe7047 
+来源：CSDN 
+原文：https://blog.csdn.net/lishuangzhe7047/article/detail...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kafka">Kafka</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/08/30/2019-07/iterator/" >
             
                 <span>iterator(迭代器)</span>
@@ -625,69 +696,6 @@ expect &amp; send
         <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Expect">Expect</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/09/2019-07/git-branch-all/" >
-            
-                <span>git 拉取所有远程分支</span>
-        </a>
-        <div class="abstract-content">
-            123git branch -r | grep -v &apos;\-&gt;&apos; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; donegit fetch --allgit pull --all
-来自 Stackoverflow
-链接：http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/06/2019-07/memcached-node-package/" >
-            
-                <span>Nodejs memcached 包的基本用法</span>
-        </a>
-        <div class="abstract-content">
-            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108'use strict';const Memcached = require('memcached');const memcached = new Memcach...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/06</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Memcached">Memcached</a>
     
 </div>
             
@@ -2410,9 +2418,39 @@ expect &amp; send
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 96
+        Total : 98
         </div>
         <!-- search  -->
         
@@ -2425,6 +2463,16 @@ expect &amp; send
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span><a class="archive-post-title" href= "/2020/05/21/2020-05/ink/" >自製鋼筆染料墨水配方[转载]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/18</span><a class="archive-post-title" href= "/2020/05/18/2020-05/chrome-auto-sign-in/" >解决 Chrome 无法自动填充账号密码的问题</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2453,12 +2501,12 @@ expect &amp; send
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
@@ -2482,12 +2530,12 @@ expect &amp; send
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
@@ -2731,12 +2779,12 @@ expect &amp; send
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
@@ -3043,6 +3091,8 @@ expect &amp; send
         <span class="sidebar-tag-name" data-tags="Synology"><span class="iconfont-archer">&#xe606;</span>Synology</span>
     
         <span class="sidebar-tag-name" data-tags="zfs"><span class="iconfont-archer">&#xe606;</span>zfs</span>
+    
+        <span class="sidebar-tag-name" data-tags="Chrome"><span class="iconfont-archer">&#xe606;</span>Chrome</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
