@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="">
-    <!-- title -->
+    <!--
+ * @Author: maple
+ * @Date: 2020-05-22 17:47:08
+ * @LastEditors: maple
+ * @LastEditTime: 2020-05-22 18:36:09
+--> 
+<!-- title -->
 
 
 
@@ -9,19 +15,31 @@
 
 
 
-
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="Maple">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="Maple">
     
-    <meta name="keywords" content="Maple's Bolg,Maple">
+    <meta name="keywords" content="hexo,blog,hexo-blog">
     
-    <meta name="description" content>
+    <meta name="description" content="">
+    <meta name="description" content="随着自己年纪越来越大，事情越来越多，而相对的，记忆力却越来越差。 但是已经安装过一次 Raspberry4 ，但是不到几个月的时间就忘得一干二净，折腾了一整个晚上才完全搞定。 以此说明，以后应当认真记录一些操作的信息，以供事后参考。 真怀念自己当初的记忆力  Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取速度，相对于前几代有着本质的差异。我原先使用迅雷下载宝作为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Raspberry4 安装 Ubuntu">
+<meta property="og:url" content="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/index.html">
+<meta property="og:site_name" content="Maple&#39;s Bolg">
+<meta property="og:description" content="随着自己年纪越来越大，事情越来越多，而相对的，记忆力却越来越差。 但是已经安装过一次 Raspberry4 ，但是不到几个月的时间就忘得一干二净，折腾了一整个晚上才完全搞定。 以此说明，以后应当认真记录一些操作的信息，以供事后参考。 真怀念自己当初的记忆力  Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取速度，相对于前几代有着本质的差异。我原先使用迅雷下载宝作为">
+<meta property="article:published_time" content="2019-12-23T23:56:03.000Z">
+<meta property="article:modified_time" content="2019-12-24T01:52:12.626Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="树莓派">
+<meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
     <title>Raspberry4 安装 Ubuntu · Maple&#39;s Blog</title>
     <style type="text/css">
     @font-face {
@@ -75,10 +93,10 @@
 
 </style>
 
-    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -187,10 +205,10 @@
 }( typeof global !== "undefined" ? global : this ) );
 </script>
 
-    <link rel="icon" href="/assets/favicon.ico">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
-    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="icon" href= "/assets/favicon.png" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
     <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     
@@ -200,7 +218,7 @@
     
     <!-- 谷歌统计  -->
     
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
     
         <body class="post-body">
@@ -241,7 +259,7 @@ height:50vh;
     <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/assets/11.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/mapleincode/images/master/img/20200522181805.png)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
@@ -460,28 +478,43 @@ height:50vh;
 </blockquote>
 <p><a href="http://cdimage.ubuntu.com/releases/bionic/release/ubuntu-18.04.3-preinstalled-server-armhf+raspi3.img.xz" target="_blank" rel="noopener">http://cdimage.ubuntu.com/releases/bionic/release/ubuntu-18.04.3-preinstalled-server-armhf+raspi3.img.xz</a></p>
 <h2 id="写入镜像-amp-修改镜像"><a href="#写入镜像-amp-修改镜像" class="headerlink" title="写入镜像 &amp; 修改镜像"></a>写入镜像 &amp; 修改镜像</h2><p>写入方式:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xzcat ~/Downloads/ev3dev-yyyy-mm-dd.img.xz | sudo dd bs=4M of=/dev/sdb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xzcat ~&#x2F;Downloads&#x2F;ev3dev-yyyy-mm-dd.img.xz | sudo dd bs&#x3D;4M of&#x3D;&#x2F;dev&#x2F;sdb</span><br></pre></td></tr></table></figure>
+
+
+
 <p>修改镜像:</p>
 <blockquote>
 <p>64 位镜像已经修改，可以直接使用</p>
 </blockquote>
 <p>首先是创建一个文件夹，然后把 SD 卡挂载到启动区</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir raspboot</span><br><span class="line">mount /dev/sdb2 raspboot</span><br></pre></td></tr></table></figure>
+
 <p>然后删除所有里面的文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd raspboot</span><br><span class="line">rm -rf *</span><br></pre></td></tr></table></figure>
+
+
+
 <p>下载官方 Github 库中的固件</p>
 <p><a href="https://codeload.github.com/raspberrypi/firmware/zip/master" target="_blank" rel="noopener">//github.com/raspberrypi/firmware/archive/master.zip</a></p>
 <p>解压之后把文件夹里所有的文件都 copy 到 raspboot 文件夹 (也就是 sd 卡的启动区)。</p>
 <p>然后在启动区创建 cmdline.txt 和 config.txt</p>
 <p>cmdline.txt</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dwc_otg.fiq_fix_enable=2 console=ttyAMA0,115200 kgdboc=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 rootwait rootflags=noload net.ifnames=0</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dwc_otg.fiq_fix_enable&#x3D;2 console&#x3D;ttyAMA0,115200 kgdboc&#x3D;ttyAMA0,115200 console&#x3D;tty1 root&#x3D;&#x2F;dev&#x2F;mmcblk0p2 rootfstype&#x3D;ext4 rootwait rootflags&#x3D;noload net.ifnames&#x3D;0</span><br></pre></td></tr></table></figure>
+
+
+
 <p>config.txt</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Enable audio (loads snd_bcm2835)</span><br><span class="line">dtparam=audio=on</span><br><span class="line"></span><br><span class="line">[pi4]</span><br><span class="line"></span><br><span class="line">[all]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Enable audio (loads snd_bcm2835)</span><br><span class="line">dtparam&#x3D;audio&#x3D;on</span><br><span class="line"></span><br><span class="line">[pi4]</span><br><span class="line"></span><br><span class="line">[all]</span><br></pre></td></tr></table></figure>
+
 <h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>然后插入到 Pi4 并启动。</p>
 <p>第一次启动会比较慢，需要等待几分钟。启动之后就会自动开启 SSH。默认用户密码为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu / ubuntu</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ubuntu &#x2F; ubuntu</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="修复-apt-get-update-错误"><a href="#修复-apt-get-update-错误" class="headerlink" title="修复 apt-get update 错误"></a>修复 apt-get update 错误</h2><p>由于 18.04 官方并未支持 Pi4 。所以在 apt 源会识别成错误的固件。作者给的办法是，关闭 flash-kernel 内核的更新:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-mark hold flash-kernel</span><br></pre></td></tr></table></figure>
+
 <p>这样，只要不使用 <code>dist-upgrade</code>，正常使用都不会有问题。</p>
 <p>一旦官方支持了之后，重新 <code>unhold</code> 之后就可以继续正常更新。</p>
 <h2 id="USB-启动"><a href="#USB-启动" class="headerlink" title="USB 启动"></a>USB 启动</h2><blockquote>
@@ -495,10 +528,14 @@ height:50vh;
 <p>如果连接移动硬盘后，系统依然进了 SD 卡的分区 (可以通过 df -h 查看分区容量来确认)。可以直接修改 /boot/firmware 中的 cmdline.txt （相当于启动分区），然后重启即可。</p>
 <h2 id="Wifi-修复"><a href="#Wifi-修复" class="headerlink" title="Wifi 修复"></a>Wifi 修复</h2><p>作者提示说 wifi 会因为系统版本问题(Pi3 版本)，导致系统卡主一段时间。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i <span class="string">"s:0x48200100:0x44200100:g"</span> /lib/firmware/brcm/brcmfmac43455-sdio.txt</span><br></pre></td></tr></table></figure>
+
 <p>然后重启系统。</p>
 <h2 id="修改用户名-amp-用户组-amp-用户路径-amp-系统名称"><a href="#修改用户名-amp-用户组-amp-用户路径-amp-系统名称" class="headerlink" title="修改用户名 &amp; 用户组 &amp; 用户路径 &amp; 系统名称"></a>修改用户名 &amp; 用户组 &amp; 用户路径 &amp; 系统名称</h2><p>首先是登录 root 用户(不能使用 SSH)。</p>
 <p>然后</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 修改用户名</span></span><br><span class="line">sudo usermod -l new_username ubuntu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改用户目录</span></span><br><span class="line">sudo mv ubuntu xxxx</span><br><span class="line">sudo usermod -d /home/xxxx -m xxxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改用户组</span></span><br><span class="line">sudo groupmod -n xxxx ubuntu</span><br></pre></td></tr></table></figure>
+
+
+
 <p>因为这个办法需要借助显示器，或者新建一个支持 ssh 的用户，如果觉得麻烦可以修改:</p>
 <ul>
 <li>/etc/passwd</li>
@@ -508,20 +545,24 @@ height:50vh;
 <p>这三个文件。来实现重命名的效果。</p>
 <p>还有一点是修改系统名称，直接修改 /etc/hostname 即可。</p>
 <h2 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="修改-GPU-内存占用"><a href="#修改-GPU-内存占用" class="headerlink" title="修改 GPU 内存占用"></a>修改 GPU 内存占用</h2><p>默认 1GB 版本会使用 76MB 内存作为 GPU 显存。对于服务器来说，显存的量其实并没有那么重要。作者建议把显存修改成 16MB。</p>
 <p>修改 <code>/boot/firmware/config.txt</code> 文件，加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpu_mem=16</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpu_mem&#x3D;16</span><br></pre></td></tr></table></figure>
+
 <p>然后重启即可。</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
-            <p>原文作者：<a href="http://blog.vmko.cc">Maple</a>
-            <p>原文链接：<a href="http://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">http://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/</a>
-            <p>发表日期：<a href="http://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">December 24th 2019, 3:56:03 pm</a>
-            <p>更新日期：<a href="http://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">December 24th 2019, 9:52:12 am</a>
-            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>原文作者：<a href="https://blog.vmko.cc">Maple</a>
+            <p>原文链接：<a href="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/</a>
+            <p>发表日期：<a href="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">December 24th 2019, 7:56:03 am</a>
+            <p>更新日期：<a href="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">December 24th 2019, 9:52:12 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -529,7 +570,7 @@ height:50vh;
         <li class="next">
             
                 <div class="nextSlogan">Next Post</div>
-                <a href= "/2020/01/08/2020-01/km3/" title= "杭州科目三">
+                <a href= "/2020/01/07/2020-01/km3/" title= "杭州科目三">
                     <div class="nextTitle">杭州科目三</div>
                 </a>
             
@@ -555,7 +596,7 @@ height:50vh;
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "http://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "Raspberry4 安装 Ubuntu"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
@@ -567,9 +608,13 @@ height:50vh;
         })();
 
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
 
     
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
     <!-- partial('_partial/comment/changyan') -->
     <!--PC版-->
 
@@ -648,7 +693,7 @@ height:50vh;
     <div class="busuanzi-container">
     
      
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> </span>
     
     </div>
     
@@ -2324,18 +2369,6 @@ top:50vh;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 98
@@ -2369,7 +2402,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/2020-05/Synology Drive/" >群晖 Drive 反复同步问题</a>
+            <span class="archive-post-date">05/02</span><a class="archive-post-title" href= "/2020/05/02/2020-05/Synology%20Drive/" >群晖 Drive 反复同步问题</a>
         </li>
     
     
@@ -2404,7 +2437,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/08</span><a class="archive-post-title" href= "/2020/01/08/2020-01/km3/" >杭州科目三</a>
+            <span class="archive-post-date">01/07</span><a class="archive-post-title" href= "/2020/01/07/2020-01/km3/" >杭州科目三</a>
         </li>
     
     
@@ -2433,7 +2466,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/17</span><a class="archive-post-title" href= "/2019/12/17/2019-12/koa-compose/" >Koa-Compose 源码试写</a>
+            <span class="archive-post-date">12/16</span><a class="archive-post-title" href= "/2019/12/16/2019-12/koa-compose/" >Koa-Compose 源码试写</a>
         </li>
     
     
@@ -2473,7 +2506,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/13</span><a class="archive-post-title" href= "/2019/08/13/2019-08/单反画幅/" >单反画幅</a>
+            <span class="archive-post-date">08/13</span><a class="archive-post-title" href= "/2019/08/13/2019-08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/" >单反画幅</a>
         </li>
     
     
@@ -2498,7 +2531,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2019/04/30/2019-07/xiazaibao/" >迅雷下载宝定制固件</a>
+            <span class="archive-post-date">04/29</span><a class="archive-post-title" href= "/2019/04/29/2019-07/xiazaibao/" >迅雷下载宝定制固件</a>
         </li>
     
     
@@ -2513,12 +2546,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/15</span><a class="archive-post-title" href= "/2019/03/15/2019-07/analysis-of-redis-performance/" >Redis 性能问题分析（转载）</a>
+            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2019/03/14/2019-07/analysis-of-redis-performance/" >Redis 性能问题分析（转载）</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/14</span><a class="archive-post-title" href= "/2019/03/14/2019-07/redis-concurrence/" >node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
+            <span class="archive-post-date">03/13</span><a class="archive-post-title" href= "/2019/03/13/2019-07/redis-concurrence/" >node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
         </li>
     
     
@@ -2567,17 +2600,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/vmware-market-expansion/" >VMware 虚拟机硬盘文件扩容</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/kafka-auto-offset-reset/" >Kafka auto.offset.reset 值</a>
+            <span class="archive-post-date">11/01</span><a class="archive-post-title" href= "/2018/11/01/2019-07/node-proxy/" >JavaScript Proxy 对象</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span><a class="archive-post-title" href= "/2018/10/31/2019-07/kafka-auto-offset-reset/" >Kafka auto.offset.reset 值</a>
         </li>
     
     
@@ -2587,7 +2620,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/30</span><a class="archive-post-title" href= "/2018/08/30/2019-07/python-with-as/" >Python with as 的作用</a>
+            <span class="archive-post-date">08/29</span><a class="archive-post-title" href= "/2018/08/29/2019-07/python-with-as/" >Python with as 的作用</a>
         </li>
     
     
@@ -2607,12 +2640,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2018/08/24/2019-07/http2/" >在树莓派上升级 Nginx 开启 HTTP/2</a>
+            <span class="archive-post-date">08/23</span><a class="archive-post-title" href= "/2018/08/23/2019-07/http2/" >在树莓派上升级 Nginx 开启 HTTP/2</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">08/10</span><a class="archive-post-title" href= "/2018/08/10/2019-07/node-buffer/" >Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
+            <span class="archive-post-date">08/09</span><a class="archive-post-title" href= "/2018/08/09/2019-07/node-buffer/" >Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
         </li>
     
     
@@ -2627,17 +2660,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2018/07/06/2019-07/memcached-node-package/" >Nodejs memcached 包的基本用法</a>
+            <span class="archive-post-date">07/05</span><a class="archive-post-title" href= "/2018/07/05/2019-07/memcached-node-package/" >Nodejs memcached 包的基本用法</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">07/04</span><a class="archive-post-title" href= "/2018/07/04/2019-08/typescript/" >TypeScript 学习笔记</a>
+            <span class="archive-post-date">07/03</span><a class="archive-post-title" href= "/2018/07/03/2019-08/typescript/" >TypeScript 学习笔记</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">06/07</span><a class="archive-post-title" href= "/2018/06/07/2019-07/node-momery/" >取消 Node 对内存上限的限制条件</a>
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href= "/2018/06/06/2019-07/node-momery/" >取消 Node 对内存上限的限制条件</a>
         </li>
     
     
@@ -2662,12 +2695,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/23</span><a class="archive-post-title" href= "/2018/05/23/2019-07/babel/" >Babel 学习笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/babel/" >Babel 学习笔记</a>
         </li>
     
     
@@ -2677,7 +2705,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/base64-js/" >Base64 JavaScript 实现</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span><a class="archive-post-title" href= "/2018/05/21/2019-07/base64-js/" >Base64 JavaScript 实现</a>
         </li>
     
     
@@ -2697,12 +2730,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/14</span><a class="archive-post-title" href= "/2018/05/14/2019-07/react-reudx-note-new-md/" >React-Redux 笔记 - 其他</a>
+            <span class="archive-post-date">05/13</span><a class="archive-post-title" href= "/2018/05/13/2019-07/react-reudx-note-new-md/" >React-Redux 笔记 - 其他</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/09</span><a class="archive-post-title" href= "/2018/05/09/2019-07/react-note/" >React.js 小书 - 第三阶段 - 学习笔记</a>
+            <span class="archive-post-date">05/08</span><a class="archive-post-title" href= "/2018/05/08/2019-07/react-note/" >React.js 小书 - 第三阶段 - 学习笔记</a>
         </li>
     
     
@@ -2717,7 +2750,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/13</span><a class="archive-post-title" href= "/2018/04/13/2019-07/object-define-properity/" >Vue.js 数据绑定原理</a>
+            <span class="archive-post-date">04/12</span><a class="archive-post-title" href= "/2018/04/12/2019-07/object-define-properity/" >Vue.js 数据绑定原理</a>
         </li>
     
     
@@ -2727,12 +2760,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">04/08</span><a class="archive-post-title" href= "/2018/04/08/2019-07/nas-ssh-error/" >群晖 SFTP 连接失败</a>
+            <span class="archive-post-date">04/07</span><a class="archive-post-title" href= "/2018/04/07/2019-07/nas-ssh-error/" >群晖 SFTP 连接失败</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/29</span><a class="archive-post-title" href= "/2018/03/29/2019-07/static-ip/" >Linux 静态 IP 设置</a>
+            <span class="archive-post-date">03/28</span><a class="archive-post-title" href= "/2018/03/28/2019-07/static-ip/" >Linux 静态 IP 设置</a>
         </li>
     
     
@@ -2747,7 +2780,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href= "/2018/03/06/2019-07/public-license/" >五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
+            <span class="archive-post-date">03/05</span><a class="archive-post-title" href= "/2018/03/05/2019-07/public-license/" >五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
         </li>
     
     
@@ -2757,22 +2790,22 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/23</span><a class="archive-post-title" href= "/2018/02/23/2019-07/openvpn-login-auto/" >使用 Expect 自动登录 OpenVPN</a>
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2018/02/22/2019-07/openvpn-login-auto/" >使用 Expect 自动登录 OpenVPN</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/22</span><a class="archive-post-title" href= "/2018/02/22/2019-07/node-install/" >Ubuntu 安装 Node.js 环境</a>
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2018/02/21/2019-07/node-install/" >Ubuntu 安装 Node.js 环境</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/12</span><a class="archive-post-title" href= "/2018/02/12/2019-07/auto-restart/" >Shell 自动重启进程</a>
+            <span class="archive-post-date">02/11</span><a class="archive-post-title" href= "/2018/02/11/2019-07/auto-restart/" >Shell 自动重启进程</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/08</span><a class="archive-post-title" href= "/2018/02/08/2019-07/pac/" >自动科学上网 & PAC</a>
+            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2018/02/07/2019-07/pac/" >自动科学上网 & PAC</a>
         </li>
     
     
@@ -2791,7 +2824,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/30</span><a class="archive-post-title" href= "/2017/12/30/2019-07/virtual-dom/" >深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
+            <span class="archive-post-date">12/29</span><a class="archive-post-title" href= "/2017/12/29/2019-07/virtual-dom/" >深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
         </li>
     
     
@@ -2801,12 +2834,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/22</span><a class="archive-post-title" href= "/2017/12/22/2019-07/gulp/" >Gulp 常用插件(转)</a>
+            <span class="archive-post-date">12/21</span><a class="archive-post-title" href= "/2017/12/21/2019-07/gulp/" >Gulp 常用插件(转)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/15</span><a class="archive-post-title" href= "/2017/12/15/2019-07/gulp-autoprefixer/" >gulp-autoprefixer 基本使用</a>
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2017/12/14/2019-07/gulp-autoprefixer/" >gulp-autoprefixer 基本使用</a>
         </li>
     
     
@@ -2816,17 +2849,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2017/12/10/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/10</span><a class="archive-post-title" href= "/2017/12/10/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/07</span><a class="archive-post-title" href= "/2017/12/07/2019-07/ubuntu-swap/" >Ubuntu 新增 swap</a>
+            <span class="archive-post-date">12/06</span><a class="archive-post-title" href= "/2017/12/06/2019-07/ubuntu-swap/" >Ubuntu 新增 swap</a>
         </li>
     
     
@@ -2836,7 +2869,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/22</span><a class="archive-post-title" href= "/2017/11/22/2019-07/database-install/" >常用数据库(缓存)的简单安装配置</a>
+            <span class="archive-post-date">11/21</span><a class="archive-post-title" href= "/2017/11/21/2019-07/database-install/" >常用数据库(缓存)的简单安装配置</a>
         </li>
     
     
@@ -2846,17 +2879,17 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2017/11/04/2019-07/mysql-config/" >my.cnf 参数解释 & 优化 (转载)</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2017/11/03/2019-07/mysql-config/" >my.cnf 参数解释 & 优化 (转载)</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/04</span><a class="archive-post-title" href= "/2017/11/04/2019-07/gitlab/gitlab-upgrade-3/" >GitLab 推送了更新(三) - Nginx 反向代理</a>
+            <span class="archive-post-date">11/03</span><a class="archive-post-title" href= "/2017/11/03/2019-07/gitlab/gitlab-upgrade-3/" >GitLab 推送了更新(三) - Nginx 反向代理</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2017/10/28/2019-07/gitlab/gitlab-upgrade-2/" >GitLab 推送了更新(二) - 安装 docker GitLab</a>
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017/10/27/2019-07/gitlab/gitlab-upgrade-2/" >GitLab 推送了更新(二) - 安装 docker GitLab</a>
         </li>
     
     
@@ -2866,7 +2899,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">10/24</span><a class="archive-post-title" href= "/2017/10/24/2019-07/openssl-key-zhuan-huan/" >PFX文件提取公钥私钥</a>
+            <span class="archive-post-date">10/23</span><a class="archive-post-title" href= "/2017/10/23/2019-07/openssl-key-zhuan-huan/" >PFX文件提取公钥私钥</a>
         </li>
     
     </div>
@@ -2876,11 +2909,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Ubuntu"><span class="iconfont-archer">&#xe606;</span>Ubuntu</span>
     
-        <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
+        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
     
         <span class="sidebar-tag-name" data-tags="Babel"><span class="iconfont-archer">&#xe606;</span>Babel</span>
     
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
+        <span class="sidebar-tag-name" data-tags="Shell"><span class="iconfont-archer">&#xe606;</span>Shell</span>
     
         <span class="sidebar-tag-name" data-tags="mac os"><span class="iconfont-archer">&#xe606;</span>mac os</span>
     
@@ -2898,9 +2931,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Git"><span class="iconfont-archer">&#xe606;</span>Git</span>
     
-        <span class="sidebar-tag-name" data-tags="Node.js"><span class="iconfont-archer">&#xe606;</span>Node.js</span>
-    
         <span class="sidebar-tag-name" data-tags="Gulp.js"><span class="iconfont-archer">&#xe606;</span>Gulp.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="Node.js"><span class="iconfont-archer">&#xe606;</span>Node.js</span>
     
         <span class="sidebar-tag-name" data-tags="HTTP/2"><span class="iconfont-archer">&#xe606;</span>HTTP/2</span>
     
@@ -2908,9 +2941,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="Python"><span class="iconfont-archer">&#xe606;</span>Python</span>
     
-        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
-    
         <span class="sidebar-tag-name" data-tags="MACOS"><span class="iconfont-archer">&#xe606;</span>MACOS</span>
+    
+        <span class="sidebar-tag-name" data-tags="Kafka"><span class="iconfont-archer">&#xe606;</span>Kafka</span>
     
         <span class="sidebar-tag-name" data-tags="MineCraft"><span class="iconfont-archer">&#xe606;</span>MineCraft</span>
     
@@ -2930,11 +2963,11 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="License"><span class="iconfont-archer">&#xe606;</span>License</span>
     
-        <span class="sidebar-tag-name" data-tags="RabbitMQ"><span class="iconfont-archer">&#xe606;</span>RabbitMQ</span>
-    
         <span class="sidebar-tag-name" data-tags="Nginx"><span class="iconfont-archer">&#xe606;</span>Nginx</span>
     
         <span class="sidebar-tag-name" data-tags="React.js"><span class="iconfont-archer">&#xe606;</span>React.js</span>
+    
+        <span class="sidebar-tag-name" data-tags="RabbitMQ"><span class="iconfont-archer">&#xe606;</span>RabbitMQ</span>
     
         <span class="sidebar-tag-name" data-tags="SAN"><span class="iconfont-archer">&#xe606;</span>SAN</span>
     
@@ -2942,9 +2975,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="CPU"><span class="iconfont-archer">&#xe606;</span>CPU</span>
     
-        <span class="sidebar-tag-name" data-tags="VMware"><span class="iconfont-archer">&#xe606;</span>VMware</span>
-    
         <span class="sidebar-tag-name" data-tags="C++"><span class="iconfont-archer">&#xe606;</span>C++</span>
+    
+        <span class="sidebar-tag-name" data-tags="VMware"><span class="iconfont-archer">&#xe606;</span>VMware</span>
     
         <span class="sidebar-tag-name" data-tags="oh-my-zsh"><span class="iconfont-archer">&#xe606;</span>oh-my-zsh</span>
     
@@ -2952,7 +2985,15 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="CentOS"><span class="iconfont-archer">&#xe606;</span>CentOS</span>
     
-        <span class="sidebar-tag-name" data-tags="前端"><span class="iconfont-archer">&#xe606;</span>前端</span>
+        <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
+    
+        <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
+    
+        <span class="sidebar-tag-name" data-tags="Synology"><span class="iconfont-archer">&#xe606;</span>Synology</span>
+    
+        <span class="sidebar-tag-name" data-tags="Chrome"><span class="iconfont-archer">&#xe606;</span>Chrome</span>
     
         <span class="sidebar-tag-name" data-tags="Redux"><span class="iconfont-archer">&#xe606;</span>Redux</span>
     
@@ -2962,6 +3003,8 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="ESXi"><span class="iconfont-archer">&#xe606;</span>ESXi</span>
     
+        <span class="sidebar-tag-name" data-tags="zfs"><span class="iconfont-archer">&#xe606;</span>zfs</span>
+    
         <span class="sidebar-tag-name" data-tags="DOM"><span class="iconfont-archer">&#xe606;</span>DOM</span>
     
         <span class="sidebar-tag-name" data-tags="TypeScript"><span class="iconfont-archer">&#xe606;</span>TypeScript</span>
@@ -2969,18 +3012,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
-    
-        <span class="sidebar-tag-name" data-tags="xp"><span class="iconfont-archer">&#xe606;</span>xp</span>
-    
-        <span class="sidebar-tag-name" data-tags="OpenVPN, Raspberry"><span class="iconfont-archer">&#xe606;</span>OpenVPN, Raspberry</span>
-    
-        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
-    
-        <span class="sidebar-tag-name" data-tags="Synology"><span class="iconfont-archer">&#xe606;</span>Synology</span>
-    
-        <span class="sidebar-tag-name" data-tags="zfs"><span class="iconfont-archer">&#xe606;</span>zfs</span>
-    
-        <span class="sidebar-tag-name" data-tags="Chrome"><span class="iconfont-archer">&#xe606;</span>Chrome</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
