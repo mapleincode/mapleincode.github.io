@@ -358,6 +358,89 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/09/2019-07/ali-apt/" >
+            
+                <span>Ubuntu APT 更换阿里源</span>
+        </a>
+        <div class="abstract-content">
+            备份原 APT 源
+1sudo mv /etc/sources.list /etc/sources.list.bak
+
+重新编辑一份新的sources.list
+16.0412345678910111213141516# deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricteddeb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-propert...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/09/2019-07/docker/docker-user/" >
+            
+                <span>Docker 普通用户操作不用 sudo 权限</span>
+        </a>
+        <div class="abstract-content">
+            Docker 的服务本来是要 root 权限或者 docker 组的权限。只要将当前用户加入 docker 组即可以在不使用sudo 的前提下运行 Docker 指令。
+
+新建 docker 组
+
+一般情况下，在安装 Docker 的时候已经创建好了。
+
+
+
+1sudo groupadd docker
+
+
+将当前用户加入 docker 组
+
+1sudo gpasswd -a $&#123;USER&#125; docker
+
+​    或者
+1sudo usermod -aG docker $&#123;USER&#125;
+
+
+退出 ssh 或者重启 docker 服务
+
+1sudo ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/12/06/2019-07/ubuntu-swap/" >
             
                 <span>Ubuntu 新增 swap</span>
@@ -656,40 +739,10 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/10/23/2019-07/openssl-key-zhuan-huan/" >
-            
-                <span>PFX文件提取公钥私钥</span>
-        </a>
-        <div class="abstract-content">
-            123456// 原版PFX证书openssl pkcs12 -in myssl.pfx -nodes -out server.pem// 提取私钥openssl rsa -in server.pem -out server.key// 提取公钥openssl x509 -in server.pem -out server.crt
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenSSL">OpenSSL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span>
+        <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2408,101 +2461,9 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 99
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2515,6 +2476,16 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/ddsm/" >esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/2020-06-17/" >日记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2558,12 +2529,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
@@ -2587,12 +2558,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2836,12 +2807,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
@@ -2906,12 +2877,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -2985,12 +2956,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
@@ -3150,6 +3121,10 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
     
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
+    
+        <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="synology"><span class="iconfont-archer">&#xe606;</span>synology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

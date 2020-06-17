@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vmko.cc/2020/06/17/2020-06/2020-06-17/</loc>
+    
+    <lastmod>2020-06-17T16:23:04.522Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2020/06/17/2020-06/ddsm/</loc>
+    
+    <lastmod>2020-06-17T16:23:04.522Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vmko.cc/2020/05/21/2020-05/ink/</loc>
     
     <lastmod>2020-06-16T20:23:04.415Z</lastmod>
@@ -93,13 +107,6 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/01/18/2020-01/java/</loc>
-    
-    <lastmod>2020-01-17T18:56:11.325Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.vmko.cc/2020/01/18/2020-01/pivpn/</loc>
     
     <lastmod>2020-01-17T18:56:11.325Z</lastmod>
@@ -107,9 +114,9 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/12/24/2019-12/xp-serials-ids/</loc>
+    <loc>https://blog.vmko.cc/2020/01/18/2020-01/java/</loc>
     
-    <lastmod>2019-12-24T01:52:12.626Z</lastmod>
+    <lastmod>2020-01-17T18:56:11.325Z</lastmod>
     
   </url>
   
@@ -121,9 +128,9 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/googlefef7257230862e75.html</loc>
+    <loc>https://blog.vmko.cc/2019/12/24/2019-12/xp-serials-ids/</loc>
     
-    <lastmod>2019-12-23T08:36:47.571Z</lastmod>
+    <lastmod>2019-12-24T01:52:12.626Z</lastmod>
     
   </url>
   
@@ -135,9 +142,9 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/12/16/2019-12/koa-compose/</loc>
+    <loc>https://blog.vmko.cc/googlefef7257230862e75.html</loc>
     
-    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
+    <lastmod>2019-12-23T08:36:47.571Z</lastmod>
     
   </url>
   
@@ -150,13 +157,6 @@
   
   <url>
     <loc>https://blog.vmko.cc/2019/11/08/2019-11/esxi/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/07/03/2019-08/typescript/</loc>
     
     <lastmod>2019-12-23T08:36:47.551Z</lastmod>
     
@@ -205,16 +205,16 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/11/01/2019-07/node-proxy/</loc>
+    <loc>https://blog.vmko.cc/2018/07/03/2019-08/typescript/</loc>
     
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/04/12/2019-07/object-define-properity/</loc>
+    <loc>https://blog.vmko.cc/2019/12/16/2019-12/koa-compose/</loc>
     
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
     
   </url>
   
@@ -345,7 +345,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/04/29/2019-07/xiazaibao/</loc>
+    <loc>https://blog.vmko.cc/2018/05/08/2019-07/react-note/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -359,7 +359,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/04/23/2019-07/systemctl/</loc>
+    <loc>https://blog.vmko.cc/2018/08/09/2019-07/node-buffer/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -373,7 +373,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/05/28/2019-07/xp-x64/</loc>
+    <loc>https://blog.vmko.cc/2019/04/29/2019-07/xiazaibao/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -415,14 +415,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/05/23/2019-07/redis/</loc>
+    <loc>https://blog.vmko.cc/2018/04/23/2019-07/systemctl/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/05/08/2019-07/react-note/</loc>
+    <loc>https://blog.vmko.cc/2018/05/28/2019-07/xp-x64/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -436,7 +436,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/08/09/2019-07/node-buffer/</loc>
+    <loc>https://blog.vmko.cc/2019/05/23/2019-07/redis/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -451,6 +451,20 @@
   
   <url>
     <loc>https://blog.vmko.cc/2018/02/21/2019-07/node-install/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/11/01/2019-07/node-proxy/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/04/12/2019-07/object-define-properity/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -534,6 +548,13 @@
   </url>
   
   <url>
+    <loc>https://blog.vmko.cc/2019/01/07/2019-07/kafka-node/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vmko.cc/2017/11/20/2019-07/inode/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
@@ -542,13 +563,6 @@
   
   <url>
     <loc>https://blog.vmko.cc/2017/12/21/2019-07/gulp/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/01/07/2019-07/kafka-node/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -590,20 +604,6 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/11/09/2019-07/foreign-key/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/08/08/2019-07/expect/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.vmko.cc/2019/03/14/2019-07/analysis-of-redis-performance/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
@@ -618,14 +618,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2017/11/21/2019-07/database-install/</loc>
+    <loc>https://blog.vmko.cc/2018/11/09/2019-07/foreign-key/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2017/11/24/2019-07/comand-control/</loc>
+    <loc>https://blog.vmko.cc/2018/08/08/2019-07/expect/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -675,6 +675,20 @@
   
   <url>
     <loc>https://blog.vmko.cc/2017/11/03/2019-07/gitlab/gitlab-upgrade-3/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/11/21/2019-07/database-install/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/11/24/2019-07/comand-control/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     

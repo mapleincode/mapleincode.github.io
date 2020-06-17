@@ -371,6 +371,86 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/08/23/2019-07/http2/" >
+            
+                <span>在树莓派上升级 Nginx 开启 HTTP/2</span>
+        </a>
+        <div class="abstract-content">
+            因为家里的路由器支持的 NAT 端口的数量只能有限的 20 个。随着自己乱七八糟的服务越来越多，不得不用家里的树莓派靠 Nginx 做了一层反向代理。支持根据域名访问不同的地址。
+随着 Chrome 开始推荐 Https，用了自签证书搞了 Https。
+然后看到了  HTTP/2。心想反正搞干脆搞好点。然后用我那个树莓派来折腾 HTTP/2。
+
+不得不说树莓派真的适合学习 Linux。
+
+关于 HTTP/2HTTP/2 （原名HTTP/2.0）即超文本传输协议 2.0，是下一代HTTP协议。(From 百度百科)。
+
+支持异步连接多路复用
+头部压缩
+请求 / 响应管线化
+保持与 HTTP...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "HTTP/2">HTTP/2</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "树莓派">树莓派</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/08/09/2019-07/node-buffer/" >
+            
+                <span>Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</span>
+        </a>
+        <div class="abstract-content">
+            转载自 https://segmentfault.com/a/1190000009547330
+
+本文摘录自《Nodejs学习笔记》，更多章节及更新，请访问 github主页地址。欢迎加群交流，群号 197339705。
+
+模块概览Buffer是node的核心模块，开发者可以利用它来处理二进制数据，比如文件流的读写、网络请求数据的处理等。
+Buffer的API非常多，本文仅挑选 比较常用/容易理解 的API进行讲解，包括Buffer实例的创建、比较、连接、拷贝、查找、遍历、类型转换、截取、编码转换等。
+创建
+new Buffer(array)
+Buffer.alloc(length)
+B...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/08/08/2019-07/expect/" >
             
                 <span>Expect 使用小记</span>
@@ -630,74 +710,10 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/28/2019-07/xp-x64/" >
-            
-                <span>MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</span>
-        </a>
-        <div class="abstract-content">
-            简介12345678910111213141516171819202122232425262728293031323334353637[资源名称]---Windows XP Professional x64 Edition with SP2 - VL (English)[资源类型]---ISO镜像[资源语言]---英语+简体中文[杀毒状况]---NOD32+KAV2009[共享时间]---时间不定[安装测试]---刻盘+硬盘安装通过[版权声明]---软件版权归原作者及原软件公司所有，仅供测试所用，请勿用于商业用途，如果你喜欢，请购买正版软件[资源介绍] Windows XP Profes...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/28</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "XP">XP</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/05/22/2019-07/babel/" >
-            
-                <span>Babel 学习笔记</span>
-        </a>
-        <div class="abstract-content">
-            Babel  学习前段时间学习写 React.js ，使用了了 Dva.js 框架。然后在 npm run dev可以运行的情况下。发现静态文件编译一直出问题。提示 Uglify 打包失败。定位问题是使用了 ES6 写的包 https://github.com/sorrycc/blog/issues/68。
-因为那个包是我自己写的，本来就是用于 Node 的包，这样就需要用 Babel 将 es6 转成 es5。
-创建 .babelrc在项目名称创建配置文件。
-格式: 
-1234&#123;  "presets": [],  "plugins": []&#125;
-
-presets 就是...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Babel">Babel</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/5/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/page/5/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2483,101 +2499,9 @@ presets 就是...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 99
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2590,6 +2514,16 @@ presets 就是...
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/ddsm/" >esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/2020-06-17/" >日记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2633,12 +2567,12 @@ presets 就是...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
@@ -2662,12 +2596,12 @@ presets 就是...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2911,12 +2845,12 @@ presets 就是...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
@@ -2981,12 +2915,12 @@ presets 就是...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3060,12 +2994,12 @@ presets 就是...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
@@ -3225,6 +3159,10 @@ presets 就是...
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
     
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
+    
+        <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="synology"><span class="iconfont-archer">&#xe606;</span>synology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

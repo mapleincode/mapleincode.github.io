@@ -371,6 +371,76 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/02/22/2019-07/openvpn-login-auto/" >
+            
+                <span>使用 Expect 自动登录 OpenVPN</span>
+        </a>
+        <div class="abstract-content">
+            公司使用 OpenVPN 作为外网办公网络，本来只设置了用户名密码，但是为了安全，公司的网(yun)管(wei)同事升级了安全配置，添加了谷歌验证的输入需求。
+谷歌验证是一种将预先生成秘钥和时间戳，通过一种开源算法计算出若干位的数字的安全方案。在 VPN 配置界面，会提供一个二维码(即为秘钥)，然后在手机上安装 APP，扫码二维码并保存，可以获得一个动态刷新的验证码。然后在登录界面输入账号密码和动态验证码即可登录 VPN。
+作为一个电脑党，每次登录 VPN 都需要满世界找手机，真的让人觉得麻烦。因为谷歌验证是开源的，所以 gayhub 上到处都有各个编程语言支持的包。如果可以运行一套程序...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Expect">Expect</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN">OpenVPN</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/02/21/2019-07/node-install/" >
+            
+                <span>Ubuntu 安装 Node.js 环境</span>
+        </a>
+        <div class="abstract-content">
+            官方编译版本安装使用官方预先编译好的二进制安装包进行安装。
+从https://nodejs.org/en/download/选择对应的版本的二进制包，下载到 Linux 上。
+123456789101112# 下载wget https://nodejs.org/dist/&#123;version&#125;/node-&#123;version&#125;-linux-x64.tar.xz# 解压tar -xvf node-&#123;version&#125;-linux-x64.tar.xz# 进入文件夹cd node-&#123;version&#125;-linux-x64/#...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/02/11/2019-07/auto-restart/" >
             
                 <span>Shell 自动重启进程</span>
@@ -642,93 +712,10 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/12/09/2019-07/ali-apt/" >
-            
-                <span>Ubuntu APT 更换阿里源</span>
-        </a>
-        <div class="abstract-content">
-            备份原 APT 源
-1sudo mv /etc/sources.list /etc/sources.list.bak
-
-重新编辑一份新的sources.list
-16.0412345678910111213141516# deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricteddeb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-propert...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/12/09/2019-07/docker/docker-user/" >
-            
-                <span>Docker 普通用户操作不用 sudo 权限</span>
-        </a>
-        <div class="abstract-content">
-            Docker 的服务本来是要 root 权限或者 docker 组的权限。只要将当前用户加入 docker 组即可以在不使用sudo 的前提下运行 Docker 指令。
-
-新建 docker 组
-
-一般情况下，在安装 Docker 的时候已经创建好了。
-
-
-
-1sudo groupadd docker
-
-
-将当前用户加入 docker 组
-
-1sudo gpasswd -a $&#123;USER&#125; docker
-
-​    或者
-1sudo usermod -aG docker $&#123;USER&#125;
-
-
-退出 ssh 或者重启 docker 服务
-
-1sudo ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2514,101 +2501,9 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 99
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2621,6 +2516,16 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/ddsm/" >esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/2020-06-17/" >日记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2664,12 +2569,12 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
@@ -2693,12 +2598,12 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2942,12 +2847,12 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
@@ -3012,12 +2917,12 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3091,12 +2996,12 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
@@ -3256,6 +3161,10 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
     
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
+    
+        <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="synology"><span class="iconfont-archer">&#xe606;</span>synology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

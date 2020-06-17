@@ -358,6 +358,43 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/17/2020-06/ddsm/" >
+            
+                <span>esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
+        </a>
+        <div class="abstract-content">
+            群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
+当然对我们来说，重要的是里面的序列号。
+我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
+查阅了谷歌，在论坛上找到解决方案：
+https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
+
+Been there, done tha...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "esxi">esxi</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "synology">synology</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/06/17/2020-06/esxi/" >
             
                 <span>esxi 安装</span>
@@ -385,6 +422,42 @@
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "esxi">esxi</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/17/2020-06/2020-06-17/" >
+            
+                <span>日记</span>
+        </a>
+        <div class="abstract-content">
+            最近的经历和感触
+
+在老家玩了几天，家里 esxi 服务器挂了、路由器也挂了
+路由器挂了之后我一直担心是不是服务器挂了导致出租房起火了，因为这个路由器从买来就没死机过一次
+然后回家后发现是电源坏了，找了商家，商家熟练的发来一个链接。看了下销量敢情这路由器的充电器压根不靠谱啊，还卖 20 + 10 。
+在老家连不上 nas，闲的蛋疼去刷了下知乎，然后发现一个月初的回答居然有 600 赞了，天哪
+在朋友的推荐下买了斐讯 N1盒子，发现斐讯的遗产都好好，无论是蓝牙音箱还是路由器还是这盒子
+发现 N1 盒子可以刷游戏系统，求资源求了半天。之后转念想不求作者（因为我这个是小号，那个作者又感觉很不靠...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "日记">日记</a>
     
 </div>
             
@@ -678,84 +751,6 @@ expires
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Nginx">Nginx</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/2020-01/java/" >
-            
-                <span>Java 学习路线</span>
-        </a>
-        <div class="abstract-content">
-            基友推荐的 Java 教程，源地址:
-https://www.bilibili.com/read/cv3560825
-目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
-1. 基础阶段1.1 必选
-Java 语言：https://www.bilibili.com/video/av59529105/
-
-MySQL 数据库：https://www.bilibili.com/video/av59623481/
-
-JDBC：https://www.bilibili.com/video/av59534040/
-
-Java Web：https://www.bilibili...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/2020-01/pivpn/" >
-            
-                <span>树莓派安装 PIVPN</span>
-        </a>
-        <div class="abstract-content">
-            在树莓派上安装 OpenVPN。
-虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
-核心安装就只有一条命令:
-1curl -L https://install.pivpn.io | bash
-
-
-
-具体过程可以参考
-http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
-这位大佬安装过程讲解的十分详细 = - =。
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN, Raspberry">OpenVPN, Raspberry</a>
     
 </div>
             
@@ -2484,101 +2479,9 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 99
+        Total : 101
         </div>
         <!-- search  -->
         
@@ -2591,6 +2494,16 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/ddsm/" >esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/2020-06-17/" >日记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2634,12 +2547,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
@@ -2663,12 +2576,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/xp-serials-ids/" >XP 序列号</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2019/12/24/2019-12/rasp-4-ubuntu/" >Raspberry4 安装 Ubuntu</a>
         </li>
     
     
@@ -2912,12 +2825,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
@@ -2982,12 +2895,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3061,12 +2974,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
@@ -3226,6 +3139,10 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
     
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
+    
+        <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="synology"><span class="iconfont-archer">&#xe606;</span>synology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
