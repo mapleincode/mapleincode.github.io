@@ -358,6 +358,45 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/17/2020-06/esxi/" >
+            
+                <span>esxi 安装</span>
+        </a>
+        <div class="abstract-content">
+            起因因为主板是华南寨板，网卡并非服务器版本。导致 esxi 不识别。我去闲鱼上淘了一张双口的 82576。结果这几天刷软路由，发现一种办法是通过网卡直通给虚拟机的办法，实现 esxi 来支持软路由。
+但是在我的 esxi 硬件那边，发现网卡的直通写了不支持。
+问了店家，店家表示：
+
+网卡肯定是支持的
+如果不支持，可能是主板的问题
+如果不行，可以去 vmware 上找找驱动安装试试
+
+然后我乖巧的去找了驱动，然后安装，重启，就没然后了，原因很简单，我在 100 公里外的老家拼命刷浏览器的回车，却只告诉我 esxi 服务器 503 了。
+老板，你也好歹告诉我下驱动装失败了会进不去吧。
+我就说...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "esxi">esxi</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/05/21/2020-05/ink/" >
             
                 <span>自製鋼筆染料墨水配方[转载]</span>
@@ -475,18 +514,18 @@ Safari 写了四五个月没洗笔，状况都很良好
                 <span>群晖 Drive 反复同步问题</span>
         </a>
         <div class="abstract-content">
-            群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
+            2020-05-25： 
+Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
+安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
+两款 Mac 都需要更新到新版本！！
+Drive 一定会成为你重要的同步软件！！！
+
+群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
 
 但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
 推荐大家有条件还是去上正版群晖。
 
-Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实现文件同步。类似国内软件坚果云。
-因为有在家里办公的习惯，所以把公司的代码和文件统统同步到家里的 NAS，然后在同步到家里的 MAC 电脑。
-
-虽然已经被裁员了 Q^Q
-
-Drive 提供实时文件传输，加上网络条件比较合适，基本可以实现实时文件修改。甚至可以实现跨系统的文件支持。
-...
+Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -723,45 +762,6 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/01/18/2020-01/disable-systemd-resolved/" >
-            
-                <span>nameserver 127.0.0.53</span>
-        </a>
-        <div class="abstract-content">
-            Ubuntu 升级到 16.04 还是 18.04 的时候，默认会启动 NetWorkManage 的一个功能，即把 /etc/resolv.conf 的 dns 地址配置成
-1nameserver 127.0.0.53
-
-正常情况下不会有影响，但是如果想要关闭这个功能，设置
-12$ sudo systemctl disable systemd-resolved$ sudo reboot
-
-
-建议正常运作的情况下不需要卸载这个组件
-
-参考: https://www.hiroom2.com/2017/08/24/ubuntu-1610-nameserver-127-0-0-53-en/
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
@@ -776,7 +776,7 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
  * @Author: maple
  * @Date: 2020-05-22 17:47:08
  * @LastEditors: maple
- * @LastEditTime: 2020-05-22 22:15:07
+ * @LastEditTime: 2020-05-22 23:03:39
 -->
 <footer class="footer footer-unloaded">
     <!-- social  -->
@@ -853,12 +853,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     </div>
 
     <div class="busuanzi-container">
-        <div id="busuanzi_container_site_pv" style="width:300px;margin:0 auto; padding:20px 0;">
+        <div id="busuanzi_container_site_pv" style="width:400px;margin:0 auto; padding:20px 0;">
             <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704"
                 style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
                 <img src="/assets/beian.png" style="float:left;" />
-                <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备
-                    33011002014704号</p>
+                <span style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备
+                    33011002014704号；备案号: 浙ICP备20017606号-1</span>
             </a>
         </div>
 
@@ -2517,9 +2517,68 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 98
+        Total : 99
         </div>
         <!-- search  -->
         
@@ -2532,6 +2591,11 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span><a class="archive-post-title" href= "/2020/06/17/2020-06/esxi/" >esxi 安装</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2570,12 +2634,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/pivpn/" >树莓派安装 PIVPN</a>
+            <span class="archive-post-date">01/18</span><a class="archive-post-title" href= "/2020/01/18/2020-01/java/" >Java 学习路线</a>
         </li>
     
     
@@ -2848,12 +2912,12 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
@@ -3160,6 +3224,8 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
         <span class="sidebar-tag-name" data-tags="Docker"><span class="iconfont-archer">&#xe606;</span>Docker</span>
     
         <span class="sidebar-tag-name" data-tags="GitLab"><span class="iconfont-archer">&#xe606;</span>GitLab</span>
+    
+        <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
