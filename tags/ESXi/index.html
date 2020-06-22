@@ -358,6 +358,45 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/17/2020-06/esxi/" >
+            
+                <span>esxi 安装</span>
+        </a>
+        <div class="abstract-content">
+            起因因为主板是华南寨板，网卡并非服务器版本。导致 esxi 不识别。我去闲鱼上淘了一张双口的 82576。结果这几天刷软路由，发现一种办法是通过网卡直通给虚拟机的办法，实现 esxi 来支持软路由。
+但是在我的 esxi 硬件那边，发现网卡的直通写了不支持。
+问了店家，店家表示：
+
+网卡肯定是支持的
+如果不支持，可能是主板的问题
+如果不行，可以去 vmware 上找找驱动安装试试
+
+然后我乖巧的去找了驱动，然后安装，重启，就没然后了，原因很简单，我在 100 公里外的老家拼命刷浏览器的回车，却只告诉我 esxi 服务器 503 了。
+老板，你也好歹告诉我下驱动装失败了会进不去吧。
+我就说...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "ESXi">ESXi</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2019/11/08/2019-11/esxi/" >
             
                 <span>ESXi 使用笔记</span>
@@ -365,8 +404,11 @@
         <div class="abstract-content">
             作为不想折腾开发环境的懒人，长期部署若干个服务器用于自己开发学习。
 目前的做法是，在搭建 Ubuntu 的宿主机安装 VMware Station ，然后利用其 VMware Server ，通过客户端连接。
-被一个朋友吐槽为什么不用 ESXi。
-早期的想法是能用就行，加上对虚拟机的功能也不是很了解。但是慢慢的，简单化的 VMware Server 不能满足我的需求。与 ESXi 不同，VMware Server 底层还是 Ubuntu 服务，相当于  ESXi 的硬件虚拟，Server 采用软件虚拟。性能较差，而且在我目前的需求：使用 Windows 安装聊天软件使用等情况下，发现 S...
+结果被一个朋友吐槽为什么不用 ESXi。
+早期的想法是能用就行，加上对虚拟机的功能也不是很了解。
+ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其他的系统。
+与 ESXi 不同，VMware Server 底层还是 Linux，相当于  ESXi 直接与硬件交互，而 VMware Server 则与 Linux 交互。
+其实性能上也没有感受到很大的差距，但是 VMwar...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -2766,8 +2808,6 @@
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
-    
-        <span class="sidebar-tag-name" data-tags="synology"><span class="iconfont-archer">&#xe606;</span>synology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

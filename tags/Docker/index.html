@@ -358,6 +358,45 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/06/17/2020-06/ddsm/" >
+            
+                <span>esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
+        </a>
+        <div class="abstract-content">
+            群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
+当然对我们来说，重要的是里面的序列号。
+我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
+查阅了谷歌，在论坛上找到解决方案：
+https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
+
+Been there, done tha...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Synology">Synology</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "esxi">esxi</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/05/22/2019-07/docker/docker-prune/" >
             
                 <span>Docker 运行文件清理工具 prune</span>
@@ -2892,8 +2931,6 @@ Docker 版本:
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
-    
-        <span class="sidebar-tag-name" data-tags="synology"><span class="iconfont-archer">&#xe606;</span>synology</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
