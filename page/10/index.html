@@ -371,6 +371,185 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/29/2019-07/virtual-dom/" >
+            
+                <span>深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
+        </a>
+        <div class="abstract-content">
+            作者：戴嘉华
+转载请注明出处并保留原文链接(#13)和作者信息。
+目录：
+1 前言
+2 对前端应用状态管理思考
+3 Virtual DOM 算法
+4 算法实现
+4.1 步骤一：用JS对象模拟DOM树
+4.2 步骤二：比较两棵虚拟DOM树的差异
+4.3 步骤三：把差异应用到真正的DOM树上
+
+
+5 结语
+6 References
+
+1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
+本文...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DOM">DOM</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/26/2019-07/git-no-ff/" >
+            
+                <span>git merge --no-ff</span>
+        </a>
+        <div class="abstract-content">
+            --no-ff 指的是强行关闭fast-forward方式。
+fast-forward方式就是当条件允许的时候，git 直接把 HEAD 指针指向合并分支的头，完成合并。属于“快进方式”，不过这种情况如果删除分支，则会丢失分支信息。因为在这个过程中没有创建 commit。
+git merge --squash 是用来把一些不必要 commit 进行压缩，比如说，你的 feature 在开发的时候写的 commit 很乱，那么我们合并的时候不希望把这些历史 commit 带过来，于是使用--squash进行合并，此时文件已经同合并后一样了，但不移动 HEAD，不提交。需要进行一次额外的 c...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/26</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/21/2019-07/gulp/" >
+            
+                <span>Gulp 常用插件(转)</span>
+        </a>
+        <div class="abstract-content">
+            Gulp 常用插件(转)原文地址
+
+  本文主要展示的是gulp常用插件的使用方法和用途，通过对插件的熟练运用达到精通gulp。不定期更新。可以到github上面下载DEMO。
+
+匹配符 、*、！、{}1234gulp.src(&#39;.&#x2F;js&#x2F;*.js&#39;)               &#x2F;&#x2F; * 匹配js文件夹下所有.js格式的文件gulp.src(&#39;.&#x2F;js&#x2F;**&#x2F;*.js&#39;)            &#x2F;&#x2F; ** 匹配js文件夹的0个或多个子文件夹gulp.src([&#3...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Gulp.js">Gulp.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/14/2019-07/gulp-autoprefixer/" >
+            
+                <span>gulp-autoprefixer 基本使用</span>
+        </a>
+        <div class="abstract-content">
+            转载传送门
+基本使用
+使用 gulp-autoprefixer 根据设置浏览器版本自动处理浏览器前缀。使用她我们可以很潇洒地写代码，不必考虑各浏览器兼容前缀。
+
+1234567891011121314var gulp = require('gulp'),    autoprefixer = require('gulp-autoprefixer'); gulp.task('testAutoFx', function () &#123;    gulp.src('src/css/index.css')        .pipe(autoprefixer(&#123;            b...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Gulp.js">Gulp.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/13/2019-07/docker/docker-run/" >
+            
+                <span>Docker启动后直接退出</span>
+        </a>
+        <div class="abstract-content">
+            之前对 docker 的运行问题很不了解，后来根据朋友的解释才理解，容器中的程序应该挂载在容器上，由容器的重启关闭来控制程序的关闭开机。
+那假如运行后台运行的函数呢？
+如果不做处理，在函数进入后台运行后，容易就会直接 exit 结束。
+有一个办法是在运行脚本上加一句:
+1tail -f /dev/null
+
+这样容易就处于执行状态就不会退出了。
+算是歪门邪道吧。
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/13</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/12/09/2019-07/ali-apt/" >
             
                 <span>Ubuntu APT 更换阿里源</span>
@@ -561,191 +740,6 @@ MySQL安装1sudo apt install mysql-server
         <a class="post-tag" href="javascript:void(0);" data-tags = "Redis">Redis</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Memcache">Memcache</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/11/20/2019-07/inode/" >
-            
-                <span>优化 Ext4 分区 inode 占用空间问题</span>
-        </a>
-        <div class="abstract-content">
-            
-  对乱七八糟的知识点整理，方便下次使用
-
-
-  去年年底购入了渣雷的下载宝，用  ntfs 格式化后，性能一直不佳(后面发现是因为那个渣系统会索引文件)，后用 ext4 格式，但是格式之后发现居然少了 15G 左右。
-
-inodeinode是指在许多“类Unix文件系统”中的一种数据结构。每个inode保存了文件系统中的一个文件系统对象（包括文件、目录、设备文件、socket、管道, 等等）的元信息数据，但不包括数据内容或者文件名。(from: 维基百科)
-通俗的说，inode 其实就是文件的索引值。
-inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统自动将硬盘分成两个区域...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/11/03/2019-07/mysql-config/" >
-            
-                <span>my.cnf 参数解释 &amp; 优化 (转载)</span>
-        </a>
-        <div class="abstract-content">
-            my.cnf 参数解析
-转载 From
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "MySQL">MySQL</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/11/03/2019-07/gitlab/gitlab-upgrade-3/" >
-            
-                <span>GitLab 推送了更新(三) - Nginx 反向代理</span>
-        </a>
-        <div class="abstract-content">
-            
-GitLab 搭建在家里的一台服务器上，并没有直接暴露到外网。为了可以外网访问，所以需要把端口转发到内网(NAT)。因为用了渣 TP 路由器，只支持转发 20 个端口到外网。为了节省端口资源，所以打算使用树莓派上的 Nginx 作为反向代理，使多个 Domain 同时使用一个端口。
-
-Nginx 安装无脑安装:
-12sudo apt update;sudo apt install nginx;
-
-查看 nginx 服务运行状态:
-123456789maple@localhost:~/$ sudo service nginx status● nginx.service - A high ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Nginx">Nginx</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/10/27/2019-07/gitlab/gitlab-upgrade-2/" >
-            
-                <span>GitLab 推送了更新(二) - 安装 docker GitLab</span>
-        </a>
-        <div class="abstract-content">
-            
-之前在树莓派安装 GitLab 因为配置过低的原因，导致 GitLab 一直无法正常使用。痛并思痛，打算在一台x86的主机上安装 GitLab。当时想着能够快速部署而且不和现在的系统太过耦合，碰巧在 GitLab 主页上看到了小鲸鱼，想来试试这个已经出来好几年的新(liubi)技术。
-
-环境
-AMD CPU 主机，4 核心， 12G DDR3 内存。ubuntu 16.04.02 Desktop。
-
-Docker 版本:
-1Docker version 1.12.6, build 78d1802
-
-镜像安装首先是要 pull 镜像。
-因为官方的镜像速度实在是捉急，所以用了DaoClou...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/27</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Docker">Docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "GitLab">GitLab</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2017/10/26/2019-07/gitlab/gitlab-upgrade-1/" >
-            
-                <span>GitLab 推送了更新(一) - 树莓派安装GitLab</span>
-        </a>
-        <div class="abstract-content">
-            
-家里常年挂了一个树莓派，因为噪音小(之前主机都放在卧室)，被动散热就可以满足，因此用来挂一些简单的脚本。之前GitLab整合了安装，推出了一键傻瓜式安装。后来版本更新到了10.0, 颜值比8.0要高。但是arm版本一直是8.0，上周ssh进去的时候，居然提示有更新，所以打算更新下树莓派上的Gitlab。
-
-系统环境RaspBerry B2
-树莓派二代，四核ARM架构处理器, 1G DDR2 内存，做了 2GB 的虚拟缓存。
-ubuntu 15.10 系统。
-32G SD 卡。
-GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽然做过一些优化，但是实际上 1G 内存...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树莓派">树莓派</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "GitLab">GitLab</a>
     
 </div>
             
@@ -2541,9 +2535,238 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 101
+        Total : 106
         </div>
         <!-- search  -->
         
@@ -2556,6 +2779,31 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/api-gateway/" >API 网关功能</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/redis-cluster/" >redis 集群</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span><a class="archive-post-title" href= "/2020/08/18/2020-08/jiaohanglaji/" >从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span><a class="archive-post-title" href= "/2020/08/13/2020-08/python/" >Python & Ubuntu</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span><a class="archive-post-title" href= "/2020/07/06/2020-07/HashMap%20&%20HashTable/" >HashMap 和 HashTable 的区别</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2957,12 +3205,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
@@ -3036,12 +3284,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/ali-apt/" >Ubuntu APT 更换阿里源</a>
+            <span class="archive-post-date">12/09</span><a class="archive-post-title" href= "/2017/12/09/2019-07/docker/docker-user/" >Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
     
