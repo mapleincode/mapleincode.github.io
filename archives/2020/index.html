@@ -358,7 +358,128 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/09/05/redis-cluster/" >
+        <a class="abstract-title" href = "/2020/09/22/2020-09/lock/" >
+            
+                <span>2020-09/lock</span>
+        </a>
+        <div class="abstract-content">
+            悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
+
+Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
+
+
+适合多写环境
+
+乐观锁
+不上锁
+更新前判断数据是否被更新
+使用版本号机制和 CAS 算法
+适合多读少写环境
+
+
+在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
+
+总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
+
+对于资源竞争较少（线程冲突...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/22/2020-09/raspberry-usb-start/" >
+            
+                <span>raspberry 4B Ubuntu 系统 USB 启动</span>
+        </a>
+        <div class="abstract-content">
+            raspberry 4B，现在是觉得坑多于喜。
+为了减少系统盘对性能的影响，所以我们使用外接 USB 系统盘的办法。
+而树莓派默认只支持从 SD 读取。
+
+隔壁 raspbian 已经支持无卡 usb 启动了，ubuntu 啥时候支持下？
+
+早期是通过修改 cmdline.txt 里的 root
+1root&#x3D;&#x2F;dev&#x2F;mmcblk0p2
+
+修改为
+1root&#x3D;&#x2F;dev&#x2F;sda2
+
+也就是在 sda 上所在的系统分区。
+而更新到 18.04.4 之后(大概)，cmdline.txt 改成了 btcmd.txt。而整个启动命令变成了...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "raspberry">raspberry</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/16/2020-09/raspberry/" >
+            
+                <span>我不推荐使用树莓派来当做家用服务器</span>
+        </a>
+        <div class="abstract-content">
+            
+本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
+对于物联网、家用办公等等需求的人而言，毫无意义
+
+第一个树莓派五年前，我入手了树莓派 2。
+作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
+而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
+但是树莓派 2 有若干致命的问题：
+
+usb 只有 ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "raspberry">raspberry</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/05/2020-08/redis-cluster/" >
             
                 <span>redis 集群</span>
         </a>
@@ -398,7 +519,7 @@ cluster-confi...
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/09/05/api-gateway/" >
+        <a class="abstract-title" href = "/2020/09/05/2020-08/api-gateway/" >
             
                 <span>API 网关功能</span>
         </a>
@@ -615,123 +736,10 @@ Been there, done tha...
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/06/17/2020-06/2020-06-17/" >
-            
-                <span>日记</span>
-        </a>
-        <div class="abstract-content">
-            最近的经历和感触
-
-在老家玩了几天，家里 esxi 服务器挂了、路由器也挂了
-路由器挂了之后我一直担心是不是服务器挂了导致出租房起火了，因为这个路由器从买来就没死机过一次
-然后回家后发现是电源坏了，找了商家，商家熟练的发来一个链接。看了下销量敢情这路由器的充电器压根不靠谱啊，还卖 20 + 10 。
-在老家连不上 nas，闲的蛋疼去刷了下知乎，然后发现一个月初的回答居然有 600 赞了，天哪
-在朋友的推荐下买了斐讯 N1盒子，发现斐讯的遗产都好好，无论是蓝牙音箱还是路由器还是这盒子
-发现 N1 盒子可以刷游戏系统，求资源求了半天。之后转念想不求作者（因为我这个是小号，那个作者又感觉很不靠...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "日记">日记</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/21/2020-05/ink/" >
-            
-                <span>自製鋼筆染料墨水配方[转载]</span>
-        </a>
-        <div class="abstract-content">
-            
-https://www.ptt.cc/bbs/stationery/M.1448639335.A.202.html
-转载自一位弯弯大佬的一篇文章，文章内容很详细。
-短时间应该不会去学做，但是的确蛮有意思的赶脚。
-
-
-原文是繁体，排版依然按照原文
-
-给大家参考
-之前在疫区用这配方卖了两批小赚点钱
-卖剩的自己目前也一直在用
-Safari 写了四五个月没洗笔，状况都很良好
-所以应该是不会伤笔
-另外，测试时使用下水量较小的 78g
- 加上本人通常是写狂草 (写很快很丑) 
-所以需要下水量大的墨水，调出来黏度偏低
-比例视使用者习惯自行调整，这里只是参考
-第一步先配好甘油水溶液→体积比甘油：水= ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/05/18/2020-05/chrome-auto-sign-in/" >
-            
-                <span>解决 Chrome 无法自动填充账号密码的问题</span>
-        </a>
-        <div class="abstract-content">
-            前段时间在折腾浏览器的时候，不知道怎么一搞，导致在登录界面，Chrome 不会自动把账户密码填充到登录账户密码栏里。也就是进入一个页面之后，需要手动点击账户栏，选择账户才会填入正确密码。
-我尝试重新登录账户，清除数据，卸载 Chrome 重启等操作均无法解决问题。
-忽然想到，MacOS 拖程序到回收站其实并不算完全卸载，即使删除用户数据，也会存留部分数据在用户数据文件夹。
-
-一般情况我会使用 CleanMyMac 来卸载，没想到这玩意儿也没有完全卸载。
-
-搜索 Google （吐槽重置之后，地址栏输入居然变成了百度）之后，找到了卸载 Chrome 的正确姿势：
-
-在计算机屏幕的底部，右键...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Chrome">Chrome</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">NEXT &gt;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><a class="extend next" rel="next" href="/archives/2020/page/2/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2644,44 +2652,9 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2697,12 +2670,22 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/api-gateway/" >API 网关功能</a>
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2020/09/22/2020-09/raspberry-usb-start/" >raspberry 4B Ubuntu 系统 USB 启动</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/redis-cluster/" >redis 集群</a>
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2020/09/16/2020-09/raspberry/" >我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/redis-cluster/" >redis 集群</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/api-gateway/" >API 网关功能</a>
         </li>
     
     
@@ -3050,12 +3033,12 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
@@ -3120,12 +3103,12 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3241,6 +3224,29 @@ Safari 写了四五个月没洗笔，状况都很良好
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017/10/27/2019-07/gitlab/gitlab-upgrade-2/" >GitLab 推送了更新(二) - 安装 docker GitLab</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/09/22/2020-09/lock/" >2020-09/lock</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -3366,6 +3372,8 @@ Safari 写了四五个月没洗笔，状况都很良好
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="raspberry"><span class="iconfont-archer">&#xe606;</span>raspberry</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

@@ -371,6 +371,125 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2017/12/06/2019-07/ubuntu-swap/" >
+            
+                <span>Ubuntu 新增 swap</span>
+        </a>
+        <div class="abstract-content">
+            更换权限sudo su
+创建 swap 文件fallocate -l 1G /swapfile
+修改访问权限
+12chown root:root /swapfilechmod 0600 /swapfile
+
+启动 swap 分区
+1mkswap /swapfile
+
+返回信息
+12Setting up swapspace version 1, size = 8 GiB (8589930496 bytes)no label, UUID=f1f74673-d41b-4b06-a80c-15a6b449a1fe
+
+激活 swap 分区
+1swapon /swapfile
+
+然后修改开机载入
+1...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Ubuntu">Ubuntu</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/11/24/2019-07/comand-control/" >
+            
+                <span>命令执行控制 &amp;&amp; 与 ||(转)</span>
+        </a>
+        <div class="abstract-content">
+            &amp;&amp;方式：command1 &amp;&amp; command2如果 command1 执行成功，则执行 command2。
+||方式：command1 || command2如果 command1 执行失败，则执行 command2。
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/24</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017/11/21/2019-07/database-install/" >
+            
+                <span>常用数据库(缓存)的简单安装配置</span>
+        </a>
+        <div class="abstract-content">
+            用于日常代码调试测试开发。如果稳定使用建议 docker 搭建数据库。
+环境树莓派 Ubuntu 16.04
+MySQL安装1sudo apt install mysql-server
+
+配置MySQL 的配置文件位于 /etc/mysql/。
+一般名称为my.cnf或者mysqld.cnf。
+因为一般开发用的 MySQL 都是外网调用，所以需要修改bind-address。注释或者修改成你所在的局域网的 IP。(如果数据库在公网暴露且有信息存储，请勿注释该代码)。
+创建用户并授权创建用户1CREATE USER "hello"@"%" IDENTIFIED BY "password";...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MySQL">MySQL</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "MongoDB">MongoDB</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Redis">Redis</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Memcache">Memcache</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2017/11/20/2019-07/inode/" >
             
                 <span>优化 Ext4 分区 inode 占用空间问题</span>
@@ -2563,44 +2682,9 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2616,12 +2700,22 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/api-gateway/" >API 网关功能</a>
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2020/09/22/2020-09/raspberry-usb-start/" >raspberry 4B Ubuntu 系统 USB 启动</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/redis-cluster/" >redis 集群</a>
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2020/09/16/2020-09/raspberry/" >我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/redis-cluster/" >redis 集群</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/api-gateway/" >API 网关功能</a>
         </li>
     
     
@@ -2969,12 +3063,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
@@ -3039,12 +3133,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3160,6 +3254,29 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017/10/27/2019-07/gitlab/gitlab-upgrade-2/" >GitLab 推送了更新(二) - 安装 docker GitLab</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/09/22/2020-09/lock/" >2020-09/lock</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -3285,6 +3402,8 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="raspberry"><span class="iconfont-archer">&#xe606;</span>raspberry</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

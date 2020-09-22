@@ -358,6 +358,108 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/12/2019-07/object-define-properity/" >
+            
+                <span>Vue.js 数据绑定原理</span>
+        </a>
+        <div class="abstract-content">
+            作为一个后端开发，对于set 和get一般都不会陌生。在面向对象开发中，一个对象一般都有 get 和 set 的属性，赋值既是set，得值就是get。刚接触 JavaScript 的时候，似乎还没有这个特性（也可能自己太菜），随着 Vue.js 的流行慢慢火热起来。其实原理很简单，就是看怎么搞。
+对象描述类型通俗的来说就是一个对象假设 var obj = { a: 1 }，有一种东东叫做属性描述对象，用于解释 obj.a的一些属性。
+有且只有两种类型: 
+
+数据型描述符
+控制型描述符
+
+所有对象的 key 的描述对象类型必须是两者之一。
+数据型描述符(data descriptors)也...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Vue.js">Vue.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/12/2019-07/shell-place/" >
+            
+                <span>Shell 获取文件地址</span>
+        </a>
+        <div class="abstract-content">
+            12cd `dirname $0`echo `pwd`
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/04/07/2019-07/nas-ssh-error/" >
+            
+                <span>群晖 SFTP 连接失败</span>
+        </a>
+        <div class="abstract-content">
+            群晖系统(Synology DiskStation)可以说是 NAS 系统中最完美的系统（虽然我也就用了他一个）。基本他集成了所有我们所需要的功能，而且性能强大。
+因为需要在局域网内进行文件传输，因为平时都是用 SSH 来通讯的，所以直接用 NAS 用自带 SFTP 服务来传输文件非常方便。
+之前有一次，将局域网里的某个机子重装了之后，在 NAS 上通过 SFTP 服务访问却得到了 链接失败。
+考虑了下，应该是known_hosts捣的鬼。
+常用 SSH 的人，对known_hosts一定很了解，本身它是为了安全而生，访问你访问到一个虚假的系统。通常，如果一个域名或者 IP 的 ssh-...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "黑群辉">黑群辉</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/03/28/2019-07/static-ip/" >
             
                 <span>Linux 静态 IP 设置</span>
@@ -588,104 +690,6 @@ G...
         <a class="post-tag" href="javascript:void(0);" data-tags = "Linux">Linux</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/11/2019-07/auto-restart/" >
-            
-                <span>Shell 自动重启进程</span>
-        </a>
-        <div class="abstract-content">
-            将 OpenVPN 搭建在一台服务器上，因为服务器设置了会话过期，所以服务每天都会在 24 小时后自动断开，因此需要一个类似守护进程的脚本来进行自动重启。
-网上找到了一个简单的脚本:
-12345678910#!/bin/bashwhile truedo    procnum=` ps -ef|grep "openvpn"|grep -v grep|wc -l`   if [ $procnum -eq 0 ]; then       ./openvpn   fi   sleep 30done
-
-其方式是每 30 秒通过 ps 命令来检查对应名称的进程是否存在，如果不存在，则重新启动进程。
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/02/07/2019-07/pac/" >
-            
-                <span>自动科学上网 &amp; PAC</span>
-        </a>
-        <div class="abstract-content">
-            
-  一直很喜欢 Chrome 的书签和记录同步，也不喜欢第三方的来搞。但是因为我们伟大的长城，所以需要科学上网来实现数据同步。之前是租了一台 VPS，然后自己搭建 SS 服务器，无奈费用实在是太高。后来在同事的推荐下开了一个 SS 服务，16 刀一年，50G 一个月（P.S. 后面发现这个网站的流量是按照节点算的，慢的节点算 0.2，相当于 250G，对我这种之翻墙看看网页的乖巧少年来说完全够用了）。但是问题来了，iPad 的 SS 客户端我只能找到一个简单的小工具，且只支持aes-256-cfb&quot;，但是 SS 服务商强制要求 chacha20-ietf-poly1305这种...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "PAC">PAC</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/01/22/2019-07/rasp-hdd/" >
-            
-                <span>树莓派用机械硬盘当系统盘</span>
-        </a>
-        <div class="abstract-content">
-            
-  全程参考一个大佬的文章 https://mynook.info/blog/post/boot-raspberrypi-from-external-hdd
-
-方案一直对树莓派的读写速度十分不能接受，也曾想去某宝上找 EMMC 转 SD 的套件，但是听那个老板说 EMMC 芯片一百+，觉得有点贵，毕竟树莓派也仅仅支持 USB2.0。于是乎，在某家库存店找了一个 80G 的库存的机械硬盘(￥60)，又买了一根双 USB 的易驱线(树莓派的 USB 供电支持不了机械硬盘)。
-
-  简单搜索了一下发现直接从硬盘启动是不行的，因为树莓派启动的时候固定是从 SD 卡的第一个分区（/boot）读取...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树莓派">树莓派</a>
     
 </div>
             
@@ -2608,44 +2612,9 @@ G...
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2661,12 +2630,22 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/api-gateway/" >API 网关功能</a>
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2020/09/22/2020-09/raspberry-usb-start/" >raspberry 4B Ubuntu 系统 USB 启动</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/redis-cluster/" >redis 集群</a>
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2020/09/16/2020-09/raspberry/" >我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/redis-cluster/" >redis 集群</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/api-gateway/" >API 网关功能</a>
         </li>
     
     
@@ -3014,12 +2993,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
@@ -3084,12 +3063,12 @@ G...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3205,6 +3184,29 @@ G...
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017/10/27/2019-07/gitlab/gitlab-upgrade-2/" >GitLab 推送了更新(二) - 安装 docker GitLab</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/09/22/2020-09/lock/" >2020-09/lock</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -3330,6 +3332,8 @@ G...
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="raspberry"><span class="iconfont-archer">&#xe606;</span>raspberry</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

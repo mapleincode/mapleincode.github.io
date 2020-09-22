@@ -358,6 +358,110 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/01/2019-07/vmware-market-expansion/" >
+            
+                <span>VMware 虚拟机硬盘文件扩容</span>
+        </a>
+        <div class="abstract-content">
+            因为开发和测试需要，在家里常年跑了 vmware 虚拟机。然后通过 MAC 端的 VMware Fusion 对其进行连接。在上面操作。
+前段时间 win10 推送了一个大版本更新，需要升级大版本就要把老的数据备份，然而我之前分配的硬盘空间不足以进行升级。而我实在不想把开虚拟机的电脑接到显示器上，尤其是我知道那张显卡已经基本无法显示了。
+我想到了 VMware 一向都有完善的命令行工具，是否可以通过命令行工具来实现对硬盘文件的扩容。查阅了网上资料，卧槽，还真的可以的。
+123456789101112131415161718192021222324252627282930313233343...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "VMware">VMware</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/11/01/2019-07/node-proxy/" >
+            
+                <span>JavaScript Proxy 对象</span>
+        </a>
+        <div class="abstract-content">
+            Usage123let target = &#123;&#125;;let handler = &#123;&#125;;let p = new Proxy(target, handler);
+
+target: 目标对象。可以是任何类型的对象，甚至是另一个代理。
+handler: 一个对象，其属性是当实行一个操作是定义代理的行为的函数。
+Example12345678910111213let handler = &#123;    get: function(target, name) &#123;        return name in target ? target[name] ...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "JavaScript">JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/31/2019-07/kafka-auto-offset-reset/" >
+            
+                <span>Kafka auto.offset.reset 值</span>
+        </a>
+        <div class="abstract-content">
+            首先附上别人的文章：
+earliest当各分区下有已提交的 offset 时，从提交的 offset 开始消费；无提交的 offset 时，从头开始消费 
+latest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
+nonetopic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的 offset，则抛出异常
+
+
+作者：lishuangzhe7047 
+来源：CSDN 
+原文：https://blog.csdn.net/lishuangzhe7047/article/detail...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/31</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Kafka">Kafka</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/08/30/2019-07/iterator/" >
             
                 <span>iterator(迭代器)</span>
@@ -586,9 +690,9 @@ MYISAM：优点：
 模块概览Buffer是node的核心模块，开发者可以利用它来处理二进制数据，比如文件流的读写、网络请求数据的处理等。
 Buffer的API非常多，本文仅挑选 比较常用/容易理解 的API进行讲解，包括Buffer实例的创建、比较、连接、拷贝、查找、遍历、类型转换、截取、编码转换等。
 创建
-new Buffer(array)
+Buffer.from(array)
 Buffer.alloc(length)
-B...
+...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -600,109 +704,6 @@ B...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/08/08/2019-07/expect/" >
-            
-                <span>Expect 使用小记</span>
-        </a>
-        <div class="abstract-content">
-            Expect 使用小记Expect 是 unix 系统中用来进行自动化控制和测试的软件工具，由 DonLibes 制作，作为 Tcl 脚本语言的一个扩展，应用在交互式软件中如 telnet，ftp，Passwd，fsck，rlogin，tip，ssh 等等。该工具利用Unix 伪终端包装其子进程，允许任意程序通过终端接入进行自动化控制。
-基本指令
-spawn
-1spawn ssh $user@$host -p $port
-
-expect &amp; send
-12expect "password:"send "$password\r"
-
-1234567891011expect &#123...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Expect">Expect</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/09/2019-07/git-branch-all/" >
-            
-                <span>git 拉取所有远程分支</span>
-        </a>
-        <div class="abstract-content">
-            123git branch -r | grep -v &#39;\-&gt;&#39; | while read remote; do git branch --track &quot;$&#123;remote#origin&#x2F;&#125;&quot; &quot;$remote&quot;; donegit fetch --allgit pull --all
-
-来自 Stackoverflow
-链接：http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Git">Git</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/07/05/2019-07/memcached-node-package/" >
-            
-                <span>Nodejs memcached 包的基本用法</span>
-        </a>
-        <div class="abstract-content">
-            123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108'use strict';const Memcached = require('memcached');const memcached = new Memcach...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/05</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Node.js">Node.js</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Memcached">Memcached</a>
     
 </div>
             
@@ -2625,44 +2626,9 @@ expect &amp; send
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 106
+        Total : 109
         </div>
         <!-- search  -->
         
@@ -2678,12 +2644,22 @@ expect &amp; send
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/api-gateway/" >API 网关功能</a>
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2020/09/22/2020-09/raspberry-usb-start/" >raspberry 4B Ubuntu 系统 USB 启动</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/redis-cluster/" >redis 集群</a>
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2020/09/16/2020-09/raspberry/" >我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/redis-cluster/" >redis 集群</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/api-gateway/" >API 网关功能</a>
         </li>
     
     
@@ -3031,12 +3007,12 @@ expect &amp; send
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/docker/docker-prune/" >Docker 运行文件清理工具 prune</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href= "/2018/05/22/2019-07/ubuntu-language/" >Ubuntu 安装中文语言包</a>
         </li>
     
     
@@ -3101,12 +3077,12 @@ expect &amp; send
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/zsh-autosuggestions/" >oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2018/03/18/2019-07/unixbench/" >使用 Unixbench 测试 CPU 性能</a>
         </li>
     
     
@@ -3222,6 +3198,29 @@ expect &amp; send
         <li class="archive-post-item">
             <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017/10/27/2019-07/gitlab/gitlab-upgrade-2/" >GitLab 推送了更新(二) - 安装 docker GitLab</a>
         </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/09/22/2020-09/lock/" >2020-09/lock</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
     
     
         <li class="archive-post-item">
@@ -3347,6 +3346,8 @@ expect &amp; send
         <span class="sidebar-tag-name" data-tags="esxi"><span class="iconfont-archer">&#xe606;</span>esxi</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
+    
+        <span class="sidebar-tag-name" data-tags="raspberry"><span class="iconfont-archer">&#xe606;</span>raspberry</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
