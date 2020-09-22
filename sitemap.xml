@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vmko.cc/2020/09/09/2020-09/lock/</loc>
+    
+    <lastmod>2020-09-22T08:23:02.593Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vmko.cc/2020/09/05/2020-08/redis-cluster/</loc>
     
     <lastmod>2020-09-22T06:08:14.629Z</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://blog.vmko.cc/2020/09/05/2020-08/api-gateway/</loc>
-    
-    <lastmod>2020-09-22T06:08:14.629Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2020/09/22/2020-09/lock/</loc>
     
     <lastmod>2020-09-22T06:08:14.629Z</lastmod>
     

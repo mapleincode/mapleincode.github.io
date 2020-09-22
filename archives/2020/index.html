@@ -358,47 +358,6 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/09/22/2020-09/lock/" >
-            
-                <span>2020-09/lock</span>
-        </a>
-        <div class="abstract-content">
-            悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
-
-Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
-
-
-适合多写环境
-
-乐观锁
-不上锁
-更新前判断数据是否被更新
-使用版本号机制和 CAS 算法
-适合多读少写环境
-
-
-在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
-
-总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
-
-对于资源竞争较少（线程冲突...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
         <a class="abstract-title" href = "/2020/09/22/2020-09/raspberry-usb-start/" >
             
                 <span>raspberry 4B Ubuntu 系统 USB 启动</span>
@@ -467,6 +426,53 @@ usb 只有 ...
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "raspberry">raspberry</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/09/09/2020-09/lock/" >
+            
+                <span>悲观锁 &amp; 乐观锁</span>
+        </a>
+        <div class="abstract-content">
+            悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
+
+Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
+
+
+适合多写环境
+
+乐观锁
+不上锁
+更新前判断数据是否被更新
+使用版本号机制和 CAS 算法
+适合多读少写环境
+
+
+在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
+
+总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
+
+对于资源竞争较少（线程冲突...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "SQL">SQL</a>
     
 </div>
             
@@ -2652,6 +2658,62 @@ Been there, done tha...
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 109
@@ -2680,12 +2742,17 @@ Been there, done tha...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/redis-cluster/" >redis 集群</a>
+            <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2020/09/09/2020-09/lock/" >悲观锁 & 乐观锁</a>
         </li>
     
     
         <li class="archive-post-item">
             <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/api-gateway/" >API 网关功能</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span><a class="archive-post-title" href= "/2020/09/05/2020-08/redis-cluster/" >redis 集群</a>
         </li>
     
     
@@ -3226,29 +3293,6 @@ Been there, done tha...
         </li>
     
     
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> Invalid date </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2020/09/22/2020-09/lock/" >2020-09/lock</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
-    <div class="archive-year"> 2017 </div>
-    <ul class="year-list">
-    
-    
         <li class="archive-post-item">
             <span class="archive-post-date">10/26</span><a class="archive-post-title" href= "/2017/10/26/2019-07/gitlab/gitlab-upgrade-1/" >GitLab 推送了更新(一) - 树莓派安装GitLab</a>
         </li>
@@ -3374,6 +3418,8 @@ Been there, done tha...
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
     
         <span class="sidebar-tag-name" data-tags="raspberry"><span class="iconfont-archer">&#xe606;</span>raspberry</span>
+    
+        <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
