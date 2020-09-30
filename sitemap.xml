@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/09/05/2020-08/redis-cluster/</loc>
+    <loc>https://blog.vmko.cc/2020/09/05/2020-08/api-gateway/</loc>
     
     <lastmod>2020-09-22T06:08:14.629Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/09/05/2020-08/api-gateway/</loc>
+    <loc>https://blog.vmko.cc/2020/09/05/2020-08/redis-cluster/</loc>
     
     <lastmod>2020-09-22T06:08:14.629Z</lastmod>
     
@@ -51,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/08/18/2020-08/jiaohanglaji/</loc>
+    <loc>https://blog.vmko.cc/2020/07/06/2020-07/HashMap%20&%20HashTable/</loc>
     
     <lastmod>2020-09-05T15:51:17.743Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/07/06/2020-07/HashMap%20&%20HashTable/</loc>
+    <loc>https://blog.vmko.cc/2020/08/18/2020-08/jiaohanglaji/</loc>
     
     <lastmod>2020-09-05T15:51:17.743Z</lastmod>
     
@@ -142,14 +142,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2017/12/29/2019-07/virtual-dom/</loc>
+    <loc>https://blog.vmko.cc/2020/03/10/2020-01/nginx-cache/</loc>
     
     <lastmod>2020-03-31T19:05:13.510Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/03/10/2020-01/nginx-cache/</loc>
+    <loc>https://blog.vmko.cc/2017/12/29/2019-07/virtual-dom/</loc>
     
     <lastmod>2020-03-31T19:05:13.510Z</lastmod>
     
@@ -177,14 +177,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/01/18/2020-01/pivpn/</loc>
+    <loc>https://blog.vmko.cc/2020/01/18/2020-01/java/</loc>
     
     <lastmod>2020-01-17T18:56:11.325Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2020/01/18/2020-01/java/</loc>
+    <loc>https://blog.vmko.cc/2020/01/18/2020-01/pivpn/</loc>
     
     <lastmod>2020-01-17T18:56:11.325Z</lastmod>
     
@@ -205,13 +205,6 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/googlefef7257230862e75.html</loc>
-    
-    <lastmod>2019-12-23T08:36:47.571Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.vmko.cc/baidu_verify_CLKYZbZsGh.html</loc>
     
     <lastmod>2019-12-23T08:36:47.571Z</lastmod>
@@ -219,21 +212,14 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/12/16/2019-12/koa-compose/</loc>
+    <loc>https://blog.vmko.cc/googlefef7257230862e75.html</loc>
     
-    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/11/11/2019-11/vCenter/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
+    <lastmod>2019-12-23T08:36:47.571Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/11/26/2019-11/logstash/</loc>
+    <loc>https://blog.vmko.cc/2019/09/02/2019-08/version/</loc>
     
     <lastmod>2019-12-23T08:36:47.551Z</lastmod>
     
@@ -247,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/09/02/2019-08/version/</loc>
+    <loc>https://blog.vmko.cc/2019/12/23/2019-11/centos5.x/</loc>
     
     <lastmod>2019-12-23T08:36:47.551Z</lastmod>
     
@@ -255,6 +241,27 @@
   
   <url>
     <loc>https://blog.vmko.cc/2019/11/11/2019-11/passwd/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/11/26/2019-11/logstash/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/11/11/2019-11/vCenter/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/12/16/2019-12/koa-compose/</loc>
     
     <lastmod>2019-12-23T08:36:47.551Z</lastmod>
     
@@ -275,161 +282,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/12/23/2019-11/centos5.x/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.551Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/01/11/2019-07/rabbitmq-install/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/08/29/2019-07/python-with-as/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/05/13/2019-07/react-reudx-note-new-md/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/01/07/2019-07/redlock/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/03/13/2019-07/redis-concurrence/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/02/26/2019-07/san/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/04/12/2019-07/shell-place/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/07/21/2019-07/ssl_cert/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/03/28/2019-07/static-ip/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/05/23/2019-07/redis/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/05/22/2019-07/ubuntu-language/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/04/23/2019-07/systemctl/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/12/06/2019-07/ubuntu-swap/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/05/08/2019-07/react-note/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/06/01/2019-07/xcode-route/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/04/29/2019-07/xiazaibao/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/04/13/2019-07/xms/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/09/05/2019-08/rabbtmq-demo/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/03/18/2019-07/zsh-autosuggestions/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/11/01/2019-07/vmware-market-expansion/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.vmko.cc/2018/06/06/2019-07/node-async/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/05/28/2019-07/xp-x64/</loc>
     
     <lastmod>2019-12-23T08:36:47.541Z</lastmod>
     
@@ -527,7 +380,154 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/04/16/2019-07/gitlab/gitlab-source/</loc>
+    <loc>https://blog.vmko.cc/2019/01/11/2019-07/rabbitmq-install/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/08/29/2019-07/python-with-as/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/05/13/2019-07/react-reudx-note-new-md/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/01/07/2019-07/redlock/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/03/13/2019-07/redis-concurrence/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/02/26/2019-07/san/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/04/12/2019-07/shell-place/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/07/21/2019-07/ssl_cert/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/03/28/2019-07/static-ip/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/05/22/2019-07/ubuntu-language/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/04/23/2019-07/systemctl/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/12/06/2019-07/ubuntu-swap/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/06/01/2019-07/xcode-route/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/11/01/2019-07/vmware-market-expansion/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/04/13/2019-07/xms/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/09/05/2019-08/rabbtmq-demo/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/03/18/2019-07/zsh-autosuggestions/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/05/08/2019-07/react-note/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/05/23/2019-07/redis/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/05/28/2019-07/xp-x64/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/04/29/2019-07/xiazaibao/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.541Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/12/09/2019-07/ali-apt/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -541,49 +541,112 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/08/26/2019-07/mysql-engines/</loc>
+    <loc>https://blog.vmko.cc/2018/05/22/2019-07/babel/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/01/07/2019-07/kafka-node/</loc>
+    <loc>https://blog.vmko.cc/2018/02/11/2019-07/auto-restart/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/07/05/2019-07/memcached-node-package/</loc>
+    <loc>https://blog.vmko.cc/2019/06/17/2019-07/codesign/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/08/29/2019-07/mysql-ACID/</loc>
+    <loc>https://blog.vmko.cc/2017/11/24/2019-07/comand-control/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/02/25/2019-07/mc-server-input-error/</loc>
+    <loc>https://blog.vmko.cc/2017/11/21/2019-07/database-install/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/10/31/2019-07/kafka-auto-offset-reset/</loc>
+    <loc>https://blog.vmko.cc/2018/08/08/2019-07/expect/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/05/29/2019-07/macos-pac/</loc>
+    <loc>https://blog.vmko.cc/2018/11/09/2019-07/foreign-key/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/07/09/2019-07/git-branch-all/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/12/26/2019-07/git-no-ff/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/12/14/2019-07/gulp-autoprefixer/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/08/27/2019-07/guanchazhe/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/08/23/2019-07/http2/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/12/21/2019-07/gulp/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2017/11/20/2019-07/inode/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/07/05/2019-07/id-autoincr/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/02/21/2019-07/grub2/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -597,7 +660,56 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2019/02/21/2019-07/grub2/</loc>
+    <loc>https://blog.vmko.cc/2018/05/29/2019-07/macos-pac/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/10/31/2019-07/kafka-auto-offset-reset/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/02/25/2019-07/mc-server-input-error/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/08/29/2019-07/mysql-ACID/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/07/05/2019-07/memcached-node-package/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/08/26/2019-07/mysql-engines/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/04/07/2019-07/nas-ssh-error/</loc>
+    
+    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2019/01/07/2019-07/kafka-node/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -612,20 +724,6 @@
   
   <url>
     <loc>https://blog.vmko.cc/2017/11/03/2019-07/mysql-config/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/07/05/2019-07/id-autoincr/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/11/20/2019-07/inode/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -653,7 +751,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/04/07/2019-07/nas-ssh-error/</loc>
+    <loc>https://blog.vmko.cc/2019/04/16/2019-07/gitlab/gitlab-source/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
@@ -675,104 +773,6 @@
   
   <url>
     <loc>https://blog.vmko.cc/2017/11/03/2019-07/gitlab/gitlab-upgrade-3/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/12/21/2019-07/gulp/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/08/23/2019-07/http2/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/08/27/2019-07/guanchazhe/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/12/14/2019-07/gulp-autoprefixer/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/12/26/2019-07/git-no-ff/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/07/09/2019-07/git-branch-all/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/11/09/2019-07/foreign-key/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/08/08/2019-07/expect/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/11/21/2019-07/database-install/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/11/24/2019-07/comand-control/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2019/06/17/2019-07/codesign/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/02/11/2019-07/auto-restart/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2018/05/22/2019-07/babel/</loc>
-    
-    <lastmod>2019-12-23T08:36:47.531Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.vmko.cc/2017/12/09/2019-07/ali-apt/</loc>
     
     <lastmod>2019-12-23T08:36:47.531Z</lastmod>
     
