@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2020/07/06/2020-07/HashMap%20&%20HashTable/</loc>
+    <lastmod>2020-10-13</lastmod>
+  </url>  <url>
     <loc>https://blog.vmko.cc/2020/09/09/2020-09/lock/</loc>
     <lastmod>2020-09-22</lastmod>
   </url>  <url>
@@ -20,9 +23,6 @@
     <lastmod>2020-09-22</lastmod>
   </url>  <url>
     <loc>https://blog.vmko.cc/2020/08/13/2020-08/python/</loc>
-    <lastmod>2020-09-05</lastmod>
-  </url>  <url>
-    <loc>https://blog.vmko.cc/2020/07/06/2020-07/HashMap%20&%20HashTable/</loc>
     <lastmod>2020-09-05</lastmod>
   </url>  <url>
     <loc>https://blog.vmko.cc/2020/08/18/2020-08/jiaohanglaji/</loc>
