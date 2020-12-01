@@ -371,6 +371,225 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/15/2020-01/java-mode/" >
+            
+                <span>类成员的访问控制模式及其允许访问范围</span>
+        </a>
+        <div class="abstract-content">
+            
+
+
+访问控制模式
+在同一个类内
+在同一个包内
+子类
+所有类
+
+
+
+公共模式(public)
+允许访问
+允许访问
+允许访问
+允许访问
+
+
+保护模式(protected)
+允许访问
+允许访问
+允许访问
+
+
+
+默认模式(default)
+允许访问
+允许访问
+
+
+
+
+私有模式(private)
+允许访问
+
+
+
+
+
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/15</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/04/01/2020-01/wordpress-domain/" >
+            
+                <span>WordPress 绑定多域名</span>
+        </a>
+        <div class="abstract-content">
+            WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
+而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
+但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
+首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
+12define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);define('WP_HOME', 'http://' . $_SERVER['HTTP_H...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "PHP">PHP</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/03/10/2020-01/nginx-cache/" >
+            
+                <span>Nginx 降低 IO 负荷</span>
+        </a>
+        <div class="abstract-content">
+            V 站上一个帖子提问：
+
+硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
+https://www.v2ex.com/t/649310#reply8
+
+有大佬回复:
+
+当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
+
+按照他说的内容分析下这几个 Nginx 配置的功能。
+expires
+开启客户端 cache ，设置 expire...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Nginx">Nginx</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/18/2020-01/java/" >
+            
+                <span>Java 学习路线</span>
+        </a>
+        <div class="abstract-content">
+            基友推荐的 Java 教程，源地址:
+https://www.bilibili.com/read/cv3560825
+目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
+1. 基础阶段1.1 必选
+Java 语言：https://www.bilibili.com/video/av59529105/
+
+MySQL 数据库：https://www.bilibili.com/video/av59623481/
+
+JDBC：https://www.bilibili.com/video/av59534040/
+
+Java Web：https://www.bilibili...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Java">Java</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/01/18/2020-01/pivpn/" >
+            
+                <span>树莓派安装 PIVPN</span>
+        </a>
+        <div class="abstract-content">
+            在树莓派上安装 OpenVPN。
+虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
+核心安装就只有一条命令:
+1curl -L https://install.pivpn.io | bash
+
+
+
+具体过程可以参考
+http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
+这位大佬安装过程讲解的十分详细 = - =。
+
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "OpenVPN, Raspberry">OpenVPN, Raspberry</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2020/01/18/2020-01/disable-systemd-resolved/" >
             
                 <span>nameserver 127.0.0.53</span>
@@ -585,178 +804,10 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/12/16/2019-12/koa-compose/" >
-            
-                <span>Koa-Compose 源码试写</span>
-        </a>
-        <div class="abstract-content">
-            1234567891011121314151617181920212223242526272829303132333435363738async function _compose(ctx, next, items) &#123;    if(items.length === 0) &#123;        return next();    &#125;    const func = items.shift();    return func(ctx, async function() &#123;        return _compose(ctx, next, items);...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/26/2019-11/logstash/" >
-            
-                <span>Logstash conf 语法</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/12/2019-11/ELK/" >
-            
-                <span>ELK 搭建</span>
-        </a>
-        <div class="abstract-content">
-            起因
-项目需求
-公司某位大佬有记录文档可以参考
-
-ELKELK 平台是当前应用比较广泛的一套开源实时日志分析解决方案。ELK 由 ElasticSearch、Logstash 和 Kiabana 三个开源工具组成。
-ELK = Elasticsearch + Logstash + Kibana
-参考 &amp; 下载地址: https://www.elastic.co/cn/products/
-
-MacOS 
-
-Elasticsearch
-Elasticsearch 是一个基于 JSON 的分布式搜索和分析引擎。
-Kibana
-Kibana 可谓 Elastic Stack 的窗户。探索...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ELK">ELK</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/11/2019-11/passwd/" >
-            
-                <span>Shell 自动输入 sudo 密码</span>
-        </a>
-        <div class="abstract-content">
-            
-使用 echo 和管道命令
-
-12#!&#x2F;bin&#x2F;bashecho password | sudo -S service runtime* status
-
-
-使用文本块输入重定向
-
-
-发现这个命令不能用在 shell 的判断条件里
-
-1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
-
-
-
-
-第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
-
-参考:
-
-https://blog.csdn.net/qiyueqinglian/arti...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "Shell">Shell</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2019/11/11/2019-11/vCenter/" >
-            
-                <span>vCenter 和 vCSA 对比</span>
-        </a>
-        <div class="abstract-content">
-            vCenter Server与vCenter Server Virtual Appliance（vCSA）都提供对企业中[VMware vSphere](https://baike.baidu.com/item/VMware vSphere)部署的集中管理。虽然拥有相同的功能，两者安装却不同，所支持的功能也不同。
-vCSA不支持的功能
-vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSphere许可。VCSA 5.0.1及以后版本运行PostgreSQL数据库，而之前版本运行的是IBM DB2数据库。VCSA只支持PostgreSQ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "VMware">VMware</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">NEXT &gt;</a>
+        <a class="extend prev" rel="prev" href="/page/2/">&lt; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">NEXT &gt;</a>
     </nav>
     
 </main>
@@ -2618,9 +2669,130 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 109
+        Total : 114
         </div>
         <!-- search  -->
         
@@ -2633,6 +2805,31 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span><a class="archive-post-title" href= "/2020/12/01/2020-11/aliyun-data-disk-format/" >阿里云 Ubuntu 数据盘格式化和挂载</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span><a class="archive-post-title" href= "/2020/11/23/2020-11/dpkg-bad-inconsistent-state/" >Dpkg 包损坏无法安装 & 卸载</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span><a class="archive-post-title" href= "/2020/11/13/2020-11/syno-install/" >黑群晖 6.2.3 安装指南</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span><a class="archive-post-title" href= "/2020/11/09/2020-11/syno/" >黑群辉安装教程 (6.2.3)</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span><a class="archive-post-title" href= "/2020/10/19/2020-10/zhenglun/" >争论的艺术</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -3324,6 +3521,8 @@ vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSp
         <span class="sidebar-tag-name" data-tags="raspberry"><span class="iconfont-archer">&#xe606;</span>raspberry</span>
     
         <span class="sidebar-tag-name" data-tags="SQL"><span class="iconfont-archer">&#xe606;</span>SQL</span>
+    
+        <span class="sidebar-tag-name" data-tags="life"><span class="iconfont-archer">&#xe606;</span>life</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

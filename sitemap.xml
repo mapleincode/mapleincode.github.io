@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vmko.cc/2020/11/13/2020-11/syno-install/</loc>
+    
+    <lastmod>2020-12-01T12:23:03.238Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2020/11/09/2020-11/syno/</loc>
+    
+    <lastmod>2020-12-01T12:23:03.238Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2020/10/19/2020-10/zhenglun/</loc>
+    
+    <lastmod>2020-12-01T12:23:03.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2020/12/01/2020-11/aliyun-data-disk-format/</loc>
+    
+    <lastmod>2020-12-01T12:23:03.234Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2020/11/23/2020-11/dpkg-bad-inconsistent-state/</loc>
+    
+    <lastmod>2020-12-01T12:23:03.234Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.vmko.cc/2020/07/06/2020-07/HashMap&HashTable/</loc>
     
     <lastmod>2020-10-14T08:23:02.731Z</lastmod>
