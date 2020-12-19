@@ -394,6 +394,37 @@
         </div>
     </article>
     
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2020/10/14/2020-10/dash-bash/" >
+            
+                <span>set: Illegal option -o pipefail</span>
+        </a>
+        <div class="abstract-content">
+            造成原因，Debian 和 Ubuntu 的 /bin/sh 指向的是 dash 而不是 bash。
+
+Dash Shell 比 Bash Shell 小的多，符合POSIX标准。
+Dash 支持的命令比 Bash 要小
+ 查看状态: ls /bin/sh -al
+重新配置: udo dpkg-reconfigure dash
+
+区别主要有
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/14</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
     <!-- paginator  -->
     
 </main>
@@ -2306,12 +2337,9 @@
     
     
     
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 114
+        Total : 115
         </div>
         <!-- search  -->
         
@@ -2348,6 +2376,11 @@
     
         <li class="archive-post-item">
             <span class="archive-post-date">10/19</span><a class="archive-post-title" href= "/2020/10/19/2020-10/zhenglun/" >争论的艺术</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span><a class="archive-post-title" href= "/2020/10/14/2020-10/dash-bash/" >set: Illegal option -o pipefail</a>
         </li>
     
     

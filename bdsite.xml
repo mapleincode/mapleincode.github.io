@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2020/10/14/2020-10/dash-bash/</loc>
+    <lastmod>2020-12-19</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vmko.cc/2020/11/13/2020-11/syno-install/</loc>
     <lastmod>2020-12-01</lastmod>
   </url>
