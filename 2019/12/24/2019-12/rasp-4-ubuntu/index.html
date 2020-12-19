@@ -31,6 +31,7 @@
 <meta property="og:url" content="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/index.html">
 <meta property="og:site_name" content="Maple&#39;s Bolg">
 <meta property="og:description" content="随着自己年纪越来越大，事情越来越多，而相对的，记忆力却越来越差。 但是已经安装过一次 Raspberry4 ，但是不到几个月的时间就忘得一干二净，折腾了一整个晚上才完全搞定。 以此说明，以后应当认真记录一些操作的信息，以供事后参考。 真怀念自己当初的记忆力  Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取速度，相对于前几代有着本质的差异。我原先使用迅雷下载宝作为">
+<meta property="og:locale">
 <meta property="article:published_time" content="2019-12-23T23:56:03.000Z">
 <meta property="article:modified_time" content="2019-12-24T01:52:12.626Z">
 <meta property="article:author" content="Maple">
@@ -218,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.3.0"></head>
 
     
         <body class="post-body">
@@ -562,7 +563,7 @@ height:50vh;
             <p>原文链接：<a href="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/</a>
             <p>发表日期：<a href="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">December 24th 2019, 7:56:03 am</a>
             <p>更新日期：<a href="https://blog.vmko.cc/2019/12/24/2019-12/rasp-4-ubuntu/">December 24th 2019, 9:52:12 am</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -608,7 +609,7 @@ height:50vh;
         })();
 
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
     <!-- gitalk评论 -->
@@ -737,7 +738,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需要准备"><span class="toc-number">1.</span> <span class="toc-text">需要准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#下载镜像"><span class="toc-number">2.</span> <span class="toc-text">下载镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#写入镜像-amp-修改镜像"><span class="toc-number">3.</span> <span class="toc-text">写入镜像 &amp; 修改镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#启动"><span class="toc-number">4.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修复-apt-get-update-错误"><span class="toc-number">5.</span> <span class="toc-text">修复 apt-get update 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#USB-启动"><span class="toc-number">6.</span> <span class="toc-text">USB 启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wifi-修复"><span class="toc-number">7.</span> <span class="toc-text">Wifi 修复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改用户名-amp-用户组-amp-用户路径-amp-系统名称"><span class="toc-number">8.</span> <span class="toc-text">修改用户名 &amp; 用户组 &amp; 用户路径 &amp; 系统名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改时区"><span class="toc-number">9.</span> <span class="toc-text">修改时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改-GPU-内存占用"><span class="toc-number">10.</span> <span class="toc-text">修改 GPU 内存占用</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">需要准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E9%95%9C%E5%83%8F"><span class="toc-number">2.</span> <span class="toc-text">下载镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E9%95%9C%E5%83%8F-amp-%E4%BF%AE%E6%94%B9%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">写入镜像 &amp; 修改镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-number">4.</span> <span class="toc-text">启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D-apt-get-update-%E9%94%99%E8%AF%AF"><span class="toc-number">5.</span> <span class="toc-text">修复 apt-get update 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#USB-%E5%90%AF%E5%8A%A8"><span class="toc-number">6.</span> <span class="toc-text">USB 启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wifi-%E4%BF%AE%E5%A4%8D"><span class="toc-number">7.</span> <span class="toc-text">Wifi 修复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E7%94%A8%E6%88%B7%E5%90%8D-amp-%E7%94%A8%E6%88%B7%E7%BB%84-amp-%E7%94%A8%E6%88%B7%E8%B7%AF%E5%BE%84-amp-%E7%B3%BB%E7%BB%9F%E5%90%8D%E7%A7%B0"><span class="toc-number">8.</span> <span class="toc-text">修改用户名 &amp; 用户组 &amp; 用户路径 &amp; 系统名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA"><span class="toc-number">9.</span> <span class="toc-text">修改时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-GPU-%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8"><span class="toc-number">10.</span> <span class="toc-text">修改 GPU 内存占用</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

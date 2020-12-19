@@ -31,6 +31,7 @@
 <meta property="og:url" content="https://blog.vmko.cc/2019/03/14/2019-07/analysis-of-redis-performance/index.html">
 <meta property="og:site_name" content="Maple&#39;s Bolg">
 <meta property="og:description" content="Redis 性能问题分析（转载）原文: https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;67093716547b   在一些网络服务的系统中，Redis 的性能，可能是比 MySQL 等硬盘数据库的性能更重要的课题。比如微博，把热点微博[1]，最新的用户关系[2]，都存储在 Redis 中，大量的查询击中 Redis，而不走 MySQL。 那么，针对 Redis 服务，我们能做哪些性能优化呢？">
+<meta property="og:locale">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1269937-42e1506cb8d8f59b.jpg">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1269937-152b2ed0fdf75ff8.jpg">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1269937-fd6b5e6b928c3838.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/467/format/webp">
@@ -222,7 +223,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.3.0"></head>
 
     
         <body class="post-body">
@@ -579,7 +580,7 @@ height:50vh;
             <p>原文链接：<a href="https://blog.vmko.cc/2019/03/14/2019-07/analysis-of-redis-performance/">https://blog.vmko.cc/2019/03/14/2019-07/analysis-of-redis-performance/</a>
             <p>发表日期：<a href="https://blog.vmko.cc/2019/03/14/2019-07/analysis-of-redis-performance/">March 14th 2019, 5:24:39 pm</a>
             <p>更新日期：<a href="https://blog.vmko.cc/2019/03/14/2019-07/analysis-of-redis-performance/">December 23rd 2019, 4:36:47 pm</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -625,7 +626,7 @@ height:50vh;
         })();
 
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
     <!-- gitalk评论 -->
@@ -754,7 +755,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-性能问题分析（转载）"><span class="toc-number">1.</span> <span class="toc-text">Redis 性能问题分析（转载）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-性能的基本面"><span class="toc-number">1.1.</span> <span class="toc-text">Redis 性能的基本面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化网络延时"><span class="toc-number">1.2.</span> <span class="toc-text">优化网络延时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#警惕执行时间长的操作"><span class="toc-number">1.3.</span> <span class="toc-text">警惕执行时间长的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优化数据结构、使用正确的算法"><span class="toc-number">1.4.</span> <span class="toc-text">优化数据结构、使用正确的算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#考虑操作系统和硬件是否影响性能"><span class="toc-number">1.5.</span> <span class="toc-text">考虑操作系统和硬件是否影响性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#考虑持久化带来的开销"><span class="toc-number">1.6.</span> <span class="toc-text">考虑持久化带来的开销</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用分布式架构-——-读写分离、数据分片"><span class="toc-number">1.7.</span> <span class="toc-text">使用分布式架构 —— 读写分离、数据分片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后话"><span class="toc-number">1.8.</span> <span class="toc-text">后话</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Redis-%E6%80%A7%E8%83%BD%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90%EF%BC%88%E8%BD%AC%E8%BD%BD%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">Redis 性能问题分析（转载）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis-%E6%80%A7%E8%83%BD%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%9D%A2"><span class="toc-number">1.1.</span> <span class="toc-text">Redis 性能的基本面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E7%BD%91%E7%BB%9C%E5%BB%B6%E6%97%B6"><span class="toc-number">1.2.</span> <span class="toc-text">优化网络延时</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AD%A6%E6%83%95%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4%E9%95%BF%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.</span> <span class="toc-text">警惕执行时间长的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%81%E4%BD%BF%E7%94%A8%E6%AD%A3%E7%A1%AE%E7%9A%84%E7%AE%97%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">优化数据结构、使用正确的算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E8%99%91%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%A1%AC%E4%BB%B6%E6%98%AF%E5%90%A6%E5%BD%B1%E5%93%8D%E6%80%A7%E8%83%BD"><span class="toc-number">1.5.</span> <span class="toc-text">考虑操作系统和硬件是否影响性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%80%83%E8%99%91%E6%8C%81%E4%B9%85%E5%8C%96%E5%B8%A6%E6%9D%A5%E7%9A%84%E5%BC%80%E9%94%80"><span class="toc-number">1.6.</span> <span class="toc-text">考虑持久化带来的开销</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84-%E2%80%94%E2%80%94-%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E3%80%81%E6%95%B0%E6%8D%AE%E5%88%86%E7%89%87"><span class="toc-number">1.7.</span> <span class="toc-text">使用分布式架构 —— 读写分离、数据分片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8E%E8%AF%9D"><span class="toc-number">1.8.</span> <span class="toc-text">后话</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

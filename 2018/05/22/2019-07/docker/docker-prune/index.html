@@ -31,6 +31,7 @@
 <meta property="og:url" content="https://blog.vmko.cc/2018/05/22/2019-07/docker/docker-prune/index.html">
 <meta property="og:site_name" content="Maple&#39;s Bolg">
 <meta property="og:description" content="原文地址 转载地址 Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾回收”），例如镜像、容器、卷和网络：除非明确要求 Docker 这样做，否则通常不会删除这些对象。这可能会导致 Docker 使用额外的磁盘空间。对于每种类型的对象，Docker 都提供了一条 prune 命令。另外，可以使用 docker system prune 一次清理多种类型的对象。本主题讲解如何使用这些 p">
+<meta property="og:locale">
 <meta property="article:published_time" content="2018-05-22T06:19:02.000Z">
 <meta property="article:modified_time" content="2019-12-23T08:36:47.531Z">
 <meta property="article:author" content="Maple">
@@ -217,7 +218,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.3.0"></head>
 
     
         <body class="post-body">
@@ -472,7 +473,7 @@ height:50vh;
             <p>原文链接：<a href="https://blog.vmko.cc/2018/05/22/2019-07/docker/docker-prune/">https://blog.vmko.cc/2018/05/22/2019-07/docker/docker-prune/</a>
             <p>发表日期：<a href="https://blog.vmko.cc/2018/05/22/2019-07/docker/docker-prune/">May 22nd 2018, 2:19:02 pm</a>
             <p>更新日期：<a href="https://blog.vmko.cc/2018/05/22/2019-07/docker/docker-prune/">December 23rd 2019, 4:36:47 pm</a>
-            <p>版权声明：本文采用<a rel="license noopener" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
     <!-- paginator  -->
@@ -518,7 +519,7 @@ height:50vh;
         })();
 
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
     
     <!-- gitalk评论 -->
@@ -647,7 +648,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-修剪镜像"><span class="toc-number">1.</span> <span class="toc-text">1. 修剪镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-修剪容器"><span class="toc-number">2.</span> <span class="toc-text">2. 修剪容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-修剪卷"><span class="toc-number">3.</span> <span class="toc-text">3. 修剪卷</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-修剪网络"><span class="toc-number">4.</span> <span class="toc-text">4. 修剪网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-修剪一切"><span class="toc-number">5.</span> <span class="toc-text">5. 修剪一切</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E4%BF%AE%E5%89%AA%E9%95%9C%E5%83%8F"><span class="toc-number">1.</span> <span class="toc-text">1. 修剪镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%BF%AE%E5%89%AA%E5%AE%B9%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">2. 修剪容器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E4%BF%AE%E5%89%AA%E5%8D%B7"><span class="toc-number">3.</span> <span class="toc-text">3. 修剪卷</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%BF%AE%E5%89%AA%E7%BD%91%E7%BB%9C"><span class="toc-number">4.</span> <span class="toc-text">4. 修剪网络</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E4%BF%AE%E5%89%AA%E4%B8%80%E5%88%87"><span class="toc-number">5.</span> <span class="toc-text">5. 修剪一切</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
