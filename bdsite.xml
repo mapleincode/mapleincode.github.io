@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2021/05/24/frp/</loc>
+    <lastmod>2021-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2021/02/24/2021-02/baijiu/</loc>
+    <lastmod>2021-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2021/04/23/2021-04/GraphQL/</loc>
+    <lastmod>2021-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2021/04/12/2021-04/kubernetes/</loc>
+    <lastmod>2021-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2021/04/08/2021-04/nginx-ws/</loc>
+    <lastmod>2021-05-24</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2021/04/23/2021-04/prisma-connection-urls/</loc>
+    <lastmod>2021-05-24</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vmko.cc/2020/12/01/2020-11/aliyun-data-disk-format/</loc>
     <lastmod>2021-01-19</lastmod>
   </url>
