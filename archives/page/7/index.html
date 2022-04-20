@@ -428,76 +428,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/07/05/2019-07/id-autoincr/">
-                
-                <span class="abstract-title-text">唯一 ID 生成</span>
-            </a>
-            <div class="abstract-content">
-                MySQL 自增 ID优点:
-
-自增数字
-无需额外操作
-
-缺点:
-
-单点问题
-可以设置 step 解决，例如一个表是 0, 2, 4 另个表是 1, 3, 5。但是这个方法后期扩展性差
-
-
-
-UUID
-v1() 真随机
-v4() 伪随机
-效率 v4() 远超 v1()
-
-优点:
-
-全世界唯一
-
-缺点:
-
-太长，做主键会降低性能，并且更多的容量
-不能生成递增有序的数字
-可以通过时间算法计算出时间戳
-
-
-mac 地址泄漏(?，没有查到这个事情)
-
-Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId()
-优点：
-支持多表
-缺点：
-
-所有表写入性能...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/2019/06/17/2019-07/codesign/">
                 
                 <span class="abstract-title-text">mac os codesign</span>
@@ -858,6 +788,49 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
+                
+                <span class="abstract-title-text">Python 字符串中的转移符</span>
+            </a>
+            <div class="abstract-content">
+                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
+在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
+12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
+
+正确做法应该是:
+12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
+
+当然大部分语言都是这个样子。如果包含\
+在 P...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
     
 </div>
 
@@ -1638,14 +1611,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
         
         
-        
-        
-        
-        
-        
     
-        
-        
         
         
         
@@ -1916,7 +1882,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 133
         </div>
         <!-- search  -->
         
@@ -1932,14 +1898,14 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/iptables/">linux 端口转发 iptables</a>
         </li>
     
         
@@ -1964,12 +1930,6 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         <li class="archive-post-item">
             <span class="archive-post-date">04/06</span>
             <a class="archive-post-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span>
-            <a class="archive-post-title" href="/2022/04/01/hello-world/">Hello World</a>
         </li>
     
         
@@ -3083,6 +3043,21 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
             <span class="sidebar-tag-name" data-tags="mvn">
                 <span class="iconfont-archer">&#xe606;</span>
                 mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
             </span>
         
     </div>

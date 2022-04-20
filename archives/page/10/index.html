@@ -428,41 +428,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019-07/node-async/">
-                
-                <span class="abstract-title-text">Node 异步三种方式的对比 Demo</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127&#x27;use strict&#x27;;c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/2018/06/01/2019-07/xcode-route/">
                 
                 <span class="abstract-title-text">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</span>
@@ -796,6 +761,48 @@ co...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/16/2019-07/react-nginx/">
+                
+                <span class="abstract-title-text">Nginx 部署 react 项目返回 404</span>
+            </a>
+            <div class="abstract-content">
+                前端时间苦学 React.js，作为愚蠢的后端开发，在面对如此复杂的前端框架，真的是…
+用 dva.js 算是完成了第一个可以用的小工具，在树莓派上编译成 html ，然后新建一个 nginx server，部署。
+直接进根目录是没有问题的，但是如果我直接选择子目录类似: /utils。却返回了 404。
+查了下百度，说法是因为 Nginx 是根据路径去查找文件，但是 react-router 默认编译后只有一个 index.html。
+所以办法是修改 nginx.conf
+123456server &#123;    ...  location / &#123;    try_file...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
     
 </div>
 
@@ -1576,14 +1583,7 @@ co...
         
         
         
-        
-        
-        
-        
-        
     
-        
-        
         
         
         
@@ -1854,7 +1854,7 @@ co...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 133
         </div>
         <!-- search  -->
         
@@ -1870,14 +1870,14 @@ co...
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/iptables/">linux 端口转发 iptables</a>
         </li>
     
         
@@ -1902,12 +1902,6 @@ co...
         <li class="archive-post-item">
             <span class="archive-post-date">04/06</span>
             <a class="archive-post-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span>
-            <a class="archive-post-title" href="/2022/04/01/hello-world/">Hello World</a>
         </li>
     
         
@@ -3021,6 +3015,21 @@ co...
             <span class="sidebar-tag-name" data-tags="mvn">
                 <span class="iconfont-archer">&#xe606;</span>
                 mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
             </span>
         
     </div>

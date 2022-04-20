@@ -428,48 +428,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/05/16/2019-07/react-nginx/">
-                
-                <span class="abstract-title-text">Nginx 部署 react 项目返回 404</span>
-            </a>
-            <div class="abstract-content">
-                前端时间苦学 React.js，作为愚蠢的后端开发，在面对如此复杂的前端框架，真的是…
-用 dva.js 算是完成了第一个可以用的小工具，在树莓派上编译成 html ，然后新建一个 nginx server，部署。
-直接进根目录是没有问题的，但是如果我直接选择子目录类似: /utils。却返回了 404。
-查了下百度，说法是因为 Nginx 是根据路径去查找文件，但是 react-router 默认编译后只有一个 index.html。
-所以办法是修改 nginx.conf
-123456server &#123;    ...  location / &#123;    try_file...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/2018/05/13/2019-07/react-reudx-note-new-md/">
                 
                 <span class="abstract-title-text">React-Redux 笔记 - 其他</span>
@@ -845,6 +803,50 @@ systemctl status httpd.service （服务详细信息） systemctl...
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="cpu">cpu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/18/2019-07/zsh-autosuggestions/">
+                
+                <span class="abstract-title-text">oh-my-zsh 安装 zsh-autosuggestions 插件</span>
+            </a>
+            <div class="abstract-content">
+                zsh-autosuggestions 是 oh-my-zsh 的一个试用插件，可以实现动态显示历史输入记录的效果。
+
+和 oh-my-zsh 一般的内置插件不一样，不能通过光改动~/.zshrc来启动，需要额外配置。
+
+  树莓派上安装这个插件，bash 输入变得十分卡顿，因此对于性能较差的机子(尤其是硬盘速度)，不建议使用这个插件。
+
+安装插件从 GitHub 上 clone 插件。
+1git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+启动插件1source ~/....
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oh-my-zsh">oh-my-zsh</a>
     
 </div>
 
@@ -1625,14 +1627,7 @@ systemctl status httpd.service （服务详细信息） systemctl...
         
         
         
-        
-        
-        
-        
-        
     
-        
-        
         
         
         
@@ -1903,7 +1898,7 @@ systemctl status httpd.service （服务详细信息） systemctl...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 133
         </div>
         <!-- search  -->
         
@@ -1919,14 +1914,14 @@ systemctl status httpd.service （服务详细信息） systemctl...
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/iptables/">linux 端口转发 iptables</a>
         </li>
     
         
@@ -1951,12 +1946,6 @@ systemctl status httpd.service （服务详细信息） systemctl...
         <li class="archive-post-item">
             <span class="archive-post-date">04/06</span>
             <a class="archive-post-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span>
-            <a class="archive-post-title" href="/2022/04/01/hello-world/">Hello World</a>
         </li>
     
         
@@ -3070,6 +3059,21 @@ systemctl status httpd.service （服务详细信息） systemctl...
             <span class="sidebar-tag-name" data-tags="mvn">
                 <span class="iconfont-archer">&#xe606;</span>
                 mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
             </span>
         
     </div>

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.vmko.cc/2022/04/20/2022-04/iptables/</loc>
+    <loc>https://blog.vmko.cc/2022/04/19/2022-04/firewalld/</loc>
     
     <lastmod>2022-04-20</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2022/04/20/2022-04/firewalld/</loc>
+    <loc>https://blog.vmko.cc/2022/04/19/2022-04/iptables/</loc>
     
     <lastmod>2022-04-20</lastmod>
     
@@ -1216,15 +1216,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://blog.vmko.cc/2022/04/01/hello-world/</loc>
-    
-    <lastmod>2022-04-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://blog.vmko.cc/</loc>
@@ -1649,6 +1640,27 @@
   
   <url>
     <loc>https://blog.vmko.cc/tags/mvn/</loc>
+    <lastmod>2022-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/tags/firewalld/</loc>
+    <lastmod>2022-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/tags/liunx/</loc>
+    <lastmod>2022-04-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/tags/iptables/</loc>
     <lastmod>2022-04-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -443,54 +443,6 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2021/09/13/2021-09/raspberry-watchdog/">
-                
-                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
-            </a>
-            <div class="abstract-content">
-                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
-在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
-然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
-解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
-
-系统:
-
-raspberry 4B
-ubuntu 20.04
-
-
-安装流程
-在 config.txt 从硬件上打开 watchdog 功能
-12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
             <a class="abstract-title" href="/2021/07/21/2021-07/esxi-copy/">
                 
                 <span class="abstract-title-text">ESXi 支持复制粘贴</span>
@@ -881,6 +833,44 @@ BMR 分区表默认只支持 4 个主分区
     
 </div>
 
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/23/2020-11/dpkg-bad-inconsistent-state/">
+                
+                <span class="abstract-title-text">Dpkg 包损坏无法安装 &amp; 卸载</span>
+            </a>
+            <div class="abstract-content">
+                卸载时报错：
+12package is in a very bad inconsistent state;you should reinstall it before attempting a removal
+
+
+
+解决方法：
+
+强制卸载
+
+1sudo dpkg --remove --force-remove-reinstreq xxxxxx
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
+                </div>
+                <!-- tags -->
                 
             </div>
         </article>
@@ -1736,14 +1726,7 @@ BMR 分区表默认只支持 4 个主分区
         
         
         
-        
-        
-        
-        
-        
     
-        
-        
         
         
         
@@ -2014,7 +1997,7 @@ BMR 分区表默认只支持 4 个主分区
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 134
+        Total : 133
         </div>
         <!-- search  -->
         
@@ -2030,14 +2013,14 @@ BMR 分区表默认只支持 4 个主分区
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
-            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/iptables/">linux 端口转发 iptables</a>
         </li>
     
         
@@ -2062,12 +2045,6 @@ BMR 分区表默认只支持 4 个主分区
         <li class="archive-post-item">
             <span class="archive-post-date">04/06</span>
             <a class="archive-post-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/01</span>
-            <a class="archive-post-title" href="/2022/04/01/hello-world/">Hello World</a>
         </li>
     
         
@@ -3181,6 +3158,21 @@ BMR 分区表默认只支持 4 个主分区
             <span class="sidebar-tag-name" data-tags="mvn">
                 <span class="iconfont-archer">&#xe606;</span>
                 mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
             </span>
         
     </div>
