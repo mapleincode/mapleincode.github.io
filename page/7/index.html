@@ -443,6 +443,158 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/07/05/2019-07/id-autoincr/">
+                
+                <span class="abstract-title-text">唯一 ID 生成</span>
+            </a>
+            <div class="abstract-content">
+                MySQL 自增 ID优点:
+
+自增数字
+无需额外操作
+
+缺点:
+
+单点问题
+可以设置 step 解决，例如一个表是 0, 2, 4 另个表是 1, 3, 5。但是这个方法后期扩展性差
+
+
+
+UUID
+v1() 真随机
+v4() 伪随机
+效率 v4() 远超 v1()
+
+优点:
+
+全世界唯一
+
+缺点:
+
+太长，做主键会降低性能，并且更多的容量
+不能生成递增有序的数字
+可以通过时间算法计算出时间戳
+
+
+mac 地址泄漏(?，没有查到这个事情)
+
+Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId()
+优点：
+支持多表
+缺点：
+
+所有表写入性能...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/06/17/2019-07/codesign/">
+                
+                <span class="abstract-title-text">mac os codesign</span>
+            </a>
+            <div class="abstract-content">
+                12codesign --sign - --force --deep /Applications/Alfred\ 3.app codesign --sign - --force --deep /Applications/Alfred\ 3.app/Contents/Preferences/Alfred\ Preferences.app
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/05/23/2019-07/redis/">
+                
+                <span class="abstract-title-text">redis 学习笔记</span>
+            </a>
+            <div class="abstract-content">
+                Redis 数据类型
+redis 支持五种数据类型
+String: 字符串
+Hash: Hash 散列
+List: 列表
+Set: 集合
+ZSet: 有序集合(Sorted Set)
+
+
+
+KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key，并返回而序列化的值。exists keyexpire key // 秒expireat key // timestamppexpireat key // 毫秒 (unix timestamp)keys pattern // 查找所有符合给定模式(pattern)...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/04/29/2019-07/xiazaibao/">
                 
                 <span class="abstract-title-text">迅雷下载宝定制固件</span>
@@ -721,125 +873,6 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
-                
-                <span class="abstract-title-text">Python 字符串中的转移符</span>
-            </a>
-            <div class="abstract-content">
-                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
-在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
-12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
-
-正确做法应该是:
-12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
-
-当然大部分语言都是这个样子。如果包含\
-在 P...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/11/2019-07/rabbitmq-install/">
-                
-                <span class="abstract-title-text">RabbitMQ 安装 &amp; 添加登录用户[转载]</span>
-            </a>
-            <div class="abstract-content">
-                
-本文转载自 https://www.dev-heaven.com/posts/1914.html
-
-安装脚本12345678910yum install wget -y#Download RabbitMQ and Erlangwget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.9/rabbitmq-server-3.6.9-1.el6.noarch.rpmwget https://www.rabbitmq.com/releases/erlang/erlang-19.0.4-1.el6.x86_64.rpm#Instal...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/07/2019-07/redlock/">
-                
-                <span class="abstract-title-text">Red Lock</span>
-            </a>
-            <div class="abstract-content">
-                在分布式版本的算法里我们假设我们有 N 个 Redis master 节点，这些节点都是完全独立的，我们不用任何复制或者其他隐含的分布式协调算法。我们已经描述了如何在单节点环境下安全地获取和释放锁。因此我们理所当然地应当用这个方法在每个单节点里来获取和释放锁。在我们的例子里面我们把 N 设成 5，这个数字是一个相对比较合理的数值，因此我们需要在不同的计算机或者虚拟机上运行 5 个 master 节点来保证他们大多数情况下都不会同时宕机。一个客户端需要做如下操作来获取锁：
-
-获取当前时间（单位是毫秒）。
-轮流用相同的 key 和随机值在 N 个节点上请求锁，在这一步里，客户端在每个 mas...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
     
 </div>
 
@@ -1688,7 +1721,28 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1955,7 +2009,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1971,6 +2025,24 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1978,7 +2050,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         

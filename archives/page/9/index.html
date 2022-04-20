@@ -428,6 +428,128 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/08/29/2019-07/mysql-ACID/">
+                
+                <span class="abstract-title-text">MySQL 事务</span>
+            </a>
+            <div class="abstract-content">
+                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
+我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
+事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
+
+原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+
+一致性：在事务开始之前和事务...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/27/2019-07/guanchazhe/">
+                
+                <span class="abstract-title-text">Node 和观察者设计模式</span>
+            </a>
+            <div class="abstract-content">
+                观察者设计模式观察者模式（有时又被称为模型-视图（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
+总的来说，例如 Node 的事件机制。除非是一个不包含异步的程序(如果没有异步逻辑，那这个程序在执行结束前都不会有事件循环)，否则一般程序在拥有带监听的 IO 事件(或者是网络套接字)的观察者时，就会通过线程层(libuv)不断的是轮询这些事件有没有完成。而系统在完成 IO 之后，将...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/26/2019-07/mysql-engines/">
+                
+                <span class="abstract-title-text">MySQL 引擎</span>
+            </a>
+            <div class="abstract-content">
+                ISAM优点：
+读取速度快，不占用大量内存与存储资源。
+缺点：
+不能够容错，不支持事务处理。
+ISAM 设计为了那些读取比较频繁，但是写入比较少的操作，例如数据中心。它可以占用较少的内存和资源对数据进行读取。但是相应的缺少了一些机制，比如事务和容错性。尤其是容错性，硬盘的错误会导致整个库的数据都被丢失。
+其次是加锁和并发问题，一旦涉及数据写入，整张表都会被进行加锁，这样一旦有一个数据被修改，其他数据哪怕不是同一行，修改操作都会被堵塞。
+MYISAM：优点：
+
+是 ISAM 的扩展，提供了 ISAM 所没有的索引和字段管理。
+使用一种表格锁定机制，来优化并发读写。
+拥有一些有用的扩展，如修...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/08/23/2019-07/http2/">
                 
                 <span class="abstract-title-text">在树莓派上升级 Nginx 开启 HTTP/2</span>
@@ -705,117 +827,6 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019-07/node-async/">
-                
-                <span class="abstract-title-text">Node 异步三种方式的对比 Demo</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127&#x27;use strict&#x27;;c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/01/2019-07/xcode-route/">
-                
-                <span class="abstract-title-text">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</span>
-            </a>
-            <div class="abstract-content">
-                前段时间更新 Mac OS 的系统，也同样更新了 Xcode。在公司的项目中，用了死月大佬封装 C++ ons 版本得到的 Aliyun ons。在重新安装依赖时，发现在编译 ons 的时候不停爆出unknown type name &#39;uint32_t&#39;这样的错误。
-本以为是 npm 的缓存、c++ 版本、node 版本等原因，当我用另一台 Mac 安装 ons 并成功之后，完全不知道该怎么做。这时碰巧切了一个新的 Node 版本，在编译时报出了一个 Warn: xcode-select: error: tool &#39;xcodebuild&#39; requires...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/29/2019-07/macos-pac/">
-                
-                <span class="abstract-title-text">MAC OS 通过脚本配置自动代理 &amp; 关闭自动代理</span>
-            </a>
-            <div class="abstract-content">
-                因为在家里搞了一个 PAC 文件用来科学上网。但是上班用的 MAC 因为要带到公司，所以在公司用的是 Sha*socks。因为启用  SS 会覆盖原有的配置，而如果已经有了 PAC 配置，在不消除设置的情况下，在外网同样也是无法上网的。
-所以找了一个网上的教程，搞到了两个配置:
-设置自动代理setpac.sh
-12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh#######################################################...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
     
 </div>
 
@@ -1586,7 +1597,28 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1853,7 +1885,7 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1869,6 +1901,24 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1876,7 +1926,7 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         

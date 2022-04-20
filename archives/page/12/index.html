@@ -428,6 +428,126 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/03/18/2019-07/zsh-autosuggestions/">
+                
+                <span class="abstract-title-text">oh-my-zsh 安装 zsh-autosuggestions 插件</span>
+            </a>
+            <div class="abstract-content">
+                zsh-autosuggestions 是 oh-my-zsh 的一个试用插件，可以实现动态显示历史输入记录的效果。
+
+和 oh-my-zsh 一般的内置插件不一样，不能通过光改动~/.zshrc来启动，需要额外配置。
+
+  树莓派上安装这个插件，bash 输入变得十分卡顿，因此对于性能较差的机子(尤其是硬盘速度)，不建议使用这个插件。
+
+安装插件从 GitHub 上 clone 插件。
+1git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+启动插件1source ~/....
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oh-my-zsh">oh-my-zsh</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/05/2019-07/public-license/">
+                
+                <span class="abstract-title-text">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</span>
+            </a>
+            <div class="abstract-content">
+                什么是许可协议？什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。
+不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。
+而开源许可协议使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。
+G...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="license">license</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/02/26/2019-07/san/">
+                
+                <span class="abstract-title-text">生成 SAN 证书并自签</span>
+            </a>
+            <div class="abstract-content">
+                生成 SAN 证书。因为群晖的证书生成有个 BUG， 创造多域名证书居然不能输入*。只好网上找资料手动创建多域名证书 SAN certificater(SubjectAltName Certificater)。
+工作文件夹12345678910├── ca.srl├── certs│   ├── ca.cer # ca 证书│   └── server.cer # server 证书├── private│   ├── ca.csr # ca csr 文件│   ├── ca.pem # ca 私钥│   ├── server.pem # server 私钥 │   └── server...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/26</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="san">san</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/02/22/2019-07/openvpn-login-auto/">
                 
                 <span class="abstract-title-text">使用 Expect 自动登录 OpenVPN</span>
@@ -698,127 +818,6 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/21/2019-07/gulp/">
-                
-                <span class="abstract-title-text">Gulp 常用插件(转)</span>
-            </a>
-            <div class="abstract-content">
-                Gulp 常用插件(转)原文地址
-
-  本文主要展示的是gulp常用插件的使用方法和用途，通过对插件的熟练运用达到精通gulp。不定期更新。可以到github上面下载DEMO。
-
-匹配符 *、**、！、{}1234gulp.src(&#x27;./js/*.js&#x27;)               // * 匹配js文件夹下所有.js格式的文件gulp.src(&#x27;./js/**/*.js&#x27;)            // ** 匹配js文件夹的0个或多个子文件夹gulp.src([&#x27;./js/*.js&#x27;,&#x27;!./js/index.js...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gulp">gulp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/14/2019-07/gulp-autoprefixer/">
-                
-                <span class="abstract-title-text">gulp-autoprefixer 基本使用</span>
-            </a>
-            <div class="abstract-content">
-                转载传送门
-基本使用
-使用 gulp-autoprefixer 根据设置浏览器版本自动处理浏览器前缀。使用她我们可以很潇洒地写代码，不必考虑各浏览器兼容前缀。
-
-1234567891011121314var gulp = require(&#x27;gulp&#x27;),    autoprefixer = require(&#x27;gulp-autoprefixer&#x27;); gulp.task(&#x27;testAutoFx&#x27;, function () &#123;    gulp.src(&#x27;src/css/index.css&#x27;)      ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gulp">gulp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/13/2019-07/docker/docker-run/">
-                
-                <span class="abstract-title-text">Docker 启动后直接退出</span>
-            </a>
-            <div class="abstract-content">
-                之前对 docker 的运行问题很不了解，后来根据朋友的解释才理解，容器中的程序应该挂载在容器上，由容器的重启关闭来控制程序的关闭开机。
-那假如运行后台运行的函数呢？
-如果不做处理，在函数进入后台运行后，容易就会直接 exit 结束。
-有一个办法是在运行脚本上加一句:
-1tail -f /dev/null
-
-这样容易就处于执行状态就不会退出了。
-算是歪门邪道吧。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
 </div>
 
@@ -1589,7 +1588,28 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1856,7 +1876,7 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1872,6 +1892,24 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1879,7 +1917,7 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         

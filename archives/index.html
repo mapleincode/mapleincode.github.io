@@ -428,6 +428,115 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/04/20/2022-04/iptables/">
+                
+                <span class="abstract-title-text">[Untitled Post]</span>
+            </a>
+            <div class="abstract-content">
+                linux 端口转发 iptablescentos 7 使用 firewalld 服务而不是 iptables，如果 centos7 以上需要注意！！
+1.开启配置  iptables临时修改：
+1$ echo 1 &gt;/proc/sys/net/ipv4/ip_forward
+
+默认值 0 是禁止 ip 转发，修改为 1 即开启 ip 转发功能。
+重启生效:
+修改 &#x2F;etc&#x2F;sysctl.conf 文件:
+1net.ipv4.ip_forward = 1
+
+其他:
+1sysctl -w net.ipv4.ip_forward=1
+
+
+查看路由表:
+netstat...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/20/2022-04/firewalld/">
+                
+                <span class="abstract-title-text">[Untitled Post]</span>
+            </a>
+            <div class="abstract-content">
+                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
+1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/20</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/maven-command/">
+                
+                <span class="abstract-title-text">30 个 Maven 命令</span>
+            </a>
+            <div class="abstract-content">
+                https://www.cnblogs.com/javastack/p/12982472.html
+maven 命令除了常用的几个，大部分经常记不住，整理一下，方便查询。
+maven 命令的格式为 mvn [plugin-name]:[goal-name]，可以接受的参数如下。
+1234567891011-D 指定参数，如 -Dmaven.test.skip=true 跳过单元测试；-P 指定 Profile 配置，可以用于区分环境；-e 显示maven运行出错的信息；-o 离线执行命令,即不去远程仓库更新包；-X 显示maven允许的debug信息；-U 强制去远程更新snapshot...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/04/07/2022-03/python-3-minutes/">
                 
                 <span class="abstract-title-text">3 分钟学习 (Python)</span>
@@ -467,12 +576,12 @@ Python 是由吉多·范罗苏姆(Guido Van Rossum)在 90 年代早期设计。�
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2022/04/07/2022-04/maven/">
+            <a class="abstract-title" href="/2022/04/07/2022-04/maven-notion/">
                 
                 <span class="abstract-title-text">mvn 笔记精简</span>
             </a>
             <div class="abstract-content">
-                Maven 笔记精简from https://segmentfault.com/a/1190000019897882
+                Maven 概念from https://segmentfault.com/a/1190000019897882
 Maven 定位
 编译
 部署
@@ -489,13 +598,13 @@ Maven 定位
 
 
 配置文件pom.xml 
-配置结构12345678&lt;dependencies&gt;	&lt;dependency&gt;  	&lt;groupId&gt;cn.vmkoo.test&lt;/gro...
+配置结构12345678&lt;dependencies&gt;	&lt;dependency&gt;  	&lt;groupId&gt;cn.vmkoo.test&lt;/group...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/07">
+                <div class="abstract-date" title="Last updated: 2022/04/20">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
                 </div>
                 <!-- tags -->
@@ -722,138 +831,6 @@ htt...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/13/2021-09/raspberry-watchdog/">
-                
-                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
-            </a>
-            <div class="abstract-content">
-                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
-在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
-然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
-解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
-
-系统:
-
-raspberry 4B
-ubuntu 20.04
-
-
-安装流程
-在 config.txt 从硬件上打开 watchdog 功能
-12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/07/21/2021-07/esxi-copy/">
-                
-                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
-            </a>
-            <div class="abstract-content">
-                修改办法设置 - 高级 - 编辑配置
-添加
-12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
-
-
-
-其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
-
-
-
-Warining注意 vmware tools 的状态
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/05/25/2021-04/k8s-demo-mysql/">
-                
-                <span class="abstract-title-text">k8s mysql demo</span>
-            </a>
-            <div class="abstract-content">
-                
-mysql-rc.yaml
-
-123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
     
 </div>
 
@@ -1624,7 +1601,28 @@ mysql-rc.yaml
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1891,7 +1889,7 @@ mysql-rc.yaml
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1907,6 +1905,24 @@ mysql-rc.yaml
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1914,7 +1930,7 @@ mysql-rc.yaml
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         

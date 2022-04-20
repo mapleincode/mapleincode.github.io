@@ -443,6 +443,117 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/06/06/2019-07/node-async/">
+                
+                <span class="abstract-title-text">Node 异步三种方式的对比 Demo</span>
+            </a>
+            <div class="abstract-content">
+                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127&#x27;use strict&#x27;;c...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/06/01/2019-07/xcode-route/">
+                
+                <span class="abstract-title-text">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</span>
+            </a>
+            <div class="abstract-content">
+                前段时间更新 Mac OS 的系统，也同样更新了 Xcode。在公司的项目中，用了死月大佬封装 C++ ons 版本得到的 Aliyun ons。在重新安装依赖时，发现在编译 ons 的时候不停爆出unknown type name &#39;uint32_t&#39;这样的错误。
+本以为是 npm 的缓存、c++ 版本、node 版本等原因，当我用另一台 Mac 安装 ons 并成功之后，完全不知道该怎么做。这时碰巧切了一个新的 Node 版本，在编译时报出了一个 Warn: xcode-select: error: tool &#39;xcodebuild&#39; requires...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/29/2019-07/macos-pac/">
+                
+                <span class="abstract-title-text">MAC OS 通过脚本配置自动代理 &amp; 关闭自动代理</span>
+            </a>
+            <div class="abstract-content">
+                因为在家里搞了一个 PAC 文件用来科学上网。但是上班用的 MAC 因为要带到公司，所以在公司用的是 Sha*socks。因为启用  SS 会覆盖原有的配置，而如果已经有了 PAC 配置，在不消除设置的情况下，在外网同样也是无法上网的。
+所以找了一个网上的教程，搞到了两个配置:
+设置自动代理setpac.sh
+12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh#######################################################...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/05/28/2019-07/xp-x64/">
                 
                 <span class="abstract-title-text">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</span>
@@ -700,138 +811,6 @@ co...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/16/2019-07/react-nginx/">
-                
-                <span class="abstract-title-text">Nginx 部署 react 项目返回 404</span>
-            </a>
-            <div class="abstract-content">
-                前端时间苦学 React.js，作为愚蠢的后端开发，在面对如此复杂的前端框架，真的是…
-用 dva.js 算是完成了第一个可以用的小工具，在树莓派上编译成 html ，然后新建一个 nginx server，部署。
-直接进根目录是没有问题的，但是如果我直接选择子目录类似: /utils。却返回了 404。
-查了下百度，说法是因为 Nginx 是根据路径去查找文件，但是 react-router 默认编译后只有一个 index.html。
-所以办法是修改 nginx.conf
-123456server &#123;    ...  location / &#123;    try_file...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/13/2019-07/react-reudx-note-new-md/">
-                
-                <span class="abstract-title-text">React-Redux 笔记 - 其他</span>
-            </a>
-            <div class="abstract-content">
-                
-参考了阮一峰老师的文章
-
-combineReducersUsage123const &#123; combineReducers &#125; from &#x27;redux&#x27;;const * as reducers from &#x27;./reduces&#x27;;const reducer = combineReducer(reducers);
-
-
-方便管理 reducer，可以按内容分类 reducer
-reducer 数据也独立，每个 reducer 所能获取和修改的 state 都是独立的。
-获取数据应该要通过 state.xxx.yyy。
-当然要跟着修改的地...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/08/2019-07/react-note/">
-                
-                <span class="abstract-title-text">React.js 小书 - 第三阶段 - 学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                
-React.js 小书
-
-第三阶段Lesson 28 - 高阶组件(Higher-Order Components)
-高阶组件是函数。
-
-高阶组件的作用是提高代码复用度。
-
-高阶组件基本结构
-123456789101112export default (某个子组件, 其他参数) &#123;    class NewComponet extends Componet &#123;        // 各种可复用的逻辑，比如请求服务器、读取缓存        // 也可以修改其他参数然后传到子组件中        // const 修改后的参数 = 处理函数(其他参数)        /...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redux">redux</a>
     
 </div>
 
@@ -1680,7 +1659,28 @@ React.js 小书
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1947,7 +1947,7 @@ React.js 小书
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1963,6 +1963,24 @@ React.js 小书
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1970,7 +1988,7 @@ React.js 小书
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         

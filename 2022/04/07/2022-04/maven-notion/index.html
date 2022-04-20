@@ -19,15 +19,15 @@
         <meta name="keywords" content="hexo,blog,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="Maven 笔记精简from https:&#x2F;&#x2F;segmentfault.com&#x2F;a&#x2F;1190000019897882 Maven 定位 编译 部署 清理 测试 报告 打包 安装  目录架构约定123456test  &#x2F; main  		&#x2F; java     &#x2F;&#x2F; 源代码  		resources  &#x2F;&#x2F; 配置文件  &#x2F; test  	  &#x2F; java     &#x2F;&#x2F; 测试代码      配置文件po">
+    <meta name="description" content="Maven 概念from https:&#x2F;&#x2F;segmentfault.com&#x2F;a&#x2F;1190000019897882 Maven 定位 编译 部署 清理 测试 报告 打包 安装  目录架构约定123456test  &#x2F; main  		&#x2F; java     &#x2F;&#x2F; 源代码  		resources  &#x2F;&#x2F; 配置文件  &#x2F; test  	  &#x2F; java     &#x2F;&#x2F; 测试代码      配置文件pom.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mvn 笔记精简">
-<meta property="og:url" content="https://blog.vmko.cc/2022/04/07/2022-04/maven/index.html">
+<meta property="og:url" content="https://blog.vmko.cc/2022/04/07/2022-04/maven-notion/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="Maven 笔记精简from https:&#x2F;&#x2F;segmentfault.com&#x2F;a&#x2F;1190000019897882 Maven 定位 编译 部署 清理 测试 报告 打包 安装  目录架构约定123456test  &#x2F; main  		&#x2F; java     &#x2F;&#x2F; 源代码  		resources  &#x2F;&#x2F; 配置文件  &#x2F; test  	  &#x2F; java     &#x2F;&#x2F; 测试代码      配置文件po">
+<meta property="og:description" content="Maven 概念from https:&#x2F;&#x2F;segmentfault.com&#x2F;a&#x2F;1190000019897882 Maven 定位 编译 部署 清理 测试 报告 打包 安装  目录架构约定123456test  &#x2F; main  		&#x2F; java     &#x2F;&#x2F; 源代码  		resources  &#x2F;&#x2F; 配置文件  &#x2F; test  	  &#x2F; java     &#x2F;&#x2F; 测试代码      配置文件pom.">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-07T03:10:43.000Z">
-<meta property="article:modified_time" content="2022-04-07T07:49:15.723Z">
+<meta property="article:modified_time" content="2022-04-20T08:27:35.596Z">
 <meta property="article:author" content="Maple">
 <meta property="article:tag" content="java">
 <meta property="article:tag" content="mvn">
@@ -336,7 +336,7 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">177</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">614</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -497,7 +497,7 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Maven-笔记精简"><a href="#Maven-笔记精简" class="headerlink" title="Maven 笔记精简"></a>Maven 笔记精简</h1><p>from <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000019897882">https://segmentfault.com/a/1190000019897882</a></p>
+        <h1 id="Maven-概念"><a href="#Maven-概念" class="headerlink" title="Maven 概念"></a>Maven 概念</h1><p>from <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000019897882">https://segmentfault.com/a/1190000019897882</a></p>
 <h2 id="Maven-定位"><a href="#Maven-定位" class="headerlink" title="Maven 定位"></a>Maven 定位</h2><ul>
 <li>编译</li>
 <li>部署</li>
@@ -540,15 +540,142 @@
 </ul>
 </li>
 </ul>
-<h2 id="生命周期-x2F-插件-x2F-目标"><a href="#生命周期-x2F-插件-x2F-目标" class="headerlink" title="生命周期 &#x2F; 插件 &#x2F; 目标"></a>生命周期 &#x2F; 插件 &#x2F; 目标</h2>
+<h2 id="生命周期-x2F-插件-x2F-目标"><a href="#生命周期-x2F-插件-x2F-目标" class="headerlink" title="生命周期 &#x2F; 插件 &#x2F; 目标"></a>生命周期 &#x2F; 插件 &#x2F; 目标</h2><h3 id="三套生命周期"><a href="#三套生命周期" class="headerlink" title="三套生命周期"></a>三套生命周期</h3><ul>
+<li><p><strong>Clean Lifecycle</strong></p>
+<ul>
+<li><code>mvn clean</code></li>
+<li>生命周期<ul>
+<li>pre-clean</li>
+<li>clean</li>
+<li>post-clean</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Default Lifecycle</strong></p>
+<ul>
+<li><code>mvn install</code></li>
+<li>生命周期<ul>
+<li>validate</li>
+<li>generate-sources</li>
+<li><pre><code>process-sources
+</code></pre>
+</li>
+<li>generate-resources</li>
+<li><strong>process-resources</strong>          <ul>
+<li><strong>复制并处理资源文件，至目标目录，准备打包。</strong></li>
+</ul>
+</li>
+<li><strong>compile</strong><ul>
+<li><strong>编译项目的源代码。</strong></li>
+</ul>
+</li>
+<li>process-classes</li>
+<li>generate-test-sources   </li>
+<li>process-test-sources</li>
+<li>generate-test-resources</li>
+<li><strong>process-test-resources</strong>          <ul>
+<li><strong>复制并处理资源文件，至目标测试目录。</strong></li>
+</ul>
+</li>
+<li><strong>test-compile</strong><ul>
+<li><strong>编译测试源代码。</strong></li>
+</ul>
+</li>
+<li>process-test-classes</li>
+<li><strong>test</strong>                </li>
+<li><strong>使用合适的单元测试框架运行测试。这些测试代码不会被打包或部署。</strong></li>
+<li>prepare-package</li>
+<li><strong>package</strong>          </li>
+<li><strong>接受编译好的代码，打包成可发布的格式，如  JAR  。</strong></li>
+<li>pre-integration-test</li>
+<li>integration-test</li>
+<li>post-integration-test</li>
+<li>verify</li>
+<li>install          </li>
+<li>将包安装至本地仓库，以让其它项目依赖。</li>
+<li>deploy          </li>
+<li>将最终的包复制到远程的仓库，以让其它开发人员与项目共享</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Site Lifecycle</strong></p>
+<ul>
+<li><code>mvn site</code></li>
+<li>生命周期<ul>
+<li>pre-site</li>
+<li>site</li>
+<li>post-site</li>
+<li>site-deploy</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="依赖-amp-依赖的范围"><a href="#依赖-amp-依赖的范围" class="headerlink" title="依赖 &amp; 依赖的范围"></a>依赖 &amp; 依赖的范围</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>complie</th>
+<th>test</th>
+<th>provided</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对主程序是否有效</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>对测试程序是否有效</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>是否参与打包</td>
+<td>√</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>是否参与部署</td>
+<td>√</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>例子</td>
+<td>spring-core</td>
+<td>junit</td>
+<td>servlet-api.tar</td>
+</tr>
+</tbody></table>
+<h4 id="依赖原则"><a href="#依赖原则" class="headerlink" title="依赖原则"></a>依赖原则</h4><ol>
+<li>路径最短者优先</li>
+<li>路径相同时，先声明者优先</li>
+</ol>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>父工程</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.cxkStudy.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>ParentName<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">description</span>&gt;</span>学习Maven使用<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../studyDenpen<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>../Hello<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>子工程</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.cxkStudy.maven<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>Parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>统一安装清理工作</li>
+<li>子工程的依赖不需要写版本号（会自动参照父依赖的版本）</li>
+</ol>
+
     </article>
     <!-- license -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://blog.vmko.cc">Maple</a>
-            <p>原文链接：<a href="https://blog.vmko.cc/2022/04/07/2022-04/maven/">https://blog.vmko.cc/2022/04/07/2022-04/maven/</a>
-            <p>发表日期：<a href="https://blog.vmko.cc/2022/04/07/2022-04/maven/">April 7th 2022, 11:10:43 am</a>
-            <p>更新日期：<a href="https://blog.vmko.cc/2022/04/07/2022-04/maven/">April 7th 2022, 3:49:15 pm</a>
+            <p>原文链接：<a href="https://blog.vmko.cc/2022/04/07/2022-04/maven-notion/">https://blog.vmko.cc/2022/04/07/2022-04/maven-notion/</a>
+            <p>发表日期：<a href="https://blog.vmko.cc/2022/04/07/2022-04/maven-notion/">April 7th 2022, 11:10:43 am</a>
+            <p>更新日期：<a href="https://blog.vmko.cc/2022/04/07/2022-04/maven-notion/">April 20th 2022, 4:27:35 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -585,7 +712,7 @@
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
         var disqus_config = function () {
-        this.page.url = "https://blog.vmko.cc/2022/04/07/2022-04/maven/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = "https://blog.vmko.cc/2022/04/07/2022-04/maven-notion/";  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = "mvn 笔记精简"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
         };
         
@@ -726,7 +853,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven-%E7%AC%94%E8%AE%B0%E7%B2%BE%E7%AE%80"><span class="toc-number">1.</span> <span class="toc-text">Maven 笔记精简</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.1.</span> <span class="toc-text">Maven 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%9E%B6%E6%9E%84%E7%BA%A6%E5%AE%9A"><span class="toc-number">1.2.</span> <span class="toc-text">目录架构约定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">配置结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-%E4%B8%AD%E5%A4%AE%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">Maven 中央仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%93%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-x2F-%E6%8F%92%E4%BB%B6-x2F-%E7%9B%AE%E6%A0%87"><span class="toc-number">2.1.</span> <span class="toc-text">生命周期 &#x2F; 插件 &#x2F; 目标</span></a></li></ol></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven-%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">Maven 概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.1.</span> <span class="toc-text">Maven 定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%9E%B6%E6%9E%84%E7%BA%A6%E5%AE%9A"><span class="toc-number">1.2.</span> <span class="toc-text">目录架构约定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.</span> <span class="toc-text">配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">配置结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-%E4%B8%AD%E5%A4%AE%E4%BB%93%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">Maven 中央仓库</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%93%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-x2F-%E6%8F%92%E4%BB%B6-x2F-%E7%9B%AE%E6%A0%87"><span class="toc-number">2.1.</span> <span class="toc-text">生命周期 &#x2F; 插件 &#x2F; 目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E5%A5%97%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-number">2.1.1.</span> <span class="toc-text">三套生命周期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96-amp-%E4%BE%9D%E8%B5%96%E7%9A%84%E8%8C%83%E5%9B%B4"><span class="toc-number">2.2.</span> <span class="toc-text">依赖 &amp; 依赖的范围</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%8E%9F%E5%88%99"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">依赖原则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%A7%E6%89%BF"><span class="toc-number">2.2.1.</span> <span class="toc-text">继承</span></a></li></ol></li></ol></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -1395,7 +1522,28 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1662,7 +1810,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1678,6 +1826,24 @@
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1685,7 +1851,7 @@
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         

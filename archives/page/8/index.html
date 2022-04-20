@@ -428,6 +428,125 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
+                
+                <span class="abstract-title-text">Python 字符串中的转移符</span>
+            </a>
+            <div class="abstract-content">
+                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
+在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
+12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
+
+正确做法应该是:
+12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
+
+当然大部分语言都是这个样子。如果包含\
+在 P...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/11/2019-07/rabbitmq-install/">
+                
+                <span class="abstract-title-text">RabbitMQ 安装 &amp; 添加登录用户[转载]</span>
+            </a>
+            <div class="abstract-content">
+                
+本文转载自 https://www.dev-heaven.com/posts/1914.html
+
+安装脚本12345678910yum install wget -y#Download RabbitMQ and Erlangwget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.9/rabbitmq-server-3.6.9-1.el6.noarch.rpmwget https://www.rabbitmq.com/releases/erlang/erlang-19.0.4-1.el6.x86_64.rpm#Instal...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/07/2019-07/redlock/">
+                
+                <span class="abstract-title-text">Red Lock</span>
+            </a>
+            <div class="abstract-content">
+                在分布式版本的算法里我们假设我们有 N 个 Redis master 节点，这些节点都是完全独立的，我们不用任何复制或者其他隐含的分布式协调算法。我们已经描述了如何在单节点环境下安全地获取和释放锁。因此我们理所当然地应当用这个方法在每个单节点里来获取和释放锁。在我们的例子里面我们把 N 设成 5，这个数字是一个相对比较合理的数值，因此我们需要在不同的计算机或者虚拟机上运行 5 个 master 节点来保证他们大多数情况下都不会同时宕机。一个客户端需要做如下操作来获取锁：
+
+获取当前时间（单位是毫秒）。
+轮流用相同的 key 和随机值在 N 个节点上请求锁，在这一步里，客户端在每个 mas...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/01/07/2019-07/kafka-node/">
                 
                 <span class="abstract-title-text">Kafka-node 的使用 Demo</span>
@@ -704,128 +823,6 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/29/2019-07/mysql-ACID/">
-                
-                <span class="abstract-title-text">MySQL 事务</span>
-            </a>
-            <div class="abstract-content">
-                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
-我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
-事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
-
-原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
-
-一致性：在事务开始之前和事务...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/27/2019-07/guanchazhe/">
-                
-                <span class="abstract-title-text">Node 和观察者设计模式</span>
-            </a>
-            <div class="abstract-content">
-                观察者设计模式观察者模式（有时又被称为模型-视图（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
-总的来说，例如 Node 的事件机制。除非是一个不包含异步的程序(如果没有异步逻辑，那这个程序在执行结束前都不会有事件循环)，否则一般程序在拥有带监听的 IO 事件(或者是网络套接字)的观察者时，就会通过线程层(libuv)不断的是轮询这些事件有没有完成。而系统在完成 IO 之后，将...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/26/2019-07/mysql-engines/">
-                
-                <span class="abstract-title-text">MySQL 引擎</span>
-            </a>
-            <div class="abstract-content">
-                ISAM优点：
-读取速度快，不占用大量内存与存储资源。
-缺点：
-不能够容错，不支持事务处理。
-ISAM 设计为了那些读取比较频繁，但是写入比较少的操作，例如数据中心。它可以占用较少的内存和资源对数据进行读取。但是相应的缺少了一些机制，比如事务和容错性。尤其是容错性，硬盘的错误会导致整个库的数据都被丢失。
-其次是加锁和并发问题，一旦涉及数据写入，整张表都会被进行加锁，这样一旦有一个数据被修改，其他数据哪怕不是同一行，修改操作都会被堵塞。
-MYISAM：优点：
-
-是 ISAM 的扩展，提供了 ISAM 所没有的索引和字段管理。
-使用一种表格锁定机制，来优化并发读写。
-拥有一些有用的扩展，如修...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
     
 </div>
 
@@ -1596,7 +1593,28 @@ MYISAM：优点：
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1863,7 +1881,7 @@ MYISAM：优点：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 131
+        Total : 134
         </div>
         <!-- search  -->
         
@@ -1879,6 +1897,24 @@ MYISAM：优点：
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/iptables/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2022/04/20/2022-04/firewalld/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022-04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
             <a class="archive-post-title" href="/2022/04/07/2022-03/python-3-minutes/">3 分钟学习 (Python)</a>
         </li>
@@ -1886,7 +1922,7 @@ MYISAM：优点：
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/07</span>
-            <a class="archive-post-title" href="/2022/04/07/2022-04/maven/">mvn 笔记精简</a>
+            <a class="archive-post-title" href="/2022/04/07/2022-04/maven-notion/">mvn 笔记精简</a>
         </li>
     
         
