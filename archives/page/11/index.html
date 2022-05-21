@@ -1,6 +1,18 @@
+<!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:21:17
+-->
 <!DOCTYPE html>
 <html lang="">
-    <!-- title -->
+    <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:22:15
+-->
+<!-- title -->
 
 
     
@@ -195,8 +207,8 @@
     <link rel="preload" href="/css/dark.css?v=20211217" as="style">
     <link rel="stylesheet" href="/css/dark.css">
     <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
     <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
     <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
     <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
@@ -209,10 +221,10 @@
     
 <meta name="generator" content="Hexo 6.1.0"></head>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         if (typeof window.$ == undefined) {
-            console.warn('jquery load from jsdelivr failed, will load local script')
+            console.warn('jquery load from bootcdn failed, will load local script')
             document.write('<script src="/lib/jquery.min.js" />')
         }
     </script>
@@ -408,7 +420,7 @@
 
   asyncLoadWithFallBack(
     [
-      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      // 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
       'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
       "/lib/webfontloader.min.js",
     ],
@@ -420,6 +432,91 @@
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
                 <main class="main index-page">
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/17/2019-07/openvpn-make/">
+                
+                <span class="abstract-title-text">编译 OpenVPN 及解决相关依赖问题</span>
+            </a>
+            <div class="abstract-content">
+                
+OpenVPN 是全功能的 SSL VPN，它使用行业标准 SSL&#x2F;TLS 协议实现 OSI 第 2 层或第 3 层安全网络扩展，支持基于证书，智能卡和&#x2F;或用户名&#x2F;密码凭据的灵活的客户端认证方法，并允许用户或使用防火墙规则应用于 VPN 虚拟接口的组专用访问控制策略。OpenVPN 不是 Web 应用程序代理，不通过 Web 浏览器进行操作。
+
+在 OpenVpn 官网下载最新版本的源码包，解压后按开始编译
+123$ ./configure$ make$ sudo make install
+
+configure 过程中会出现相关依赖未安装的错误提示
+
+co...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/16/2019-07/react-nginx/">
+                
+                <span class="abstract-title-text">Nginx 部署 react 项目返回 404</span>
+            </a>
+            <div class="abstract-content">
+                前端时间苦学 React.js，作为愚蠢的后端开发，在面对如此复杂的前端框架，真的是…
+用 dva.js 算是完成了第一个可以用的小工具，在树莓派上编译成 html ，然后新建一个 nginx server，部署。
+直接进根目录是没有问题的，但是如果我直接选择子目录类似: /utils。却返回了 404。
+查了下百度，说法是因为 Nginx 是根据路径去查找文件，但是 react-router 默认编译后只有一个 index.html。
+所以办法是修改 nginx.conf
+123456server &#123;    ...  location / &#123;    try_file...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
     
         
         
@@ -773,88 +870,6 @@ systemctl status httpd.service （服务详细信息） systemctl...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/03/18/2019-07/unixbench/">
-                
-                <span class="abstract-title-text">使用 Unixbench 测试 CPU 性能</span>
-            </a>
-            <div class="abstract-content">
-                Unixbench 是 Linux 用来测试 CPU 综合性能的工具。
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#! /bin/bash#==============================================================##   Description:  Unixbench script                             ##   Author: Teddysun &lt;i@ted...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="cpu">cpu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/03/18/2019-07/zsh-autosuggestions/">
-                
-                <span class="abstract-title-text">oh-my-zsh 安装 zsh-autosuggestions 插件</span>
-            </a>
-            <div class="abstract-content">
-                zsh-autosuggestions 是 oh-my-zsh 的一个试用插件，可以实现动态显示历史输入记录的效果。
-
-和 oh-my-zsh 一般的内置插件不一样，不能通过光改动~/.zshrc来启动，需要额外配置。
-
-  树莓派上安装这个插件，bash 输入变得十分卡顿，因此对于性能较差的机子(尤其是硬盘速度)，不建议使用这个插件。
-
-安装插件从 GitHub 上 clone 插件。
-1git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
-
-启动插件1source ~/....
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="oh-my-zsh">oh-my-zsh</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -866,7 +881,13 @@ systemctl status httpd.service （服务详细信息） systemctl...
                 <!-- profile -->
                 
             </div>
-            <footer class="footer footer-unloaded">
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-05 14:10:53
+-->
+<footer class="footer footer-unloaded">
     <!-- social  -->
     
         <div class="social">
@@ -874,22 +895,13 @@ systemctl status httpd.service （服务详细信息） systemctl...
     
         
             
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:llkj13579@126.com" class="iconfont-archer email" title=email ></a>
             
         
     
         
             
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                    
-                    <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
+                <a href="//github.com/mapleincode" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
@@ -902,7 +914,9 @@ systemctl status httpd.service （服务详细信息） systemctl...
         
     
         
-    
+            
+                <a href="//www.zhihu.com/people/mapleincode" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
         
     
         
@@ -917,6 +931,14 @@ systemctl status httpd.service （服务详细信息） systemctl...
     
         
     
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/830610" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
         
     
         
@@ -936,6 +958,21 @@ systemctl status httpd.service （服务详细信息） systemctl...
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20017606号-1</a>
+                </span>
+            
+            
+                
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704" target="_blank">浙公网安备33011002014704号</a>
+                </span>
+            
+        </div>
     
     <!-- 不蒜子  -->
     
@@ -1627,7 +1664,21 @@ systemctl status httpd.service （服务详细信息） systemctl...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -1898,7 +1949,7 @@ systemctl status httpd.service （服务详细信息） systemctl...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 133
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -1912,6 +1963,18 @@ systemctl status httpd.service （服务详细信息） systemctl...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022-04/python-pip/">python 更换国内镜像源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022-04/python-venv/">python venv</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/19</span>
@@ -3076,6 +3139,11 @@ systemctl status httpd.service （服务详细信息） systemctl...
                 iptables
             </span>
         
+            <span class="sidebar-tag-name" data-tags="python pip">
+                <span class="iconfont-archer">&#xe606;</span>
+                python pip
+            </span>
+        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3117,7 +3185,7 @@ systemctl status httpd.service （服务详细信息） systemctl...
         <!-- dark mode -->
         <script src="/scripts/dark.js?v=20211217"></script>
         <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
         <!-- algolia -->
         
         <!-- busuanzi -->

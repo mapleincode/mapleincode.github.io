@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vmko.cc/2022/05/19/2022-04/python-pip/</loc>
+    
+    <lastmod>2022-05-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2022/05/19/2022-04/python-venv/</loc>
+    
+    <lastmod>2022-05-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/2018/08/23/2019-07/http2/</loc>
+    
+    <lastmod>2022-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vmko.cc/2022/04/19/2022-04/firewalld/</loc>
     
     <lastmod>2022-04-20</lastmod>
@@ -947,15 +974,6 @@
   </url>
   
   <url>
-    <loc>https://blog.vmko.cc/2018/08/23/2019-07/http2/</loc>
-    
-    <lastmod>2022-04-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.vmko.cc/2018/08/09/2019-07/node-buffer/</loc>
     
     <lastmod>2022-04-01</lastmod>
@@ -1219,7 +1237,7 @@
 
   <url>
     <loc>https://blog.vmko.cc/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1227,441 +1245,448 @@
   
   <url>
     <loc>https://blog.vmko.cc/tags/rabbitmq/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/other/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/photography/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/ubuntu/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/shell/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/babel/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/javascript/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/mac-os/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/linux/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/mysql/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/mongodb/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/redis/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/memcache/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/expect/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/git/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/gitlab/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/raspberry/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/docker/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/nginx/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/nodejs/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/gulp/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/http-2/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/python/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/kafka/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/mc/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/java/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/memcached/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/synology/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/vue/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/openssl/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/openvpn/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/pac/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/license/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/reactjs/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/redux/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/san/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/cpu/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/vmware/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/c/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/xp/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/oh-my-zsh/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/elk/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/centos/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/esxi/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/php/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/chrome/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/ink/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/zfs/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/daily/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/sql/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/graphql/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/frp/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/kubernetes/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/prisma/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/zip/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/rar/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/typescript/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/dom/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/mvn/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/firewalld/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/liunx/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vmko.cc/tags/iptables/</loc>
-    <lastmod>2022-04-20</lastmod>
+    <lastmod>2022-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vmko.cc/tags/python-pip/</loc>
+    <lastmod>2022-05-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

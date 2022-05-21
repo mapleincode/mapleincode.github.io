@@ -1,6 +1,18 @@
+<!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:21:17
+-->
 <!DOCTYPE html>
 <html lang="">
-    <!-- title -->
+    <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:22:15
+-->
+<!-- title -->
 
 
     
@@ -195,8 +207,8 @@
     <link rel="preload" href="/css/dark.css?v=20211217" as="style">
     <link rel="stylesheet" href="/css/dark.css">
     <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
     <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
     <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
     <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
@@ -209,10 +221,10 @@
     
 <meta name="generator" content="Hexo 6.1.0"></head>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         if (typeof window.$ == undefined) {
-            console.warn('jquery load from jsdelivr failed, will load local script')
+            console.warn('jquery load from bootcdn failed, will load local script')
             document.write('<script src="/lib/jquery.min.js" />')
         }
     </script>
@@ -408,7 +420,7 @@
 
   asyncLoadWithFallBack(
     [
-      'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      // 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
       'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
       "/lib/webfontloader.min.js",
     ],
@@ -420,6 +432,131 @@
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
                 <main class="main index-page">
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/07/21/2019-07/ssl_cert/">
+                
+                <span class="abstract-title-text">Let&#39;s encrypt 证书申请</span>
+            </a>
+            <div class="abstract-content">
+                呃，这大概是我最短的一次证书申请，比我私签的证书简单了上百倍，全程就花了 1 分钟左右。
+申请证书直接贴地址：
+https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
+国人的作品，我无法表达我的感受，能把一件这么复杂的事情做的和电脑登录微信这么简单。
+首先是安装
+1curl  https://get.acme.sh | sh
+
+
+
+然后目录位置是
+1~/.acme.sh/
+
+
+
+验证域名有两个方式
+
+在网站配置一个静态文件
+在 DNS 配置一个 TEXT 类型的域名文件
+
+主要都是为了验证你就是域名所有人。
+第一种方法据说不...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/07/05/2019-07/id-autoincr/">
+                
+                <span class="abstract-title-text">唯一 ID 生成</span>
+            </a>
+            <div class="abstract-content">
+                MySQL 自增 ID优点:
+
+自增数字
+无需额外操作
+
+缺点:
+
+单点问题
+可以设置 step 解决，例如一个表是 0, 2, 4 另个表是 1, 3, 5。但是这个方法后期扩展性差
+
+
+
+UUID
+v1() 真随机
+v4() 伪随机
+效率 v4() 远超 v1()
+
+优点:
+
+全世界唯一
+
+缺点:
+
+太长，做主键会降低性能，并且更多的容量
+不能生成递增有序的数字
+可以通过时间算法计算出时间戳
+
+
+mac 地址泄漏(?，没有查到这个事情)
+
+Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId()
+优点：
+支持多表
+缺点：
+
+所有表写入性能...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
     
         
         
@@ -753,92 +890,6 @@ socket IO 导致的上下文切换开销
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/02/21/2019-07/grub2/">
-                
-                <span class="abstract-title-text">关于 grub2 的修复</span>
-            </a>
-            <div class="abstract-content">
-                现在 Linux 的版本做的优化也是越来越到位，无论是功能，样式还是上手度都比以前好了很多。但是 Linux 的多样化造成经常一更新代码就挂掉。(表示更新 Fedora、OpenSUSE、Linux Mint 全部挂掉了)。不过因为相互兼容，所以重装也比较方便。但是以前重装 Windows 就不一样了。重装完 Windows 之后 Grub2 会被删的一干二净。
-windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
-
-首先是需要一个 Ubuntu 启动盘（U 盘 or 光盘）。进入系统。
-
-切换成 root 账户su root
-
-查看分区并挂载系统区。
-12fdisk -...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
-                
-                <span class="abstract-title-text">Python 字符串中的转移符</span>
-            </a>
-            <div class="abstract-content">
-                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
-在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
-12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
-
-正确做法应该是:
-12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
-
-当然大部分语言都是这个样子。如果包含\
-在 P...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
@@ -850,7 +901,13 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
                 <!-- profile -->
                 
             </div>
-            <footer class="footer footer-unloaded">
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-05 14:10:53
+-->
+<footer class="footer footer-unloaded">
     <!-- social  -->
     
         <div class="social">
@@ -858,22 +915,13 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
         
             
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:llkj13579@126.com" class="iconfont-archer email" title=email ></a>
             
         
     
         
             
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                    
-                    <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
+                <a href="//github.com/mapleincode" class="iconfont-archer github" target="_blank" title=github></a>
             
         
     
@@ -886,7 +934,9 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
     
         
-    
+            
+                <a href="//www.zhihu.com/people/mapleincode" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
         
     
         
@@ -901,6 +951,14 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
         
     
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/830610" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
         
     
         
@@ -920,6 +978,21 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20017606号-1</a>
+                </span>
+            
+            
+                
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704" target="_blank">浙公网安备33011002014704号</a>
+                </span>
+            
+        </div>
     
     <!-- 不蒜子  -->
     
@@ -1611,7 +1684,21 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -1882,7 +1969,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 133
+        Total : 135
         </div>
         <!-- search  -->
         
@@ -1896,6 +1983,18 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022-04/python-pip/">python 更换国内镜像源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022-04/python-venv/">python venv</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/19</span>
@@ -3060,6 +3159,11 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
                 iptables
             </span>
         
+            <span class="sidebar-tag-name" data-tags="python pip">
+                <span class="iconfont-archer">&#xe606;</span>
+                python pip
+            </span>
+        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3101,7 +3205,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         <!-- dark mode -->
         <script src="/scripts/dark.js?v=20211217"></script>
         <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
         <!-- algolia -->
         
         <!-- busuanzi -->
