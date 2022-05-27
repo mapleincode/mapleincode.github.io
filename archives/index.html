@@ -440,6 +440,79 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/05/27/2022-04/rabbitmq-client/">
+                
+                <span class="abstract-title-text">RabbitMQ 客户端(nodejs)</span>
+            </a>
+            <div class="abstract-content">
+                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/27">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">
+                
+                <span class="abstract-title-text">gitlab 升级失败 or gitlab-ctl reconfigure 失败</span>
+            </a>
+            <div class="abstract-content">
+                问题通过 apt 升级 gitlab-ce 发生错误。提示 gitlab-ctl reconfigure 失败。
+1234567Running handlers:There was an error running gitlab-ctl reconfigure:rails_migration[gitlab-rails] (gitlab::database_migrations line 51) had an error: Mixlib::ShellOut::ShellCommandFailed: bash[migrate gitlab-rails database] (/opt/gitl...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/27">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/05/19/2022-04/python-pip/">
                 
                 <span class="abstract-title-text">python 更换国内镜像源</span>
@@ -783,107 +856,6 @@ Maven 定位
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/02/09/2022-01/unrar/">
-                
-                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
-            </a>
-            <div class="abstract-content">
-                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
-方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
-packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
-1pip install zipfile
-
-
-
-存在问题：gbk 文件名乱码
-因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
-有...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/16/2021-09/synology-drive-icon/">
-                
-                <span class="abstract-title-text">Synolog 群晖 Drive 图标不显示的问题</span>
-            </a>
-            <div class="abstract-content">
-                群晖作为有效生产力工具，对我而言是完全不可能缺少的工具。至少解决了我上下班带电脑的问题。
-Drvie 作为同步工具，虽然速度上不怎么样，但是至少可以实现跨设备同步。尤其是还完美支持了  Ubuntu 上的同步。
-群晖 Drvie 一般情况下会出现两个问题：
-
-同步无权限
-同步状态图标不显示
-
-今天主要解决的是第二个问题。
-原因原因主要是 3 点：
-
-软件自身 BUG
-软件在注册表的路径被破坏。
-软件服务被禁用。
-文件浏览器里任务图标优先级被覆盖。
-
-解决软件 BUG重装。
-说实话比较少见，但是也遇到过。主要是 Mac 端容易出现不稳定的情况。
-注册表路径被破坏修复方案参考知乎大佬
-htt...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
     
 </div>
 
@@ -1696,7 +1668,21 @@ htt...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -1971,7 +1957,7 @@ htt...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -1985,6 +1971,18 @@ htt...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022-04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>

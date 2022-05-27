@@ -455,6 +455,107 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/02/09/2022-01/unrar/">
+                
+                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
+            </a>
+            <div class="abstract-content">
+                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
+方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
+packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
+1pip install zipfile
+
+
+
+存在问题：gbk 文件名乱码
+因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
+有...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/09/16/2021-09/synology-drive-icon/">
+                
+                <span class="abstract-title-text">Synolog 群晖 Drive 图标不显示的问题</span>
+            </a>
+            <div class="abstract-content">
+                群晖作为有效生产力工具，对我而言是完全不可能缺少的工具。至少解决了我上下班带电脑的问题。
+Drvie 作为同步工具，虽然速度上不怎么样，但是至少可以实现跨设备同步。尤其是还完美支持了  Ubuntu 上的同步。
+群晖 Drvie 一般情况下会出现两个问题：
+
+同步无权限
+同步状态图标不显示
+
+今天主要解决的是第二个问题。
+原因原因主要是 3 点：
+
+软件自身 BUG
+软件在注册表的路径被破坏。
+软件服务被禁用。
+文件浏览器里任务图标优先级被覆盖。
+
+解决软件 BUG重装。
+说实话比较少见，但是也遇到过。主要是 Mac 端容易出现不稳定的情况。
+注册表路径被破坏修复方案参考知乎大佬
+htt...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2021/09/13/2021-09/memcache-lock/">
                 
                 <span class="abstract-title-text">memcached 实现高并发条件下全局锁</span>
@@ -796,92 +897,6 @@ kubeadm: 相当于 server 端。
     
 </div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/08/2021-04/nginx-ws/">
-                
-                <span class="abstract-title-text">Nginx 支持 WebSocket</span>
-            </a>
-            <div class="abstract-content">
-                12345678910111213141516171819202122232425262728293031# 编辑nginx.conf，在http区域内一定要添加下面配置：map $http_upgrade $connection_upgrade &#123;    default upgrade;    &#x27;&#x27; close;&#125; # map指令的作用：# 该作用主要是根据客户端请求中$http_upgrade 的值，来构造改变$connection_upgrade的值，即根据变量$http_upgrade的值创建新的变量$connection_upgrade，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/02/24/2021-02/baijiu/">
-                
-                <span class="abstract-title-text">中国白酒分类</span>
-            </a>
-            <div class="abstract-content">
-                
-
-
-香型
-标准
-制作
-色泽和外观
-香气
-口味口感
-典型代表
-
-
-
-酱香型 Jiang-flavour Chinese spirits
-GB&#x2F;T 26760-2011
-以高粱、小麦、水等为原料，经传统固态法发酵、贮存、勾兑而成[17]
-无色或微黄，清亮透明，无悬浮物，无沉淀
-酱香突出，香气幽雅，空杯留香持久
-酒体醇厚、丰满，诸位协调，余味悠长
-贵州茅台 贵州匀酒 湖南武陵酒 四川郎酒 芦台春 燕岭春
-
-
-浓香型 Strong aromatic Chinese spirits
-GB&#x2F;T 10781.1-2006
-以粮谷为原料，采用浓香大曲为糖化发酵剂，经泥窖固态发酵，固...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/24</span>
-                </div>
-                <!-- tags -->
                 
             </div>
         </article>
@@ -1770,7 +1785,21 @@ GB&#x2F;T 10781.1-2006
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2045,7 +2074,7 @@ GB&#x2F;T 10781.1-2006
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -2059,6 +2088,18 @@ GB&#x2F;T 10781.1-2006
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022-04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>

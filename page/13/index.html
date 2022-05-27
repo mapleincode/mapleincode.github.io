@@ -455,6 +455,97 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/01/22/2019-07/rasp-hdd/">
+                
+                <span class="abstract-title-text">树莓派用机械硬盘当系统盘</span>
+            </a>
+            <div class="abstract-content">
+                
+  全程参考一个大佬的文章 https://mynook.info/blog/post/boot-raspberrypi-from-external-hdd
+
+方案一直对树莓派的读写速度十分不能接受，也曾想去某宝上找 EMMC 转 SD 的套件，但是听那个老板说 EMMC 芯片一百+，觉得有点贵，毕竟树莓派也仅仅支持 USB2.0。于是乎，在某家库存店找了一个 80G 的库存的机械硬盘(￥60)，又买了一根双 USB 的易驱线(树莓派的 USB 供电支持不了机械硬盘)。
+
+  简单搜索了一下发现直接从硬盘启动是不行的，因为树莓派启动的时候固定是从 SD 卡的第一个分区（&#x2F;bo...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/22</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/12/29/2019-07/virtual-dom/">
+                
+                <span class="abstract-title-text">深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
+            </a>
+            <div class="abstract-content">
+                作者：戴嘉华
+转载请注明出处并保留原文链接(#13)和作者信息。
+目录：
+1 前言
+2 对前端应用状态管理思考
+3 Virtual DOM 算法
+4 算法实现
+4.1 步骤一：用JS对象模拟DOM树
+4.2 步骤二：比较两棵虚拟DOM树的差异
+4.3 步骤三：把差异应用到真正的DOM树上
+
+
+5 结语
+6 References
+
+1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
+本文...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="dom">dom</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2017/12/26/2019-07/git-no-ff/">
                 
                 <span class="abstract-title-text">git merge --no-ff</span>
@@ -780,94 +871,6 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/11/21/2019-07/database-install/">
-                
-                <span class="abstract-title-text">常用数据库(缓存)的简单安装配置</span>
-            </a>
-            <div class="abstract-content">
-                用于日常代码调试测试开发。如果稳定使用建议 docker 搭建数据库。
-环境树莓派 Ubuntu 16.04
-MySQL安装1sudo apt install mysql-server
-
-配置MySQL 的配置文件位于 /etc/mysql/。
-一般名称为my.cnf或者mysqld.cnf。
-因为一般开发用的 MySQL 都是外网调用，所以需要修改bind-address。注释或者修改成你所在的局域网的 IP。(如果数据库在公网暴露且有信息存储，请勿注释该代码)。
-创建用户并授权创建用户1CREATE USER &quot;hello&quot;@&quot;%&quot; IDENT...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mongodb">mongodb</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="memcache">memcache</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/11/20/2019-07/inode/">
-                
-                <span class="abstract-title-text">优化 Ext4 分区 inode 占用空间问题</span>
-            </a>
-            <div class="abstract-content">
-                
-  去年年底购入了渣雷的下载宝，用  ntfs 格式化后，性能一直不佳(后面发现是因为那个渣系统会索引文件)，后用 ext4 格式，但是格式之后发现居然少了 15G 左右。
-
-inodeinode是指在许多“类Unix文件系统”中的一种数据结构。每个inode保存了文件系统中的一个文件系统对象（包括文件、目录、设备文件、socket、管道, 等等）的元信息数据，但不包括数据内容或者文件名。(from: 维基百科)
-通俗的说，inode 其实就是文件的索引值。
-inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统自动将硬盘分成两个区域。一个是数据区，存放文件数据；另一个是 ino...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/20</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
@@ -1761,7 +1764,21 @@ inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2036,7 +2053,7 @@ inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -2050,6 +2067,18 @@ inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022-04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>

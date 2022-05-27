@@ -440,6 +440,89 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/04/07/2019-07/nas-ssh-error/">
+                
+                <span class="abstract-title-text">群晖 SFTP 连接失败</span>
+            </a>
+            <div class="abstract-content">
+                群晖系统(Synology DiskStation)可以说是 NAS 系统中最完美的系统（虽然我也就用了他一个）。基本他集成了所有我们所需要的功能，而且性能强大。
+因为需要在局域网内进行文件传输，因为平时都是用 SSH 来通讯的，所以直接用 NAS 用自带 SFTP 服务来传输文件非常方便。
+之前有一次，将局域网里的某个机子重装了之后，在 NAS 上通过 SFTP 服务访问却得到了 链接失败。
+考虑了下，应该是known_hosts捣的鬼。
+常用 SSH 的人，对known_hosts一定很了解，本身它是为了安全而生，访问你访问到一个虚假的系统。通常，如果一个域名或者 IP 的 ssh-...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/28/2019-07/static-ip/">
+                
+                <span class="abstract-title-text">Linux 静态 IP 设置</span>
+            </a>
+            <div class="abstract-content">
+                整理虚拟机的 IP。
+路由器原来的 IP 段是192.168.2.0。为了方便管理，想把所有主机的 IP 改成 192.168.1.x。
+子网掩码虽然大学教过但是完全不知道这是什么东西。
+抽空看了一个小时基本理解了他的作用。
+将子网掩码从255.255.255.0改成255.255.252.0，这样就可以接受 192.168.0.x -&gt; 192.168.3.x的 IP 了。
+配置静态 IPUbuntu 下配置 IP 的文件是/etc/network/interfaces。
+默认配置为:
+123# The primary network interfaceauto ens32ifa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/03/18/2019-07/unixbench/">
                 
                 <span class="abstract-title-text">使用 Unixbench 测试 CPU 性能</span>
@@ -740,97 +823,6 @@ G...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="pac">pac</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/01/22/2019-07/rasp-hdd/">
-                
-                <span class="abstract-title-text">树莓派用机械硬盘当系统盘</span>
-            </a>
-            <div class="abstract-content">
-                
-  全程参考一个大佬的文章 https://mynook.info/blog/post/boot-raspberrypi-from-external-hdd
-
-方案一直对树莓派的读写速度十分不能接受，也曾想去某宝上找 EMMC 转 SD 的套件，但是听那个老板说 EMMC 芯片一百+，觉得有点贵，毕竟树莓派也仅仅支持 USB2.0。于是乎，在某家库存店找了一个 80G 的库存的机械硬盘(￥60)，又买了一根双 USB 的易驱线(树莓派的 USB 供电支持不了机械硬盘)。
-
-  简单搜索了一下发现直接从硬盘启动是不行的，因为树莓派启动的时候固定是从 SD 卡的第一个分区（&#x2F;bo...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/29/2019-07/virtual-dom/">
-                
-                <span class="abstract-title-text">深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
-            </a>
-            <div class="abstract-content">
-                作者：戴嘉华
-转载请注明出处并保留原文链接(#13)和作者信息。
-目录：
-1 前言
-2 对前端应用状态管理思考
-3 Virtual DOM 算法
-4 算法实现
-4.1 步骤一：用JS对象模拟DOM树
-4.2 步骤二：比较两棵虚拟DOM树的差异
-4.3 步骤三：把差异应用到真正的DOM树上
-
-
-5 结语
-6 References
-
-1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
-本文...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dom">dom</a>
     
 </div>
 
@@ -1643,7 +1635,21 @@ G...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -1918,7 +1924,7 @@ G...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -1932,6 +1938,18 @@ G...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022-04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>

@@ -455,6 +455,103 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/09/09/2020-09/lock/">
+                
+                <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
+            </a>
+            <div class="abstract-content">
+                悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
+
+Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
+
+
+适合多写环境
+
+乐观锁
+不上锁
+更新前判断数据是否被更新
+使用版本号机制和 CAS 算法
+适合多读少写环境
+
+
+在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
+
+总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
+
+对于资源竞争较少（线程冲突...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="sql">sql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/05/2020-08/redis-cluster/">
+                
+                <span class="abstract-title-text">redis 集群</span>
+            </a>
+            <div class="abstract-content">
+                redis 3.0 引入的新功能。
+
+然后去看了下现在 redis 已经是 6.x 了
+
+逻辑根据 CRC16 把 key 值分到 16383 个槽内。然后把若干个节点设置分别维护若干个槽。实现节点分布式。
+缺点
+不支持多 key 值操作（因为不同 key 值可能属于若干个节点）。
+事务只支持单 key 事务
+支持 0 库
+
+集群搭建
+三节点主从库。
+只记录，未测试
+
+0. redis.conf 相关 cluster 参数
+cluster-enabled: 如果想在特定的Redis实例中启用Redis群集支持就设置为yes。 否则，实例通常作为独立实例启动。
+
+cluster-confi...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/09/05/2020-08/api-gateway/">
                 
                 <span class="abstract-title-text">API 网关功能</span>
@@ -797,90 +894,6 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="ink">ink</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/18/2020-05/chrome-auto-sign-in/">
-                
-                <span class="abstract-title-text">解决 Chrome 无法自动填充账号密码的问题</span>
-            </a>
-            <div class="abstract-content">
-                前段时间在折腾浏览器的时候，不知道怎么一搞，导致在登录界面，Chrome 不会自动把账户密码填充到登录账户密码栏里。也就是进入一个页面之后，需要手动点击账户栏，选择账户才会填入正确密码。
-我尝试重新登录账户，清除数据，卸载 Chrome 重启等操作均无法解决问题。
-忽然想到，MacOS 拖程序到回收站其实并不算完全卸载，即使删除用户数据，也会存留部分数据在用户数据文件夹。
-
-一般情况我会使用 CleanMyMac 来卸载，没想到这玩意儿也没有完全卸载。
-
-搜索 Google （吐槽重置之后，地址栏输入居然变成了百度）之后，找到了卸载 Chrome 的正确姿势：
-
-在计算机屏幕的底部，右键...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="chrome">chrome</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/08/2020-05/zfs/">
-                
-                <span class="abstract-title-text">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</span>
-            </a>
-            <div class="abstract-content">
-                
-原文: https://zhuanlan.zhihu.com/p/45137745
-
-今天，我们来谈论一下 ZFS，一个先进的文件系统。我们将讨论 ZFS 从何而来，它是什么，以及为什么它在科技界和企业界如此受欢迎。
-虽然我是一个美国人，但我更喜欢读成 ZedFS 而不是 ZeeFS，因为前者听起来更酷一些。你可以根据你的个人喜好来发音。
-
-注意：在这篇文章中，你将会看到 ZFS 被提到很多次。当我在谈论特性和安装的时候，我所指的是 OpenZFS 。自从 *甲骨文(Oracle)*公司放弃 OpenSolaris 项目之后，ZFS（由甲骨文公司开发）和 OpenZFS 已经走向了不同...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zfs">zfs</a>
     
 </div>
 
@@ -1772,7 +1785,21 @@ Safari 写了四五个月没洗笔，状况都很良好
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2047,7 +2074,7 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -2061,6 +2088,18 @@ Safari 写了四五个月没洗笔，状况都很良好
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022-04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>

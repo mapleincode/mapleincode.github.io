@@ -455,6 +455,87 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/03/13/2019-07/redis-concurrence/">
+                
+                <span class="abstract-title-text">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</span>
+            </a>
+            <div class="abstract-content">
+                最近做了一个项目，涉及了大量的 redis IO 读写。
+原先的方式采用了单命令，一个操作往往涉及多个请求，写入和读取数据的效率十分低。因此，期望通过打包命令的方式，来减少网络请求 IO 对效率的影响
+在网上找到某大佬关于 redis 单条命令请求效率低的解释:
+
+
+socket IO 导致的上下文切换开销
+熟悉 OS／Linux 的童鞋都知道，一次 redis 请求在客户端和服务端分别至少会存在一次 read() 和一次 write() ，作为系统调用，read／write 的成本高于普通的函数调用，因此，在单个命令重复调用场景下，大量的 read&#x2F;write 系统调用会产生...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/02/25/2019-07/mc-server-input-error/">
+                
+                <span class="abstract-title-text">MC 服务器启动之后无法在服务端输入指令</span>
+            </a>
+            <div class="abstract-content">
+                不久前，发现 MC 服务器居然不能输入指令关闭服务器，在启动过程中有报错。
+123456789101112java.io.IOException: Resource temporarily unavailable	at java.io.FileInputStream.readBytes(Native Method)	at java.io.FileInputStream.read(FileInputStream.java:272)	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)	at java.io.Buf...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mc">mc</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/02/21/2019-07/grub2/">
                 
                 <span class="abstract-title-text">关于 grub2 的修复</span>
@@ -770,87 +851,6 @@ Example12345678910111213let handler = &#123;    get: function(target, name) &#12
         <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/10/31/2019-07/kafka-auto-offset-reset/">
-                
-                <span class="abstract-title-text">Kafka auto.offset.reset 值</span>
-            </a>
-            <div class="abstract-content">
-                首先附上别人的文章：
-earliest当各分区下有已提交的 offset 时，从提交的 offset 开始消费；无提交的 offset 时，从头开始消费 
-latest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
-nonetopic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的 offset，则抛出异常
-
-
-作者：lishuangzhe7047 
-来源：CSDN 
-原文：https://blog.csdn.net/lishuangzhe7047/article/detail...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/31</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kafka">kafka</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/30/2019-07/iterator/">
-                
-                <span class="abstract-title-text">iterator(迭代器)</span>
-            </a>
-            <div class="abstract-content">
-                Node 版本:
-1234567891011121314151617function * hello(max) &#123;    let count = 0;    let a = 1, b = 1, tmp = 1;    while(count &lt; max) &#123;        yield a;        tmp = a;        a = b;        b = tmp + b;        count ++;    &#125;&#125;for(const i of hello(500)) &#123;    console.log(i);&#12...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/30</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
     
 </div>
 
@@ -1742,7 +1742,21 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2017,7 +2031,7 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 135
+        Total : 137
         </div>
         <!-- search  -->
         
@@ -2031,6 +2045,18 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022-04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>
