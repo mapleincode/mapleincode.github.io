@@ -440,6 +440,359 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2021/09/13/2021-09/memcache-lock/">
+                
+                <span class="abstract-title-text">memcached 实现高并发条件下全局锁</span>
+            </a>
+            <div class="abstract-content">
+                在支持 redis 的项目中，我很喜欢用
+1redis.incr();
+
+因为 redis 操作具有原子性，可以通过这个函数实现原子级的同步锁。
+而 memcache 却不能实现这样的效果，我考虑设想了了一个方案。
+123456789101112131415async funciton lock(key) &#123;  const value = uuid.v4();  const expire = 120 * 1000;    const _result = await mem.get(key);  if (_result) return false;  	await mem.set...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/09/13/2021-09/raspberry-watchdog/">
+                
+                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
+            </a>
+            <div class="abstract-content">
+                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
+在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
+然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
+解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
+
+系统:
+
+raspberry 4B
+ubuntu 20.04
+
+
+安装流程
+在 config.txt 从硬件上打开 watchdog 功能
+12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/07/21/2021-07/esxi-copy/">
+                
+                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
+            </a>
+            <div class="abstract-content">
+                修改办法设置 - 高级 - 编辑配置
+添加
+12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
+
+
+
+其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
+
+
+
+Warining注意 vmware tools 的状态
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/05/25/2021-04/k8s-demo-mysql/">
+                
+                <span class="abstract-title-text">k8s mysql demo</span>
+            </a>
+            <div class="abstract-content">
+                
+mysql-rc.yaml
+
+123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/05/24/2021-04/frp/">
+                
+                <span class="abstract-title-text">frp 的使用</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+frp 堪称一神器。只要你拥有一台公网服务器，然后开启一个 tcp 端口，即可快乐的玩耍 frp。
+
+个人方案原本是搭建在树莓派 4 上。无奈那玩意儿实在不稳定。
+目前搭建在基于 esxi 的虚拟机上。
+网络环境是普通的家用电信宽带，依赖 ddns 服务实现域名更新。
+
+安装 &amp; 启动在 Release 页面下载对应的文件包，解压。
+主要包含以下文件
+12345678910├── README.md├── frpc # or frpc.exe├── frpc.ini├── frps # or frpc.exe├── frps.ini└── systemd    ├──...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="frp">frp</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/23/2021-04/prisma-connection-urls/">
+                
+                <span class="abstract-title-text">Prisma connection URLs</span>
+            </a>
+            <div class="abstract-content">
+                PostgreSQL12341datasource db &#123;2  provider = &quot;postgresql&quot;3  url      = &quot;postgresql://janedoe:mypassword@localhost:5432/mydb&quot;4&#125;
+
+MySQL12341datasource db &#123;2  provider = &quot;mysql&quot;3  url      = &quot;mysql://janedoe:mypassword@localhost:3306/mydb&quot;4&#125;...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="prisma">prisma</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/23/2021-04/GraphQL/">
+                
+                <span class="abstract-title-text">GraphQL</span>
+            </a>
+            <div class="abstract-content">
+                simple example12345678query &#123;  aman &#123;    id    ago: ago # 年龄    name    sex  &#125;&#125;
+
+
+
+字段 &amp; 别名123456789101112query &#123;  groups &#123;    id    name    apis &#123;      id      name      code: uri    &#125;  &#125;&#125;
+
+
+
+参数1234567891011query &#123;  groups(ids: [100000010...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="graphql">graphql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/12/2021-04/kubernetes/">
+                
+                <span class="abstract-title-text">kubernetes 学习</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+kubernetes核心是容器。
+1. 工具 &amp; 环境参考：https://kubernetes.io/zh/docs/tasks/tools/
+
+工具
+kubectl: 管理工具，相当于管理 client 端。
+kubeadm: 相当于 server 端。
+
+
+服务器
+两台 4 核心 4G 的虚拟机
+
+
+
+
+每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)
+
+
+本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。
+
+2. 安...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2021/04/08/2021-04/nginx-ws/">
                 
                 <span class="abstract-title-text">Nginx 支持 WebSocket</span>
@@ -519,395 +872,10 @@ GB&#x2F;T 10781.1-2006
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/12/01/2020-11/aliyun-data-disk-format/">
-                
-                <span class="abstract-title-text">阿里云 Ubuntu 数据盘格式化和挂载</span>
-            </a>
-            <div class="abstract-content">
-                阿里云数据盘默认挂载之后不会分区、格式化、挂载。需要手动处理这个逻辑。
-也适用于普通 Ubuntu 系统的情况。
-1. 找到磁盘1fdisk -l
-
-查找到所有磁盘和分区信息。
-找到未分区或者未格式化的磁盘编号 /dev/xxx
-2. 对磁盘进行分区输入：
-1fdisk -u /dev/vdb
-
-输入 n 创建一个新的分区输入 p 选择创建分区类型为 primary
-
-BMR 分区表默认只支持 4 个主分区
-
-输入 1 选择仅创建一个分区
-然后选择第一个可用的扇区编号，我们这边直接回车，输入默认的 2048。
-然后是输入最后一个扇区编号，我们这边依然回车，输入默认值。
-然后输入 p 可以...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/23/2020-11/dpkg-bad-inconsistent-state/">
-                
-                <span class="abstract-title-text">Dpkg 包损坏无法安装 &amp; 卸载</span>
-            </a>
-            <div class="abstract-content">
-                卸载时报错：
-12package is in a very bad inconsistent state;you should reinstall it before attempting a removal
-
-
-
-解决方法：
-
-强制卸载
-
-1sudo dpkg --remove --force-remove-reinstreq xxxxxx
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/13/2020-11/syno-install/">
-                
-                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
-            </a>
-            <div class="abstract-content">
-                1. 准备设备
-nas 电脑设备一台
-其他 PC 设备一台
-启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
-
-2. 准备文件
-DSM_DS918+_25426.pat 
-系统安装文件。
-可以官网直接下载。
-目前时间段最新的系统安装文件(2020-11-13)
-如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
-
-
-DS918+_6.23-25426-1.04b（引导文件）.img
-引导文件
-
-
-DS918-6.23_1.04b的扩展驱动0.13.3.zip
-驱动扩展，用于增强驱动，支持 2.5G 网卡
-
-
-libsynon...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/09/2020-11/syno/">
-                
-                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
-            </a>
-            <div class="abstract-content">
-                关于 nas 的推荐1. 按照系统
-群晖
-推荐
-扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
-应用极多，而且包含桌面应用和移动应用
-黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
-白群晖缺点： 贵
-
-
-FreeNAS
-使用不多
-硬件要求相对高一点 &amp; 开源
-UI 还行，现在和 True NAS 合并了
-
-
-Linux &amp; Samba
-就是 Linux 服务器
-
-
-Windows Server
-就是 windows 服务器
-
-
-unraid &amp; vmware
-都是虚拟机，会损耗部分性能。
-
-
-
-2. 按照硬盘数
-2.5 寸 x 1
-ar...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/10/19/2020-10/zhenglun/">
-                
-                <span class="abstract-title-text">争论的艺术</span>
-            </a>
-            <div class="abstract-content">
-                今天打车，遇到一个很健谈的司机。
-
-好像所有司机都很健谈，而且谈过之后司机的态度就会 MAX
-
-提到关于国产品牌和进口品牌。我想到之前在群里就遇到一个人死顶苹果的摄像头。
-认为苹果的摄像头比华为好。因为苹果的摄像头比较真实，拍出来的人比较丑。
-但是华为的话，通过软硬件对图形进行渲染，拍出来的人虽然好看，但是反而是辣鸡。
-和那个大哥谈论下，基本几分钟就把比较中立的结论给定了下来：
-
-华为的渲染记录也是功能和特性之一。
-即使苹果的拍照渲染程度小，但是和实物，或者哪怕是单反效果相比，都要差的多
-日常生活中，大家拍照，无论是拍人和拍物，本身就是为了纪念，也是为了好看。
-而相反的是，苹果摄像头的特...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/10/14/2020-10/dash-bash/">
-                
-                <span class="abstract-title-text">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</span>
-            </a>
-            <div class="abstract-content">
-                造成原因，Debian 和 Ubuntu 的 &#x2F;bin&#x2F;sh 指向的是 dash 而不是 bash。
-
-Dash Shell 比 Bash Shell 小的多，符合POSIX标准。
-Dash 支持的命令比 Bash 要小
-查看状态: ls &#x2F;bin&#x2F;sh -al
-重新配置: udo dpkg-reconfigure dash
-
-区别主要有
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/22/2020-09/raspberry-usb-start/">
-                
-                <span class="abstract-title-text">raspberry 4B Ubuntu 系统 USB 启动</span>
-            </a>
-            <div class="abstract-content">
-                raspberry 4B，现在是觉得坑多于喜。
-为了减少系统盘对性能的影响，所以我们使用外接 USB 系统盘的办法。
-而树莓派默认只支持从 SD 读取。
-
-隔壁 raspbian 已经支持无卡 usb 启动了，ubuntu 啥时候支持下？
-
-早期是通过修改 cmdline.txt 里的 root
-1root=/dev/mmcblk0p2
-
-修改为
-1root=/dev/sda2
-
-也就是在 sda 上所在的系统分区。
-而更新到 18.04.4 之后(大概)，cmdline.txt 改成了 btcmd.txt。而整个启动命令变成了
-1net.ifnames=0 dwc_otg.lpm_en...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/16/2020-09/raspberry/">
-                
-                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
-            </a>
-            <div class="abstract-content">
-                
-本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
-对于物联网、家用办公等等需求的人而言，毫无意义
-
-第一个树莓派五年前，我入手了树莓派 2。
-作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
-而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
-但是树莓派 2 有若干致命的问题：
-
-usb 只有 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/2/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/2/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/4/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1718,7 +1686,63 @@ usb 只有 ...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1997,7 +2021,7 @@ usb 只有 ...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -2011,6 +2035,54 @@ usb 只有 ...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -3202,6 +3274,21 @@ usb 只有 ...
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>

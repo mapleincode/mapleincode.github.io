@@ -440,6 +440,344 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/08/29/2019-07/python-with-as/">
+                
+                <span class="abstract-title-text">Python with as 的作用</span>
+            </a>
+            <div class="abstract-content">
+                Python with as 的作用这几天在入门 Python，https://learnxinyminutes.com/docs/python3/，看到 with as，这边说了一句
+
+# Instead of try&#x2F;finally to cleanup resources you can use a with statement
+如果不使用 try&#x2F;finally 来清理资源，你可以使用声明这个功能。
+
+123with open(&quot;1.txt&quot;) as f	for line in f:		print(line)
+
+首先说下 with as 的...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/29/2019-07/mysql-ACID/">
+                
+                <span class="abstract-title-text">MySQL 事务</span>
+            </a>
+            <div class="abstract-content">
+                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
+我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
+事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
+
+原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+
+一致性：在事务开始之前和事务...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/27/2019-07/guanchazhe/">
+                
+                <span class="abstract-title-text">Node 和观察者设计模式</span>
+            </a>
+            <div class="abstract-content">
+                观察者设计模式观察者模式（有时又被称为模型-视图（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
+总的来说，例如 Node 的事件机制。除非是一个不包含异步的程序(如果没有异步逻辑，那这个程序在执行结束前都不会有事件循环)，否则一般程序在拥有带监听的 IO 事件(或者是网络套接字)的观察者时，就会通过线程层(libuv)不断的是轮询这些事件有没有完成。而系统在完成 IO 之后，将...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/26/2019-07/mysql-engines/">
+                
+                <span class="abstract-title-text">MySQL 引擎</span>
+            </a>
+            <div class="abstract-content">
+                ISAM优点：
+读取速度快，不占用大量内存与存储资源。
+缺点：
+不能够容错，不支持事务处理。
+ISAM 设计为了那些读取比较频繁，但是写入比较少的操作，例如数据中心。它可以占用较少的内存和资源对数据进行读取。但是相应的缺少了一些机制，比如事务和容错性。尤其是容错性，硬盘的错误会导致整个库的数据都被丢失。
+其次是加锁和并发问题，一旦涉及数据写入，整张表都会被进行加锁，这样一旦有一个数据被修改，其他数据哪怕不是同一行，修改操作都会被堵塞。
+MYISAM：优点：
+
+是 ISAM 的扩展，提供了 ISAM 所没有的索引和字段管理。
+使用一种表格锁定机制，来优化并发读写。
+拥有一些有用的扩展，如修...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/23/2019-07/http2/">
+                
+                <span class="abstract-title-text">在树莓派上升级 Nginx 开启 HTTP/2</span>
+            </a>
+            <div class="abstract-content">
+                因为家里的路由器支持的 NAT 端口的数量只能有限的 20 个。随着自己乱七八糟的服务越来越多，不得不用家里的树莓派靠 Nginx 做了一层反向代理。支持根据域名访问不同的地址。
+随着 Chrome 开始推荐 Https，用了自签证书搞了 Https。
+然后看到了  HTTP&#x2F;2。心想反正搞干脆搞好点。然后用我那个树莓派来折腾 HTTP&#x2F;2。
+
+不得不说树莓派真的适合学习 Linux。
+
+关于 HTTP&#x2F;2HTTP&#x2F;2 （原名HTTP&#x2F;2.0）即超文本传输协议 2.0，是下一代HTTP协议。(From 百度百科)。
+
+支持异步连接多路复用...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/16">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="http/2">http/2</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/09/2019-07/node-buffer/">
+                
+                <span class="abstract-title-text">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</span>
+            </a>
+            <div class="abstract-content">
+                转载自 https://segmentfault.com/a/1190000009547330
+
+本文摘录自《Nodejs学习笔记》，更多章节及更新，请访问 github主页地址。欢迎加群交流，群号 197339705。
+
+模块概览Buffer是node的核心模块，开发者可以利用它来处理二进制数据，比如文件流的读写、网络请求数据的处理等。
+Buffer的API非常多，本文仅挑选 比较常用&#x2F;容易理解 的API进行讲解，包括Buffer实例的创建、比较、连接、拷贝、查找、遍历、类型转换、截取、编码转换等。
+创建
+Buffer.from(array)
+Buffer.alloc(len...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/08/2019-07/expect/">
+                
+                <span class="abstract-title-text">Expect 使用小记</span>
+            </a>
+            <div class="abstract-content">
+                Expect 使用小记Expect 是 unix 系统中用来进行自动化控制和测试的软件工具，由 DonLibes 制作，作为 Tcl 脚本语言的一个扩展，应用在交互式软件中如 telnet，ftp，Passwd，fsck，rlogin，tip，ssh 等等。该工具利用Unix 伪终端包装其子进程，允许任意程序通过终端接入进行自动化控制。
+基本指令
+spawn
+1spawn ssh $user@$host -p $port
+
+expect &amp; send
+12expect &quot;password:&quot;send &quot;$password\r&quot;
+
+12345...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="expect">expect</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/07/09/2019-07/git-branch-all/">
+                
+                <span class="abstract-title-text">git 拉取所有远程分支</span>
+            </a>
+            <div class="abstract-content">
+                123git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; donegit fetch --allgit pull --all
+
+来自 Stackoverflow
+链接：http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/07/05/2019-07/memcached-node-package/">
                 
                 <span class="abstract-title-text">Nodejs memcached 包的基本用法</span>
@@ -514,308 +852,10 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019-07/node-momery/">
-                
-                <span class="abstract-title-text">取消 Node 对内存上限的限制条件</span>
-            </a>
-            <div class="abstract-content">
-                123node --max-old-space-size=1700 test.js // 单位为MB// ornode --max-new-space-size=1024 test.js // 单位为KB
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019-07/node-async/">
-                
-                <span class="abstract-title-text">Node 异步三种方式的对比 Demo</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127&#x27;use strict&#x27;;c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/01/2019-07/xcode-route/">
-                
-                <span class="abstract-title-text">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</span>
-            </a>
-            <div class="abstract-content">
-                前段时间更新 Mac OS 的系统，也同样更新了 Xcode。在公司的项目中，用了死月大佬封装 C++ ons 版本得到的 Aliyun ons。在重新安装依赖时，发现在编译 ons 的时候不停爆出unknown type name &#39;uint32_t&#39;这样的错误。
-本以为是 npm 的缓存、c++ 版本、node 版本等原因，当我用另一台 Mac 安装 ons 并成功之后，完全不知道该怎么做。这时碰巧切了一个新的 Node 版本，在编译时报出了一个 Warn: xcode-select: error: tool &#39;xcodebuild&#39; requires...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/29/2019-07/macos-pac/">
-                
-                <span class="abstract-title-text">MAC OS 通过脚本配置自动代理 &amp; 关闭自动代理</span>
-            </a>
-            <div class="abstract-content">
-                因为在家里搞了一个 PAC 文件用来科学上网。但是上班用的 MAC 因为要带到公司，所以在公司用的是 Sha*socks。因为启用  SS 会覆盖原有的配置，而如果已经有了 PAC 配置，在不消除设置的情况下，在外网同样也是无法上网的。
-所以找了一个网上的教程，搞到了两个配置:
-设置自动代理setpac.sh
-12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh#######################################################...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/28/2019-07/xp-x64/">
-                
-                <span class="abstract-title-text">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</span>
-            </a>
-            <div class="abstract-content">
-                简介12345678910111213141516171819202122232425262728293031323334353637[资源名称]---Windows XP Professional x64 Edition with SP2 - VL (English)[资源类型]---ISO镜像[资源语言]---英语+简体中文[杀毒状况]---NOD32+KAV2009[共享时间]---时间不定[安装测试]---刻盘+硬盘安装通过[版权声明]---软件版权归原作者及原软件公司所有，仅供测试所用，请勿用于商业用途，如果你喜欢，请购买正版软件[资源介绍] Windows XP Profes...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="xp">xp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/22/2019-07/babel/">
-                
-                <span class="abstract-title-text">Babel 学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                Babel  学习前段时间学习写 React.js ，使用了了 Dva.js 框架。然后在 npm run dev可以运行的情况下。发现静态文件编译一直出问题。提示 Uglify 打包失败。定位问题是使用了 ES6 写的包 https://github.com/sorrycc/blog/issues/68。
-因为那个包是我自己写的，本来就是用于 Node 的包，这样就需要用 Babel 将 es6 转成 es5。
-创建 .babelrc在项目名称创建配置文件。
-格式: 
-1234&#123;  &quot;presets&quot;: [],  &quot;plugins&quot;: ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="babel">babel</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/22/2019-07/ubuntu-language/">
-                
-                <span class="abstract-title-text">Ubuntu 安装中文语言包</span>
-            </a>
-            <div class="abstract-content">
-                1sudo apt-get install language-pack-zh-hans
-
-解决未安装语言包导致系统应用无法识别 zh_CN.UTF-8
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/05/22/2019-07/docker/docker-prune/">
-                
-                <span class="abstract-title-text">Docker 运行文件清理工具 prune</span>
-            </a>
-            <div class="abstract-content">
-                原文地址
-转载地址
-Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾回收”），例如镜像、容器、卷和网络：除非明确要求 Docker 这样做，否则通常不会删除这些对象。这可能会导致 Docker 使用额外的磁盘空间。对于每种类型的对象，Docker 都提供了一条 prune 命令。另外，可以使用 docker system prune 一次清理多种类型的对象。本主题讲解如何使用这些 prune修剪命令。
-1. 修剪镜像docker image prune 命令可以清理未使用的镜像。默认情况下，docker image prune 命令只会清理 dangling 镜像。dang...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1626,7 +1666,63 @@ Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1905,7 +2001,7 @@ Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -1919,6 +2015,54 @@ Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -3110,6 +3254,21 @@ Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾�
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>

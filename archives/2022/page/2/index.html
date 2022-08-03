@@ -440,6 +440,364 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022-04/python-pip/">
+                
+                <span class="abstract-title-text">python 更换国内镜像源</span>
+            </a>
+            <div class="abstract-content">
+                临时修改清华源
+
+清华大学的 pip 源，它是官网 pypi 的镜像，每隔5分钟同步一次，推荐使用。
+
+12pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \    --trusted-host pypi.tuna.tsinghua.edu.cn packagename
+
+
+
+豆瓣源
+12pip install -i http://pypi.douban.com/simple \    --trusted-host pypi.douban.com packagename
+
+
+阿里源
+12pip install -i http...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python pip">python pip</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022-04/python-venv/">
+                
+                <span class="abstract-title-text">python venv</span>
+            </a>
+            <div class="abstract-content">
+                venv 是 pyhton 的虚拟环境
+安装1sudo apt install python3.8-venv
+
+
+
+使用1234python3 -m venv pgadmin4 			# 创建 venvsource pgadmin4/bin/activate 	# 激活（进入） venv# ...													# do somethingdeactivate										# 退出 venv
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/firewalld/">
+                
+                <span class="abstract-title-text">Centos7 防火墙 firewalld 基本配置与端口转发</span>
+            </a>
+            <div class="abstract-content">
+                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
+1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="firewalld">firewalld</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/iptables/">
+                
+                <span class="abstract-title-text">linux 端口转发 iptables</span>
+            </a>
+            <div class="abstract-content">
+                linux 端口转发 iptablescentos 7 使用 firewalld 服务而不是 iptables，如果 centos7 以上需要注意！！
+1.开启配置  iptables临时修改：
+1$ echo 1 &gt;/proc/sys/net/ipv4/ip_forward
+
+默认值 0 是禁止 ip 转发，修改为 1 即开启 ip 转发功能。
+重启生效:
+修改 &#x2F;etc&#x2F;sysctl.conf 文件:
+1net.ipv4.ip_forward = 1
+
+其他:
+1sysctl -w net.ipv4.ip_forward=1
+
+
+查看路由表:
+netstat...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="liunx">liunx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="iptables">iptables</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/maven-command/">
+                
+                <span class="abstract-title-text">30 个 Maven 命令</span>
+            </a>
+            <div class="abstract-content">
+                https://www.cnblogs.com/javastack/p/12982472.html
+maven 命令除了常用的几个，大部分经常记不住，整理一下，方便查询。
+maven 命令的格式为 mvn [plugin-name]:[goal-name]，可以接受的参数如下。
+1234567891011-D 指定参数，如 -Dmaven.test.skip=true 跳过单元测试；-P 指定 Profile 配置，可以用于区分环境；-e 显示maven运行出错的信息；-o 离线执行命令,即不去远程仓库更新包；-X 显示maven允许的debug信息；-U 强制去远程更新snapshot...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/07/2022-03/python-3-minutes/">
+                
+                <span class="abstract-title-text">3 分钟学习 (Python)</span>
+            </a>
+            <div class="abstract-content">
+                from https://github.com/adambard/learnxinyminutes-docs/pull/4351
+Python 是由吉多·范罗苏姆(Guido Van Rossum)在 90 年代早期设计。它是如今最常用的编程语言之一。它的语法简洁且优美，几乎就是可执行的伪代码。
+欢迎大家斧正。英文版原作 Louie Dinh @louiedinh邮箱 louiedinh [at] [谷歌的信箱服务]。中文翻译 Geoff Liu。
+注意：这篇教程是基于 Python 3 写的。如果你想学旧版 Python 2，我们特别有另一篇教程。
+123456789101112131...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/07/2022-04/maven-notion/">
+                
+                <span class="abstract-title-text">mvn 笔记精简</span>
+            </a>
+            <div class="abstract-content">
+                Maven 概念from https://segmentfault.com/a/1190000019897882
+Maven 定位
+编译
+部署
+清理
+测试
+报告
+打包
+安装
+
+目录架构约定123456test  / main  		/ java     // 源代码  		resources  // 配置文件  / test  	  / java     // 测试代码
+
+
+
+
+
+配置文件pom.xml 
+配置结构12345678&lt;dependencies&gt;	&lt;dependency&gt;  	&lt;groupId&gt;cn.vmkoo.test&lt;/group...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">
+                
+                <span class="abstract-title-text">记一次 highlight.js 不生效的问题</span>
+            </a>
+            <div class="abstract-content">
+                问题在折腾工作机的时候，惊奇的发现自己的博客的 code 块的语法高亮没了？！当时因为是主题的问题，还更换了 hexo 的主题。直到某一次查询到 csdn 的博客页面，发现博客的语法高亮也出现了相似的问题：字体的颜色显示成黑色。
+
+先说解决方案，问题出在刚安装的 source code pro  字体上，国内某大站下载的字体存在问题，我后面去 google 官网下载了一份就正常了。
+
+
+清理缓存 &amp; 卸载清理页面缓存，强制刷新页面，无法解决。
+使用了隐形标签来测试是否被浏览器插件影响，无法解决。
+清理浏览器缓存，无法解决。
+卸载重装浏览器，无法解决。
+更换电脑，发现别的电脑都是正...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/02/09/2022-01/unrar/">
                 
                 <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
@@ -1295,7 +1653,63 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1574,7 +1988,7 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -1588,6 +2002,54 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -2779,6 +3241,21 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>

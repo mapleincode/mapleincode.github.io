@@ -440,6 +440,382 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/07/21/2019-07/ssl_cert/">
+                
+                <span class="abstract-title-text">Let&#39;s encrypt 证书申请</span>
+            </a>
+            <div class="abstract-content">
+                呃，这大概是我最短的一次证书申请，比我私签的证书简单了上百倍，全程就花了 1 分钟左右。
+申请证书直接贴地址：
+https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
+国人的作品，我无法表达我的感受，能把一件这么复杂的事情做的和电脑登录微信这么简单。
+首先是安装
+1curl  https://get.acme.sh | sh
+
+
+
+然后目录位置是
+1~/.acme.sh/
+
+
+
+验证域名有两个方式
+
+在网站配置一个静态文件
+在 DNS 配置一个 TEXT 类型的域名文件
+
+主要都是为了验证你就是域名所有人。
+第一种方法据说不...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/07/05/2019-07/id-autoincr/">
+                
+                <span class="abstract-title-text">唯一 ID 生成</span>
+            </a>
+            <div class="abstract-content">
+                MySQL 自增 ID优点:
+
+自增数字
+无需额外操作
+
+缺点:
+
+单点问题
+可以设置 step 解决，例如一个表是 0, 2, 4 另个表是 1, 3, 5。但是这个方法后期扩展性差
+
+
+
+UUID
+v1() 真随机
+v4() 伪随机
+效率 v4() 远超 v1()
+
+优点:
+
+全世界唯一
+
+缺点:
+
+太长，做主键会降低性能，并且更多的容量
+不能生成递增有序的数字
+可以通过时间算法计算出时间戳
+
+
+mac 地址泄漏(?，没有查到这个事情)
+
+Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId()
+优点：
+支持多表
+缺点：
+
+所有表写入性能...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/06/17/2019-07/codesign/">
+                
+                <span class="abstract-title-text">mac os codesign</span>
+            </a>
+            <div class="abstract-content">
+                12codesign --sign - --force --deep /Applications/Alfred\ 3.app codesign --sign - --force --deep /Applications/Alfred\ 3.app/Contents/Preferences/Alfred\ Preferences.app
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/05/23/2019-07/redis/">
+                
+                <span class="abstract-title-text">redis 学习笔记</span>
+            </a>
+            <div class="abstract-content">
+                Redis 数据类型
+redis 支持五种数据类型
+String: 字符串
+Hash: Hash 散列
+List: 列表
+Set: 集合
+ZSet: 有序集合(Sorted Set)
+
+
+
+KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key，并返回而序列化的值。exists keyexpire key // 秒expireat key // timestamppexpireat key // 毫秒 (unix timestamp)keys pattern // 查找所有符合给定模式(pattern)...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/04/29/2019-07/xiazaibao/">
+                
+                <span class="abstract-title-text">迅雷下载宝定制固件</span>
+            </a>
+            <div class="abstract-content">
+                转载 https://www.right.com.cn/forum/thread-186873-1-1.html。
+此文是为了备份。
+
+迅雷下载宝官方固件因追求稳定而不开放ssh和telnet。为了进一步挖潜下载宝性能，在保留官方百分之百功能的基础上，定制了下载宝固件，仅供广大高清爱好者学习研究，
+若有违官方政策，请自觉删除！
+为了稳定起见，本固件只基于官方手机APP正式推送的版本进行定制，例如191. 192版。 
+【2017年10月12日复活版】
+鉴于下载宝官方开始更新固件，且各位网友极力更新定制固件，本人决定继续更新维护下载宝的定制固件版本，供大伙研究使用。
+因本人下载宝已出，在此...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/04/16/2019-07/gitlab-source/">
+                
+                <span class="abstract-title-text">GitLab Ubuntu 使用清华镜像站</span>
+            </a>
+            <div class="abstract-content">
+                GitLab 作为优秀的 Git 服务，安装在家里用于代码管理。
+GitLab CE 基本每周一次更新，为了保证使用新功能一般都经常通过 apt-get 进行更新。无奈国内的速度十分感人。
+后面发现清华大学开源软件镜像站提供了镜像源。
+修改 /etc/apt/source.list.d/gitlab_gitlab-ce.list
+12345678# this file was generated by packages.gitlab.com for# the repository at https://packages.gitlab.com/gitlab/gitlab-ce# deb h...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/03/29/2019-07/syno/">
+                
+                <span class="abstract-title-text">黑群晖的安装 &amp; 洗白</span>
+            </a>
+            <div class="abstract-content">
+                
+本帖只作为技术研究， 请读者遵守相关法律法规，不要侵犯以他人的商业利益为目的进行相关破解行为。
+
+准备工作硬件:
+
+一台可以上网并带有 USB 口的 windows 电脑
+一个 U 盘（作为启动盘而非安装盘，需要长期插在机子上）
+nas（主机）
+
+软件: 
+
+ChipEasy
+Win32DiskImager
+DiskGenius
+
+下载地址:
+https://pan.baidu.com/s/1BVbFroBwtCCdNm2xCuaCHg#list/path=%2F
+
+已失效
+
+安装群晖系统1. 首先获取 nas 设备的 mac。mac 地址相当于是网卡的唯一编号。最简单的办法就是看下路...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/03/14/2019-07/analysis-of-redis-performance/">
+                
+                <span class="abstract-title-text">Redis 性能问题分析（转载）</span>
+            </a>
+            <div class="abstract-content">
+                Redis 性能问题分析（转载）原文: https://www.jianshu.com/p/67093716547b
+
+
+在一些网络服务的系统中，Redis 的性能，可能是比 MySQL 等硬盘数据库的性能更重要的课题。比如微博，把热点微博[1]，最新的用户关系[2]，都存储在 Redis 中，大量的查询击中 Redis，而不走 MySQL。
+那么，针对 Redis 服务，我们能做哪些性能优化呢？或者说，应该避免哪些性能浪费呢？
+Redis 性能的基本面在讨论优化之前，我们需要知道，Redis 服务本身就有一些特性，比如单线程运行。除非修改 Redis 的源代码，不然这些特性，就是我们思...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/03/13/2019-07/redis-concurrence/">
                 
                 <span class="abstract-title-text">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</span>
@@ -514,340 +890,10 @@ socket IO 导致的上下文切换开销
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/02/21/2019-07/grub2/">
-                
-                <span class="abstract-title-text">关于 grub2 的修复</span>
-            </a>
-            <div class="abstract-content">
-                现在 Linux 的版本做的优化也是越来越到位，无论是功能，样式还是上手度都比以前好了很多。但是 Linux 的多样化造成经常一更新代码就挂掉。(表示更新 Fedora、OpenSUSE、Linux Mint 全部挂掉了)。不过因为相互兼容，所以重装也比较方便。但是以前重装 Windows 就不一样了。重装完 Windows 之后 Grub2 会被删的一干二净。
-windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
-
-首先是需要一个 Ubuntu 启动盘（U 盘 or 光盘）。进入系统。
-
-切换成 root 账户su root
-
-查看分区并挂载系统区。
-12fdisk -...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
-                
-                <span class="abstract-title-text">Python 字符串中的转移符</span>
-            </a>
-            <div class="abstract-content">
-                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
-在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
-12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
-
-正确做法应该是:
-12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
-
-当然大部分语言都是这个样子。如果包含\
-在 P...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/11/2019-07/rabbitmq-install/">
-                
-                <span class="abstract-title-text">RabbitMQ 安装 &amp; 添加登录用户[转载]</span>
-            </a>
-            <div class="abstract-content">
-                
-本文转载自 https://www.dev-heaven.com/posts/1914.html
-
-安装脚本12345678910yum install wget -y#Download RabbitMQ and Erlangwget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.9/rabbitmq-server-3.6.9-1.el6.noarch.rpmwget https://www.rabbitmq.com/releases/erlang/erlang-19.0.4-1.el6.x86_64.rpm#Instal...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/07/2019-07/redlock/">
-                
-                <span class="abstract-title-text">Red Lock</span>
-            </a>
-            <div class="abstract-content">
-                在分布式版本的算法里我们假设我们有 N 个 Redis master 节点，这些节点都是完全独立的，我们不用任何复制或者其他隐含的分布式协调算法。我们已经描述了如何在单节点环境下安全地获取和释放锁。因此我们理所当然地应当用这个方法在每个单节点里来获取和释放锁。在我们的例子里面我们把 N 设成 5，这个数字是一个相对比较合理的数值，因此我们需要在不同的计算机或者虚拟机上运行 5 个 master 节点来保证他们大多数情况下都不会同时宕机。一个客户端需要做如下操作来获取锁：
-
-获取当前时间（单位是毫秒）。
-轮流用相同的 key 和随机值在 N 个节点上请求锁，在这一步里，客户端在每个 mas...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/01/07/2019-07/kafka-node/">
-                
-                <span class="abstract-title-text">Kafka-node 的使用 Demo</span>
-            </a>
-            <div class="abstract-content">
-                Kafka 是基于磁盘文件顺序存储而设计的类 AMQP 消息队列服务，支持集群和数据备份。有着超高的稳定性和吞吐量。
-前段时间我司拟推广 Kafka，也乘机借着项目学了下 Kafka 的相关知识，虽然最后还是一直决定使用 ONS..
-在 Node 环境使用量比较高的是 Kafka-node这个包。所以本文主要讲诉这个包的一些简单用例。
-关于 Lower Level Consumer 和 High Level Consumer 的区别
-一开始在不怎么了解的情况下，一直分不清楚两者的关系。后来在一大佬的文章中得到了解释:
-
-很多时候，客户程序只是希望从Kafka读取数据，不太关心消息 off...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kafka">kafka</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/11/09/2019-07/foreign-key/">
-                
-                <span class="abstract-title-text">MySQL 外键</span>
-            </a>
-            <div class="abstract-content">
-                
-如果公共关键字在一个关系中是主关键字，那么这个公共关键字被称为另一个关系的外键。
-
-说白了就是两张表， A 表的某个字段必须和 B 表的某个字段关联起来。
-B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这个值。如果 B 表该字段不存在的值，是无法作为 A 表该字段的值来使用的。
-这样就可以保证在写入数据的时候，不会因为 B 表的数据未写入而 A 表的数据写入成功导致数据不一致。
-也能避免当 A 表关联 B 表字段。B 表擅自删除导致 A 无法关联到 B 表。
-其父表被关联的字段，称为子表的外键。
-这里有以下几个特点：
-
-父表不存在的值，子表是无法引用。
-子表...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/11/01/2019-07/vmware-market-expansion/">
-                
-                <span class="abstract-title-text">VMware 虚拟机硬盘文件扩容</span>
-            </a>
-            <div class="abstract-content">
-                因为开发和测试需要，在家里常年跑了 vmware 虚拟机。然后通过 MAC 端的 VMware Fusion 对其进行连接。在上面操作。
-前段时间 win10 推送了一个大版本更新，需要升级大版本就要把老的数据备份，然而我之前分配的硬盘空间不足以进行升级。而我实在不想把开虚拟机的电脑接到显示器上，尤其是我知道那张显卡已经基本无法显示了。
-我想到了 VMware 一向都有完善的命令行工具，是否可以通过命令行工具来实现对硬盘文件的扩容。查阅了网上资料，卧槽，还真的可以的。
-123456789101112131415161718192021222324252627282930313233343...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/11/01/2019-07/node-proxy/">
-                
-                <span class="abstract-title-text">JavaScript Proxy 对象</span>
-            </a>
-            <div class="abstract-content">
-                Usage123let target = &#123;&#125;;let handler = &#123;&#125;;let p = new Proxy(target, handler);
-
-target: 目标对象。可以是任何类型的对象，甚至是另一个代理。
-handler: 一个对象，其属性是当实行一个操作是定义代理的行为的函数。
-Example12345678910111213let handler = &#123;    get: function(target, name) &#123;        return name in target ? target[name] ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1658,7 +1704,63 @@ Example12345678910111213let handler = &#123;    get: function(target, name) &#12
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1937,7 +2039,7 @@ Example12345678910111213let handler = &#123;    get: function(target, name) &#12
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -1951,6 +2053,54 @@ Example12345678910111213let handler = &#123;    get: function(target, name) &#12
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -3142,6 +3292,21 @@ Example12345678910111213let handler = &#123;    get: function(target, name) &#12
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>

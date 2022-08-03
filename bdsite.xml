@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2022/05/30/2022-04/pm2/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/07/05/2022-06/requirement/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/06/07/2022-06/vlan/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/07/18/2022-07/syno-vpn/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/01/2022-08/java-stream/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/03/2022-08/zookeeper/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2021/04/12/2021-04/kubernetes/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/03/2022-04/openstack/</loc>
+    <lastmod>2022-08-03</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vmko.cc/2022/05/27/2022-04/rabbitmq-client/</loc>
     <lastmod>2022-05-27</lastmod>
   </url>
@@ -94,10 +130,6 @@
   </url>
   <url>
     <loc>https://blog.vmko.cc/2021/05/25/2021-04/k8s-demo-mysql/</loc>
-    <lastmod>2022-04-01</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.vmko.cc/2021/04/12/2021-04/kubernetes/</loc>
     <lastmod>2022-04-01</lastmod>
   </url>
   <url>

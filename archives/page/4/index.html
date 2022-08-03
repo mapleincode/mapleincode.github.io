@@ -440,6 +440,391 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/12/01/2020-11/aliyun-data-disk-format/">
+                
+                <span class="abstract-title-text">阿里云 Ubuntu 数据盘格式化和挂载</span>
+            </a>
+            <div class="abstract-content">
+                阿里云数据盘默认挂载之后不会分区、格式化、挂载。需要手动处理这个逻辑。
+也适用于普通 Ubuntu 系统的情况。
+1. 找到磁盘1fdisk -l
+
+查找到所有磁盘和分区信息。
+找到未分区或者未格式化的磁盘编号 /dev/xxx
+2. 对磁盘进行分区输入：
+1fdisk -u /dev/vdb
+
+输入 n 创建一个新的分区输入 p 选择创建分区类型为 primary
+
+BMR 分区表默认只支持 4 个主分区
+
+输入 1 选择仅创建一个分区
+然后选择第一个可用的扇区编号，我们这边直接回车，输入默认的 2048。
+然后是输入最后一个扇区编号，我们这边依然回车，输入默认值。
+然后输入 p 可以...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/23/2020-11/dpkg-bad-inconsistent-state/">
+                
+                <span class="abstract-title-text">Dpkg 包损坏无法安装 &amp; 卸载</span>
+            </a>
+            <div class="abstract-content">
+                卸载时报错：
+12package is in a very bad inconsistent state;you should reinstall it before attempting a removal
+
+
+
+解决方法：
+
+强制卸载
+
+1sudo dpkg --remove --force-remove-reinstreq xxxxxx
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/13/2020-11/syno-install/">
+                
+                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
+            </a>
+            <div class="abstract-content">
+                1. 准备设备
+nas 电脑设备一台
+其他 PC 设备一台
+启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
+
+2. 准备文件
+DSM_DS918+_25426.pat 
+系统安装文件。
+可以官网直接下载。
+目前时间段最新的系统安装文件(2020-11-13)
+如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
+
+
+DS918+_6.23-25426-1.04b（引导文件）.img
+引导文件
+
+
+DS918-6.23_1.04b的扩展驱动0.13.3.zip
+驱动扩展，用于增强驱动，支持 2.5G 网卡
+
+
+libsynon...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/09/2020-11/syno/">
+                
+                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
+            </a>
+            <div class="abstract-content">
+                关于 nas 的推荐1. 按照系统
+群晖
+推荐
+扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
+应用极多，而且包含桌面应用和移动应用
+黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
+白群晖缺点： 贵
+
+
+FreeNAS
+使用不多
+硬件要求相对高一点 &amp; 开源
+UI 还行，现在和 True NAS 合并了
+
+
+Linux &amp; Samba
+就是 Linux 服务器
+
+
+Windows Server
+就是 windows 服务器
+
+
+unraid &amp; vmware
+都是虚拟机，会损耗部分性能。
+
+
+
+2. 按照硬盘数
+2.5 寸 x 1
+ar...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/10/19/2020-10/zhenglun/">
+                
+                <span class="abstract-title-text">争论的艺术</span>
+            </a>
+            <div class="abstract-content">
+                今天打车，遇到一个很健谈的司机。
+
+好像所有司机都很健谈，而且谈过之后司机的态度就会 MAX
+
+提到关于国产品牌和进口品牌。我想到之前在群里就遇到一个人死顶苹果的摄像头。
+认为苹果的摄像头比华为好。因为苹果的摄像头比较真实，拍出来的人比较丑。
+但是华为的话，通过软硬件对图形进行渲染，拍出来的人虽然好看，但是反而是辣鸡。
+和那个大哥谈论下，基本几分钟就把比较中立的结论给定了下来：
+
+华为的渲染记录也是功能和特性之一。
+即使苹果的拍照渲染程度小，但是和实物，或者哪怕是单反效果相比，都要差的多
+日常生活中，大家拍照，无论是拍人和拍物，本身就是为了纪念，也是为了好看。
+而相反的是，苹果摄像头的特...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/10/14/2020-10/dash-bash/">
+                
+                <span class="abstract-title-text">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</span>
+            </a>
+            <div class="abstract-content">
+                造成原因，Debian 和 Ubuntu 的 &#x2F;bin&#x2F;sh 指向的是 dash 而不是 bash。
+
+Dash Shell 比 Bash Shell 小的多，符合POSIX标准。
+Dash 支持的命令比 Bash 要小
+查看状态: ls &#x2F;bin&#x2F;sh -al
+重新配置: udo dpkg-reconfigure dash
+
+区别主要有
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/14</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/22/2020-09/raspberry-usb-start/">
+                
+                <span class="abstract-title-text">raspberry 4B Ubuntu 系统 USB 启动</span>
+            </a>
+            <div class="abstract-content">
+                raspberry 4B，现在是觉得坑多于喜。
+为了减少系统盘对性能的影响，所以我们使用外接 USB 系统盘的办法。
+而树莓派默认只支持从 SD 读取。
+
+隔壁 raspbian 已经支持无卡 usb 启动了，ubuntu 啥时候支持下？
+
+早期是通过修改 cmdline.txt 里的 root
+1root=/dev/mmcblk0p2
+
+修改为
+1root=/dev/sda2
+
+也就是在 sda 上所在的系统分区。
+而更新到 18.04.4 之后(大概)，cmdline.txt 改成了 btcmd.txt。而整个启动命令变成了
+1net.ifnames=0 dwc_otg.lpm_en...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/16/2020-09/raspberry/">
+                
+                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
+            </a>
+            <div class="abstract-content">
+                
+本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
+对于物联网、家用办公等等需求的人而言，毫无意义
+
+第一个树莓派五年前，我入手了树莓派 2。
+作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
+而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
+但是树莓派 2 有若干致命的问题：
+
+usb 只有 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/09/09/2020-09/lock/">
                 
                 <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
@@ -530,367 +915,10 @@ cluster-confi...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/05/2020-08/api-gateway/">
-                
-                <span class="abstract-title-text">API 网关功能</span>
-            </a>
-            <div class="abstract-content">
-                网关封装了底层系统并与客户端分离，为客户端提供了与微服务系统进行通信的单个入口点。
-整合 API 网关整合了一些边缘的重复功能，无需让每个微服务都实现它们。它包括如下功能：
-
-认证和授权
-服务发现集成
-缓存响应结果
-重试策略、熔断器、QoS
-限速和节流
-负载均衡
-log 日志、链路追踪、关联
-Header、query 字符串 以及 claims 转义
-IP 白名单
-IAM
-集中式日志管理（服务之间的 transaction ID、错误日志等）
-身份的提供方，验证与授权
-
-from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/08/18/2020-08/jiaohanglaji/">
-                
-                <span class="abstract-title-text">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</span>
-            </a>
-            <div class="abstract-content">
-                1. 接触交行先说下接触交行的原因，起先，我也办理了一张大家都应该推荐的招商信用卡。期间也没什么问题，但是后面习惯了去山姆购物，交行办卡小哥就在山姆门口各种推荐交行信用卡，因为交行信用卡有个卡种，可以支持山姆超市打折，也是这个原因办理了交行的信用卡。
-2. 事情起因再说下本次事情的起源。
-我其实日常信用卡用的也不多，刚好搬家刷了一个 6000 的冰箱，但是因为店家无货所以取消。再加上额外消费了 1000 左右，所以当时需要还的大概是 1200。
-我的还款到期日是 8 月 4 号。请记住这个节点。
-7 月 31 号，我用手机尝试还款一次。当下显示还款中，我因为刚搬家比较忙，就没一直关注。毕...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/18</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/08/13/2020-08/python/">
-                
-                <span class="abstract-title-text">Python &amp; Ubuntu</span>
-            </a>
-            <div class="abstract-content">
-                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
-安装 Python3安装 python3
-1sudo apt install python3
-
-安装 pip3
-1sudo apt install python3-pip
-
-
-
-
-一般 pip 和 pip2 指的都是 python2-pip
-
-pip3 安装依赖1pip3 install flask
-
-这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
-pm2 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/07/06/2020-07/HashMap&HashTable/">
-                
-                <span class="abstract-title-text">HashMap和HashTable的区别</span>
-            </a>
-            <div class="abstract-content">
-                HashMap 不是线程安全的HashMap 是 map 接口的实现类，是将键映射到值的对象，其中键和值都是对象，并且不能包含重复键，但可以包含重复值。HashMap 允许 null  key 和 null value，而 HashTable 不允许。
-HashTable 是线程安全 Collection。HashMap 是 HashTable 的轻量级实现，他们都完成了Map 接口，主要区别在于 HashMap 允许 null  key 和 null value,由于非线程安全，效率上可能高于 Hashtable。
-区别如下：
-HashMap允许将 null 作为一个 entry 的 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020-06/ddsm/">
-                
-                <span class="abstract-title-text">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
-            </a>
-            <div class="abstract-content">
-                群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
-当然对我们来说，重要的是里面的序列号。
-我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
-查阅了谷歌，在论坛上找到解决方案：
-https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
-
-Been there, done tha...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020-06/esxi/">
-                
-                <span class="abstract-title-text">esxi 安装</span>
-            </a>
-            <div class="abstract-content">
-                起因因为主板是华南寨板，网卡并非服务器版本。导致 esxi 不识别。我去闲鱼上淘了一张双口的 82576。结果这几天刷软路由，发现一种办法是通过网卡直通给虚拟机的办法，实现 esxi 来支持软路由。
-但是在我的 esxi 硬件那边，发现网卡的直通写了不支持。
-问了店家，店家表示：
-
-网卡肯定是支持的
-如果不支持，可能是主板的问题
-如果不行，可以去 vmware 上找找驱动安装试试
-
-然后我乖巧的去找了驱动，然后安装，重启，就没然后了，原因很简单，我在 100 公里外的老家拼命刷浏览器的回车，却只告诉我 esxi 服务器 503 了。
-老板，你也好歹告诉我下驱动装失败了会进不去吧。
-我就说...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020-06/2020-06-17/">
-                
-                <span class="abstract-title-text">日记</span>
-            </a>
-            <div class="abstract-content">
-                最近的经历和感触
-
-在老家玩了几天，家里 esxi 服务器挂了、路由器也挂了
-路由器挂了之后我一直担心是不是服务器挂了导致出租房起火了，因为这个路由器从买来就没死机过一次
-然后回家后发现是电源坏了，找了商家，商家熟练的发来一个链接。看了下销量敢情这路由器的充电器压根不靠谱啊，还卖 20 + 10 。
-在老家连不上 nas，闲的蛋疼去刷了下知乎，然后发现一个月初的回答居然有 600 赞了，天哪
-在朋友的推荐下买了斐讯 N1盒子，发现斐讯的遗产都好好，无论是蓝牙音箱还是路由器还是这盒子
-发现 N1 盒子可以刷游戏系统，求资源求了半天。之后转念想不求作者（因为我这个是小号，那个作者又感觉很不靠...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="daily">daily</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/21/2020-05/ink/">
-                
-                <span class="abstract-title-text">自製鋼筆染料墨水配方[转载]</span>
-            </a>
-            <div class="abstract-content">
-                
-https://www.ptt.cc/bbs/stationery/M.1448639335.A.202.html
-转载自一位弯弯大佬的一篇文章，文章内容很详细。
-短时间应该不会去学做，但是的确蛮有意思的赶脚。
-
-
-原文是繁体，排版依然按照原文
-
-给大家参考
-之前在疫区用这配方卖了两批小赚点钱
-卖剩的自己目前也一直在用
-Safari 写了四五个月没洗笔，状况都很良好
-所以应该是不会伤笔
-另外，测试时使用下水量较小的 78g
- 加上本人通常是写狂草 (写很快很丑) 
-所以需要下水量大的墨水，调出来黏度偏低
-比例视使用者习惯自行调整，这里只是参考
-第一步先配好甘油水溶液→体积比甘油：水&#...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ink">ink</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/3/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/5/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/3/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/5/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1701,7 +1729,63 @@ Safari 写了四五个月没洗笔，状况都很良好
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1980,7 +2064,7 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -1994,6 +2078,54 @@ Safari 写了四五个月没洗笔，状况都很良好
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -3185,6 +3317,21 @@ Safari 写了四五个月没洗笔，状况都很良好
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>

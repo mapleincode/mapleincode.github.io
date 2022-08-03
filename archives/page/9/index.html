@@ -440,6 +440,336 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/02/21/2019-07/grub2/">
+                
+                <span class="abstract-title-text">关于 grub2 的修复</span>
+            </a>
+            <div class="abstract-content">
+                现在 Linux 的版本做的优化也是越来越到位，无论是功能，样式还是上手度都比以前好了很多。但是 Linux 的多样化造成经常一更新代码就挂掉。(表示更新 Fedora、OpenSUSE、Linux Mint 全部挂掉了)。不过因为相互兼容，所以重装也比较方便。但是以前重装 Windows 就不一样了。重装完 Windows 之后 Grub2 会被删的一干二净。
+windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
+
+首先是需要一个 Ubuntu 启动盘（U 盘 or 光盘）。进入系统。
+
+切换成 root 账户su root
+
+查看分区并挂载系统区。
+12fdisk -...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
+                
+                <span class="abstract-title-text">Python 字符串中的转移符</span>
+            </a>
+            <div class="abstract-content">
+                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
+在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
+12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
+
+正确做法应该是:
+12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
+
+当然大部分语言都是这个样子。如果包含\
+在 P...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/11/2019-07/rabbitmq-install/">
+                
+                <span class="abstract-title-text">RabbitMQ 安装 &amp; 添加登录用户[转载]</span>
+            </a>
+            <div class="abstract-content">
+                
+本文转载自 https://www.dev-heaven.com/posts/1914.html
+
+安装脚本12345678910yum install wget -y#Download RabbitMQ and Erlangwget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.9/rabbitmq-server-3.6.9-1.el6.noarch.rpmwget https://www.rabbitmq.com/releases/erlang/erlang-19.0.4-1.el6.x86_64.rpm#Instal...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/07/2019-07/redlock/">
+                
+                <span class="abstract-title-text">Red Lock</span>
+            </a>
+            <div class="abstract-content">
+                在分布式版本的算法里我们假设我们有 N 个 Redis master 节点，这些节点都是完全独立的，我们不用任何复制或者其他隐含的分布式协调算法。我们已经描述了如何在单节点环境下安全地获取和释放锁。因此我们理所当然地应当用这个方法在每个单节点里来获取和释放锁。在我们的例子里面我们把 N 设成 5，这个数字是一个相对比较合理的数值，因此我们需要在不同的计算机或者虚拟机上运行 5 个 master 节点来保证他们大多数情况下都不会同时宕机。一个客户端需要做如下操作来获取锁：
+
+获取当前时间（单位是毫秒）。
+轮流用相同的 key 和随机值在 N 个节点上请求锁，在这一步里，客户端在每个 mas...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/01/07/2019-07/kafka-node/">
+                
+                <span class="abstract-title-text">Kafka-node 的使用 Demo</span>
+            </a>
+            <div class="abstract-content">
+                Kafka 是基于磁盘文件顺序存储而设计的类 AMQP 消息队列服务，支持集群和数据备份。有着超高的稳定性和吞吐量。
+前段时间我司拟推广 Kafka，也乘机借着项目学了下 Kafka 的相关知识，虽然最后还是一直决定使用 ONS..
+在 Node 环境使用量比较高的是 Kafka-node这个包。所以本文主要讲诉这个包的一些简单用例。
+关于 Lower Level Consumer 和 High Level Consumer 的区别
+一开始在不怎么了解的情况下，一直分不清楚两者的关系。后来在一大佬的文章中得到了解释:
+
+很多时候，客户程序只是希望从Kafka读取数据，不太关心消息 off...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kafka">kafka</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/11/09/2019-07/foreign-key/">
+                
+                <span class="abstract-title-text">MySQL 外键</span>
+            </a>
+            <div class="abstract-content">
+                
+如果公共关键字在一个关系中是主关键字，那么这个公共关键字被称为另一个关系的外键。
+
+说白了就是两张表， A 表的某个字段必须和 B 表的某个字段关联起来。
+B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这个值。如果 B 表该字段不存在的值，是无法作为 A 表该字段的值来使用的。
+这样就可以保证在写入数据的时候，不会因为 B 表的数据未写入而 A 表的数据写入成功导致数据不一致。
+也能避免当 A 表关联 B 表字段。B 表擅自删除导致 A 无法关联到 B 表。
+其父表被关联的字段，称为子表的外键。
+这里有以下几个特点：
+
+父表不存在的值，子表是无法引用。
+子表...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/11/01/2019-07/vmware-market-expansion/">
+                
+                <span class="abstract-title-text">VMware 虚拟机硬盘文件扩容</span>
+            </a>
+            <div class="abstract-content">
+                因为开发和测试需要，在家里常年跑了 vmware 虚拟机。然后通过 MAC 端的 VMware Fusion 对其进行连接。在上面操作。
+前段时间 win10 推送了一个大版本更新，需要升级大版本就要把老的数据备份，然而我之前分配的硬盘空间不足以进行升级。而我实在不想把开虚拟机的电脑接到显示器上，尤其是我知道那张显卡已经基本无法显示了。
+我想到了 VMware 一向都有完善的命令行工具，是否可以通过命令行工具来实现对硬盘文件的扩容。查阅了网上资料，卧槽，还真的可以的。
+123456789101112131415161718192021222324252627282930313233343...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/11/01/2019-07/node-proxy/">
+                
+                <span class="abstract-title-text">JavaScript Proxy 对象</span>
+            </a>
+            <div class="abstract-content">
+                Usage123let target = &#123;&#125;;let handler = &#123;&#125;;let p = new Proxy(target, handler);
+
+target: 目标对象。可以是任何类型的对象，甚至是另一个代理。
+handler: 一个对象，其属性是当实行一个操作是定义代理的行为的函数。
+Example12345678910111213let handler = &#123;    get: function(target, name) &#123;        return name in target ? target[name] ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/10/31/2019-07/kafka-auto-offset-reset/">
                 
                 <span class="abstract-title-text">Kafka auto.offset.reset 值</span>
@@ -514,348 +844,10 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/29/2019-07/python-with-as/">
-                
-                <span class="abstract-title-text">Python with as 的作用</span>
-            </a>
-            <div class="abstract-content">
-                Python with as 的作用这几天在入门 Python，https://learnxinyminutes.com/docs/python3/，看到 with as，这边说了一句
-
-# Instead of try&#x2F;finally to cleanup resources you can use a with statement
-如果不使用 try&#x2F;finally 来清理资源，你可以使用声明这个功能。
-
-123with open(&quot;1.txt&quot;) as f	for line in f:		print(line)
-
-首先说下 with as 的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/29/2019-07/mysql-ACID/">
-                
-                <span class="abstract-title-text">MySQL 事务</span>
-            </a>
-            <div class="abstract-content">
-                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
-我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
-事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
-
-原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
-
-一致性：在事务开始之前和事务...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/27/2019-07/guanchazhe/">
-                
-                <span class="abstract-title-text">Node 和观察者设计模式</span>
-            </a>
-            <div class="abstract-content">
-                观察者设计模式观察者模式（有时又被称为模型-视图（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
-总的来说，例如 Node 的事件机制。除非是一个不包含异步的程序(如果没有异步逻辑，那这个程序在执行结束前都不会有事件循环)，否则一般程序在拥有带监听的 IO 事件(或者是网络套接字)的观察者时，就会通过线程层(libuv)不断的是轮询这些事件有没有完成。而系统在完成 IO 之后，将...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/26/2019-07/mysql-engines/">
-                
-                <span class="abstract-title-text">MySQL 引擎</span>
-            </a>
-            <div class="abstract-content">
-                ISAM优点：
-读取速度快，不占用大量内存与存储资源。
-缺点：
-不能够容错，不支持事务处理。
-ISAM 设计为了那些读取比较频繁，但是写入比较少的操作，例如数据中心。它可以占用较少的内存和资源对数据进行读取。但是相应的缺少了一些机制，比如事务和容错性。尤其是容错性，硬盘的错误会导致整个库的数据都被丢失。
-其次是加锁和并发问题，一旦涉及数据写入，整张表都会被进行加锁，这样一旦有一个数据被修改，其他数据哪怕不是同一行，修改操作都会被堵塞。
-MYISAM：优点：
-
-是 ISAM 的扩展，提供了 ISAM 所没有的索引和字段管理。
-使用一种表格锁定机制，来优化并发读写。
-拥有一些有用的扩展，如修...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/23/2019-07/http2/">
-                
-                <span class="abstract-title-text">在树莓派上升级 Nginx 开启 HTTP/2</span>
-            </a>
-            <div class="abstract-content">
-                因为家里的路由器支持的 NAT 端口的数量只能有限的 20 个。随着自己乱七八糟的服务越来越多，不得不用家里的树莓派靠 Nginx 做了一层反向代理。支持根据域名访问不同的地址。
-随着 Chrome 开始推荐 Https，用了自签证书搞了 Https。
-然后看到了  HTTP&#x2F;2。心想反正搞干脆搞好点。然后用我那个树莓派来折腾 HTTP&#x2F;2。
-
-不得不说树莓派真的适合学习 Linux。
-
-关于 HTTP&#x2F;2HTTP&#x2F;2 （原名HTTP&#x2F;2.0）即超文本传输协议 2.0，是下一代HTTP协议。(From 百度百科)。
-
-支持异步连接多路复用...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/05/16">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="http/2">http/2</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/09/2019-07/node-buffer/">
-                
-                <span class="abstract-title-text">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</span>
-            </a>
-            <div class="abstract-content">
-                转载自 https://segmentfault.com/a/1190000009547330
-
-本文摘录自《Nodejs学习笔记》，更多章节及更新，请访问 github主页地址。欢迎加群交流，群号 197339705。
-
-模块概览Buffer是node的核心模块，开发者可以利用它来处理二进制数据，比如文件流的读写、网络请求数据的处理等。
-Buffer的API非常多，本文仅挑选 比较常用&#x2F;容易理解 的API进行讲解，包括Buffer实例的创建、比较、连接、拷贝、查找、遍历、类型转换、截取、编码转换等。
-创建
-Buffer.from(array)
-Buffer.alloc(len...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/08/08/2019-07/expect/">
-                
-                <span class="abstract-title-text">Expect 使用小记</span>
-            </a>
-            <div class="abstract-content">
-                Expect 使用小记Expect 是 unix 系统中用来进行自动化控制和测试的软件工具，由 DonLibes 制作，作为 Tcl 脚本语言的一个扩展，应用在交互式软件中如 telnet，ftp，Passwd，fsck，rlogin，tip，ssh 等等。该工具利用Unix 伪终端包装其子进程，允许任意程序通过终端接入进行自动化控制。
-基本指令
-spawn
-1spawn ssh $user@$host -p $port
-
-expect &amp; send
-12expect &quot;password:&quot;send &quot;$password\r&quot;
-
-12345...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="expect">expect</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/07/09/2019-07/git-branch-all/">
-                
-                <span class="abstract-title-text">git 拉取所有远程分支</span>
-            </a>
-            <div class="abstract-content">
-                123git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; donegit fetch --allgit pull --all
-
-来自 Stackoverflow
-链接：http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/8/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/10/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/8/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/10/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1666,7 +1658,63 @@ expect &amp; send
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1945,7 +1993,7 @@ expect &amp; send
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -1959,6 +2007,54 @@ expect &amp; send
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -3150,6 +3246,21 @@ expect &amp; send
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>

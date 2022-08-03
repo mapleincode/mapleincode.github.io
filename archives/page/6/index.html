@@ -440,6 +440,432 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/05/02/2020-05/Synology%20Drive/">
+                
+                <span class="abstract-title-text">群晖 Drive 反复同步问题</span>
+            </a>
+            <div class="abstract-content">
+                2020-05-25： 
+Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
+安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
+两款 Mac 都需要更新到新版本！！
+Drive 一定会成为你重要的同步软件！！！
+
+群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
+
+但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
+推荐大家有条件还是去上正版群晖。
+
+Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/04/15/2020-01/java-mode/">
+                
+                <span class="abstract-title-text">类成员的访问控制模式及其允许访问范围</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+访问控制模式
+在同一个类内
+在同一个包内
+子类
+所有类
+
+
+
+公共模式(public)
+允许访问
+允许访问
+允许访问
+允许访问
+
+
+保护模式(protected)
+允许访问
+允许访问
+允许访问
+
+
+
+默认模式(default)
+允许访问
+允许访问
+
+
+
+
+私有模式(private)
+允许访问
+
+
+
+
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/15</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/04/01/2020-01/wordpress-domain/">
+                
+                <span class="abstract-title-text">WordPress 绑定多域名</span>
+            </a>
+            <div class="abstract-content">
+                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
+而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
+但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
+首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
+12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/03/10/2020-01/nginx-cache/">
+                
+                <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
+            </a>
+            <div class="abstract-content">
+                V 站上一个帖子提问：
+
+硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
+https://www.v2ex.com/t/649310#reply8
+
+有大佬回复:
+
+当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
+
+按照他说的内容分析下这几个 Nginx 配置的功能。
+expires
+开启客户端 cache ，设置 expire...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/01/18/2020-01/java/">
+                
+                <span class="abstract-title-text">Java 学习路线</span>
+            </a>
+            <div class="abstract-content">
+                基友推荐的 Java 教程，源地址:
+https://www.bilibili.com/read/cv3560825
+目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
+1. 基础阶段1.1 必选
+Java 语言：https://www.bilibili.com/video/av59529105/
+
+MySQL 数据库：https://www.bilibili.com/video/av59623481/
+
+JDBC：https://www.bilibili.com/video/av59534040/
+
+Java Web：https://www.bilibili...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/01/18/2020-01/pivpn/">
+                
+                <span class="abstract-title-text">树莓派安装 PIVPN</span>
+            </a>
+            <div class="abstract-content">
+                在树莓派上安装 OpenVPN。
+虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
+核心安装就只有一条命令:
+1curl -L https://install.pivpn.io | bash
+
+
+
+具体过程可以参考
+http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
+这位大佬安装过程讲解的十分详细 &#x3D; - &#x3D;。
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/01/18/2020-01/disable-systemd-resolved/">
+                
+                <span class="abstract-title-text">nameserver 127.0.0.53</span>
+            </a>
+            <div class="abstract-content">
+                Ubuntu 升级到 16.04 还是 18.04 的时候，默认会启动 NetWorkManage 的一个功能，即把 /etc/resolv.conf 的 dns 地址配置成
+1nameserver 127.0.0.53
+
+正常情况下不会有影响，但是如果想要关闭这个功能，设置
+12$ sudo systemctl disable systemd-resolved$ sudo reboot
+
+
+建议正常运作的情况下不需要卸载这个组件
+
+参考: https://www.hiroom2.com/2017/08/24/ubuntu-1610-nameserver-127-0-0-53-en/
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/01/07/2020-01/km3/">
+                
+                <span class="abstract-title-text">杭州科目三</span>
+            </a>
+            <div class="abstract-content">
+                新系统模拟灯光考试夜间模拟灯光题目
+
+
+行为
+灯光操作
+
+
+
+夜间通过急弯、坡路
+交替使用远近光灯
+
+
+夜间通过坡路、拱桥
+交替使用远近光灯
+
+
+夜间通过急弯、拱桥
+交替使用远近光灯
+
+
+夜间通过拱桥、人行横道
+交替使用远近光灯
+
+
+夜间通过没有交通信号灯控制的路口
+交替使用远近光灯
+
+
+夜间超越前方车辆
+交替使用远近光灯
+
+
+夜间同方向近距离跟车行驶
+使用近光灯
+
+
+夜间与机动车会车
+使用近光灯
+
+
+夜间直行通过路口
+使用近光灯
+
+
+夜间路口左转弯
+近光灯 + 左转向灯
+
+
+夜间路口右转弯
+近光灯 + 右转向灯
+
+
+夜间在有路灯的道路上行驶
+使用近光灯
+
+
+夜间在照明良好的道路上行驶
+...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/12/24/2019-12/rasp-4-ubuntu/">
                 
                 <span class="abstract-title-text">Raspberry4 安装 Ubuntu</span>
@@ -514,320 +940,10 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/12/16/2019-12/koa-compose/">
-                
-                <span class="abstract-title-text">Koa-Compose 源码试写</span>
-            </a>
-            <div class="abstract-content">
-                1234567891011121314151617181920212223242526272829303132333435363738async function _compose(ctx, next, items) &#123;    if(items.length === 0) &#123;        return next();    &#125;    const func = items.shift();    return func(ctx, async function() &#123;        return _compose(ctx, next, items);...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/26/2019-11/logstash/">
-                
-                <span class="abstract-title-text">Logstash conf 语法</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/13/2019-11/centos5.x/">
-                
-                <span class="abstract-title-text">CentOS 5.x 版本 repo 地址</span>
-            </a>
-            <div class="abstract-content">
-                在迁移虚拟机到 ESXi 的时候，不幸遗漏了一个游戏私服服务器 orz。虽然私服不怎么好玩，但是也算是一个小纪念。鉴于私服的服务器版本是 CentOS 5.x 版本比较老，所以担心之后可能搭不起来。
-于是乎，果然访问 error。查阅了相关信息，我搭建的时候 16 年年底。17 年 3 月，CentOS 5.x 正式停止依赖维护。
-呃…查询了网上资料，有提供一个 http://vault.centos.org/5.11/os 的 repo 地址。并且版本限定 5.11。鉴于我对 CentOS 不太了解，直接拿了网上的 CentOS-Base.repo。
-12345678910111213...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/12/2019-11/ELK/">
-                
-                <span class="abstract-title-text">ELK 搭建</span>
-            </a>
-            <div class="abstract-content">
-                起因
-项目需求
-公司某位大佬有记录文档可以参考
-
-ELKELK 平台是当前应用比较广泛的一套开源实时日志分析解决方案。ELK 由 ElasticSearch、Logstash 和 Kiabana 三个开源工具组成。
-ELK &#x3D; Elasticsearch + Logstash + Kibana
-参考 &amp; 下载地址: https://www.elastic.co/cn/products/
-
-MacOS 
-
-Elasticsearch
-Elasticsearch 是一个基于 JSON 的分布式搜索和分析引擎。
-Kibana
-Kibana 可谓 Elastic Stack 的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="elk">elk</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/11/2019-11/passwd/">
-                
-                <span class="abstract-title-text">Shell 自动输入 sudo 密码</span>
-            </a>
-            <div class="abstract-content">
-                
-使用 echo 和管道命令
-
-12#!/bin/bashecho password | sudo -S service runtime* status
-
-
-使用文本块输入重定向
-
-
-发现这个命令不能用在 shell 的判断条件里
-
-1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
-
-
-
-
-第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
-
-参考:
-
-https://blog.csdn.net/qiyueqinglian/article/detail...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/11/2019-11/vCenter/">
-                
-                <span class="abstract-title-text">vCenter 和 vCSA 对比</span>
-            </a>
-            <div class="abstract-content">
-                vCenter Server与vCenter Server Virtual Appliance（vCSA）都提供对企业中[VMware vSphere](https://baike.baidu.com/item/VMware vSphere)部署的集中管理。虽然拥有相同的功能，两者安装却不同，所支持的功能也不同。
-vCSA不支持的功能
-vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSphere许可。VCSA 5.0.1及以后版本运行PostgreSQL数据库，而之前版本运行的是IBM DB2数据库。VCSA只支持PostgreSQ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/08/2019-11/esxi/">
-                
-                <span class="abstract-title-text">ESXi 使用笔记</span>
-            </a>
-            <div class="abstract-content">
-                作为不想折腾开发环境的懒人，长期部署若干个服务器用于自己开发学习。
-目前的做法是，在搭建 Ubuntu 的宿主机安装 VMware Station ，然后利用其 VMware Server ，通过客户端连接。
-结果被一个朋友吐槽为什么不用 ESXi。
-早期的想法是能用就行，加上对虚拟机的功能也不是很了解。
-ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其他的系统。
-与 ESXi 不同，VMware Server 底层还是 Linux，相当于  ESXi 直接与硬件交互，而 VMware Server 则与 Linux 交互。
-其实性能上也没有感受到很大的差距，但是 VMwar...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/09/05/2019-08/rabbtmq-demo/">
-                
-                <span class="abstract-title-text">RabbitMQ Node demo</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105const options = &#123;    hostname: &#x27;192.168.2.121&#x27;,    username: &#x27;username...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1638,7 +1754,63 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1917,7 +2089,7 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 137
+        Total : 145
         </div>
         <!-- search  -->
         
@@ -1931,6 +2103,54 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022-08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022-08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022-07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022-06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022-06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022-04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/27</span>
@@ -3122,6 +3342,21 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             <span class="sidebar-tag-name" data-tags="python pip">
                 <span class="iconfont-archer">&#xe606;</span>
                 python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
             </span>
         
     </div>
