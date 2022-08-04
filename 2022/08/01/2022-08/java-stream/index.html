@@ -31,15 +31,15 @@
         <meta name="keywords" content="hexo,blog,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="5、实验结果总结从以上的实验来看，可以总结处以下几点：  在少低数据量的处理场景中（size&lt;&#x3D;1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁； 在大数据量（szie&gt;10000）时，stream 的处理效率">
+    <meta name="description" content="5. 实验结果总结从以上的实验来看，可以总结处以下几点：  在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁； 在大数据量（szie &gt; 10000）时，stream">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Stream">
 <meta property="og:url" content="https://blog.vmko.cc/2022/08/01/2022-08/java-stream/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="5、实验结果总结从以上的实验来看，可以总结处以下几点：  在少低数据量的处理场景中（size&lt;&#x3D;1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁； 在大数据量（szie&gt;10000）时，stream 的处理效率">
+<meta property="og:description" content="5. 实验结果总结从以上的实验来看，可以总结处以下几点：  在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁； 在大数据量（szie &gt; 10000）时，stream">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-08-01T08:34:17.000Z">
-<meta property="article:modified_time" content="2022-08-03T10:51:48.346Z">
+<meta property="article:modified_time" content="2022-08-04T02:43:59.231Z">
 <meta property="article:author" content="Maple">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -506,13 +506,13 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h1 id="5、实验结果总结"><a href="#5、实验结果总结" class="headerlink" title="5、实验结果总结"></a>5、实验结果总结</h1><p>从以上的实验来看，可以总结处以下几点：</p>
+        <h1 id="5-实验结果总结"><a href="#5-实验结果总结" class="headerlink" title="5. 实验结果总结"></a>5. 实验结果总结</h1><p>从以上的实验来看，可以总结处以下几点：</p>
 <ul>
-<li>在少低数据量的处理场景中（size&lt;&#x3D;1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；</li>
-<li>在大数据量（szie&gt;10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分配线程本身就很玄学），可以达到一个很高的运行效率，然而实际普通业务一般不会有需要迭代高于10000次的计算；</li>
+<li>在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；</li>
+<li>在大数据量（szie &gt; 10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分配线程本身就很玄学），可以达到一个很高的运行效率，然而实际普通业务一般不会有需要迭代高于10000次的计算；</li>
 <li>Parallel Stream 受引 CPU 环境影响很大，当没分配到多个cpu核心时，加上引用 forkJoinPool 的开销，运行效率可能还不如普通的 Stream；</li>
 </ul>
-<h1 id="6、使用-Stream-的建议"><a href="#6、使用-Stream-的建议" class="headerlink" title="6、使用 Stream 的建议"></a>6、使用 Stream 的建议</h1><ul>
+<h1 id="6-使用-Stream-的建议"><a href="#6-使用-Stream-的建议" class="headerlink" title="6. 使用 Stream 的建议"></a>6. 使用 Stream 的建议</h1><ul>
 <li>简单的迭代逻辑，可以直接使用 iterator，对于有多步处理的迭代逻辑，可以使用 stream，损失一点几乎没有的效率，换来代码的高可读性是值得的；</li>
 <li>单核 cpu 环境，不推荐使用 parallel stream，在多核 cpu 且有大数据量的条件下，推荐使用 paralle stream；</li>
 <li><strong>stream 中含有装箱类型，在进行中间操作之前，最好转成对应的数值流，减少由于频繁的拆箱、装箱造成的性能损失。</strong></li>
@@ -527,7 +527,7 @@
             <p>原文作者：<a href="https://blog.vmko.cc">Maple</a>
             <p>原文链接：<a href="https://blog.vmko.cc/2022/08/01/2022-08/java-stream/">https://blog.vmko.cc/2022/08/01/2022-08/java-stream/</a>
             <p>发表日期：<a href="https://blog.vmko.cc/2022/08/01/2022-08/java-stream/">August 1st 2022, 4:34:17 pm</a>
-            <p>更新日期：<a href="https://blog.vmko.cc/2022/08/01/2022-08/java-stream/">August 3rd 2022, 6:51:48 pm</a>
+            <p>更新日期：<a href="https://blog.vmko.cc/2022/08/01/2022-08/java-stream/">August 4th 2022, 10:43:59 am</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -733,7 +733,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E3%80%81%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">5、实验结果总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6%E3%80%81%E4%BD%BF%E7%94%A8-Stream-%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="toc-number">2.</span> <span class="toc-text">6、使用 Stream 的建议</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">5. 实验结果总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E4%BD%BF%E7%94%A8-Stream-%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="toc-number">2.</span> <span class="toc-text">6. 使用 Stream 的建议</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -1783,14 +1783,8 @@
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/03</span>
-            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/03</span>
-            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022-08/maven-settings/">maven settings.xml 笔记</a>
         </li>
     
         
@@ -1851,6 +1845,12 @@
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>
             <a class="archive-post-title" href="/2022/05/19/2022-04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022-04/openstack/">OpenStack 学习</a>
         </li>
     
         
@@ -3035,6 +3035,11 @@
             <span class="sidebar-tag-name" data-tags="zookeeper">
                 <span class="iconfont-archer">&#xe606;</span>
                 zookeeper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
             </span>
         
     </div>

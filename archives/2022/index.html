@@ -440,9 +440,9 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2022/08/03/2022-08/maven-settings/">
+            <a class="abstract-title" href="/2022/08/04/2022-08/maven-settings/">
                 
-                <span class="abstract-title-text">[Untitled Post]</span>
+                <span class="abstract-title-text">maven settings.xml 笔记</span>
             </a>
             <div class="abstract-content">
                 Maven 常见的配置文件由以下几部分：
@@ -463,52 +463,18 @@ profilesprofiles 可以认为是配置，其 id 是标识配置的唯一 id （�
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/03</span>
+                <div class="abstract-date" title="Last updated: 2022/08/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
                 </div>
                 <!-- tags -->
                 
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
+                    <div class= abstract-tags >
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/08/03/2022-04/openstack/">
-                
-                <span class="abstract-title-text">OpenStack 学习</span>
-            </a>
-            <div class="abstract-content">
-                [TOC]
-关键术语访问密钥&#x2F;安全密钥
-组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="maven">maven</a>
+    
+</div>
 
-用户 pub 密钥
-
-可用区域
-云范围内用于对虚拟机提供容错的一组隔离的虚拟层。
-块存储
-存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。
-容器（对象）
-在对象存储中组织和存储对象。
-容器（LXC）
-Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的操作系统级别的虚拟环境。Openstack容器服务（Magnum）提供应用容器的管理功能。
-固定&#x2F;静态IP
-相同VM（虚拟机）每次启动的时候关联的IP地址。这可用于管...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/03</span>
-                </div>
-                <!-- tags -->
                 
             </div>
         </article>
@@ -540,7 +506,7 @@ stat
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
+                <div class="abstract-date" title="Last updated: 2022/08/04">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/03</span>
                 </div>
                 <!-- tags -->
@@ -569,16 +535,16 @@ stat
                 <span class="abstract-title-text">Java Stream</span>
             </a>
             <div class="abstract-content">
-                5、实验结果总结从以上的实验来看，可以总结处以下几点：
+                5. 实验结果总结从以上的实验来看，可以总结处以下几点：
 
-在少低数据量的处理场景中（size&lt;&#x3D;1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；
-在大数据量（szie&gt;10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分配线程本身...
+在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；
+在大数据量（szie &gt; 10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
+                <div class="abstract-date" title="Last updated: 2022/08/04">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/01</span>
                 </div>
                 <!-- tags -->
@@ -842,6 +808,54 @@ js 文件 （确切说就是 nodejs 脚本）
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022-04/python-pip/">
+                
+                <span class="abstract-title-text">python 更换国内镜像源</span>
+            </a>
+            <div class="abstract-content">
+                临时修改清华源
+
+清华大学的 pip 源，它是官网 pypi 的镜像，每隔5分钟同步一次，推荐使用。
+
+12pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \    --trusted-host pypi.tuna.tsinghua.edu.cn packagename
+
+
+
+豆瓣源
+12pip install -i http://pypi.douban.com/simple \    --trusted-host pypi.douban.com packagename
+
+
+阿里源
+12pip install -i http...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python pip">python pip</a>
     
 </div>
 
@@ -2015,14 +2029,8 @@ js 文件 （确切说就是 nodejs 脚本）
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/03</span>
-            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/03</span>
-            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022-08/maven-settings/">maven settings.xml 笔记</a>
         </li>
     
         
@@ -2083,6 +2091,12 @@ js 文件 （确切说就是 nodejs 脚本）
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>
             <a class="archive-post-title" href="/2022/05/19/2022-04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022-04/openstack/">OpenStack 学习</a>
         </li>
     
         
@@ -3267,6 +3281,11 @@ js 文件 （确切说就是 nodejs 脚本）
             <span class="sidebar-tag-name" data-tags="zookeeper">
                 <span class="iconfont-archer">&#xe606;</span>
                 zookeeper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
             </span>
         
     </div>

@@ -31,15 +31,11 @@
         <meta name="keywords" content="hexo,blog,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="Maven 常见的配置文件由以下几部分：  proxy mirror repository server profiles  其中 proxy 就是代理服务，这一点暂时不管。 idrepository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。 我一开始以为类似 central, thirdparty 是固定的字">
-<meta property="og:type" content="article">
+    <meta property="og:type" content="website">
 <meta property="og:title" content="Maple&#39;s Blog">
-<meta property="og:url" content="https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/index.html">
+<meta property="og:url" content="https://blog.vmko.cc/tags/maven/index.html">
 <meta property="og:site_name" content="Maple&#39;s Blog">
-<meta property="og:description" content="Maven 常见的配置文件由以下几部分：  proxy mirror repository server profiles  其中 proxy 就是代理服务，这一点暂时不管。 idrepository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。 我一开始以为类似 central, thirdparty 是固定的字">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-08-03T10:51:48.346Z">
-<meta property="article:modified_time" content="2022-08-03T10:51:48.346Z">
 <meta property="article:author" content="Maple">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -233,8 +229,6 @@
         }
     </script>
     
-        <body class="post-body">
-    
         <!-- header -->
         <header class="header header-mobile">
     <!-- top read progress line -->
@@ -264,17 +258,6 @@
     </div>
     <!-- toggle banner for post layout -->
     
-        
-            <div class="banner">
-        
-            <div class="blog-title header-element">
-                <a href="/">Maple&#39;s Blog.</a>
-            </div>
-            <div class="post-title header-element">
-                <a href="#" class="post-name"></a>
-            </div>
-        </div>
-    
 </header>
 
         <!-- fixed footer -->
@@ -301,71 +284,24 @@
 
 
 
-    height:50vh;
-
 ">
     
     <!-- 主页  -->
-    
-        
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/mapleincode/images/master/img/20200522181805.png)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-                [Untitled Post]
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-                
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页 meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">985</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <!-- 撰写日期 -->
-                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
-                    <span class="post-intro-time">2022/08/03</span>
-                    <!-- busuanzi -->
-                    
-                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    
-                    <!-- 文章分享 -->
-                    <span class="share-wrapper">
-                        <span class="iconfont-archer share-icon">&#xe71d;</span>
-                        <span class="share-text">Share</span>
-                        <ul class="share-list">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -495,160 +431,56 @@
 
             <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
-                <main class="main post-page">
-    <article class="article-entry">
-        <p>Maven 常见的配置文件由以下几部分：</p>
-<ul>
-<li>proxy</li>
-<li>mirror</li>
-<li>repository</li>
-<li>server</li>
-<li>profiles</li>
-</ul>
-<p>其中 proxy 就是代理服务，这一点暂时不管。</p>
-<h2 id="id"><a href="#id" class="headerlink" title="id"></a>id</h2><p>repository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。</p>
-<p>我一开始以为类似 <code>central</code>, <code>thirdparty</code> 是固定的字段，后面理解开来，应该只是属于常用的 id，并没有固定的含义。</p>
-<h2 id="profiles"><a href="#profiles" class="headerlink" title="profiles"></a>profiles</h2><p>profiles 可以认为是配置，其 id 是标识配置的唯一 id （和 server 无关）。</p>
-<p>可以认为为了方便切换配置。</p>
-<p>其选择通过 <code>activeProfiles</code> 字段标识。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>&#123;profileId&#125;<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<p>profile 包含三部分：</p>
-<ul>
-<li>id，也就是 profile 的 id</li>
-<li>repositories</li>
-<li>pluginRepositories</li>
-</ul>
-<h2 id="repositories"><a href="#repositories" class="headerlink" title="repositories"></a>repositories</h2><p>仓库。</p>
-<p>包含属性：</p>
-<ul>
-<li>id，唯一标识</li>
-<li>url，地址</li>
-<li>releases &amp; snapshots，通过版本号 version 来区分，包含 SNAPSHOT 字段的就是快照版本，否则为 release 版本</li>
-</ul>
-<p>多个  repository 的情况下，根据其在 repositories 定义的先后顺序进行查找。直到查询到为止。</p>
-<h2 id="pluginRepositories"><a href="#pluginRepositories" class="headerlink" title="pluginRepositories"></a>pluginRepositories</h2><p>插件仓库，定义方式和 repositories 相同。定义的是类似 mvn 在实现功能时的所需要的包的 repo。</p>
-<p>如果不定义，在 mvn clean install 等操作时，依然会拉取 maven 官方库。</p>
-<h2 id="mirrors"><a href="#mirrors" class="headerlink" title="mirrors"></a>mirrors</h2><p>镜像。</p>
-<p>mirrors 可能在国内用的比较多，介于网速的原因。</p>
-<p>和 repository  相比，mirror 配置除了没有 releases 和 snapshots，还多了一个 mirrorOf。</p>
-<p>mirrorOf 配置的需要被镜像代理的 repository 的 id。</p>
-<p>除了 id 之外，mirrorOf 还支持以下参数：</p>
-<ul>
-<li><code>*</code>: 匹配所有，所有内容都从镜像拉取</li>
-<li><code>external:*</code>: 除了本地缓存的所有从镜像仓库拉取</li>
-<li><code>repo,repo1</code>: repo 或者 repo1 ，这里的 repo 指的是  repository 的 id。</li>
-<li><code>*,!repo1</code>: 除了 repo1 的所有仓库</li>
-</ul>
-<p>一个 repo 最多被一个镜像代理，例如 mirrors 有两个 mirror 都代理了 id：central。那有且只有第一个 mirror 会被访问。</p>
-<blockquote>
-<p>如果第一个 mirror of 了 central ，第二个 mirror of 了 *。</p>
-<p>那在访问 id 为 central 的 repo 会访问第一个 mirror，而在访问其他 repo 时会访问第二个 mirror。</p>
-</blockquote>
-<p>##repositories 和 mirrors 的区别</p>
-<p>repositories 属于仓库配置，相当于定义不同的资源 （snapshot 和 release ）从哪里拉取，优先从那里拉取。</p>
-<p>所以 repository  需要配置  snapshots 和 releases 参数。例如， releases 可以从 aliyun 优先拉取，而 snapshots 则可以设定只从公司的 repos 甚至个人私有的 repos 获取。</p>
-<p>而 mirrors 本质更像是用来加速，比如定义了 id 为 central 的 repo，则在 mirrors 里配置加速的 mirros 里时，里面的 mirrorOf 就需要填写为 central。</p>
-<p>两者很多功能都比较类似，感觉更像是定义上的区别。比如 maven 官方库，和 aliyun 库。</p>
-<p>我可以把 maven 定义成 central ，而 aliyun 定义成 central-1。这样两者都是 repos，然后把  aliyun 的 repo 放在 maven 的前面，这样优先会拉取 aliyun 的仓库。</p>
-<p>但是如果我把 maven 定义成 central，而把 aliyun 定义成 mirror，并且 mirrorOf central。这样系统只会从 aliyun 去获取资源，因为他们本质只是一个 repo。</p>
-<p>所以，正常情况下除非是用于加速，否则不同类型的 repo 应该都设置到 repositories 去。这样一旦需要代理，直接修改 mirrors 就可以了。</p>
-<blockquote>
-<p>实际上拿到同事的配置，绝大多数的配置都放在了 mirrors ，这个概念应该是错的。</p>
-<p>正常应当把 maven 官方 repo 放在 repositories ，类似 aliyun 仓库的应当作为 central 的镜像被放到 mirros。</p>
-<p>而各类私有仓库，应当都放到 respositories ，并且定义不同的 id。</p>
-</blockquote>
-<h2 id="servers"><a href="#servers" class="headerlink" title="servers"></a>servers</h2><p>servers 里定义的是访问私有库的账户密码。</p>
-<p>这里比较有意思的是项目里 pom.xml  也会定义 distributionManagement。这里的 repository 需要的鉴权，也可以被定义到 <code>~/.m2/settings.xml</code> 里的 servers。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6993190688846266375">https://juejin.cn/post/6993190688846266375</a></li>
-<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844904071518748680">https://juejin.cn/post/6844904071518748680</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/jeikerxiao/article/details/60324713">https://blog.csdn.net/jeikerxiao/article/details/60324713</a></li>
-</ol>
-
-    </article>
-    <!-- license -->
+                <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="https://blog.vmko.cc">Maple</a>
-            <p>原文链接：<a href="https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/">https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/</a>
-            <p>发表日期：<a href="https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/">August 3rd 2022, 6:51:48 pm</a>
-            <p>更新日期：<a href="https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/">August 3rd 2022, 6:51:48 pm</a>
-            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
-        </div>
-    
-    <!-- paginator -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2022/08/03/2022-04/openstack/" title="OpenStack 学习">
-                    <div class="prevTitle">OpenStack 学习</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- comment -->
-    
-        <div class="post-comment">
-            <!-- 来必力 City 版安装代码 -->
-
-
-            
-    <div id="disqus_thread"></div>
-    <script>
-        /**
-    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
         
-        var disqus_config = function () {
-        this.page.url = "https://blog.vmko.cc/2022/08/03/2022-08/maven-settings/";  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = ""; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         
-        (function () { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://blog-mapleincode-com.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
+        
+        
             
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/04/2022-08/maven-settings/">
+                
+                <span class="abstract-title-text">maven settings.xml 笔记</span>
+            </a>
+            <div class="abstract-content">
+                Maven 常见的配置文件由以下几部分：
 
-            <!--
- * @Author: maple
- * @Date: 2022-04-20 16:27:18
- * @LastEditors: maple
- * @LastEditTime: 2022-05-20 14:23:33
--->
+proxy
+mirror
+repository
+server
+profiles
 
-
-            <!-- utteranc评论 -->
-
-
-            <!-- partial('_partial/comment/changyan') -->
-            <!--PC版-->
-
-
+其中 proxy 就是代理服务，这一点暂时不管。
+idrepository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。
+我一开始以为类似 central, thirdparty 是固定的字段，后面理解开来，应该只是属于常用的 id，并没有固定的含义。
+profilesprofiles 可以认为是配置，其 id 是标识配置的唯一 id （和 server 无关）。
+可以认为为了方便...
+            </div>
+            <!-- read more -->
             
-            
-
-            
-
-        </div>
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
     
-    <!-- timeliness note -->
-    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
     
-    <!-- Mathjax -->
+        <a class="post-tag" href="javascript:void(0);" data-tags="maven">maven</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+    <!-- paginator  -->
     
 </main>
 
@@ -761,23 +593,6 @@
 
         </div>
         <!-- toc -->
-        
-            <div class="toc-wrapper toc-wrapper-loding" style=
-
-
-
-
-
-
-
-    top:50vh;
-
->
-                <div class="toc-catalog">
-                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-                </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#id"><span class="toc-number">1.</span> <span class="toc-text">id</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#profiles"><span class="toc-number">2.</span> <span class="toc-text">profiles</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#repositories"><span class="toc-number">3.</span> <span class="toc-text">repositories</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pluginRepositories"><span class="toc-number">4.</span> <span class="toc-text">pluginRepositories</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mirrors"><span class="toc-number">5.</span> <span class="toc-text">mirrors</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#servers"><span class="toc-number">6.</span> <span class="toc-text">servers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">7.</span> <span class="toc-text">参考</span></a></li></ol>
-            </div>
         
         <!-- sidebar -->
         <div class="sidebar sidebar-hide">
@@ -1826,14 +1641,8 @@
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/03</span>
-            <a class="archive-post-title" href="/2022/08/03/2022-08/maven-settings/">[Untitled Post]</a>
-        </li>
-    
-        
-        <li class="archive-post-item">
-            <span class="archive-post-date">08/03</span>
-            <a class="archive-post-title" href="/2022/08/03/2022-04/openstack/">OpenStack 学习</a>
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022-08/maven-settings/">maven settings.xml 笔记</a>
         </li>
     
         
@@ -1894,6 +1703,12 @@
         <li class="archive-post-item">
             <span class="archive-post-date">05/19</span>
             <a class="archive-post-title" href="/2022/05/19/2022-04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022-04/openstack/">OpenStack 学习</a>
         </li>
     
         
@@ -3080,6 +2895,11 @@
                 zookeeper
             </span>
         
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
+            </span>
+        
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
@@ -3131,8 +2951,6 @@
         <!-- CNZZ -->
         
         <!-- async load share.js -->
-        
-            <script src="/scripts/share.js?v=20211217" async></script>
         
         <!-- mermaid -->
         
