@@ -440,6 +440,249 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/11/11/2019-11/passwd/">
+                
+                <span class="abstract-title-text">Shell 自动输入 sudo 密码</span>
+            </a>
+            <div class="abstract-content">
+                
+使用 echo 和管道命令
+
+12#!/bin/bashecho password | sudo -S service runtime* status
+
+
+使用文本块输入重定向
+
+
+发现这个命令不能用在 shell 的判断条件里
+
+1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
+
+
+
+
+第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
+
+参考:
+
+https://blog.csdn.net/qiyueqinglian/article/detail...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/11/11/2019-11/vCenter/">
+                
+                <span class="abstract-title-text">vCenter 和 vCSA 对比</span>
+            </a>
+            <div class="abstract-content">
+                vCenter Server与vCenter Server Virtual Appliance（vCSA）都提供对企业中[VMware vSphere](https://baike.baidu.com/item/VMware vSphere)部署的集中管理。虽然拥有相同的功能，两者安装却不同，所支持的功能也不同。
+vCSA不支持的功能
+vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSphere许可。VCSA 5.0.1及以后版本运行PostgreSQL数据库，而之前版本运行的是IBM DB2数据库。VCSA只支持PostgreSQ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/11/08/2019-11/esxi/">
+                
+                <span class="abstract-title-text">ESXi 使用笔记</span>
+            </a>
+            <div class="abstract-content">
+                作为不想折腾开发环境的懒人，长期部署若干个服务器用于自己开发学习。
+目前的做法是，在搭建 Ubuntu 的宿主机安装 VMware Station ，然后利用其 VMware Server ，通过客户端连接。
+结果被一个朋友吐槽为什么不用 ESXi。
+早期的想法是能用就行，加上对虚拟机的功能也不是很了解。
+ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其他的系统。
+与 ESXi 不同，VMware Server 底层还是 Linux，相当于  ESXi 直接与硬件交互，而 VMware Server 则与 Linux 交互。
+其实性能上也没有感受到很大的差距，但是 VMwar...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/09/05/2019-08/rabbtmq-demo/">
+                
+                <span class="abstract-title-text">RabbitMQ Node demo</span>
+            </a>
+            <div class="abstract-content">
+                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105const options = &#123;    hostname: &#x27;192.168.2.121&#x27;,    username: &#x27;username...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/09/02/2019-08/version/">
+                
+                <span class="abstract-title-text">版本号对比</span>
+            </a>
+            <div class="abstract-content">
+                version 对比公司一同学为了对比 version 特意引入了一个 module。
+对于一般情况，引入成熟的 module 的确可以解决很多问题，尤其是完善性。但是 version 对比却是相当简单的逻辑。
+12345678910function sort(v1, v2) &#123;	const diff = v1.shift() - v2.shift();	return diff !== 0 ? (diff &gt; 0) : sort(v1, v2);&#125;function version(v1, v2) &#123;	v1 = v1.split(&#x27;.&#x27...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/08/13/2019-08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">
+                
+                <span class="abstract-title-text">单反画幅</span>
+            </a>
+            <div class="abstract-content">
+                135 胶卷十九世纪二十年代胶卷的宽度为 35mm，德国研制出使用拍摄电影的 35mm (36mm×24mm) 胶片的徕卡照相机后，35毫米胶卷又叫“徕卡卷”，后来世界各厂生产用于拍摄35毫米胶片的照相机越来越多，“徕卡卷”这个名称已不能适应了，于是就按胶卷的宽度改为“35 毫米胶片”。
+直到五十年代之后，为了区分 35 毫米电影胶片和照相机用的 35 毫米散装胶卷，在胶卷盒上印有 135 的代号。后来大家就公认把 35mm 胶卷称为 135 胶卷，把用 135 胶卷的相机称为 135 相机。讲到这里相信大家会有个疑问，135（35）胶卷尺寸规格不是36*24mm吗 ？为什么叫35mm胶...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="photography">photography</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/07/21/2019-07/ssl_cert/">
                 
                 <span class="abstract-title-text">Let&#39;s encrypt 证书申请</span>
@@ -640,260 +883,10 @@ KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/04/29/2019-07/xiazaibao/">
-                
-                <span class="abstract-title-text">迅雷下载宝定制固件</span>
-            </a>
-            <div class="abstract-content">
-                转载 https://www.right.com.cn/forum/thread-186873-1-1.html。
-此文是为了备份。
-
-迅雷下载宝官方固件因追求稳定而不开放ssh和telnet。为了进一步挖潜下载宝性能，在保留官方百分之百功能的基础上，定制了下载宝固件，仅供广大高清爱好者学习研究，
-若有违官方政策，请自觉删除！
-为了稳定起见，本固件只基于官方手机APP正式推送的版本进行定制，例如191. 192版。 
-【2017年10月12日复活版】
-鉴于下载宝官方开始更新固件，且各位网友极力更新定制固件，本人决定继续更新维护下载宝的定制固件版本，供大伙研究使用。
-因本人下载宝已出，在此...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/04/16/2019-07/gitlab-source/">
-                
-                <span class="abstract-title-text">GitLab Ubuntu 使用清华镜像站</span>
-            </a>
-            <div class="abstract-content">
-                GitLab 作为优秀的 Git 服务，安装在家里用于代码管理。
-GitLab CE 基本每周一次更新，为了保证使用新功能一般都经常通过 apt-get 进行更新。无奈国内的速度十分感人。
-后面发现清华大学开源软件镜像站提供了镜像源。
-修改 /etc/apt/source.list.d/gitlab_gitlab-ce.list
-12345678# this file was generated by packages.gitlab.com for# the repository at https://packages.gitlab.com/gitlab/gitlab-ce# deb h...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/03/29/2019-07/syno/">
-                
-                <span class="abstract-title-text">黑群晖的安装 &amp; 洗白</span>
-            </a>
-            <div class="abstract-content">
-                
-本帖只作为技术研究， 请读者遵守相关法律法规，不要侵犯以他人的商业利益为目的进行相关破解行为。
-
-准备工作硬件:
-
-一台可以上网并带有 USB 口的 windows 电脑
-一个 U 盘（作为启动盘而非安装盘，需要长期插在机子上）
-nas（主机）
-
-软件: 
-
-ChipEasy
-Win32DiskImager
-DiskGenius
-
-下载地址:
-https://pan.baidu.com/s/1BVbFroBwtCCdNm2xCuaCHg#list/path=%2F
-
-已失效
-
-安装群晖系统1. 首先获取 nas 设备的 mac。mac 地址相当于是网卡的唯一编号。最简单的办法就是看下路...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/03/14/2019-07/analysis-of-redis-performance/">
-                
-                <span class="abstract-title-text">Redis 性能问题分析（转载）</span>
-            </a>
-            <div class="abstract-content">
-                Redis 性能问题分析（转载）原文: https://www.jianshu.com/p/67093716547b
-
-
-在一些网络服务的系统中，Redis 的性能，可能是比 MySQL 等硬盘数据库的性能更重要的课题。比如微博，把热点微博[1]，最新的用户关系[2]，都存储在 Redis 中，大量的查询击中 Redis，而不走 MySQL。
-那么，针对 Redis 服务，我们能做哪些性能优化呢？或者说，应该避免哪些性能浪费呢？
-Redis 性能的基本面在讨论优化之前，我们需要知道，Redis 服务本身就有一些特性，比如单线程运行。除非修改 Redis 的源代码，不然这些特性，就是我们思...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/03/13/2019-07/redis-concurrence/">
-                
-                <span class="abstract-title-text">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</span>
-            </a>
-            <div class="abstract-content">
-                最近做了一个项目，涉及了大量的 redis IO 读写。
-原先的方式采用了单命令，一个操作往往涉及多个请求，写入和读取数据的效率十分低。因此，期望通过打包命令的方式，来减少网络请求 IO 对效率的影响
-在网上找到某大佬关于 redis 单条命令请求效率低的解释:
-
-
-socket IO 导致的上下文切换开销
-熟悉 OS／Linux 的童鞋都知道，一次 redis 请求在客户端和服务端分别至少会存在一次 read() 和一次 write() ，作为系统调用，read／write 的成本高于普通的函数调用，因此，在单个命令重复调用场景下，大量的 read&#x2F;write 系统调用会产生...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/02/25/2019-07/mc-server-input-error/">
-                
-                <span class="abstract-title-text">MC 服务器启动之后无法在服务端输入指令</span>
-            </a>
-            <div class="abstract-content">
-                不久前，发现 MC 服务器居然不能输入指令关闭服务器，在启动过程中有报错。
-123456789101112java.io.IOException: Resource temporarily unavailable	at java.io.FileInputStream.readBytes(Native Method)	at java.io.FileInputStream.read(FileInputStream.java:272)	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)	at java.io.Buf...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mc">mc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1744,7 +1737,49 @@ socket IO 导致的上下文切换开销
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2039,7 +2074,7 @@ socket IO 导致的上下文切换开销
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 151
         </div>
         <!-- search  -->
         
@@ -2053,6 +2088,42 @@ socket IO 导致的上下文切换开销
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022-08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022-08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022-08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/04</span>
@@ -3312,6 +3383,11 @@ socket IO 导致的上下文切换开销
             <span class="sidebar-tag-name" data-tags="maven">
                 <span class="iconfont-archer">&#xe606;</span>
                 maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
             </span>
         
     </div>

@@ -440,6 +440,269 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/07/05/2022-06/requirement/">
+                
+                <span class="abstract-title-text">Python 项目 &amp; requirement.txt</span>
+            </a>
+            <div class="abstract-content">
+                安装依赖1pip install -r requirement.txt
+
+
+
+环境依赖写入文件
+是所有的依赖都会写入，不仅仅是项目所依赖的
+
+1pip freeze &gt; requirements.txt
+
+
+
+仅写入项目所依赖的依赖12pip install pipreqspipreqs ./
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/07/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/06/07/2022-06/vlan/">
+                
+                <span class="abstract-title-text">VLAN</span>
+            </a>
+            <div class="abstract-content">
+                ACCESS 端口接 PC，VID &#x3D; PVIDTRUNK 端口级联，VID &#x3D; 全部，PVID &#x3D; 1
+VID &#x3D; VLAN ID
+PVID &#x3D; Port-Base VLAN ID
+VID（VLAN ID）是VLAN的标识，定义其中的端口可以接收发自这个VLAN的包
+
+当端口1同时属于 VLAN1、VLAN2 和 VLAN3 时, 那么端口1可以接收到 VLAN1，2，3的数据
+
+PVID（Port VLAN ID）定义这个 untag 端口可以转发哪个 VLAN 的包
+
+而它的PVID为1,发出的包只能发到 VLAN1 中
+
+PVID...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/06/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="VLAN">VLAN</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/30/2022-04/pm2/">
+                
+                <span class="abstract-title-text">pm2 管理所有应用</span>
+            </a>
+            <div class="abstract-content">
+                关于 pm2PM2 is a daemon process manager that will help you manage and keep your application online 24&#x2F;7
+基本用法1234pm2 start app.jspm2 stop [name, id, all]pm2 restart [name, id, all]pm2 kill [name, id, all]
+
+
+
+配置文件pm2  支持根据配置文件启动，一般有三种:
+
+json
+yaml
+js 文件 （确切说就是 nodejs 脚本）
+
+其实对参数而言都是一样的，官方推荐 js 文件，...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/30</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="pm2">pm2</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/27/2022-04/rabbitmq-client/">
+                
+                <span class="abstract-title-text">RabbitMQ 客户端(nodejs)</span>
+            </a>
+            <div class="abstract-content">
+                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/27">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">
+                
+                <span class="abstract-title-text">gitlab 升级失败 or gitlab-ctl reconfigure 失败</span>
+            </a>
+            <div class="abstract-content">
+                问题通过 apt 升级 gitlab-ce 发生错误。提示 gitlab-ctl reconfigure 失败。
+1234567Running handlers:There was an error running gitlab-ctl reconfigure:rails_migration[gitlab-rails] (gitlab::database_migrations line 51) had an error: Mixlib::ShellOut::ShellCommandFailed: bash[migrate gitlab-rails database] (/opt/gitl...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/27">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022-04/python-pip/">
+                
+                <span class="abstract-title-text">python 更换国内镜像源</span>
+            </a>
+            <div class="abstract-content">
+                临时修改清华源
+
+清华大学的 pip 源，它是官网 pypi 的镜像，每隔5分钟同步一次，推荐使用。
+
+12pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \    --trusted-host pypi.tuna.tsinghua.edu.cn packagename
+
+
+
+豆瓣源
+12pip install -i http://pypi.douban.com/simple \    --trusted-host pypi.douban.com packagename
+
+
+阿里源
+12pip install -i http...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python pip">python pip</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/05/19/2022-04/python-venv/">
                 
                 <span class="abstract-title-text">python venv</span>
@@ -608,235 +871,10 @@ netstat...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/19/2022-04/maven-command/">
-                
-                <span class="abstract-title-text">30 个 Maven 命令</span>
-            </a>
-            <div class="abstract-content">
-                https://www.cnblogs.com/javastack/p/12982472.html
-maven 命令除了常用的几个，大部分经常记不住，整理一下，方便查询。
-maven 命令的格式为 mvn [plugin-name]:[goal-name]，可以接受的参数如下。
-1234567891011-D 指定参数，如 -Dmaven.test.skip=true 跳过单元测试；-P 指定 Profile 配置，可以用于区分环境；-e 显示maven运行出错的信息；-o 离线执行命令,即不去远程仓库更新包；-X 显示maven允许的debug信息；-U 强制去远程更新snapshot...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/07/2022-03/python-3-minutes/">
-                
-                <span class="abstract-title-text">3 分钟学习 (Python)</span>
-            </a>
-            <div class="abstract-content">
-                from https://github.com/adambard/learnxinyminutes-docs/pull/4351
-Python 是由吉多·范罗苏姆(Guido Van Rossum)在 90 年代早期设计。它是如今最常用的编程语言之一。它的语法简洁且优美，几乎就是可执行的伪代码。
-欢迎大家斧正。英文版原作 Louie Dinh @louiedinh邮箱 louiedinh [at] [谷歌的信箱服务]。中文翻译 Geoff Liu。
-注意：这篇教程是基于 Python 3 写的。如果你想学旧版 Python 2，我们特别有另一篇教程。
-123456789101112131...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/07">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/07/2022-04/maven-notion/">
-                
-                <span class="abstract-title-text">mvn 笔记精简</span>
-            </a>
-            <div class="abstract-content">
-                Maven 概念from https://segmentfault.com/a/1190000019897882
-Maven 定位
-编译
-部署
-清理
-测试
-报告
-打包
-安装
-
-目录架构约定123456test  / main  		/ java     // 源代码  		resources  // 配置文件  / test  	  / java     // 测试代码
-
-
-
-
-
-配置文件pom.xml 
-配置结构12345678&lt;dependencies&gt;	&lt;dependency&gt;  	&lt;groupId&gt;cn.vmkoo.test&lt;/group...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">
-                
-                <span class="abstract-title-text">记一次 highlight.js 不生效的问题</span>
-            </a>
-            <div class="abstract-content">
-                问题在折腾工作机的时候，惊奇的发现自己的博客的 code 块的语法高亮没了？！当时因为是主题的问题，还更换了 hexo 的主题。直到某一次查询到 csdn 的博客页面，发现博客的语法高亮也出现了相似的问题：字体的颜色显示成黑色。
-
-先说解决方案，问题出在刚安装的 source code pro  字体上，国内某大站下载的字体存在问题，我后面去 google 官网下载了一份就正常了。
-
-
-清理缓存 &amp; 卸载清理页面缓存，强制刷新页面，无法解决。
-使用了隐形标签来测试是否被浏览器插件影响，无法解决。
-清理浏览器缓存，无法解决。
-卸载重装浏览器，无法解决。
-更换电脑，发现别的电脑都是正...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/07">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/02/09/2022-01/unrar/">
-                
-                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
-            </a>
-            <div class="abstract-content">
-                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
-方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
-packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
-1pip install zipfile
-
-
-
-存在问题：gbk 文件名乱码
-因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
-有...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/2022/">&lt; PREV</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span>
+            <a class="extend prev" rel="prev" href="/archives/2022/">&lt; PREV</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1687,7 +1725,49 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1982,7 +2062,7 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 151
         </div>
         <!-- search  -->
         
@@ -1996,6 +2076,42 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022-08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022-08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022-08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/04</span>
@@ -3255,6 +3371,11 @@ packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎�
             <span class="sidebar-tag-name" data-tags="maven">
                 <span class="iconfont-archer">&#xe606;</span>
                 maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
             </span>
         
     </div>

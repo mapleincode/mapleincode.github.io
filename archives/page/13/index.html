@@ -440,6 +440,268 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/04/23/2019-07/systemctl/">
+                
+                <span class="abstract-title-text">systemctl 命令(转)</span>
+            </a>
+            <div class="abstract-content">
+                systemctl命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。
+
+
+
+任务
+旧指令
+新指令
+
+
+
+使某服务自动启动
+chkconfig –level 3 httpd on
+systemctl enable httpd.service
+
+
+使某服务不自动启动
+chkconfig –level 3 httpd off
+systemctl disable httpd.service
+
+
+检查服务状态
+service httpd status
+systemctl status httpd.service （服务详细信息） systemctl...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/13/2019-07/xms/">
+                
+                <span class="abstract-title-text">Xms Xmx PermSize MaxPermSize 的含义</span>
+            </a>
+            <div class="abstract-content">
+                转载
+参数的含义
+
+-vmargs -Xms128M -Xmx512M -XX:PermSize&#x3D;64M-XX:MaxPermSize&#x3D;128M-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了-Xms128m JVM初始分配的堆内存-Xmx512m JVM最大允许分配的堆内存，按需分配-XX:PermSize&#x3D;64M JVM初始分配的非堆内存-XX:MaxPermSize&#x3D;128M JVM最大允许分配的非堆内存，按需分配
+
+我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。
+堆(Heap)和非堆(Non-he...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/12/2019-07/object-define-properity/">
+                
+                <span class="abstract-title-text">Vue.js 数据绑定原理</span>
+            </a>
+            <div class="abstract-content">
+                作为一个后端开发，对于set 和get一般都不会陌生。在面向对象开发中，一个对象一般都有 get 和 set 的属性，赋值既是set，得值就是get。刚接触 JavaScript 的时候，似乎还没有这个特性（也可能自己太菜），随着 Vue.js 的流行慢慢火热起来。其实原理很简单，就是看怎么搞。
+对象描述类型通俗的来说就是一个对象假设 var obj = &#123; a: 1 &#125;，有一种东东叫做属性描述对象，用于解释 obj.a的一些属性。
+有且只有两种类型: 
+
+数据型描述符
+控制型描述符
+
+所有对象的 key 的描述对象类型必须是两者之一。
+数据型描述符(data des...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vue">vue</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/12/2019-07/shell-place/">
+                
+                <span class="abstract-title-text">Shell 获取文件地址</span>
+            </a>
+            <div class="abstract-content">
+                12cd `dirname $0`echo `pwd`
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/07/2019-07/nas-ssh-error/">
+                
+                <span class="abstract-title-text">群晖 SFTP 连接失败</span>
+            </a>
+            <div class="abstract-content">
+                群晖系统(Synology DiskStation)可以说是 NAS 系统中最完美的系统（虽然我也就用了他一个）。基本他集成了所有我们所需要的功能，而且性能强大。
+因为需要在局域网内进行文件传输，因为平时都是用 SSH 来通讯的，所以直接用 NAS 用自带 SFTP 服务来传输文件非常方便。
+之前有一次，将局域网里的某个机子重装了之后，在 NAS 上通过 SFTP 服务访问却得到了 链接失败。
+考虑了下，应该是known_hosts捣的鬼。
+常用 SSH 的人，对known_hosts一定很了解，本身它是为了安全而生，访问你访问到一个虚假的系统。通常，如果一个域名或者 IP 的 ssh-...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/28/2019-07/static-ip/">
+                
+                <span class="abstract-title-text">Linux 静态 IP 设置</span>
+            </a>
+            <div class="abstract-content">
+                整理虚拟机的 IP。
+路由器原来的 IP 段是192.168.2.0。为了方便管理，想把所有主机的 IP 改成 192.168.1.x。
+子网掩码虽然大学教过但是完全不知道这是什么东西。
+抽空看了一个小时基本理解了他的作用。
+将子网掩码从255.255.255.0改成255.255.252.0，这样就可以接受 192.168.0.x -&gt; 192.168.3.x的 IP 了。
+配置静态 IPUbuntu 下配置 IP 的文件是/etc/network/interfaces。
+默认配置为:
+123# The primary network interfaceauto ens32ifa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/03/18/2019-07/unixbench/">
                 
                 <span class="abstract-title-text">使用 Unixbench 测试 CPU 性能</span>
@@ -591,258 +853,10 @@ G...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/22/2019-07/openvpn-login-auto/">
-                
-                <span class="abstract-title-text">使用 Expect 自动登录 OpenVPN</span>
-            </a>
-            <div class="abstract-content">
-                公司使用 OpenVPN 作为外网办公网络，本来只设置了用户名密码，但是为了安全，公司的网(yun)管(wei)同事升级了安全配置，添加了谷歌验证的输入需求。
-谷歌验证是一种将预先生成秘钥和时间戳，通过一种开源算法计算出若干位的数字的安全方案。在 VPN 配置界面，会提供一个二维码(即为秘钥)，然后在手机上安装 APP，扫码二维码并保存，可以获得一个动态刷新的验证码。然后在登录界面输入账号密码和动态验证码即可登录 VPN。
-作为一个电脑党，每次登录 VPN 都需要满世界找手机，真的让人觉得麻烦。因为谷歌验证是开源的，所以 gayhub 上到处都有各个编程语言支持的包。如果可以运行一套程序...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="expect">expect</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/21/2019-07/node-install/">
-                
-                <span class="abstract-title-text">Ubuntu 安装 Node.js 环境</span>
-            </a>
-            <div class="abstract-content">
-                官方编译版本安装使用官方预先编译好的二进制安装包进行安装。
-从https://nodejs.org/en/download/选择对应的版本的二进制包，下载到 Linux 上。
-123456789101112# 下载wget https://nodejs.org/dist/&#123;version&#125;/node-&#123;version&#125;-linux-x64.tar.xz# 解压tar -xvf node-&#123;version&#125;-linux-x64.tar.xz# 进入文件夹cd node-&#123;version&#125;-linux-x64/#...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/11/2019-07/auto-restart/">
-                
-                <span class="abstract-title-text">Shell 自动重启进程</span>
-            </a>
-            <div class="abstract-content">
-                将 OpenVPN 搭建在一台服务器上，因为服务器设置了会话过期，所以服务每天都会在 24 小时后自动断开，因此需要一个类似守护进程的脚本来进行自动重启。
-网上找到了一个简单的脚本:
-12345678910#!/bin/bashwhile truedo    procnum=` ps -ef|grep &quot;openvpn&quot;|grep -v grep|wc -l`   if [ $procnum -eq 0 ]; then       ./openvpn   fi   sleep 30done
-
-其方式是每 30 秒通过 ps 命令来检查对应名称的进程是否存在，如果不存在...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/07/2019-07/pac/">
-                
-                <span class="abstract-title-text">自动科学上网 &amp; PAC</span>
-            </a>
-            <div class="abstract-content">
-                
-  一直很喜欢 Chrome 的书签和记录同步，也不喜欢第三方的来搞。但是因为我们伟大的长城，所以需要科学上网来实现数据同步。之前是租了一台 VPS，然后自己搭建 SS 服务器，无奈费用实在是太高。后来在同事的推荐下开了一个 SS 服务，16 刀一年，50G 一个月（P.S. 后面发现这个网站的流量是按照节点算的，慢的节点算 0.2，相当于 250G，对我这种之翻墙看看网页的乖巧少年来说完全够用了）。但是问题来了，iPad 的 SS 客户端我只能找到一个简单的小工具，且只支持aes-256-cfb&quot;，但是 SS 服务商强制要求 chacha20-ietf-poly1305这种...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="pac">pac</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/01/22/2019-07/rasp-hdd/">
-                
-                <span class="abstract-title-text">树莓派用机械硬盘当系统盘</span>
-            </a>
-            <div class="abstract-content">
-                
-  全程参考一个大佬的文章 https://mynook.info/blog/post/boot-raspberrypi-from-external-hdd
-
-方案一直对树莓派的读写速度十分不能接受，也曾想去某宝上找 EMMC 转 SD 的套件，但是听那个老板说 EMMC 芯片一百+，觉得有点贵，毕竟树莓派也仅仅支持 USB2.0。于是乎，在某家库存店找了一个 80G 的库存的机械硬盘(￥60)，又买了一根双 USB 的易驱线(树莓派的 USB 供电支持不了机械硬盘)。
-
-  简单搜索了一下发现直接从硬盘启动是不行的，因为树莓派启动的时候固定是从 SD 卡的第一个分区（&#x2F;bo...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/29/2019-07/virtual-dom/">
-                
-                <span class="abstract-title-text">深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
-            </a>
-            <div class="abstract-content">
-                作者：戴嘉华
-转载请注明出处并保留原文链接(#13)和作者信息。
-目录：
-1 前言
-2 对前端应用状态管理思考
-3 Virtual DOM 算法
-4 算法实现
-4.1 步骤一：用JS对象模拟DOM树
-4.2 步骤二：比较两棵虚拟DOM树的差异
-4.3 步骤三：把差异应用到真正的DOM树上
-
-
-5 结语
-6 References
-
-1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
-本文...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dom">dom</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/12/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/14/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/12/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/14/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1693,7 +1707,49 @@ G...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1988,7 +2044,7 @@ G...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 145
+        Total : 151
         </div>
         <!-- search  -->
         
@@ -2002,6 +2058,42 @@ G...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022-08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022-08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022-08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022-08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/04</span>
@@ -3261,6 +3353,11 @@ G...
             <span class="sidebar-tag-name" data-tags="maven">
                 <span class="iconfont-archer">&#xe606;</span>
                 maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
             </span>
         
     </div>
