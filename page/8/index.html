@@ -455,6 +455,92 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2019/11/13/2019-11/centos5.x/">
+                
+                <span class="abstract-title-text">CentOS 5.x 版本 repo 地址</span>
+            </a>
+            <div class="abstract-content">
+                在迁移虚拟机到 ESXi 的时候，不幸遗漏了一个游戏私服服务器 orz。虽然私服不怎么好玩，但是也算是一个小纪念。鉴于私服的服务器版本是 CentOS 5.x 版本比较老，所以担心之后可能搭不起来。
+于是乎，果然访问 error。查阅了相关信息，我搭建的时候 16 年年底。17 年 3 月，CentOS 5.x 正式停止依赖维护。
+呃…查询了网上资料，有提供一个 http://vault.centos.org/5.11/os 的 repo 地址。并且版本限定 5.11。鉴于我对 CentOS 不太了解，直接拿了网上的 CentOS-Base.repo。
+12345678910111213...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/11/12/2019-11/ELK/">
+                
+                <span class="abstract-title-text">ELK 搭建</span>
+            </a>
+            <div class="abstract-content">
+                起因
+项目需求
+公司某位大佬有记录文档可以参考
+
+ELKELK 平台是当前应用比较广泛的一套开源实时日志分析解决方案。ELK 由 ElasticSearch、Logstash 和 Kiabana 三个开源工具组成。
+ELK &#x3D; Elasticsearch + Logstash + Kibana
+参考 &amp; 下载地址: https://www.elastic.co/cn/products/
+
+MacOS 
+
+Elasticsearch
+Elasticsearch 是一个基于 JSON 的分布式搜索和分析引擎。
+Kibana
+Kibana 可谓 Elastic Stack 的...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="elk">elk</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2019/11/11/2019-11/passwd/">
                 
                 <span class="abstract-title-text">Shell 自动输入 sudo 密码</span>
@@ -808,88 +894,6 @@ Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId(
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/06/17/2019-07/codesign/">
-                
-                <span class="abstract-title-text">mac os codesign</span>
-            </a>
-            <div class="abstract-content">
-                12codesign --sign - --force --deep /Applications/Alfred\ 3.app codesign --sign - --force --deep /Applications/Alfred\ 3.app/Contents/Preferences/Alfred\ Preferences.app
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/05/23/2019-07/redis/">
-                
-                <span class="abstract-title-text">redis 学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                Redis 数据类型
-redis 支持五种数据类型
-String: 字符串
-Hash: Hash 散列
-List: 列表
-Set: 集合
-ZSet: 有序集合(Sorted Set)
-
-
-
-KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key，并返回而序列化的值。exists keyexpire key // 秒expireat key // timestamppexpireat key // 毫秒 (unix timestamp)keys pattern // 查找所有符合给定模式(pattern)...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
     
 </div>
 
@@ -1861,7 +1865,21 @@ KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2168,7 +2186,7 @@ KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 151
+        Total : 153
         </div>
         <!-- search  -->
         
@@ -2182,6 +2200,18 @@ KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022-08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/11</span>
@@ -3482,6 +3512,11 @@ KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key
             <span class="sidebar-tag-name" data-tags="jvm">
                 <span class="iconfont-archer">&#xe606;</span>
                 jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
             </span>
         
     </div>

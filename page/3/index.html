@@ -455,6 +455,97 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/firewalld/">
+                
+                <span class="abstract-title-text">Centos7 防火墙 firewalld 基本配置与端口转发</span>
+            </a>
+            <div class="abstract-content">
+                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
+1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="firewalld">firewalld</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/iptables/">
+                
+                <span class="abstract-title-text">linux 端口转发 iptables</span>
+            </a>
+            <div class="abstract-content">
+                linux 端口转发 iptablescentos 7 使用 firewalld 服务而不是 iptables，如果 centos7 以上需要注意！！
+1.开启配置  iptables临时修改：
+1$ echo 1 &gt;/proc/sys/net/ipv4/ip_forward
+
+默认值 0 是禁止 ip 转发，修改为 1 即开启 ip 转发功能。
+重启生效:
+修改 &#x2F;etc&#x2F;sysctl.conf 文件:
+1net.ipv4.ip_forward = 1
+
+其他:
+1sysctl -w net.ipv4.ip_forward=1
+
+
+查看路由表:
+netstat...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="liunx">liunx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="iptables">iptables</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/04/19/2022-04/maven-command/">
                 
                 <span class="abstract-title-text">30 个 Maven 命令</span>
@@ -806,90 +897,6 @@ ubuntu 20.04
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/07/21/2021-07/esxi-copy/">
-                
-                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
-            </a>
-            <div class="abstract-content">
-                修改办法设置 - 高级 - 编辑配置
-添加
-12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
-
-
-
-其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
-
-
-
-Warining注意 vmware tools 的状态
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/05/25/2021-04/k8s-demo-mysql/">
-                
-                <span class="abstract-title-text">k8s mysql demo</span>
-            </a>
-            <div class="abstract-content">
-                
-mysql-rc.yaml
-
-123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
     
 </div>
 
@@ -1861,7 +1868,21 @@ mysql-rc.yaml
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2168,7 +2189,7 @@ mysql-rc.yaml
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 151
+        Total : 153
         </div>
         <!-- search  -->
         
@@ -2182,6 +2203,18 @@ mysql-rc.yaml
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022-08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/11</span>
@@ -3482,6 +3515,11 @@ mysql-rc.yaml
             <span class="sidebar-tag-name" data-tags="jvm">
                 <span class="iconfont-archer">&#xe606;</span>
                 jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
             </span>
         
     </div>

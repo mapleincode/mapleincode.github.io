@@ -440,6 +440,84 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/08/01/2022-08/java-stream/">
+                
+                <span class="abstract-title-text">Java Stream</span>
+            </a>
+            <div class="abstract-content">
+                5. 实验结果总结从以上的实验来看，可以总结处以下几点：
+
+在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；
+在大数据量（szie &gt; 10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/07/18/2022-07/syno-vpn/">
+                
+                <span class="abstract-title-text">解决群晖 vpn 后无法访问本机的问题</span>
+            </a>
+            <div class="abstract-content">
+                我的群晖的 ip 是 192.168.3.x。
+我的 openvpn 设定范围是 10.9.0.x。
+一旦链接后，群晖只能通过 10.9.0.1 访问，而无法通过 192.168.3.x 访问。
+查看了下别的机子没有相似的问题。尝试升级版本和查看 route 表均未发现问题。
+然后逐一对比&lt;设置 &#x2F; 网络 &gt;里的配置。发现在常规 - 高级设置，勾选了 启用多网关。取消勾选后，问题解决，可以正常访问群晖。
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/07/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/07/05/2022-06/requirement/">
                 
                 <span class="abstract-title-text">Python 项目 &amp; requirement.txt</span>
@@ -775,97 +853,6 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/30</span>
                 </div>
                 <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/19/2022-04/firewalld/">
-                
-                <span class="abstract-title-text">Centos7 防火墙 firewalld 基本配置与端口转发</span>
-            </a>
-            <div class="abstract-content">
-                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
-1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="firewalld">firewalld</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/19/2022-04/iptables/">
-                
-                <span class="abstract-title-text">linux 端口转发 iptables</span>
-            </a>
-            <div class="abstract-content">
-                linux 端口转发 iptablescentos 7 使用 firewalld 服务而不是 iptables，如果 centos7 以上需要注意！！
-1.开启配置  iptables临时修改：
-1$ echo 1 &gt;/proc/sys/net/ipv4/ip_forward
-
-默认值 0 是禁止 ip 转发，修改为 1 即开启 ip 转发功能。
-重启生效:
-修改 &#x2F;etc&#x2F;sysctl.conf 文件:
-1net.ipv4.ip_forward = 1
-
-其他:
-1sysctl -w net.ipv4.ip_forward=1
-
-
-查看路由表:
-netstat...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="liunx">liunx</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="iptables">iptables</a>
-    
-</div>
-
                 
             </div>
         </article>
@@ -1755,7 +1742,21 @@ netstat...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2062,7 +2063,7 @@ netstat...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 151
+        Total : 153
         </div>
         <!-- search  -->
         
@@ -2076,6 +2077,18 @@ netstat...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022-08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/11</span>
@@ -3376,6 +3389,11 @@ netstat...
             <span class="sidebar-tag-name" data-tags="jvm">
                 <span class="iconfont-archer">&#xe606;</span>
                 jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
             </span>
         
     </div>

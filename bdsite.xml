@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2022/08/18/2022-08/the-sunny-16-rules/</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/19/2022-08/hashmap/</loc>
+    <lastmod>2022-08-19</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vmko.cc/2022/08/03/2022-08/zookeeper/</loc>
     <lastmod>2022-08-12</lastmod>
   </url>

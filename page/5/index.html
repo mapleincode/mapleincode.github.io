@@ -455,6 +455,119 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/11/13/2020-11/syno-install/">
+                
+                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
+            </a>
+            <div class="abstract-content">
+                1. 准备设备
+nas 电脑设备一台
+其他 PC 设备一台
+启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
+
+2. 准备文件
+DSM_DS918+_25426.pat 
+系统安装文件。
+可以官网直接下载。
+目前时间段最新的系统安装文件(2020-11-13)
+如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
+
+
+DS918+_6.23-25426-1.04b（引导文件）.img
+引导文件
+
+
+DS918-6.23_1.04b的扩展驱动0.13.3.zip
+驱动扩展，用于增强驱动，支持 2.5G 网卡
+
+
+libsynon...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/09/2020-11/syno/">
+                
+                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
+            </a>
+            <div class="abstract-content">
+                关于 nas 的推荐1. 按照系统
+群晖
+推荐
+扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
+应用极多，而且包含桌面应用和移动应用
+黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
+白群晖缺点： 贵
+
+
+FreeNAS
+使用不多
+硬件要求相对高一点 &amp; 开源
+UI 还行，现在和 True NAS 合并了
+
+
+Linux &amp; Samba
+就是 Linux 服务器
+
+
+Windows Server
+就是 windows 服务器
+
+
+unraid &amp; vmware
+都是虚拟机，会损耗部分性能。
+
+
+
+2. 按照硬盘数
+2.5 寸 x 1
+ar...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/10/19/2020-10/zhenglun/">
                 
                 <span class="abstract-title-text">争论的艺术</span>
@@ -806,96 +919,6 @@ from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/18</span>
                 </div>
                 <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/08/13/2020-08/python/">
-                
-                <span class="abstract-title-text">Python &amp; Ubuntu</span>
-            </a>
-            <div class="abstract-content">
-                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
-安装 Python3安装 python3
-1sudo apt install python3
-
-安装 pip3
-1sudo apt install python3-pip
-
-
-
-
-一般 pip 和 pip2 指的都是 python2-pip
-
-pip3 安装依赖1pip3 install flask
-
-这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
-pm2 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/07/06/2020-07/HashMap&HashTable/">
-                
-                <span class="abstract-title-text">HashMap和HashTable的区别</span>
-            </a>
-            <div class="abstract-content">
-                HashMap 不是线程安全的HashMap 是 map 接口的实现类，是将键映射到值的对象，其中键和值都是对象，并且不能包含重复键，但可以包含重复值。HashMap 允许 null  key 和 null value，而 HashTable 不允许。
-HashTable 是线程安全 Collection。HashMap 是 HashTable 的轻量级实现，他们都完成了Map 接口，主要区别在于 HashMap 允许 null  key 和 null value,由于非线程安全，效率上可能高于 Hashtable。
-区别如下：
-HashMap允许将 null 作为一个 entry 的 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
                 
             </div>
         </article>
@@ -1864,7 +1887,21 @@ HashMap允许将 null 作为一个 entry 的 ...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2171,7 +2208,7 @@ HashMap允许将 null 作为一个 entry 的 ...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 151
+        Total : 153
         </div>
         <!-- search  -->
         
@@ -2185,6 +2222,18 @@ HashMap允许将 null 作为一个 entry 的 ...
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022-08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/11</span>
@@ -3485,6 +3534,11 @@ HashMap允许将 null 作为一个 entry 的 ...
             <span class="sidebar-tag-name" data-tags="jvm">
                 <span class="iconfont-archer">&#xe606;</span>
                 jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
             </span>
         
     </div>
