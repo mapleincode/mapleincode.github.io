@@ -39,7 +39,7 @@
 <meta property="og:description" content="[TOC] 关键术语访问密钥&#x2F;安全密钥 组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。  用户 pub 密钥  可用区域 云范围内用于对虚拟机提供容错的一组隔离的虚拟层。 块存储 存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。 容器（对象） 在对象存储中组织和存储对象。 容器（LXC） Linux容器是在单个Linux宿主上运行多个相互隔离">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-04-30T02:43:10.000Z">
-<meta property="article:modified_time" content="2022-08-04T02:43:59.227Z">
+<meta property="article:modified_time" content="2023-03-28T08:54:09.095Z">
 <meta property="article:author" content="Maple">
 <meta name="twitter:card" content="summary">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -223,7 +223,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -336,7 +336,7 @@
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">3.5k</span>阅读时长: <span class="post-count reading-time">15 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">3.8k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -784,6 +784,80 @@
 <li><p>同一个 domain 下不同的 project 有些资源可能互通。比如共享 network， 同享的 image，还有 flavor。</p>
 </li>
 </ol>
+<h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><p><a target="_blank" rel="noopener" href="https://docs.openstack.org/install-guide/openstack-services.html">https://docs.openstack.org/install-guide/openstack-services.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.openstack.org/install-guide/openstack-services.html#minimal-deployment-for-xena">https://docs.openstack.org/install-guide/openstack-services.html#minimal-deployment-for-xena</a></p>
+<h2 id="Minimal-deployment-for-Xena"><a href="#Minimal-deployment-for-Xena" class="headerlink" title="Minimal deployment for Xena"></a><a target="_blank" rel="noopener" href="https://docs.openstack.org/install-guide/openstack-services.html#minimal-deployment-for-xena">Minimal deployment for Xena</a></h2><p>At a minimum, you need to install the following services. Install the services in the order specified below:</p>
+<ul>
+<li>Identity service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/keystone/xena/install/">keystone installation for Xena</a></li>
+<li>Image service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/glance/xena/install/">glance installation for Xena</a></li>
+<li>Placement service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/placement/xena/install/">placement installation for Xena</a></li>
+<li>Compute service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/nova/xena/install/">nova installation for Xena</a></li>
+<li>Networking service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/neutron/xena/install/">neutron installation for Xena</a></li>
+</ul>
+<p>We advise to also install the following components after you have installed the minimal deployment services:</p>
+<ul>
+<li>Dashboard – <a target="_blank" rel="noopener" href="https://docs.openstack.org/horizon/xena/install/">horizon installation for Xena</a></li>
+<li>Block Storage service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/cinder/xena/install/">cinder installation for Xena</a></li>
+</ul>
+<h2 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">domain</span></span><br><span class="line">openstack domain create t1_domain</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">+-------------+----------------------------------+</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| Field       | Value                            |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">+-------------+----------------------------------+</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| description |                                  |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| enabled     | True                             |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| <span class="built_in">id</span>          | 2410e860fc98445ca2f61e84e16f87ca |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| name        | t1_domain                        |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| options     | &#123;&#125;                               |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| tags        | []                               |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">+-------------+----------------------------------+</span></span><br><span class="line"></span><br><span class="line">openstack domain list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除 domain</span></span><br><span class="line">openstack domain set testdomain --disable</span><br><span class="line">openstack domain delete testdomain # 删除前必须先 distable</span><br></pre></td></tr></table></figure>
+
+
+
+<p>共用:</p>
+<ul>
+<li>role 角色</li>
+<li>network 网络</li>
+<li>image 镜像</li>
+<li>flavor 规格</li>
+<li>snapshot<ul>
+<li>可以通过 role 限制</li>
+</ul>
+</li>
+</ul>
+<p>不共用:</p>
+<ul>
+<li>project</li>
+<li>user</li>
+</ul>
+<h2 id="project"><a href="#project" class="headerlink" title="project"></a>project</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">project</span></span><br><span class="line">openstack project create --domain t1_domain t1_project</span><br><span class="line">openstack porject list</span><br><span class="line">openstack project delete t1_porject</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>Invalid credentials.</p>
+</blockquote>
+<h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">openstack role list</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+----------------------------------+--------+</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| ID                               | Name   |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+----------------------------------+--------+</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| 05e56359e3704b86b11915eafb3a7dd3 | admin  |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| 41bc8eee42bb4e1d8e6897d70810a4c7 | member |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| a4f79cf33e614a53a0b559a64a72d660 | myrole |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| d1197901083f4fbeb38ed56da99f793d | reader |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+----------------------------------+--------+</span></span><br><span class="line"></span><br><span class="line">openstack role show member</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">openstack user create --domain t1_domain --password-prompt admin</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>You are not authorized for any projects or domains.</p>
+</blockquote>
+<h2 id="role"><a href="#role" class="headerlink" title="role"></a>role</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack role add --project t1_project --user admin admin --project-domain t1_domain --user-domain t1_domain</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openstack network create  --share --external   --provider-physical-network provider   --provider-network-type flat provider</span><br><span class="line">openstack subnet create --network provider   --allocation-pool start=192.168.201.200,end=192.168.201.210   --dns-nameserver 114.114.114.114 --gateway 192.168.201.1   --subnet-range 192.168.201.0/24 provider</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="flavor"><a href="#flavor" class="headerlink" title="flavor"></a>flavor</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="image"><a href="#image" class="headerlink" title="image"></a>image</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img</span><br><span class="line">openstack image create &quot;cirros&quot; \</span><br><span class="line">  --file cirros-0.3.4-x86_64-disk.img \</span><br><span class="line">  --disk-format qcow2 --container-format bare \</span><br><span class="line">  --public</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://cloud-images.ubuntu.com/">https://cloud-images.ubuntu.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.debian.org/images/cloud/">https://cloud.debian.org/images/cloud/</a></p>
+<h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack server create --flavor m1.nano --image cirros   --nic net-id=&quot;a2197965-1a9e-4584-892e-c38ea26da077&quot; --security-group default   --key-name mykey provider-instance</span><br></pre></td></tr></table></figure>
+
+
+
 
     </article>
     <!-- license -->
@@ -792,7 +866,7 @@
             <p>原文作者：<a href="https://blog.vmko.cc">Maple</a>
             <p>原文链接：<a href="https://blog.vmko.cc/2022/04/30/2022-04/openstack/">https://blog.vmko.cc/2022/04/30/2022-04/openstack/</a>
             <p>发表日期：<a href="https://blog.vmko.cc/2022/04/30/2022-04/openstack/">April 30th 2022, 10:43:10 am</a>
-            <p>更新日期：<a href="https://blog.vmko.cc/2022/04/30/2022-04/openstack/">August 4th 2022, 10:43:59 am</a>
+            <p>更新日期：<a href="https://blog.vmko.cc/2022/04/30/2022-04/openstack/">March 28th 2023, 4:54:09 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -998,7 +1072,7 @@
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
-                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.</span> <span class="toc-text">关键术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">虚拟机创建过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">新增镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-qcow2-%E5%92%8C-raw"><span class="toc-number">4.</span> <span class="toc-text">关于 qcow2 和 raw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Disk-and-Container-Formats"><span class="toc-number">5.</span> <span class="toc-text">Disk and Container Formats</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Format"><span class="toc-number">5.1.</span> <span class="toc-text">Disk Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-Format"><span class="toc-number">5.2.</span> <span class="toc-text">Container Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">启动一个实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">6.1.</span> <span class="toc-text">1. 创建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%8F%90%E4%BE%9B%E8%80%85%E7%BD%91%E7%BB%9C"><span class="toc-number">6.1.1.</span> <span class="toc-text">创建提供者网络</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-number">6.2.</span> <span class="toc-text">2. 生成一个密钥对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A2%9E%E5%8A%A0%E5%AE%89%E5%85%A8%E7%BB%84%E8%A7%84%E5%88%99"><span class="toc-number">6.3.</span> <span class="toc-text">3. 增加安全组规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9C%A8%E5%85%AC%E6%9C%89%E7%BD%91%E7%BB%9C%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">7.</span> <span class="toc-text">4. 在公有网络上创建实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu"><span class="toc-number">8.</span> <span class="toc-text">ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack%E6%8A%A5%E9%94%99-Host-is-not-mapped-to-any-cell"><span class="toc-number">9.</span> <span class="toc-text">OpenStack报错:Host is not mapped to any cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain-amp-project"><span class="toc-number">10.</span> <span class="toc-text">domain &amp; project</span></a></li></ol>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.</span> <span class="toc-text">关键术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">虚拟机创建过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">新增镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-qcow2-%E5%92%8C-raw"><span class="toc-number">4.</span> <span class="toc-text">关于 qcow2 和 raw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Disk-and-Container-Formats"><span class="toc-number">5.</span> <span class="toc-text">Disk and Container Formats</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Format"><span class="toc-number">5.1.</span> <span class="toc-text">Disk Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-Format"><span class="toc-number">5.2.</span> <span class="toc-text">Container Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">启动一个实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">6.1.</span> <span class="toc-text">1. 创建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%8F%90%E4%BE%9B%E8%80%85%E7%BD%91%E7%BB%9C"><span class="toc-number">6.1.1.</span> <span class="toc-text">创建提供者网络</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-number">6.2.</span> <span class="toc-text">2. 生成一个密钥对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A2%9E%E5%8A%A0%E5%AE%89%E5%85%A8%E7%BB%84%E8%A7%84%E5%88%99"><span class="toc-number">6.3.</span> <span class="toc-text">3. 增加安全组规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9C%A8%E5%85%AC%E6%9C%89%E7%BD%91%E7%BB%9C%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">7.</span> <span class="toc-text">4. 在公有网络上创建实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu"><span class="toc-number">8.</span> <span class="toc-text">ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack%E6%8A%A5%E9%94%99-Host-is-not-mapped-to-any-cell"><span class="toc-number">9.</span> <span class="toc-text">OpenStack报错:Host is not mapped to any cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain-amp-project"><span class="toc-number">10.</span> <span class="toc-text">domain &amp; project</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E4%BA%AB"><span class="toc-number"></span> <span class="toc-text">分享</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimal-deployment-for-Xena"><span class="toc-number">1.</span> <span class="toc-text">Minimal deployment for Xena</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain"><span class="toc-number">2.</span> <span class="toc-text">domain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#project"><span class="toc-number">3.</span> <span class="toc-text">project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User"><span class="toc-number">4.</span> <span class="toc-text">User</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#role"><span class="toc-number">5.</span> <span class="toc-text">role</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network"><span class="toc-number">6.</span> <span class="toc-text">Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flavor"><span class="toc-number">7.</span> <span class="toc-text">flavor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#image"><span class="toc-number">8.</span> <span class="toc-text">image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#key"><span class="toc-number">9.</span> <span class="toc-text">key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server"><span class="toc-number">10.</span> <span class="toc-text">server</span></a></li></ol>
             </div>
         
         <!-- sidebar -->
@@ -1777,7 +1851,140 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2088,7 +2295,7 @@
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2099,9 +2306,132 @@
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3419,6 +3749,21 @@
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

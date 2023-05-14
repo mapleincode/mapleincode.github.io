@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -440,43 +440,29 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/08/13/2020-08/python/">
+            <a class="abstract-title" href="/2021/05/25/2021-04/k8s-demo-mysql/">
                 
-                <span class="abstract-title-text">Python &amp; Ubuntu</span>
+                <span class="abstract-title-text">k8s mysql demo</span>
             </a>
             <div class="abstract-content">
-                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
-安装 Python3安装 python3
-1sudo apt install python3
+                
+mysql-rc.yaml
 
-安装 pip3
-1sudo apt install python3-pip
-
-
-
-
-一般 pip 和 pip2 指的都是 python2-pip
-
-pip3 安装依赖1pip3 install flask
-
-这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
-pm2 ...
+123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
     
 </div>
 
@@ -492,29 +478,35 @@ pm2 ...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/07/06/2020-07/HashMap&HashTable/">
+            <a class="abstract-title" href="/2021/05/24/2021-04/frp/">
                 
-                <span class="abstract-title-text">HashMap和HashTable的区别</span>
+                <span class="abstract-title-text">frp 的使用</span>
             </a>
             <div class="abstract-content">
-                HashMap 不是线程安全的HashMap 是 map 接口的实现类，是将键映射到值的对象，其中键和值都是对象，并且不能包含重复键，但可以包含重复值。HashMap 允许 null  key 和 null value，而 HashTable 不允许。
-HashTable 是线程安全 Collection。HashMap 是 HashTable 的轻量级实现，他们都完成了Map 接口，主要区别在于 HashMap 允许 null  key 和 null value,由于非线程安全，效率上可能高于 Hashtable。
-区别如下：
-HashMap允许将 null 作为一个 entry 的 ...
+                [TOC]
+frp 堪称一神器。只要你拥有一台公网服务器，然后开启一个 tcp 端口，即可快乐的玩耍 frp。
+
+个人方案原本是搭建在树莓派 4 上。无奈那玩意儿实在不稳定。
+目前搭建在基于 esxi 的虚拟机上。
+网络环境是普通的家用电信宽带，依赖 ddns 服务实现域名更新。
+
+安装 &amp; 启动在 Release 页面下载对应的文件包，解压。
+主要包含以下文件
+12345678910├── README.md├── frpc # or frpc.exe├── frpc.ini├── frps # or frpc.exe├── frps.ini└── systemd    ├──...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/24</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="frp">frp</a>
     
 </div>
 
@@ -530,25 +522,119 @@ HashMap允许将 null 作为一个 entry 的 ...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020-06/ddsm/">
+            <a class="abstract-title" href="/2021/04/23/2021-04/prisma-connection-urls/">
                 
-                <span class="abstract-title-text">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
+                <span class="abstract-title-text">Prisma connection URLs</span>
             </a>
             <div class="abstract-content">
-                群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
-当然对我们来说，重要的是里面的序列号。
-我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
-查阅了谷歌，在论坛上找到解决方案：
-https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
+                PostgreSQL12341datasource db &#123;2  provider = &quot;postgresql&quot;3  url      = &quot;postgresql://janedoe:mypassword@localhost:5432/mydb&quot;4&#125;
 
-Been there, done tha...
+MySQL12341datasource db &#123;2  provider = &quot;mysql&quot;3  url      = &quot;mysql://janedoe:mypassword@localhost:3306/mydb&quot;4&#125;...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="prisma">prisma</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/23/2021-04/GraphQL/">
+                
+                <span class="abstract-title-text">GraphQL</span>
+            </a>
+            <div class="abstract-content">
+                simple example12345678query &#123;  aman &#123;    id    ago: ago # 年龄    name    sex  &#125;&#125;
+
+
+
+字段 &amp; 别名123456789101112query &#123;  groups &#123;    id    name    apis &#123;      id      name      code: uri    &#125;  &#125;&#125;
+
+
+
+参数1234567891011query &#123;  groups(ids: [100000010...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="graphql">graphql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/12/2021-04/kubernetes/">
+                
+                <span class="abstract-title-text">kubernetes 学习</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+kubernetes核心是容器。
+1. 工具 &amp; 环境参考：https://kubernetes.io/zh/docs/tasks/tools/
+
+工具
+kubectl: 管理工具，相当于管理 client 端。
+kubeadm: 相当于 server 端。
+
+
+服务器
+两台 4 核心 4G 的虚拟机
+
+
+
+
+每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)
+
+
+本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。
+
+2. 安...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/03">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
                 </div>
                 <!-- tags -->
                 
@@ -557,9 +643,7 @@ Been there, done tha...
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
     
 </div>
 
@@ -575,36 +659,26 @@ Been there, done tha...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020-06/esxi/">
+            <a class="abstract-title" href="/2021/04/08/2021-04/nginx-ws/">
                 
-                <span class="abstract-title-text">esxi 安装</span>
+                <span class="abstract-title-text">Nginx 支持 WebSocket</span>
             </a>
             <div class="abstract-content">
-                起因因为主板是华南寨板，网卡并非服务器版本。导致 esxi 不识别。我去闲鱼上淘了一张双口的 82576。结果这几天刷软路由，发现一种办法是通过网卡直通给虚拟机的办法，实现 esxi 来支持软路由。
-但是在我的 esxi 硬件那边，发现网卡的直通写了不支持。
-问了店家，店家表示：
-
-网卡肯定是支持的
-如果不支持，可能是主板的问题
-如果不行，可以去 vmware 上找找驱动安装试试
-
-然后我乖巧的去找了驱动，然后安装，重启，就没然后了，原因很简单，我在 100 公里外的老家拼命刷浏览器的回车，却只告诉我 esxi 服务器 503 了。
-老板，你也好歹告诉我下驱动装失败了会进不去吧。
-我就说...
+                12345678910111213141516171819202122232425262728293031# 编辑nginx.conf，在http区域内一定要添加下面配置：map $http_upgrade $connection_upgrade &#123;    default upgrade;    &#x27;&#x27; close;&#125; # map指令的作用：# 该作用主要是根据客户端请求中$http_upgrade 的值，来构造改变$connection_upgrade的值，即根据变量$http_upgrade的值创建新的变量$connection_upgrade，...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
     
 </div>
 
@@ -620,33 +694,93 @@ Been there, done tha...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020-06/2020-06-17/">
+            <a class="abstract-title" href="/2021/02/24/2021-02/baijiu/">
                 
-                <span class="abstract-title-text">日记</span>
+                <span class="abstract-title-text">中国白酒分类</span>
             </a>
             <div class="abstract-content">
-                最近的经历和感触
+                
 
-在老家玩了几天，家里 esxi 服务器挂了、路由器也挂了
-路由器挂了之后我一直担心是不是服务器挂了导致出租房起火了，因为这个路由器从买来就没死机过一次
-然后回家后发现是电源坏了，找了商家，商家熟练的发来一个链接。看了下销量敢情这路由器的充电器压根不靠谱啊，还卖 20 + 10 。
-在老家连不上 nas，闲的蛋疼去刷了下知乎，然后发现一个月初的回答居然有 600 赞了，天哪
-在朋友的推荐下买了斐讯 N1盒子，发现斐讯的遗产都好好，无论是蓝牙音箱还是路由器还是这盒子
-发现 N1 盒子可以刷游戏系统，求资源求了半天。之后转念想不求作者（因为我这个是小号，那个作者又感觉很不靠...
+
+香型
+标准
+制作
+色泽和外观
+香气
+口味口感
+典型代表
+
+
+
+酱香型 Jiang-flavour Chinese spirits
+GB&#x2F;T 26760-2011
+以高粱、小麦、水等为原料，经传统固态法发酵、贮存、勾兑而成[17]
+无色或微黄，清亮透明，无悬浮物，无沉淀
+酱香突出，香气幽雅，空杯留香持久
+酒体醇厚、丰满，诸位协调，余味悠长
+贵州茅台 贵州匀酒 湖南武陵酒 四川郎酒 芦台春 燕岭春
+
+
+浓香型 Strong aromatic Chinese spirits
+GB&#x2F;T 10781.1-2006
+以粮谷为原料，采用浓香大曲为糖化发酵剂，经泥窖固态发酵，固...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/24</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/12/01/2020-11/aliyun-data-disk-format/">
+                
+                <span class="abstract-title-text">阿里云 Ubuntu 数据盘格式化和挂载</span>
+            </a>
+            <div class="abstract-content">
+                阿里云数据盘默认挂载之后不会分区、格式化、挂载。需要手动处理这个逻辑。
+也适用于普通 Ubuntu 系统的情况。
+1. 找到磁盘1fdisk -l
+
+查找到所有磁盘和分区信息。
+找到未分区或者未格式化的磁盘编号 /dev/xxx
+2. 对磁盘进行分区输入：
+1fdisk -u /dev/vdb
+
+输入 n 创建一个新的分区输入 p 选择创建分区类型为 primary
+
+BMR 分区表默认只支持 4 个主分区
+
+输入 1 选择仅创建一个分区
+然后选择第一个可用的扇区编号，我们这边直接回车，输入默认的 2048。
+然后是输入最后一个扇区编号，我们这边依然回车，输入默认值。
+然后输入 p 可以...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/01</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="daily">daily</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
     
 </div>
 
@@ -662,47 +796,33 @@ Been there, done tha...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/05/21/2020-05/ink/">
+            <a class="abstract-title" href="/2020/11/23/2020-11/dpkg-bad-inconsistent-state/">
                 
-                <span class="abstract-title-text">自製鋼筆染料墨水配方[转载]</span>
+                <span class="abstract-title-text">Dpkg 包损坏无法安装 &amp; 卸载</span>
             </a>
             <div class="abstract-content">
-                
-https://www.ptt.cc/bbs/stationery/M.1448639335.A.202.html
-转载自一位弯弯大佬的一篇文章，文章内容很详细。
-短时间应该不会去学做，但是的确蛮有意思的赶脚。
+                卸载时报错：
+12package is in a very bad inconsistent state;you should reinstall it before attempting a removal
 
 
-原文是繁体，排版依然按照原文
 
-给大家参考
-之前在疫区用这配方卖了两批小赚点钱
-卖剩的自己目前也一直在用
-Safari 写了四五个月没洗笔，状况都很良好
-所以应该是不会伤笔
-另外，测试时使用下水量较小的 78g
- 加上本人通常是写狂草 (写很快很丑) 
-所以需要下水量大的墨水，调出来黏度偏低
-比例视使用者习惯自行调整，这里只是参考
-第一步先配好甘油水溶液→体积比甘油：水&#...
+解决方法：
+
+强制卸载
+
+1sudo dpkg --remove --force-remove-reinstreq xxxxxx
+
+
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/21</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
                 </div>
                 <!-- tags -->
                 
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ink">ink</a>
-    
-</div>
-
-                
             </div>
         </article>
         <div class="index-post-divider"></div>
@@ -714,114 +834,40 @@ Safari 写了四五个月没洗笔，状况都很良好
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/05/18/2020-05/chrome-auto-sign-in/">
+            <a class="abstract-title" href="/2020/11/13/2020-11/syno-install/">
                 
-                <span class="abstract-title-text">解决 Chrome 无法自动填充账号密码的问题</span>
+                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
             </a>
             <div class="abstract-content">
-                前段时间在折腾浏览器的时候，不知道怎么一搞，导致在登录界面，Chrome 不会自动把账户密码填充到登录账户密码栏里。也就是进入一个页面之后，需要手动点击账户栏，选择账户才会填入正确密码。
-我尝试重新登录账户，清除数据，卸载 Chrome 重启等操作均无法解决问题。
-忽然想到，MacOS 拖程序到回收站其实并不算完全卸载，即使删除用户数据，也会存留部分数据在用户数据文件夹。
+                1. 准备设备
+nas 电脑设备一台
+其他 PC 设备一台
+启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
 
-一般情况我会使用 CleanMyMac 来卸载，没想到这玩意儿也没有完全卸载。
+2. 准备文件
+DSM_DS918+_25426.pat 
+系统安装文件。
+可以官网直接下载。
+目前时间段最新的系统安装文件(2020-11-13)
+如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
 
-搜索 Google （吐槽重置之后，地址栏输入居然变成了百度）之后，找到了卸载 Chrome 的正确姿势：
 
-在计算机屏幕的底部，右键...
+DS918+_6.23-25426-1.04b（引导文件）.img
+引导文件
+
+
+DS918-6.23_1.04b的扩展驱动0.13.3.zip
+驱动扩展，用于增强驱动，支持 2.5G 网卡
+
+
+libsynon...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="chrome">chrome</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/08/2020-05/zfs/">
-                
-                <span class="abstract-title-text">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</span>
-            </a>
-            <div class="abstract-content">
-                
-原文: https://zhuanlan.zhihu.com/p/45137745
-
-今天，我们来谈论一下 ZFS，一个先进的文件系统。我们将讨论 ZFS 从何而来，它是什么，以及为什么它在科技界和企业界如此受欢迎。
-虽然我是一个美国人，但我更喜欢读成 ZedFS 而不是 ZeeFS，因为前者听起来更酷一些。你可以根据你的个人喜好来发音。
-
-注意：在这篇文章中，你将会看到 ZFS 被提到很多次。当我在谈论特性和安装的时候，我所指的是 OpenZFS 。自从 *甲骨文(Oracle)*公司放弃 OpenSolaris 项目之后，ZFS（由甲骨文公司开发）和 OpenZFS 已经走向了不同...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zfs">zfs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/02/2020-05/Synology%20Drive/">
-                
-                <span class="abstract-title-text">群晖 Drive 反复同步问题</span>
-            </a>
-            <div class="abstract-content">
-                2020-05-25： 
-Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
-安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
-两款 Mac 都需要更新到新版本！！
-Drive 一定会成为你重要的同步软件！！！
-
-群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
-
-但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
-推荐大家有条件还是去上正版群晖。
-
-Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/02</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
                 </div>
                 <!-- tags -->
                 
@@ -829,80 +875,6 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/04/15/2020-01/java-mode/">
-                
-                <span class="abstract-title-text">类成员的访问控制模式及其允许访问范围</span>
-            </a>
-            <div class="abstract-content">
-                
-
-
-访问控制模式
-在同一个类内
-在同一个包内
-子类
-所有类
-
-
-
-公共模式(public)
-允许访问
-允许访问
-允许访问
-允许访问
-
-
-保护模式(protected)
-允许访问
-允许访问
-允许访问
-
-
-
-默认模式(default)
-允许访问
-允许访问
-
-
-
-
-私有模式(private)
-允许访问
-
-
-
-
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/15</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
     
 </div>
 
@@ -914,7 +886,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/5/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1805,7 +1777,140 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2116,7 +2221,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2127,9 +2232,132 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3447,6 +3675,21 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

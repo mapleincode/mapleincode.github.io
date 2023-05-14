@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -455,29 +455,29 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/11/13/2019-11/centos5.x/">
+            <a class="abstract-title" href="/2020/07/06/2020-07/HashMap&HashTable/">
                 
-                <span class="abstract-title-text">CentOS 5.x 版本 repo 地址</span>
+                <span class="abstract-title-text">HashMap和HashTable的区别</span>
             </a>
             <div class="abstract-content">
-                在迁移虚拟机到 ESXi 的时候，不幸遗漏了一个游戏私服服务器 orz。虽然私服不怎么好玩，但是也算是一个小纪念。鉴于私服的服务器版本是 CentOS 5.x 版本比较老，所以担心之后可能搭不起来。
-于是乎，果然访问 error。查阅了相关信息，我搭建的时候 16 年年底。17 年 3 月，CentOS 5.x 正式停止依赖维护。
-呃…查询了网上资料，有提供一个 http://vault.centos.org/5.11/os 的 repo 地址。并且版本限定 5.11。鉴于我对 CentOS 不太了解，直接拿了网上的 CentOS-Base.repo。
-12345678910111213...
+                HashMap 不是线程安全的HashMap 是 map 接口的实现类，是将键映射到值的对象，其中键和值都是对象，并且不能包含重复键，但可以包含重复值。HashMap 允许 null  key 和 null value，而 HashTable 不允许。
+HashTable 是线程安全 Collection。HashMap 是 HashTable 的轻量级实现，他们都完成了Map 接口，主要区别在于 HashMap 允许 null  key 和 null value,由于非线程安全，效率上可能高于 Hashtable。
+区别如下：
+HashMap允许将 null 作为一个 entry 的 ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
     
 </div>
 
@@ -493,172 +493,34 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/11/12/2019-11/ELK/">
+            <a class="abstract-title" href="/2020/06/17/2020-06/ddsm/">
                 
-                <span class="abstract-title-text">ELK 搭建</span>
+                <span class="abstract-title-text">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
             </a>
             <div class="abstract-content">
-                起因
-项目需求
-公司某位大佬有记录文档可以参考
+                群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
+当然对我们来说，重要的是里面的序列号。
+我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
+查阅了谷歌，在论坛上找到解决方案：
+https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
 
-ELKELK 平台是当前应用比较广泛的一套开源实时日志分析解决方案。ELK 由 ElasticSearch、Logstash 和 Kiabana 三个开源工具组成。
-ELK &#x3D; Elasticsearch + Logstash + Kibana
-参考 &amp; 下载地址: https://www.elastic.co/cn/products/
-
-MacOS 
-
-Elasticsearch
-Elasticsearch 是一个基于 JSON 的分布式搜索和分析引擎。
-Kibana
-Kibana 可谓 Elastic Stack 的...
+Been there, done tha...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="elk">elk</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
     
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/11/2019-11/passwd/">
-                
-                <span class="abstract-title-text">Shell 自动输入 sudo 密码</span>
-            </a>
-            <div class="abstract-content">
-                
-使用 echo 和管道命令
-
-12#!/bin/bashecho password | sudo -S service runtime* status
-
-
-使用文本块输入重定向
-
-
-发现这个命令不能用在 shell 的判断条件里
-
-1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
-
-
-
-
-第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
-
-参考:
-
-https://blog.csdn.net/qiyueqinglian/article/detail...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/11/2019-11/vCenter/">
-                
-                <span class="abstract-title-text">vCenter 和 vCSA 对比</span>
-            </a>
-            <div class="abstract-content">
-                vCenter Server与vCenter Server Virtual Appliance（vCSA）都提供对企业中[VMware vSphere](https://baike.baidu.com/item/VMware vSphere)部署的集中管理。虽然拥有相同的功能，两者安装却不同，所支持的功能也不同。
-vCSA不支持的功能
-vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSphere许可。VCSA 5.0.1及以后版本运行PostgreSQL数据库，而之前版本运行的是IBM DB2数据库。VCSA只支持PostgreSQ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/08/2019-11/esxi/">
-                
-                <span class="abstract-title-text">ESXi 使用笔记</span>
-            </a>
-            <div class="abstract-content">
-                作为不想折腾开发环境的懒人，长期部署若干个服务器用于自己开发学习。
-目前的做法是，在搭建 Ubuntu 的宿主机安装 VMware Station ，然后利用其 VMware Server ，通过客户端连接。
-结果被一个朋友吐槽为什么不用 ESXi。
-早期的想法是能用就行，加上对虚拟机的功能也不是很了解。
-ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其他的系统。
-与 ESXi 不同，VMware Server 底层还是 Linux，相当于  ESXi 直接与硬件交互，而 VMware Server 则与 Linux 交互。
-其实性能上也没有感受到很大的差距，但是 VMwar...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
     
@@ -676,26 +538,36 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/09/05/2019-08/rabbtmq-demo/">
+            <a class="abstract-title" href="/2020/06/17/2020-06/esxi/">
                 
-                <span class="abstract-title-text">RabbitMQ Node demo</span>
+                <span class="abstract-title-text">esxi 安装</span>
             </a>
             <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105const options = &#123;    hostname: &#x27;192.168.2.121&#x27;,    username: &#x27;username...
+                起因因为主板是华南寨板，网卡并非服务器版本。导致 esxi 不识别。我去闲鱼上淘了一张双口的 82576。结果这几天刷软路由，发现一种办法是通过网卡直通给虚拟机的办法，实现 esxi 来支持软路由。
+但是在我的 esxi 硬件那边，发现网卡的直通写了不支持。
+问了店家，店家表示：
+
+网卡肯定是支持的
+如果不支持，可能是主板的问题
+如果不行，可以去 vmware 上找找驱动安装试试
+
+然后我乖巧的去找了驱动，然后安装，重启，就没然后了，原因很简单，我在 100 公里外的老家拼命刷浏览器的回车，却只告诉我 esxi 服务器 503 了。
+老板，你也好歹告诉我下驱动装失败了会进不去吧。
+我就说...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
     
 </div>
 
@@ -711,28 +583,33 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/09/02/2019-08/version/">
+            <a class="abstract-title" href="/2020/06/17/2020-06/2020-06-17/">
                 
-                <span class="abstract-title-text">版本号对比</span>
+                <span class="abstract-title-text">日记</span>
             </a>
             <div class="abstract-content">
-                version 对比公司一同学为了对比 version 特意引入了一个 module。
-对于一般情况，引入成熟的 module 的确可以解决很多问题，尤其是完善性。但是 version 对比却是相当简单的逻辑。
-12345678910function sort(v1, v2) &#123;	const diff = v1.shift() - v2.shift();	return diff !== 0 ? (diff &gt; 0) : sort(v1, v2);&#125;function version(v1, v2) &#123;	v1 = v1.split(&#x27;.&#x27...
+                最近的经历和感触
+
+在老家玩了几天，家里 esxi 服务器挂了、路由器也挂了
+路由器挂了之后我一直担心是不是服务器挂了导致出租房起火了，因为这个路由器从买来就没死机过一次
+然后回家后发现是电源坏了，找了商家，商家熟练的发来一个链接。看了下销量敢情这路由器的充电器压根不靠谱啊，还卖 20 + 10 。
+在老家连不上 nas，闲的蛋疼去刷了下知乎，然后发现一个月初的回答居然有 600 赞了，天哪
+在朋友的推荐下买了斐讯 N1盒子，发现斐讯的遗产都好好，无论是蓝牙音箱还是路由器还是这盒子
+发现 N1 盒子可以刷游戏系统，求资源求了半天。之后转念想不求作者（因为我这个是小号，那个作者又感觉很不靠...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="daily">daily</a>
     
 </div>
 
@@ -748,27 +625,43 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/08/13/2019-08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">
+            <a class="abstract-title" href="/2020/05/21/2020-05/ink/">
                 
-                <span class="abstract-title-text">单反画幅</span>
+                <span class="abstract-title-text">自製鋼筆染料墨水配方[转载]</span>
             </a>
             <div class="abstract-content">
-                135 胶卷十九世纪二十年代胶卷的宽度为 35mm，德国研制出使用拍摄电影的 35mm (36mm×24mm) 胶片的徕卡照相机后，35毫米胶卷又叫“徕卡卷”，后来世界各厂生产用于拍摄35毫米胶片的照相机越来越多，“徕卡卷”这个名称已不能适应了，于是就按胶卷的宽度改为“35 毫米胶片”。
-直到五十年代之后，为了区分 35 毫米电影胶片和照相机用的 35 毫米散装胶卷，在胶卷盒上印有 135 的代号。后来大家就公认把 35mm 胶卷称为 135 胶卷，把用 135 胶卷的相机称为 135 相机。讲到这里相信大家会有个疑问，135（35）胶卷尺寸规格不是36*24mm吗 ？为什么叫35mm胶...
+                
+https://www.ptt.cc/bbs/stationery/M.1448639335.A.202.html
+转载自一位弯弯大佬的一篇文章，文章内容很详细。
+短时间应该不会去学做，但是的确蛮有意思的赶脚。
+
+
+原文是繁体，排版依然按照原文
+
+给大家参考
+之前在疫区用这配方卖了两批小赚点钱
+卖剩的自己目前也一直在用
+Safari 写了四五个月没洗笔，状况都很良好
+所以应该是不会伤笔
+另外，测试时使用下水量较小的 78g
+ 加上本人通常是写狂草 (写很快很丑) 
+所以需要下水量大的墨水，调出来黏度偏低
+比例视使用者习惯自行调整，这里只是参考
+第一步先配好甘油水溶液→体积比甘油：水&#...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/13</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/21</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="photography">photography</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="ink">ink</a>
     
 </div>
 
@@ -784,46 +677,34 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/07/21/2019-07/ssl_cert/">
+            <a class="abstract-title" href="/2020/05/18/2020-05/chrome-auto-sign-in/">
                 
-                <span class="abstract-title-text">Let&#39;s encrypt 证书申请</span>
+                <span class="abstract-title-text">解决 Chrome 无法自动填充账号密码的问题</span>
             </a>
             <div class="abstract-content">
-                呃，这大概是我最短的一次证书申请，比我私签的证书简单了上百倍，全程就花了 1 分钟左右。
-申请证书直接贴地址：
-https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
-国人的作品，我无法表达我的感受，能把一件这么复杂的事情做的和电脑登录微信这么简单。
-首先是安装
-1curl  https://get.acme.sh | sh
+                前段时间在折腾浏览器的时候，不知道怎么一搞，导致在登录界面，Chrome 不会自动把账户密码填充到登录账户密码栏里。也就是进入一个页面之后，需要手动点击账户栏，选择账户才会填入正确密码。
+我尝试重新登录账户，清除数据，卸载 Chrome 重启等操作均无法解决问题。
+忽然想到，MacOS 拖程序到回收站其实并不算完全卸载，即使删除用户数据，也会存留部分数据在用户数据文件夹。
 
+一般情况我会使用 CleanMyMac 来卸载，没想到这玩意儿也没有完全卸载。
 
+搜索 Google （吐槽重置之后，地址栏输入居然变成了百度）之后，找到了卸载 Chrome 的正确姿势：
 
-然后目录位置是
-1~/.acme.sh/
-
-
-
-验证域名有两个方式
-
-在网站配置一个静态文件
-在 DNS 配置一个 TEXT 类型的域名文件
-
-主要都是为了验证你就是域名所有人。
-第一种方法据说不...
+在计算机屏幕的底部，右键...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/21</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/18</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="chrome">chrome</a>
     
 </div>
 
@@ -839,61 +720,191 @@ https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/07/05/2019-07/id-autoincr/">
+            <a class="abstract-title" href="/2020/05/08/2020-05/zfs/">
                 
-                <span class="abstract-title-text">唯一 ID 生成</span>
+                <span class="abstract-title-text">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</span>
             </a>
             <div class="abstract-content">
-                MySQL 自增 ID优点:
+                
+原文: https://zhuanlan.zhihu.com/p/45137745
 
-自增数字
-无需额外操作
+今天，我们来谈论一下 ZFS，一个先进的文件系统。我们将讨论 ZFS 从何而来，它是什么，以及为什么它在科技界和企业界如此受欢迎。
+虽然我是一个美国人，但我更喜欢读成 ZedFS 而不是 ZeeFS，因为前者听起来更酷一些。你可以根据你的个人喜好来发音。
 
-缺点:
-
-单点问题
-可以设置 step 解决，例如一个表是 0, 2, 4 另个表是 1, 3, 5。但是这个方法后期扩展性差
-
-
-
-UUID
-v1() 真随机
-v4() 伪随机
-效率 v4() 远超 v1()
-
-优点:
-
-全世界唯一
-
-缺点:
-
-太长，做主键会降低性能，并且更多的容量
-不能生成递增有序的数字
-可以通过时间算法计算出时间戳
-
-
-mac 地址泄漏(?，没有查到这个事情)
-
-Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId()
-优点：
-支持多表
-缺点：
-
-所有表写入性能...
+注意：在这篇文章中，你将会看到 ZFS 被提到很多次。当我在谈论特性和安装的时候，我所指的是 OpenZFS 。自从 *甲骨文(Oracle)*公司放弃 OpenSolaris 项目之后，ZFS（由甲骨文公司开发）和 OpenZFS 已经走向了不同...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/08</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="zfs">zfs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/05/02/2020-05/Synology%20Drive/">
+                
+                <span class="abstract-title-text">群晖 Drive 反复同步问题</span>
+            </a>
+            <div class="abstract-content">
+                2020-05-25： 
+Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
+安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
+两款 Mac 都需要更新到新版本！！
+Drive 一定会成为你重要的同步软件！！！
+
+群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
+
+但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
+推荐大家有条件还是去上正版群晖。
+
+Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/04/15/2020-01/java-mode/">
+                
+                <span class="abstract-title-text">类成员的访问控制模式及其允许访问范围</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+访问控制模式
+在同一个类内
+在同一个包内
+子类
+所有类
+
+
+
+公共模式(public)
+允许访问
+允许访问
+允许访问
+允许访问
+
+
+保护模式(protected)
+允许访问
+允许访问
+允许访问
+
+
+
+默认模式(default)
+允许访问
+允许访问
+
+
+
+
+私有模式(private)
+允许访问
+
+
+
+
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/15</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/04/01/2020-01/wordpress-domain/">
+                
+                <span class="abstract-title-text">WordPress 绑定多域名</span>
+            </a>
+            <div class="abstract-content">
+                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
+而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
+但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
+首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
+12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
     
 </div>
 
@@ -905,7 +916,7 @@ Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId(
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/7/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/9/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/7/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1875,7 +1886,140 @@ Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId(
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2186,7 +2330,7 @@ Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId(
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2197,9 +2341,132 @@ Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId(
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3517,6 +3784,21 @@ Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId(
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2023/04/11/2023-04/rabbitmq/</loc>
+    <lastmod>2023-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/04/04/2023-04/synology-set-code/</loc>
+    <lastmod>2023-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/04/20/2023-04/ts-class-method-overload/</loc>
+    <lastmod>2023-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/04/21/2023-04/ts-is-type/</loc>
+    <lastmod>2023-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/04/20/2023-04/pip3-install-mailer-error/</loc>
+    <lastmod>2023-05-14</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/05/27/2022-04/rabbitmq-client/</loc>
+    <lastmod>2023-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/03/16/2023-03/python_advance/</loc>
+    <lastmod>2023-03-31</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/03/07/2023-02/java-object-type/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/02/28/2023-02/mysql-start-error/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/04/30/2022-04/openstack/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/12/06/2022-12/bootstrap/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/01/03/2023-01/syno-openvpn-timeout/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/02/23/2023-02/esm/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/02/28/2023-02/rabbitmq-start-error/</loc>
+    <lastmod>2023-03-28</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/09/26/2022-09/Arraybuffer/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/09/26/2022-09/es/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/09/27/2022-09/java9-18/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/09/27/2022-09/ts-tools/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/24/2022-08/juren/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/20/2022-08/mc-lord-wine/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2022/08/19/2022-08/distributed-lock/</loc>
+    <lastmod>2022-12-02</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vmko.cc/2022/08/18/2022-08/the-sunny-16-rules/</loc>
     <lastmod>2022-08-19</lastmod>
   </url>
@@ -45,10 +129,6 @@
     <lastmod>2022-08-04</lastmod>
   </url>
   <url>
-    <loc>https://blog.vmko.cc/2022/04/30/2022-04/openstack/</loc>
-    <lastmod>2022-08-04</lastmod>
-  </url>
-  <url>
     <loc>https://blog.vmko.cc/2022/05/30/2022-04/pm2/</loc>
     <lastmod>2022-08-03</lastmod>
   </url>
@@ -67,10 +147,6 @@
   <url>
     <loc>https://blog.vmko.cc/2021/04/12/2021-04/kubernetes/</loc>
     <lastmod>2022-08-03</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.vmko.cc/2022/05/27/2022-04/rabbitmq-client/</loc>
-    <lastmod>2022-05-27</lastmod>
   </url>
   <url>
     <loc>https://blog.vmko.cc/2022/05/25/2022-04/gitlab-upgrade-error/</loc>

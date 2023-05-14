@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -455,28 +455,37 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/06/17/2019-07/codesign/">
+            <a class="abstract-title" href="/2020/03/10/2020-01/nginx-cache/">
                 
-                <span class="abstract-title-text">mac os codesign</span>
+                <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
             </a>
             <div class="abstract-content">
-                12codesign --sign - --force --deep /Applications/Alfred\ 3.app codesign --sign - --force --deep /Applications/Alfred\ 3.app/Contents/Preferences/Alfred\ Preferences.app
+                V 站上一个帖子提问：
 
+硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
+https://www.v2ex.com/t/649310#reply8
 
+有大佬回复:
+
+当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
+
+按照他说的内容分析下这几个 Nginx 配置的功能。
+expires
+开启客户端 cache ，设置 expire...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
     
 </div>
 
@@ -492,284 +501,34 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/05/23/2019-07/redis/">
+            <a class="abstract-title" href="/2020/01/18/2020-01/java/">
                 
-                <span class="abstract-title-text">redis 学习笔记</span>
+                <span class="abstract-title-text">Java 学习路线</span>
             </a>
             <div class="abstract-content">
-                Redis 数据类型
-redis 支持五种数据类型
-String: 字符串
-Hash: Hash 散列
-List: 列表
-Set: 集合
-ZSet: 有序集合(Sorted Set)
+                基友推荐的 Java 教程，源地址:
+https://www.bilibili.com/read/cv3560825
+目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
+1. 基础阶段1.1 必选
+Java 语言：https://www.bilibili.com/video/av59529105/
 
+MySQL 数据库：https://www.bilibili.com/video/av59623481/
 
+JDBC：https://www.bilibili.com/video/av59534040/
 
-KEY1234567891011121314151617set keyget keydel keydump key // 序列化给定 key，并返回而序列化的值。exists keyexpire key // 秒expireat key // timestamppexpireat key // 毫秒 (unix timestamp)keys pattern // 查找所有符合给定模式(pattern)...
+Java Web：https://www.bilibili...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/04/29/2019-07/xiazaibao/">
-                
-                <span class="abstract-title-text">迅雷下载宝定制固件</span>
-            </a>
-            <div class="abstract-content">
-                转载 https://www.right.com.cn/forum/thread-186873-1-1.html。
-此文是为了备份。
-
-迅雷下载宝官方固件因追求稳定而不开放ssh和telnet。为了进一步挖潜下载宝性能，在保留官方百分之百功能的基础上，定制了下载宝固件，仅供广大高清爱好者学习研究，
-若有违官方政策，请自觉删除！
-为了稳定起见，本固件只基于官方手机APP正式推送的版本进行定制，例如191. 192版。 
-【2017年10月12日复活版】
-鉴于下载宝官方开始更新固件，且各位网友极力更新定制固件，本人决定继续更新维护下载宝的定制固件版本，供大伙研究使用。
-因本人下载宝已出，在此...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/29</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/04/16/2019-07/gitlab-source/">
-                
-                <span class="abstract-title-text">GitLab Ubuntu 使用清华镜像站</span>
-            </a>
-            <div class="abstract-content">
-                GitLab 作为优秀的 Git 服务，安装在家里用于代码管理。
-GitLab CE 基本每周一次更新，为了保证使用新功能一般都经常通过 apt-get 进行更新。无奈国内的速度十分感人。
-后面发现清华大学开源软件镜像站提供了镜像源。
-修改 /etc/apt/source.list.d/gitlab_gitlab-ce.list
-12345678# this file was generated by packages.gitlab.com for# the repository at https://packages.gitlab.com/gitlab/gitlab-ce# deb h...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/03/29/2019-07/syno/">
-                
-                <span class="abstract-title-text">黑群晖的安装 &amp; 洗白</span>
-            </a>
-            <div class="abstract-content">
-                
-本帖只作为技术研究， 请读者遵守相关法律法规，不要侵犯以他人的商业利益为目的进行相关破解行为。
-
-准备工作硬件:
-
-一台可以上网并带有 USB 口的 windows 电脑
-一个 U 盘（作为启动盘而非安装盘，需要长期插在机子上）
-nas（主机）
-
-软件: 
-
-ChipEasy
-Win32DiskImager
-DiskGenius
-
-下载地址:
-https://pan.baidu.com/s/1BVbFroBwtCCdNm2xCuaCHg#list/path=%2F
-
-已失效
-
-安装群晖系统1. 首先获取 nas 设备的 mac。mac 地址相当于是网卡的唯一编号。最简单的办法就是看下路...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/03/14/2019-07/analysis-of-redis-performance/">
-                
-                <span class="abstract-title-text">Redis 性能问题分析（转载）</span>
-            </a>
-            <div class="abstract-content">
-                Redis 性能问题分析（转载）原文: https://www.jianshu.com/p/67093716547b
-
-
-在一些网络服务的系统中，Redis 的性能，可能是比 MySQL 等硬盘数据库的性能更重要的课题。比如微博，把热点微博[1]，最新的用户关系[2]，都存储在 Redis 中，大量的查询击中 Redis，而不走 MySQL。
-那么，针对 Redis 服务，我们能做哪些性能优化呢？或者说，应该避免哪些性能浪费呢？
-Redis 性能的基本面在讨论优化之前，我们需要知道，Redis 服务本身就有一些特性，比如单线程运行。除非修改 Redis 的源代码，不然这些特性，就是我们思...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/03/13/2019-07/redis-concurrence/">
-                
-                <span class="abstract-title-text">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</span>
-            </a>
-            <div class="abstract-content">
-                最近做了一个项目，涉及了大量的 redis IO 读写。
-原先的方式采用了单命令，一个操作往往涉及多个请求，写入和读取数据的效率十分低。因此，期望通过打包命令的方式，来减少网络请求 IO 对效率的影响
-在网上找到某大佬关于 redis 单条命令请求效率低的解释:
-
-
-socket IO 导致的上下文切换开销
-熟悉 OS／Linux 的童鞋都知道，一次 redis 请求在客户端和服务端分别至少会存在一次 read() 和一次 write() ，作为系统调用，read／write 的成本高于普通的函数调用，因此，在单个命令重复调用场景下，大量的 read&#x2F;write 系统调用会产生...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/02/25/2019-07/mc-server-input-error/">
-                
-                <span class="abstract-title-text">MC 服务器启动之后无法在服务端输入指令</span>
-            </a>
-            <div class="abstract-content">
-                不久前，发现 MC 服务器居然不能输入指令关闭服务器，在启动过程中有报错。
-123456789101112java.io.IOException: Resource temporarily unavailable	at java.io.FileInputStream.readBytes(Native Method)	at java.io.FileInputStream.read(FileInputStream.java:272)	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)	at java.io.Buf...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mc">mc</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
     
@@ -787,34 +546,38 @@ socket IO 导致的上下文切换开销
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/02/21/2019-07/grub2/">
+            <a class="abstract-title" href="/2020/01/18/2020-01/pivpn/">
                 
-                <span class="abstract-title-text">关于 grub2 的修复</span>
+                <span class="abstract-title-text">树莓派安装 PIVPN</span>
             </a>
             <div class="abstract-content">
-                现在 Linux 的版本做的优化也是越来越到位，无论是功能，样式还是上手度都比以前好了很多。但是 Linux 的多样化造成经常一更新代码就挂掉。(表示更新 Fedora、OpenSUSE、Linux Mint 全部挂掉了)。不过因为相互兼容，所以重装也比较方便。但是以前重装 Windows 就不一样了。重装完 Windows 之后 Grub2 会被删的一干二净。
-windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
+                在树莓派上安装 OpenVPN。
+虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
+核心安装就只有一条命令:
+1curl -L https://install.pivpn.io | bash
 
-首先是需要一个 Ubuntu 启动盘（U 盘 or 光盘）。进入系统。
 
-切换成 root 账户su root
 
-查看分区并挂载系统区。
-12fdisk -...
+具体过程可以参考
+http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
+这位大佬安装过程讲解的十分详细 &#x3D; - &#x3D;。
+
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/21</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
     
 </div>
 
@@ -830,34 +593,293 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/01/28/2019-07/python-raw-string/">
+            <a class="abstract-title" href="/2020/01/18/2020-01/disable-systemd-resolved/">
                 
-                <span class="abstract-title-text">Python 字符串中的转移符</span>
+                <span class="abstract-title-text">nameserver 127.0.0.53</span>
             </a>
             <div class="abstract-content">
-                关于转移符，无非是\ 加上别的字符。例如换行\n，制表符\t。
-在 JavaScript 中，字符串中涉及\的部分一律作为转移符，而如果想输入\的字符，必须写成\\。作为 mac 党还行，如果是 Windows 开发就呵呵哒了。
-12&gt; path = &#x27;c:\Users\maple\Desktop\新建文件夹&#x27;;&#x27;c:UsersmapleDesktop新建文件夹&#x27;
+                Ubuntu 升级到 16.04 还是 18.04 的时候，默认会启动 NetWorkManage 的一个功能，即把 /etc/resolv.conf 的 dns 地址配置成
+1nameserver 127.0.0.53
 
-正确做法应该是:
-12&gt; path&#x27;c:\\Users\\maple\\Desktop\\新建文件夹&#x27;
+正常情况下不会有影响，但是如果想要关闭这个功能，设置
+12$ sudo systemctl disable systemd-resolved$ sudo reboot
 
-当然大部分语言都是这个样子。如果包含\
-在 P...
+
+建议正常运作的情况下不需要卸载这个组件
+
+参考: https://www.hiroom2.com/2017/08/24/ubuntu-1610-nameserver-127-0-0-53-en/
+
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/28</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/01/07/2020-01/km3/">
+                
+                <span class="abstract-title-text">杭州科目三</span>
+            </a>
+            <div class="abstract-content">
+                新系统模拟灯光考试夜间模拟灯光题目
+
+
+行为
+灯光操作
+
+
+
+夜间通过急弯、坡路
+交替使用远近光灯
+
+
+夜间通过坡路、拱桥
+交替使用远近光灯
+
+
+夜间通过急弯、拱桥
+交替使用远近光灯
+
+
+夜间通过拱桥、人行横道
+交替使用远近光灯
+
+
+夜间通过没有交通信号灯控制的路口
+交替使用远近光灯
+
+
+夜间超越前方车辆
+交替使用远近光灯
+
+
+夜间同方向近距离跟车行驶
+使用近光灯
+
+
+夜间与机动车会车
+使用近光灯
+
+
+夜间直行通过路口
+使用近光灯
+
+
+夜间路口左转弯
+近光灯 + 左转向灯
+
+
+夜间路口右转弯
+近光灯 + 右转向灯
+
+
+夜间在有路灯的道路上行驶
+使用近光灯
+
+
+夜间在照明良好的道路上行驶
+...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/12/24/2019-12/rasp-4-ubuntu/">
+                
+                <span class="abstract-title-text">Raspberry4 安装 Ubuntu</span>
+            </a>
+            <div class="abstract-content">
+                
+随着自己年纪越来越大，事情越来越多，而相对的，记忆力却越来越差。
+但是已经安装过一次 Raspberry4 ，但是不到几个月的时间就忘得一干二净，折腾了一整个晚上才完全搞定。
+以此说明，以后应当认真记录一些操作的信息，以供事后参考。
+真怀念自己当初的记忆力
+
+Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取速度，相对于前几代有着本质的差异。我原先使用迅雷下载宝作为小型的 NAS 存储视频监控和正常查看的电视剧，但是下载宝作为低端的性能配置，IO 写入性能不理想，写入速度最高也仅有 30 MB&#x2F;s，在对性能需求愈发高的情况下，我决定用 Raspb...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/12/24/2019-12/xp-serials-ids/">
+                
+                <span class="abstract-title-text">XP 序列号</span>
+            </a>
+            <div class="abstract-content">
+                
+仅供学习参考，不可用于商业
+
+12345678910111213141516171819202122# (工行版) 可用(强推此号)MRX3F-47B9T-2487J-KWKMF-RPWBY# (台湾交大学生版) 可用QC986-27D34-6M3TY-JJXP9-TBGMDCM3HY-26VYW-6JRYC-X66GX-JVY2DDP7CM-PD6MC-6BKXT-M8JJ6-RPXGJ# 可装不可升级F4297-RCWJP-P482C-YY23Y-XH8W3 HH7VV-6P3G9-82TWK-QKJJ3-MXR96HCQ9D-TVCWX-X9QRG-J4B2Y-GR2TT# 20...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="xp">xp</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/12/16/2019-12/koa-compose/">
+                
+                <span class="abstract-title-text">Koa-Compose 源码试写</span>
+            </a>
+            <div class="abstract-content">
+                1234567891011121314151617181920212223242526272829303132333435363738async function _compose(ctx, next, items) &#123;    if(items.length === 0) &#123;        return next();    &#125;    const func = items.shift();    return func(ctx, async function() &#123;        return _compose(ctx, next, items);...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/11/26/2019-11/logstash/">
+                
+                <span class="abstract-title-text">Logstash conf 语法</span>
+            </a>
+            <div class="abstract-content">
+                
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/11/13/2019-11/centos5.x/">
+                
+                <span class="abstract-title-text">CentOS 5.x 版本 repo 地址</span>
+            </a>
+            <div class="abstract-content">
+                在迁移虚拟机到 ESXi 的时候，不幸遗漏了一个游戏私服服务器 orz。虽然私服不怎么好玩，但是也算是一个小纪念。鉴于私服的服务器版本是 CentOS 5.x 版本比较老，所以担心之后可能搭不起来。
+于是乎，果然访问 error。查阅了相关信息，我搭建的时候 16 年年底。17 年 3 月，CentOS 5.x 正式停止依赖维护。
+呃…查询了网上资料，有提供一个 http://vault.centos.org/5.11/os 的 repo 地址。并且版本限定 5.11。鉴于我对 CentOS 不太了解，直接拿了网上的 CentOS-Base.repo。
+12345678910111213...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
     
 </div>
 
@@ -869,7 +891,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1839,7 +1861,140 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2150,7 +2305,7 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2161,9 +2316,132 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3481,6 +3759,21 @@ windows 重装后导致 Grub 问题找出以前整理过的一份笔记：
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

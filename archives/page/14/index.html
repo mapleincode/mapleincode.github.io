@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -440,29 +440,29 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/03/05/2019-07/public-license/">
+            <a class="abstract-title" href="/2018/05/29/2019-07/macos-pac/">
                 
-                <span class="abstract-title-text">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</span>
+                <span class="abstract-title-text">MAC OS 通过脚本配置自动代理 &amp; 关闭自动代理</span>
             </a>
             <div class="abstract-content">
-                什么是许可协议？什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。
-不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。
-而开源许可协议使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。
-G...
+                因为在家里搞了一个 PAC 文件用来科学上网。但是上班用的 MAC 因为要带到公司，所以在公司用的是 Sha*socks。因为启用  SS 会覆盖原有的配置，而如果已经有了 PAC 配置，在不消除设置的情况下，在外网同样也是无法上网的。
+所以找了一个网上的教程，搞到了两个配置:
+设置自动代理setpac.sh
+12345678910111213141516171819202122232425262728293031323334353637383940414243#!/bin/sh#######################################################...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/05</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/29</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="license">license</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
     
 </div>
 
@@ -478,29 +478,26 @@ G...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/02/26/2019-07/san/">
+            <a class="abstract-title" href="/2018/05/28/2019-07/xp-x64/">
                 
-                <span class="abstract-title-text">生成 SAN 证书并自签</span>
+                <span class="abstract-title-text">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</span>
             </a>
             <div class="abstract-content">
-                生成 SAN 证书。因为群晖的证书生成有个 BUG， 创造多域名证书居然不能输入*。只好网上找资料手动创建多域名证书 SAN certificater(SubjectAltName Certificater)。
-工作文件夹12345678910├── ca.srl├── certs│   ├── ca.cer # ca 证书│   └── server.cer # server 证书├── private│   ├── ca.csr # ca csr 文件│   ├── ca.pem # ca 私钥│   ├── server.pem # server 私钥 │   └── server...
+                简介12345678910111213141516171819202122232425262728293031323334353637[资源名称]---Windows XP Professional x64 Edition with SP2 - VL (English)[资源类型]---ISO镜像[资源语言]---英语+简体中文[杀毒状况]---NOD32+KAV2009[共享时间]---时间不定[安装测试]---刻盘+硬盘安装通过[版权声明]---软件版权归原作者及原软件公司所有，仅供测试所用，请勿用于商业用途，如果你喜欢，请购买正版软件[资源介绍] Windows XP Profes...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/26</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/28</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="san">san</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="xp">xp</a>
     
 </div>
 
@@ -516,32 +513,226 @@ G...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/02/22/2019-07/openvpn-login-auto/">
+            <a class="abstract-title" href="/2018/05/22/2019-07/babel/">
                 
-                <span class="abstract-title-text">使用 Expect 自动登录 OpenVPN</span>
+                <span class="abstract-title-text">Babel 学习笔记</span>
             </a>
             <div class="abstract-content">
-                公司使用 OpenVPN 作为外网办公网络，本来只设置了用户名密码，但是为了安全，公司的网(yun)管(wei)同事升级了安全配置，添加了谷歌验证的输入需求。
-谷歌验证是一种将预先生成秘钥和时间戳，通过一种开源算法计算出若干位的数字的安全方案。在 VPN 配置界面，会提供一个二维码(即为秘钥)，然后在手机上安装 APP，扫码二维码并保存，可以获得一个动态刷新的验证码。然后在登录界面输入账号密码和动态验证码即可登录 VPN。
-作为一个电脑党，每次登录 VPN 都需要满世界找手机，真的让人觉得麻烦。因为谷歌验证是开源的，所以 gayhub 上到处都有各个编程语言支持的包。如果可以运行一套程序...
+                Babel  学习前段时间学习写 React.js ，使用了了 Dva.js 框架。然后在 npm run dev可以运行的情况下。发现静态文件编译一直出问题。提示 Uglify 打包失败。定位问题是使用了 ES6 写的包 https://github.com/sorrycc/blog/issues/68。
+因为那个包是我自己写的，本来就是用于 Node 的包，这样就需要用 Babel 将 es6 转成 es5。
+创建 .babelrc在项目名称创建配置文件。
+格式: 
+1234&#123;  &quot;presets&quot;: [],  &quot;plugins&quot;: ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/22</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="babel">babel</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="expect">expect</a>
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/22/2019-07/ubuntu-language/">
+                
+                <span class="abstract-title-text">Ubuntu 安装中文语言包</span>
+            </a>
+            <div class="abstract-content">
+                1sudo apt-get install language-pack-zh-hans
+
+解决未安装语言包导致系统应用无法识别 zh_CN.UTF-8
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/22/2019-07/docker/docker-prune/">
+                
+                <span class="abstract-title-text">Docker 运行文件清理工具 prune</span>
+            </a>
+            <div class="abstract-content">
+                原文地址
+转载地址
+Docker 采用保守的方法来清理未使用的对象（通常称为“垃圾回收”），例如镜像、容器、卷和网络：除非明确要求 Docker 这样做，否则通常不会删除这些对象。这可能会导致 Docker 使用额外的磁盘空间。对于每种类型的对象，Docker 都提供了一条 prune 命令。另外，可以使用 docker system prune 一次清理多种类型的对象。本主题讲解如何使用这些 prune修剪命令。
+1. 修剪镜像docker image prune 命令可以清理未使用的镜像。默认情况下，docker image prune 命令只会清理 dangling 镜像。dang...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/22</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/21/2019-07/base64-js/">
+                
+                <span class="abstract-title-text">Base64 JavaScript 实现</span>
+            </a>
+            <div class="abstract-content">
+                基于 JavaScript 实现的 Base64 算法
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106/** * https://blog.csdn.net/u012369749/article/details/7378...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/21/2019-07/order/">
+                
+                <span class="abstract-title-text">订单的几种类型</span>
+            </a>
+            <div class="abstract-content">
+                订单的几种类型
+充值购买，分次扣钱。
+充值积分， 分次扣积分。
+充值次数，分次扣次数。
+永久买入
+按月买入（时间）
+月结
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/05/17/2019-07/openvpn-make/">
+                
+                <span class="abstract-title-text">编译 OpenVPN 及解决相关依赖问题</span>
+            </a>
+            <div class="abstract-content">
+                
+OpenVPN 是全功能的 SSL VPN，它使用行业标准 SSL&#x2F;TLS 协议实现 OSI 第 2 层或第 3 层安全网络扩展，支持基于证书，智能卡和&#x2F;或用户名&#x2F;密码凭据的灵活的客户端认证方法，并允许用户或使用防火墙规则应用于 VPN 虚拟接口的组专用访问控制策略。OpenVPN 不是 Web 应用程序代理，不通过 Web 浏览器进行操作。
+
+在 OpenVpn 官网下载最新版本的源码包，解压后按开始编译
+123$ ./configure$ make$ sudo make install
+
+configure 过程中会出现相关依赖未安装的错误提示
+
+co...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
     
         <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
     
@@ -559,30 +750,33 @@ G...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/02/21/2019-07/node-install/">
+            <a class="abstract-title" href="/2018/05/16/2019-07/react-nginx/">
                 
-                <span class="abstract-title-text">Ubuntu 安装 Node.js 环境</span>
+                <span class="abstract-title-text">Nginx 部署 react 项目返回 404</span>
             </a>
             <div class="abstract-content">
-                官方编译版本安装使用官方预先编译好的二进制安装包进行安装。
-从https://nodejs.org/en/download/选择对应的版本的二进制包，下载到 Linux 上。
-123456789101112# 下载wget https://nodejs.org/dist/&#123;version&#125;/node-&#123;version&#125;-linux-x64.tar.xz# 解压tar -xvf node-&#123;version&#125;-linux-x64.tar.xz# 进入文件夹cd node-&#123;version&#125;-linux-x64/#...
+                前端时间苦学 React.js，作为愚蠢的后端开发，在面对如此复杂的前端框架，真的是…
+用 dva.js 算是完成了第一个可以用的小工具，在树莓派上编译成 html ，然后新建一个 nginx server，部署。
+直接进根目录是没有问题的，但是如果我直接选择子目录类似: /utils。却返回了 404。
+查了下百度，说法是因为 Nginx 是根据路径去查找文件，但是 react-router 默认编译后只有一个 index.html。
+所以办法是修改 nginx.conf
+123456server &#123;    ...  location / &#123;    try_file...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/21</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/16</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
     
 </div>
 
@@ -598,233 +792,35 @@ G...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/02/11/2019-07/auto-restart/">
+            <a class="abstract-title" href="/2018/05/13/2019-07/react-reudx-note-new-md/">
                 
-                <span class="abstract-title-text">Shell 自动重启进程</span>
+                <span class="abstract-title-text">React-Redux 笔记 - 其他</span>
             </a>
             <div class="abstract-content">
-                将 OpenVPN 搭建在一台服务器上，因为服务器设置了会话过期，所以服务每天都会在 24 小时后自动断开，因此需要一个类似守护进程的脚本来进行自动重启。
-网上找到了一个简单的脚本:
-12345678910#!/bin/bashwhile truedo    procnum=` ps -ef|grep &quot;openvpn&quot;|grep -v grep|wc -l`   if [ $procnum -eq 0 ]; then       ./openvpn   fi   sleep 30done
+                
+参考了阮一峰老师的文章
 
-其方式是每 30 秒通过 ps 命令来检查对应名称的进程是否存在，如果不存在...
+combineReducersUsage123const &#123; combineReducers &#125; from &#x27;redux&#x27;;const * as reducers from &#x27;./reduces&#x27;;const reducer = combineReducer(reducers);
+
+
+方便管理 reducer，可以按内容分类 reducer
+reducer 数据也独立，每个 reducer 所能获取和修改的 state 都是独立的。
+获取数据应该要通过 state.xxx.yyy。
+当然要跟着修改的地...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/11</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/13</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/07/2019-07/pac/">
-                
-                <span class="abstract-title-text">自动科学上网 &amp; PAC</span>
-            </a>
-            <div class="abstract-content">
-                
-  一直很喜欢 Chrome 的书签和记录同步，也不喜欢第三方的来搞。但是因为我们伟大的长城，所以需要科学上网来实现数据同步。之前是租了一台 VPS，然后自己搭建 SS 服务器，无奈费用实在是太高。后来在同事的推荐下开了一个 SS 服务，16 刀一年，50G 一个月（P.S. 后面发现这个网站的流量是按照节点算的，慢的节点算 0.2，相当于 250G，对我这种之翻墙看看网页的乖巧少年来说完全够用了）。但是问题来了，iPad 的 SS 客户端我只能找到一个简单的小工具，且只支持aes-256-cfb&quot;，但是 SS 服务商强制要求 chacha20-ietf-poly1305这种...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="pac">pac</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/01/22/2019-07/rasp-hdd/">
-                
-                <span class="abstract-title-text">树莓派用机械硬盘当系统盘</span>
-            </a>
-            <div class="abstract-content">
-                
-  全程参考一个大佬的文章 https://mynook.info/blog/post/boot-raspberrypi-from-external-hdd
-
-方案一直对树莓派的读写速度十分不能接受，也曾想去某宝上找 EMMC 转 SD 的套件，但是听那个老板说 EMMC 芯片一百+，觉得有点贵，毕竟树莓派也仅仅支持 USB2.0。于是乎，在某家库存店找了一个 80G 的库存的机械硬盘(￥60)，又买了一根双 USB 的易驱线(树莓派的 USB 供电支持不了机械硬盘)。
-
-  简单搜索了一下发现直接从硬盘启动是不行的，因为树莓派启动的时候固定是从 SD 卡的第一个分区（&#x2F;bo...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/29/2019-07/virtual-dom/">
-                
-                <span class="abstract-title-text">深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
-            </a>
-            <div class="abstract-content">
-                作者：戴嘉华
-转载请注明出处并保留原文链接(#13)和作者信息。
-目录：
-1 前言
-2 对前端应用状态管理思考
-3 Virtual DOM 算法
-4 算法实现
-4.1 步骤一：用JS对象模拟DOM树
-4.2 步骤二：比较两棵虚拟DOM树的差异
-4.3 步骤三：把差异应用到真正的DOM树上
-
-
-5 结语
-6 References
-
-1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
-本文...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dom">dom</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/26/2019-07/git-no-ff/">
-                
-                <span class="abstract-title-text">git merge --no-ff</span>
-            </a>
-            <div class="abstract-content">
-                --no-ff 指的是强行关闭fast-forward方式。
-fast-forward方式就是当条件允许的时候，git 直接把 HEAD 指针指向合并分支的头，完成合并。属于“快进方式”，不过这种情况如果删除分支，则会丢失分支信息。因为在这个过程中没有创建 commit。
-git merge --squash 是用来把一些不必要 commit 进行压缩，比如说，你的 feature 在开发的时候写的 commit 很乱，那么我们合并的时候不希望把这些历史 commit 带过来，于是使用--squash进行合并，此时文件已经同合并后一样了，但不移动 HEAD，不提交。需要进行一次额外的 c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/21/2019-07/gulp/">
-                
-                <span class="abstract-title-text">Gulp 常用插件(转)</span>
-            </a>
-            <div class="abstract-content">
-                Gulp 常用插件(转)原文地址
-
-  本文主要展示的是gulp常用插件的使用方法和用途，通过对插件的熟练运用达到精通gulp。不定期更新。可以到github上面下载DEMO。
-
-匹配符 *、**、！、{}1234gulp.src(&#x27;./js/*.js&#x27;)               // * 匹配js文件夹下所有.js格式的文件gulp.src(&#x27;./js/**/*.js&#x27;)            // ** 匹配js文件夹的0个或多个子文件夹gulp.src([&#x27;./js/*.js&#x27;,&#x27;!./js/index.js...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gulp">gulp</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
     
 </div>
 
@@ -836,7 +832,7 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/13/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/15/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/13/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/12/">12</a><a class="page-number" href="/archives/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/archives/page/15/">15</a><a class="page-number" href="/archives/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="extend next" rel="next" href="/archives/page/15/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1727,7 +1723,140 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2038,7 +2167,7 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2049,9 +2178,132 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3369,6 +3621,21 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -455,30 +455,37 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/12/14/2019-07/gulp-autoprefixer/">
+            <a class="abstract-title" href="/2018/05/08/2019-07/react-note/">
                 
-                <span class="abstract-title-text">gulp-autoprefixer 基本使用</span>
+                <span class="abstract-title-text">React.js 小书 - 第三阶段 - 学习笔记</span>
             </a>
             <div class="abstract-content">
-                转载传送门
-基本使用
-使用 gulp-autoprefixer 根据设置浏览器版本自动处理浏览器前缀。使用她我们可以很潇洒地写代码，不必考虑各浏览器兼容前缀。
+                
+React.js 小书
 
-1234567891011121314var gulp = require(&#x27;gulp&#x27;),    autoprefixer = require(&#x27;gulp-autoprefixer&#x27;); gulp.task(&#x27;testAutoFx&#x27;, function () &#123;    gulp.src(&#x27;src/css/index.css&#x27;)      ...
+第三阶段Lesson 28 - 高阶组件(Higher-Order Components)
+高阶组件是函数。
+
+高阶组件的作用是提高代码复用度。
+
+高阶组件基本结构
+123456789101112export default (某个子组件, 其他参数) &#123;    class NewComponet extends Componet &#123;        // 各种可复用的逻辑，比如请求服务器、读取缓存        // 也可以修改其他参数然后传到子组件中        // const 修改后的参数 = 处理函数(其他参数)        /...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/14</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="gulp">gulp</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redux">redux</a>
     
 </div>
 
@@ -494,34 +501,48 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/12/13/2019-07/docker/docker-run/">
+            <a class="abstract-title" href="/2018/04/23/2019-07/systemctl/">
                 
-                <span class="abstract-title-text">Docker 启动后直接退出</span>
+                <span class="abstract-title-text">systemctl 命令(转)</span>
             </a>
             <div class="abstract-content">
-                之前对 docker 的运行问题很不了解，后来根据朋友的解释才理解，容器中的程序应该挂载在容器上，由容器的重启关闭来控制程序的关闭开机。
-那假如运行后台运行的函数呢？
-如果不做处理，在函数进入后台运行后，容易就会直接 exit 结束。
-有一个办法是在运行脚本上加一句:
-1tail -f /dev/null
+                systemctl命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。
 
-这样容易就处于执行状态就不会退出了。
-算是歪门邪道吧。
 
+
+任务
+旧指令
+新指令
+
+
+
+使某服务自动启动
+chkconfig –level 3 httpd on
+systemctl enable httpd.service
+
+
+使某服务不自动启动
+chkconfig –level 3 httpd off
+systemctl disable httpd.service
+
+
+检查服务状态
+service httpd status
+systemctl status httpd.service （服务详细信息） systemctl...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/13</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/23</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
 </div>
 
@@ -537,30 +558,32 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/12/09/2019-07/ali-apt/">
+            <a class="abstract-title" href="/2018/04/13/2019-07/xms/">
                 
-                <span class="abstract-title-text">Ubuntu APT 更换阿里源</span>
+                <span class="abstract-title-text">Xms Xmx PermSize MaxPermSize 的含义</span>
             </a>
             <div class="abstract-content">
-                备份原 APT 源
-1sudo mv /etc/sources.list /etc/sources.list.bak
+                转载
+参数的含义
 
-重新编辑一份新的sources.list
-16.0412345678910111213141516# deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricteddeb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-propert...
+-vmargs -Xms128M -Xmx512M -XX:PermSize&#x3D;64M-XX:MaxPermSize&#x3D;128M-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了-Xms128m JVM初始分配的堆内存-Xmx512m JVM最大允许分配的堆内存，按需分配-XX:PermSize&#x3D;64M JVM初始分配的非堆内存-XX:MaxPermSize&#x3D;128M JVM最大允许分配的非堆内存，按需分配
+
+我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。
+堆(Heap)和非堆(Non-he...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
     
 </div>
 
@@ -576,47 +599,36 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/12/09/2019-07/docker/docker-user/">
+            <a class="abstract-title" href="/2018/04/12/2019-07/object-define-properity/">
                 
-                <span class="abstract-title-text">Docker 普通用户操作不用 sudo 权限</span>
+                <span class="abstract-title-text">Vue.js 数据绑定原理</span>
             </a>
             <div class="abstract-content">
-                Docker 的服务本来是要 root 权限或者 docker 组的权限。只要将当前用户加入 docker 组即可以在不使用sudo 的前提下运行 Docker 指令。
+                作为一个后端开发，对于set 和get一般都不会陌生。在面向对象开发中，一个对象一般都有 get 和 set 的属性，赋值既是set，得值就是get。刚接触 JavaScript 的时候，似乎还没有这个特性（也可能自己太菜），随着 Vue.js 的流行慢慢火热起来。其实原理很简单，就是看怎么搞。
+对象描述类型通俗的来说就是一个对象假设 var obj = &#123; a: 1 &#125;，有一种东东叫做属性描述对象，用于解释 obj.a的一些属性。
+有且只有两种类型: 
 
-新建 docker 组
+数据型描述符
+控制型描述符
 
-一般情况下，在安装 Docker 的时候已经创建好了。
-
-
-
-1sudo groupadd docker
-
-
-将当前用户加入 docker 组
-
-1sudo gpasswd -a $&#123;USER&#125; docker
-
-​    或者
-1sudo usermod -aG docker $&#123;USER&#125;
-
-
-退出 ssh 或者重启 docker 服务
-
-1sudo ...
+所有对象的 key 的描述对象类型必须是两者之一。
+数据型描述符(data des...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="vue">vue</a>
     
 </div>
 
@@ -632,63 +644,12 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/12/06/2019-07/ubuntu-swap/">
+            <a class="abstract-title" href="/2018/04/12/2019-07/shell-place/">
                 
-                <span class="abstract-title-text">Ubuntu 新增 swap</span>
+                <span class="abstract-title-text">Shell 获取文件地址</span>
             </a>
             <div class="abstract-content">
-                更换权限sudo su
-创建 swap 文件fallocate -l 1G /swapfile
-修改访问权限
-12chown root:root /swapfilechmod 0600 /swapfile
-
-启动 swap 分区
-1mkswap /swapfile
-
-返回信息
-12Setting up swapspace version 1, size = 8 GiB (8589930496 bytes)no label, UUID=f1f74673-d41b-4b06-a80c-15a6b449a1fe
-
-激活 swap 分区
-1swapon /swapfile
-
-然后修改开机载入
-1...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/11/24/2019-07/comand-control/">
-                
-                <span class="abstract-title-text">命令执行控制 &amp;&amp; 与 ||(转)</span>
-            </a>
-            <div class="abstract-content">
-                &amp;&amp;方式：command1 &amp;&amp; command2如果 command1 执行成功，则执行 command2。
-||方式：command1 || command2如果 command1 执行失败，则执行 command2。
+                12cd `dirname $0`echo `pwd`
 
             </div>
             <!-- read more -->
@@ -696,7 +657,7 @@
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/24</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/12</span>
                 </div>
                 <!-- tags -->
                 
@@ -705,6 +666,87 @@
     
         <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
     
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/07/2019-07/nas-ssh-error/">
+                
+                <span class="abstract-title-text">群晖 SFTP 连接失败</span>
+            </a>
+            <div class="abstract-content">
+                群晖系统(Synology DiskStation)可以说是 NAS 系统中最完美的系统（虽然我也就用了他一个）。基本他集成了所有我们所需要的功能，而且性能强大。
+因为需要在局域网内进行文件传输，因为平时都是用 SSH 来通讯的，所以直接用 NAS 用自带 SFTP 服务来传输文件非常方便。
+之前有一次，将局域网里的某个机子重装了之后，在 NAS 上通过 SFTP 服务访问却得到了 链接失败。
+考虑了下，应该是known_hosts捣的鬼。
+常用 SSH 的人，对known_hosts一定很了解，本身它是为了安全而生，访问你访问到一个虚假的系统。通常，如果一个域名或者 IP 的 ssh-...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/28/2019-07/static-ip/">
+                
+                <span class="abstract-title-text">Linux 静态 IP 设置</span>
+            </a>
+            <div class="abstract-content">
+                整理虚拟机的 IP。
+路由器原来的 IP 段是192.168.2.0。为了方便管理，想把所有主机的 IP 改成 192.168.1.x。
+子网掩码虽然大学教过但是完全不知道这是什么东西。
+抽空看了一个小时基本理解了他的作用。
+将子网掩码从255.255.255.0改成255.255.252.0，这样就可以接受 192.168.0.x -&gt; 192.168.3.x的 IP 了。
+配置静态 IPUbuntu 下配置 IP 的文件是/etc/network/interfaces。
+默认配置为:
+123# The primary network interfaceauto ens32ifa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
 </div>
@@ -721,72 +763,20 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/11/21/2019-07/database-install/">
+            <a class="abstract-title" href="/2018/03/18/2019-07/unixbench/">
                 
-                <span class="abstract-title-text">常用数据库(缓存)的简单安装配置</span>
+                <span class="abstract-title-text">使用 Unixbench 测试 CPU 性能</span>
             </a>
             <div class="abstract-content">
-                用于日常代码调试测试开发。如果稳定使用建议 docker 搭建数据库。
-环境树莓派 Ubuntu 16.04
-MySQL安装1sudo apt install mysql-server
-
-配置MySQL 的配置文件位于 /etc/mysql/。
-一般名称为my.cnf或者mysqld.cnf。
-因为一般开发用的 MySQL 都是外网调用，所以需要修改bind-address。注释或者修改成你所在的局域网的 IP。(如果数据库在公网暴露且有信息存储，请勿注释该代码)。
-创建用户并授权创建用户1CREATE USER &quot;hello&quot;@&quot;%&quot; IDENT...
+                Unixbench 是 Linux 用来测试 CPU 综合性能的工具。
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#! /bin/bash#==============================================================##   Description:  Unixbench script                             ##   Author: Teddysun &lt;i@ted...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mongodb">mongodb</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="memcache">memcache</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/11/20/2019-07/inode/">
-                
-                <span class="abstract-title-text">优化 Ext4 分区 inode 占用空间问题</span>
-            </a>
-            <div class="abstract-content">
-                
-  去年年底购入了渣雷的下载宝，用  ntfs 格式化后，性能一直不佳(后面发现是因为那个渣系统会索引文件)，后用 ext4 格式，但是格式之后发现居然少了 15G 左右。
-
-inodeinode是指在许多“类Unix文件系统”中的一种数据结构。每个inode保存了文件系统中的一个文件系统对象（包括文件、目录、设备文件、socket、管道, 等等）的元信息数据，但不包括数据内容或者文件名。(from: 维基百科)
-通俗的说，inode 其实就是文件的索引值。
-inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统自动将硬盘分成两个区域。一个是数据区，存放文件数据；另一个是 ino...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/20</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
                 </div>
                 <!-- tags -->
                 
@@ -795,42 +785,7 @@ inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统�
     
         <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
     
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/11/03/2019-07/mysql-config/">
-                
-                <span class="abstract-title-text">my.cnf 参数解释 &amp; 优化 (转载)</span>
-            </a>
-            <div class="abstract-content">
-                my.cnf 参数解析
-转载 From
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="cpu">cpu</a>
     
 </div>
 
@@ -846,33 +801,73 @@ inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统�
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2017/11/03/2019-07/gitlab-upgrade-3/">
+            <a class="abstract-title" href="/2018/03/18/2019-07/zsh-autosuggestions/">
                 
-                <span class="abstract-title-text">GitLab 推送了更新(三) - Nginx 反向代理</span>
+                <span class="abstract-title-text">oh-my-zsh 安装 zsh-autosuggestions 插件</span>
             </a>
             <div class="abstract-content">
-                
-GitLab 搭建在家里的一台服务器上，并没有直接暴露到外网。为了可以外网访问，所以需要把端口转发到内网(NAT)。因为用了渣 TP 路由器，只支持转发 20 个端口到外网。为了节省端口资源，所以打算使用树莓派上的 Nginx 作为反向代理，使多个 Domain 同时使用一个端口。
+                zsh-autosuggestions 是 oh-my-zsh 的一个试用插件，可以实现动态显示历史输入记录的效果。
 
-Nginx 安装无脑安装:
-12sudo apt update;sudo apt install nginx;
+和 oh-my-zsh 一般的内置插件不一样，不能通过光改动~/.zshrc来启动，需要额外配置。
 
-查看 nginx 服务运行状态:
-123456789maple@localhost:~/$ sudo service nginx status● nginx.service - A high ...
+  树莓派上安装这个插件，bash 输入变得十分卡顿，因此对于性能较差的机子(尤其是硬盘速度)，不建议使用这个插件。
+
+安装插件从 GitHub 上 clone 插件。
+1git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+启动插件1source ~/....
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="oh-my-zsh">oh-my-zsh</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/05/2019-07/public-license/">
+                
+                <span class="abstract-title-text">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</span>
+            </a>
+            <div class="abstract-content">
+                什么是许可协议？什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。
+不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。
+而开源许可协议使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。
+G...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="license">license</a>
     
 </div>
 
@@ -884,7 +879,7 @@ Nginx 安装无脑安装:
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/14/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/16/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/14/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/16/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1854,7 +1849,140 @@ Nginx 安装无脑安装:
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2165,7 +2293,7 @@ Nginx 安装无脑安装:
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2176,9 +2304,132 @@ Nginx 安装无脑安装:
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3496,6 +3747,21 @@ Nginx 安装无脑安装:
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

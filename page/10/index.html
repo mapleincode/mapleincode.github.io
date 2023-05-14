@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -455,29 +455,39 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/01/11/2019-07/rabbitmq-install/">
+            <a class="abstract-title" href="/2019/11/12/2019-11/ELK/">
                 
-                <span class="abstract-title-text">RabbitMQ 安装 &amp; 添加登录用户[转载]</span>
+                <span class="abstract-title-text">ELK 搭建</span>
             </a>
             <div class="abstract-content">
-                
-本文转载自 https://www.dev-heaven.com/posts/1914.html
+                起因
+项目需求
+公司某位大佬有记录文档可以参考
 
-安装脚本12345678910yum install wget -y#Download RabbitMQ and Erlangwget https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.9/rabbitmq-server-3.6.9-1.el6.noarch.rpmwget https://www.rabbitmq.com/releases/erlang/erlang-19.0.4-1.el6.x86_64.rpm#Instal...
+ELKELK 平台是当前应用比较广泛的一套开源实时日志分析解决方案。ELK 由 ElasticSearch、Logstash 和 Kiabana 三个开源工具组成。
+ELK &#x3D; Elasticsearch + Logstash + Kibana
+参考 &amp; 下载地址: https://www.elastic.co/cn/products/
+
+MacOS 
+
+Elasticsearch
+Elasticsearch 是一个基于 JSON 的分布式搜索和分析引擎。
+Kibana
+Kibana 可谓 Elastic Stack 的...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/11</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="elk">elk</a>
     
 </div>
 
@@ -493,29 +503,46 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/01/07/2019-07/redlock/">
+            <a class="abstract-title" href="/2019/11/11/2019-11/passwd/">
                 
-                <span class="abstract-title-text">Red Lock</span>
+                <span class="abstract-title-text">Shell 自动输入 sudo 密码</span>
             </a>
             <div class="abstract-content">
-                在分布式版本的算法里我们假设我们有 N 个 Redis master 节点，这些节点都是完全独立的，我们不用任何复制或者其他隐含的分布式协调算法。我们已经描述了如何在单节点环境下安全地获取和释放锁。因此我们理所当然地应当用这个方法在每个单节点里来获取和释放锁。在我们的例子里面我们把 N 设成 5，这个数字是一个相对比较合理的数值，因此我们需要在不同的计算机或者虚拟机上运行 5 个 master 节点来保证他们大多数情况下都不会同时宕机。一个客户端需要做如下操作来获取锁：
+                
+使用 echo 和管道命令
 
-获取当前时间（单位是毫秒）。
-轮流用相同的 key 和随机值在 N 个节点上请求锁，在这一步里，客户端在每个 mas...
+12#!/bin/bashecho password | sudo -S service runtime* status
+
+
+使用文本块输入重定向
+
+
+发现这个命令不能用在 shell 的判断条件里
+
+1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
+
+
+
+
+第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
+
+参考:
+
+https://blog.csdn.net/qiyueqinglian/article/detail...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
     
 </div>
 
@@ -531,111 +558,21 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/01/07/2019-07/kafka-node/">
+            <a class="abstract-title" href="/2019/11/11/2019-11/vCenter/">
                 
-                <span class="abstract-title-text">Kafka-node 的使用 Demo</span>
+                <span class="abstract-title-text">vCenter 和 vCSA 对比</span>
             </a>
             <div class="abstract-content">
-                Kafka 是基于磁盘文件顺序存储而设计的类 AMQP 消息队列服务，支持集群和数据备份。有着超高的稳定性和吞吐量。
-前段时间我司拟推广 Kafka，也乘机借着项目学了下 Kafka 的相关知识，虽然最后还是一直决定使用 ONS..
-在 Node 环境使用量比较高的是 Kafka-node这个包。所以本文主要讲诉这个包的一些简单用例。
-关于 Lower Level Consumer 和 High Level Consumer 的区别
-一开始在不怎么了解的情况下，一直分不清楚两者的关系。后来在一大佬的文章中得到了解释:
-
-很多时候，客户程序只是希望从Kafka读取数据，不太关心消息 off...
+                vCenter Server与vCenter Server Virtual Appliance（vCSA）都提供对企业中[VMware vSphere](https://baike.baidu.com/item/VMware vSphere)部署的集中管理。虽然拥有相同的功能，两者安装却不同，所支持的功能也不同。
+vCSA不支持的功能
+vCSA安装在用于VMware的SUSE Linux Enterprise Server上，前提是拥有vSphere许可。VCSA 5.0.1及以后版本运行PostgreSQL数据库，而之前版本运行的是IBM DB2数据库。VCSA只支持PostgreSQ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kafka">kafka</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/11/09/2019-07/foreign-key/">
-                
-                <span class="abstract-title-text">MySQL 外键</span>
-            </a>
-            <div class="abstract-content">
-                
-如果公共关键字在一个关系中是主关键字，那么这个公共关键字被称为另一个关系的外键。
-
-说白了就是两张表， A 表的某个字段必须和 B 表的某个字段关联起来。
-B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这个值。如果 B 表该字段不存在的值，是无法作为 A 表该字段的值来使用的。
-这样就可以保证在写入数据的时候，不会因为 B 表的数据未写入而 A 表的数据写入成功导致数据不一致。
-也能避免当 A 表关联 B 表字段。B 表擅自删除导致 A 无法关联到 B 表。
-其父表被关联的字段，称为子表的外键。
-这里有以下几个特点：
-
-父表不存在的值，子表是无法引用。
-子表...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/11/01/2019-07/vmware-market-expansion/">
-                
-                <span class="abstract-title-text">VMware 虚拟机硬盘文件扩容</span>
-            </a>
-            <div class="abstract-content">
-                因为开发和测试需要，在家里常年跑了 vmware 虚拟机。然后通过 MAC 端的 VMware Fusion 对其进行连接。在上面操作。
-前段时间 win10 推送了一个大版本更新，需要升级大版本就要把老的数据备份，然而我之前分配的硬盘空间不足以进行升级。而我实在不想把开虚拟机的电脑接到显示器上，尤其是我知道那张显卡已经基本无法显示了。
-我想到了 VMware 一向都有完善的命令行工具，是否可以通过命令行工具来实现对硬盘文件的扩容。查阅了网上资料，卧槽，还真的可以的。
-123456789101112131415161718192021222324252627282930313233343...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
                 </div>
                 <!-- tags -->
                 
@@ -658,32 +595,34 @@ B 表那个字段如果有值 value，A 表的这个字段才能使用 value 这
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/11/01/2019-07/node-proxy/">
+            <a class="abstract-title" href="/2019/11/08/2019-11/esxi/">
                 
-                <span class="abstract-title-text">JavaScript Proxy 对象</span>
+                <span class="abstract-title-text">ESXi 使用笔记</span>
             </a>
             <div class="abstract-content">
-                Usage123let target = &#123;&#125;;let handler = &#123;&#125;;let p = new Proxy(target, handler);
-
-target: 目标对象。可以是任何类型的对象，甚至是另一个代理。
-handler: 一个对象，其属性是当实行一个操作是定义代理的行为的函数。
-Example12345678910111213let handler = &#123;    get: function(target, name) &#123;        return name in target ? target[name] ...
+                作为不想折腾开发环境的懒人，长期部署若干个服务器用于自己开发学习。
+目前的做法是，在搭建 Ubuntu 的宿主机安装 VMware Station ，然后利用其 VMware Server ，通过客户端连接。
+结果被一个朋友吐槽为什么不用 ESXi。
+早期的想法是能用就行，加上对虚拟机的功能也不是很了解。
+ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其他的系统。
+与 ESXi 不同，VMware Server 底层还是 Linux，相当于  ESXi 直接与硬件交互，而 VMware Server 则与 Linux 交互。
+其实性能上也没有感受到很大的差距，但是 VMwar...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/08</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="vmware">vmware</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
     
 </div>
 
@@ -699,34 +638,26 @@ Example12345678910111213let handler = &#123;    get: function(target, name) &#12
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/10/31/2019-07/kafka-auto-offset-reset/">
+            <a class="abstract-title" href="/2019/09/05/2019-08/rabbtmq-demo/">
                 
-                <span class="abstract-title-text">Kafka auto.offset.reset 值</span>
+                <span class="abstract-title-text">RabbitMQ Node demo</span>
             </a>
             <div class="abstract-content">
-                首先附上别人的文章：
-earliest当各分区下有已提交的 offset 时，从提交的 offset 开始消费；无提交的 offset 时，从头开始消费 
-latest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
-nonetopic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的 offset，则抛出异常
-
-
-作者：lishuangzhe7047 
-来源：CSDN 
-原文：https://blog.csdn.net/lishuangzhe7047/article/detail...
+                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105const options = &#123;    hostname: &#x27;192.168.2.121&#x27;,    username: &#x27;username...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/31</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/05</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="kafka">kafka</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
     
 </div>
 
@@ -742,29 +673,28 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/08/30/2019-07/iterator/">
+            <a class="abstract-title" href="/2019/09/02/2019-08/version/">
                 
-                <span class="abstract-title-text">iterator(迭代器)</span>
+                <span class="abstract-title-text">版本号对比</span>
             </a>
             <div class="abstract-content">
-                Node 版本:
-1234567891011121314151617function * hello(max) &#123;    let count = 0;    let a = 1, b = 1, tmp = 1;    while(count &lt; max) &#123;        yield a;        tmp = a;        a = b;        b = tmp + b;        count ++;    &#125;&#125;for(const i of hello(500)) &#123;    console.log(i);&#12...
+                version 对比公司一同学为了对比 version 特意引入了一个 module。
+对于一般情况，引入成熟的 module 的确可以解决很多问题，尤其是完善性。但是 version 对比却是相当简单的逻辑。
+12345678910function sort(v1, v2) &#123;	const diff = v1.shift() - v2.shift();	return diff !== 0 ? (diff &gt; 0) : sort(v1, v2);&#125;function version(v1, v2) &#123;	v1 = v1.split(&#x27;.&#x27...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/30</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/09/02</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
     
 </div>
 
@@ -780,33 +710,27 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/08/29/2019-07/python-with-as/">
+            <a class="abstract-title" href="/2019/08/13/2019-08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">
                 
-                <span class="abstract-title-text">Python with as 的作用</span>
+                <span class="abstract-title-text">单反画幅</span>
             </a>
             <div class="abstract-content">
-                Python with as 的作用这几天在入门 Python，https://learnxinyminutes.com/docs/python3/，看到 with as，这边说了一句
-
-# Instead of try&#x2F;finally to cleanup resources you can use a with statement
-如果不使用 try&#x2F;finally 来清理资源，你可以使用声明这个功能。
-
-123with open(&quot;1.txt&quot;) as f	for line in f:		print(line)
-
-首先说下 with as 的...
+                135 胶卷十九世纪二十年代胶卷的宽度为 35mm，德国研制出使用拍摄电影的 35mm (36mm×24mm) 胶片的徕卡照相机后，35毫米胶卷又叫“徕卡卷”，后来世界各厂生产用于拍摄35毫米胶片的照相机越来越多，“徕卡卷”这个名称已不能适应了，于是就按胶卷的宽度改为“35 毫米胶片”。
+直到五十年代之后，为了区分 35 毫米电影胶片和照相机用的 35 毫米散装胶卷，在胶卷盒上印有 135 的代号。后来大家就公认把 35mm 胶卷称为 135 胶卷，把用 135 胶卷的相机称为 135 相机。讲到这里相信大家会有个疑问，135（35）胶卷尺寸规格不是36*24mm吗 ？为什么叫35mm胶...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/08/13</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="photography">photography</a>
     
 </div>
 
@@ -822,25 +746,109 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2018/08/29/2019-07/mysql-ACID/">
+            <a class="abstract-title" href="/2019/07/21/2019-07/ssl_cert/">
                 
-                <span class="abstract-title-text">MySQL 事务</span>
+                <span class="abstract-title-text">Let&#39;s encrypt 证书申请</span>
             </a>
             <div class="abstract-content">
-                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
-我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
-事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
+                呃，这大概是我最短的一次证书申请，比我私签的证书简单了上百倍，全程就花了 1 分钟左右。
+申请证书直接贴地址：
+https://github.com/Neilpang/acme.sh/wiki/%E8%AF%B4%E6%98%8E
+国人的作品，我无法表达我的感受，能把一件这么复杂的事情做的和电脑登录微信这么简单。
+首先是安装
+1curl  https://get.acme.sh | sh
 
-原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
 
-一致性：在事务开始之前和事务...
+
+然后目录位置是
+1~/.acme.sh/
+
+
+
+验证域名有两个方式
+
+在网站配置一个静态文件
+在 DNS 配置一个 TEXT 类型的域名文件
+
+主要都是为了验证你就是域名所有人。
+第一种方法据说不...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/07/05/2019-07/id-autoincr/">
+                
+                <span class="abstract-title-text">唯一 ID 生成</span>
+            </a>
+            <div class="abstract-content">
+                MySQL 自增 ID优点:
+
+自增数字
+无需额外操作
+
+缺点:
+
+单点问题
+可以设置 step 解决，例如一个表是 0, 2, 4 另个表是 1, 3, 5。但是这个方法后期扩展性差
+
+
+
+UUID
+v1() 真随机
+v4() 伪随机
+效率 v4() 远超 v1()
+
+优点:
+
+全世界唯一
+
+缺点:
+
+太长，做主键会降低性能，并且更多的容量
+不能生成递增有序的数字
+可以通过时间算法计算出时间戳
+
+
+mac 地址泄漏(?，没有查到这个事情)
+
+Sequenece 表根据一个唯一 table 值，插入 Sequence 表来获取 nextId()
+优点：
+支持多表
+缺点：
+
+所有表写入性能...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/07/05</span>
                 </div>
                 <!-- tags -->
                 
@@ -856,10 +864,47 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
         </article>
         <div class="index-post-divider"></div>
     
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2019/06/17/2019-07/codesign/">
+                
+                <span class="abstract-title-text">mac os codesign</span>
+            </a>
+            <div class="abstract-content">
+                12codesign --sign - --force --deep /Applications/Alfred\ 3.app codesign --sign - --force --deep /Applications/Alfred\ 3.app/Contents/Preferences/Alfred\ Preferences.app
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mac os">mac os</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/9/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/11/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/9/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/11/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1829,7 +1874,140 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2140,7 +2318,7 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2151,9 +2329,132 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3471,6 +3772,21 @@ nonetopic各分区都存在已提交的offset时，从offset后开始消费；�
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

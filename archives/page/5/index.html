@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -440,40 +440,313 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/11/13/2020-11/syno-install/">
+            <a class="abstract-title" href="/2022/04/19/2022-04/iptables/">
                 
-                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
+                <span class="abstract-title-text">linux 端口转发 iptables</span>
             </a>
             <div class="abstract-content">
-                1. 准备设备
-nas 电脑设备一台
-其他 PC 设备一台
-启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
+                linux 端口转发 iptablescentos 7 使用 firewalld 服务而不是 iptables，如果 centos7 以上需要注意！！
+1.开启配置  iptables临时修改：
+1$ echo 1 &gt;/proc/sys/net/ipv4/ip_forward
 
-2. 准备文件
-DSM_DS918+_25426.pat 
-系统安装文件。
-可以官网直接下载。
-目前时间段最新的系统安装文件(2020-11-13)
-如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
+默认值 0 是禁止 ip 转发，修改为 1 即开启 ip 转发功能。
+重启生效:
+修改 &#x2F;etc&#x2F;sysctl.conf 文件:
+1net.ipv4.ip_forward = 1
 
-
-DS918+_6.23-25426-1.04b（引导文件）.img
-引导文件
+其他:
+1sysctl -w net.ipv4.ip_forward=1
 
 
-DS918-6.23_1.04b的扩展驱动0.13.3.zip
-驱动扩展，用于增强驱动，支持 2.5G 网卡
+查看路由表:
+netstat...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="liunx">liunx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="iptables">iptables</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/maven-command/">
+                
+                <span class="abstract-title-text">30 个 Maven 命令</span>
+            </a>
+            <div class="abstract-content">
+                https://www.cnblogs.com/javastack/p/12982472.html
+maven 命令除了常用的几个，大部分经常记不住，整理一下，方便查询。
+maven 命令的格式为 mvn [plugin-name]:[goal-name]，可以接受的参数如下。
+1234567891011-D 指定参数，如 -Dmaven.test.skip=true 跳过单元测试；-P 指定 Profile 配置，可以用于区分环境；-e 显示maven运行出错的信息；-o 离线执行命令,即不去远程仓库更新包；-X 显示maven允许的debug信息；-U 强制去远程更新snapshot...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/07/2022-03/python-3-minutes/">
+                
+                <span class="abstract-title-text">3 分钟学习 (Python)</span>
+            </a>
+            <div class="abstract-content">
+                from https://github.com/adambard/learnxinyminutes-docs/pull/4351
+Python 是由吉多·范罗苏姆(Guido Van Rossum)在 90 年代早期设计。它是如今最常用的编程语言之一。它的语法简洁且优美，几乎就是可执行的伪代码。
+欢迎大家斧正。英文版原作 Louie Dinh @louiedinh邮箱 louiedinh [at] [谷歌的信箱服务]。中文翻译 Geoff Liu。
+注意：这篇教程是基于 Python 3 写的。如果你想学旧版 Python 2，我们特别有另一篇教程。
+123456789101112131...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/07/2022-04/maven-notion/">
+                
+                <span class="abstract-title-text">mvn 笔记精简</span>
+            </a>
+            <div class="abstract-content">
+                Maven 概念from https://segmentfault.com/a/1190000019897882
+Maven 定位
+编译
+部署
+清理
+测试
+报告
+打包
+安装
+
+目录架构约定123456test  / main  		/ java     // 源代码  		resources  // 配置文件  / test  	  / java     // 测试代码
 
 
-libsynon...
+
+
+
+配置文件pom.xml 
+配置结构12345678&lt;dependencies&gt;	&lt;dependency&gt;  	&lt;groupId&gt;cn.vmkoo.test&lt;/group...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/06/2022-03/hl-js-no-usefull/">
+                
+                <span class="abstract-title-text">记一次 highlight.js 不生效的问题</span>
+            </a>
+            <div class="abstract-content">
+                问题在折腾工作机的时候，惊奇的发现自己的博客的 code 块的语法高亮没了？！当时因为是主题的问题，还更换了 hexo 的主题。直到某一次查询到 csdn 的博客页面，发现博客的语法高亮也出现了相似的问题：字体的颜色显示成黑色。
+
+先说解决方案，问题出在刚安装的 source code pro  字体上，国内某大站下载的字体存在问题，我后面去 google 官网下载了一份就正常了。
+
+
+清理缓存 &amp; 卸载清理页面缓存，强制刷新页面，无法解决。
+使用了隐形标签来测试是否被浏览器插件影响，无法解决。
+清理浏览器缓存，无法解决。
+卸载重装浏览器，无法解决。
+更换电脑，发现别的电脑都是正...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/02/09/2022-01/unrar/">
+                
+                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
+            </a>
+            <div class="abstract-content">
+                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
+方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
+packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
+1pip install zipfile
+
+
+
+存在问题：gbk 文件名乱码
+因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
+有...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/09/16/2021-09/synology-drive-icon/">
+                
+                <span class="abstract-title-text">Synolog 群晖 Drive 图标不显示的问题</span>
+            </a>
+            <div class="abstract-content">
+                群晖作为有效生产力工具，对我而言是完全不可能缺少的工具。至少解决了我上下班带电脑的问题。
+Drvie 作为同步工具，虽然速度上不怎么样，但是至少可以实现跨设备同步。尤其是还完美支持了  Ubuntu 上的同步。
+群晖 Drvie 一般情况下会出现两个问题：
+
+同步无权限
+同步状态图标不显示
+
+今天主要解决的是第二个问题。
+原因原因主要是 3 点：
+
+软件自身 BUG
+软件在注册表的路径被破坏。
+软件服务被禁用。
+文件浏览器里任务图标优先级被覆盖。
+
+解决软件 BUG重装。
+说实话比较少见，但是也遇到过。主要是 Mac 端容易出现不稳定的情况。
+注册表路径被破坏修复方案参考知乎大佬
+htt...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/16</span>
                 </div>
                 <!-- tags -->
                 
@@ -496,95 +769,31 @@ libsynon...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/11/09/2020-11/syno/">
+            <a class="abstract-title" href="/2021/09/13/2021-09/memcache-lock/">
                 
-                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
+                <span class="abstract-title-text">memcached 实现高并发条件下全局锁</span>
             </a>
             <div class="abstract-content">
-                关于 nas 的推荐1. 按照系统
-群晖
-推荐
-扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
-应用极多，而且包含桌面应用和移动应用
-黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
-白群晖缺点： 贵
+                在支持 redis 的项目中，我很喜欢用
+1redis.incr();
 
-
-FreeNAS
-使用不多
-硬件要求相对高一点 &amp; 开源
-UI 还行，现在和 True NAS 合并了
-
-
-Linux &amp; Samba
-就是 Linux 服务器
-
-
-Windows Server
-就是 windows 服务器
-
-
-unraid &amp; vmware
-都是虚拟机，会损耗部分性能。
-
-
-
-2. 按照硬盘数
-2.5 寸 x 1
-ar...
+因为 redis 操作具有原子性，可以通过这个函数实现原子级的同步锁。
+而 memcache 却不能实现这样的效果，我考虑设想了了一个方案。
+123456789101112131415async funciton lock(key) &#123;  const value = uuid.v4();  const expire = 120 * 1000;    const _result = await mem.get(key);  if (_result) return false;  	await mem.set...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/10/19/2020-10/zhenglun/">
-                
-                <span class="abstract-title-text">争论的艺术</span>
-            </a>
-            <div class="abstract-content">
-                今天打车，遇到一个很健谈的司机。
-
-好像所有司机都很健谈，而且谈过之后司机的态度就会 MAX
-
-提到关于国产品牌和进口品牌。我想到之前在群里就遇到一个人死顶苹果的摄像头。
-认为苹果的摄像头比华为好。因为苹果的摄像头比较真实，拍出来的人比较丑。
-但是华为的话，通过软硬件对图形进行渲染，拍出来的人虽然好看，但是反而是辣鸡。
-和那个大哥谈论下，基本几分钟就把比较中立的结论给定了下来：
-
-华为的渲染记录也是功能和特性之一。
-即使苹果的拍照渲染程度小，但是和实物，或者哪怕是单反效果相比，都要差的多
-日常生活中，大家拍照，无论是拍人和拍物，本身就是为了纪念，也是为了好看。
-而相反的是，苹果摄像头的特...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
     
 </div>
 
@@ -600,76 +809,32 @@ ar...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/10/14/2020-10/dash-bash/">
+            <a class="abstract-title" href="/2021/09/13/2021-09/raspberry-watchdog/">
                 
-                <span class="abstract-title-text">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</span>
+                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
             </a>
             <div class="abstract-content">
-                造成原因，Debian 和 Ubuntu 的 &#x2F;bin&#x2F;sh 指向的是 dash 而不是 bash。
+                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
+在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
+然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
+解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
 
-Dash Shell 比 Bash Shell 小的多，符合POSIX标准。
-Dash 支持的命令比 Bash 要小
-查看状态: ls &#x2F;bin&#x2F;sh -al
-重新配置: udo dpkg-reconfigure dash
+系统:
 
-区别主要有
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
+raspberry 4B
+ubuntu 20.04
+
+
+安装流程
+在 config.txt 从硬件上打开 watchdog 功能
+12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/22/2020-09/raspberry-usb-start/">
-                
-                <span class="abstract-title-text">raspberry 4B Ubuntu 系统 USB 启动</span>
-            </a>
-            <div class="abstract-content">
-                raspberry 4B，现在是觉得坑多于喜。
-为了减少系统盘对性能的影响，所以我们使用外接 USB 系统盘的办法。
-而树莓派默认只支持从 SD 读取。
-
-隔壁 raspbian 已经支持无卡 usb 启动了，ubuntu 啥时候支持下？
-
-早期是通过修改 cmdline.txt 里的 root
-1root=/dev/mmcblk0p2
-
-修改为
-1root=/dev/sda2
-
-也就是在 sda 上所在的系统分区。
-而更新到 18.04.4 之后(大概)，cmdline.txt 改成了 btcmd.txt。而整个启动命令变成了
-1net.ifnames=0 dwc_otg.lpm_en...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
                 </div>
                 <!-- tags -->
                 
@@ -692,218 +857,40 @@ Dash 支持的命令比 Bash 要小
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/09/16/2020-09/raspberry/">
+            <a class="abstract-title" href="/2021/07/21/2021-07/esxi-copy/">
                 
-                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
+                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
             </a>
             <div class="abstract-content">
-                
-本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
-对于物联网、家用办公等等需求的人而言，毫无意义
+                修改办法设置 - 高级 - 编辑配置
+添加
+12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
 
-第一个树莓派五年前，我入手了树莓派 2。
-作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
-而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
-但是树莓派 2 有若干致命的问题：
 
-usb 只有 ...
+
+其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
+
+
+
+Warining注意 vmware tools 的状态
+
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
     
 </div>
 
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/09/2020-09/lock/">
-                
-                <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
-            </a>
-            <div class="abstract-content">
-                悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
-
-Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
-
-
-适合多写环境
-
-乐观锁
-不上锁
-更新前判断数据是否被更新
-使用版本号机制和 CAS 算法
-适合多读少写环境
-
-
-在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
-
-总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
-
-对于资源竞争较少（线程冲突...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="sql">sql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/05/2020-08/redis-cluster/">
-                
-                <span class="abstract-title-text">redis 集群</span>
-            </a>
-            <div class="abstract-content">
-                redis 3.0 引入的新功能。
-
-然后去看了下现在 redis 已经是 6.x 了
-
-逻辑根据 CRC16 把 key 值分到 16383 个槽内。然后把若干个节点设置分别维护若干个槽。实现节点分布式。
-缺点
-不支持多 key 值操作（因为不同 key 值可能属于若干个节点）。
-事务只支持单 key 事务
-支持 0 库
-
-集群搭建
-三节点主从库。
-只记录，未测试
-
-0. redis.conf 相关 cluster 参数
-cluster-enabled: 如果想在特定的Redis实例中启用Redis群集支持就设置为yes。 否则，实例通常作为独立实例启动。
-
-cluster-confi...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/05/2020-08/api-gateway/">
-                
-                <span class="abstract-title-text">API 网关功能</span>
-            </a>
-            <div class="abstract-content">
-                网关封装了底层系统并与客户端分离，为客户端提供了与微服务系统进行通信的单个入口点。
-整合 API 网关整合了一些边缘的重复功能，无需让每个微服务都实现它们。它包括如下功能：
-
-认证和授权
-服务发现集成
-缓存响应结果
-重试策略、熔断器、QoS
-限速和节流
-负载均衡
-log 日志、链路追踪、关联
-Header、query 字符串 以及 claims 转义
-IP 白名单
-IAM
-集中式日志管理（服务之间的 transaction ID、错误日志等）
-身份的提供方，验证与授权
-
-from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/08/18/2020-08/jiaohanglaji/">
-                
-                <span class="abstract-title-text">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</span>
-            </a>
-            <div class="abstract-content">
-                1. 接触交行先说下接触交行的原因，起先，我也办理了一张大家都应该推荐的招商信用卡。期间也没什么问题，但是后面习惯了去山姆购物，交行办卡小哥就在山姆门口各种推荐交行信用卡，因为交行信用卡有个卡种，可以支持山姆超市打折，也是这个原因办理了交行的信用卡。
-2. 事情起因再说下本次事情的起源。
-我其实日常信用卡用的也不多，刚好搬家刷了一个 6000 的冰箱，但是因为店家无货所以取消。再加上额外消费了 1000 左右，所以当时需要还的大概是 1200。
-我的还款到期日是 8 月 4 号。请记住这个节点。
-7 月 31 号，我用手机尝试还款一次。当下显示还款中，我因为刚搬家比较忙，就没一直关注。毕...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/18</span>
-                </div>
-                <!-- tags -->
                 
             </div>
         </article>
@@ -912,7 +899,7 @@ from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/4/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/16/">16</a><a class="extend next" rel="next" href="/archives/page/6/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/4/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="extend next" rel="next" href="/archives/page/6/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1803,7 +1790,140 @@ from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2114,7 +2234,7 @@ from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2125,9 +2245,132 @@ from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3445,6 +3688,21 @@ from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

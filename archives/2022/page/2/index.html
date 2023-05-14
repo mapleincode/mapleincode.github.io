@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -440,6 +440,479 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/08/11/2022-08/java-history/">
+                
+                <span class="abstract-title-text">Java 发展简史</span>
+            </a>
+            <div class="abstract-content">
+                原链接：
+https://blog.csdn.net/lywstuding/article/details/121117136
+[toc]
+1. C 语言，C++ 的诞生
+这一段和 Java 毫无关系，感觉是作者拿来凑字数的，可以跳过。
+
+Java 的诞生离不开 C 语言和 C++,C++ 是在 C 语言的基础上改造的，后来 Sun 公司又对 C++ 进行改写，产生了 Java。也可以说 Java 源自于 C 和 C++。
+1956 年 FORTRAM 的诞生1956 年，美国计算机科学家约翰・巴克斯带领团队开发出了世界上第一个高级编程语言 FORTRAN。
+FORTRAN 语言是世界上...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/11/2022-08/java-conception/">
+                
+                <span class="abstract-title-text">Java 的一系列概念</span>
+            </a>
+            <div class="abstract-content">
+                Java一门编程语言，这个没啥好说的。
+JVMJava Virtual Machine 虚拟机
+例如：
+
+Sun Classic VM 
+JDK 1.0 提供的虚拟机
+
+
+Exact VM
+JDK 1.2 引入，被 HotSpot 替代
+
+
+HotSpot VM
+JDK 1.2 引入
+JDK 1.3 之后默认的虚拟机
+OpenSDK 的默认虚拟机
+
+
+JRockit
+BEA 公司，被 Oracle 收购
+起特性被引入到 OpenSDK 所使用的 HotSpot 
+可以说现在 OpenSDK 使用的 jvm 其实是两者的合体
+
+
+J9
+IBM 家的虚拟机
+
+
+
+JRE
+Java Runti...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/11/2022-08/jvm8/">
+                
+                <span class="abstract-title-text">JVM 8 特有的参数（区别 JVM 7）</span>
+            </a>
+            <div class="abstract-content">
+                JVM 内存模型
+虚拟机栈
+每个线程都有私有的栈
+栈帧
+每个方法会创建一个栈帧
+包含
+局部变量表
+操作数栈
+方法出口
+…
+
+
+StackOverflowError
+
+
+
+
+本地方法栈
+虚拟机的 Native 方法所用的栈
+
+
+PC 寄存器
+线程的程序计数器
+
+
+堆
+堆内存
+所有线程共享部分
+包含所有对象和数组（所有指针型变量？）
+GC 的对象
+
+
+方法区
+物理位置也属于堆
+包含
+存储类的信息
+常量池
+方法数据
+方法代码
+
+
+
+
+
+PermGen 永久代
+jdk 1.7 HotSpot 特有，jdk 1.8 移除
+方法区的具体实现
+
+
+jdk 7 中，存储在永久代的部分数据就已经转移到了J...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/10/2022-08/gc/">
+                
+                <span class="abstract-title-text">Java GC</span>
+            </a>
+            <div class="abstract-content">
+                
+Serial GC
+
+单线程收集器
+
+需要暂停其他工作线
+
+Client 模式
+
+
+
+Serial Old GC
+
+Serial 老年代版本，Client 版本
+其他功能
+搭配Parallel Scavenge收集器使用。
+做为 CMS 收集器的后备方案，当 CMS 出现 Concurrent Mode Failure 时使用。
+做为 G1 的 fullGC 收集器。这也是我们在使用 G1 的时候需要注意的，G1 应该尽量杜绝FullGC。否则就会退化为串行 GC。
+
+
+
+
+
+
+ParNew GC
+
+Serial 收集器的多线程版本，其他参数方式都一样
+XX:parallelGCThr...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/10</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/09/2022-08/jvm7/">
+                
+                <span class="abstract-title-text">jvm7 一份调优参数分析</span>
+            </a>
+            <div class="abstract-content">
+                前几天看文章，看到了一篇文章给了一份 jvm7 的启动调优参数。可以学习下 JVM7 的一些特性。
+1java -server -Xms2G -Xmx2G -XX:MaxPermSize=256M -Xss256K -XX:NewRatio=2 -XX:SurvivorRatio=8 -XX:+UseAdaptiveSizePolicy -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:../logs/gc.log -XX:+PrintTenuringDi...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="jvm">jvm</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/04/2022-08/java-lock/">
+                
+                <span class="abstract-title-text">Java 的 21 种锁</span>
+            </a>
+            <div class="abstract-content">
+                
+乐观锁
+
+并发控制概念
+
+OCC
+
+适合写入少，回滚成本低于锁的场景
+
+本质没有锁，靠自身校验来实现”锁的效果“
+
+事务写入数据后，提供时间戳或者类似的凭证
+
+通过凭证检查数据是否被修改
+被修改，回滚事务
+无修改，提交事务
+
+
+
+
+不足
+
+读取独占的资源可能造成死锁
+
+
+
+
+悲观锁
+
+并发控制概念
+PCC
+适合写入多，回滚成本高于锁的场景
+先竞争获取锁，获得锁只能才能写入数据，写完数据释放锁
+不足
+容易造成死锁
+加锁会有效率消耗
+
+
+
+
+自旋锁
+
+技术方案
+现成执行忙循环
+占用时间长会导致资源消耗
+CAS
+默认 10 次
+-XX:PreBlockSpin 修改
+
+
+
+
+可重入锁
+
+递归...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/04/2022-08/maven-settings/">
+                
+                <span class="abstract-title-text">maven settings.xml 笔记</span>
+            </a>
+            <div class="abstract-content">
+                Maven 常见的配置文件由以下几部分：
+
+proxy
+mirror
+repository
+server
+profiles
+
+其中 proxy 就是代理服务，这一点暂时不管。
+idrepository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。
+我一开始以为类似 central, thirdparty 是固定的字段，后面理解开来，应该只是属于常用的 id，并没有固定的含义。
+profilesprofiles 可以认为是配置，其 id 是标识配置的唯一 id （和 server 无关）。
+可以认为为了方便...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="maven">maven</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/03/2022-08/zookeeper/">
+                
+                <span class="abstract-title-text">zookeeper 笔记</span>
+            </a>
+            <div class="abstract-content">
+                [toc]
+命令行
+ls &#x2F; ls2
+delete
+set
+get
+stat
+
+节点持久类型1234567PERSISTENT			// 持久节点，一旦创建成功不会被删除，除非客户端主动发起删除请求PERSISTENT_SEQUENTIAL		// 持久顺序节点，会在用户路径后面拼接一个不会重复的自增数字后缀，其他同上EPHEMERAL			// 临时节点，当创建该节点的客户端链接断开后自动被删除EPHEMERAL_SEQUENTIAL		// 临时顺序节点，基本同上，也是增加一个数字后缀CONTAINER			// 容器节点，一旦子节点被删除完就会被服务端删除PERSISTE...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="zookeeper">zookeeper</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/08/01/2022-08/java-stream/">
                 
                 <span class="abstract-title-text">Java Stream</span>
@@ -511,357 +984,10 @@
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/07/05/2022-06/requirement/">
-                
-                <span class="abstract-title-text">Python 项目 &amp; requirement.txt</span>
-            </a>
-            <div class="abstract-content">
-                安装依赖1pip install -r requirement.txt
-
-
-
-环境依赖写入文件
-是所有的依赖都会写入，不仅仅是项目所依赖的
-
-1pip freeze &gt; requirements.txt
-
-
-
-仅写入项目所依赖的依赖12pip install pipreqspipreqs ./
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/07/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/06/07/2022-06/vlan/">
-                
-                <span class="abstract-title-text">VLAN</span>
-            </a>
-            <div class="abstract-content">
-                ACCESS 端口接 PC，VID &#x3D; PVIDTRUNK 端口级联，VID &#x3D; 全部，PVID &#x3D; 1
-VID &#x3D; VLAN ID
-PVID &#x3D; Port-Base VLAN ID
-VID（VLAN ID）是VLAN的标识，定义其中的端口可以接收发自这个VLAN的包
-
-当端口1同时属于 VLAN1、VLAN2 和 VLAN3 时, 那么端口1可以接收到 VLAN1，2，3的数据
-
-PVID（Port VLAN ID）定义这个 untag 端口可以转发哪个 VLAN 的包
-
-而它的PVID为1,发出的包只能发到 VLAN1 中
-
-PVID...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/06/07</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="VLAN">VLAN</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/05/30/2022-04/pm2/">
-                
-                <span class="abstract-title-text">pm2 管理所有应用</span>
-            </a>
-            <div class="abstract-content">
-                关于 pm2PM2 is a daemon process manager that will help you manage and keep your application online 24&#x2F;7
-基本用法1234pm2 start app.jspm2 stop [name, id, all]pm2 restart [name, id, all]pm2 kill [name, id, all]
-
-
-
-配置文件pm2  支持根据配置文件启动，一般有三种:
-
-json
-yaml
-js 文件 （确切说就是 nodejs 脚本）
-
-其实对参数而言都是一样的，官方推荐 js 文件，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/03">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/30</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="pm2">pm2</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/05/27/2022-04/rabbitmq-client/">
-                
-                <span class="abstract-title-text">RabbitMQ 客户端(nodejs)</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/05/27">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/05/25/2022-04/gitlab-upgrade-error/">
-                
-                <span class="abstract-title-text">gitlab 升级失败 or gitlab-ctl reconfigure 失败</span>
-            </a>
-            <div class="abstract-content">
-                问题通过 apt 升级 gitlab-ce 发生错误。提示 gitlab-ctl reconfigure 失败。
-1234567Running handlers:There was an error running gitlab-ctl reconfigure:rails_migration[gitlab-rails] (gitlab::database_migrations line 51) had an error: Mixlib::ShellOut::ShellCommandFailed: bash[migrate gitlab-rails database] (/opt/gitl...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/05/27">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/05/19/2022-04/python-pip/">
-                
-                <span class="abstract-title-text">python 更换国内镜像源</span>
-            </a>
-            <div class="abstract-content">
-                临时修改清华源
-
-清华大学的 pip 源，它是官网 pypi 的镜像，每隔5分钟同步一次，推荐使用。
-
-12pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \    --trusted-host pypi.tuna.tsinghua.edu.cn packagename
-
-
-
-豆瓣源
-12pip install -i http://pypi.douban.com/simple \    --trusted-host pypi.douban.com packagename
-
-
-阿里源
-12pip install -i http...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/05/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python pip">python pip</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/05/19/2022-04/python-venv/">
-                
-                <span class="abstract-title-text">python venv</span>
-            </a>
-            <div class="abstract-content">
-                venv 是 pyhton 的虚拟环境
-安装1sudo apt install python3.8-venv
-
-
-
-使用1234python3 -m venv pgadmin4 			# 创建 venvsource pgadmin4/bin/activate 	# 激活（进入） venv# ...													# do somethingdeactivate										# 退出 venv
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/05/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/30/2022-04/openstack/">
-                
-                <span class="abstract-title-text">OpenStack 学习</span>
-            </a>
-            <div class="abstract-content">
-                [TOC]
-关键术语访问密钥&#x2F;安全密钥
-组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。
-
-用户 pub 密钥
-
-可用区域
-云范围内用于对虚拟机提供容错的一组隔离的虚拟层。
-块存储
-存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。
-容器（对象）
-在对象存储中组织和存储对象。
-容器（LXC）
-Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的操作系统级别的虚拟环境。Openstack容器服务（Magnum）提供应用容器的管理功能。
-固定&#x2F;静态IP
-相同VM（虚拟机）每次启动的时候关联的IP地址。这可用于管...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/04">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/30</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/2022/">&lt; PREV</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/page/3/">3</a><a class="extend next" rel="next" href="/archives/2022/page/3/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/2022/">&lt; PREV</a><a class="page-number" href="/archives/2022/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2022/page/3/">3</a><a class="page-number" href="/archives/2022/page/4/">4</a><a class="extend next" rel="next" href="/archives/2022/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1752,7 +1878,140 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2063,7 +2322,7 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2074,9 +2333,132 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3394,6 +3776,21 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>

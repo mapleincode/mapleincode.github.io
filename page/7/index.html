@@ -219,7 +219,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 6.1.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
@@ -455,30 +455,95 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/04/01/2020-01/wordpress-domain/">
+            <a class="abstract-title" href="/2020/11/09/2020-11/syno/">
                 
-                <span class="abstract-title-text">WordPress 绑定多域名</span>
+                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
             </a>
             <div class="abstract-content">
-                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
-而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
-但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
-首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
-12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
+                关于 nas 的推荐1. 按照系统
+群晖
+推荐
+扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
+应用极多，而且包含桌面应用和移动应用
+黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
+白群晖缺点： 贵
+
+
+FreeNAS
+使用不多
+硬件要求相对高一点 &amp; 开源
+UI 还行，现在和 True NAS 合并了
+
+
+Linux &amp; Samba
+就是 Linux 服务器
+
+
+Windows Server
+就是 windows 服务器
+
+
+unraid &amp; vmware
+都是虚拟机，会损耗部分性能。
+
+
+
+2. 按照硬盘数
+2.5 寸 x 1
+ar...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/10/19/2020-10/zhenglun/">
+                
+                <span class="abstract-title-text">争论的艺术</span>
+            </a>
+            <div class="abstract-content">
+                今天打车，遇到一个很健谈的司机。
+
+好像所有司机都很健谈，而且谈过之后司机的态度就会 MAX
+
+提到关于国产品牌和进口品牌。我想到之前在群里就遇到一个人死顶苹果的摄像头。
+认为苹果的摄像头比华为好。因为苹果的摄像头比较真实，拍出来的人比较丑。
+但是华为的话，通过软硬件对图形进行渲染，拍出来的人虽然好看，但是反而是辣鸡。
+和那个大哥谈论下，基本几分钟就把比较中立的结论给定了下来：
+
+华为的渲染记录也是功能和特性之一。
+即使苹果的拍照渲染程度小，但是和实物，或者哪怕是单反效果相比，都要差的多
+日常生活中，大家拍照，无论是拍人和拍物，本身就是为了纪念，也是为了好看。
+而相反的是，苹果摄像头的特...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
     
 </div>
 
@@ -494,167 +559,27 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/03/10/2020-01/nginx-cache/">
+            <a class="abstract-title" href="/2020/10/14/2020-10/dash-bash/">
                 
-                <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
+                <span class="abstract-title-text">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</span>
             </a>
             <div class="abstract-content">
-                V 站上一个帖子提问：
+                造成原因，Debian 和 Ubuntu 的 &#x2F;bin&#x2F;sh 指向的是 dash 而不是 bash。
 
-硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
-https://www.v2ex.com/t/649310#reply8
+Dash Shell 比 Bash Shell 小的多，符合POSIX标准。
+Dash 支持的命令比 Bash 要小
+查看状态: ls &#x2F;bin&#x2F;sh -al
+重新配置: udo dpkg-reconfigure dash
 
-有大佬回复:
-
-当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
-
-按照他说的内容分析下这几个 Nginx 配置的功能。
-expires
-开启客户端 cache ，设置 expire...
+区别主要有
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/18/2020-01/java/">
-                
-                <span class="abstract-title-text">Java 学习路线</span>
-            </a>
-            <div class="abstract-content">
-                基友推荐的 Java 教程，源地址:
-https://www.bilibili.com/read/cv3560825
-目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
-1. 基础阶段1.1 必选
-Java 语言：https://www.bilibili.com/video/av59529105/
-
-MySQL 数据库：https://www.bilibili.com/video/av59623481/
-
-JDBC：https://www.bilibili.com/video/av59534040/
-
-Java Web：https://www.bilibili...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/18/2020-01/pivpn/">
-                
-                <span class="abstract-title-text">树莓派安装 PIVPN</span>
-            </a>
-            <div class="abstract-content">
-                在树莓派上安装 OpenVPN。
-虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
-核心安装就只有一条命令:
-1curl -L https://install.pivpn.io | bash
-
-
-
-具体过程可以参考
-http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
-这位大佬安装过程讲解的十分详细 &#x3D; - &#x3D;。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/18/2020-01/disable-systemd-resolved/">
-                
-                <span class="abstract-title-text">nameserver 127.0.0.53</span>
-            </a>
-            <div class="abstract-content">
-                Ubuntu 升级到 16.04 还是 18.04 的时候，默认会启动 NetWorkManage 的一个功能，即把 /etc/resolv.conf 的 dns 地址配置成
-1nameserver 127.0.0.53
-
-正常情况下不会有影响，但是如果想要关闭这个功能，设置
-12$ sudo systemctl disable systemd-resolved$ sudo reboot
-
-
-建议正常运作的情况下不需要卸载这个组件
-
-参考: https://www.hiroom2.com/2017/08/24/ubuntu-1610-nameserver-127-0-0-53-en/
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/14</span>
                 </div>
                 <!-- tags -->
                 
@@ -677,116 +602,38 @@ http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/01/07/2020-01/km3/">
+            <a class="abstract-title" href="/2020/09/22/2020-09/raspberry-usb-start/">
                 
-                <span class="abstract-title-text">杭州科目三</span>
+                <span class="abstract-title-text">raspberry 4B Ubuntu 系统 USB 启动</span>
             </a>
             <div class="abstract-content">
-                新系统模拟灯光考试夜间模拟灯光题目
+                raspberry 4B，现在是觉得坑多于喜。
+为了减少系统盘对性能的影响，所以我们使用外接 USB 系统盘的办法。
+而树莓派默认只支持从 SD 读取。
 
+隔壁 raspbian 已经支持无卡 usb 启动了，ubuntu 啥时候支持下？
 
-行为
-灯光操作
+早期是通过修改 cmdline.txt 里的 root
+1root=/dev/mmcblk0p2
 
+修改为
+1root=/dev/sda2
 
-
-夜间通过急弯、坡路
-交替使用远近光灯
-
-
-夜间通过坡路、拱桥
-交替使用远近光灯
-
-
-夜间通过急弯、拱桥
-交替使用远近光灯
-
-
-夜间通过拱桥、人行横道
-交替使用远近光灯
-
-
-夜间通过没有交通信号灯控制的路口
-交替使用远近光灯
-
-
-夜间超越前方车辆
-交替使用远近光灯
-
-
-夜间同方向近距离跟车行驶
-使用近光灯
-
-
-夜间与机动车会车
-使用近光灯
-
-
-夜间直行通过路口
-使用近光灯
-
-
-夜间路口左转弯
-近光灯 + 左转向灯
-
-
-夜间路口右转弯
-近光灯 + 右转向灯
-
-
-夜间在有路灯的道路上行驶
-使用近光灯
-
-
-夜间在照明良好的道路上行驶
-...
+也就是在 sda 上所在的系统分区。
+而更新到 18.04.4 之后(大概)，cmdline.txt 改成了 btcmd.txt。而整个启动命令变成了
+1net.ifnames=0 dwc_otg.lpm_en...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/12/24/2019-12/rasp-4-ubuntu/">
-                
-                <span class="abstract-title-text">Raspberry4 安装 Ubuntu</span>
-            </a>
-            <div class="abstract-content">
-                
-随着自己年纪越来越大，事情越来越多，而相对的，记忆力却越来越差。
-但是已经安装过一次 Raspberry4 ，但是不到几个月的时间就忘得一干二净，折腾了一整个晚上才完全搞定。
-以此说明，以后应当认真记录一些操作的信息，以供事后参考。
-真怀念自己当初的记忆力
-
-Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取速度，相对于前几代有着本质的差异。我原先使用迅雷下载宝作为小型的 NAS 存储视频监控和正常查看的电视剧，但是下载宝作为低端的性能配置，IO 写入性能不理想，写入速度最高也仅有 30 MB&#x2F;s，在对性能需求愈发高的情况下，我决定用 Raspb...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/24</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
     
@@ -804,29 +651,35 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/12/24/2019-12/xp-serials-ids/">
+            <a class="abstract-title" href="/2020/09/16/2020-09/raspberry/">
                 
-                <span class="abstract-title-text">XP 序列号</span>
+                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
             </a>
             <div class="abstract-content">
                 
-仅供学习参考，不可用于商业
+本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
+对于物联网、家用办公等等需求的人而言，毫无意义
 
-12345678910111213141516171819202122# (工行版) 可用(强推此号)MRX3F-47B9T-2487J-KWKMF-RPWBY# (台湾交大学生版) 可用QC986-27D34-6M3TY-JJXP9-TBGMDCM3HY-26VYW-6JRYC-X66GX-JVY2DDP7CM-PD6MC-6BKXT-M8JJ6-RPXGJ# 可装不可升级F4297-RCWJP-P482C-YY23Y-XH8W3 HH7VV-6P3G9-82TWK-QKJJ3-MXR96HCQ9D-TVCWX-X9QRG-J4B2Y-GR2TT# 20...
+第一个树莓派五年前，我入手了树莓派 2。
+作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
+而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
+但是树莓派 2 有若干致命的问题：
+
+usb 只有 ...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/24</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
                 </div>
                 <!-- tags -->
                 
                     <div class= abstract-tags >
     
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="xp">xp</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
     
 </div>
 
@@ -842,19 +695,89 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/12/16/2019-12/koa-compose/">
+            <a class="abstract-title" href="/2020/09/09/2020-09/lock/">
                 
-                <span class="abstract-title-text">Koa-Compose 源码试写</span>
+                <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
             </a>
             <div class="abstract-content">
-                1234567891011121314151617181920212223242526272829303132333435363738async function _compose(ctx, next, items) &#123;    if(items.length === 0) &#123;        return next();    &#125;    const func = items.shift();    return func(ctx, async function() &#123;        return _compose(ctx, next, items);...
+                悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
+
+Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
+
+
+适合多写环境
+
+乐观锁
+不上锁
+更新前判断数据是否被更新
+使用版本号机制和 CAS 算法
+适合多读少写环境
+
+
+在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
+
+总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
+
+对于资源竞争较少（线程冲突...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="sql">sql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/05/2020-08/redis-cluster/">
+                
+                <span class="abstract-title-text">redis 集群</span>
+            </a>
+            <div class="abstract-content">
+                redis 3.0 引入的新功能。
+
+然后去看了下现在 redis 已经是 6.x 了
+
+逻辑根据 CRC16 把 key 值分到 16383 个槽内。然后把若干个节点设置分别维护若干个槽。实现节点分布式。
+缺点
+不支持多 key 值操作（因为不同 key 值可能属于若干个节点）。
+事务只支持单 key 事务
+支持 0 库
+
+集群搭建
+三节点主从库。
+只记录，未测试
+
+0. redis.conf 相关 cluster 参数
+cluster-enabled: 如果想在特定的Redis实例中启用Redis群集支持就设置为yes。 否则，实例通常作为独立实例启动。
+
+cluster-confi...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
                 </div>
                 <!-- tags -->
                 
@@ -869,21 +792,129 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2019/11/26/2019-11/logstash/">
+            <a class="abstract-title" href="/2020/09/05/2020-08/api-gateway/">
                 
-                <span class="abstract-title-text">Logstash conf 语法</span>
+                <span class="abstract-title-text">API 网关功能</span>
             </a>
             <div class="abstract-content">
-                
+                网关封装了底层系统并与客户端分离，为客户端提供了与微服务系统进行通信的单个入口点。
+整合 API 网关整合了一些边缘的重复功能，无需让每个微服务都实现它们。它包括如下功能：
+
+认证和授权
+服务发现集成
+缓存响应结果
+重试策略、熔断器、QoS
+限速和节流
+负载均衡
+log 日志、链路追踪、关联
+Header、query 字符串 以及 claims 转义
+IP 白名单
+IAM
+集中式日志管理（服务之间的 transaction ID、错误日志等）
+身份的提供方，验证与授权
+
+from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
+
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
                 </div>
                 <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/08/18/2020-08/jiaohanglaji/">
+                
+                <span class="abstract-title-text">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</span>
+            </a>
+            <div class="abstract-content">
+                1. 接触交行先说下接触交行的原因，起先，我也办理了一张大家都应该推荐的招商信用卡。期间也没什么问题，但是后面习惯了去山姆购物，交行办卡小哥就在山姆门口各种推荐交行信用卡，因为交行信用卡有个卡种，可以支持山姆超市打折，也是这个原因办理了交行的信用卡。
+2. 事情起因再说下本次事情的起源。
+我其实日常信用卡用的也不多，刚好搬家刷了一个 6000 的冰箱，但是因为店家无货所以取消。再加上额外消费了 1000 左右，所以当时需要还的大概是 1200。
+我的还款到期日是 8 月 4 号。请记住这个节点。
+7 月 31 号，我用手机尝试还款一次。当下显示还款中，我因为刚搬家比较忙，就没一直关注。毕...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/18</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/08/13/2020-08/python/">
+                
+                <span class="abstract-title-text">Python &amp; Ubuntu</span>
+            </a>
+            <div class="abstract-content">
+                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
+安装 Python3安装 python3
+1sudo apt install python3
+
+安装 pip3
+1sudo apt install python3-pip
+
+
+
+
+一般 pip 和 pip2 指的都是 python2-pip
+
+pip3 安装依赖1pip3 install flask
+
+这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
+pm2 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
                 
             </div>
         </article>
@@ -892,7 +923,7 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/6/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/8/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/6/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/8/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1862,7 +1893,140 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2173,7 +2337,7 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 153
+        Total : 172
         </div>
         <!-- search  -->
         
@@ -2184,9 +2348,132 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         
             
             
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023-04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023-04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023-04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023-04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023-03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023-02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023-02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023-02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2022 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022-12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022-09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022-09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022-08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022-08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022-08/distributed-lock/">分布式互斥</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/19</span>
@@ -3504,6 +3791,21 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             <span class="sidebar-tag-name" data-tags="摄影">
                 <span class="iconfont-archer">&#xe606;</span>
                 摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
             </span>
         
     </div>
