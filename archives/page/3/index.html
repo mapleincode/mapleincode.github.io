@@ -440,6 +440,221 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/08/20/2022-08/mc-lord-wine/">
+                
+                <span class="abstract-title-text">mc 魔戒 mod 酿酒系统</span>
+            </a>
+            <div class="abstract-content">
+                LotR Mod 1.6.4
+魔戒酿酒系统
+酒的浓度
+
+
+英文
+
+
+
+
+Weak
+弱
+
+
+Light
+淡
+
+
+Moderate
+适中
+
+
+Strong
+强劲
+
+
+Potent
+浓烈
+
+
+酒的分类
+
+
+英文
+中文
+成分
+备注
+
+
+
+Mug of Water
+水
+
+
+
+
+Mug of Milk
+牛奶
+
+
+
+
+Mug of Chocolate
+巧克力
+
+
+
+
+Ale
+麦芽酒
+小麦 * 6
+
+
+
+Miruvor
+米茹沃
+3* 瑁珑坚果 + 艾拉诺 + 尼福瑞迪尔 + 糖
+
+
+
+Orc Draught
+奥克饮料
+骨头 * 3 + 魔古尔菇 * 3
+获得力量和速度
+
+
+Mead
+蜂蜜酒
+糖 * 6
+...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/12/02">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mc">mc</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/19/2022-08/distributed-lock/">
+                
+                <span class="abstract-title-text">分布式互斥</span>
+            </a>
+            <div class="abstract-content">
+                分布式互斥
+
+集中式算法
+协调者
+redis
+zookeeper
+
+
+
+
+分布式算法
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/12/02">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/19</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/19/2022-08/hashmap/">
+                
+                <span class="abstract-title-text">hash map</span>
+            </a>
+            <div class="abstract-content">
+                Hash Map
+
+原理
+散列 （hash）
+把 key 转化为数字哈希，再把数据存入数组，实现 O(1) 查询
+
+
+
+
+冲突
+构造理想的 Hash 函数
+提供冲突解决方案
+开放寻址法
+线性查探
+Linear Probing
+查询下一个位置是否为空，为空直接插入。
+查询 key 如果被占用就查询下一个。
+哈希表比较慢会影响性能，多次查询
+
+
+二次查探
+Quadratic Probing
+由线性查探 i 步长，改为 i^2 步长
+
+
+双三列
+Double Hash
+两个或以上的 Hash 函数
+
+
+
+
+链表法
+利用链表去解决重复 hash 的问题
+链表长，转为红黑树
+红黑树节点少，转为链表...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/19</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/08/18/2022-08/the-sunny-16-rules/">
                 
                 <span class="abstract-title-text">阳光十六法则</span>
@@ -906,136 +1121,6 @@ CAS
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2022/08/12">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/08/04/2022-08/maven-settings/">
-                
-                <span class="abstract-title-text">maven settings.xml 笔记</span>
-            </a>
-            <div class="abstract-content">
-                Maven 常见的配置文件由以下几部分：
-
-proxy
-mirror
-repository
-server
-profiles
-
-其中 proxy 就是代理服务，这一点暂时不管。
-idrepository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。
-我一开始以为类似 central, thirdparty 是固定的字段，后面理解开来，应该只是属于常用的 id，并没有固定的含义。
-profilesprofiles 可以认为是配置，其 id 是标识配置的唯一 id （和 server 无关）。
-可以认为为了方便...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/04">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="maven">maven</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/08/03/2022-08/zookeeper/">
-                
-                <span class="abstract-title-text">zookeeper 笔记</span>
-            </a>
-            <div class="abstract-content">
-                [toc]
-命令行
-ls &#x2F; ls2
-delete
-set
-get
-stat
-
-节点持久类型1234567PERSISTENT			// 持久节点，一旦创建成功不会被删除，除非客户端主动发起删除请求PERSISTENT_SEQUENTIAL		// 持久顺序节点，会在用户路径后面拼接一个不会重复的自增数字后缀，其他同上EPHEMERAL			// 临时节点，当创建该节点的客户端链接断开后自动被删除EPHEMERAL_SEQUENTIAL		// 临时顺序节点，基本同上，也是增加一个数字后缀CONTAINER			// 容器节点，一旦子节点被删除完就会被服务端删除PERSISTE...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/12">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zookeeper">zookeeper</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/08/01/2022-08/java-stream/">
-                
-                <span class="abstract-title-text">Java Stream</span>
-            </a>
-            <div class="abstract-content">
-                5. 实验结果总结从以上的实验来看，可以总结处以下几点：
-
-在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；
-在大数据量（szie &gt; 10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/08/04">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/01</span>
                 </div>
                 <!-- tags -->
                 
@@ -2040,7 +2125,28 @@ stat
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2389,7 +2495,7 @@ stat
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -2403,6 +2509,24 @@ stat
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3858,6 +3982,11 @@ stat
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>

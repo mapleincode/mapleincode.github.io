@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vmko.cc/2023/06/12/2023-05/aligo_walk/</loc>
+    <lastmod>2023-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/05/09/2023-05/walk/</loc>
+    <lastmod>2023-06-12</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vmko.cc/2023/06/12/2023-06/esxi_disk_shrink/</loc>
+    <lastmod>2023-06-12</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vmko.cc/2023/04/11/2023-04/rabbitmq/</loc>
     <lastmod>2023-05-14</lastmod>
   </url>

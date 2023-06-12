@@ -440,6 +440,56 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">
+                
+                <span class="abstract-title-text">Esxi 磁盘容量收缩</span>
+            </a>
+            <div class="abstract-content">
+                Esxi 支持精简置备和厚置备。对于我们设备容量比较紧缺并且对性能要求不高的个人用户而言。精简置备是首选。
+但是精简置备存在一个问题，一旦跨磁盘移动之后，精简置备的容量会变成满容量。
+所以实用指令进行收缩：
+1vmkfstools -K xxx.vmdk
+
+
+
+这个指令仅支持因为移动虚拟机导致的磁盘增大。
+还有种情况是，一开始选择了厚置备，则可以通过转换的方式了来转成精简置备：
+1vmfstools -i old.vmdk -d thin new.vmdk
+
+
+thin 指的是精简置备
+
+完成转换的的 vmdk 默认就是是压缩过的。
+注意一点，如果虚拟机中途达到过一个容量，再删除内容，这...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/06/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/06/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/01/03/2023-01/syno-openvpn-timeout/">
                 
                 <span class="abstract-title-text">OpenVPN 存在 ping 超时的问题</span>
@@ -1642,7 +1692,28 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1991,7 +2062,7 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -2005,6 +2076,24 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3460,6 +3549,11 @@ ESXi 直接是作为一个虚拟化管理的一个系统，本身并不依赖其
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>

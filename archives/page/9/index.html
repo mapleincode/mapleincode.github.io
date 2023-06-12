@@ -440,6 +440,165 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/05/02/2020-05/Synology%20Drive/">
+                
+                <span class="abstract-title-text">群晖 Drive 反复同步问题</span>
+            </a>
+            <div class="abstract-content">
+                2020-05-25： 
+Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
+安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
+两款 Mac 都需要更新到新版本！！
+Drive 一定会成为你重要的同步软件！！！
+
+群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
+
+但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
+推荐大家有条件还是去上正版群晖。
+
+Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/02</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/04/15/2020-01/java-mode/">
+                
+                <span class="abstract-title-text">类成员的访问控制模式及其允许访问范围</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+访问控制模式
+在同一个类内
+在同一个包内
+子类
+所有类
+
+
+
+公共模式(public)
+允许访问
+允许访问
+允许访问
+允许访问
+
+
+保护模式(protected)
+允许访问
+允许访问
+允许访问
+
+
+
+默认模式(default)
+允许访问
+允许访问
+
+
+
+
+私有模式(private)
+允许访问
+
+
+
+
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/15</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/04/01/2020-01/wordpress-domain/">
+                
+                <span class="abstract-title-text">WordPress 绑定多域名</span>
+            </a>
+            <div class="abstract-content">
+                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
+而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
+但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
+首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
+12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/03/10/2020-01/nginx-cache/">
                 
                 <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
@@ -773,98 +932,6 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="xp">xp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/12/16/2019-12/koa-compose/">
-                
-                <span class="abstract-title-text">Koa-Compose 源码试写</span>
-            </a>
-            <div class="abstract-content">
-                1234567891011121314151617181920212223242526272829303132333435363738async function _compose(ctx, next, items) &#123;    if(items.length === 0) &#123;        return next();    &#125;    const func = items.shift();    return func(ctx, async function() &#123;        return _compose(ctx, next, items);...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/16</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/26/2019-11/logstash/">
-                
-                <span class="abstract-title-text">Logstash conf 语法</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/26</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/13/2019-11/centos5.x/">
-                
-                <span class="abstract-title-text">CentOS 5.x 版本 repo 地址</span>
-            </a>
-            <div class="abstract-content">
-                在迁移虚拟机到 ESXi 的时候，不幸遗漏了一个游戏私服服务器 orz。虽然私服不怎么好玩，但是也算是一个小纪念。鉴于私服的服务器版本是 CentOS 5.x 版本比较老，所以担心之后可能搭不起来。
-于是乎，果然访问 error。查阅了相关信息，我搭建的时候 16 年年底。17 年 3 月，CentOS 5.x 正式停止依赖维护。
-呃…查询了网上资料，有提供一个 http://vault.centos.org/5.11/os 的 repo 地址。并且版本限定 5.11。鉴于我对 CentOS 不太了解，直接拿了网上的 CentOS-Base.repo。
-12345678910111213...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
     
 </div>
 
@@ -1862,7 +1929,28 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2211,7 +2299,7 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -2225,6 +2313,24 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3680,6 +3786,11 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>

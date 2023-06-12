@@ -455,6 +455,125 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/08/29/2019-07/python-with-as/">
+                
+                <span class="abstract-title-text">Python with as 的作用</span>
+            </a>
+            <div class="abstract-content">
+                Python with as 的作用这几天在入门 Python，https://learnxinyminutes.com/docs/python3/，看到 with as，这边说了一句
+
+# Instead of try&#x2F;finally to cleanup resources you can use a with statement
+如果不使用 try&#x2F;finally 来清理资源，你可以使用声明这个功能。
+
+123with open(&quot;1.txt&quot;) as f	for line in f:		print(line)
+
+首先说下 with as 的...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/29/2019-07/mysql-ACID/">
+                
+                <span class="abstract-title-text">MySQL 事务</span>
+            </a>
+            <div class="abstract-content">
+                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
+我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
+事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
+
+原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+
+一致性：在事务开始之前和事务...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/27/2019-07/guanchazhe/">
+                
+                <span class="abstract-title-text">Node 和观察者设计模式</span>
+            </a>
+            <div class="abstract-content">
+                观察者设计模式观察者模式（有时又被称为模型-视图（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
+总的来说，例如 Node 的事件机制。除非是一个不包含异步的程序(如果没有异步逻辑，那这个程序在执行结束前都不会有事件循环)，否则一般程序在拥有带监听的 IO 事件(或者是网络套接字)的观察者时，就会通过线程层(libuv)不断的是轮询这些事件有没有完成。而系统在完成 IO 之后，将...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/08/26/2019-07/mysql-engines/">
                 
                 <span class="abstract-title-text">MySQL 引擎</span>
@@ -740,116 +859,6 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019-07/node-momery/">
-                
-                <span class="abstract-title-text">取消 Node 对内存上限的限制条件</span>
-            </a>
-            <div class="abstract-content">
-                123node --max-old-space-size=1700 test.js // 单位为MB// ornode --max-new-space-size=1024 test.js // 单位为KB
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019-07/node-async/">
-                
-                <span class="abstract-title-text">Node 异步三种方式的对比 Demo</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127&#x27;use strict&#x27;;c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/01/2019-07/xcode-route/">
-                
-                <span class="abstract-title-text">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</span>
-            </a>
-            <div class="abstract-content">
-                前段时间更新 Mac OS 的系统，也同样更新了 Xcode。在公司的项目中，用了死月大佬封装 C++ ons 版本得到的 Aliyun ons。在重新安装依赖时，发现在编译 ons 的时候不停爆出unknown type name &#39;uint32_t&#39;这样的错误。
-本以为是 npm 的缓存、c++ 版本、node 版本等原因，当我用另一台 Mac 安装 ons 并成功之后，完全不知道该怎么做。这时碰巧切了一个新的 Node 版本，在编译时报出了一个 Warn: xcode-select: error: tool &#39;xcodebuild&#39; requires...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
     
 </div>
 
@@ -1926,7 +1935,28 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2275,7 +2305,7 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -2289,6 +2319,24 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3744,6 +3792,11 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>

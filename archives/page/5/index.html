@@ -440,6 +440,130 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022-04/python-venv/">
+                
+                <span class="abstract-title-text">python venv</span>
+            </a>
+            <div class="abstract-content">
+                venv 是 pyhton 的虚拟环境
+安装1sudo apt install python3.8-venv
+
+
+
+使用1234python3 -m venv pgadmin4 			# 创建 venvsource pgadmin4/bin/activate 	# 激活（进入） venv# ...													# do somethingdeactivate										# 退出 venv
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/05/19">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/30/2022-04/openstack/">
+                
+                <span class="abstract-title-text">OpenStack 学习</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+关键术语访问密钥&#x2F;安全密钥
+组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。
+
+用户 pub 密钥
+
+可用区域
+云范围内用于对虚拟机提供容错的一组隔离的虚拟层。
+块存储
+存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。
+容器（对象）
+在对象存储中组织和存储对象。
+容器（LXC）
+Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的操作系统级别的虚拟环境。Openstack容器服务（Magnum）提供应用容器的管理功能。
+固定&#x2F;静态IP
+相同VM（虚拟机）每次启动的时候关联的IP地址。这可用于管...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2023/03/28">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/30</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022-04/firewalld/">
+                
+                <span class="abstract-title-text">Centos7 防火墙 firewalld 基本配置与端口转发</span>
+            </a>
+            <div class="abstract-content">
+                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
+1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/20">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="firewalld">firewalld</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/04/19/2022-04/iptables/">
                 
                 <span class="abstract-title-text">linux 端口转发 iptables</span>
@@ -754,140 +878,6 @@ htt...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/13/2021-09/memcache-lock/">
-                
-                <span class="abstract-title-text">memcached 实现高并发条件下全局锁</span>
-            </a>
-            <div class="abstract-content">
-                在支持 redis 的项目中，我很喜欢用
-1redis.incr();
-
-因为 redis 操作具有原子性，可以通过这个函数实现原子级的同步锁。
-而 memcache 却不能实现这样的效果，我考虑设想了了一个方案。
-123456789101112131415async funciton lock(key) &#123;  const value = uuid.v4();  const expire = 120 * 1000;    const _result = await mem.get(key);  if (_result) return false;  	await mem.set...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/13/2021-09/raspberry-watchdog/">
-                
-                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
-            </a>
-            <div class="abstract-content">
-                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
-在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
-然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
-解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
-
-系统:
-
-raspberry 4B
-ubuntu 20.04
-
-
-安装流程
-在 config.txt 从硬件上打开 watchdog 功能
-12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/07/21/2021-07/esxi-copy/">
-                
-                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
-            </a>
-            <div class="abstract-content">
-                修改办法设置 - 高级 - 编辑配置
-添加
-12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
-
-
-
-其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
-
-
-
-Warining注意 vmware tools 的状态
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/01">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
     
 </div>
 
@@ -1885,7 +1875,28 @@ Warining注意 vmware tools 的状态
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2234,7 +2245,7 @@ Warining注意 vmware tools 的状态
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -2248,6 +2259,24 @@ Warining注意 vmware tools 的状态
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3703,6 +3732,11 @@ Warining注意 vmware tools 的状态
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>

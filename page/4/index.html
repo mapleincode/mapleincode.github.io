@@ -455,6 +455,136 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/08/04/2022-08/maven-settings/">
+                
+                <span class="abstract-title-text">maven settings.xml 笔记</span>
+            </a>
+            <div class="abstract-content">
+                Maven 常见的配置文件由以下几部分：
+
+proxy
+mirror
+repository
+server
+profiles
+
+其中 proxy 就是代理服务，这一点暂时不管。
+idrepository 和 mirror 和 server 都拥有一个字段是 id。这里的 id 就单纯的用来标识一个 server 的唯一的标识字段。
+我一开始以为类似 central, thirdparty 是固定的字段，后面理解开来，应该只是属于常用的 id，并没有固定的含义。
+profilesprofiles 可以认为是配置，其 id 是标识配置的唯一 id （和 server 无关）。
+可以认为为了方便...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="maven">maven</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/03/2022-08/zookeeper/">
+                
+                <span class="abstract-title-text">zookeeper 笔记</span>
+            </a>
+            <div class="abstract-content">
+                [toc]
+命令行
+ls &#x2F; ls2
+delete
+set
+get
+stat
+
+节点持久类型1234567PERSISTENT			// 持久节点，一旦创建成功不会被删除，除非客户端主动发起删除请求PERSISTENT_SEQUENTIAL		// 持久顺序节点，会在用户路径后面拼接一个不会重复的自增数字后缀，其他同上EPHEMERAL			// 临时节点，当创建该节点的客户端链接断开后自动被删除EPHEMERAL_SEQUENTIAL		// 临时顺序节点，基本同上，也是增加一个数字后缀CONTAINER			// 容器节点，一旦子节点被删除完就会被服务端删除PERSISTE...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/12">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="zookeeper">zookeeper</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/01/2022-08/java-stream/">
+                
+                <span class="abstract-title-text">Java Stream</span>
+            </a>
+            <div class="abstract-content">
+                5. 实验结果总结从以上的实验来看，可以总结处以下几点：
+
+在少低数据量的处理场景中（size &lt;&#x3D; 1000），stream 的处理效率是不如传统的 iterator 外部迭代器处理速度快的，但是实际上这些处理任务本身运行时间都低于毫秒，这点效率的差距对普通业务几乎没有影响，反而 stream 可以使得代码更加简洁；
+在大数据量（szie &gt; 10000）时，stream 的处理效率会高于 iterator，特别是使用了并行流，在cpu恰好将线程分配到多个核心的条件下（当然parallel stream 底层使用的是 JVM 的 ForkJoinPool，这东西分...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/08/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/07/18/2022-07/syno-vpn/">
                 
                 <span class="abstract-title-text">解决群晖 vpn 后无法访问本机的问题</span>
@@ -743,130 +873,6 @@ js 文件 （确切说就是 nodejs 脚本）
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="python pip">python pip</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/05/19/2022-04/python-venv/">
-                
-                <span class="abstract-title-text">python venv</span>
-            </a>
-            <div class="abstract-content">
-                venv 是 pyhton 的虚拟环境
-安装1sudo apt install python3.8-venv
-
-
-
-使用1234python3 -m venv pgadmin4 			# 创建 venvsource pgadmin4/bin/activate 	# 激活（进入） venv# ...													# do somethingdeactivate										# 退出 venv
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/05/19">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/30/2022-04/openstack/">
-                
-                <span class="abstract-title-text">OpenStack 学习</span>
-            </a>
-            <div class="abstract-content">
-                [TOC]
-关键术语访问密钥&#x2F;安全密钥
-组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。
-
-用户 pub 密钥
-
-可用区域
-云范围内用于对虚拟机提供容错的一组隔离的虚拟层。
-块存储
-存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。
-容器（对象）
-在对象存储中组织和存储对象。
-容器（LXC）
-Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的操作系统级别的虚拟环境。Openstack容器服务（Magnum）提供应用容器的管理功能。
-固定&#x2F;静态IP
-相同VM（虚拟机）每次启动的时候关联的IP地址。这可用于管...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2023/03/28">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/30</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/19/2022-04/firewalld/">
-                
-                <span class="abstract-title-text">Centos7 防火墙 firewalld 基本配置与端口转发</span>
-            </a>
-            <div class="abstract-content">
-                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
-1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2022/04/20">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="firewalld">firewalld</a>
     
 </div>
 
@@ -1943,7 +1949,28 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2292,7 +2319,7 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -2306,6 +2333,24 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3761,6 +3806,11 @@ Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的�
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>

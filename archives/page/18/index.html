@@ -440,6 +440,132 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2017/11/03/2019-07/mysql-config/">
+                
+                <span class="abstract-title-text">my.cnf 参数解释 &amp; 优化 (转载)</span>
+            </a>
+            <div class="abstract-content">
+                my.cnf 参数解析
+转载 From
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/11/03/2019-07/gitlab-upgrade-3/">
+                
+                <span class="abstract-title-text">GitLab 推送了更新(三) - Nginx 反向代理</span>
+            </a>
+            <div class="abstract-content">
+                
+GitLab 搭建在家里的一台服务器上，并没有直接暴露到外网。为了可以外网访问，所以需要把端口转发到内网(NAT)。因为用了渣 TP 路由器，只支持转发 20 个端口到外网。为了节省端口资源，所以打算使用树莓派上的 Nginx 作为反向代理，使多个 Domain 同时使用一个端口。
+
+Nginx 安装无脑安装:
+12sudo apt update;sudo apt install nginx;
+
+查看 nginx 服务运行状态:
+123456789maple@localhost:~/$ sudo service nginx status● nginx.service - A high ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/10/27/2019-07/gitlab-upgrade-2/">
+                
+                <span class="abstract-title-text">GitLab 推送了更新(二) - 安装 docker GitLab</span>
+            </a>
+            <div class="abstract-content">
+                
+之前在树莓派安装 GitLab 因为配置过低的原因，导致 GitLab 一直无法正常使用。痛并思痛，打算在一台x86的主机上安装 GitLab。当时想着能够快速部署而且不和现在的系统太过耦合，碰巧在 GitLab 主页上看到了小鲸鱼，想来试试这个已经出来好几年的新(liubi)技术。
+
+环境
+AMD CPU 主机，4 核心， 12G DDR3 内存。ubuntu 16.04.02 Desktop。
+
+Docker 版本:
+1Docker version 1.12.6, build 78d1802
+
+镜像安装首先是要 pull 镜像。
+因为官方的镜像速度实在是捉急，所以用了DaoClou...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2022/04/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2017/10/26/2019-07/gitlab-upgrade-1/">
                 
                 <span class="abstract-title-text">GitLab 推送了更新(一) - 树莓派安装GitLab</span>
@@ -1504,7 +1630,28 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -1853,7 +2000,7 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 172
+        Total : 175
         </div>
         <!-- search  -->
         
@@ -1867,6 +2014,24 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023-05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023-05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/21</span>
@@ -3322,6 +3487,11 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
             <span class="sidebar-tag-name" data-tags="python3">
                 <span class="iconfont-archer">&#xe606;</span>
                 python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
             </span>
         
     </div>
