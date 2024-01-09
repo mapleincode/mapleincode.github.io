@@ -1,0 +1,3738 @@
+<!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:21:17
+-->
+<!DOCTYPE html>
+<html lang="">
+    <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:22:15
+-->
+<!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Maple">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Maple">
+    
+        <meta name="keywords" content="hexo,blog,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="[TOC] kubernetes核心是容器。 1. 工具 &amp; 环境参考：https:&#x2F;&#x2F;kubernetes.io&#x2F;zh&#x2F;docs&#x2F;tasks&#x2F;tools&#x2F;  工具 kubectl: 管理工具，相当于管理 client 端。 kubeadm: 相当于 server 端。   服务器 两台 4 核心 4G 的虚拟机     每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubernetes 学习">
+<meta property="og:url" content="https://blog.vvcat.cn/2021/04/12/2021/04/kubernetes/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="[TOC] kubernetes核心是容器。 1. 工具 &amp; 环境参考：https:&#x2F;&#x2F;kubernetes.io&#x2F;zh&#x2F;docs&#x2F;tasks&#x2F;tools&#x2F;  工具 kubectl: 管理工具，相当于管理 client 端。 kubeadm: 相当于 server 端。   服务器 两台 4 核心 4G 的虚拟机     每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-04-12T08:12:11.000Z">
+<meta property="article:modified_time" content="2024-01-09T00:20:32.866Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="kubernetes">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/favicon.png">
+    
+    <title>kubernetes 学习 · Maple&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from bootcdn failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Maple's Blog.</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">Maple&#39;s Blog.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">kubernetes 学习</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/mapleincode/images/master/img/20200522181805.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                kubernetes 学习
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">2.4k</span>阅读时长: <span class="post-count reading-time">11 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2021/04/12</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      // 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>[TOC]</p>
+<h1 id="kubernetes"><a href="#kubernetes" class="headerlink" title="kubernetes"></a>kubernetes</h1><p>核心是容器。</p>
+<h2 id="1-工具-amp-环境"><a href="#1-工具-amp-环境" class="headerlink" title="1. 工具 &amp; 环境"></a>1. 工具 &amp; 环境</h2><p>参考：<a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/tasks/tools/">https://kubernetes.io/zh/docs/tasks/tools/</a></p>
+<ul>
+<li>工具<ul>
+<li>kubectl: 管理工具，相当于管理 client 端。</li>
+<li>kubeadm: 相当于 server 端。</li>
+</ul>
+</li>
+<li>服务器<ul>
+<li>两台 4 核心 4G 的虚拟机</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)</p>
+</blockquote>
+<blockquote>
+<p>本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。</p>
+</blockquote>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><h3 id="2-1-管理端工具安装"><a href="#2-1-管理端工具安装" class="headerlink" title="2.1 管理端工具安装"></a>2.1 管理端工具安装</h3><h4 id="安装-kubectl-macOS"><a href="#安装-kubectl-macOS" class="headerlink" title="安装 kubectl (macOS)"></a>安装 kubectl (macOS)</h4><blockquote>
+<p>命令行管理工具</p>
+</blockquote>
+<ol>
+<li><p>brew 安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install kubectl</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>直接安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 下载最新版本</span><br><span class="line">curl -LO &quot;https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/amd64/kubectl&quot;</span><br><span class="line"></span><br><span class="line"># + 执行权限</span><br><span class="line">chmod +x ./kubectl</span><br><span class="line"></span><br><span class="line">// 移动到 bin 目录</span><br><span class="line">sudo mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line"></span><br><span class="line">// 授予 root 组权限</span><br><span class="line">sudo chown root: /usr/local/bin/kubectl</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-2-服务端安装"><a href="#2-2-服务端安装" class="headerlink" title="2.2 服务端安装"></a>2.2 服务端安装</h3><blockquote>
+<p>Pod</p>
+</blockquote>
+<h4 id="2-2-1-Docker"><a href="#2-2-1-Docker" class="headerlink" title="2.2.1 Docker"></a>2.2.1 Docker</h4><p>考虑到 kubeadm 初始化会检测 Docker，所以考虑先安装 Docker。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1-镜像加速"><a href="#1-镜像加速" class="headerlink" title="1. 镜像加速"></a>1. 镜像加速</h5><blockquote>
+<p>–mirror Aliyun 使得安装时采用阿里云源，减少安装时间</p>
+</blockquote>
+<p>阿里云有提供一个速度还算不错的 docker  镜像加速器。个人可以免费使用。</p>
+<p>在控制台搜索 &lt; 容器镜像服务 &gt;，选择 - 镜像工具 - 镜像加速器。按照配置镜像加速器的方式进行配置。</p>
+<h5 id="2-默认账户没有-docker-权限问题"><a href="#2-默认账户没有-docker-权限问题" class="headerlink" title="2. 默认账户没有 docker 权限问题"></a>2. 默认账户没有 docker 权限问题</h5><p>默认 Docker sock 需要 root 权限才能访问，在本地开发测试，可以使用:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker $&#123;USER&#125;</span><br></pre></td></tr></table></figure>
+
+<p>把用户 user 也加入到 docker 组。退出 ssh 或者退出登录重进，就可以在不使用 sudo 的前提下使用 docker。</p>
+<h4 id="2-2-2-kubeadm"><a href="#2-2-2-kubeadm" class="headerlink" title="2.2.2 kubeadm"></a>2.2.2 kubeadm</h4><blockquote>
+<p>Pod 工具</p>
+</blockquote>
+<p>官方教程需要在 ubuntu apt 安装一个授权 key，但是域名是 *.google.com</p>
+<p>这决定了很多 linux 环境，尤其是生产都很难方面的安装。后来在网上搜到了一份教程，作者通过替换镜像等方式解决这个问题。</p>
+<p>更新 apt-key &amp; 添加依赖库，这里添加的是阿里云提供的库。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get install -y apt-transport-https</span><br><span class="line">curl https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | apt-key add - </span><br><span class="line">cat &lt;&lt;EOF &gt;/etc/apt/sources.list.d/kubernetes.list</span><br><span class="line">deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+
+<p><strong>这里注意是 xenial ，虽然 xenial 是 16.04。而作为最新 LTS 18.04 和 20.04，aliyun 都没有更新。实际操作并无影响，不需要额外替换。apt 可以正常识别。</strong></p>
+<h4 id="2-2-3-安装-kubeadm-x2F-kubectl-x2F-kubelet"><a href="#2-2-3-安装-kubeadm-x2F-kubectl-x2F-kubelet" class="headerlink" title="2.2.3 安装 kubeadm &#x2F; kubectl &#x2F; kubelet"></a>2.2.3 安装 kubeadm &#x2F; kubectl &#x2F; kubelet</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install -y kubelet kubeadm kubectl</span><br><span class="line">apt-mark hold kubelet kubeadm kubectl</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>引用教程作者原话：</p>
+<p>如果你有多台机器，非 master 节点不需要安装 kubeadm&#x2F;kubectl。当然装了也没啥坏处</p>
+<p>apt-mark hold 是为了标记 kubelet 不自动升级</p>
+<p>可以选择 apt-mark unhold kubelet  取消标记</p>
+</blockquote>
+<h4 id="2-2-4-pull-kubernetes-镜像"><a href="#2-2-4-pull-kubernetes-镜像" class="headerlink" title="2.2.4 pull kubernetes 镜像"></a>2.2.4 pull kubernetes 镜像</h4><blockquote>
+<p>国外的朋友可以跳过这一步</p>
+</blockquote>
+<p>如果在国内，直接运行<code>kubeadm init</code> 会一直卡主不懂。原因是因为默认镜像拉取的是谷歌源。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo kubeadm init</span><br><span class="line">[init] Using Kubernetes version: v1.21.0</span><br><span class="line">[preflight] Running pre-flight checks</span><br><span class="line">	[WARNING IsDockerSystemdCheck]: detected &quot;cgroupfs&quot; as the Docker cgroup driver. The recommended driver is &quot;systemd&quot;. Please follow the guide at https://kubernetes.io/docs/setup/cri/</span><br><span class="line">[preflight] Pulling images required for setting up a Kubernetes cluster</span><br><span class="line">[preflight] This might take a minute or two, depending on the speed of your internet connection</span><br><span class="line">[preflight] You can also perform this action in beforehand using &#x27;kubeadm config images pull&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>解决办法是用国内的 docker 镜像加速。</p>
+<p><strong>第一种版本是手动替换：</strong></p>
+<ol>
+<li>首先查看 kubelet 版本：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ kubelet --version</span><br><span class="line">Kubernetes v1.21.0</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用 kubeadm config image pull 命令查看所需要 image 名称和版本:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ kubeadm config images list --kubernetes-version v1.21.0</span><br><span class="line">k8s.gcr.io/kube-apiserver:v1.21.1</span><br><span class="line">k8s.gcr.io/kube-controller-manager:v1.21.1</span><br><span class="line">k8s.gcr.io/kube-scheduler:v1.21.1</span><br><span class="line">k8s.gcr.io/kube-proxy:v1.21.1</span><br><span class="line">k8s.gcr.io/pause:3.4.1</span><br><span class="line">k8s.gcr.io/etcd:3.4.13-0</span><br><span class="line">k8s.gcr.io/coredns/coredns:v1.8.0</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>这里要手动替换 <code>k8s.gcr.io</code> 为 <code>k8smx</code>，并使用 docker pull 的方式下载镜像。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker pull k8smx/kube-apiserver:v1.21.1</span><br><span class="line">docker pull k8smx/kube-controller-manager:v1.21.1</span><br><span class="line">docker pull k8smx/kube-scheduler:v1.21.1</span><br><span class="line">docker pull k8smx/kube-proxy:v1.21.1</span><br><span class="line">docker pull k8smx/pause:3.4.1</span><br><span class="line">docker pull k8smx/etcd:3.4.13-0</span><br><span class="line">docker pull coredns/coredns:1.8.0</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>coredns&#x2F;coredns 直接拉取，要注意 version 需要从 v1.8.0 改成 1.8.0 否则 pull 不下来</p>
+</blockquote>
+<ol start="4">
+<li>然后对镜像 tag 进行重命名</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker tag k8smx/kube-apiserver:v1.21.1 k8s.gcr.io/kube-apiserver:v1.21.1</span><br><span class="line">docker tag k8smx/kube-controller-manager:v1.21.1 k8s.gcr.io/kube-controller-manager:v1.21.1</span><br><span class="line">docker tag k8smx/kube-scheduler:v1.21.1 k8s.gcr.io/kube-scheduler:v1.21.1</span><br><span class="line">docker tag k8smx/kube-proxy:v1.21.1 k8s.gcr.io/kube-proxy:v1.21.1</span><br><span class="line">docker tag k8smx/pause:3.4.1 k8s.gcr.io/pause:3.4.1</span><br><span class="line">docker tag k8smx/etcd:3.4.13-0 k8s.gcr.io/etcd:3.4.13-0</span><br><span class="line">docker tag coredns/coredns:1.8.0 k8s.gcr.io/coredns/coredns:v1.8.0</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>第二种办法是使用自动下载脚本:</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for i in `kubeadm config images list`; do</span><br><span class="line">  imageName=$&#123;i#k8s.gcr.io/&#125;</span><br><span class="line">  docker pull registry.aliyuncs.com/google_containers/$imageName</span><br><span class="line">  docker tag registry.aliyuncs.com/google_containers/$imageName k8s.gcr.io/$imageName</span><br><span class="line">  docker rmi registry.aliyuncs.com/google_containers/$imageName</span><br><span class="line">done;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>coredns&#x2F;coredns 镜像无法通过自动操作，需要手动</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker pull coredns/coredns:1.8.0</span><br><span class="line">docker tag coredns/coredns:1.8.0 k8s.gcr.io/coredns/coredns:v1.8.0</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-安装过程可能遇到的问题"><a href="#2-3-安装过程可能遇到的问题" class="headerlink" title="2.3 安装过程可能遇到的问题"></a>2.3 安装过程可能遇到的问题</h3><h5 id="cproupfs-和-systemd-两个驱动的区别"><a href="#cproupfs-和-systemd-两个驱动的区别" class="headerlink" title="cproupfs 和 systemd 两个驱动的区别"></a>cproupfs 和 systemd 两个驱动的区别</h5><p>在初始化过程中，会产生一个 WARNING:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[WARNING IsDockerSystemdCheck]: detected &quot;cgroupfs&quot; as the Docker cgroup driver. The recommended driver is &quot;systemd&quot;. </span><br></pre></td></tr></table></figure>
+
+
+
+<p>大概意思是默认 Docker 在系统中使用了 cgroupfs 这个 cgroup 驱动（管理），而 kube 推荐使用 systemd。</p>
+<p>cgroupfs 和 systemd 都是 cgroup 的管理工具（驱动）。systemd 作为后来者，功能点可能比前者更加完善（然而我查不到相关的中文资料）。因为 kubernetes 会默认使用 systemd 作为 cgroup 管理。如果用户不做修改，默认 docker 和 kubernetes 会使用 cgroupfs 作为 cgroup 作为管理。则这个系统会出现两种 cgroup 管理工具（驱动）。</p>
+<p>官方认为，如果系统包含两种工具，可能在资源紧张时会导致系统不稳定。所以推荐用户把 docker 和 kubernetes 的 cgroup 修改为 systemd。</p>
+<p><strong>修改需要同时修改 docker 和 kubelet 的配置，否则会造成无法通过 kubelet 调度容器。</strong></p>
+<p><strong>docker</strong>:</p>
+<p>修改方式是在 &#x2F;etc&#x2F;docker&#x2F;daemon.json 新增一条参数</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;exec-opts&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;native.cgroupdriver=systemd&quot;</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>修改后重启 docker <code>systemctl restart docker</code>。使用 kubeadm init 就不会产生这个  WARNING 了。</p>
+<p><strong>kubelet</strong>:</p>
+<p>修改 <code>/var/lib/kubelet/config.yaml</code> 的 cgroupDriver 改为 <code>systemd</code></p>
+<blockquote>
+<p>强烈建议不要更改已加入集群的节点的cgroup驱动程序。</p>
+<p>如果kubelet使用一个cgroup驱动程序的语义创建了Pods，那么在试图为现有的Pods重新创建Pod沙箱时，将容器运行时更改为另一个cgroup驱动程序可能会导致错误。重新启动kubelet可能无法解决这些错误。</p>
+</blockquote>
+<p>参考: <a target="_blank" rel="noopener" href="https://www.codenong.com/cs109603870/">https://www.codenong.com/cs109603870/</a></p>
+<h5 id="关闭-swap"><a href="#关闭-swap" class="headerlink" title="关闭 swap"></a>关闭 swap</h5><p>在使用命令 <code>kubelet init</code> 时，发生报错:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ERROR Swap]: running with swap on is not supported. Please disable swap</span><br></pre></td></tr></table></figure>
+
+<p>原因是我的虚拟机开启了 swap。而 swap 对虚拟机而言会造成额外的性能问题。所以理所当然要关闭 swap。当然你可以可以通过 <code>ignore</code> 忽略。</p>
+<h2 id="3-kubeadm-init"><a href="#3-kubeadm-init" class="headerlink" title="3. kubeadm init"></a>3. kubeadm init</h2><blockquote>
+<p>初始化 kubernetes</p>
+</blockquote>
+<p>在安装完所有依赖的 docker 镜像之后，我们就可以执行初始化。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Your Kubernetes control-plane has initialized successfully!</span><br><span class="line"></span><br><span class="line">To start using your cluster, you need to run the following as a regular user:</span><br><span class="line"></span><br><span class="line">  mkdir -p $HOME/.kube</span><br><span class="line">  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span><br><span class="line">  sudo chown $(id -u):$(id -g) $HOME/.kube/config</span><br><span class="line"></span><br><span class="line">Alternatively, if you are the root user, you can run:</span><br><span class="line"></span><br><span class="line">  export KUBECONFIG=/etc/kubernetes/admin.conf</span><br><span class="line"></span><br><span class="line">You should now deploy a pod network to the cluster.</span><br><span class="line">Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:</span><br><span class="line">  https://kubernetes.io/docs/concepts/cluster-administration/addons/</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在最后完成之后会弹出一个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Then you can join any number of worker nodes by running the following on each as root:</span><br><span class="line"></span><br><span class="line">kubeadm join 192.168.3.242:6443 --token plr2xt.a19ifb79gl4l3uxr \</span><br><span class="line">	--discovery-token-ca-cert-hash sha256:f1d2929b4ce2414dabfe5b37ba740a22dd320099df13168e06cc245c380e4176</span><br></pre></td></tr></table></figure>
+
+<p>适用于其他节点加入集群。</p>
+<p>这边我犯了一个错误，其实有且只有一个节点需要 <code>kubeadm init</code>。而第二个节点不需要。如果第二个节点执行 <code>kubeamdin join xxx</code> 会发生报错。</p>
+<p>参考了 gayhub 的方案: <a href="">https://github.com/kubernetes/kubeadm/issues/974#issuecomment-402861544</a></p>
+<p>只需要执行 ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubeadm reset</span><br></pre></td></tr></table></figure>
+
+<p>选择 <code>Y</code> 就可以初始化 kubeadm。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">The reset process does not clean CNI configuration. To do so, you must remove /etc/cni/net.d</span><br><span class="line"></span><br><span class="line">The reset process does not reset or clean up iptables rules or IPVS tables.</span><br><span class="line">If you wish to reset iptables, you must do so manually by using the &quot;iptables&quot; command.</span><br><span class="line"></span><br><span class="line">If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)</span><br><span class="line">to reset your system&#x27;s IPVS tables.</span><br><span class="line"></span><br><span class="line">The reset process does not clean your kubeconfig files and you must remove them manually.</span><br><span class="line">Please, check the contents of the $HOME/.kube/config file.</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="kubeadm-join"><a href="#kubeadm-join" class="headerlink" title="kubeadm  join"></a>kubeadm  join</h2><p>输入第一台服务器返回的<code>kubeadm join xxxx</code>。</p>
+<p>返回：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">To start using your cluster, you need to run the following as a regular user:</span><br><span class="line"></span><br><span class="line">  mkdir -p $HOME/.kube</span><br><span class="line">  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config</span><br><span class="line">  sudo chown $(id -u):$(id -g) $HOME/.kube/config</span><br><span class="line"></span><br><span class="line">Alternatively, if you are the root user, you can run:</span><br><span class="line"></span><br><span class="line">  export KUBECONFIG=/etc/kubernetes/admin.conf</span><br><span class="line"></span><br><span class="line">You should now deploy a pod network to the cluster.</span><br><span class="line">Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:</span><br><span class="line">  https://kubernetes.io/docs/concepts/cluster-administration/addons/</span><br><span class="line"></span><br><span class="line">Then you can join any number of worker nodes by running the following on each as root:</span><br><span class="line"></span><br><span class="line">kubeadm join 192.168.3.242:6443 --token 17s2zk.29hdphqfeerxkm18 \</span><br><span class="line">	--discovery-token-ca-cert-hash sha256:90adf2e95cb044d436c6d4849ce2804050adb9db0c7168585dd0522ccb201fbf</span><br></pre></td></tr></table></figure>
+
+<p>然后在第一台服务器输入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl get nodes</span><br></pre></td></tr></table></figure>
+
+<p>返回：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NAME            STATUS     ROLES                  AGE     VERSION</span><br><span class="line">vm-ubuntu-201   NotReady   control-plane,master   7m17s   v1.21.1</span><br><span class="line">vm-ubuntu-202   NotReady   &lt;none&gt;                 3m25s   v1.21.1</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/home/">Kubernetes 文档</a></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/tasks/tools/install-kubectl-macos/">在 macOS 系统上安装和设置 kubectl</a></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh/docs/setup/production-environment/tools/kubeadm/install-kubeadm/">安装 kubeadm</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/110806">Docker 安装 (阿里云教程)</a></li>
+<li><a target="_blank" rel="noopener" href="https://ieevee.com/tech/2018/09/01/kubeadm.html">墙内安装kubernetes教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.codenong.com/cs109603870/">Cgroup drivers：systemd cgroupfs 区别</a></li>
+</ul>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.vvcat.cn">Maple</a>
+            <p>原文链接：<a href="https://blog.vvcat.cn/2021/04/12/2021/04/kubernetes/">https://blog.vvcat.cn/2021/04/12/2021/04/kubernetes/</a>
+            <p>发表日期：<a href="https://blog.vvcat.cn/2021/04/12/2021/04/kubernetes/">April 12th 2021, 4:12:11 pm</a>
+            <p>更新日期：<a href="https://blog.vvcat.cn/2021/04/12/2021/04/kubernetes/">January 9th 2024, 8:20:32 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2021/04/23/2021/04/GraphQL/" title="GraphQL">
+                    <div class="nextTitle">GraphQL</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2021/04/08/2021/04/nginx-ws/" title="Nginx 支持 WebSocket">
+                    <div class="prevTitle">Nginx 支持 WebSocket</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://blog.vvcat.cn/2021/04/12/2021/04/kubernetes/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "kubernetes 学习"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://blog-mapleincode-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+            
+
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:23:33
+-->
+
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-05 14:10:53
+-->
+<footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:llkj13579@126.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/mapleincode" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com/people/mapleincode" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/830610" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20017606号-1</a>
+                </span>
+            
+            
+                
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704" target="_blank">浙公网安备33011002014704号</a>
+                </span>
+            
+        </div>
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#kubernetes"><span class="toc-number">1.</span> <span class="toc-text">kubernetes</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E5%85%B7-amp-%E7%8E%AF%E5%A2%83"><span class="toc-number">1.1.</span> <span class="toc-text">1. 工具 &amp; 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.</span> <span class="toc-text">2. 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%AE%A1%E7%90%86%E7%AB%AF%E5%B7%A5%E5%85%B7%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 管理端工具安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-kubectl-macOS"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">安装 kubectl (macOS)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2 服务端安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-Docker"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1 Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F"><span class="toc-number">1.2.2.1.1.</span> <span class="toc-text">1. 镜像加速</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E9%BB%98%E8%AE%A4%E8%B4%A6%E6%88%B7%E6%B2%A1%E6%9C%89-docker-%E6%9D%83%E9%99%90%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.2.1.2.</span> <span class="toc-text">2. 默认账户没有 docker 权限问题</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-kubeadm"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2 kubeadm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-%E5%AE%89%E8%A3%85-kubeadm-x2F-kubectl-x2F-kubelet"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">2.2.3 安装 kubeadm &#x2F; kubectl &#x2F; kubelet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-4-pull-kubernetes-%E9%95%9C%E5%83%8F"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">2.2.4 pull kubernetes 镜像</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3 安装过程可能遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#cproupfs-%E5%92%8C-systemd-%E4%B8%A4%E4%B8%AA%E9%A9%B1%E5%8A%A8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.2.3.0.1.</span> <span class="toc-text">cproupfs 和 systemd 两个驱动的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E9%97%AD-swap"><span class="toc-number">1.2.3.0.2.</span> <span class="toc-text">关闭 swap</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-kubeadm-init"><span class="toc-number">1.3.</span> <span class="toc-text">3. kubeadm init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kubeadm-join"><span class="toc-number">1.4.</span> <span class="toc-text">kubeadm  join</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">1.5.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 178
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span>
+            <a class="archive-post-title" href="/2023/12/20/2023/12/validation-api/">validation-api</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/20</span>
+            <a class="archive-post-title" href="/2023/09/20/2023/09/shutil/">Python shutil 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/31</span>
+            <a class="archive-post-title" href="/2023/08/31/2023/08/nestjs-provider/">Nestjs Provider</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2023/08/03/2023/08/mvn-command/">mvn 命令参数含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span>
+            <a class="archive-post-title" href="/2023/07/26/2023/07/after-poweroff-force/">强关 esxi，数据损坏和修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023/05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023/04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023/04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023/04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023/03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023/02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023/02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023/01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022/12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022/08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022/08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/distributed-lock/">分布式互斥</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022/08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022/08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022/08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/maven-settings/">maven settings.xml 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022/08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022/08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022/07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022/06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022/06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022/04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022/04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022/04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-pip/">python 更换国内镜像源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022/04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/iptables/">linux 端口转发 iptables</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/03/python-3-minutes/">3 分钟学习 (Python)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/04/maven-notion/">mvn 笔记精简</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span>
+            <a class="archive-post-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/09</span>
+            <a class="archive-post-title" href="/2022/02/09/2022/01/unrar/">python 对 zip 和 rar 文件进行解压</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/2021/09/synology-drive-icon/">Synolog 群晖 Drive 图标不显示的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/memcache-lock/">memcached 实现高并发条件下全局锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/raspberry-watchdog/">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2021/07/21/2021/07/esxi-copy/">ESXi 支持复制粘贴</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">k8s mysql demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span>
+            <a class="archive-post-title" href="/2021/05/24/2021/04/frp/">frp 的使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/prisma-connection-urls/">Prisma connection URLs</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/GraphQL/">GraphQL</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2021/04/12/2021/04/kubernetes/">kubernetes 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span>
+            <a class="archive-post-title" href="/2021/04/08/2021/04/nginx-ws/">Nginx 支持 WebSocket</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span>
+            <a class="archive-post-title" href="/2021/02/24/2021/02/baijiu/">中国白酒分类</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span>
+            <a class="archive-post-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">阿里云 Ubuntu 数据盘格式化和挂载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span>
+            <a class="archive-post-title" href="/2020/11/23/2020/11/dpkg-bad-inconsistent-state/">Dpkg 包损坏无法安装 & 卸载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2020/11/13/2020/11/syno-install/">黑群晖 6.2.3 安装指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2020/11/09/2020/11/syno/">黑群辉安装教程 (6.2.3)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span>
+            <a class="archive-post-title" href="/2020/10/19/2020/10/zhenglun/">争论的艺术</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span>
+            <a class="archive-post-title" href="/2020/10/14/2020/10/dash-bash/">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2020/09/22/2020/09/raspberry-usb-start/">raspberry 4B Ubuntu 系统 USB 启动</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2020/09/16/2020/09/raspberry/">我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span>
+            <a class="archive-post-title" href="/2020/09/09/2020/09/lock/">悲观锁 & 乐观锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/redis-cluster/">redis 集群</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/api-gateway/">API 网关功能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2020/08/18/2020/08/jiaohanglaji/">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2020/08/13/2020/08/python/">Python & Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span>
+            <a class="archive-post-title" href="/2020/07/06/2020/07/HashMap&HashTable/">HashMap和HashTable的区别</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/ddsm/">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/esxi/">esxi 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/2020-06-17/">日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2020/05/21/2020/05/ink/">自製鋼筆染料墨水配方[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/18</span>
+            <a class="archive-post-title" href="/2020/05/18/2020/05/chrome-auto-sign-in/">解决 Chrome 无法自动填充账号密码的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2020/05/08/2020/05/zfs/">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span>
+            <a class="archive-post-title" href="/2020/05/02/2020/05/Synology%20Drive/">群晖 Drive 反复同步问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span>
+            <a class="archive-post-title" href="/2020/04/15/2020/01/java-mode/">类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span>
+            <a class="archive-post-title" href="/2020/04/01/2020/01/wordpress-domain/">WordPress 绑定多域名</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/2020/03/10/2020/01/nginx-cache/">Nginx 降低 IO 负荷</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/java/">Java 学习路线</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/pivpn/">树莓派安装 PIVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/disable-systemd-resolved/">nameserver 127.0.0.53</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2020/01/07/2020/01/km3/">杭州科目三</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2019 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/rasp-4-ubuntu/">Raspberry4 安装 Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/xp-serials-ids/">XP 序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2019/12/16/2019/12/koa-compose/">Koa-Compose 源码试写</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2019/11/26/2019/11/logstash/">Logstash conf 语法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2019/11/13/2019/11/centos5.x/">CentOS 5.x 版本 repo 地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/12</span>
+            <a class="archive-post-title" href="/2019/11/12/2019/11/ELK/">ELK 搭建</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/passwd/">Shell 自动输入 sudo 密码</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/vCenter/">vCenter 和 vCSA 对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/08</span>
+            <a class="archive-post-title" href="/2019/11/08/2019/11/esxi/">ESXi 使用笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2019/09/05/2019/08/rabbtmq-demo/">RabbitMQ Node demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span>
+            <a class="archive-post-title" href="/2019/09/02/2019/08/version/">版本号对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2019/08/13/2019/08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">单反画幅</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2019/07/21/2019/07/ssl_cert/">Let's encrypt 证书申请</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2019/07/05/2019/07/id-autoincr/">唯一 ID 生成</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2019/06/17/2019/07/codesign/">mac os codesign</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span>
+            <a class="archive-post-title" href="/2019/05/23/2019/07/redis/">redis 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/2019/04/29/2019/07/xiazaibao/">迅雷下载宝定制固件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/16</span>
+            <a class="archive-post-title" href="/2019/04/16/2019/07/gitlab-source/">GitLab Ubuntu 使用清华镜像站</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span>
+            <a class="archive-post-title" href="/2019/03/29/2019/07/syno/">黑群晖的安装 & 洗白</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/2019/03/14/2019/07/analysis-of-redis-performance/">Redis 性能问题分析（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/2019/03/13/2019/07/redis-concurrence/">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span>
+            <a class="archive-post-title" href="/2019/02/25/2019/07/mc-server-input-error/">MC 服务器启动之后无法在服务端输入指令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2019/02/21/2019/07/grub2/">关于 grub2 的修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span>
+            <a class="archive-post-title" href="/2019/01/28/2019/07/python-raw-string/">Python 字符串中的转移符</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span>
+            <a class="archive-post-title" href="/2019/01/11/2019/07/rabbitmq-install/">RabbitMQ 安装 & 添加登录用户[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/redlock/">Red Lock</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/kafka-node/">Kafka-node 的使用 Demo</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2018 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2018/11/09/2019/07/foreign-key/">MySQL 外键</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/vmware-market-expansion/">VMware 虚拟机硬盘文件扩容</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/node-proxy/">JavaScript Proxy 对象</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/2018/10/31/2019/07/kafka-auto-offset-reset/">Kafka auto.offset.reset 值</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/30</span>
+            <a class="archive-post-title" href="/2018/08/30/2019/07/iterator/">iterator(迭代器)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/python-with-as/">Python with as 的作用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/mysql-ACID/">MySQL 事务</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/2018/08/27/2019/07/guanchazhe/">Node 和观察者设计模式</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span>
+            <a class="archive-post-title" href="/2018/08/26/2019/07/mysql-engines/">MySQL 引擎</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span>
+            <a class="archive-post-title" href="/2018/08/23/2019/07/http2/">在树莓派上升级 Nginx 开启 HTTP/2</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2018/08/09/2019/07/node-buffer/">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span>
+            <a class="archive-post-title" href="/2018/08/08/2019/07/expect/">Expect 使用小记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span>
+            <a class="archive-post-title" href="/2018/07/09/2019/07/git-branch-all/">git 拉取所有远程分支</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2018/07/05/2019/07/memcached-node-package/">Nodejs memcached 包的基本用法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span>
+            <a class="archive-post-title" href="/2018/07/03/2019/08/typescript/">TypeScript 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-momery/">取消 Node 对内存上限的限制条件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-async/">Node 异步三种方式的对比 Demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span>
+            <a class="archive-post-title" href="/2018/06/01/2019/07/xcode-route/">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span>
+            <a class="archive-post-title" href="/2018/05/28/2019/07/xp-x64/">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/babel/">Babel 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/ubuntu-language/">Ubuntu 安装中文语言包</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/docker/docker-prune/">Docker 运行文件清理工具 prune</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/base64-js/">Base64 JavaScript 实现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/order/">订单的几种类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span>
+            <a class="archive-post-title" href="/2018/05/17/2019/07/openvpn-make/">编译 OpenVPN 及解决相关依赖问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span>
+            <a class="archive-post-title" href="/2018/05/16/2019/07/react-nginx/">Nginx 部署 react 项目返回 404</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span>
+            <a class="archive-post-title" href="/2018/05/13/2019/07/react-reudx-note-new-md/">React-Redux 笔记 - 其他</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2018/05/08/2019/07/react-note/">React.js 小书 - 第三阶段 - 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2018/04/23/2019/07/systemctl/">systemctl 命令(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2018/04/13/2019/07/xms/">Xms Xmx PermSize MaxPermSize 的含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/object-define-properity/">Vue.js 数据绑定原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/shell-place/">Shell 获取文件地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2018/04/07/2019/07/nas-ssh-error/">群晖 SFTP 连接失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2018/03/28/2019/07/static-ip/">Linux 静态 IP 设置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/unixbench/">使用 Unixbench 测试 CPU 性能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/zsh-autosuggestions/">oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/05</span>
+            <a class="archive-post-title" href="/2018/03/05/2019/07/public-license/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span>
+            <a class="archive-post-title" href="/2018/02/26/2019/07/san/">生成 SAN 证书并自签</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2018/02/22/2019/07/openvpn-login-auto/">使用 Expect 自动登录 OpenVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2018/02/21/2019/07/node-install/">Ubuntu 安装 Node.js 环境</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span>
+            <a class="archive-post-title" href="/2018/02/11/2019/07/auto-restart/">Shell 自动重启进程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span>
+            <a class="archive-post-title" href="/2018/01/22/2019/07/rasp-hdd/">树莓派用机械硬盘当系统盘</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2017 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/29</span>
+            <a class="archive-post-title" href="/2017/12/29/2019/07/virtual-dom/">深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span>
+            <a class="archive-post-title" href="/2017/12/26/2019/07/git-no-ff/">git merge --no-ff</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span>
+            <a class="archive-post-title" href="/2017/12/21/2019/07/gulp/">Gulp 常用插件(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span>
+            <a class="archive-post-title" href="/2017/12/14/2019/07/gulp-autoprefixer/">gulp-autoprefixer 基本使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span>
+            <a class="archive-post-title" href="/2017/12/13/2019/07/docker/docker-run/">Docker 启动后直接退出</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/ali-apt/">Ubuntu APT 更换阿里源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/docker/docker-user/">Docker 普通用户操作不用 sudo 权限</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2017/12/06/2019/07/ubuntu-swap/">Ubuntu 新增 swap</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span>
+            <a class="archive-post-title" href="/2017/11/24/2019/07/comand-control/">命令执行控制 && 与 ||(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span>
+            <a class="archive-post-title" href="/2017/11/21/2019/07/database-install/">常用数据库(缓存)的简单安装配置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2017/11/20/2019/07/inode/">优化 Ext4 分区 inode 占用空间问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/mysql-config/">my.cnf 参数解释 & 优化 (转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/gitlab-upgrade-3/">GitLab 推送了更新(三) - Nginx 反向代理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2017/10/27/2019/07/gitlab-upgrade-2/">GitLab 推送了更新(二) - 安装 docker GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/2017/10/26/2019/07/gitlab-upgrade-1/">GitLab 推送了更新(一) - 树莓派安装GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span>
+            <a class="archive-post-title" href="/2017/10/23/2019/07/openssl-key-zhuan-huan/">PFX文件提取公钥私钥</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="rabbitmq">
+                <span class="iconfont-archer">&#xe606;</span>
+                rabbitmq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="other">
+                <span class="iconfont-archer">&#xe606;</span>
+                other
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="photography">
+                <span class="iconfont-archer">&#xe606;</span>
+                photography
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubuntu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubuntu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="shell">
+                <span class="iconfont-archer">&#xe606;</span>
+                shell
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="babel">
+                <span class="iconfont-archer">&#xe606;</span>
+                babel
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="javascript">
+                <span class="iconfont-archer">&#xe606;</span>
+                javascript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mac os">
+                <span class="iconfont-archer">&#xe606;</span>
+                mac os
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mysql">
+                <span class="iconfont-archer">&#xe606;</span>
+                mysql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mongodb">
+                <span class="iconfont-archer">&#xe606;</span>
+                mongodb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redis">
+                <span class="iconfont-archer">&#xe606;</span>
+                redis
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcache">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcache
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="expect">
+                <span class="iconfont-archer">&#xe606;</span>
+                expect
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gitlab">
+                <span class="iconfont-archer">&#xe606;</span>
+                gitlab
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="raspberry">
+                <span class="iconfont-archer">&#xe606;</span>
+                raspberry
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nginx">
+                <span class="iconfont-archer">&#xe606;</span>
+                nginx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nodejs">
+                <span class="iconfont-archer">&#xe606;</span>
+                nodejs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gulp">
+                <span class="iconfont-archer">&#xe606;</span>
+                gulp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="http/2">
+                <span class="iconfont-archer">&#xe606;</span>
+                http/2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python">
+                <span class="iconfont-archer">&#xe606;</span>
+                python
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kafka">
+                <span class="iconfont-archer">&#xe606;</span>
+                kafka
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mc">
+                <span class="iconfont-archer">&#xe606;</span>
+                mc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="java">
+                <span class="iconfont-archer">&#xe606;</span>
+                java
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcached">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcached
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="synology">
+                <span class="iconfont-archer">&#xe606;</span>
+                synology
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vue">
+                <span class="iconfont-archer">&#xe606;</span>
+                vue
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openssl">
+                <span class="iconfont-archer">&#xe606;</span>
+                openssl
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openvpn">
+                <span class="iconfont-archer">&#xe606;</span>
+                openvpn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="license">
+                <span class="iconfont-archer">&#xe606;</span>
+                license
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="reactjs">
+                <span class="iconfont-archer">&#xe606;</span>
+                reactjs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redux">
+                <span class="iconfont-archer">&#xe606;</span>
+                redux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="san">
+                <span class="iconfont-archer">&#xe606;</span>
+                san
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cpu">
+                <span class="iconfont-archer">&#xe606;</span>
+                cpu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vmware">
+                <span class="iconfont-archer">&#xe606;</span>
+                vmware
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="c++">
+                <span class="iconfont-archer">&#xe606;</span>
+                c++
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="xp">
+                <span class="iconfont-archer">&#xe606;</span>
+                xp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="oh-my-zsh">
+                <span class="iconfont-archer">&#xe606;</span>
+                oh-my-zsh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="elk">
+                <span class="iconfont-archer">&#xe606;</span>
+                elk
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="centos">
+                <span class="iconfont-archer">&#xe606;</span>
+                centos
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="esxi">
+                <span class="iconfont-archer">&#xe606;</span>
+                esxi
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="php">
+                <span class="iconfont-archer">&#xe606;</span>
+                php
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="chrome">
+                <span class="iconfont-archer">&#xe606;</span>
+                chrome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ink">
+                <span class="iconfont-archer">&#xe606;</span>
+                ink
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zfs">
+                <span class="iconfont-archer">&#xe606;</span>
+                zfs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="daily">
+                <span class="iconfont-archer">&#xe606;</span>
+                daily
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="sql">
+                <span class="iconfont-archer">&#xe606;</span>
+                sql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="graphql">
+                <span class="iconfont-archer">&#xe606;</span>
+                graphql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="frp">
+                <span class="iconfont-archer">&#xe606;</span>
+                frp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kubernetes">
+                <span class="iconfont-archer">&#xe606;</span>
+                kubernetes
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="prisma">
+                <span class="iconfont-archer">&#xe606;</span>
+                prisma
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zip">
+                <span class="iconfont-archer">&#xe606;</span>
+                zip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="rar">
+                <span class="iconfont-archer">&#xe606;</span>
+                rar
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dom">
+                <span class="iconfont-archer">&#xe606;</span>
+                dom
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="前端">
+                <span class="iconfont-archer">&#xe606;</span>
+                前端
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mvn">
+                <span class="iconfont-archer">&#xe606;</span>
+                mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python pip">
+                <span class="iconfont-archer">&#xe606;</span>
+                python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubunutu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubunutu
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.vvcat.cn",
+        root: siteMetaRoot,
+        author: "Maple"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>

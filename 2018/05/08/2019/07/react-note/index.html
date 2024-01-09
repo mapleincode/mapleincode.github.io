@@ -1,0 +1,3741 @@
+<!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:21:17
+-->
+<!DOCTYPE html>
+<html lang="">
+    <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:22:15
+-->
+<!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Maple">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Maple">
+    
+        <meta name="keywords" content="hexo,blog,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="React.js 小书  第三阶段Lesson 28 - 高阶组件(Higher-Order Components) 高阶组件是函数。  高阶组件的作用是提高代码复用度。  高阶组件基本结构 123456789101112export default (某个子组件, 其他参数) &amp;#123;    class NewComponet extends Componet &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React.js 小书 - 第三阶段 - 学习笔记">
+<meta property="og:url" content="https://blog.vvcat.cn/2018/05/08/2019/07/react-note/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="React.js 小书  第三阶段Lesson 28 - 高阶组件(Higher-Order Components) 高阶组件是函数。  高阶组件的作用是提高代码复用度。  高阶组件基本结构 123456789101112export default (某个子组件, 其他参数) &amp;#123;    class NewComponet extends Componet &amp;#123;">
+<meta property="og:locale">
+<meta property="article:published_time" content="2018-05-08T09:38:23.000Z">
+<meta property="article:modified_time" content="2024-01-09T00:20:32.846Z">
+<meta property="article:author" content="Maple">
+<meta property="article:tag" content="reactjs">
+<meta property="article:tag" content="redux">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/favicon.png">
+    
+    <title>React.js 小书 - 第三阶段 - 学习笔记 · Maple&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from bootcdn failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Maple's Blog.</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">Maple&#39;s Blog.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">React.js 小书 - 第三阶段 - 学习笔记</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/mapleincode/images/master/img/20200522181805.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                React.js 小书 - 第三阶段 - 学习笔记
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redux">redux</a>
+    
+</div>
+
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3k</span>阅读时长: <span class="post-count reading-time">12 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2018/05/08</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      // 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <blockquote>
+<p><a target="_blank" rel="noopener" href="http://huziketang.mangojuice.top/books/react/">React.js 小书</a></p>
+</blockquote>
+<h2 id="第三阶段"><a href="#第三阶段" class="headerlink" title="第三阶段"></a>第三阶段</h2><h3 id="Lesson-28-高阶组件-Higher-Order-Components"><a href="#Lesson-28-高阶组件-Higher-Order-Components" class="headerlink" title="Lesson 28 - 高阶组件(Higher-Order Components)"></a>Lesson 28 - 高阶组件(Higher-Order Components)</h3><ol>
+<li><p>高阶组件是函数。</p>
+</li>
+<li><p>高阶组件的作用是提高代码复用度。</p>
+</li>
+<li><p>高阶组件基本结构</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (某个子组件, 其他参数) &#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">NewComponet</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Componet</span> &#123;</span><br><span class="line">        <span class="comment">// 各种可复用的逻辑，比如请求服务器、读取缓存</span></span><br><span class="line">        <span class="comment">// 也可以修改其他参数然后传到子组件中</span></span><br><span class="line">        <span class="comment">// const 修改后的参数 = 处理函数(其他参数)</span></span><br><span class="line">        <span class="comment">// this.setState(&#123; 修改后的参数 &#125;)</span></span><br><span class="line">        <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> &lt;某个子组件 data=&#123;<span class="variable language_">this</span>.修改后的参数&#125;/&gt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">NewComponet</span>; <span class="comment">// 返回这个重新被封装过的组件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>高阶组件就是一个函数，传给它一个组件，它返回一个新的组件。</strong></p>
+</li>
+</ol>
+<h3 id="Lession-29-React-js-的-context"><a href="#Lession-29-React-js-的-context" class="headerlink" title="Lession 29 - React.js 的 context"></a>Lession 29 - React.js 的 context</h3><ol>
+<li><p>作者意思是别用 context</p>
+</li>
+<li><p>context 翻译过来就是全局的变量。但是前段的页面的层次会比较恐怖，所以前端们比较害怕全局的的属性容易被影响。</p>
+</li>
+<li><p>控制 context 的办法有两个: 1. 控制定义，让定义麻烦点。 2. 控制接受，让接受麻烦点。</p>
+</li>
+<li><p>context 的基本代码演示:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假设这个是父组件</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Index</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> childContextTypes = &#123;</span><br><span class="line">        变量: <span class="title class_">PropTypes</span>.<span class="property">string</span> <span class="comment">// prop-types 包。据说是必写的。为了让代码复杂点儿。</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123; <span class="attr">themeColor</span>: <span class="string">&#x27;red&#x27;</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    getChildContext () &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123; <span class="attr">themeColr</span>: <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">themeColor</span> &#125;; <span class="comment">// 这是子组件获得 Context 的函数 前端就是喜欢定义些奇怪的函数，然后方便框架自动获取 orz</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 然后这个是子组件，子组件要获得父(爷爷)组件传过来的全局变量 context</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Title</span> <span class="keyword">extends</span> <span class="title class_ inherited__">Component</span> &#123;</span><br><span class="line">    <span class="keyword">static</span> contextTypes = &#123;</span><br><span class="line">        <span class="attr">thiemeColor</span>: <span class="title class_">PropTypes</span>.<span class="property">string</span> <span class="comment">// 同 childContextTypes,也是为了麻烦</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">style</span>=<span class="string">&#123;&#123;color:</span> <span class="attr">this.context.themeColor</span> &#125;&#125;&gt;</span>标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Context 只能被子组件访问，哦对了还能被修改的样子。</p>
+</li>
+<li><p>作者再次强调别用那个玩意儿，后面有封装过的更好用的东西介绍。</p>
+</li>
+</ol>
+<h3 id="Lession-30-Redux（一）：优雅地修改共享状态"><a href="#Lession-30-Redux（一）：优雅地修改共享状态" class="headerlink" title="Lession 30 - Redux（一）：优雅地修改共享状态"></a>Lession 30 - Redux（一）：优雅地修改共享状态</h3><ol>
+<li><p>Redux 是一种前端框架架构形式</p>
+</li>
+<li><p>React-redux 才是将这个架构形式和 React.js 结合起来的一个库。</p>
+</li>
+<li><p><code>appState</code>专门存数据的地方，前端毕竟模块化比较多，<code>(ಥ _ ಥ)</code>前端真难。</p>
+</li>
+<li><p>然后就是<code>dispatch</code>这个方法</p>
+<ol>
+<li><p>一个函数，专门管数据修改</p>
+</li>
+<li><p>格式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">dispatch</span>(<span class="params">action = &#123; type: <span class="string">&#x27;&#x27;</span> &#125;</span>) &#123;</span><br><span class="line">    <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">        <span class="attr">case</span>: <span class="string">&#x27;XXXX&#x27;</span>:</span><br><span class="line">            <span class="comment">// 修改数据</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="attr">default</span>: </span><br><span class="line">              <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>dispatch 可以方便数据修改操作的管理，是的数据被修改的时候容易被监控。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="Lession-31-动手实现-Redux（二）：抽离-store-和监控数据变化"><a href="#Lession-31-动手实现-Redux（二）：抽离-store-和监控数据变化" class="headerlink" title="Lession 31 - 动手实现 Redux（二）：抽离 store 和监控数据变化"></a>Lession 31 - 动手实现 Redux（二）：抽离 store 和监控数据变化</h3><ol>
+<li><p><code>createStore</code>，字面意思就是创建 <code>store</code>，而<code>store</code>就是 <code>appStore</code> + <code>dispatch</code>。估计类似一块块的专门的存储器 + 修改器。</p>
+</li>
+<li><p>createStore 接受两个参数: <code>state</code> 和 <code>stateChanger</code>，返回<code>store</code>对象，包含<code>getState()</code>和<code>dispatch()</code>。</p>
+</li>
+<li><p><code>state</code>和<code>stateChanger</code>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> appState = &#123;</span><br><span class="line">  <span class="attr">title</span>: &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;React.js 小书&#x27;</span>,</span><br><span class="line">    <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">content</span>: &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;React.js 小书内容&#x27;</span>,</span><br><span class="line">    <span class="attr">color</span>: <span class="string">&#x27;blue&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="comment">// 其实就是一个 state 对象 没啥特点</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">stateChanger</span> (state, action) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.<span class="property">type</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;UPDATE_TITLE_TEXT&#x27;</span>:</span><br><span class="line">      state.<span class="property">title</span>.<span class="property">text</span> = action.<span class="property">text</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;UPDATE_TITLE_COLOR&#x27;</span>:</span><br><span class="line">      state.<span class="property">title</span>.<span class="property">color</span> = action.<span class="property">color</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125; <span class="comment">// 这个比较有意思，首先这是一个函数，有两个变量</span></span><br><span class="line"><span class="comment">// 变量1 是 state 一个对象用来存储数据</span></span><br><span class="line"><span class="comment">// 变量2 就是之前提过的 action，包含一个 type</span></span><br><span class="line"><span class="comment">// 这个 func 是一个 switch ，根据 action.type 对 state 进行修改</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(appState, stateChanger);</span><br><span class="line"></span><br><span class="line">store.<span class="title function_">getState</span>();</span><br><span class="line">store.<span class="title function_">dispatch</span>(&#123; <span class="attr">type</span>: <span class="string">&#x27;UPDATE_TITLE_TEXT&#x27;</span>, <span class="attr">text</span>: <span class="string">&#x27;这是另一个标题&#x27;</span> &#125;);</span><br><span class="line">store.<span class="title function_">getState</span>(); <span class="comment">// 新的数据</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>listener 是一个监听函数。然后 store.subscribe(listener)。然后他就会保存这个监听函数。然后调用<code>store.dispatch()</code>然后监听函数就会被轮询调用一遍。Noder 可以当做一个 callback 来理解。只是这个 callback 可以多个传入(其实 Node 的 callback 也可以这么写)。</p>
+<blockquote>
+<p>subscribe subscribe subscribe subscribe … 我只是在背单词&#x2F;(ㄒoㄒ)&#x2F;</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Lession-32-动手实现-Redux（三）：纯函数（Pure-Function）简介"><a href="#Lession-32-动手实现-Redux（三）：纯函数（Pure-Function）简介" class="headerlink" title="Lession 32 - 动手实现 Redux（三）：纯函数（Pure Function）简介"></a>Lession 32 - 动手实现 Redux（三）：纯函数（Pure Function）简介</h3><ol>
+<li>一个函数的返回结果只依赖于它的参数，并且在执行过程里面没有副作用，我们就把这个函数叫做纯函数。</li>
+<li>粗暴的理解纯函数<ol>
+<li>函数里所有执行的变量，要么是穿进去，要么本来就是在内部的。</li>
+<li>不修改传入的那部分参数。</li>
+<li>类似 String.slice()，但是 Array.splice() 就不是（因为修改了传入的参数）。</li>
+</ol>
+</li>
+<li>纯函数的纯在是为了安全。呃，如果是后端，后端会把你的函数都 hack 掉，吼吼~没有什么东西是改不了的。</li>
+</ol>
+<h3 id="Lession-33-动手实现-Redux（四）：共享结构的对象提高性能"><a href="#Lession-33-动手实现-Redux（四）：共享结构的对象提高性能" class="headerlink" title="Lession 33 - 动手实现 Redux（四）：共享结构的对象提高性能"></a>Lession 33 - 动手实现 Redux（四）：共享结构的对象提高性能</h3><ol>
+<li><p>复制对象的小技巧</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">const</span> obj2 = &#123; ...obj &#125; <span class="comment">// =&gt; &#123; a: 1, b: 2 &#125; 类似 lodash.clone();</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>noder: 我们有 Lodash !!</p>
+</blockquote>
+</li>
+<li><p>对 store 里的数据进行处理时，不在原有的 obj 上处理，而是重新新建一个 newObj。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newAppState1 = &#123; <span class="comment">// 新建一个 newAppState1</span></span><br><span class="line">  ...newAppState, <span class="comment">// 复制 newAppState1 里面的内容</span></span><br><span class="line">  <span class="attr">title</span>: &#123; <span class="comment">// 用一个新的对象覆盖原来的 title 属性</span></span><br><span class="line">    ...newAppState.<span class="property">title</span>, <span class="comment">// 复制原来 title 对象里面的内容</span></span><br><span class="line">    <span class="attr">color</span>: <span class="string">&quot;blue&quot;</span> <span class="comment">// 覆盖 color 属性</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原因: 可以保证修改前的数据和修改后的数据的 obj 不是同一个。</p>
+<p>这么做的好处有：</p>
+<pre><code> 1. 写法看起来更牛逼点
+    2. 子对象，只有被修改的对象才会被新建，没有被修改的不会被新建。
+</code></pre>
+<p>用 Node 的方式来写就是:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> _ = <span class="built_in">require</span>(<span class="string">&#x27;lodash&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> newAppState = &#123;</span><br><span class="line">    <span class="attr">title</span>: &#123;</span><br><span class="line">        <span class="attr">color</span>: <span class="string">&#x27;red&#x27;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">qqqq</span>: <span class="string">&#x27;qqqq&#x27;</span>,</span><br><span class="line">    <span class="attr">pppp</span>: &#123;</span><br><span class="line">        <span class="attr">pp</span>: <span class="string">&#x27;pp&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> newAppState1 = _.<span class="title function_">clone</span>(newAppState);</span><br><span class="line">newAppState1.<span class="property">title</span> = _.<span class="title function_">clone</span>(newAppState1.<span class="property">title</span>);</span><br><span class="line">newAppState1.<span class="property">title</span>.<span class="property">color</span> = <span class="string">&#x27;red&#x27;</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现办法是修改 stateChanger 的代码。修改返回为新建对象（但是我觉得是不是得判断不是和原有值相同 ？？？）</p>
+</li>
+</ol>
+<blockquote>
+<p>类似 Vue.js 数据绑定的确比 React.js 的实现来的有条理的多。</p>
+</blockquote>
+<h3 id="Lession-34-动手实现-Redux（五）：不要问为什么的-reducer"><a href="#Lession-34-动手实现-Redux（五）：不要问为什么的-reducer" class="headerlink" title="Lession 34 - 动手实现 Redux（五）：不要问为什么的 reducer"></a>Lession 34 - 动手实现 Redux（五）：不要问为什么的 reducer</h3><ol>
+<li>好吧  reducer 是大爷: 将 stateChanger 和 appState 合并到了一个。</li>
+<li>reducer 兼顾了数据初始化 &amp; 数据变化处理。</li>
+<li>reducer 就是之前说的纯函数。</li>
+<li>reducer 接受两个参数: 1. state 2. action。如果 state 为 null 则初始化 state。返回初始化后或者被修改后的 state。</li>
+<li>reducer 的作用标准说法是: 初始化和计算新的<code>state</code>。面试的同学请记清楚这句话。</li>
+</ol>
+<h3 id="Lession-35-动手实现-Redux（六）：Redux-总结"><a href="#Lession-35-动手实现-Redux（六）：Redux-总结" class="headerlink" title="Lession 35  - 动手实现 Redux（六）：Redux 总结"></a>Lession 35  - 动手实现 Redux（六）：Redux 总结</h3><p>整个 redux 流程:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定一个 reducer</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">reducer</span> (state, action) &#123;</span><br><span class="line">  <span class="comment">/* 初始化 state 和 switch case */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 生成 store</span></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(reducer)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听数据变化重新渲染页面</span></span><br><span class="line">store.<span class="title function_">subscribe</span>(<span class="function">() =&gt;</span> <span class="title function_">renderApp</span>(store.<span class="title function_">getState</span>()))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 首次渲染页面</span></span><br><span class="line"><span class="title function_">renderApp</span>(store.<span class="title function_">getState</span>()) </span><br><span class="line"></span><br><span class="line"><span class="comment">// 后面可以随意 dispatch 了，页面自动更新</span></span><br><span class="line">store.<span class="title function_">dispatch</span>(...)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Lession-36-动手实现-React-redux（一）：初始化工程"><a href="#Lession-36-动手实现-React-redux（一）：初始化工程" class="headerlink" title="Lession 36 - 动手实现 React-redux（一）：初始化工程"></a>Lession 36 - 动手实现 React-redux（一）：初始化工程</h3><p>呃…一个 demo。</p>
+<h3 id="Lession-37-动手实现-React-redux（二）：结合-context-和-store"><a href="#Lession-37-动手实现-React-redux（二）：结合-context-和-store" class="headerlink" title="Lession 37 - 动手实现 React-redux（二）：结合 context 和 store"></a>Lession 37 - 动手实现 React-redux（二）：结合 context 和 store</h3><p>也是一个 demo。不过写着写着大概明白了什么回事。</p>
+<ol>
+<li>通过 context 来管理全局的一个 store。</li>
+<li>store 存储着子组件也需要的数据。</li>
+<li>子组件获得数据直接通过 store.getState()，而子组件修改数据则通过 store.dispatch(action)。</li>
+<li>不需要繁琐的从父组件传  handle 函数，子组件通过 <code>onclick=&#123;this.prop.handleXXX.bind(this)&#125;</code>来实现数据传递。</li>
+</ol>
+<h3 id="Lession-38-动手实现-React-redux（三）：connect-和-mapStateToProps"><a href="#Lession-38-动手实现-React-redux（三）：connect-和-mapStateToProps" class="headerlink" title="Lession 38 - 动手实现 React-redux（三）：connect 和 mapStateToProps"></a>Lession 38 - 动手实现 React-redux（三）：connect 和 mapStateToProps</h3><p>介绍了一个叫做<code>connect</code>的函数</p>
+<p>实现代码: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &#x27;react&#x27;</span><br><span class="line">import PropTypes from &#x27;prop-types&#x27;</span><br><span class="line"></span><br><span class="line">export const connect = (mapStateToProps) =&gt; (WrappedComponent) =&gt; &#123;</span><br><span class="line">  class Connect extends Component &#123;</span><br><span class="line">    static contextTypes = &#123;</span><br><span class="line">      store: PropTypes.object</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    constructor () &#123;</span><br><span class="line">      super()</span><br><span class="line">      this.state = &#123; allProps: &#123;&#125; &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillMount () &#123;</span><br><span class="line">      const &#123; store &#125; = this.context</span><br><span class="line">      this._updateProps()</span><br><span class="line">      store.subscribe(() =&gt; this._updateProps())</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    _updateProps () &#123;</span><br><span class="line">      const &#123; store &#125; = this.context</span><br><span class="line">      let stateProps = mapStateToProps(store.getState(), this.props) // 额外传入 props，让获取数据更加灵活方便</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        allProps: &#123; // 整合普通的 props 和从 state 生成的 props</span><br><span class="line">          ...stateProps,</span><br><span class="line">          ...this.props</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">      return &lt;WrappedComponent &#123;...this.state.allProps&#125; /&gt;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return Connect</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>mapStateToProps 是一个转换函数，方便传递需要的参数</li>
+</ol>
+<p>效果代码: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const mapStateToProps = (state) =&gt; &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    themeColor: state.themeColor</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">Header = connect(mapStateToProps)(Header);</span><br></pre></td></tr></table></figure>
+
+<p>通过 connect 函数和一个 mapStateToProps 实现 store 和子组件的数据获取和数据绑定。</p>
+<h3 id="Lession-38-动手实现-React-redux（四）：mapDispatchToProps"><a href="#Lession-38-动手实现-React-redux（四）：mapDispatchToProps" class="headerlink" title="Lession 38 - 动手实现 React-redux（四）：mapDispatchToProps"></a>Lession 38 - 动手实现 React-redux（四）：mapDispatchToProps</h3><blockquote>
+<p>vscode 直接提示了 mapDispatchToProps ，估计也是和前者差不多的东西，通过一个高阶函数来实现，store 和函数的调用。</p>
+</blockquote>
+<p>我猜是通过 store + mapDispatchToProps 得到一个特殊的函数。</p>
+<p>首先在 connet 方法中加入了一个新的函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">export const connect = (mapStateToProps, mapDispatchToProps) =&gt; (WrappedComponent) =&gt; &#123;</span><br><span class="line">    class Connect extends Component &#123;</span><br><span class="line">        static contextProps = &#123;</span><br><span class="line">            store: PropTypes.object</span><br><span class="line">        &#125;</span><br><span class="line">        constructor () &#123;</span><br><span class="line">            super()</span><br><span class="line">            this.state = &#123;</span><br><span class="line">                allProps: &#123;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        _updateProps () &#123;</span><br><span class="line">              const &#123; store &#125; = this.context</span><br><span class="line">              let stateProps = mapStateToProps</span><br><span class="line">                ? mapStateToProps(store.getState(), this.props)</span><br><span class="line">                : &#123;&#125; // 防止 mapStateToProps 没有传入</span><br><span class="line">              let dispatchProps = mapDispatchToProps</span><br><span class="line">                ? mapDispatchToProps(store.dispatch, this.props)</span><br><span class="line">                : &#123;&#125; // 防止 mapDispatchToProps 没有传入</span><br><span class="line">              this.setState(&#123;</span><br><span class="line">                allProps: &#123;</span><br><span class="line">                      ...stateProps,</span><br><span class="line">                      ...dispatchProps,</span><br><span class="line">                      ...this.props</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            const store = this.context.store;</span><br><span class="line">            this._updateProps();</span><br><span class="line">            store.subscribe(() =&gt; this._updateProps();</span><br><span class="line">        &#125;</span><br><span class="line">        render() &#123;</span><br><span class="line">            return &lt;WrappedComponent &#123;...this.state.allProps&#125; /&gt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return Connect;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="mapDispatchToProps"><a href="#mapDispatchToProps" class="headerlink" title="mapDispatchToProps"></a>mapDispatchToProps</h4><p>好像是把 dispatch 的函数转换成 props，然后子组件直接调用 <code>this.props.xxx</code>，在内部写成<code>&lt;button onclick=&#123;this.props.xxx.bind(this)&#125;&gt;</code> 。</p>
+<p>不过看到后面是多了一部，现在子组件内部封装成一个函数:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class ThemeSwitch extends Component &#123;</span><br><span class="line">    static propTypes = &#123;</span><br><span class="line">        themeColor: PropTypes.string,</span><br><span class="line">        onSwitchColor: PropTypes.func</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handleSwitchColor(color) &#123;</span><br><span class="line">        if(this.props.onSwitchColor) &#123;</span><br><span class="line">            this.props.onSwitchColor(color); // 感觉还是为了防止未传入 props 导致组件报错</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;button onclick=&#123;this.handleSwitchColor.bind(this, &#x27;color&#x27;)&#125;&gt;&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>要注意一点是: </p>
+<p>mapStateToProps 和 mapDispathcToProps 的第二个参数都是<code>this.props</code>，似乎是<code>react-redux</code>里面的组件的 props 传入进去。估计只会会提到这一点。</p>
+<h3 id="Lession-40-动手实现-React-redux（五）：Provider"><a href="#Lession-40-动手实现-React-redux（五）：Provider" class="headerlink" title="Lession - 40 动手实现 React-redux（五）：Provider"></a>Lession - 40 动手实现 React-redux（五）：Provider</h3><p>首先第一感觉也是和<code>connect</code> 差不多的东西。为了分离 <code>this.context</code>出去，之前 createStore 还是放在父组件 <code>Index</code>上。</p>
+<p>后面发现完全想错了。</p>
+<ol>
+<li>Provider 是一个组件。</li>
+<li>Provider 用来包裹主组件，来实现 store 的创建和透传。</li>
+<li>通过 Provider，直接在其 props 里传入 store，实现对 store 的引用。而作为真正主组件的<code>Index</code>，则只要简单的结构代码就 OK 了。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">// 头部引入 Provider</span><br><span class="line">import &#123; Provider &#125; from &#x27;./react-redux&#x27;</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">// 删除 Index 里面所有关于 context 的代码</span><br><span class="line">class Index extends Component &#123;</span><br><span class="line">  render () &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;Header /&gt;</span><br><span class="line">        &lt;Content /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const store = createStore(themeReducer);</span><br><span class="line"></span><br><span class="line">// 把 Provider 作为组件树的根节点</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;Index /&gt;</span><br><span class="line">  &lt;/Provider&gt;,</span><br><span class="line">  document.getElementById(&#x27;root&#x27;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Lession-41-动手实现-React-redux（六）：React-redux-总结"><a href="#Lession-41-动手实现-React-redux（六）：React-redux-总结" class="headerlink" title="Lession - 41 动手实现 React-redux（六）：React-redux 总结"></a>Lession - 41 动手实现 React-redux（六）：React-redux 总结</h3><p>主要讲述了 redux 概念 和  redux-react 基本逻辑:</p>
+<ol>
+<li>connect 用来将 redux 相关代码抽离统一，主要是 store 中数据的传递和修改和绑定</li>
+<li>Provider  用来将 context 初始化的代码抽离。</li>
+<li>mapStateToProps state &#x3D;&gt; props。将 store.getState() 转换成你需要的数据。</li>
+<li>mapDispatchToProps dispatch &#x3D;&gt; props。一个传入 dispatch 的函数。将 dispatch 封装到一个新的函数，用以直接调用。</li>
+<li>createState 创建 store</li>
+<li>reducer 创建 store 时定义的规则。</li>
+</ol>
+<h3 id="Lession-42-使用真正的-Redux-和-React-redux"><a href="#Lession-42-使用真正的-Redux-和-React-redux" class="headerlink" title="Lession - 42 使用真正的 Redux 和 React-redux"></a>Lession - 42 使用真正的 Redux 和 React-redux</h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install redux react-redux --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span>, connect &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里才真的认识到， redux 只是一种数据共享和管理的方式，所以 createStore 要从 redux 里面取。</p>
+<p>而其他的实现则是基于 react ，所以才有了 react-redux。</p>
+<p>还发现之前 reducer 把参数顺序搞错了，应该 const reducer &#x3D; (state, action) {}</p>
+<h3 id="Lession-43-Smart-组件-vs-Dumb-组件"><a href="#Lession-43-Smart-组件-vs-Dumb-组件" class="headerlink" title="Lession - 43  Smart 组件 vs Dumb 组件"></a>Lession - 43  Smart 组件 vs Dumb 组件</h3><blockquote>
+<p>杀马特组件 ？？？？</p>
+</blockquote>
+<ol>
+<li><p>通过<code>props</code> 渲染确定结果的组件我们把它叫做 Dumb 组件: 特点依赖少，但是对数据处理能力较差</p>
+</li>
+<li><p>Smart 组件专门做数据相关的应用逻辑，和各种数据打交道、和 Ajax 打交道</p>
+</li>
+<li><p>作者强调， Dumb 不应该引用 Smart 组件导致复用度变低。</p>
+</li>
+<li><p>创建组件分类</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">src/</span><br><span class="line">  components/ -- Dumb 组件</span><br><span class="line">  containers/ -- Smart 组件</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.vvcat.cn">Maple</a>
+            <p>原文链接：<a href="https://blog.vvcat.cn/2018/05/08/2019/07/react-note/">https://blog.vvcat.cn/2018/05/08/2019/07/react-note/</a>
+            <p>发表日期：<a href="https://blog.vvcat.cn/2018/05/08/2019/07/react-note/">May 8th 2018, 5:38:23 pm</a>
+            <p>更新日期：<a href="https://blog.vvcat.cn/2018/05/08/2019/07/react-note/">January 9th 2024, 8:20:32 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2018/05/13/2019/07/react-reudx-note-new-md/" title="React-Redux 笔记 - 其他">
+                    <div class="nextTitle">React-Redux 笔记 - 其他</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2018/04/23/2019/07/systemctl/" title="systemctl 命令(转)">
+                    <div class="prevTitle">systemctl 命令(转)</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://blog.vvcat.cn/2018/05/08/2019/07/react-note/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "React.js 小书 - 第三阶段 - 学习笔记"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://blog-mapleincode-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+            
+
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:23:33
+-->
+
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-05 14:10:53
+-->
+<footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:llkj13579@126.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/mapleincode" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com/people/mapleincode" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/830610" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20017606号-1</a>
+                </span>
+            
+            
+                
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704" target="_blank">浙公网安备33011002014704号</a>
+                </span>
+            
+        </div>
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%98%B6%E6%AE%B5"><span class="toc-number">1.</span> <span class="toc-text">第三阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Lesson-28-%E9%AB%98%E9%98%B6%E7%BB%84%E4%BB%B6-Higher-Order-Components"><span class="toc-number">1.1.</span> <span class="toc-text">Lesson 28 - 高阶组件(Higher-Order Components)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-29-React-js-%E7%9A%84-context"><span class="toc-number">1.2.</span> <span class="toc-text">Lession 29 - React.js 的 context</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-30-Redux%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BF%AE%E6%94%B9%E5%85%B1%E4%BA%AB%E7%8A%B6%E6%80%81"><span class="toc-number">1.3.</span> <span class="toc-text">Lession 30 - Redux（一）：优雅地修改共享状态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-31-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-Redux%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E6%8A%BD%E7%A6%BB-store-%E5%92%8C%E7%9B%91%E6%8E%A7%E6%95%B0%E6%8D%AE%E5%8F%98%E5%8C%96"><span class="toc-number">1.4.</span> <span class="toc-text">Lession 31 - 动手实现 Redux（二）：抽离 store 和监控数据变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-32-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-Redux%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9A%E7%BA%AF%E5%87%BD%E6%95%B0%EF%BC%88Pure-Function%EF%BC%89%E7%AE%80%E4%BB%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Lession 32 - 动手实现 Redux（三）：纯函数（Pure Function）简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-33-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-Redux%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E5%85%B1%E4%BA%AB%E7%BB%93%E6%9E%84%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD"><span class="toc-number">1.6.</span> <span class="toc-text">Lession 33 - 动手实现 Redux（四）：共享结构的对象提高性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-34-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-Redux%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9A%E4%B8%8D%E8%A6%81%E9%97%AE%E4%B8%BA%E4%BB%80%E4%B9%88%E7%9A%84-reducer"><span class="toc-number">1.7.</span> <span class="toc-text">Lession 34 - 动手实现 Redux（五）：不要问为什么的 reducer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-35-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-Redux%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9ARedux-%E6%80%BB%E7%BB%93"><span class="toc-number">1.8.</span> <span class="toc-text">Lession 35  - 动手实现 Redux（六）：Redux 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-36-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-React-redux%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%88%9D%E5%A7%8B%E5%8C%96%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.9.</span> <span class="toc-text">Lession 36 - 动手实现 React-redux（一）：初始化工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-37-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-React-redux%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9A%E7%BB%93%E5%90%88-context-%E5%92%8C-store"><span class="toc-number">1.10.</span> <span class="toc-text">Lession 37 - 动手实现 React-redux（二）：结合 context 和 store</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-38-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-React-redux%EF%BC%88%E4%B8%89%EF%BC%89%EF%BC%9Aconnect-%E5%92%8C-mapStateToProps"><span class="toc-number">1.11.</span> <span class="toc-text">Lession 38 - 动手实现 React-redux（三）：connect 和 mapStateToProps</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-38-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-React-redux%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9AmapDispatchToProps"><span class="toc-number">1.12.</span> <span class="toc-text">Lession 38 - 动手实现 React-redux（四）：mapDispatchToProps</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mapDispatchToProps"><span class="toc-number">1.12.1.</span> <span class="toc-text">mapDispatchToProps</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-40-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-React-redux%EF%BC%88%E4%BA%94%EF%BC%89%EF%BC%9AProvider"><span class="toc-number">1.13.</span> <span class="toc-text">Lession - 40 动手实现 React-redux（五）：Provider</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-41-%E5%8A%A8%E6%89%8B%E5%AE%9E%E7%8E%B0-React-redux%EF%BC%88%E5%85%AD%EF%BC%89%EF%BC%9AReact-redux-%E6%80%BB%E7%BB%93"><span class="toc-number">1.14.</span> <span class="toc-text">Lession - 41 动手实现 React-redux（六）：React-redux 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-42-%E4%BD%BF%E7%94%A8%E7%9C%9F%E6%AD%A3%E7%9A%84-Redux-%E5%92%8C-React-redux"><span class="toc-number">1.15.</span> <span class="toc-text">Lession - 42 使用真正的 Redux 和 React-redux</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Install"><span class="toc-number">1.15.1.</span> <span class="toc-text">Install</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Usage"><span class="toc-number">1.15.2.</span> <span class="toc-text">Usage</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lession-43-Smart-%E7%BB%84%E4%BB%B6-vs-Dumb-%E7%BB%84%E4%BB%B6"><span class="toc-number">1.16.</span> <span class="toc-text">Lession - 43  Smart 组件 vs Dumb 组件</span></a></li></ol></li></ol>
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 178
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span>
+            <a class="archive-post-title" href="/2023/12/20/2023/12/validation-api/">validation-api</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/20</span>
+            <a class="archive-post-title" href="/2023/09/20/2023/09/shutil/">Python shutil 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/31</span>
+            <a class="archive-post-title" href="/2023/08/31/2023/08/nestjs-provider/">Nestjs Provider</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2023/08/03/2023/08/mvn-command/">mvn 命令参数含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span>
+            <a class="archive-post-title" href="/2023/07/26/2023/07/after-poweroff-force/">强关 esxi，数据损坏和修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023/05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023/04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023/04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023/04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023/03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023/02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023/02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023/01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022/12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022/08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022/08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/distributed-lock/">分布式互斥</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022/08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022/08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022/08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/maven-settings/">maven settings.xml 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022/08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022/08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022/07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022/06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022/06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022/04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022/04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022/04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-pip/">python 更换国内镜像源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022/04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/iptables/">linux 端口转发 iptables</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/03/python-3-minutes/">3 分钟学习 (Python)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/04/maven-notion/">mvn 笔记精简</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span>
+            <a class="archive-post-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/09</span>
+            <a class="archive-post-title" href="/2022/02/09/2022/01/unrar/">python 对 zip 和 rar 文件进行解压</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/2021/09/synology-drive-icon/">Synolog 群晖 Drive 图标不显示的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/memcache-lock/">memcached 实现高并发条件下全局锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/raspberry-watchdog/">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2021/07/21/2021/07/esxi-copy/">ESXi 支持复制粘贴</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">k8s mysql demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span>
+            <a class="archive-post-title" href="/2021/05/24/2021/04/frp/">frp 的使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/prisma-connection-urls/">Prisma connection URLs</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/GraphQL/">GraphQL</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2021/04/12/2021/04/kubernetes/">kubernetes 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span>
+            <a class="archive-post-title" href="/2021/04/08/2021/04/nginx-ws/">Nginx 支持 WebSocket</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span>
+            <a class="archive-post-title" href="/2021/02/24/2021/02/baijiu/">中国白酒分类</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span>
+            <a class="archive-post-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">阿里云 Ubuntu 数据盘格式化和挂载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span>
+            <a class="archive-post-title" href="/2020/11/23/2020/11/dpkg-bad-inconsistent-state/">Dpkg 包损坏无法安装 & 卸载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2020/11/13/2020/11/syno-install/">黑群晖 6.2.3 安装指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2020/11/09/2020/11/syno/">黑群辉安装教程 (6.2.3)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span>
+            <a class="archive-post-title" href="/2020/10/19/2020/10/zhenglun/">争论的艺术</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span>
+            <a class="archive-post-title" href="/2020/10/14/2020/10/dash-bash/">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2020/09/22/2020/09/raspberry-usb-start/">raspberry 4B Ubuntu 系统 USB 启动</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2020/09/16/2020/09/raspberry/">我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span>
+            <a class="archive-post-title" href="/2020/09/09/2020/09/lock/">悲观锁 & 乐观锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/redis-cluster/">redis 集群</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/api-gateway/">API 网关功能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2020/08/18/2020/08/jiaohanglaji/">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2020/08/13/2020/08/python/">Python & Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span>
+            <a class="archive-post-title" href="/2020/07/06/2020/07/HashMap&HashTable/">HashMap和HashTable的区别</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/ddsm/">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/esxi/">esxi 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/2020-06-17/">日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2020/05/21/2020/05/ink/">自製鋼筆染料墨水配方[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/18</span>
+            <a class="archive-post-title" href="/2020/05/18/2020/05/chrome-auto-sign-in/">解决 Chrome 无法自动填充账号密码的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2020/05/08/2020/05/zfs/">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span>
+            <a class="archive-post-title" href="/2020/05/02/2020/05/Synology%20Drive/">群晖 Drive 反复同步问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span>
+            <a class="archive-post-title" href="/2020/04/15/2020/01/java-mode/">类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span>
+            <a class="archive-post-title" href="/2020/04/01/2020/01/wordpress-domain/">WordPress 绑定多域名</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/2020/03/10/2020/01/nginx-cache/">Nginx 降低 IO 负荷</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/java/">Java 学习路线</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/pivpn/">树莓派安装 PIVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/disable-systemd-resolved/">nameserver 127.0.0.53</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2020/01/07/2020/01/km3/">杭州科目三</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2019 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/rasp-4-ubuntu/">Raspberry4 安装 Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/xp-serials-ids/">XP 序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2019/12/16/2019/12/koa-compose/">Koa-Compose 源码试写</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2019/11/26/2019/11/logstash/">Logstash conf 语法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2019/11/13/2019/11/centos5.x/">CentOS 5.x 版本 repo 地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/12</span>
+            <a class="archive-post-title" href="/2019/11/12/2019/11/ELK/">ELK 搭建</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/passwd/">Shell 自动输入 sudo 密码</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/vCenter/">vCenter 和 vCSA 对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/08</span>
+            <a class="archive-post-title" href="/2019/11/08/2019/11/esxi/">ESXi 使用笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2019/09/05/2019/08/rabbtmq-demo/">RabbitMQ Node demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span>
+            <a class="archive-post-title" href="/2019/09/02/2019/08/version/">版本号对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2019/08/13/2019/08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">单反画幅</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2019/07/21/2019/07/ssl_cert/">Let's encrypt 证书申请</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2019/07/05/2019/07/id-autoincr/">唯一 ID 生成</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2019/06/17/2019/07/codesign/">mac os codesign</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span>
+            <a class="archive-post-title" href="/2019/05/23/2019/07/redis/">redis 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/2019/04/29/2019/07/xiazaibao/">迅雷下载宝定制固件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/16</span>
+            <a class="archive-post-title" href="/2019/04/16/2019/07/gitlab-source/">GitLab Ubuntu 使用清华镜像站</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span>
+            <a class="archive-post-title" href="/2019/03/29/2019/07/syno/">黑群晖的安装 & 洗白</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/2019/03/14/2019/07/analysis-of-redis-performance/">Redis 性能问题分析（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/2019/03/13/2019/07/redis-concurrence/">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span>
+            <a class="archive-post-title" href="/2019/02/25/2019/07/mc-server-input-error/">MC 服务器启动之后无法在服务端输入指令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2019/02/21/2019/07/grub2/">关于 grub2 的修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span>
+            <a class="archive-post-title" href="/2019/01/28/2019/07/python-raw-string/">Python 字符串中的转移符</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span>
+            <a class="archive-post-title" href="/2019/01/11/2019/07/rabbitmq-install/">RabbitMQ 安装 & 添加登录用户[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/redlock/">Red Lock</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/kafka-node/">Kafka-node 的使用 Demo</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2018 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2018/11/09/2019/07/foreign-key/">MySQL 外键</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/vmware-market-expansion/">VMware 虚拟机硬盘文件扩容</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/node-proxy/">JavaScript Proxy 对象</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/2018/10/31/2019/07/kafka-auto-offset-reset/">Kafka auto.offset.reset 值</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/30</span>
+            <a class="archive-post-title" href="/2018/08/30/2019/07/iterator/">iterator(迭代器)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/python-with-as/">Python with as 的作用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/mysql-ACID/">MySQL 事务</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/2018/08/27/2019/07/guanchazhe/">Node 和观察者设计模式</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span>
+            <a class="archive-post-title" href="/2018/08/26/2019/07/mysql-engines/">MySQL 引擎</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span>
+            <a class="archive-post-title" href="/2018/08/23/2019/07/http2/">在树莓派上升级 Nginx 开启 HTTP/2</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2018/08/09/2019/07/node-buffer/">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span>
+            <a class="archive-post-title" href="/2018/08/08/2019/07/expect/">Expect 使用小记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span>
+            <a class="archive-post-title" href="/2018/07/09/2019/07/git-branch-all/">git 拉取所有远程分支</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2018/07/05/2019/07/memcached-node-package/">Nodejs memcached 包的基本用法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span>
+            <a class="archive-post-title" href="/2018/07/03/2019/08/typescript/">TypeScript 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-momery/">取消 Node 对内存上限的限制条件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-async/">Node 异步三种方式的对比 Demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span>
+            <a class="archive-post-title" href="/2018/06/01/2019/07/xcode-route/">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span>
+            <a class="archive-post-title" href="/2018/05/28/2019/07/xp-x64/">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/babel/">Babel 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/ubuntu-language/">Ubuntu 安装中文语言包</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/docker/docker-prune/">Docker 运行文件清理工具 prune</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/base64-js/">Base64 JavaScript 实现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/order/">订单的几种类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span>
+            <a class="archive-post-title" href="/2018/05/17/2019/07/openvpn-make/">编译 OpenVPN 及解决相关依赖问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span>
+            <a class="archive-post-title" href="/2018/05/16/2019/07/react-nginx/">Nginx 部署 react 项目返回 404</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span>
+            <a class="archive-post-title" href="/2018/05/13/2019/07/react-reudx-note-new-md/">React-Redux 笔记 - 其他</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2018/05/08/2019/07/react-note/">React.js 小书 - 第三阶段 - 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2018/04/23/2019/07/systemctl/">systemctl 命令(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2018/04/13/2019/07/xms/">Xms Xmx PermSize MaxPermSize 的含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/object-define-properity/">Vue.js 数据绑定原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/shell-place/">Shell 获取文件地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2018/04/07/2019/07/nas-ssh-error/">群晖 SFTP 连接失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2018/03/28/2019/07/static-ip/">Linux 静态 IP 设置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/unixbench/">使用 Unixbench 测试 CPU 性能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/zsh-autosuggestions/">oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/05</span>
+            <a class="archive-post-title" href="/2018/03/05/2019/07/public-license/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span>
+            <a class="archive-post-title" href="/2018/02/26/2019/07/san/">生成 SAN 证书并自签</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2018/02/22/2019/07/openvpn-login-auto/">使用 Expect 自动登录 OpenVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2018/02/21/2019/07/node-install/">Ubuntu 安装 Node.js 环境</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span>
+            <a class="archive-post-title" href="/2018/02/11/2019/07/auto-restart/">Shell 自动重启进程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span>
+            <a class="archive-post-title" href="/2018/01/22/2019/07/rasp-hdd/">树莓派用机械硬盘当系统盘</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2017 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/29</span>
+            <a class="archive-post-title" href="/2017/12/29/2019/07/virtual-dom/">深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span>
+            <a class="archive-post-title" href="/2017/12/26/2019/07/git-no-ff/">git merge --no-ff</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span>
+            <a class="archive-post-title" href="/2017/12/21/2019/07/gulp/">Gulp 常用插件(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span>
+            <a class="archive-post-title" href="/2017/12/14/2019/07/gulp-autoprefixer/">gulp-autoprefixer 基本使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span>
+            <a class="archive-post-title" href="/2017/12/13/2019/07/docker/docker-run/">Docker 启动后直接退出</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/ali-apt/">Ubuntu APT 更换阿里源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/docker/docker-user/">Docker 普通用户操作不用 sudo 权限</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2017/12/06/2019/07/ubuntu-swap/">Ubuntu 新增 swap</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span>
+            <a class="archive-post-title" href="/2017/11/24/2019/07/comand-control/">命令执行控制 && 与 ||(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span>
+            <a class="archive-post-title" href="/2017/11/21/2019/07/database-install/">常用数据库(缓存)的简单安装配置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2017/11/20/2019/07/inode/">优化 Ext4 分区 inode 占用空间问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/mysql-config/">my.cnf 参数解释 & 优化 (转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/gitlab-upgrade-3/">GitLab 推送了更新(三) - Nginx 反向代理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2017/10/27/2019/07/gitlab-upgrade-2/">GitLab 推送了更新(二) - 安装 docker GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/2017/10/26/2019/07/gitlab-upgrade-1/">GitLab 推送了更新(一) - 树莓派安装GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span>
+            <a class="archive-post-title" href="/2017/10/23/2019/07/openssl-key-zhuan-huan/">PFX文件提取公钥私钥</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="rabbitmq">
+                <span class="iconfont-archer">&#xe606;</span>
+                rabbitmq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="other">
+                <span class="iconfont-archer">&#xe606;</span>
+                other
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="photography">
+                <span class="iconfont-archer">&#xe606;</span>
+                photography
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubuntu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubuntu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="shell">
+                <span class="iconfont-archer">&#xe606;</span>
+                shell
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="babel">
+                <span class="iconfont-archer">&#xe606;</span>
+                babel
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="javascript">
+                <span class="iconfont-archer">&#xe606;</span>
+                javascript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mac os">
+                <span class="iconfont-archer">&#xe606;</span>
+                mac os
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mysql">
+                <span class="iconfont-archer">&#xe606;</span>
+                mysql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mongodb">
+                <span class="iconfont-archer">&#xe606;</span>
+                mongodb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redis">
+                <span class="iconfont-archer">&#xe606;</span>
+                redis
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcache">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcache
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="expect">
+                <span class="iconfont-archer">&#xe606;</span>
+                expect
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gitlab">
+                <span class="iconfont-archer">&#xe606;</span>
+                gitlab
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="raspberry">
+                <span class="iconfont-archer">&#xe606;</span>
+                raspberry
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nginx">
+                <span class="iconfont-archer">&#xe606;</span>
+                nginx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nodejs">
+                <span class="iconfont-archer">&#xe606;</span>
+                nodejs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gulp">
+                <span class="iconfont-archer">&#xe606;</span>
+                gulp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="http/2">
+                <span class="iconfont-archer">&#xe606;</span>
+                http/2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python">
+                <span class="iconfont-archer">&#xe606;</span>
+                python
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kafka">
+                <span class="iconfont-archer">&#xe606;</span>
+                kafka
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mc">
+                <span class="iconfont-archer">&#xe606;</span>
+                mc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="java">
+                <span class="iconfont-archer">&#xe606;</span>
+                java
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcached">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcached
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="synology">
+                <span class="iconfont-archer">&#xe606;</span>
+                synology
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vue">
+                <span class="iconfont-archer">&#xe606;</span>
+                vue
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openssl">
+                <span class="iconfont-archer">&#xe606;</span>
+                openssl
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openvpn">
+                <span class="iconfont-archer">&#xe606;</span>
+                openvpn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="license">
+                <span class="iconfont-archer">&#xe606;</span>
+                license
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="reactjs">
+                <span class="iconfont-archer">&#xe606;</span>
+                reactjs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redux">
+                <span class="iconfont-archer">&#xe606;</span>
+                redux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="san">
+                <span class="iconfont-archer">&#xe606;</span>
+                san
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cpu">
+                <span class="iconfont-archer">&#xe606;</span>
+                cpu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vmware">
+                <span class="iconfont-archer">&#xe606;</span>
+                vmware
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="c++">
+                <span class="iconfont-archer">&#xe606;</span>
+                c++
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="xp">
+                <span class="iconfont-archer">&#xe606;</span>
+                xp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="oh-my-zsh">
+                <span class="iconfont-archer">&#xe606;</span>
+                oh-my-zsh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="elk">
+                <span class="iconfont-archer">&#xe606;</span>
+                elk
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="centos">
+                <span class="iconfont-archer">&#xe606;</span>
+                centos
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="esxi">
+                <span class="iconfont-archer">&#xe606;</span>
+                esxi
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="php">
+                <span class="iconfont-archer">&#xe606;</span>
+                php
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="chrome">
+                <span class="iconfont-archer">&#xe606;</span>
+                chrome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ink">
+                <span class="iconfont-archer">&#xe606;</span>
+                ink
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zfs">
+                <span class="iconfont-archer">&#xe606;</span>
+                zfs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="daily">
+                <span class="iconfont-archer">&#xe606;</span>
+                daily
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="sql">
+                <span class="iconfont-archer">&#xe606;</span>
+                sql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="graphql">
+                <span class="iconfont-archer">&#xe606;</span>
+                graphql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="frp">
+                <span class="iconfont-archer">&#xe606;</span>
+                frp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kubernetes">
+                <span class="iconfont-archer">&#xe606;</span>
+                kubernetes
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="prisma">
+                <span class="iconfont-archer">&#xe606;</span>
+                prisma
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zip">
+                <span class="iconfont-archer">&#xe606;</span>
+                zip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="rar">
+                <span class="iconfont-archer">&#xe606;</span>
+                rar
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dom">
+                <span class="iconfont-archer">&#xe606;</span>
+                dom
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="前端">
+                <span class="iconfont-archer">&#xe606;</span>
+                前端
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mvn">
+                <span class="iconfont-archer">&#xe606;</span>
+                mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python pip">
+                <span class="iconfont-archer">&#xe606;</span>
+                python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubunutu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubunutu
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.vvcat.cn",
+        root: siteMetaRoot,
+        author: "Maple"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>

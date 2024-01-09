@@ -1,0 +1,4043 @@
+<!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:21:17
+-->
+<!DOCTYPE html>
+<html lang="">
+    <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:22:15
+-->
+<!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Maple">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Maple">
+    
+        <meta name="keywords" content="hexo,blog,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="转载 https:&#x2F;&#x2F;www.right.com.cn&#x2F;forum&#x2F;thread-186873-1-1.html。 此文是为了备份。  迅雷下载宝官方固件因追求稳定而不开放ssh和telnet。为了进一步挖潜下载宝性能，在保留官方百分之百功能的基础上，定制了下载宝固件，仅供广大高清爱好者学习研究， 若有违官方政策，请自觉删除！ 为了稳定起见，本固件只基于官方手机APP正式推送的版本进行定制，例如1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="迅雷下载宝定制固件">
+<meta property="og:url" content="https://blog.vvcat.cn/2019/04/29/2019/07/xiazaibao/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="转载 https:&#x2F;&#x2F;www.right.com.cn&#x2F;forum&#x2F;thread-186873-1-1.html。 此文是为了备份。  迅雷下载宝官方固件因追求稳定而不开放ssh和telnet。为了进一步挖潜下载宝性能，在保留官方百分之百功能的基础上，定制了下载宝固件，仅供广大高清爱好者学习研究， 若有违官方政策，请自觉删除！ 为了稳定起见，本固件只基于官方手机APP正式推送的版本进行定制，例如1">
+<meta property="og:locale">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/181123ebbaxntnwn06znaa-20190429182804253.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/181124jld0r4yyqltsrwkh-20190429182804254.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/181124p03notnhqnnh3hib-20190429182804255.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/181125lj0zzqalag4gelf9-20190429182804256.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/181126tmaryby88v2orb4v-20190429182804257.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/181123hx3b6bcq9q88xna6-20190429182804257.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/075719nsh61xxpbx1nozxo-20190429182804258.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/080923w0g80guw0zg5ug94-20190429182804259.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/075738rwytoi1g410lyzz0-20190429182804260.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/075743v0ffxf49sl9l0d0h-20190429182804261.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/070403rj3djq1j1fj9jfpw-20190429182804262.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/094003vu2kxk4v06hj9k1v-20190429182804262.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/001432shhhah989f8hhfah-20190429182804263.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/001439fj0p550j85p69v4j-20190429182804264.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/002229ogqsmm77kml0p5pq-20190429182804265.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/001440lvr7aw7ww1ava3ww-20190429182804265.png">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/214206bjwhzjadztakt4a4-20190429182804266.jpg">
+<meta property="og:image" content="https://blog.vvcat.cn/assets/154844vum75ka288n7m2kn-20190429182804267.png">
+<meta property="article:published_time" content="2019-04-29T10:26:53.000Z">
+<meta property="article:modified_time" content="2024-01-09T00:20:32.850Z">
+<meta property="article:author" content="Maple">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.vvcat.cn/assets/181123ebbaxntnwn06znaa-20190429182804253.png">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/favicon.png">
+    
+    <title>迅雷下载宝定制固件 · Maple&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from bootcdn failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Maple's Blog.</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">Maple&#39;s Blog.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">迅雷下载宝定制固件</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/mapleincode/images/master/img/20200522181805.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                迅雷下载宝定制固件
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">6.6k</span>阅读时长: <span class="post-count reading-time">24 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2019/04/29</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      // 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>转载 <a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-186873-1-1.html">https://www.right.com.cn/forum/thread-186873-1-1.html</a>。</p>
+<p>此文是为了备份。</p>
+<hr>
+<p>迅雷下载宝官方固件因追求稳定而不开放ssh和telnet。为了进一步挖潜下载宝性能，在保留官方百分之百功能的基础上，定制了下载宝固件，仅供广大高清爱好者学习研究，</p>
+<p>若有违官方政策，请自觉删除！</p>
+<p>为了稳定起见，本固件只基于官方手机APP正式推送的版本进行定制，例如191. 192版。 </p>
+<p>【2017年10月12日复活版】</p>
+<p>鉴于下载宝官方开始更新固件，且各位网友极力更新定制固件，本人决定继续更新维护下载宝的定制固件版本，供大伙研究使用。</p>
+<p>因本人下载宝已出，在此要特别感谢@tonymoses朋友提供远程调试环境，并极其耐心地协助做好测试工作！</p>
+<p>复活版之后的持续更新版本原则上只是更新官方基础固件，定制功能不再做扩展，当然有些必要的更新视情况会做的。</p>
+<p>171012复活版</p>
+<ol>
+<li><p>基于官方338固件进行扩展和定制。 </p>
+</li>
+<li><p>功能与170508终极版相同。</p>
+</li>
+<li><p>因有人反映Transmission的web界面有bug，故更新到最新的 WEB Control: 1.1 Beta(20170606)。</p>
+<p>注：再次强调从318版开始，luci访问已恢复默认80端口。</p>
+</li>
+</ol>
+<p>【2017年5月8日终极版】</p>
+<p>鉴于下载宝官方论坛自2017年2月9日之后再无任何官方信息和对于用户发帖的任何回应，另外本人迅雷会员到期后已不再续费，因此，2017年5月8日之后本人不再基于官方固件做更新。</p>
+<p>期间本人试用过自行编译的 LEDE 固件和 pandorabox 固件。LEDE是纯开源系统，使用的是最新的linux内核和最新的package，有着更好的扩展性和灵活性。但其使用的是MTK的开源驱动，IO性能较弱。而pandorabox虽然不开源，内核老旧，但其使用的是MTK闭源驱动，对NTFS硬盘支持也很好，经实测写入速度能达到70MB&#x2F;s，读取达到千兆网满速。</p>
+<p>因此，综合评估下来，本人目前日常使用的是pandorabox。之后是否会继续推出基于pandorabox的下载宝定制固件，要视情况而定。</p>
+<p>170508 终极版： </p>
+<ol>
+<li><p>全面基于官方 327 版固件进行扩展和定制，luci访问地址 http:&#x2F;&#x2F;下载宝ip，默认用户名：root，密码：admin </p>
+</li>
+<li><p>采用全新架构扩展SD卡，可作为ROM直接安装组件。ROM的容量可扩展到下载宝所能识别的SD卡容量。</p>
+</li>
+<li><p>可挂载远程 NFS 服务器和 Samba 服务器的硬盘为本地路径，不再受移动硬盘的容量限制。</p>
+<p>远程挂载NFS服务器：mount -t nfs -o iocharset&#x3D;utf8 , nolock,rw 远程ip:&#x2F;输出路径 &#x2F;本地挂载点</p>
+<p>远程挂载Samba服务器：mount -t cifs -o iocharset&#x3D;utf8,username&#x3D;xxx,password&#x3D;xxx &#x2F;&#x2F;远程ip&#x2F;共享路径 &#x2F;本地挂载点</p>
+<p>若本地挂载点设为：&#x2F;data&#x2F;UsbDisk1&#x2F;VolumeX&#x2F;TDDOWNLOAD，则下载宝的下载点即为远程服务器。其中VolumeX要根据系统挂载点而定。</p>
+</li>
+<li><p>定制功能包括：NFS服务器. FTP服务器. Transmission. Aria2. Ngrok，且均可在luci界面进行配置。若需要其他功能请自行通过luci或opkg进行安装，安装方法与openwrt相同。</p>
+</li>
+<li><p>nfs server默认启动。其他功能默认关闭，须在luci的服务菜单里手动打开需要的功能。一旦启用，下次开机则会自动运行。若不需要nfs server，停止命令：mynfs stop，启动命令：mynfs start</p>
+</li>
+<li><p>提供smartmontools，可查看外接硬盘的smart信息包括硬盘温度等。查看命令为：smt</p>
+</li>
+<li><p>可暂停下载宝原生服务，命令为：myxzb stop，启动命令为：myxzb start</p>
+</li>
+<li><p>Transmission：</p>
+<ol>
+<li><p>主程序为最新2.92版。</p>
+</li>
+<li><p>Web Control UI更新为20170317版。</p>
+</li>
+<li><p>提供了3个Transmission的chrome插件（可任选其一）供下载使用，基于chrome内核的浏览器同样适用，可右键直接添加下载任务。</p>
+</li>
+<li><p>提供了最强大的android APP供下载使用。</p>
+</li>
+<li><p>关于Transmission的建议：</p>
+<ol>
+<li>在计划任务里写入守护命令：*&#x2F;5 * * * * &#x2F;usr&#x2F;ubin&#x2F;mymon，在Transmission异常退出后会自动重启。其中5代表5分钟，可自行修改。</li>
+<li>最好暂停下载宝服务，因其负载太高。在计划任务里写入守护命令：*&#x2F;5 * * * * &#x2F;usr&#x2F;ubin&#x2F;mymonall ，mymonall已包含a中的监控。</li>
+<li>缓存设置不超过32M，16M为宜，否则容易异常退出。</li>
+<li>在SD卡里创建一个不小于64M的swap分区，在luci的挂载点里有swap分区的挂载选项。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Aria2：</p>
+<ol>
+<li>主程序为最新1.31.0版，支持BT和磁力下载，支持断点续传。</li>
+<li>luci新增token方式的RPC认证，替换掉用户密码方式。RPC设置为：  <a target="_blank" rel="noopener" href="http://token:xxx@下载宝ip:6800/jsonrpc%EF%BC%8C%E5%85%B6%E4%B8%ADxxx%E6%98%AFluci%E7%95%8C%E9%9D%A2%E9%87%8C%E8%AE%BE%E7%BD%AE%E7%9A%84token%E5%80%BC%E3%80%82">http://token:xxx@下载宝ip:6800/jsonrpc，其中xxx是luci界面里设置的token值。</a></li>
+<li>luci新增“证书检验”选项，若用于百度云离线下载，此选项必须为空，否则无法正常下载。</li>
+<li>luci新增“log记录等级”选项，默认为“notice”，解决了log文件体积增长迅速的问题。</li>
+<li>web管理采用YAAW，访问aria2c.com，即可进行下载管理，页面已汉化。</li>
+<li>新增Aria-Ng Web UI，功能比YAAW更为强大。访问地址：  http:&#x2F;&#x2F;下载宝ip&#x2F;aria2</li>
+</ol>
+</li>
+<li><p>智能识别SD卡，若SD卡装有固件则自动扩展，否则作为普通SD卡使用。在不使用SD卡扩展固件时，本固件功能与官方一致。</p>
+</li>
+</ol>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li><p>确保 Bootloader 为官方 uboot，若已经刷了 breed 则必须刷回官方 uboot 。方法详见下方【固件升级】。</p>
+</li>
+<li><p>升级 327.170326 版固件，方法详见底部【固件升级】。</p>
+</li>
+<li><p>下载rom.tar固件包，直接拷贝到SD卡根目录下。SD卡支持任意文件系统格式，无需格式化。</p>
+</li>
+<li><p>将SD卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，等led白灯常亮后会再次重启，此时ROM已扩展为sd卡容量。若SD卡下载宝不好识别，则多断电插拔重启几次。实在不行只能另行换卡。</p>
+</li>
+<li><p>若只需要官方功能，则不必安装SD卡。</p>
+</li>
+</ol>
+<p>【2017年3月30日更新】</p>
+<p>修正了327版无法挂载cifs的问题。</p>
+<p>【2017年3月29日更新】</p>
+<ol>
+<li><p>更新了 Aria2 的配置，确保断点续传。</p>
+<p>刷机后需要在YAAW配置界面内填写自己的ip：    <a target="_blank" rel="noopener" href="http://ip:6800/jsonrpc">http://ip:6800/jsonrpc</a></p>
+<p>若在luci中开启了RPC认证，则YAAW设置为:     <a target="_blank" rel="noopener" href="http://user:passwd@ip:6800/jsonrpc">http://user:passwd@ip:6800/jsonrpc</a></p>
+</li>
+<li><p>更新了 Transmission 的配置，一般情况下刷机后选择启用即可。</p>
+</li>
+<li><p>修正了NFS Server 配置无法生效的问题（318版无此问题）。</p>
+</li>
+</ol>
+<p>【2017年3月28日更新】</p>
+<ol>
+<li>修正了 327 版固件 ip 分配的问题。</li>
+<li>更新了 Aria2，采用自行编译的版本，支持BT和磁力链接。</li>
+<li>重新制作了 318 版全功能版。</li>
+</ol>
+<p>【2017年3月26日更新】</p>
+<ol>
+<li><p>更新官方 327 版固件。</p>
+</li>
+<li><p>新增Aria2，web管理采用YAAW，访问aria2c.com，即可进行下载管理，页面已汉化。</p>
+</li>
+<li><p>新增FTP服务器。</p>
+</li>
+<li><p>新增smartmontools，可查看外接硬盘的smart信息。查看命令为：smt</p>
+</li>
+<li><p>可暂停下载宝原生服务，命令为：myxzb stop，启动命令为：myxzb start</p>
+</li>
+<li><p>nfs server默认启动。其他功能默认关闭，须在luci的服务菜单里手动打开需要的功能。一旦启用，下次开机则会自动运行。若不需要nfs server，停止命令：mynfs stop，启动命令：mynfs start</p>
+</li>
+<li><p>关于Transmission的建议：</p>
+<ol>
+<li><p>在计划任务里写入守护命令：*&#x2F;5 * * * * &#x2F;usr&#x2F;ubin&#x2F;mymon，在Transmission异常退出后会自动重启。其中5代表5分钟，可自行修改。</p>
+</li>
+<li><p>最好暂停下载宝服务，因其负载太高。在计划任务里写入守护命令：*&#x2F;5 * * * * &#x2F;usr&#x2F;ubin&#x2F;mymonall ，mymonall已包含1）的监控。</p>
+</li>
+<li><p>缓存设置不超过32M，否则容易异常退出。</p>
+</li>
+<li><p>在sd卡里创建一个不小于64M的swap分区，在luci的挂载点里有swap分区的挂载选项。</p>
+</li>
+</ol>
+</li>
+<li><p>其他功能及安装方法详见1月8日更新说明。</p>
+</li>
+</ol>
+<p>【2017年1月8日更新】– 里程碑重大更新 </p>
+<ol>
+<li><p>全面基于 318 版固件进行扩展和定制；</p>
+</li>
+<li><p>采用全新架构扩展 SD 卡，可作为 ROM 直接安装组件。ROM 的容量可扩展到下载宝所能识别的 SD 卡容量。</p>
+</li>
+<li><p>可挂载远程 NFS 服务器和 Samba 服务器的硬盘为本地路径，不再受移动硬盘的容量限制。</p>
+<ul>
+<li>远程挂载NFS服务器：mount -t nfs -o nolock,rw 远程ip:&#x2F;输出路径 &#x2F;本地挂载点</li>
+<li>远程挂载Samba服务器：mount -t cifs -o username&#x3D;xxx,password&#x3D;xxx &#x2F;&#x2F;远程ip&#x2F;共享路径 &#x2F;本地挂载点</li>
+<li>若本地挂载点设为：&#x2F;data&#x2F;UsbDisk1&#x2F;VolumeX&#x2F;TDDOWNLOAD，则下载宝的下载点即为远程服务器。其中VolumeX要根据系统挂载点而定。</li>
+</ul>
+</li>
+<li><p>定制功能只提供NFS服务器. Transmission和Ngrok，且均可在luci界面进行配置，因此取消自启动设置功能。若需要其他功能请自行通过luci或opkg进行安装，安装方法与openwrt相同。</p>
+</li>
+<li><p>智能识别 SD 卡，若 SD 卡装有固件则自动扩展，否则作为普通 SD 卡使用。在不使用 SD 卡扩展固件时，本固件功能与官方一致。</p>
+</li>
+</ol>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li><p>确保 Bootloader 为官方 uboot，若已经刷了 breed 则必须刷回官方 uboot。</p>
+<pre><code> 方法详见下方【固件升级】。
+</code></pre>
+</li>
+<li><p>升级 318.170108 版固件，方法详见下方【固件升级】。</p>
+</li>
+<li><p>下载 rom.tar 固件包，直接拷贝到 SD 卡根目录下。SD 卡支持任意文件系统格式，无需格式化。有的 SD 卡下载宝不好识别的话，最好格式化成NTFS。</p>
+</li>
+<li><p>将 SD 卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，等 led 白灯常亮后即可正常使用，此时 ROM 已扩展为 sd 卡容量。</p>
+</li>
+<li><p>若只需要官方功能，则不必安装 SD 卡。</p>
+</li>
+<li><p>因官方视频点播不再占用 80 端口，luci 改回常规的 80 端口。</p>
+</li>
+<li><p>luci 及其他登录用户名：root，密码：admin</p>
+</li>
+</ol>
+<p>【2017年1月1日】</p>
+<ol>
+<li>官方已推出 318 版固件，此版固件是官方基于 3.10.14 内核的 Openwrt 自行编译的，脱离原先的Pandorabox 架构，极大程度上提高了对底层的控制。也就是说，从 318 版之后，下载宝固件已脱胎换骨。 </li>
+<li>官方针对第三方 Bootloader 做了限制，也就是说刷了 breed 的下载宝升级 318 版之后无法获取 ip地址。同时，也对其他方面做了权限限制。</li>
+<li>因此，本学习固件的定制功能不再跟随官方固件升级和维护，285.160831 是全功能的终结版。</li>
+<li>为了能顺利升级 318 版固件，特提供官方 uboot 的下载，直接在breed里”更新固件&#x2F;Bootloader”选项下刷入即可。要注意的是，官方 uboot 下刷机是“捅菊花”，而不是按“键盘弹出”键。</li>
+<li>为了便于部分爱好者进一步研究学习下载宝固件，以后会继续提供 root 版固件。仅作学习研究之用，若有违官方政策，请自觉删除！</li>
+</ol>
+<p><strong>【8月31日更新】</strong></p>
+<ol>
+<li>基于官方固件 285 版。</li>
+<li>加入 Aria2 1.25.0，更新自动启动选项。</li>
+<li>Transmission升级为 2.92-3。</li>
+<li>分为两个版本，无后缀的是全功能版本，luciroot 后缀的是带luci界面. 开放ssh的root版。</li>
+<li>优化opt安装方式，直接拷贝，不必解压。</li>
+</ol>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li><p>升级 285.160831 版固件，方法详见下方【固件升级】。</p>
+</li>
+<li><p>下载 opt.tgz 运行包，直接拷贝到 SD 卡上，根目录下绝对不能有 opt 目录。SD卡必须是 NTFS 格式。</p>
+</li>
+<li><p>将 SD 卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，即可正常使用。</p>
+</li>
+<li><p>若不需要 Transmission. 百度云同步. Aria2 和 Ngrok 功能，则不必安装 SD 卡。</p>
+</li>
+<li><p>关于 Aria2，需要注意以下几点：</p>
+<p>​    1. 登陆 aria2c.com（指向本地web），设置里的RPC Path要改为：<a target="_blank" rel="noopener" href="http://token/">http://token</a>: Passw0rd@下载宝 ip:6800&#x2F;jsonrpc （删除：与P之间的空格）。</p>
+<p>​    2. 若要使用迅雷离线和百度网盘的下载资源，还需要安装浏览器插件。浏览器要用chrome原版，其他基于chrome内核的改版浏览器都不一定有效。</p>
+</li>
+<li><p>官方未标明285版是否稳定，因此保留192稳定版的下载链接。</p>
+</li>
+</ol>
+<p><strong>【8月28日更新】</strong></p>
+<ol>
+<li><p>官方固件同步升级为285版（看不懂的版本号）。</p>
+</li>
+<li><p>opt 应用包不更新。</p>
+</li>
+<li><p>分为两个版本，无后缀的是全功能版本，luciroot 后缀的是带 luci 界面. 开放 ssh 的 root 版。</p>
+</li>
+<li><p>rom 空间已所剩无几，为稳定起见，其他功能统统不再增加。</p>
+</li>
+<li><p>关于Aria2，若需要的朋友可以自行安装。安装脚本为：ipkg upate &amp;&amp; ipkg upgrade &amp;&amp; ipkg install aria2，具体配置和使用方法详见官方文档。</p>
+<p>需要注意以下几点：</p>
+<ol>
+<li>登陆aria2c.com（指向本地web），设置里的RPC Path要改为：<a target="_blank" rel="noopener" href="http://token/">http://token</a>: Passw0rd@下载宝ip:6800&#x2F;jsonrpc （删除：与P之间的空格）。</li>
+<li>若要使用迅雷离线和百度网盘的下载资源，还需要安装浏览器插件。浏览器要用chrome原版，其他基于chrome内核的改版浏览器都不一定有效。</li>
+<li>ipkg upgrade命令会升级 transmission 到2.92-3版，因此需要将 transmission-control-full.tar解包全部覆盖  &#x2F;opt&#x2F;share&#x2F;transmission&#x2F;web目录。</li>
+</ol>
+</li>
+<li><p>官方未标明285版是否稳定，因此保留192稳定版的下载链接。</p>
+</li>
+</ol>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li>升级285.160828版固件，方法详见下方【固件升级】。</li>
+<li>下载160608版opt运行包，将“opt”目录解压到SD卡上，即在SD卡根目录下建有“opt”文件夹。SD卡最好是NTFS格式。</li>
+<li>将SD卡插入下载宝。</li>
+<li>重启下载宝，即可正常使用。</li>
+<li>若不需要Transmission. 百度云同步和Ngrok功能，则不必安装SD卡。</li>
+</ol>
+<p><strong>【6月10日更新】</strong></p>
+<ol>
+<li><p>官方固件同步升级为192稳定版，opt应用包不更新。</p>
+</li>
+<li><p>加入FTP服务器，并整合入自启动选项。vsftpd已升级到最新3.0.3版本，解决了可能存在的不兼容问题。</p>
+</li>
+</ol>
+<p><img src="/assets/181123ebbaxntnwn06znaa-20190429182804253.png" alt="img"> </p>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li>升级160610版固件，方法详见下方【固件升级】。</li>
+<li>下载160608版opt运行包，将“opt”目录解压到SD卡上，即在SD卡根目录下建有“opt”文件夹。SD卡最好是NTFS格式。</li>
+<li>将SD卡插入下载宝。</li>
+<li>重启下载宝，即可正常使用。</li>
+<li>若不需要Transmission. 百度云同步和Ngrok功能，则不必安装SD卡。</li>
+</ol>
+<p><strong>FTP配置方法：</strong></p>
+<ol>
+<li><p>登陆web管理界面：http:&#x2F;&#x2F;下载宝ip:88，默认用户名root，密码admin</p>
+</li>
+<li><p>进入“服务&#x2F;FTP服务器”。</p>
+</li>
+<li><p>选项卡“全局”下的“启用”项改动后“保存&amp;应用”就会实时启动和停止FTP服务。若在开机自启动中勾选“FTP服务器”，则不论是否选中“启动”，都会开机自启动。</p>
+</li>
+</ol>
+<p><img src="/assets/181124jld0r4yyqltsrwkh-20190429182804254.png" alt="img"> </p>
+<ol start="4">
+<li>默认允许本地用户访问（用户名root，密码admin）。本地用户的根目录在“编辑模板”选项卡中设置，默认为：&#x2F;data</li>
+</ol>
+<p><img src="/assets/181124p03notnhqnnh3hib-20190429182804255.png" alt="img"> </p>
+<ol start="5">
+<li>默认禁止匿名用户，若需要请自行启用。匿名用户的根目录在“匿名用户”选项卡中设置，默认为：&#x2F;data</li>
+</ol>
+<p><img src="/assets/181125lj0zzqalag4gelf9-20190429182804256.png" alt="img"> </p>
+<p><strong>【6月8日更新】</strong></p>
+<ol>
+<li><p>优化改进Samba共享</p>
+<ol>
+<li><p>用“UsbDisk”代替共享中文名“移动磁盘”；</p>
+</li>
+<li><p>共享SD卡；</p>
+</li>
+<li><p>开启用户身份验证，在“开机自启动”选项中勾选“启用Samba验证”，输入Samba密码，用户名默认为root。</p>
+</li>
+<li><p>预留了用户自定义接口，只要将自定义smb.conf文件拷入SD卡的&#x2F;opt&#x2F;etc文件夹即可。若不需要自定义，请务必删除此文件。</p>
+</li>
+<li><p>以上功能在重启下载宝或热插拔硬盘后生效。</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="/assets/181126tmaryby88v2orb4v-20190429182804257.png" alt="img"> </p>
+<ol start="2">
+<li><p>Transmission加入了用户身份验证，默认用户名：root，密码：admin</p>
+</li>
+<li><p>将“禁止硬盘休眠”功能改为：保留硬盘休眠的基础上，禁止硬盘磁头复位。</p>
+</li>
+</ol>
+<p><strong>【6月1日更新】-里程碑版本</strong></p>
+<ol>
+<li>加入开机自启动选项功能，用户可以根据自己的需求定制开启哪些功能，降低下载宝负载。设置完成后点击“保存&amp;应用”，重启下载宝生效。百度云同步. Transmission. Ngrok内网穿透需要安装SD卡。</li>
+</ol>
+<p><img src="/assets/181123hx3b6bcq9q88xna6-20190429182804257.png" alt="img"> </p>
+<ol start="2">
+<li><p>取消hdp版本固件，禁止硬盘休眠功能整合进“开机自启动”选项。</p>
+</li>
+<li><p>百度云同步SyncY设置页面取消了“开机自动重启”选项，统一整合进“开机自启动”页面。</p>
+<p>Luci图形管理界面：http:&#x2F;&#x2F;下载宝ip:88，默认用户名：root，密码：admin</p>
+</li>
+</ol>
+<p><strong>【5月30日更新】</strong></p>
+<p>加入 Ngrok 最新1.37版（全新编译MT7621专用版），完全 luci 界面配置管理，绝对的内网穿透神器！可穿透N层内网，无须在路由器上做任何设置。实在是小运营商网络用户的福音！Transmission和百度云同步的远程管理不再只是梦想！</p>
+<p><img src="/assets/075719nsh61xxpbx1nozxo-20190429182804258.png" alt="img"> </p>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li><p>升级160530版固件，方法详见下方<strong>【固件升级】</strong>。</p>
+</li>
+<li><p>下载160530版opt运行包，将“opt”目录解压到SD卡上，即在SD卡根目录下建有“opt”文件夹。SD卡最好是NTFS格式。</p>
+</li>
+<li><p>将SD卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，即可正常使用。</p>
+</li>
+<li><p>若不需要Transmission. 百度云同步和Ngrok功能，则不必安装SD卡。</p>
+</li>
+</ol>
+<p><strong>Ngrok配置方法：</strong></p>
+<ol>
+<li>为拥有固定的二级域名，请事先注册Ngrok账号。推荐：</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="http://www.ngrok.cc/login">www.ngrok.cc/login</a></p>
+<ol start="2">
+<li><p>登陆web管理界面：http:&#x2F;&#x2F;下载宝ip:88，默认用户名root，密码admin</p>
+</li>
+<li><p>进入“服务&#x2F;Ngrok配置”，首先配置服务器，其中“令牌”是在注册用户时获取的。</p>
+</li>
+</ol>
+<p><img src="/assets/080923w0g80guw0zg5ug94-20190429182804259.png" alt="img"> </p>
+<ol start="4">
+<li>其次设置通道。Ngrok支持http. https. TCP端口三种方式，其中：子域名和远程端口都是在Ngrok网站上设置开通。本地地址要用真实ip，不能填“127.0.0.1”。概览界面中的http(s)的URL有误，访问域名应为：子域名.ngrok.cc。</li>
+</ol>
+<p><img src="/assets/075738rwytoi1g410lyzz0-20190429182804260.png" alt="img"> </p>
+<p><img src="/assets/075743v0ffxf49sl9l0d0h-20190429182804261.png" alt="img"> </p>
+<ol start="5">
+<li><p>勾选通道的“启用”选项，点击“保存&amp;应用”之后，即开始在后台运行Ngrok。清空“启用”选项并“保存&amp;应用”，则停止 Ngrok 服务。</p>
+</li>
+<li><p>若要开机自启动，请登陆ssh用命令行开启：&#x2F;etc&#x2F;init.d&#x2F;ngrokc enable</p>
+</li>
+</ol>
+<p><strong>【5月29日更新】</strong></p>
+<ol>
+<li><p>加入luci图形管理界面</p>
+<ol>
+<li>因下载宝视频播放占用了80端口，luci改用88端口，请访问：http:&#x2F;&#x2F;下载宝ip:88，web登陆默认用户名root，密码admin。</li>
+<li>因下载宝的闪存只有16M，空间已所剩无几，在此界面上基本无法再安装合适的应用包。不过，可以通过命令行：opkg install -d sd XXXX 将应用安装到SD卡上。</li>
+</ol>
+</li>
+</ol>
+<p><img src="/assets/070403rj3djq1j1fj9jfpw-20190429182804262.png" alt="img"> </p>
+<ol start="2">
+<li>加入百度云同步SyncY。已完美实现web页面的“绑定”“开机自动启动””启动”“停止”等功能，感谢坛友lm789632的提示。</li>
+<li>上一版固件中，Transmission在更换硬盘后重启会自动更新硬盘挂载点。因不少朋友用的是多分区硬盘，且本版固件在web管理界面能清楚地查看硬盘挂载点及分区大小，所以取消了Transmission自动更新挂载点的功能，改为全手动输入。</li>
+<li>至此，下载宝已基本完成了下载器+视频服务器的功能定位。<ol>
+<li>下载器：迅雷下载. PT下载. 百度云同步，后续不再加入aria2等其他下载功能。</li>
+<li>视频服务器：NFS. DLNA. Samba。</li>
+</ol>
+</li>
+</ol>
+<p><strong>安装方法：</strong></p>
+<ol>
+<li><p>升级160529版固件，方法详见下方<strong>【固件升级】</strong>。</p>
+</li>
+<li><p>下载160529版opt运行包，将“opt”目录解压到SD卡上，即在SD卡根目录下建有“opt”文件夹。SD卡最好是NTFS格式。</p>
+</li>
+<li><p>将SD卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，即可正常使用。</p>
+</li>
+<li><p>若不需要Transmission和百度云同步功能，则不必安装SD卡。</p>
+</li>
+</ol>
+<p><strong>百度云同步配置方法：</strong></p>
+<ol>
+<li>进入：服务&#x2F;SyncY</li>
+</ol>
+<p><img src="/assets/094003vu2kxk4v06hj9k1v-20190429182804262.png" alt="img"> </p>
+<ol start="2">
+<li>绑定百度账号</li>
+</ol>
+<p><img src="/assets/001432shhhah989f8hhfah-20190429182804263.png" alt="img"> </p>
+<ol start="3">
+<li><p>按提示操作，百度账号授权成功后返回此界面，点击“继续账号绑定”</p>
+</li>
+<li><p>账号绑定成功</p>
+</li>
+</ol>
+<p><img src="/assets/001439fj0p550j85p69v4j-20190429182804264.png" alt="img"> </p>
+<ol start="5">
+<li>设置好各参数及同步目录，“保存&amp;应用”。云端同步目录请设为“&#x2F;apps&#x2F;SyncY”，必须事先在百度网盘上的“我的应用数据”下建立“SyncY”目录（注意大小写）。</li>
+</ol>
+<p><img src="/assets/002229ogqsmm77kml0p5pq-20190429182804265.png" alt="img"><br>6. 点击：“启动”，百度云同步在后台运行。</p>
+<p><img src="/assets/001440lvr7aw7ww1ava3ww-20190429182804265.png" alt="img"> </p>
+<p>​    当所有内容同步完成之后，经过设定的同步间隔周期才会自动再次同步。若需要在同步间隔周期之        内立即开始执行同步，则须手动“停止”+“启动”。</p>
+<ol start="7">
+<li>详细参数设置请参阅syncy官方博客：<a target="_blank" rel="noopener" href="http://www.syncy.cn/index.php/syncyconfighelp/">http://www.syncy.cn/index.php/syncyconfighelp/</a>，感谢作者所做出的杰出贡献！</li>
+</ol>
+<p><strong>【5月23日更新】</strong></p>
+<p>加入防火墙的51413端口规则，以确保Transmission的正常下载。</p>
+<p>安装方法：</p>
+<ol>
+<li><p>升级160523版固件，更新方法详见下方。</p>
+</li>
+<li><p>下载opt文件包，连同“opt”目录名解压到SD卡上。就是说，在SD卡根目录下建有“opt”文件夹。将SD卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，即可正常使用。</p>
+</li>
+<li><p>若不需要Transmission，则不必安装SD卡。</p>
+</li>
+</ol>
+<p><strong>Transmission配置：</strong></p>
+<p>在默认配置下，登陆 <a target="_blank" rel="noopener" href="http://www.canyouseeme.org/%EF%BC%8C%E6%9F%A5%E7%9C%8B51413%E7%AB%AF%E5%8F%A3%E6%98%AF%E5%90%A6%E5%B7%B2%E6%89%93%E5%BC%80%E3%80%82%E8%8B%A5%E5%B7%B2%E6%AD%A3%E5%B8%B8%E6%89%93%E5%BC%80%EF%BC%8C%E5%88%99%E5%BF%BD%E7%95%A5%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E3%80%82%E8%8B%A5%E6%98%BE%E7%A4%BA%E6%9C%AA%E6%89%93%E5%BC%80%E7%AB%AF%E5%8F%A3%EF%BC%8C%E5%88%99%E8%BF%9B%E8%A1%8C%E5%A6%82%E4%B8%8B%E9%85%8D%E7%BD%AE%EF%BC%9A">http://www.canyouseeme.org/，查看51413端口是否已打开。若已正常打开，则忽略以下步骤。若显示未打开端口，则进行如下配置：</a></p>
+<ol>
+<li>打开Transmission的web管理页面，如下图勾选设置选项，51413端口请勿改动。</li>
+</ol>
+<p><img src="/assets/214206bjwhzjadztakt4a4-20190429182804266.jpg" alt="img"> </p>
+<ol start="2">
+<li><p>在路由器里打开UPnP选项，且手动添加51413（TCP和UDP）端口转发规则。</p>
+</li>
+<li><p>再次登陆 <a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/qq://txfile/">http://www.canyouseeme.org/</a>，查看51413端口是否打开。若已打开，恭喜你可享用pt下载了。若还是不能打开端口，则意味着你的网络运营商封杀了51413端口或者你的路由器是处于一个局域网之中。前者可尝试改动端口号或者让Transmission随机分配端口号，但不保证能正常下载。后者可在局域网的公网入口端的路由设备上开通UPnP或设置51413端口映射。</p>
+</li>
+</ol>
+<p><strong>【5月21日更新】</strong></p>
+<ol>
+<li>SD卡外挂optware运行环境</li>
+</ol>
+<p>​    下载宝虽然主频和运存都还不错，但闪存只有16M，加入NFS之后，已经几乎没有折腾空间了。因此，扩展了SD卡作为存储介质，弥补了闪存的不足。对于SD卡没有特别要求，只要能被下载宝识别，且容量大于32M即可。</p>
+<ol start="2">
+<li><p>Transmission：高清爱好者当然离不开Transmission。就此，NFS+Tr双剑合璧。 </p>
+<p>​    1. 最新版2.92-2。</p>
+<p>​    2. 加入最新版原生中文的专业web管理器Transmission Web Control 1.0 Beta（20141010），可在<strong>Web Control. 手机移动UI. 原版UI</strong>之间自由切换，功能不可谓不强大！默认web管理页面：http:&#x2F;&#x2F;下载宝ip地址:9091 </p>
+<p>​    3. 更换移动硬盘后重启下载宝，默认下载位置自动变更为当前硬盘。须事先在硬盘根目录创建<strong>“transmission”文件夹</strong>。</p>
+</li>
+</ol>
+<p><img src="/assets/154844vum75ka288n7m2kn-20190429182804267.png" alt="img"> </p>
+<ol start="3">
+<li><p>提供了扩展选项功能</p>
+<p>固件的基本版本默认开启SSH和NFS，同时提供硬盘禁止APM的版本。而Transmission以及后续陆续加入的aria2. 百度云同步等功能，将采用SD卡配置文件的方式由使用者自行决定是否开启相应功能。</p>
+</li>
+</ol>
+<p>安装方法：</p>
+<ol>
+<li><p>升级160521版固件，更新方法详见下方。</p>
+</li>
+<li><p>下载opt文件包，连同“opt”目录名解压到SD卡上。就是说，在SD卡根目录下建有“opt”文件夹。将SD卡插入下载宝。</p>
+</li>
+<li><p>重启下载宝，即可正常使用。4. 若不需要Transmission，则不必安装SD卡。</p>
+</li>
+</ol>
+<p>【历史版本说明】</p>
+<p>【5月19日首发】</p>
+<p>目前暂定通用功能：</p>
+<p>1）保留官方固件所有功能。之所以用下载宝，就是要用其专用下载模块，否则就用不再维护更新的xware好了。</p>
+<p>2）开放ssh：用户名和密码均为admin，感谢“三水良子”大神提供基础固件！</p>
+<p>3）NFS服务：对于全高清蓝光爱好者而言，NFS是网播的不二选择。官方提供的samba效率太低，dlna不支持蓝光原盘也不支持外挂字幕。官方固件基于pandorabox进行开发，内核已封闭，因此无法安装内核级的nfs服务，只能安装基于用户空间的NFS（unfs3），经实测百兆有线局域网和无线5G中继播放蓝光3D原盘流畅无压力。</p>
+<p>在通用功能基础上，增加了一个禁止硬盘APM的版本。下载宝在下载速度比较低的时候，正常情况下硬盘磁头会频繁复位，导致噪声恼人，也大幅提高了硬盘的c1值，影响硬盘寿命。当然，禁止APM之后，硬盘处于全速运行，发热量和功耗都会稍大。禁止APM后，下载宝上的硬盘弹出按键照常使用。</p>
+<p>【固件升级】</p>
+<p>以下二者取一<br>1）登陆：http:&#x2F;&#x2F;下载宝ip:81&#x2F;upgrade.do，选择固件，应用升级即可。318版以后的固件端口改为：8800。<br>2）关机断电后，用工具按住reset键，上电，待led灯频繁闪烁之后松开。有线连接电脑，登陆：<a target="_blank" rel="noopener" href="http://192.168.1.1/">http://192.168.1.1</a>，选择恢复固件，自动重启后即可使用。<br>整个固件升级过程需要三分钟左右，请耐心等待。在此过程中切勿断电！刷机有风险，刷者后果自负。</p>
+<p>建议提前刷H大的breed，<a target="_blank" rel="noopener" href="https://www.right.com.cn/forum/thread-161906-1-1.html">https://www.right.com.cn/forum/thread-161906-1-1.html</a>，下载宝专用版：<a target="_blank" rel="noopener" href="http://breed.hackpascal.net/breed-mt7621-xunlei-timeplug.bin">breed-mt7621-xunlei-timeplug.bin</a>。<br>刷breed：用上述第2种方式，选择下载好的专用版breed，恢复即可。将来若想恢复原厂uboot，可在breed里选择“固件更新&#x2F;Bootloader”刷入。<br>启动breed：按住硬盘弹出键（而非reset键），然后上电，待led等频繁闪烁之后松开。</p>
+<p><strong>【固件下载】</strong></p>
+<p>338 复活版</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1pNokoKb">https://pan.baidu.com/s/1pNokoKb</a> 密码: i4js</p>
+<p>327 终极版<br>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1eSPRlb8">https://pan.baidu.com/s/1eSPRlb8</a> 密码: mbk2</p>
+<p>官方 uboot</p>
+<p>链接：<a target="_blank" rel="noopener" href="http://pan.baidu.com/s/1mh6FwnA">http://pan.baidu.com/s/1mh6FwnA</a> 密码：m52r</p>
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.vvcat.cn">Maple</a>
+            <p>原文链接：<a href="https://blog.vvcat.cn/2019/04/29/2019/07/xiazaibao/">https://blog.vvcat.cn/2019/04/29/2019/07/xiazaibao/</a>
+            <p>发表日期：<a href="https://blog.vvcat.cn/2019/04/29/2019/07/xiazaibao/">April 29th 2019, 6:26:53 pm</a>
+            <p>更新日期：<a href="https://blog.vvcat.cn/2019/04/29/2019/07/xiazaibao/">January 9th 2024, 8:20:32 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2019/05/23/2019/07/redis/" title="redis 学习笔记">
+                    <div class="nextTitle">redis 学习笔记</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/04/16/2019/07/gitlab-source/" title="GitLab Ubuntu 使用清华镜像站">
+                    <div class="prevTitle">GitLab Ubuntu 使用清华镜像站</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://blog.vvcat.cn/2019/04/29/2019/07/xiazaibao/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "迅雷下载宝定制固件"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://blog-mapleincode-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+            
+
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:23:33
+-->
+
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-05 14:10:53
+-->
+<footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:llkj13579@126.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/mapleincode" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com/people/mapleincode" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/830610" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20017606号-1</a>
+                </span>
+            
+            
+                
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704" target="_blank">浙公网安备33011002014704号</a>
+                </span>
+            
+        </div>
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 178
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span>
+            <a class="archive-post-title" href="/2023/12/20/2023/12/validation-api/">validation-api</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/20</span>
+            <a class="archive-post-title" href="/2023/09/20/2023/09/shutil/">Python shutil 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/31</span>
+            <a class="archive-post-title" href="/2023/08/31/2023/08/nestjs-provider/">Nestjs Provider</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2023/08/03/2023/08/mvn-command/">mvn 命令参数含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span>
+            <a class="archive-post-title" href="/2023/07/26/2023/07/after-poweroff-force/">强关 esxi，数据损坏和修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023/05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023/04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023/04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023/04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023/03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023/02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023/02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023/01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022/12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022/08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022/08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/distributed-lock/">分布式互斥</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022/08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022/08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022/08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/maven-settings/">maven settings.xml 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022/08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022/08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022/07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022/06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022/06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022/04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022/04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022/04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-pip/">python 更换国内镜像源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022/04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/iptables/">linux 端口转发 iptables</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/03/python-3-minutes/">3 分钟学习 (Python)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/04/maven-notion/">mvn 笔记精简</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span>
+            <a class="archive-post-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/09</span>
+            <a class="archive-post-title" href="/2022/02/09/2022/01/unrar/">python 对 zip 和 rar 文件进行解压</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/2021/09/synology-drive-icon/">Synolog 群晖 Drive 图标不显示的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/memcache-lock/">memcached 实现高并发条件下全局锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/raspberry-watchdog/">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2021/07/21/2021/07/esxi-copy/">ESXi 支持复制粘贴</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">k8s mysql demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span>
+            <a class="archive-post-title" href="/2021/05/24/2021/04/frp/">frp 的使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/prisma-connection-urls/">Prisma connection URLs</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/GraphQL/">GraphQL</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2021/04/12/2021/04/kubernetes/">kubernetes 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span>
+            <a class="archive-post-title" href="/2021/04/08/2021/04/nginx-ws/">Nginx 支持 WebSocket</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span>
+            <a class="archive-post-title" href="/2021/02/24/2021/02/baijiu/">中国白酒分类</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span>
+            <a class="archive-post-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">阿里云 Ubuntu 数据盘格式化和挂载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span>
+            <a class="archive-post-title" href="/2020/11/23/2020/11/dpkg-bad-inconsistent-state/">Dpkg 包损坏无法安装 & 卸载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2020/11/13/2020/11/syno-install/">黑群晖 6.2.3 安装指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2020/11/09/2020/11/syno/">黑群辉安装教程 (6.2.3)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span>
+            <a class="archive-post-title" href="/2020/10/19/2020/10/zhenglun/">争论的艺术</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span>
+            <a class="archive-post-title" href="/2020/10/14/2020/10/dash-bash/">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2020/09/22/2020/09/raspberry-usb-start/">raspberry 4B Ubuntu 系统 USB 启动</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2020/09/16/2020/09/raspberry/">我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span>
+            <a class="archive-post-title" href="/2020/09/09/2020/09/lock/">悲观锁 & 乐观锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/redis-cluster/">redis 集群</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/api-gateway/">API 网关功能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2020/08/18/2020/08/jiaohanglaji/">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2020/08/13/2020/08/python/">Python & Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span>
+            <a class="archive-post-title" href="/2020/07/06/2020/07/HashMap&HashTable/">HashMap和HashTable的区别</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/ddsm/">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/esxi/">esxi 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/2020-06-17/">日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2020/05/21/2020/05/ink/">自製鋼筆染料墨水配方[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/18</span>
+            <a class="archive-post-title" href="/2020/05/18/2020/05/chrome-auto-sign-in/">解决 Chrome 无法自动填充账号密码的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2020/05/08/2020/05/zfs/">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span>
+            <a class="archive-post-title" href="/2020/05/02/2020/05/Synology%20Drive/">群晖 Drive 反复同步问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span>
+            <a class="archive-post-title" href="/2020/04/15/2020/01/java-mode/">类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span>
+            <a class="archive-post-title" href="/2020/04/01/2020/01/wordpress-domain/">WordPress 绑定多域名</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/2020/03/10/2020/01/nginx-cache/">Nginx 降低 IO 负荷</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/java/">Java 学习路线</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/pivpn/">树莓派安装 PIVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/disable-systemd-resolved/">nameserver 127.0.0.53</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2020/01/07/2020/01/km3/">杭州科目三</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2019 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/rasp-4-ubuntu/">Raspberry4 安装 Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/xp-serials-ids/">XP 序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2019/12/16/2019/12/koa-compose/">Koa-Compose 源码试写</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2019/11/26/2019/11/logstash/">Logstash conf 语法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2019/11/13/2019/11/centos5.x/">CentOS 5.x 版本 repo 地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/12</span>
+            <a class="archive-post-title" href="/2019/11/12/2019/11/ELK/">ELK 搭建</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/passwd/">Shell 自动输入 sudo 密码</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/vCenter/">vCenter 和 vCSA 对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/08</span>
+            <a class="archive-post-title" href="/2019/11/08/2019/11/esxi/">ESXi 使用笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2019/09/05/2019/08/rabbtmq-demo/">RabbitMQ Node demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span>
+            <a class="archive-post-title" href="/2019/09/02/2019/08/version/">版本号对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2019/08/13/2019/08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">单反画幅</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2019/07/21/2019/07/ssl_cert/">Let's encrypt 证书申请</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2019/07/05/2019/07/id-autoincr/">唯一 ID 生成</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2019/06/17/2019/07/codesign/">mac os codesign</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span>
+            <a class="archive-post-title" href="/2019/05/23/2019/07/redis/">redis 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/2019/04/29/2019/07/xiazaibao/">迅雷下载宝定制固件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/16</span>
+            <a class="archive-post-title" href="/2019/04/16/2019/07/gitlab-source/">GitLab Ubuntu 使用清华镜像站</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span>
+            <a class="archive-post-title" href="/2019/03/29/2019/07/syno/">黑群晖的安装 & 洗白</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/2019/03/14/2019/07/analysis-of-redis-performance/">Redis 性能问题分析（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/2019/03/13/2019/07/redis-concurrence/">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span>
+            <a class="archive-post-title" href="/2019/02/25/2019/07/mc-server-input-error/">MC 服务器启动之后无法在服务端输入指令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2019/02/21/2019/07/grub2/">关于 grub2 的修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span>
+            <a class="archive-post-title" href="/2019/01/28/2019/07/python-raw-string/">Python 字符串中的转移符</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span>
+            <a class="archive-post-title" href="/2019/01/11/2019/07/rabbitmq-install/">RabbitMQ 安装 & 添加登录用户[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/redlock/">Red Lock</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/kafka-node/">Kafka-node 的使用 Demo</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2018 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2018/11/09/2019/07/foreign-key/">MySQL 外键</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/vmware-market-expansion/">VMware 虚拟机硬盘文件扩容</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/node-proxy/">JavaScript Proxy 对象</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/2018/10/31/2019/07/kafka-auto-offset-reset/">Kafka auto.offset.reset 值</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/30</span>
+            <a class="archive-post-title" href="/2018/08/30/2019/07/iterator/">iterator(迭代器)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/python-with-as/">Python with as 的作用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/mysql-ACID/">MySQL 事务</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/2018/08/27/2019/07/guanchazhe/">Node 和观察者设计模式</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span>
+            <a class="archive-post-title" href="/2018/08/26/2019/07/mysql-engines/">MySQL 引擎</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span>
+            <a class="archive-post-title" href="/2018/08/23/2019/07/http2/">在树莓派上升级 Nginx 开启 HTTP/2</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2018/08/09/2019/07/node-buffer/">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span>
+            <a class="archive-post-title" href="/2018/08/08/2019/07/expect/">Expect 使用小记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span>
+            <a class="archive-post-title" href="/2018/07/09/2019/07/git-branch-all/">git 拉取所有远程分支</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2018/07/05/2019/07/memcached-node-package/">Nodejs memcached 包的基本用法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span>
+            <a class="archive-post-title" href="/2018/07/03/2019/08/typescript/">TypeScript 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-momery/">取消 Node 对内存上限的限制条件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-async/">Node 异步三种方式的对比 Demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span>
+            <a class="archive-post-title" href="/2018/06/01/2019/07/xcode-route/">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span>
+            <a class="archive-post-title" href="/2018/05/28/2019/07/xp-x64/">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/babel/">Babel 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/ubuntu-language/">Ubuntu 安装中文语言包</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/docker/docker-prune/">Docker 运行文件清理工具 prune</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/base64-js/">Base64 JavaScript 实现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/order/">订单的几种类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span>
+            <a class="archive-post-title" href="/2018/05/17/2019/07/openvpn-make/">编译 OpenVPN 及解决相关依赖问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span>
+            <a class="archive-post-title" href="/2018/05/16/2019/07/react-nginx/">Nginx 部署 react 项目返回 404</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span>
+            <a class="archive-post-title" href="/2018/05/13/2019/07/react-reudx-note-new-md/">React-Redux 笔记 - 其他</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2018/05/08/2019/07/react-note/">React.js 小书 - 第三阶段 - 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2018/04/23/2019/07/systemctl/">systemctl 命令(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2018/04/13/2019/07/xms/">Xms Xmx PermSize MaxPermSize 的含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/object-define-properity/">Vue.js 数据绑定原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/shell-place/">Shell 获取文件地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2018/04/07/2019/07/nas-ssh-error/">群晖 SFTP 连接失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2018/03/28/2019/07/static-ip/">Linux 静态 IP 设置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/unixbench/">使用 Unixbench 测试 CPU 性能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/zsh-autosuggestions/">oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/05</span>
+            <a class="archive-post-title" href="/2018/03/05/2019/07/public-license/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span>
+            <a class="archive-post-title" href="/2018/02/26/2019/07/san/">生成 SAN 证书并自签</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2018/02/22/2019/07/openvpn-login-auto/">使用 Expect 自动登录 OpenVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2018/02/21/2019/07/node-install/">Ubuntu 安装 Node.js 环境</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span>
+            <a class="archive-post-title" href="/2018/02/11/2019/07/auto-restart/">Shell 自动重启进程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span>
+            <a class="archive-post-title" href="/2018/01/22/2019/07/rasp-hdd/">树莓派用机械硬盘当系统盘</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2017 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/29</span>
+            <a class="archive-post-title" href="/2017/12/29/2019/07/virtual-dom/">深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span>
+            <a class="archive-post-title" href="/2017/12/26/2019/07/git-no-ff/">git merge --no-ff</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span>
+            <a class="archive-post-title" href="/2017/12/21/2019/07/gulp/">Gulp 常用插件(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span>
+            <a class="archive-post-title" href="/2017/12/14/2019/07/gulp-autoprefixer/">gulp-autoprefixer 基本使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span>
+            <a class="archive-post-title" href="/2017/12/13/2019/07/docker/docker-run/">Docker 启动后直接退出</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/ali-apt/">Ubuntu APT 更换阿里源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/docker/docker-user/">Docker 普通用户操作不用 sudo 权限</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2017/12/06/2019/07/ubuntu-swap/">Ubuntu 新增 swap</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span>
+            <a class="archive-post-title" href="/2017/11/24/2019/07/comand-control/">命令执行控制 && 与 ||(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span>
+            <a class="archive-post-title" href="/2017/11/21/2019/07/database-install/">常用数据库(缓存)的简单安装配置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2017/11/20/2019/07/inode/">优化 Ext4 分区 inode 占用空间问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/mysql-config/">my.cnf 参数解释 & 优化 (转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/gitlab-upgrade-3/">GitLab 推送了更新(三) - Nginx 反向代理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2017/10/27/2019/07/gitlab-upgrade-2/">GitLab 推送了更新(二) - 安装 docker GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/2017/10/26/2019/07/gitlab-upgrade-1/">GitLab 推送了更新(一) - 树莓派安装GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span>
+            <a class="archive-post-title" href="/2017/10/23/2019/07/openssl-key-zhuan-huan/">PFX文件提取公钥私钥</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="rabbitmq">
+                <span class="iconfont-archer">&#xe606;</span>
+                rabbitmq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="other">
+                <span class="iconfont-archer">&#xe606;</span>
+                other
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="photography">
+                <span class="iconfont-archer">&#xe606;</span>
+                photography
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubuntu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubuntu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="shell">
+                <span class="iconfont-archer">&#xe606;</span>
+                shell
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="babel">
+                <span class="iconfont-archer">&#xe606;</span>
+                babel
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="javascript">
+                <span class="iconfont-archer">&#xe606;</span>
+                javascript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mac os">
+                <span class="iconfont-archer">&#xe606;</span>
+                mac os
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mysql">
+                <span class="iconfont-archer">&#xe606;</span>
+                mysql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mongodb">
+                <span class="iconfont-archer">&#xe606;</span>
+                mongodb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redis">
+                <span class="iconfont-archer">&#xe606;</span>
+                redis
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcache">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcache
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="expect">
+                <span class="iconfont-archer">&#xe606;</span>
+                expect
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gitlab">
+                <span class="iconfont-archer">&#xe606;</span>
+                gitlab
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="raspberry">
+                <span class="iconfont-archer">&#xe606;</span>
+                raspberry
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nginx">
+                <span class="iconfont-archer">&#xe606;</span>
+                nginx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nodejs">
+                <span class="iconfont-archer">&#xe606;</span>
+                nodejs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gulp">
+                <span class="iconfont-archer">&#xe606;</span>
+                gulp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="http/2">
+                <span class="iconfont-archer">&#xe606;</span>
+                http/2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python">
+                <span class="iconfont-archer">&#xe606;</span>
+                python
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kafka">
+                <span class="iconfont-archer">&#xe606;</span>
+                kafka
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mc">
+                <span class="iconfont-archer">&#xe606;</span>
+                mc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="java">
+                <span class="iconfont-archer">&#xe606;</span>
+                java
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcached">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcached
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="synology">
+                <span class="iconfont-archer">&#xe606;</span>
+                synology
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vue">
+                <span class="iconfont-archer">&#xe606;</span>
+                vue
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openssl">
+                <span class="iconfont-archer">&#xe606;</span>
+                openssl
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openvpn">
+                <span class="iconfont-archer">&#xe606;</span>
+                openvpn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="license">
+                <span class="iconfont-archer">&#xe606;</span>
+                license
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="reactjs">
+                <span class="iconfont-archer">&#xe606;</span>
+                reactjs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redux">
+                <span class="iconfont-archer">&#xe606;</span>
+                redux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="san">
+                <span class="iconfont-archer">&#xe606;</span>
+                san
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cpu">
+                <span class="iconfont-archer">&#xe606;</span>
+                cpu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vmware">
+                <span class="iconfont-archer">&#xe606;</span>
+                vmware
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="c++">
+                <span class="iconfont-archer">&#xe606;</span>
+                c++
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="xp">
+                <span class="iconfont-archer">&#xe606;</span>
+                xp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="oh-my-zsh">
+                <span class="iconfont-archer">&#xe606;</span>
+                oh-my-zsh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="elk">
+                <span class="iconfont-archer">&#xe606;</span>
+                elk
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="centos">
+                <span class="iconfont-archer">&#xe606;</span>
+                centos
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="esxi">
+                <span class="iconfont-archer">&#xe606;</span>
+                esxi
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="php">
+                <span class="iconfont-archer">&#xe606;</span>
+                php
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="chrome">
+                <span class="iconfont-archer">&#xe606;</span>
+                chrome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ink">
+                <span class="iconfont-archer">&#xe606;</span>
+                ink
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zfs">
+                <span class="iconfont-archer">&#xe606;</span>
+                zfs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="daily">
+                <span class="iconfont-archer">&#xe606;</span>
+                daily
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="sql">
+                <span class="iconfont-archer">&#xe606;</span>
+                sql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="graphql">
+                <span class="iconfont-archer">&#xe606;</span>
+                graphql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="frp">
+                <span class="iconfont-archer">&#xe606;</span>
+                frp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kubernetes">
+                <span class="iconfont-archer">&#xe606;</span>
+                kubernetes
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="prisma">
+                <span class="iconfont-archer">&#xe606;</span>
+                prisma
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zip">
+                <span class="iconfont-archer">&#xe606;</span>
+                zip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="rar">
+                <span class="iconfont-archer">&#xe606;</span>
+                rar
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dom">
+                <span class="iconfont-archer">&#xe606;</span>
+                dom
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="前端">
+                <span class="iconfont-archer">&#xe606;</span>
+                前端
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mvn">
+                <span class="iconfont-archer">&#xe606;</span>
+                mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python pip">
+                <span class="iconfont-archer">&#xe606;</span>
+                python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubunutu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubunutu
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.vvcat.cn",
+        root: siteMetaRoot,
+        author: "Maple"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>

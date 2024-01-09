@@ -1,0 +1,3909 @@
+<!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:21:17
+-->
+<!DOCTYPE html>
+<html lang="">
+    <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:22:15
+-->
+<!-- title -->
+
+
+    
+
+<!-- keywords -->
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="Maple">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Maple">
+    
+        <meta name="keywords" content="hexo,blog,hexo-blog">
+    
+    <meta name="description" content="">
+    <meta name="description" content="[TOC] 关键术语访问密钥&#x2F;安全密钥 组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。  用户 pub 密钥  可用区域 云范围内用于对虚拟机提供容错的一组隔离的虚拟层。 块存储 存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。 容器（对象） 在对象存储中组织和存储对象。 容器（LXC） Linux容器是在单个Linux宿主上运行多个相互隔离">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenStack 学习">
+<meta property="og:url" content="https://blog.vvcat.cn/2022/04/30/2022/04/openstack/index.html">
+<meta property="og:site_name" content="Maple&#39;s Blog">
+<meta property="og:description" content="[TOC] 关键术语访问密钥&#x2F;安全密钥 组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。  用户 pub 密钥  可用区域 云范围内用于对虚拟机提供容错的一组隔离的虚拟层。 块存储 存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。 容器（对象） 在对象存储中组织和存储对象。 容器（LXC） Linux容器是在单个Linux宿主上运行多个相互隔离">
+<meta property="og:locale">
+<meta property="article:published_time" content="2022-04-30T02:43:10.000Z">
+<meta property="article:modified_time" content="2024-01-09T00:20:32.886Z">
+<meta property="article:author" content="Maple">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="icon" href="/favicon.png">
+    
+    <title>OpenStack 学习 · Maple&#39;s Blog</title>
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+    (function (w) {
+        'use strict'
+        // rel=preload support test
+        if (!w.loadCSS) {
+            w.loadCSS = function () {}
+        }
+        // define on the loadCSS obj
+        var rp = (loadCSS.relpreload = {})
+        // rel=preload feature support test
+        // runs once and returns a function for compat purposes
+        rp.support = (function () {
+            var ret
+            try {
+                ret = w.document.createElement('link').relList.supports('preload')
+            } catch (e) {
+                ret = false
+            }
+            return function () {
+                return ret
+            }
+        })()
+
+        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+        // then change that media back to its intended value on load
+        rp.bindMediaToggle = function (link) {
+            // remember existing media attr for ultimate state, or default to 'all'
+            var finalMedia = link.media || 'all'
+
+            function enableStylesheet() {
+                link.media = finalMedia
+            }
+
+            // bind load handlers to enable media
+            if (link.addEventListener) {
+                link.addEventListener('load', enableStylesheet)
+            } else if (link.attachEvent) {
+                link.attachEvent('onload', enableStylesheet)
+            }
+
+            // Set rel and non-applicable media type to start an async request
+            // note: timeout allows this to happen async to let rendering continue in IE
+            setTimeout(function () {
+                link.rel = 'stylesheet'
+                link.media = 'only x'
+            })
+            // also enable media after 3 seconds,
+            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+            setTimeout(enableStylesheet, 3000)
+        }
+
+        // loop through link elements in DOM
+        rp.poly = function () {
+            // double check this to prevent external calls from running
+            if (rp.support()) {
+                return
+            }
+            var links = w.document.getElementsByTagName('link')
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i]
+                // qualify links to those with rel=preload and as=style attrs
+                if (
+                    link.rel === 'preload' &&
+                    link.getAttribute('as') === 'style' &&
+                    !link.getAttribute('data-loadcss')
+                ) {
+                    // prevent rerunning on link
+                    link.setAttribute('data-loadcss', true)
+                    // bind listeners to toggle media back
+                    rp.bindMediaToggle(link)
+                }
+            }
+        }
+
+        // if unsupported, run the polyfill
+        if (!rp.support()) {
+            // run once at least
+            rp.poly()
+
+            // rerun poly on an interval until onload
+            var run = w.setInterval(rp.poly, 500)
+            if (w.addEventListener) {
+                w.addEventListener('load', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            } else if (w.attachEvent) {
+                w.attachEvent('onload', function () {
+                    rp.poly()
+                    w.clearInterval(run)
+                })
+            }
+        }
+
+        // commonjs
+        if (typeof exports !== 'undefined') {
+            exports.loadCSS = loadCSS
+        } else {
+            w.loadCSS = loadCSS
+        }
+    })(typeof global !== 'undefined' ? global : this)
+</script>
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20211217" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="/css/dark.css?v=20211217" as="style">
+    <link rel="stylesheet" href="/css/dark.css">
+    <link rel="stylesheet" href="/css/mobile.css?v=20211217" media="(max-width: 960px)">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js?v=20211217" as="script">
+    <link rel="preload" href="/scripts/dark.js?v=20211217" as="script">
+    <link rel="preload" href="/font/Oswald-Regular.ttf" as="font" crossorigin>
+    <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
+    <!-- algolia -->
+    
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from bootcdn failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js" />')
+        }
+    </script>
+    
+        <body class="post-body">
+    
+        <!-- header -->
+        <header class="header header-mobile">
+    <!-- top read progress line -->
+    <div class="header-element">
+        <div class="read-progress"></div>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        
+            <div class="header-sidebar-menu">
+        
+            
+                <div style="padding-left: 1px;">&#xe775;</div>
+            
+        </div>
+    </div>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=/>Maple's Blog.</a>
+        </span>
+    </div>
+    <!-- toggle banner for post layout -->
+    
+        
+            <div class="banner">
+        
+            <div class="blog-title header-element">
+                <a href="/">Maple&#39;s Blog.</a>
+            </div>
+            <div class="post-title header-element">
+                <a href="#" class="post-name">OpenStack 学习</a>
+            </div>
+        </div>
+    
+</header>
+
+        <!-- fixed footer -->
+        <footer class="footer-fixed">
+    <!-- back to top button -->
+    <div class="footer-fixed-element">
+        
+            <div class="back-top back-top-hidden">
+        
+        
+            <div>&#xe639;</div>
+        
+        </div>
+    </div>
+</footer>
+
+        <!-- wrapper -->
+        <div class="wrapper">
+            <div class="site-intro" style="
+
+
+
+
+
+
+
+    height:50vh;
+
+">
+    
+    <!-- 主页  -->
+    
+        
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://raw.githubusercontent.com/mapleincode/images/master/img/20200522181805.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+                OpenStack 学习
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+                
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页 meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">3.8k</span>阅读时长: <span class="post-count reading-time">17 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
+                    <span class="post-intro-time">2022/04/30</span>
+                    <!-- busuanzi -->
+                    
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+            <script>
+  // get user agent
+  function getBrowserVersions() {
+    var u = window.navigator.userAgent
+    return {
+      userAgent: u,
+      trident: u.indexOf('Trident') > -1, //IE内核
+      presto: u.indexOf('Presto') > -1, //opera内核
+      webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+      gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+      iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+      iPad: u.indexOf('iPad') > -1, //是否为iPad
+      webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+      weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+      uc: u.indexOf('UCBrowser') > -1, //是否为android下的UC浏览器
+    }
+  }
+  var browser = {
+    versions: getBrowserVersions(),
+  }
+  console.log('userAgent: ' + browser.versions.userAgent)
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded')
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document
+        .getElementsByClassName('intro-title')[0]
+        .classList.add('intro-fade-in')
+      document
+        .getElementsByClassName('intro-subtitle')[0]
+        .classList.add('intro-fade-in')
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in')
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb() {
+    if (browser.versions.uc) {
+      console.log('UCBrowser')
+      fontLoaded()
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular'],
+        },
+        loading: function () {
+          // 所有字体开始加载
+          // console.log('font loading');
+        },
+        active: function () {
+          // 所有字体已渲染
+          fontLoaded()
+        },
+        inactive: function () {
+          // 字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout')
+          fontLoaded()
+        },
+        timeout: 5000, // Set the timeout to two seconds
+      })
+    }
+  }
+
+  function asyncErr() {
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0]
+    o.src = u
+    if (cb) {
+      o.addEventListener(
+        'load',
+        function (e) {
+          cb(null, e)
+        },
+        false
+      )
+    }
+    if (err) {
+      o.addEventListener(
+        'error',
+        function (e) {
+          err(null, e)
+        },
+        false
+      )
+    }
+    s.parentNode.insertBefore(o, s)
+  }
+
+  var asyncLoadWithFallBack = function (arr, success, reject) {
+    var currReject = function () {
+      reject()
+      arr.shift()
+      if (arr.length) async(arr[0], success, currReject)
+    }
+
+    async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack(
+    [
+      // 'https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js',
+      'https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js',
+      "/lib/webfontloader.min.js",
+    ],
+    asyncCb,
+    asyncErr
+  )
+</script>
+
+            <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <div class="container container-unloaded">
+                <main class="main post-page">
+    <article class="article-entry">
+        <p>[TOC]</p>
+<h2 id="关键术语"><a href="#关键术语" class="headerlink" title="关键术语"></a>关键术语</h2><p><strong>访问密钥&#x2F;安全密钥</strong></p>
+<p>组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。</p>
+<blockquote>
+<p>用户 pub 密钥</p>
+</blockquote>
+<p><strong>可用区域</strong></p>
+<p>云范围内用于对虚拟机提供容错的一组隔离的虚拟层。</p>
+<p><strong>块存储</strong></p>
+<p>存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。</p>
+<p><strong>容器（对象）</strong></p>
+<p>在对象存储中组织和存储对象。</p>
+<p><strong>容器（LXC）</strong></p>
+<p>Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的操作系统级别的虚拟环境。Openstack容器服务（Magnum）提供应用容器的管理功能。</p>
+<p><strong>固定&#x2F;静态IP</strong></p>
+<p>相同VM（虚拟机）每次启动的时候关联的IP地址。这可用于管理VM，但用户通常不能访问它。</p>
+<p><strong>配置</strong></p>
+<p>虚拟机镜像的一组参数，包括CPU占用率，内存大小，存储空间大小，等等。</p>
+<p><strong>浮动IP</strong></p>
+<p>与虚拟机实例关联的公开的IP地址，这样该实例每次启动的时候其公开的IP地址都相同。</p>
+<p><strong>镜像</strong></p>
+<p>需要用它来创建或者重建服务器的某个特定的操作系统的文件集合。Openstack支持多种镜像格式（AMI，VMDK，VHD，QEMU）</p>
+<p><strong>网络</strong></p>
+<p>在实体之间提供第2层网络连接的虚拟网络。</p>
+<p><strong>对象</strong></p>
+<p>对象是存储在对象存储中的任意类型的数据，它可以是任意格式的数据——文件、音乐、视频，或者二进制数据。</p>
+<p><strong>对象存储</strong></p>
+<p>存储类型，它终于支持一致的、冗余的和非结构化的数据的存储。</p>
+<p><strong>项目&#x2F;租户</strong></p>
+<p>逻辑用户组，通常也称为租户。</p>
+<p><strong>配额</strong></p>
+<p>以项目为单位设置的计算和存储资源的限额。</p>
+<p><strong>角色</strong></p>
+<p>一个角色拥有一个权限集。某角色的用户继承角色的所有权限。</p>
+<p><strong>安全组</strong></p>
+<p>应用于计算实例的一组过滤规则。</p>
+<p><strong>服务</strong></p>
+<p>提供用户通过其访问和控制资源的某个Openstack服务。</p>
+<p><strong>快照</strong></p>
+<p>存储卷或者镜像在某个时间点的拷贝。</p>
+<p><strong>用户</strong></p>
+<p>项目&#x2F;租户消费云资源的一份子。</p>
+<p><strong>卷</strong></p>
+<p>基于磁盘的数据存储，通常表现为支持扩展属性的iSCSI设备。这种存储可能是持久的或短暂的（重启后丢失）。</p>
+<h2 id="虚拟机创建过程"><a href="#虚拟机创建过程" class="headerlink" title="虚拟机创建过程"></a>虚拟机创建过程</h2><ol>
+<li>界面或命令行通过 RESTful API 向 keystone 获取认证信息。</li>
+<li>keystone通过用户请求认证信息，并生成 auth-token 返回给对应的认证请求。</li>
+<li>界面或命令行通过 RESTful API 向 nova-api 发送一个 boot instance 的请求（携带auth-token）。</li>
+<li>nova-api 接受请求后向 keystone 发送认证请求，查看 token 是否为有效用户和 token。</li>
+<li>keystone 验证 token 是否有效，如有效则返回有效的认证和对应的角色（注：有些操作需要有角色权限才能操作）。</li>
+<li>通过认证后 nova-api 和数据库通讯。</li>
+<li>初始化新建虚拟机的数据库记录。</li>
+<li>nova-api 通过 rpc.call 向 nova-scheduler 请求是否有创建虚拟机的资源(Host ID)。</li>
+<li>nova-scheduler 进程侦听消息队列，获取 nova-api 的请求。</li>
+<li>nova-scheduler 通过查询 nova 数据库中计算资源的情况，并通过调度算法计算符合虚拟机创建需要的主机。</li>
+<li>对于有符合虚拟机创建的主机，nova-scheduler 更新数据库中虚拟机对应的物理主机信息。</li>
+<li>nova-scheduler 通过 rpc.cast 向 nova-compute 发送对应的创建虚拟机请求的消息。</li>
+<li>nova-compute 会从对应的消息队列中获取创建虚拟机请求的消息。</li>
+<li>nova-compute 通过 rpc.call 向 nova-conductor 请求获取虚拟机消息。（Flavor）</li>
+<li>nova-conductor 从消息队队列中拿到 nova-compute 请求消息。</li>
+<li>nova-conductor 根据消息查询虚拟机对应的信息。</li>
+<li>nova-conductor 从数据库中获得虚拟机对应信息。</li>
+<li>nova-conductor 把虚拟机信息通过消息的方式发送到消息队列中。</li>
+<li>nova-compute 从对应的消息队列中获取虚拟机信息消息。</li>
+<li>nova-compute 通过 keystone 的 RESTfull API 拿到认证的 token，并通过HTTP请求 glance-api 获取创建虚拟机所需要镜像。</li>
+<li>glance-api 向 keystone 认证 token 是否有效，并返回验证结果。</li>
+<li>token验证通过，nova-compute 获得虚拟机镜像信息(URL)。</li>
+<li>nova-compute 通过 keystone 的 RESTfull API 拿到认证 k 的 token，并通过 HTTP 请求 neutron-server 获取创建虚拟机所需要的网络信息。</li>
+<li>neutron-server 向 keystone 认证 token 是否有效，并返回验证结果。</li>
+<li>token 验证通过，nova-compute 获得虚拟机网络信息。</li>
+<li>nova-compute 通过 keystone 的 RESTfull API 拿到认证的 token，并通过 HTTP 请求 cinder-api 获取创建虚拟机所需要的持久化存储信息。</li>
+<li>cinder-api 向 keystone 认证 token 是否有效，并返回验证结果。</li>
+<li>token 验证通过，nova-compute 获得虚拟机持久化存储信息。</li>
+<li>nova-compute 根据 instance 的信息调用配置的虚拟化驱动来创建虚拟机。</li>
+</ol>
+<h2 id="新增镜像"><a href="#新增镜像" class="headerlink" title="新增镜像"></a>新增镜像</h2><blockquote>
+<p>CirrOS是一个小型的Linux镜像。</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$ . admin-openrc <span class="comment"># 授权</span></span><br><span class="line">$ wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img</span><br><span class="line">$ openstack image create <span class="string">&quot;cirros&quot;</span> \</span><br><span class="line">  --file cirros-0.3.4-x86_64-disk.img \</span><br><span class="line">  --disk-format qcow2 --container-format bare \</span><br><span class="line">  --public</span><br><span class="line">+------------------+------------------------------------------------------+</span><br><span class="line">| Property         | Value                                                |</span><br><span class="line">+------------------+------------------------------------------------------+</span><br><span class="line">| checksum         | 133eae9fb1c98f45894a4e60d8736619                     |</span><br><span class="line">| container_format | bare                                                 |</span><br><span class="line">| created_at       | 2015-03-26T16:52:10Z                                 |</span><br><span class="line">| disk_format      | qcow2                                                |</span><br><span class="line">| file             | /v2/images/cc5c6982-4910-471e-b864-1098015901b5/file |</span><br><span class="line">| <span class="built_in">id</span>               | cc5c6982-4910-471e-b864-1098015901b5                 |</span><br><span class="line">| min_disk         | 0                                                    |</span><br><span class="line">| min_ram          | 0                                                    |</span><br><span class="line">| name             | cirros                                               |</span><br><span class="line">| owner            | ae7a98326b9c455588edd2656d723b9d                     |</span><br><span class="line">| protected        | False                                                |</span><br><span class="line">| schema           | /v2/schemas/image                                    |</span><br><span class="line">| size             | 13200896                                             |</span><br><span class="line">| status           | active                                               |</span><br><span class="line">| tags             |                                                      |</span><br><span class="line">| updated_at       | 2015-03-26T16:52:10Z                                 |</span><br><span class="line">| virtual_size     | None                                                 |</span><br><span class="line">| visibility       | public                                               |</span><br><span class="line">+------------------+------------------------------------------------------+</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack image create</span><br></pre></td></tr></table></figure>
+
+<p>等同于</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glance image-create</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">glance image-create </span><br><span class="line">--name image_name </span><br><span class="line">--disk-format disk_format </span><br><span class="line">--container-format container_format </span><br><span class="line">--is-public [True|False] </span><br><span class="line">&lt; image_path</span><br></pre></td></tr></table></figure>
+
+<p>其中</p>
+<ul>
+<li><p><strong>image_name</strong></p>
+<p>指定您要添加的新映像的名称。</p>
+</li>
+<li><p><strong>disk_format</strong></p>
+<p>指定下列其中一种磁盘格式:</p>
+<ul>
+<li><strong>raw</strong> 非结构化的磁盘映像格式。</li>
+<li><strong>qcow2</strong> QEMU 仿真器支持的磁盘格式，该格式可以动态地扩展并支持写入时复制。</li>
+<li><strong>vmdk</strong> 对于 VMware 系统管理器，这是许多常见虚拟机监视器支持的另一种常见的磁盘格式。</li>
+</ul>
+</li>
+<li><p><strong>container-format</strong></p>
+<p>指定映像的容器格式。 可接受的格式如下：aki、ami、ari、bare 和 ovf。</p>
+</li>
+<li><p><strong>–is-public</strong></p>
+<p>指定映像是否可供其他用户访问。 值可以为 true 或 false。 如果您指定 false 值，那么映像只能在 &#x2F;root&#x2F;openrc 文件中指定的项目作用域内进行访问。</p>
+</li>
+<li><p><strong>image_path</strong></p>
+<p>指定要添加的映像的完整路径。</p>
+</li>
+</ul>
+<h2 id="关于-qcow2-和-raw"><a href="#关于-qcow2-和-raw" class="headerlink" title="关于 qcow2 和 raw"></a>关于 qcow2 和 raw</h2><p><strong>raw</strong></p>
+<ul>
+<li>格式简单，性能较好</li>
+<li>不支持稀疏格式，最好基于 ext3</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dd if=/dev/zero of=flat1.img bs=1024k count=1000 # 非稀疏文件</span><br><span class="line">dd if=/dev/zero of=flat2.img bs=1024k count=0 seek=2048 # 稀疏文件</span><br><span class="line"></span><br><span class="line"># 稀疏文件</span><br><span class="line">dd if=/dev/zero of=flat3.img bs=1024k count=1 seek=2048</span><br><span class="line">cp --sparse=never flat3.img flat3-never.img</span><br><span class="line">cp --sparse=always flat3.img flat3-always.img</span><br><span class="line">cp --sparse=always flat3-never.img flat3-never-always.img</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>文件空洞，在UNIX文件操作中，文件位移量可以大于文件的当前长度。如果 offset 比文件的当前长度更大，下一个写操作就会把文件“撑大（extend）” 在文件里创造“空洞（hole）”。</p>
+<p>稀疏文件与其他普通文件基本相同，区别在于文件中的部分数据是全0，且这部分数据不占用磁盘 空间。</p>
+</blockquote>
+<p><strong>qcow2</strong></p>
+<ul>
+<li>即便文件系统不支持sparse file，文件大小也很小</li>
+<li>copy on write</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建backing file (cow)</span></span><br><span class="line">qemu-img create -f qcow2 -o backing_file=./ubuntutest.qcow2 ubuntutest1.qcow2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于ubuntutest1.img创建一个虚拟机</span></span><br><span class="line">qemu-system-x86_64 -enable-kvm -name ubuntutest  -m 2048 -hda ubuntutest1.qcow2 -vnc :19 -net nic,model=virtio -net tap,ifname=tap0,script=no,downscript=no -monitor stdio</span><br><span class="line"></span><br><span class="line"><span class="comment"># img -&gt; qcow2</span></span><br><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=flat.img bs=1024k count=1000</span><br><span class="line">qemu-img convert -f raw -O qcow2 flat.img flat.qcow2</span><br><span class="line"></span><br><span class="line"><span class="comment"># qcow2 -&gt; qcow2</span></span><br><span class="line">qemu-img convert -f qcow2 -O qcow2 ubuntutest.qcow2 ubuntutest-convert.qcow2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩</span></span><br><span class="line">qemu-img convert -c -f qcow2 -O qcow2 ubuntutest.img ubuntutest-compress.qcow2</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Disk-and-Container-Formats"><a href="#Disk-and-Container-Formats" class="headerlink" title="Disk and Container Formats"></a>Disk and Container Formats</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.openstack.org/glance/pike/user/formats.html">https://docs.openstack.org/glance/pike/user/formats.html</a></p>
+</blockquote>
+<p>When adding an image to Glance, you must specify what the virtual machine image’s <em>disk format</em> and <em>container format</em> are. </p>
+<p>在向 Glance 添加镜像时，必须要先指定虚拟机镜像的磁盘格式和容器格式。</p>
+<p>Disk and container formats are configurable on a per-deployment basis. This document intends to establish a global convention for what specific values of <em>disk_format</em> and <em>container_format</em> mean.</p>
+<p>磁盘和容器格式可在每次部署的基础上进行配置。本文档旨在为<em>disk_format</em>和 <em>container_format</em>的特定值的含义建立一个全球约定。</p>
+<h3 id="Disk-Format"><a href="#Disk-Format" class="headerlink" title="Disk Format"></a>Disk Format</h3><p>The disk format of a virtual machine image is the format of the underlying disk image. Virtual appliance vendors have different formats for laying out the information contained in a virtual machine disk image.</p>
+<p>虚拟机映像的磁盘格式是底层磁盘映像的格式。虚拟设备供应商有不同的格式来布置虚拟机磁盘映像中包含的信息。</p>
+<p>You can set your image’s disk format to one of the following:</p>
+<ul>
+<li><p><strong>raw</strong></p>
+<p>This is an unstructured disk image format</p>
+<p>这是一种非结构化磁盘映像格式</p>
+</li>
+<li><p><strong>vhd</strong></p>
+<p>This is the VHD disk format, a common disk format used by virtual machine monitors from VMware, Xen, Microsoft, VirtualBox, and others</p>
+<p>这是 VHD 磁盘格式，VMware、Xen、Microsoft、VirtualBox 等虚拟机服务使用的常见磁盘格式</p>
+</li>
+<li><p><strong>vhdx</strong></p>
+<p>This is the VHDX disk format, an enhanced version of the vhd format which supports larger disk sizes among other features.</p>
+<p>这是 VHDX 磁盘格式，是 vhd 格式的增强版本，它支持更大容量的磁盘以及其他新的功能。</p>
+</li>
+<li><p><strong>vmdk</strong></p>
+<p>Another common disk format supported by many common virtual machine monitors</p>
+<p>另一种多种通用虚拟机服务支持的通用磁盘格式</p>
+</li>
+<li><p><strong>vdi</strong></p>
+<p>A disk format supported by VirtualBox virtual machine monitor and the QEMU emulator</p>
+<p>VirtualBox 虚拟机监视器和 QEMU 模拟器支持的磁盘格式</p>
+</li>
+<li><p><strong>iso</strong></p>
+<p>光盘数据内容的存档格式（例如 CDROM）。</p>
+</li>
+<li><p><strong>ploop</strong></p>
+<p>A disk format supported and used by Virtuozzo to run OS Containers</p>
+<p>Virtuozzo 支持并用于运行 OS 容器的磁盘格式</p>
+</li>
+<li><p><strong>qcow2</strong></p>
+<p>A disk format supported by the QEMU emulator that can expand dynamically and supports Copy on Write</p>
+<p>QEMU模拟器支持的一种磁盘格式，可以动态扩展，支持写入时复制</p>
+</li>
+<li><p><strong>aki</strong></p>
+<p>这表明 Glance 中存储的是 Amazon 内核映像</p>
+</li>
+<li><p><strong>ari</strong></p>
+<p>这表明 Glance 中存储的是 Amazon ramdisk 映像</p>
+</li>
+<li><p><strong>ami</strong></p>
+<p>这表明 Glance 中存储的是 Amazon 机器映像</p>
+</li>
+</ul>
+<h3 id="Container-Format"><a href="#Container-Format" class="headerlink" title="Container Format"></a>Container Format</h3><p>The container format refers to whether the virtual machine image is in a file format that also contains metadata about the actual virtual machine.</p>
+<p>Note that the container format string is not currently used by Glance or other OpenStack components, so it is safe to simply specify <strong>bare</strong> as the container format if you are unsure.</p>
+<p>容器格式是指虚拟机映像是否采用还包含有关实际虚拟机的元数据的文件格式。</p>
+<p>请注意，Glance 或其他 OpenStack 组件当前不使用容器格式字符串，因此如果您不确定，可以简单地将<strong>bare指定为容器格式。</strong></p>
+<p>You can set your image’s container format to one of the following:</p>
+<p>您可以将镜像的容器格式设置为以下之一：</p>
+<ul>
+<li><p><strong>bare</strong></p>
+<p>This indicates there is no container or metadata envelope for the image</p>
+<p>这表示镜像没有使用容器或元数据封装</p>
+</li>
+<li><p><strong>ovf</strong></p>
+<p>This is the OVF container format</p>
+<p>这是 OVF 容器格式</p>
+</li>
+<li><p><strong>aki</strong></p>
+<p>This indicates what is stored in Glance is an Amazon kernel image</p>
+<p>这表明 Glance 中存储的是 Amazon 内核镜像</p>
+</li>
+<li><p><strong>ari</strong></p>
+<p>This indicates what is stored in Glance is an Amazon ramdisk image</p>
+<p>这表明 Glance 中存储的是 Amazon ramdisk 镜像</p>
+</li>
+<li><p><strong>ami</strong></p>
+<p>This indicates what is stored in Glance is an Amazon machine image</p>
+<p>这表明 Glance 中存储的是 Amazon 机器镜像</p>
+</li>
+<li><p><strong>ova</strong></p>
+<p>This indicates what is stored in Glance is an OVA tar archive file</p>
+<p>这表明 Glance 中存储的是 OVA tar 归档文件</p>
+</li>
+<li><p><strong>docker</strong></p>
+<p>This indicates what is stored in Glance is a Docker tar archive of the container filesystem</p>
+<p>这表明 Glance 中存储的是容器文件系统的 Docker tar 归档文件</p>
+</li>
+</ul>
+<h2 id="启动一个实例"><a href="#启动一个实例" class="headerlink" title="启动一个实例"></a>启动一个实例</h2><h3 id="1-创建网络"><a href="#1-创建网络" class="headerlink" title="1. 创建网络"></a>1. 创建网络</h3><h4 id="创建提供者网络"><a href="#创建提供者网络" class="headerlink" title="创建提供者网络"></a>创建提供者网络</h4><blockquote>
+<p><strong>Provider networks</strong></p>
+</blockquote>
+<ol>
+<li><p>授权</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">. admin-openrc</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建网络：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack network create  --share --external \</span></span><br><span class="line"><span class="language-bash">  --provider-physical-network provider \</span></span><br><span class="line"><span class="language-bash">  --provider-network-type flat provider</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建子网</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack subnet create --network provider \</span></span><br><span class="line"><span class="language-bash">  --allocation-pool start=192.168.201.200,end=192.168.201.210 \</span></span><br><span class="line"><span class="language-bash">  --dns-nameserver 114.114.114.114 --gateway 192.168.201.1 \</span></span><br><span class="line"><span class="language-bash">  --subnet-range 192.168.201.0/24 provider</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-生成一个密钥对"><a href="#2-生成一个密钥对" class="headerlink" title="2. 生成一个密钥对"></a>2. 生成一个密钥对</h3><blockquote>
+<p>可以通过控制台直接上传.</p>
+<p>控制台上传的密钥和管控台上传的独立，研究 ing</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">. demo-openrc</span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">ssh-keygen -q -N <span class="string">&quot;&quot;</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack keypair list <span class="comment"># 验证</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="3-增加安全组规则"><a href="#3-增加安全组规则" class="headerlink" title="3. 增加安全组规则"></a>3. 增加安全组规则</h3><blockquote>
+<p>默认存在 default 安全组</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack security group rule create --proto icmp default <span class="comment"># Permit ICMP (ping)</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack security group rule create --proto tcp --dst-port 22 default <span class="comment"># 允许安全 shell (SSH) 的访问</span></span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-在公有网络上创建实例"><a href="#4-在公有网络上创建实例" class="headerlink" title="4. 在公有网络上创建实例"></a>4. 在公有网络上创建实例</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack flavor list         <span class="comment"># 查看可用类型</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack image list          <span class="comment"># 查看可用镜像</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack network list        <span class="comment"># 查看可用的网络 -----&gt; 获取 PROVIDER_NET_ID</span></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack security group list <span class="comment"># 查看可用安全组</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">openstack server create --flavor m1.nano --image cirros \</span></span><br><span class="line"><span class="language-bash">  --nic net-id=<span class="string">&quot;a2197965-1a9e-4584-892e-c38ea26da077&quot;</span> --security-group default \</span></span><br><span class="line"><span class="language-bash">  --key-name mykey provider-instance</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="ubuntu"><a href="#ubuntu" class="headerlink" title="ubuntu"></a>ubuntu</h2><blockquote>
+<p>openstack image create “cirros” <br>  –file cirros-0.3.4-x86_64-disk.img <br>  –disk-format qcow2 –container-format bare <br>  –public</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget http://cloud-images.ubuntu.com/bionic/current/bionic-server-cloudimg-amd64.img # 下载</span><br><span class="line"></span><br><span class="line">openstack image create &quot;ubuntu_1804&quot; \</span><br><span class="line">  --file bionic-server-cloudimg-amd64.img \</span><br><span class="line">  --disk-format qcow2 --container-format bare \</span><br><span class="line">  --public</span><br><span class="line">  </span><br><span class="line">openstack flavor create --id 0 --vcpus 1 --ram 512 --disk 20 m1.small</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="OpenStack报错-Host-is-not-mapped-to-any-cell"><a href="#OpenStack报错-Host-is-not-mapped-to-any-cell" class="headerlink" title="OpenStack报错:Host is not mapped to any cell"></a>OpenStack报错:Host is not mapped to any cell</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@zy-openstack:~# nova-manage cell_v2 discover_hosts --verbose</span><br><span class="line">Found 2 cell mappings.</span><br><span class="line">Skipping cell0 since it does not contain hosts.</span><br><span class="line">Getting computes from cell &#x27;cell1&#x27;: c833a5f0-612e-4e92-a68b-2460892a85bf</span><br><span class="line">Checking host mapping for compute host &#x27;zy-openstack&#x27;: e11fcef8-9ca9-4a51-981b-59d333afca08</span><br><span class="line">Creating host mapping for compute host &#x27;zy-openstack&#x27;: e11fcef8-9ca9-4a51-981b-59d333afca08</span><br><span class="line">Found 1 unmapped computes in cell: c833a5f0-612e-4e92-a68b-2460892a85bf</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="domain-amp-project"><a href="#domain-amp-project" class="headerlink" title="domain &amp; project"></a>domain &amp; project</h2><p>域和项目</p>
+<ol>
+<li>每个域的项目和用户不能公用</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">domain</span></span><br><span class="line">openstack domain create testdomain</span><br><span class="line">openstack domain list</span><br><span class="line">openstack domain set testdomain --disable</span><br><span class="line">openstack domain delete testdomain # 删除前必须先 distable</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">project</span></span><br><span class="line">openstack project create --domain testdomain testporject</span><br><span class="line">openstack porject list</span><br><span class="line">openstack project delete testdomain</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">user</span></span><br><span class="line">openstack </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">role</span></span><br><span class="line">openstack add create admin # 创建角色</span><br></pre></td></tr></table></figure>
+
+
+
+<ol>
+<li><p>domain 更像是区域的概念，domain 所有账号都是独立的，可以同名。</p>
+</li>
+<li><p>project 是分组的概念。一个 domain 下的 project 可以被同一个 admin 管理。</p>
+</li>
+<li><p>不同 domain 下的资源概念上无法互通。</p>
+</li>
+<li><p>同一个 domain 下不同的 project 有些资源可能互通。比如共享 network， 同享的 image，还有 flavor。</p>
+</li>
+</ol>
+<h1 id="分享"><a href="#分享" class="headerlink" title="分享"></a>分享</h1><p><a target="_blank" rel="noopener" href="https://docs.openstack.org/install-guide/openstack-services.html">https://docs.openstack.org/install-guide/openstack-services.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.openstack.org/install-guide/openstack-services.html#minimal-deployment-for-xena">https://docs.openstack.org/install-guide/openstack-services.html#minimal-deployment-for-xena</a></p>
+<h2 id="Minimal-deployment-for-Xena"><a href="#Minimal-deployment-for-Xena" class="headerlink" title="Minimal deployment for Xena"></a><a target="_blank" rel="noopener" href="https://docs.openstack.org/install-guide/openstack-services.html#minimal-deployment-for-xena">Minimal deployment for Xena</a></h2><p>At a minimum, you need to install the following services. Install the services in the order specified below:</p>
+<ul>
+<li>Identity service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/keystone/xena/install/">keystone installation for Xena</a></li>
+<li>Image service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/glance/xena/install/">glance installation for Xena</a></li>
+<li>Placement service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/placement/xena/install/">placement installation for Xena</a></li>
+<li>Compute service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/nova/xena/install/">nova installation for Xena</a></li>
+<li>Networking service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/neutron/xena/install/">neutron installation for Xena</a></li>
+</ul>
+<p>We advise to also install the following components after you have installed the minimal deployment services:</p>
+<ul>
+<li>Dashboard – <a target="_blank" rel="noopener" href="https://docs.openstack.org/horizon/xena/install/">horizon installation for Xena</a></li>
+<li>Block Storage service – <a target="_blank" rel="noopener" href="https://docs.openstack.org/cinder/xena/install/">cinder installation for Xena</a></li>
+</ul>
+<h2 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">domain</span></span><br><span class="line">openstack domain create t1_domain</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">+-------------+----------------------------------+</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| Field       | Value                            |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">+-------------+----------------------------------+</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| description |                                  |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| enabled     | True                             |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| <span class="built_in">id</span>          | 2410e860fc98445ca2f61e84e16f87ca |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| name        | t1_domain                        |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| options     | &#123;&#125;                               |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">| tags        | []                               |</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">+-------------+----------------------------------+</span></span><br><span class="line"></span><br><span class="line">openstack domain list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除 domain</span></span><br><span class="line">openstack domain set testdomain --disable</span><br><span class="line">openstack domain delete testdomain # 删除前必须先 distable</span><br></pre></td></tr></table></figure>
+
+
+
+<p>共用:</p>
+<ul>
+<li>role 角色</li>
+<li>network 网络</li>
+<li>image 镜像</li>
+<li>flavor 规格</li>
+<li>snapshot<ul>
+<li>可以通过 role 限制</li>
+</ul>
+</li>
+</ul>
+<p>不共用:</p>
+<ul>
+<li>project</li>
+<li>user</li>
+</ul>
+<h2 id="project"><a href="#project" class="headerlink" title="project"></a>project</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">project</span></span><br><span class="line">openstack project create --domain t1_domain t1_project</span><br><span class="line">openstack porject list</span><br><span class="line">openstack project delete t1_porject</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>Invalid credentials.</p>
+</blockquote>
+<h2 id="User"><a href="#User" class="headerlink" title="User"></a>User</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">openstack role list</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+----------------------------------+--------+</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| ID                               | Name   |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+----------------------------------+--------+</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| 05e56359e3704b86b11915eafb3a7dd3 | admin  |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| 41bc8eee42bb4e1d8e6897d70810a4c7 | member |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| a4f79cf33e614a53a0b559a64a72d660 | myrole |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">| d1197901083f4fbeb38ed56da99f793d | reader |</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">+----------------------------------+--------+</span></span><br><span class="line"></span><br><span class="line">openstack role show member</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">openstack user create --domain t1_domain --password-prompt admin</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>You are not authorized for any projects or domains.</p>
+</blockquote>
+<h2 id="role"><a href="#role" class="headerlink" title="role"></a>role</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack role add --project t1_project --user admin admin --project-domain t1_domain --user-domain t1_domain</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openstack network create  --share --external   --provider-physical-network provider   --provider-network-type flat provider</span><br><span class="line">openstack subnet create --network provider   --allocation-pool start=192.168.201.200,end=192.168.201.210   --dns-nameserver 114.114.114.114 --gateway 192.168.201.1   --subnet-range 192.168.201.0/24 provider</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="flavor"><a href="#flavor" class="headerlink" title="flavor"></a>flavor</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack flavor create --id 0 --vcpus 1 --ram 64 --disk 1 m1.nano</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="image"><a href="#image" class="headerlink" title="image"></a>image</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.cirros-cloud.net/0.3.4/cirros-0.3.4-x86_64-disk.img</span><br><span class="line">openstack image create &quot;cirros&quot; \</span><br><span class="line">  --file cirros-0.3.4-x86_64-disk.img \</span><br><span class="line">  --disk-format qcow2 --container-format bare \</span><br><span class="line">  --public</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://cloud-images.ubuntu.com/">https://cloud-images.ubuntu.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.centos.org/centos/7/images/">https://cloud.centos.org/centos/7/images/</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.debian.org/images/cloud/">https://cloud.debian.org/images/cloud/</a></p>
+<h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack keypair create --public-key ~/.ssh/id_rsa.pub mykey</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openstack server create --flavor m1.nano --image cirros   --nic net-id=&quot;a2197965-1a9e-4584-892e-c38ea26da077&quot; --security-group default   --key-name mykey provider-instance</span><br></pre></td></tr></table></figure>
+
+
+
+
+    </article>
+    <!-- license -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://blog.vvcat.cn">Maple</a>
+            <p>原文链接：<a href="https://blog.vvcat.cn/2022/04/30/2022/04/openstack/">https://blog.vvcat.cn/2022/04/30/2022/04/openstack/</a>
+            <p>发表日期：<a href="https://blog.vvcat.cn/2022/04/30/2022/04/openstack/">April 30th 2022, 10:43:10 am</a>
+            <p>更新日期：<a href="https://blog.vvcat.cn/2022/04/30/2022/04/openstack/">January 9th 2024, 8:20:32 am</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/2022/05/19/2022/04/python-venv/" title="python venv">
+                    <div class="nextTitle">python venv</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2022/04/19/2022/04/firewalld/" title="Centos7 防火墙 firewalld 基本配置与端口转发">
+                    <div class="prevTitle">Centos7 防火墙 firewalld 基本配置与端口转发</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- comment -->
+    
+        <div class="post-comment">
+            <!-- 来必力 City 版安装代码 -->
+
+
+            
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        
+        var disqus_config = function () {
+        this.page.url = "https://blog.vvcat.cn/2022/04/30/2022/04/openstack/";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "OpenStack 学习"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://blog-mapleincode-com.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+            
+
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-20 14:23:33
+-->
+
+
+            <!-- utteranc评论 -->
+
+
+            <!-- partial('_partial/comment/changyan') -->
+            <!--PC版-->
+
+
+            
+            
+
+            
+
+        </div>
+    
+    <!-- timeliness note -->
+    <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
+    
+    <!-- Mathjax -->
+    
+</main>
+
+                <!-- profile -->
+                
+            </div>
+            <!--
+ * @Author: maple
+ * @Date: 2022-04-20 16:27:18
+ * @LastEditors: maple
+ * @LastEditTime: 2022-05-05 14:10:53
+-->
+<footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+        <div class="social">
+            
+    
+        
+            
+                <a href="mailto:llkj13579@126.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/mapleincode" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//www.zhihu.com/people/mapleincode" class="iconfont-archer zhihu" target="_blank" title=zhihu></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/830610" class="iconfont-archer bilibili" target="_blank" title=bilibili></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+        </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- website approve for Chinese user -->
+    
+        <div class="website-approve">
+            
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备20017606号-1</a>
+                </span>
+            
+            
+                
+                <img class="beian-img" src="/assets/beian.png" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33011002014704" target="_blank">浙公网安备33011002014704号</a>
+                </span>
+            
+        </div>
+    
+    <!-- 不蒜子  -->
+    
+        <div class="busuanzi-container">
+            
+             
+                <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+            
+        </div>
+    	
+</footer>
+
+        </div>
+        <!-- toc -->
+        
+            <div class="toc-wrapper toc-wrapper-loding" style=
+
+
+
+
+
+
+
+    top:50vh;
+
+>
+                <div class="toc-catalog">
+                    <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+                </div>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E6%9C%AF%E8%AF%AD"><span class="toc-number">1.</span> <span class="toc-text">关键术语</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%88%9B%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">虚拟机创建过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B0%E5%A2%9E%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">新增镜像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4"><span class="toc-number">3.1.</span> <span class="toc-text">命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-qcow2-%E5%92%8C-raw"><span class="toc-number">4.</span> <span class="toc-text">关于 qcow2 和 raw</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Disk-and-Container-Formats"><span class="toc-number">5.</span> <span class="toc-text">Disk and Container Formats</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Disk-Format"><span class="toc-number">5.1.</span> <span class="toc-text">Disk Format</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Container-Format"><span class="toc-number">5.2.</span> <span class="toc-text">Container Format</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%AE%9E%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">启动一个实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%88%9B%E5%BB%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">6.1.</span> <span class="toc-text">1. 创建网络</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%8F%90%E4%BE%9B%E8%80%85%E7%BD%91%E7%BB%9C"><span class="toc-number">6.1.1.</span> <span class="toc-text">创建提供者网络</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%AF%86%E9%92%A5%E5%AF%B9"><span class="toc-number">6.2.</span> <span class="toc-text">2. 生成一个密钥对</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%A2%9E%E5%8A%A0%E5%AE%89%E5%85%A8%E7%BB%84%E8%A7%84%E5%88%99"><span class="toc-number">6.3.</span> <span class="toc-text">3. 增加安全组规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%9C%A8%E5%85%AC%E6%9C%89%E7%BD%91%E7%BB%9C%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%AE%9E%E4%BE%8B"><span class="toc-number">7.</span> <span class="toc-text">4. 在公有网络上创建实例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ubuntu"><span class="toc-number">8.</span> <span class="toc-text">ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenStack%E6%8A%A5%E9%94%99-Host-is-not-mapped-to-any-cell"><span class="toc-number">9.</span> <span class="toc-text">OpenStack报错:Host is not mapped to any cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain-amp-project"><span class="toc-number">10.</span> <span class="toc-text">domain &amp; project</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E4%BA%AB"><span class="toc-number"></span> <span class="toc-text">分享</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Minimal-deployment-for-Xena"><span class="toc-number">1.</span> <span class="toc-text">Minimal deployment for Xena</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#domain"><span class="toc-number">2.</span> <span class="toc-text">domain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#project"><span class="toc-number">3.</span> <span class="toc-text">project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User"><span class="toc-number">4.</span> <span class="toc-text">User</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#role"><span class="toc-number">5.</span> <span class="toc-text">role</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Network"><span class="toc-number">6.</span> <span class="toc-text">Network</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flavor"><span class="toc-number">7.</span> <span class="toc-text">flavor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#image"><span class="toc-number">8.</span> <span class="toc-text">image</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#key"><span class="toc-number">9.</span> <span class="toc-text">key</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server"><span class="toc-number">10.</span> <span class="toc-text">server</span></a></li></ol>
+            </div>
+        
+        <!-- sidebar -->
+        <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+        <div class="sidebar-panel-archives">
+    <!-- 在 ejs 中将 archive 按照时间排序 -->
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 178
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+        
+            
+            
+            <div class="archive-year"> 2023 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/20</span>
+            <a class="archive-post-title" href="/2023/12/20/2023/12/validation-api/">validation-api</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/20</span>
+            <a class="archive-post-title" href="/2023/09/20/2023/09/shutil/">Python shutil 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/31</span>
+            <a class="archive-post-title" href="/2023/08/31/2023/08/nestjs-provider/">Nestjs Provider</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2023/08/03/2023/08/mvn-command/">mvn 命令参数含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/26</span>
+            <a class="archive-post-title" href="/2023/07/26/2023/07/after-poweroff-force/">强关 esxi，数据损坏和修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/12</span>
+            <a class="archive-post-title" href="/2023/06/12/2023/05/aligo_walk/">[Untitled Post]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/09</span>
+            <a class="archive-post-title" href="/2023/05/09/2023/05/walk/">Nodejs 实现 Python os.walk()</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/21</span>
+            <a class="archive-post-title" href="/2023/04/21/2023/04/ts-is-type/">TypeScript Type 类型判断</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/20</span>
+            <a class="archive-post-title" href="/2023/04/20/2023/04/ts-class-method-overload/">TypeScript 重载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2023/04/11/2023/04/rabbitmq/">rabbtmq 笔记 & demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/04</span>
+            <a class="archive-post-title" href="/2023/04/04/2023/04/synology-set-code/">黑群晖新引导洗白（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/16</span>
+            <a class="archive-post-title" href="/2023/03/16/2023/03/python_advance/">廖雪峰 Python 教程笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2023/03/07/2023/02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/mysql-start-error/">MySQL 启动 error [InnoDB: Missing MLOG_CHECKPOINT]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/28</span>
+            <a class="archive-post-title" href="/2023/02/28/2023/02/rabbitmq-start-error/">RabbitMQ 重启后无法启动问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/23</span>
+            <a class="archive-post-title" href="/2023/02/23/2023/02/esm/">谈谈 es module</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/03</span>
+            <a class="archive-post-title" href="/2023/01/03/2023/01/syno-openvpn-timeout/">OpenVPN 存在 ping 超时的问题</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2022 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2022/12/06/2022/12/bootstrap/">bootstrap.yaml 参数获取</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/java9-18/">Java9 - Java18 新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/27</span>
+            <a class="archive-post-title" href="/2022/09/27/2022/09/ts-tools/">TypeScript 的高级类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/Arraybuffer/">ArrayBuffer，二进制数组</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span>
+            <a class="archive-post-title" href="/2022/09/26/2022/09/es/">ES 版本新特性</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span>
+            <a class="archive-post-title" href="/2022/08/24/2022/08/juren/">进击的巨人完整的故事</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/20</span>
+            <a class="archive-post-title" href="/2022/08/20/2022/08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/distributed-lock/">分布式互斥</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/19</span>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/hashmap/">hash map</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2022/08/18/2022/08/the-sunny-16-rules/">阳光十六法则</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-history/">Java 发展简史</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/java-conception/">Java 的一系列概念</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/11</span>
+            <a class="archive-post-title" href="/2022/08/11/2022/08/jvm8/">JVM 8 特有的参数（区别 JVM 7）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/10</span>
+            <a class="archive-post-title" href="/2022/08/10/2022/08/gc/">Java GC</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2022/08/09/2022/08/jvm7/">jvm7 一份调优参数分析</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/java-lock/">Java 的 21 种锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/04</span>
+            <a class="archive-post-title" href="/2022/08/04/2022/08/maven-settings/">maven settings.xml 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/03</span>
+            <a class="archive-post-title" href="/2022/08/03/2022/08/zookeeper/">zookeeper 笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/01</span>
+            <a class="archive-post-title" href="/2022/08/01/2022/08/java-stream/">Java Stream</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/18</span>
+            <a class="archive-post-title" href="/2022/07/18/2022/07/syno-vpn/">解决群晖 vpn 后无法访问本机的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2022/07/05/2022/06/requirement/">Python 项目 & requirement.txt</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span>
+            <a class="archive-post-title" href="/2022/06/07/2022/06/vlan/">VLAN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span>
+            <a class="archive-post-title" href="/2022/05/30/2022/04/pm2/">pm2 管理所有应用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span>
+            <a class="archive-post-title" href="/2022/05/27/2022/04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2022/05/25/2022/04/gitlab-upgrade-error/">gitlab 升级失败 or gitlab-ctl reconfigure 失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-pip/">python 更换国内镜像源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/19</span>
+            <a class="archive-post-title" href="/2022/05/19/2022/04/python-venv/">python venv</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span>
+            <a class="archive-post-title" href="/2022/04/30/2022/04/openstack/">OpenStack 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/iptables/">linux 端口转发 iptables</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span>
+            <a class="archive-post-title" href="/2022/04/19/2022/04/maven-command/">30 个 Maven 命令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/03/python-3-minutes/">3 分钟学习 (Python)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2022/04/07/2022/04/maven-notion/">mvn 笔记精简</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/06</span>
+            <a class="archive-post-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">记一次 highlight.js 不生效的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/09</span>
+            <a class="archive-post-title" href="/2022/02/09/2022/01/unrar/">python 对 zip 和 rar 文件进行解压</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2021 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2021/09/16/2021/09/synology-drive-icon/">Synolog 群晖 Drive 图标不显示的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/memcache-lock/">memcached 实现高并发条件下全局锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/13</span>
+            <a class="archive-post-title" href="/2021/09/13/2021/09/raspberry-watchdog/">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2021/07/21/2021/07/esxi-copy/">ESXi 支持复制粘贴</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/25</span>
+            <a class="archive-post-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">k8s mysql demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/24</span>
+            <a class="archive-post-title" href="/2021/05/24/2021/04/frp/">frp 的使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/prisma-connection-urls/">Prisma connection URLs</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2021/04/23/2021/04/GraphQL/">GraphQL</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2021/04/12/2021/04/kubernetes/">kubernetes 学习</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/08</span>
+            <a class="archive-post-title" href="/2021/04/08/2021/04/nginx-ws/">Nginx 支持 WebSocket</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/24</span>
+            <a class="archive-post-title" href="/2021/02/24/2021/02/baijiu/">中国白酒分类</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2020 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/01</span>
+            <a class="archive-post-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">阿里云 Ubuntu 数据盘格式化和挂载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/23</span>
+            <a class="archive-post-title" href="/2020/11/23/2020/11/dpkg-bad-inconsistent-state/">Dpkg 包损坏无法安装 & 卸载</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2020/11/13/2020/11/syno-install/">黑群晖 6.2.3 安装指南</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2020/11/09/2020/11/syno/">黑群辉安装教程 (6.2.3)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span>
+            <a class="archive-post-title" href="/2020/10/19/2020/10/zhenglun/">争论的艺术</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/14</span>
+            <a class="archive-post-title" href="/2020/10/14/2020/10/dash-bash/">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span>
+            <a class="archive-post-title" href="/2020/09/22/2020/09/raspberry-usb-start/">raspberry 4B Ubuntu 系统 USB 启动</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span>
+            <a class="archive-post-title" href="/2020/09/16/2020/09/raspberry/">我不推荐使用树莓派来当做家用服务器</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/09</span>
+            <a class="archive-post-title" href="/2020/09/09/2020/09/lock/">悲观锁 & 乐观锁</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/redis-cluster/">redis 集群</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2020/09/05/2020/08/api-gateway/">API 网关功能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/18</span>
+            <a class="archive-post-title" href="/2020/08/18/2020/08/jiaohanglaji/">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2020/08/13/2020/08/python/">Python & Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/06</span>
+            <a class="archive-post-title" href="/2020/07/06/2020/07/HashMap&HashTable/">HashMap和HashTable的区别</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/ddsm/">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/esxi/">esxi 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2020/06/17/2020/06/2020-06-17/">日记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2020/05/21/2020/05/ink/">自製鋼筆染料墨水配方[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/18</span>
+            <a class="archive-post-title" href="/2020/05/18/2020/05/chrome-auto-sign-in/">解决 Chrome 无法自动填充账号密码的问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2020/05/08/2020/05/zfs/">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/02</span>
+            <a class="archive-post-title" href="/2020/05/02/2020/05/Synology%20Drive/">群晖 Drive 反复同步问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/15</span>
+            <a class="archive-post-title" href="/2020/04/15/2020/01/java-mode/">类成员的访问控制模式及其允许访问范围</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/01</span>
+            <a class="archive-post-title" href="/2020/04/01/2020/01/wordpress-domain/">WordPress 绑定多域名</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/10</span>
+            <a class="archive-post-title" href="/2020/03/10/2020/01/nginx-cache/">Nginx 降低 IO 负荷</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/java/">Java 学习路线</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/pivpn/">树莓派安装 PIVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/18</span>
+            <a class="archive-post-title" href="/2020/01/18/2020/01/disable-systemd-resolved/">nameserver 127.0.0.53</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2020/01/07/2020/01/km3/">杭州科目三</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2019 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/rasp-4-ubuntu/">Raspberry4 安装 Ubuntu</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span>
+            <a class="archive-post-title" href="/2019/12/24/2019/12/xp-serials-ids/">XP 序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/16</span>
+            <a class="archive-post-title" href="/2019/12/16/2019/12/koa-compose/">Koa-Compose 源码试写</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2019/11/26/2019/11/logstash/">Logstash conf 语法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/13</span>
+            <a class="archive-post-title" href="/2019/11/13/2019/11/centos5.x/">CentOS 5.x 版本 repo 地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/12</span>
+            <a class="archive-post-title" href="/2019/11/12/2019/11/ELK/">ELK 搭建</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/passwd/">Shell 自动输入 sudo 密码</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/11</span>
+            <a class="archive-post-title" href="/2019/11/11/2019/11/vCenter/">vCenter 和 vCSA 对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/08</span>
+            <a class="archive-post-title" href="/2019/11/08/2019/11/esxi/">ESXi 使用笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/05</span>
+            <a class="archive-post-title" href="/2019/09/05/2019/08/rabbtmq-demo/">RabbitMQ Node demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/02</span>
+            <a class="archive-post-title" href="/2019/09/02/2019/08/version/">版本号对比</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2019/08/13/2019/08/%E5%8D%95%E5%8F%8D%E7%94%BB%E5%B9%85/">单反画幅</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span>
+            <a class="archive-post-title" href="/2019/07/21/2019/07/ssl_cert/">Let's encrypt 证书申请</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2019/07/05/2019/07/id-autoincr/">唯一 ID 生成</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/17</span>
+            <a class="archive-post-title" href="/2019/06/17/2019/07/codesign/">mac os codesign</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/23</span>
+            <a class="archive-post-title" href="/2019/05/23/2019/07/redis/">redis 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/29</span>
+            <a class="archive-post-title" href="/2019/04/29/2019/07/xiazaibao/">迅雷下载宝定制固件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/16</span>
+            <a class="archive-post-title" href="/2019/04/16/2019/07/gitlab-source/">GitLab Ubuntu 使用清华镜像站</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/29</span>
+            <a class="archive-post-title" href="/2019/03/29/2019/07/syno/">黑群晖的安装 & 洗白</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/2019/03/14/2019/07/analysis-of-redis-performance/">Redis 性能问题分析（转载）</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/13</span>
+            <a class="archive-post-title" href="/2019/03/13/2019/07/redis-concurrence/">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/25</span>
+            <a class="archive-post-title" href="/2019/02/25/2019/07/mc-server-input-error/">MC 服务器启动之后无法在服务端输入指令</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2019/02/21/2019/07/grub2/">关于 grub2 的修复</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/28</span>
+            <a class="archive-post-title" href="/2019/01/28/2019/07/python-raw-string/">Python 字符串中的转移符</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/11</span>
+            <a class="archive-post-title" href="/2019/01/11/2019/07/rabbitmq-install/">RabbitMQ 安装 & 添加登录用户[转载]</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/redlock/">Red Lock</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/07</span>
+            <a class="archive-post-title" href="/2019/01/07/2019/07/kafka-node/">Kafka-node 的使用 Demo</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2018 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/09</span>
+            <a class="archive-post-title" href="/2018/11/09/2019/07/foreign-key/">MySQL 外键</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/vmware-market-expansion/">VMware 虚拟机硬盘文件扩容</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/01</span>
+            <a class="archive-post-title" href="/2018/11/01/2019/07/node-proxy/">JavaScript Proxy 对象</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/31</span>
+            <a class="archive-post-title" href="/2018/10/31/2019/07/kafka-auto-offset-reset/">Kafka auto.offset.reset 值</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/30</span>
+            <a class="archive-post-title" href="/2018/08/30/2019/07/iterator/">iterator(迭代器)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/python-with-as/">Python with as 的作用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/29</span>
+            <a class="archive-post-title" href="/2018/08/29/2019/07/mysql-ACID/">MySQL 事务</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/27</span>
+            <a class="archive-post-title" href="/2018/08/27/2019/07/guanchazhe/">Node 和观察者设计模式</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/26</span>
+            <a class="archive-post-title" href="/2018/08/26/2019/07/mysql-engines/">MySQL 引擎</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/23</span>
+            <a class="archive-post-title" href="/2018/08/23/2019/07/http2/">在树莓派上升级 Nginx 开启 HTTP/2</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/09</span>
+            <a class="archive-post-title" href="/2018/08/09/2019/07/node-buffer/">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/08</span>
+            <a class="archive-post-title" href="/2018/08/08/2019/07/expect/">Expect 使用小记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span>
+            <a class="archive-post-title" href="/2018/07/09/2019/07/git-branch-all/">git 拉取所有远程分支</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/05</span>
+            <a class="archive-post-title" href="/2018/07/05/2019/07/memcached-node-package/">Nodejs memcached 包的基本用法</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/03</span>
+            <a class="archive-post-title" href="/2018/07/03/2019/08/typescript/">TypeScript 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-momery/">取消 Node 对内存上限的限制条件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span>
+            <a class="archive-post-title" href="/2018/06/06/2019/07/node-async/">Node 异步三种方式的对比 Demo</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/01</span>
+            <a class="archive-post-title" href="/2018/06/01/2019/07/xcode-route/">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span>
+            <a class="archive-post-title" href="/2018/05/28/2019/07/xp-x64/">MSDN Windows XP Professional x64 Edition with SP2 +VL简体中文语言包+序列号</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/babel/">Babel 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/ubuntu-language/">Ubuntu 安装中文语言包</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/22</span>
+            <a class="archive-post-title" href="/2018/05/22/2019/07/docker/docker-prune/">Docker 运行文件清理工具 prune</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/base64-js/">Base64 JavaScript 实现</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span>
+            <a class="archive-post-title" href="/2018/05/21/2019/07/order/">订单的几种类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/17</span>
+            <a class="archive-post-title" href="/2018/05/17/2019/07/openvpn-make/">编译 OpenVPN 及解决相关依赖问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/16</span>
+            <a class="archive-post-title" href="/2018/05/16/2019/07/react-nginx/">Nginx 部署 react 项目返回 404</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/13</span>
+            <a class="archive-post-title" href="/2018/05/13/2019/07/react-reudx-note-new-md/">React-Redux 笔记 - 其他</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/08</span>
+            <a class="archive-post-title" href="/2018/05/08/2019/07/react-note/">React.js 小书 - 第三阶段 - 学习笔记</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/23</span>
+            <a class="archive-post-title" href="/2018/04/23/2019/07/systemctl/">systemctl 命令(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/13</span>
+            <a class="archive-post-title" href="/2018/04/13/2019/07/xms/">Xms Xmx PermSize MaxPermSize 的含义</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/object-define-properity/">Vue.js 数据绑定原理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/12</span>
+            <a class="archive-post-title" href="/2018/04/12/2019/07/shell-place/">Shell 获取文件地址</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/07</span>
+            <a class="archive-post-title" href="/2018/04/07/2019/07/nas-ssh-error/">群晖 SFTP 连接失败</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/28</span>
+            <a class="archive-post-title" href="/2018/03/28/2019/07/static-ip/">Linux 静态 IP 设置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/unixbench/">使用 Unixbench 测试 CPU 性能</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span>
+            <a class="archive-post-title" href="/2018/03/18/2019/07/zsh-autosuggestions/">oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/05</span>
+            <a class="archive-post-title" href="/2018/03/05/2019/07/public-license/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/26</span>
+            <a class="archive-post-title" href="/2018/02/26/2019/07/san/">生成 SAN 证书并自签</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2018/02/22/2019/07/openvpn-login-auto/">使用 Expect 自动登录 OpenVPN</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span>
+            <a class="archive-post-title" href="/2018/02/21/2019/07/node-install/">Ubuntu 安装 Node.js 环境</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/11</span>
+            <a class="archive-post-title" href="/2018/02/11/2019/07/auto-restart/">Shell 自动重启进程</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/22</span>
+            <a class="archive-post-title" href="/2018/01/22/2019/07/rasp-hdd/">树莓派用机械硬盘当系统盘</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
+            <div class="archive-year"> 2017 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/29</span>
+            <a class="archive-post-title" href="/2017/12/29/2019/07/virtual-dom/">深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/26</span>
+            <a class="archive-post-title" href="/2017/12/26/2019/07/git-no-ff/">git merge --no-ff</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/21</span>
+            <a class="archive-post-title" href="/2017/12/21/2019/07/gulp/">Gulp 常用插件(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span>
+            <a class="archive-post-title" href="/2017/12/14/2019/07/gulp-autoprefixer/">gulp-autoprefixer 基本使用</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/13</span>
+            <a class="archive-post-title" href="/2017/12/13/2019/07/docker/docker-run/">Docker 启动后直接退出</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/ali-apt/">Ubuntu APT 更换阿里源</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/09</span>
+            <a class="archive-post-title" href="/2017/12/09/2019/07/docker/docker-user/">Docker 普通用户操作不用 sudo 权限</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/06</span>
+            <a class="archive-post-title" href="/2017/12/06/2019/07/ubuntu-swap/">Ubuntu 新增 swap</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/24</span>
+            <a class="archive-post-title" href="/2017/11/24/2019/07/comand-control/">命令执行控制 && 与 ||(转)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/21</span>
+            <a class="archive-post-title" href="/2017/11/21/2019/07/database-install/">常用数据库(缓存)的简单安装配置</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/20</span>
+            <a class="archive-post-title" href="/2017/11/20/2019/07/inode/">优化 Ext4 分区 inode 占用空间问题</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/mysql-config/">my.cnf 参数解释 & 优化 (转载)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/03</span>
+            <a class="archive-post-title" href="/2017/11/03/2019/07/gitlab-upgrade-3/">GitLab 推送了更新(三) - Nginx 反向代理</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span>
+            <a class="archive-post-title" href="/2017/10/27/2019/07/gitlab-upgrade-2/">GitLab 推送了更新(二) - 安装 docker GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/26</span>
+            <a class="archive-post-title" href="/2017/10/26/2019/07/gitlab-upgrade-1/">GitLab 推送了更新(一) - 树莓派安装GitLab</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/23</span>
+            <a class="archive-post-title" href="/2017/10/23/2019/07/openssl-key-zhuan-huan/">PFX文件提取公钥私钥</a>
+        </li>
+    
+    </div>
+</div>
+
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+        
+            <span class="sidebar-tag-name" data-tags="rabbitmq">
+                <span class="iconfont-archer">&#xe606;</span>
+                rabbitmq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="other">
+                <span class="iconfont-archer">&#xe606;</span>
+                other
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="photography">
+                <span class="iconfont-archer">&#xe606;</span>
+                photography
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubuntu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubuntu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="shell">
+                <span class="iconfont-archer">&#xe606;</span>
+                shell
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="babel">
+                <span class="iconfont-archer">&#xe606;</span>
+                babel
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="javascript">
+                <span class="iconfont-archer">&#xe606;</span>
+                javascript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mac os">
+                <span class="iconfont-archer">&#xe606;</span>
+                mac os
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="linux">
+                <span class="iconfont-archer">&#xe606;</span>
+                linux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mysql">
+                <span class="iconfont-archer">&#xe606;</span>
+                mysql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mongodb">
+                <span class="iconfont-archer">&#xe606;</span>
+                mongodb
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redis">
+                <span class="iconfont-archer">&#xe606;</span>
+                redis
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcache">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcache
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="expect">
+                <span class="iconfont-archer">&#xe606;</span>
+                expect
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="git">
+                <span class="iconfont-archer">&#xe606;</span>
+                git
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gitlab">
+                <span class="iconfont-archer">&#xe606;</span>
+                gitlab
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="raspberry">
+                <span class="iconfont-archer">&#xe606;</span>
+                raspberry
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="docker">
+                <span class="iconfont-archer">&#xe606;</span>
+                docker
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nginx">
+                <span class="iconfont-archer">&#xe606;</span>
+                nginx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="nodejs">
+                <span class="iconfont-archer">&#xe606;</span>
+                nodejs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="gulp">
+                <span class="iconfont-archer">&#xe606;</span>
+                gulp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="http/2">
+                <span class="iconfont-archer">&#xe606;</span>
+                http/2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python">
+                <span class="iconfont-archer">&#xe606;</span>
+                python
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kafka">
+                <span class="iconfont-archer">&#xe606;</span>
+                kafka
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mc">
+                <span class="iconfont-archer">&#xe606;</span>
+                mc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="java">
+                <span class="iconfont-archer">&#xe606;</span>
+                java
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="memcached">
+                <span class="iconfont-archer">&#xe606;</span>
+                memcached
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="synology">
+                <span class="iconfont-archer">&#xe606;</span>
+                synology
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vue">
+                <span class="iconfont-archer">&#xe606;</span>
+                vue
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openssl">
+                <span class="iconfont-archer">&#xe606;</span>
+                openssl
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="openvpn">
+                <span class="iconfont-archer">&#xe606;</span>
+                openvpn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="license">
+                <span class="iconfont-archer">&#xe606;</span>
+                license
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="reactjs">
+                <span class="iconfont-archer">&#xe606;</span>
+                reactjs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="redux">
+                <span class="iconfont-archer">&#xe606;</span>
+                redux
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="san">
+                <span class="iconfont-archer">&#xe606;</span>
+                san
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="cpu">
+                <span class="iconfont-archer">&#xe606;</span>
+                cpu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="vmware">
+                <span class="iconfont-archer">&#xe606;</span>
+                vmware
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="c++">
+                <span class="iconfont-archer">&#xe606;</span>
+                c++
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="xp">
+                <span class="iconfont-archer">&#xe606;</span>
+                xp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="oh-my-zsh">
+                <span class="iconfont-archer">&#xe606;</span>
+                oh-my-zsh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="elk">
+                <span class="iconfont-archer">&#xe606;</span>
+                elk
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="centos">
+                <span class="iconfont-archer">&#xe606;</span>
+                centos
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="esxi">
+                <span class="iconfont-archer">&#xe606;</span>
+                esxi
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="php">
+                <span class="iconfont-archer">&#xe606;</span>
+                php
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="chrome">
+                <span class="iconfont-archer">&#xe606;</span>
+                chrome
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ink">
+                <span class="iconfont-archer">&#xe606;</span>
+                ink
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zfs">
+                <span class="iconfont-archer">&#xe606;</span>
+                zfs
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="daily">
+                <span class="iconfont-archer">&#xe606;</span>
+                daily
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="sql">
+                <span class="iconfont-archer">&#xe606;</span>
+                sql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="graphql">
+                <span class="iconfont-archer">&#xe606;</span>
+                graphql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="frp">
+                <span class="iconfont-archer">&#xe606;</span>
+                frp
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="kubernetes">
+                <span class="iconfont-archer">&#xe606;</span>
+                kubernetes
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="prisma">
+                <span class="iconfont-archer">&#xe606;</span>
+                prisma
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zip">
+                <span class="iconfont-archer">&#xe606;</span>
+                zip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="rar">
+                <span class="iconfont-archer">&#xe606;</span>
+                rar
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="dom">
+                <span class="iconfont-archer">&#xe606;</span>
+                dom
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="前端">
+                <span class="iconfont-archer">&#xe606;</span>
+                前端
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mvn">
+                <span class="iconfont-archer">&#xe606;</span>
+                mvn
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="firewalld">
+                <span class="iconfont-archer">&#xe606;</span>
+                firewalld
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="liunx">
+                <span class="iconfont-archer">&#xe606;</span>
+                liunx
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="iptables">
+                <span class="iconfont-archer">&#xe606;</span>
+                iptables
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python pip">
+                <span class="iconfont-archer">&#xe606;</span>
+                python pip
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="pm2">
+                <span class="iconfont-archer">&#xe606;</span>
+                pm2
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="VLAN">
+                <span class="iconfont-archer">&#xe606;</span>
+                VLAN
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="zookeeper">
+                <span class="iconfont-archer">&#xe606;</span>
+                zookeeper
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="maven">
+                <span class="iconfont-archer">&#xe606;</span>
+                maven
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="jvm">
+                <span class="iconfont-archer">&#xe606;</span>
+                jvm
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="摄影">
+                <span class="iconfont-archer">&#xe606;</span>
+                摄影
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="JavaScript">
+                <span class="iconfont-archer">&#xe606;</span>
+                JavaScript
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="mq">
+                <span class="iconfont-archer">&#xe606;</span>
+                mq
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="python3">
+                <span class="iconfont-archer">&#xe606;</span>
+                python3
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="aligo">
+                <span class="iconfont-archer">&#xe606;</span>
+                aligo
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ubunutu">
+                <span class="iconfont-archer">&#xe606;</span>
+                ubunutu
+            </span>
+        
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+        缺失模块，请参考主题文档进行安装配置：https://github.com/fi3ework/hexo-theme-archer#%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+
+    </div>
+</div>
+
+        <!-- site-meta -->
+        <script>
+    var siteMetaRoot = "/"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
+    var siteMeta = {
+        url: "https://blog.vvcat.cn",
+        root: siteMetaRoot,
+        author: "Maple"
+    }
+</script>
+
+        <!-- import experimental options here -->
+        <!-- Custom Font -->
+
+
+        <!-- main func -->
+        <script src="/scripts/main.js?v=20211217"></script>
+        <!-- dark mode -->
+        <script src="/scripts/dark.js?v=20211217"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" defer></script>
+        <!-- algolia -->
+        
+        <!-- busuanzi -->
+        
+            <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+        
+        <!-- CNZZ -->
+        
+        <!-- async load share.js -->
+        
+            <script src="/scripts/share.js?v=20211217" async></script>
+        
+        <!-- mermaid -->
+        
+    </body>
+</html>
