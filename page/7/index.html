@@ -455,6 +455,134 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2021/07/21/2021/07/esxi-copy/">
+                
+                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
+            </a>
+            <div class="abstract-content">
+                修改办法设置 - 高级 - 编辑配置
+添加
+12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
+
+
+
+其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
+
+
+
+Warining注意 vmware tools 的状态
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">
+                
+                <span class="abstract-title-text">k8s mysql demo</span>
+            </a>
+            <div class="abstract-content">
+                
+mysql-rc.yaml
+
+123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/05/24/2021/04/frp/">
+                
+                <span class="abstract-title-text">frp 的使用</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+frp 堪称一神器。只要你拥有一台公网服务器，然后开启一个 tcp 端口，即可快乐的玩耍 frp。
+
+个人方案原本是搭建在树莓派 4 上。无奈那玩意儿实在不稳定。
+目前搭建在基于 esxi 的虚拟机上。
+网络环境是普通的家用电信宽带，依赖 ddns 服务实现域名更新。
+
+安装 &amp; 启动在 Release 页面下载对应的文件包，解压。
+主要包含以下文件
+12345678910├── README.md├── frpc # or frpc.exe├── frpc.ini├── frps # or frpc.exe├── frps.ini└── systemd    ├──...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="frp">frp</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2021/04/23/2021/04/prisma-connection-urls/">
                 
                 <span class="abstract-title-text">Prisma connection URLs</span>
@@ -760,170 +888,10 @@ BMR 分区表默认只支持 4 个主分区
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/13/2020/11/syno-install/">
-                
-                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
-            </a>
-            <div class="abstract-content">
-                1. 准备设备
-nas 电脑设备一台
-其他 PC 设备一台
-启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
-
-2. 准备文件
-DSM_DS918+_25426.pat 
-系统安装文件。
-可以官网直接下载。
-目前时间段最新的系统安装文件(2020-11-13)
-如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
-
-
-DS918+_6.23-25426-1.04b（引导文件）.img
-引导文件
-
-
-DS918-6.23_1.04b的扩展驱动0.13.3.zip
-驱动扩展，用于增强驱动，支持 2.5G 网卡
-
-
-libsynon...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/09/2020/11/syno/">
-                
-                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
-            </a>
-            <div class="abstract-content">
-                关于 nas 的推荐1. 按照系统
-群晖
-推荐
-扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
-应用极多，而且包含桌面应用和移动应用
-黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
-白群晖缺点： 贵
-
-
-FreeNAS
-使用不多
-硬件要求相对高一点 &amp; 开源
-UI 还行，现在和 True NAS 合并了
-
-
-Linux &amp; Samba
-就是 Linux 服务器
-
-
-Windows Server
-就是 windows 服务器
-
-
-unraid &amp; vmware
-都是虚拟机，会损耗部分性能。
-
-
-
-2. 按照硬盘数
-2.5 寸 x 1
-ar...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/10/19/2020/10/zhenglun/">
-                
-                <span class="abstract-title-text">争论的艺术</span>
-            </a>
-            <div class="abstract-content">
-                今天打车，遇到一个很健谈的司机。
-
-好像所有司机都很健谈，而且谈过之后司机的态度就会 MAX
-
-提到关于国产品牌和进口品牌。我想到之前在群里就遇到一个人死顶苹果的摄像头。
-认为苹果的摄像头比华为好。因为苹果的摄像头比较真实，拍出来的人比较丑。
-但是华为的话，通过软硬件对图形进行渲染，拍出来的人虽然好看，但是反而是辣鸡。
-和那个大哥谈论下，基本几分钟就把比较中立的结论给定了下来：
-
-华为的渲染记录也是功能和特性之一。
-即使苹果的拍照渲染程度小，但是和实物，或者哪怕是单反效果相比，都要差的多
-日常生活中，大家拍照，无论是拍人和拍物，本身就是为了纪念，也是为了好看。
-而相反的是，苹果摄像头的特...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/6/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/8/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/6/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/8/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -2018,7 +1986,28 @@ ar...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2379,7 +2368,7 @@ ar...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 178
+        Total : 181
         </div>
         <!-- search  -->
         
@@ -2389,6 +2378,33 @@ ar...
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2024/02/22/2024/01/outline/">通过 docker 来部署 outline</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
@@ -3889,6 +3905,21 @@ ar...
             <span class="sidebar-tag-name" data-tags="ubunutu">
                 <span class="iconfont-archer">&#xe606;</span>
                 ubunutu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="outline">
+                <span class="iconfont-archer">&#xe606;</span>
+                outline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="traefik">
+                <span class="iconfont-archer">&#xe606;</span>
+                traefik
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postgresql">
+                <span class="iconfont-archer">&#xe606;</span>
+                postgresql
             </span>
         
     </div>

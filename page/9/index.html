@@ -455,6 +455,141 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/08/13/2020/08/python/">
+                
+                <span class="abstract-title-text">Python &amp; Ubuntu</span>
+            </a>
+            <div class="abstract-content">
+                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
+安装 Python3安装 python3
+1sudo apt install python3
+
+安装 pip3
+1sudo apt install python3-pip
+
+
+
+
+一般 pip 和 pip2 指的都是 python2-pip
+
+pip3 安装依赖1pip3 install flask
+
+这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
+pm2 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/07/06/2020/07/HashMap&HashTable/">
+                
+                <span class="abstract-title-text">HashMap和HashTable的区别</span>
+            </a>
+            <div class="abstract-content">
+                HashMap 不是线程安全的HashMap 是 map 接口的实现类，是将键映射到值的对象，其中键和值都是对象，并且不能包含重复键，但可以包含重复值。HashMap 允许 null  key 和 null value，而 HashTable 不允许。
+HashTable 是线程安全 Collection。HashMap 是 HashTable 的轻量级实现，他们都完成了Map 接口，主要区别在于 HashMap 允许 null  key 和 null value,由于非线程安全，效率上可能高于 Hashtable。
+区别如下：
+HashMap允许将 null 作为一个 entry 的 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/06/17/2020/06/ddsm/">
+                
+                <span class="abstract-title-text">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
+            </a>
+            <div class="abstract-content">
+                群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
+当然对我们来说，重要的是里面的序列号。
+我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
+查阅了谷歌，在论坛上找到解决方案：
+https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
+
+Been there, done tha...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/06/17/2020/06/esxi/">
                 
                 <span class="abstract-title-text">esxi 安装</span>
@@ -791,140 +926,10 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/04/01/2020/01/wordpress-domain/">
-                
-                <span class="abstract-title-text">WordPress 绑定多域名</span>
-            </a>
-            <div class="abstract-content">
-                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
-而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
-但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
-首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
-12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/03/10/2020/01/nginx-cache/">
-                
-                <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
-            </a>
-            <div class="abstract-content">
-                V 站上一个帖子提问：
-
-硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
-https://www.v2ex.com/t/649310#reply8
-
-有大佬回复:
-
-当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
-
-按照他说的内容分析下这几个 Nginx 配置的功能。
-expires
-开启客户端 cache ，设置 expire...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/18/2020/01/java/">
-                
-                <span class="abstract-title-text">Java 学习路线</span>
-            </a>
-            <div class="abstract-content">
-                基友推荐的 Java 教程，源地址:
-https://www.bilibili.com/read/cv3560825
-目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
-1. 基础阶段1.1 必选
-Java 语言：https://www.bilibili.com/video/av59529105/
-
-MySQL 数据库：https://www.bilibili.com/video/av59623481/
-
-JDBC：https://www.bilibili.com/video/av59534040/
-
-Java Web：https://www.bilibili...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -2019,7 +2024,28 @@ Java Web：https://www.bilibili...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2380,7 +2406,7 @@ Java Web：https://www.bilibili...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 178
+        Total : 181
         </div>
         <!-- search  -->
         
@@ -2390,6 +2416,33 @@ Java Web：https://www.bilibili...
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2024/02/22/2024/01/outline/">通过 docker 来部署 outline</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
@@ -3890,6 +3943,21 @@ Java Web：https://www.bilibili...
             <span class="sidebar-tag-name" data-tags="ubunutu">
                 <span class="iconfont-archer">&#xe606;</span>
                 ubunutu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="outline">
+                <span class="iconfont-archer">&#xe606;</span>
+                outline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="traefik">
+                <span class="iconfont-archer">&#xe606;</span>
+                traefik
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postgresql">
+                <span class="iconfont-archer">&#xe606;</span>
+                postgresql
             </span>
         
     </div>

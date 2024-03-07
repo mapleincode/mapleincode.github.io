@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vvcat.cn/2024/03/07/2024/02/postgresql-installation/</loc>
+    
+    <lastmod>2024-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvcat.cn/2024/01/31/2024/01/traefik/</loc>
+    
+    <lastmod>2024-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvcat.cn/2024/02/22/2024/01/outline/</loc>
+    
+    <lastmod>2024-03-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vvcat.cn/2023/12/20/2023/12/validation-api/</loc>
     
     <lastmod>2024-01-09</lastmod>
@@ -1624,7 +1651,7 @@
 
   <url>
     <loc>https://blog.vvcat.cn/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1632,518 +1659,539 @@
   
   <url>
     <loc>https://blog.vvcat.cn/tags/rabbitmq/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/other/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/photography/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/ubuntu/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/shell/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/babel/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/javascript/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/mac-os/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/linux/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/mysql/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/mongodb/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/redis/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/memcache/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/expect/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/git/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/gitlab/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/raspberry/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/docker/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/nginx/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/nodejs/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/gulp/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/http-2/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/python/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/kafka/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/mc/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/java/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/memcached/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/synology/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/vue/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/openssl/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/openvpn/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/license/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/reactjs/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/redux/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/san/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/cpu/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/vmware/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/c/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/xp/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/oh-my-zsh/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/elk/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/centos/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/esxi/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/php/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/chrome/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/ink/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/zfs/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/daily/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/sql/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/graphql/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/frp/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/kubernetes/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/prisma/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/zip/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/rar/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/typescript/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/dom/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/mvn/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/firewalld/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/liunx/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/iptables/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/python-pip/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/pm2/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/VLAN/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/zookeeper/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/maven/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/jvm/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/%E6%91%84%E5%BD%B1/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/JavaScript/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/mq/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/python3/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/aligo/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.vvcat.cn/tags/ubunutu/</loc>
-    <lastmod>2024-01-09</lastmod>
+    <lastmod>2024-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvcat.cn/tags/outline/</loc>
+    <lastmod>2024-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvcat.cn/tags/traefik/</loc>
+    <lastmod>2024-03-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvcat.cn/tags/postgresql/</loc>
+    <lastmod>2024-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

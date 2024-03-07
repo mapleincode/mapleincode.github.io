@@ -440,6 +440,150 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/05/08/2019/07/react-note/">
+                
+                <span class="abstract-title-text">React.js 小书 - 第三阶段 - 学习笔记</span>
+            </a>
+            <div class="abstract-content">
+                
+React.js 小书
+
+第三阶段Lesson 28 - 高阶组件(Higher-Order Components)
+高阶组件是函数。
+
+高阶组件的作用是提高代码复用度。
+
+高阶组件基本结构
+123456789101112export default (某个子组件, 其他参数) &#123;    class NewComponet extends Componet &#123;        // 各种可复用的逻辑，比如请求服务器、读取缓存        // 也可以修改其他参数然后传到子组件中        // const 修改后的参数 = 处理函数(其他参数)        /...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/05/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="reactjs">reactjs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redux">redux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/23/2019/07/systemctl/">
+                
+                <span class="abstract-title-text">systemctl 命令(转)</span>
+            </a>
+            <div class="abstract-content">
+                systemctl命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。
+
+
+
+任务
+旧指令
+新指令
+
+
+
+使某服务自动启动
+chkconfig –level 3 httpd on
+systemctl enable httpd.service
+
+
+使某服务不自动启动
+chkconfig –level 3 httpd off
+systemctl disable httpd.service
+
+
+检查服务状态
+service httpd status
+systemctl status httpd.service （服务详细信息） systemctl...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/04/13/2019/07/xms/">
+                
+                <span class="abstract-title-text">Xms Xmx PermSize MaxPermSize 的含义</span>
+            </a>
+            <div class="abstract-content">
+                转载
+参数的含义
+
+-vmargs -Xms128M -Xmx512M -XX:PermSize&#x3D;64M-XX:MaxPermSize&#x3D;128M-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了-Xms128m JVM初始分配的堆内存-Xmx512m JVM最大允许分配的堆内存，按需分配-XX:PermSize&#x3D;64M JVM初始分配的非堆内存-XX:MaxPermSize&#x3D;128M JVM最大允许分配的非堆内存，按需分配
+
+我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。
+堆(Heap)和非堆(Non-he...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/04/12/2019/07/object-define-properity/">
                 
                 <span class="abstract-title-text">Vue.js 数据绑定原理</span>
@@ -717,130 +861,10 @@ G...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/26/2019/07/san/">
-                
-                <span class="abstract-title-text">生成 SAN 证书并自签</span>
-            </a>
-            <div class="abstract-content">
-                生成 SAN 证书。因为群晖的证书生成有个 BUG， 创造多域名证书居然不能输入*。只好网上找资料手动创建多域名证书 SAN certificater(SubjectAltName Certificater)。
-工作文件夹12345678910├── ca.srl├── certs│   ├── ca.cer # ca 证书│   └── server.cer # server 证书├── private│   ├── ca.csr # ca csr 文件│   ├── ca.pem # ca 私钥│   ├── server.pem # server 私钥 │   └── server...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="san">san</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/22/2019/07/openvpn-login-auto/">
-                
-                <span class="abstract-title-text">使用 Expect 自动登录 OpenVPN</span>
-            </a>
-            <div class="abstract-content">
-                公司使用 OpenVPN 作为外网办公网络，本来只设置了用户名密码，但是为了安全，公司的网(yun)管(wei)同事升级了安全配置，添加了谷歌验证的输入需求。
-谷歌验证是一种将预先生成秘钥和时间戳，通过一种开源算法计算出若干位的数字的安全方案。在 VPN 配置界面，会提供一个二维码(即为秘钥)，然后在手机上安装 APP，扫码二维码并保存，可以获得一个动态刷新的验证码。然后在登录界面输入账号密码和动态验证码即可登录 VPN。
-作为一个电脑党，每次登录 VPN 都需要满世界找手机，真的让人觉得麻烦。因为谷歌验证是开源的，所以 gayhub 上到处都有各个编程语言支持的包。如果可以运行一套程序...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="expect">expect</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/02/21/2019/07/node-install/">
-                
-                <span class="abstract-title-text">Ubuntu 安装 Node.js 环境</span>
-            </a>
-            <div class="abstract-content">
-                官方编译版本安装使用官方预先编译好的二进制安装包进行安装。
-从https://nodejs.org/en/download/选择对应的版本的二进制包，下载到 Linux 上。
-123456789101112# 下载wget https://nodejs.org/dist/&#123;version&#125;/node-&#123;version&#125;-linux-x64.tar.xz# 解压tar -xvf node-&#123;version&#125;-linux-x64.tar.xz# 进入文件夹cd node-&#123;version&#125;-linux-x64/#...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/15/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><a class="extend next" rel="next" href="/archives/page/17/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/15/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/17/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1856,7 +1880,28 @@ G...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2217,7 +2262,7 @@ G...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 178
+        Total : 181
         </div>
         <!-- search  -->
         
@@ -2227,6 +2272,33 @@ G...
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2024/02/22/2024/01/outline/">通过 docker 来部署 outline</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
@@ -3727,6 +3799,21 @@ G...
             <span class="sidebar-tag-name" data-tags="ubunutu">
                 <span class="iconfont-archer">&#xe606;</span>
                 ubunutu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="outline">
+                <span class="iconfont-archer">&#xe606;</span>
+                outline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="traefik">
+                <span class="iconfont-archer">&#xe606;</span>
+                traefik
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postgresql">
+                <span class="iconfont-archer">&#xe606;</span>
+                postgresql
             </span>
         
     </div>

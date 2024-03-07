@@ -455,6 +455,126 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2024/03/07/2024/02/postgresql-installation/">
+                
+                <span class="abstract-title-text">PostgreSQL Ubuntu 安装</span>
+            </a>
+            <div class="abstract-content">
+                安装流程安装直接找官网，无脑走流程即可。
+切记不要使用默认 apt 安装，默认 apt 仓库使用的是旧版本的 Postgres。
+官网地址安装教程
+123456789101112# Create the file repository configuration:sudo sh -c &#x27;echo &quot;deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;# Import the ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/03/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postgresql">postgresql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/02/22/2024/01/outline/">
+                
+                <span class="abstract-title-text">通过 docker 来部署 outline</span>
+            </a>
+            <div class="abstract-content">
+                同样是写 traefik 的老哥，他也写了 outline 的教程：
+从零开始使用开源文档&#x2F;Wiki软件 Outline（一）
+需要注意的是，整个项目的部署是基于 traefik 来进行部署的，除此之外教程相当详细。
+为什么要使用域名？域名可以保证使用时候比较舒服，因为所有服务都可以使用同一个 80 端口或者 443 端口，而不需要每个服务单独占用一个独立的非标准端口。
+这样的情况下，http 服务器区分服务的办法，只能以来域名。
+并非一定需要购买域名，例如范例中的 *.lab.com，只需要在 hosts 文件中加入映射即可访问。
+是否一定要使用 httpshttps 取决于...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/02/22</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="outline">outline</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/01/31/2024/01/traefik/">
+                
+                <span class="abstract-title-text">Traefik 使用和配置</span>
+            </a>
+            <div class="abstract-content">
+                Traefik  的作用是基于 Docker 网络来暴露服务，通过域名的方式来分发对容器的请求。
+在网上找到一老哥的介绍，基本已经很完善了。
+Traefik v3.0 Docker 全面使用指南：基础篇
+但是就最后的结果，因为我不想再部署一套 https 证书的申请获取，于是我简化成了纯 http 版本：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/01/31</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="traefik">traefik</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/12/20/2023/12/validation-api/">
                 
                 <span class="abstract-title-text">validation-api</span>
@@ -764,133 +884,10 @@ thin 指的是精简置备
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/05/09/2023/05/walk/">
-                
-                <span class="abstract-title-text">Nodejs 实现 Python os.walk()</span>
-            </a>
-            <div class="abstract-content">
-                1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950const path = require(&#x27;path&#x27;);const fs = require(&#x27;fs&#x27;).promises;async function done (paths, root) &#123;  const files = await fs.readdir(root);  const endDirs = [];  const endFiles = []; ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/05/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/21/2023/04/ts-is-type/">
-                
-                <span class="abstract-title-text">TypeScript Type 类型判断</span>
-            </a>
-            <div class="abstract-content">
-                TS 中官方支持的方法里，判断 Type 类型的有：
-
-typeof ，但是遗憾的只支持基础类型
-instanceof，只支持类
-
-也就是混合的自定义 Type 而言，官方是没有常见的函数来进行判断。不过 TS 也给了办法。
-先说怎么判断，TS 的类是通过参数字段来判断是否是同一个类型的 Type。也是满足字段类型相同的变量，就可以认为是属于某一个 Type。
-所以可以通过 in 来判断是否包含某个字段。
-初始先定义一些类型：
-123456789101112interface A &#123;  a: string&#125;interface B &#123;  a: number  ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">
-                
-                <span class="abstract-title-text">Python3 安装 mailer 失败</span>
-            </a>
-            <div class="abstract-content">
-                from: https://bobbyhadz.com/blog/python-error-in-package-setup-command-use-2to3-is-invalid
-原因：
-mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认版本过高，导致安装失败。
-解决方案：
-安装低版本 setuptools
-1pip install --upgrade pip &quot;setuptools&lt;58.0&quot;
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/20</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python3">python3</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
+            <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/2/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1985,7 +1982,28 @@ mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2346,7 +2364,7 @@ mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 178
+        Total : 181
         </div>
         <!-- search  -->
         
@@ -2356,6 +2374,33 @@ mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认�
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2024/02/22/2024/01/outline/">通过 docker 来部署 outline</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
@@ -3856,6 +3901,21 @@ mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认�
             <span class="sidebar-tag-name" data-tags="ubunutu">
                 <span class="iconfont-archer">&#xe606;</span>
                 ubunutu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="outline">
+                <span class="iconfont-archer">&#xe606;</span>
+                outline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="traefik">
+                <span class="iconfont-archer">&#xe606;</span>
+                traefik
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postgresql">
+                <span class="iconfont-archer">&#xe606;</span>
+                postgresql
             </span>
         
     </div>

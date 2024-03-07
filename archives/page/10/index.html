@@ -440,6 +440,136 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/04/01/2020/01/wordpress-domain/">
+                
+                <span class="abstract-title-text">WordPress 绑定多域名</span>
+            </a>
+            <div class="abstract-content">
+                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
+而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
+但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
+首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
+12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/03/10/2020/01/nginx-cache/">
+                
+                <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
+            </a>
+            <div class="abstract-content">
+                V 站上一个帖子提问：
+
+硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
+https://www.v2ex.com/t/649310#reply8
+
+有大佬回复:
+
+当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
+
+按照他说的内容分析下这几个 Nginx 配置的功能。
+expires
+开启客户端 cache ，设置 expire...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/01/18/2020/01/java/">
+                
+                <span class="abstract-title-text">Java 学习路线</span>
+            </a>
+            <div class="abstract-content">
+                基友推荐的 Java 教程，源地址:
+https://www.bilibili.com/read/cv3560825
+目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
+1. 基础阶段1.1 必选
+Java 语言：https://www.bilibili.com/video/av59529105/
+
+MySQL 数据库：https://www.bilibili.com/video/av59623481/
+
+JDBC：https://www.bilibili.com/video/av59534040/
+
+Java Web：https://www.bilibili...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/01/18/2020/01/pivpn/">
                 
                 <span class="abstract-title-text">树莓派安装 PIVPN</span>
@@ -744,151 +874,10 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/13/2019/11/centos5.x/">
-                
-                <span class="abstract-title-text">CentOS 5.x 版本 repo 地址</span>
-            </a>
-            <div class="abstract-content">
-                在迁移虚拟机到 ESXi 的时候，不幸遗漏了一个游戏私服服务器 orz。虽然私服不怎么好玩，但是也算是一个小纪念。鉴于私服的服务器版本是 CentOS 5.x 版本比较老，所以担心之后可能搭不起来。
-于是乎，果然访问 error。查阅了相关信息，我搭建的时候 16 年年底。17 年 3 月，CentOS 5.x 正式停止依赖维护。
-呃…查询了网上资料，有提供一个 http://vault.centos.org/5.11/os 的 repo 地址。并且版本限定 5.11。鉴于我对 CentOS 不太了解，直接拿了网上的 CentOS-Base.repo。
-12345678910111213...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/12/2019/11/ELK/">
-                
-                <span class="abstract-title-text">ELK 搭建</span>
-            </a>
-            <div class="abstract-content">
-                起因
-项目需求
-公司某位大佬有记录文档可以参考
-
-ELKELK 平台是当前应用比较广泛的一套开源实时日志分析解决方案。ELK 由 ElasticSearch、Logstash 和 Kiabana 三个开源工具组成。
-ELK &#x3D; Elasticsearch + Logstash + Kibana
-参考 &amp; 下载地址: https://www.elastic.co/cn/products/
-
-MacOS 
-
-Elasticsearch
-Elasticsearch 是一个基于 JSON 的分布式搜索和分析引擎。
-Kibana
-Kibana 可谓 Elastic Stack 的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="elk">elk</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/11/11/2019/11/passwd/">
-                
-                <span class="abstract-title-text">Shell 自动输入 sudo 密码</span>
-            </a>
-            <div class="abstract-content">
-                
-使用 echo 和管道命令
-
-12#!/bin/bashecho password | sudo -S service runtime* status
-
-
-使用文本块输入重定向
-
-
-发现这个命令不能用在 shell 的判断条件里
-
-1234#!/bin/bashsudo -S service talend-runtime* status &lt;&lt; EOFpasswordEOF
-
-
-
-
-第一种方法是 sudo 函数独有，但是输入重定向，对其他需要输入密码的函数也会有效
-
-参考:
-
-https://blog.csdn.net/qiyueqinglian/article/detail...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1904,7 +1893,28 @@ https://blog.csdn.net/qiyueqinglian/article/detail...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2265,7 +2275,7 @@ https://blog.csdn.net/qiyueqinglian/article/detail...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 178
+        Total : 181
         </div>
         <!-- search  -->
         
@@ -2275,6 +2285,33 @@ https://blog.csdn.net/qiyueqinglian/article/detail...
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2024/02/22/2024/01/outline/">通过 docker 来部署 outline</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
@@ -3775,6 +3812,21 @@ https://blog.csdn.net/qiyueqinglian/article/detail...
             <span class="sidebar-tag-name" data-tags="ubunutu">
                 <span class="iconfont-archer">&#xe606;</span>
                 ubunutu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="outline">
+                <span class="iconfont-archer">&#xe606;</span>
+                outline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="traefik">
+                <span class="iconfont-archer">&#xe606;</span>
+                traefik
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postgresql">
+                <span class="iconfont-archer">&#xe606;</span>
+                postgresql
             </span>
         
     </div>

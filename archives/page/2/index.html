@@ -440,6 +440,129 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/05/09/2023/05/walk/">
+                
+                <span class="abstract-title-text">Nodejs 实现 Python os.walk()</span>
+            </a>
+            <div class="abstract-content">
+                1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950const path = require(&#x27;path&#x27;);const fs = require(&#x27;fs&#x27;).promises;async function done (paths, root) &#123;  const files = await fs.readdir(root);  const endDirs = [];  const endFiles = []; ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/05/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/21/2023/04/ts-is-type/">
+                
+                <span class="abstract-title-text">TypeScript Type 类型判断</span>
+            </a>
+            <div class="abstract-content">
+                TS 中官方支持的方法里，判断 Type 类型的有：
+
+typeof ，但是遗憾的只支持基础类型
+instanceof，只支持类
+
+也就是混合的自定义 Type 而言，官方是没有常见的函数来进行判断。不过 TS 也给了办法。
+先说怎么判断，TS 的类是通过参数字段来判断是否是同一个类型的 Type。也是满足字段类型相同的变量，就可以认为是属于某一个 Type。
+所以可以通过 in 来判断是否包含某个字段。
+初始先定义一些类型：
+123456789101112interface A &#123;  a: string&#125;interface B &#123;  a: number  ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">
+                
+                <span class="abstract-title-text">Python3 安装 mailer 失败</span>
+            </a>
+            <div class="abstract-content">
+                from: https://bobbyhadz.com/blog/python-error-in-package-setup-command-use-2to3-is-invalid
+原因：
+mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认版本过高，导致安装失败。
+解决方案：
+安装低版本 setuptools
+1pip install --upgrade pip &quot;setuptools&lt;58.0&quot;
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python3">python3</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/04/20/2023/04/ts-class-method-overload/">
                 
                 <span class="abstract-title-text">TypeScript 重载</span>
@@ -726,129 +849,10 @@ BO：business object业务对象主要作用是把业务逻辑封装为一个对
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/02/23/2023/02/esm/">
-                
-                <span class="abstract-title-text">谈谈 es module</span>
-            </a>
-            <div class="abstract-content">
-                es module
-估计很多人和我一样，纠结为啥 nodejs 要换 module 引入方式，难道 nodejs 真的作为前端小工具存在了？
-import export 对于前端而言，最大的优势是异步引入依赖，这样，在加载文件的过程中，前端 js 其实是属于 wait 的状态，而不是同步堵塞，这对前端而言意义重大。
-而 nodejs 作为后端，加载速度可以说毫无压力，之前在前东家，算是比较大的项目，加载速度也不过几十秒。况且，后端完全不在乎启动速度。
-更更更何况，用异步和同步的方式去加载文件，速度都是一样的，区别是同步 cpu 是堵塞，异步 cpu 是活动。很多小白会以为异步加载会快一点...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/02/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/01/03/2023/01/syno-openvpn-timeout/">
-                
-                <span class="abstract-title-text">OpenVPN 存在 ping 超时的问题</span>
-            </a>
-            <div class="abstract-content">
-                场景 在家里有一台 ESXi ，用于创建乱七八糟用于开发的虚拟机。前段时间因为🐑了所以没去上班。今天到公司，按惯例连上家里的 OpenVPN，然后通过 SSH 访问 ESXi 上的一台主机。却发现有明显的卡顿。
-使用 ping 了家里的网关，发现丢包严重，达到了 25%。
-我的 OpenVPN 是基于 Synology  Nas 服务的一个组件。而 Synlogy 搭建于  ESXi。
-分析
-公司网络问题
-首先怀疑的是公司的网络问题。测试办法就是在没有连  vpn 的情况下，ping baidu.com。发现正常没有丢包。
-然后又从家里启动一台基于物理机的 Nas ，连接这个 Nas ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/01/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/12/06/2022/12/bootstrap/">
-                
-                <span class="abstract-title-text">bootstrap.yaml 参数获取</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415import lombok.Data;import org.springframework.stereotype.Component;import org.springframework.beans.factory.annotation.Value;/** * @author maple * @since 2022-12-06 */@Data@Componentpublic class GatewayProperties &#123;    @Value(&quot;$&#123;gateway.host&#125;&quot;)    priv...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/18/">18</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1864,7 +1868,28 @@ import export 对于前端而言，最大的优势是异步引入依赖，这样
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2225,7 +2250,7 @@ import export 对于前端而言，最大的优势是异步引入依赖，这样
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 178
+        Total : 181
         </div>
         <!-- search  -->
         
@@ -2235,6 +2260,33 @@ import export 对于前端而言，最大的优势是异步引入依赖，这样
     
         
             
+            
+            <div class="archive-year"> 2024 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/07</span>
+            <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/22</span>
+            <a class="archive-post-title" href="/2024/02/22/2024/01/outline/">通过 docker 来部署 outline</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/31</span>
+            <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
             
             <div class="archive-year"> 2023 </div>
             <ul class="year-list">
@@ -3735,6 +3787,21 @@ import export 对于前端而言，最大的优势是异步引入依赖，这样
             <span class="sidebar-tag-name" data-tags="ubunutu">
                 <span class="iconfont-archer">&#xe606;</span>
                 ubunutu
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="outline">
+                <span class="iconfont-archer">&#xe606;</span>
+                outline
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="traefik">
+                <span class="iconfont-archer">&#xe606;</span>
+                traefik
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="postgresql">
+                <span class="iconfont-archer">&#xe606;</span>
+                postgresql
             </span>
         
     </div>
