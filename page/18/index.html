@@ -455,6 +455,49 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2017/12/13/2019/07/docker/docker-run/">
+                
+                <span class="abstract-title-text">Docker 启动后直接退出</span>
+            </a>
+            <div class="abstract-content">
+                之前对 docker 的运行问题很不了解，后来根据朋友的解释才理解，容器中的程序应该挂载在容器上，由容器的重启关闭来控制程序的关闭开机。
+那假如运行后台运行的函数呢？
+如果不做处理，在函数进入后台运行后，容易就会直接 exit 结束。
+有一个办法是在运行脚本上加一句:
+1tail -f /dev/null
+
+这样容易就处于执行状态就不会退出了。
+算是歪门邪道吧。
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2017/12/09/2019/07/ali-apt/">
                 
                 <span class="abstract-title-text">Ubuntu APT 更换阿里源</span>
@@ -645,19 +688,24 @@
             </a>
             <div class="abstract-content">
                 用于日常代码调试测试开发。如果稳定使用建议 docker 搭建数据库。
-环境树莓派 Ubuntu 16.04
-MySQL安装1sudo apt install mysql-server
+1. 环境树莓派 Ubuntu 16.04
 
-配置MySQL 的配置文件位于 /etc/mysql/。
+目前版本已经使用了 Ubuntu 22.04
+
+2. MySQL2.1 MySQL 的安装1sudo apt install mysql-server
+
+
+
+2.2 配置MySQL 的配置文件位于 /etc/mysql/。
 一般名称为my.cnf或者mysqld.cnf。
 因为一般开发用的 MySQL 都是外网调用，所以需要修改bind-address。注释或者修改成你所在的局域网的 IP。(如果数据库在公网暴露且有信息存储，请勿注释该代码)。
-创建用户并授权创建用户1CREATE USER &quot;hello&quot;@&quot;%&quot; IDENT...
+2.2.1 MySQL 的...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
+                <div class="abstract-date" title="Last updated: 2024/03/14">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/21</span>
                 </div>
                 <!-- tags -->
@@ -838,52 +886,6 @@ Docker 版本:
         <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/10/26/2019/07/gitlab-upgrade-1/">
-                
-                <span class="abstract-title-text">GitLab 推送了更新(一) - 树莓派安装GitLab</span>
-            </a>
-            <div class="abstract-content">
-                
-家里常年挂了一个树莓派，因为噪音小(之前主机都放在卧室)，被动散热就可以满足，因此用来挂一些简单的脚本。之前GitLab整合了安装，推出了一键傻瓜式安装。后来版本更新到了10.0, 颜值比8.0要高。但是arm版本一直是8.0，上周ssh进去的时候，居然提示有更新，所以打算更新下树莓派上的Gitlab。
-
-系统环境RaspBerry B2
-树莓派二代，四核ARM架构处理器, 1G DDR2 内存，做了 2GB 的虚拟缓存。
-ubuntu 15.10 系统。
-32G SD 卡。
-GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽然做过一些优化，但是实际上 1G 内存...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
     
 </div>
 
@@ -2005,7 +2007,14 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
         
         
         
@@ -2372,7 +2381,7 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 181
+        Total : 182
         </div>
         <!-- search  -->
         
@@ -2386,6 +2395,12 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/2024/03/14/2024/02/deli/">得力和假货和美工刀和订书钉</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/07</span>

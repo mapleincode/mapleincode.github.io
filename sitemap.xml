@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.vvcat.cn/2024/03/14/2024/02/deli/</loc>
+    
+    <lastmod>2024-03-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.vvcat.cn/2017/11/21/2019/07/database-install/</loc>
+    
+    <lastmod>2024-03-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.vvcat.cn/2024/03/07/2024/02/postgresql-installation/</loc>
     
     <lastmod>2024-03-07</lastmod>
@@ -1614,15 +1632,6 @@
   
   <url>
     <loc>https://blog.vvcat.cn/2017/11/24/2019/07/comand-control/</loc>
-    
-    <lastmod>2024-01-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.vvcat.cn/2017/11/21/2019/07/database-install/</loc>
     
     <lastmod>2024-01-09</lastmod>
     

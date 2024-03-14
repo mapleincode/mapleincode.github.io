@@ -612,19 +612,24 @@ socket IO 导致的上下文切换开销
             </a>
             <div class="abstract-content">
                 用于日常代码调试测试开发。如果稳定使用建议 docker 搭建数据库。
-环境树莓派 Ubuntu 16.04
-MySQL安装1sudo apt install mysql-server
+1. 环境树莓派 Ubuntu 16.04
 
-配置MySQL 的配置文件位于 /etc/mysql/。
+目前版本已经使用了 Ubuntu 22.04
+
+2. MySQL2.1 MySQL 的安装1sudo apt install mysql-server
+
+
+
+2.2 配置MySQL 的配置文件位于 /etc/mysql/。
 一般名称为my.cnf或者mysqld.cnf。
 因为一般开发用的 MySQL 都是外网调用，所以需要修改bind-address。注释或者修改成你所在的局域网的 IP。(如果数据库在公网暴露且有信息存储，请勿注释该代码)。
-创建用户并授权创建用户1CREATE USER &quot;hello&quot;@&quot;%&quot; IDENT...
+2.2.1 MySQL 的...
             </div>
             <!-- read more -->
             
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
+                <div class="abstract-date" title="Last updated: 2024/03/14">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/21</span>
                 </div>
                 <!-- tags -->
@@ -1677,7 +1682,14 @@ MySQL安装1sudo apt install mysql-server
         
         
         
+        
+        
+        
+        
+        
     
+        
+        
         
         
         
@@ -2044,7 +2056,7 @@ MySQL安装1sudo apt install mysql-server
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 181
+        Total : 182
         </div>
         <!-- search  -->
         
@@ -2058,6 +2070,12 @@ MySQL安装1sudo apt install mysql-server
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/14</span>
+            <a class="archive-post-title" href="/2024/03/14/2024/02/deli/">得力和假货和美工刀和订书钉</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/07</span>
