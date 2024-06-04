@@ -455,7 +455,103 @@
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/08/18/2020/08/jiaohanglaji/">
+            <a class="abstract-title" href="/2020/09/05/2020/08/redis-cluster/">
+                
+                <span class="abstract-title-text">redis 集群</span>
+            </a>
+            <div class="abstract-content">
+                redis 3.0 引入的新功能。
+
+然后去看了下现在 redis 已经是 6.x 了
+
+逻辑根据 CRC16 把 key 值分到 16383 个槽内。然后把若干个节点设置分别维护若干个槽。实现节点分布式。
+缺点
+不支持多 key 值操作（因为不同 key 值可能属于若干个节点）。
+事务只支持单 key 事务
+支持 0 库
+
+集群搭建
+三节点主从库。
+只记录，未测试
+
+0. redis.conf 相关 cluster 参数
+cluster-enabled: 如果想在特定的Redis实例中启用Redis群集支持就设置为yes。 否则，实例通常作为独立实例启动。
+
+cluster-confi...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/05/2020/08/api-gateway/">
+                
+                <span class="abstract-title-text">API 网关功能</span>
+            </a>
+            <div class="abstract-content">
+                网关封装了底层系统并与客户端分离，为客户端提供了与微服务系统进行通信的单个入口点。
+整合 API 网关整合了一些边缘的重复功能，无需让每个微服务都实现它们。它包括如下功能：
+
+认证和授权
+服务发现集成
+缓存响应结果
+重试策略、熔断器、QoS
+限速和节流
+负载均衡
+log 日志、链路追踪、关联
+Header、query 字符串 以及 claims 转义
+IP 白名单
+IAM
+集中式日志管理（服务之间的 transaction ID、错误日志等）
+身份的提供方，验证与授权
+
+from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/08/17/2020/08/jiaohanglaji/">
                 
                 <span class="abstract-title-text">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</span>
             </a>
@@ -621,7 +717,7 @@ Been there, done tha...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020/06/esxi/">
+            <a class="abstract-title" href="/2020/06/16/2020/06/esxi/">
                 
                 <span class="abstract-title-text">esxi 安装</span>
             </a>
@@ -666,7 +762,7 @@ Been there, done tha...
             
         
         <article class="index-post">
-            <a class="abstract-title" href="/2020/06/17/2020/06/2020-06-17/">
+            <a class="abstract-title" href="/2020/06/16/2020/06/2020-06-17/">
                 
                 <span class="abstract-title-text">日记</span>
             </a>
@@ -788,93 +884,6 @@ Safari 写了四五个月没洗笔，状况都很良好
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="chrome">chrome</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/08/2020/05/zfs/">
-                
-                <span class="abstract-title-text">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</span>
-            </a>
-            <div class="abstract-content">
-                
-原文: https://zhuanlan.zhihu.com/p/45137745
-
-今天，我们来谈论一下 ZFS，一个先进的文件系统。我们将讨论 ZFS 从何而来，它是什么，以及为什么它在科技界和企业界如此受欢迎。
-虽然我是一个美国人，但我更喜欢读成 ZedFS 而不是 ZeeFS，因为前者听起来更酷一些。你可以根据你的个人喜好来发音。
-
-注意：在这篇文章中，你将会看到 ZFS 被提到很多次。当我在谈论特性和安装的时候，我所指的是 OpenZFS 。自从 *甲骨文(Oracle)*公司放弃 OpenSolaris 项目之后，ZFS（由甲骨文公司开发）和 OpenZFS 已经走向了不同...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zfs">zfs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/02/2020/05/Synology%20Drive/">
-                
-                <span class="abstract-title-text">群晖 Drive 反复同步问题</span>
-            </a>
-            <div class="abstract-content">
-                2020-05-25： 
-Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
-安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
-两款 Mac 都需要更新到新版本！！
-Drive 一定会成为你重要的同步软件！！！
-
-群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
-
-但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
-推荐大家有条件还是去上正版群晖。
-
-Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
     
 </div>
 
@@ -2001,7 +2010,21 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
         
         
         
@@ -2370,7 +2393,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 182
+        Total : 184
         </div>
         <!-- search  -->
         
@@ -2386,13 +2409,25 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             
         
         <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2024/04/10/2024/04/rsync/">rsync 命令参数详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/11</span>
+            <a class="archive-post-title" href="/2024/04/10/2024/04/ssh-keygen/">SSH密钥类型</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
             <span class="archive-post-date">03/14</span>
             <a class="archive-post-title" href="/2024/03/14/2024/02/deli/">得力和假货和美工刀和订书钉</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span>
+            <span class="archive-post-date">03/08</span>
             <a class="archive-post-title" href="/2024/03/07/2024/02/postgresql-installation/">PostgreSQL Ubuntu 安装</a>
         </li>
     
@@ -2404,7 +2439,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">01/31</span>
+            <span class="archive-post-date">02/01</span>
             <a class="archive-post-title" href="/2024/01/31/2024/01/traefik/">Traefik 使用和配置</a>
         </li>
     
@@ -2419,7 +2454,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/20</span>
+            <span class="archive-post-date">12/21</span>
             <a class="archive-post-title" href="/2023/12/20/2023/12/validation-api/">validation-api</a>
         </li>
     
@@ -2449,13 +2484,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">06/12</span>
+            <span class="archive-post-date">06/13</span>
             <a class="archive-post-title" href="/2023/06/12/2023/06/esxi_disk_shrink/">Esxi 磁盘容量收缩</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">06/12</span>
+            <span class="archive-post-date">06/13</span>
             <a class="archive-post-title" href="/2023/06/12/2023/05/aligo_walk/">[Untitled Post]</a>
         </li>
     
@@ -2467,43 +2502,43 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/21</span>
+            <span class="archive-post-date">04/22</span>
             <a class="archive-post-title" href="/2023/04/21/2023/04/ts-is-type/">TypeScript Type 类型判断</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">Python3 安装 mailer 失败</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/20</span>
+            <span class="archive-post-date">04/21</span>
             <a class="archive-post-title" href="/2023/04/20/2023/04/ts-class-method-overload/">TypeScript 重载</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/11</span>
+            <span class="archive-post-date">04/12</span>
             <a class="archive-post-title" href="/2023/04/11/2023/04/rabbitmq/">rabbtmq 笔记 & demo</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/04</span>
+            <span class="archive-post-date">04/05</span>
             <a class="archive-post-title" href="/2023/04/04/2023/04/synology-set-code/">黑群晖新引导洗白（转载）</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/16</span>
+            <span class="archive-post-date">03/17</span>
             <a class="archive-post-title" href="/2023/03/16/2023/03/python_advance/">廖雪峰 Python 教程笔记</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/07</span>
+            <span class="archive-post-date">03/08</span>
             <a class="archive-post-title" href="/2023/03/07/2023/02/java-object-type/">Java中PO，VO，POJO，DTO，DAO的基本概念</a>
         </li>
     
@@ -2522,7 +2557,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">02/23</span>
-            <a class="archive-post-title" href="/2023/02/23/2023/02/esm/">谈谈 es module</a>
+            <a class="archive-post-title" href="/2023/02/22/2023/02/esm/">谈谈 es module</a>
         </li>
     
         
@@ -2542,13 +2577,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
+            <span class="archive-post-date">12/07</span>
             <a class="archive-post-title" href="/2022/12/06/2022/12/bootstrap/">bootstrap.yaml 参数获取</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/27</span>
+            <span class="archive-post-date">09/28</span>
             <a class="archive-post-title" href="/2022/09/27/2022/09/java9-18/">Java9 - Java18 新特性</a>
         </li>
     
@@ -2560,7 +2595,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/26</span>
+            <span class="archive-post-date">09/27</span>
             <a class="archive-post-title" href="/2022/09/26/2022/09/Arraybuffer/">ArrayBuffer，二进制数组</a>
         </li>
     
@@ -2579,7 +2614,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/20</span>
-            <a class="archive-post-title" href="/2022/08/20/2022/08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
+            <a class="archive-post-title" href="/2022/08/19/2022/08/mc-lord-wine/">mc 魔戒 mod 酿酒系统</a>
         </li>
     
         
@@ -2596,19 +2631,19 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/18</span>
+            <span class="archive-post-date">08/19</span>
             <a class="archive-post-title" href="/2022/08/18/2022/08/the-sunny-16-rules/">阳光十六法则</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/11</span>
+            <span class="archive-post-date">08/12</span>
             <a class="archive-post-title" href="/2022/08/11/2022/08/java-history/">Java 发展简史</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/11</span>
+            <span class="archive-post-date">08/12</span>
             <a class="archive-post-title" href="/2022/08/11/2022/08/java-conception/">Java 的一系列概念</a>
         </li>
     
@@ -2620,13 +2655,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/10</span>
+            <span class="archive-post-date">08/11</span>
             <a class="archive-post-title" href="/2022/08/10/2022/08/gc/">Java GC</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span>
+            <span class="archive-post-date">08/10</span>
             <a class="archive-post-title" href="/2022/08/09/2022/08/jvm7/">jvm7 一份调优参数分析</a>
         </li>
     
@@ -2650,7 +2685,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/01</span>
+            <span class="archive-post-date">08/02</span>
             <a class="archive-post-title" href="/2022/08/01/2022/08/java-stream/">Java Stream</a>
         </li>
     
@@ -2662,7 +2697,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/05</span>
+            <span class="archive-post-date">07/06</span>
             <a class="archive-post-title" href="/2022/07/05/2022/06/requirement/">Python 项目 & requirement.txt</a>
         </li>
     
@@ -2680,7 +2715,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span>
+            <span class="archive-post-date">05/28</span>
             <a class="archive-post-title" href="/2022/05/27/2022/04/rabbitmq-client/">RabbitMQ 客户端(nodejs)</a>
         </li>
     
@@ -2710,13 +2745,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/19</span>
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2022/04/19/2022/04/firewalld/">Centos7 防火墙 firewalld 基本配置与端口转发</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/19</span>
+            <span class="archive-post-date">04/20</span>
             <a class="archive-post-title" href="/2022/04/19/2022/04/iptables/">linux 端口转发 iptables</a>
         </li>
     
@@ -2809,13 +2844,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/12</span>
+            <span class="archive-post-date">04/13</span>
             <a class="archive-post-title" href="/2021/04/12/2021/04/kubernetes/">kubernetes 学习</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/08</span>
+            <span class="archive-post-date">04/09</span>
             <a class="archive-post-title" href="/2021/04/08/2021/04/nginx-ws/">Nginx 支持 WebSocket</a>
         </li>
     
@@ -2836,7 +2871,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/01</span>
+            <span class="archive-post-date">12/02</span>
             <a class="archive-post-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">阿里云 Ubuntu 数据盘格式化和挂载</a>
         </li>
     
@@ -2848,7 +2883,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span>
+            <span class="archive-post-date">11/14</span>
             <a class="archive-post-title" href="/2020/11/13/2020/11/syno-install/">黑群晖 6.2.3 安装指南</a>
         </li>
     
@@ -2860,7 +2895,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">10/19</span>
+            <span class="archive-post-date">10/20</span>
             <a class="archive-post-title" href="/2020/10/19/2020/10/zhenglun/">争论的艺术</a>
         </li>
     
@@ -2879,7 +2914,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">09/16</span>
-            <a class="archive-post-title" href="/2020/09/16/2020/09/raspberry/">我不推荐使用树莓派来当做家用服务器</a>
+            <a class="archive-post-title" href="/2020/09/15/2020/09/raspberry/">我不推荐使用树莓派来当做家用服务器</a>
         </li>
     
         
@@ -2890,20 +2925,20 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span>
+            <span class="archive-post-date">09/06</span>
             <a class="archive-post-title" href="/2020/09/05/2020/08/redis-cluster/">redis 集群</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">09/05</span>
+            <span class="archive-post-date">09/06</span>
             <a class="archive-post-title" href="/2020/09/05/2020/08/api-gateway/">API 网关功能</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/18</span>
-            <a class="archive-post-title" href="/2020/08/18/2020/08/jiaohanglaji/">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
+            <a class="archive-post-title" href="/2020/08/17/2020/08/jiaohanglaji/">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</a>
         </li>
     
         
@@ -2914,31 +2949,31 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/06</span>
+            <span class="archive-post-date">07/07</span>
             <a class="archive-post-title" href="/2020/07/06/2020/07/HashMap&HashTable/">HashMap和HashTable的区别</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">06/17</span>
+            <span class="archive-post-date">06/18</span>
             <a class="archive-post-title" href="/2020/06/17/2020/06/ddsm/">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">06/17</span>
-            <a class="archive-post-title" href="/2020/06/17/2020/06/esxi/">esxi 安装</a>
+            <a class="archive-post-title" href="/2020/06/16/2020/06/esxi/">esxi 安装</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">06/17</span>
-            <a class="archive-post-title" href="/2020/06/17/2020/06/2020-06-17/">日记</a>
+            <a class="archive-post-title" href="/2020/06/16/2020/06/2020-06-17/">日记</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/21</span>
+            <span class="archive-post-date">05/22</span>
             <a class="archive-post-title" href="/2020/05/21/2020/05/ink/">自製鋼筆染料墨水配方[转载]</a>
         </li>
     
@@ -2957,19 +2992,19 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/02</span>
-            <a class="archive-post-title" href="/2020/05/02/2020/05/Synology%20Drive/">群晖 Drive 反复同步问题</a>
+            <a class="archive-post-title" href="/2020/05/01/2020/05/Synology%20Drive/">群晖 Drive 反复同步问题</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/15</span>
-            <a class="archive-post-title" href="/2020/04/15/2020/01/java-mode/">类成员的访问控制模式及其允许访问范围</a>
+            <a class="archive-post-title" href="/2020/04/14/2020/01/java-mode/">类成员的访问控制模式及其允许访问范围</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/01</span>
-            <a class="archive-post-title" href="/2020/04/01/2020/01/wordpress-domain/">WordPress 绑定多域名</a>
+            <a class="archive-post-title" href="/2020/03/31/2020/01/wordpress-domain/">WordPress 绑定多域名</a>
         </li>
     
         
@@ -2981,24 +3016,24 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">01/18</span>
-            <a class="archive-post-title" href="/2020/01/18/2020/01/java/">Java 学习路线</a>
+            <a class="archive-post-title" href="/2020/01/17/2020/01/java/">Java 学习路线</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">01/18</span>
-            <a class="archive-post-title" href="/2020/01/18/2020/01/pivpn/">树莓派安装 PIVPN</a>
+            <a class="archive-post-title" href="/2020/01/17/2020/01/pivpn/">树莓派安装 PIVPN</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">01/18</span>
-            <a class="archive-post-title" href="/2020/01/18/2020/01/disable-systemd-resolved/">nameserver 127.0.0.53</a>
+            <a class="archive-post-title" href="/2020/01/17/2020/01/disable-systemd-resolved/">nameserver 127.0.0.53</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">01/07</span>
+            <span class="archive-post-date">01/08</span>
             <a class="archive-post-title" href="/2020/01/07/2020/01/km3/">杭州科目三</a>
         </li>
     
@@ -3014,18 +3049,18 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">12/24</span>
-            <a class="archive-post-title" href="/2019/12/24/2019/12/rasp-4-ubuntu/">Raspberry4 安装 Ubuntu</a>
+            <a class="archive-post-title" href="/2019/12/23/2019/12/rasp-4-ubuntu/">Raspberry4 安装 Ubuntu</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">12/24</span>
-            <a class="archive-post-title" href="/2019/12/24/2019/12/xp-serials-ids/">XP 序列号</a>
+            <a class="archive-post-title" href="/2019/12/23/2019/12/xp-serials-ids/">XP 序列号</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/16</span>
+            <span class="archive-post-date">12/17</span>
             <a class="archive-post-title" href="/2019/12/16/2019/12/koa-compose/">Koa-Compose 源码试写</a>
         </li>
     
@@ -3037,7 +3072,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">11/13</span>
+            <span class="archive-post-date">11/14</span>
             <a class="archive-post-title" href="/2019/11/13/2019/11/centos5.x/">CentOS 5.x 版本 repo 地址</a>
         </li>
     
@@ -3056,7 +3091,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/11</span>
-            <a class="archive-post-title" href="/2019/11/11/2019/11/vCenter/">vCenter 和 vCSA 对比</a>
+            <a class="archive-post-title" href="/2019/11/10/2019/11/vCenter/">vCenter 和 vCSA 对比</a>
         </li>
     
         
@@ -3074,7 +3109,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">09/02</span>
-            <a class="archive-post-title" href="/2019/09/02/2019/08/version/">版本号对比</a>
+            <a class="archive-post-title" href="/2019/09/01/2019/08/version/">版本号对比</a>
         </li>
     
         
@@ -3086,7 +3121,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/21</span>
-            <a class="archive-post-title" href="/2019/07/21/2019/07/ssl_cert/">Let's encrypt 证书申请</a>
+            <a class="archive-post-title" href="/2019/07/20/2019/07/ssl_cert/">Let's encrypt 证书申请</a>
         </li>
     
         
@@ -3109,7 +3144,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/29</span>
+            <span class="archive-post-date">04/30</span>
             <a class="archive-post-title" href="/2019/04/29/2019/07/xiazaibao/">迅雷下载宝定制固件</a>
         </li>
     
@@ -3127,13 +3162,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/14</span>
+            <span class="archive-post-date">03/15</span>
             <a class="archive-post-title" href="/2019/03/14/2019/07/analysis-of-redis-performance/">Redis 性能问题分析（转载）</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/13</span>
+            <span class="archive-post-date">03/14</span>
             <a class="archive-post-title" href="/2019/03/13/2019/07/redis-concurrence/">node.js 请求 redis 的性能优化和 redis 的管道和事务机制</a>
         </li>
     
@@ -3158,7 +3193,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">01/11</span>
-            <a class="archive-post-title" href="/2019/01/11/2019/07/rabbitmq-install/">RabbitMQ 安装 & 添加登录用户[转载]</a>
+            <a class="archive-post-title" href="/2019/01/10/2019/07/rabbitmq-install/">RabbitMQ 安装 & 添加登录用户[转载]</a>
         </li>
     
         
@@ -3170,7 +3205,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">01/07</span>
-            <a class="archive-post-title" href="/2019/01/07/2019/07/kafka-node/">Kafka-node 的使用 Demo</a>
+            <a class="archive-post-title" href="/2019/01/06/2019/07/kafka-node/">Kafka-node 的使用 Demo</a>
         </li>
     
         
@@ -3185,7 +3220,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/09</span>
-            <a class="archive-post-title" href="/2018/11/09/2019/07/foreign-key/">MySQL 外键</a>
+            <a class="archive-post-title" href="/2018/11/08/2019/07/foreign-key/">MySQL 外键</a>
         </li>
     
         
@@ -3202,7 +3237,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">10/31</span>
+            <span class="archive-post-date">11/01</span>
             <a class="archive-post-title" href="/2018/10/31/2019/07/kafka-auto-offset-reset/">Kafka auto.offset.reset 值</a>
         </li>
     
@@ -3214,14 +3249,14 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/29</span>
+            <span class="archive-post-date">08/30</span>
             <a class="archive-post-title" href="/2018/08/29/2019/07/python-with-as/">Python with as 的作用</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">08/29</span>
-            <a class="archive-post-title" href="/2018/08/29/2019/07/mysql-ACID/">MySQL 事务</a>
+            <a class="archive-post-title" href="/2018/08/28/2019/07/mysql-ACID/">MySQL 事务</a>
         </li>
     
         
@@ -3238,13 +3273,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/23</span>
+            <span class="archive-post-date">08/24</span>
             <a class="archive-post-title" href="/2018/08/23/2019/07/http2/">在树莓派上升级 Nginx 开启 HTTP/2</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">08/09</span>
+            <span class="archive-post-date">08/10</span>
             <a class="archive-post-title" href="/2018/08/09/2019/07/node-buffer/">Nodejs进阶 - 核心模块 Buffer 常用 API 使用总结</a>
         </li>
     
@@ -3257,24 +3292,24 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">07/09</span>
-            <a class="archive-post-title" href="/2018/07/09/2019/07/git-branch-all/">git 拉取所有远程分支</a>
+            <a class="archive-post-title" href="/2018/07/08/2019/07/git-branch-all/">git 拉取所有远程分支</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/05</span>
+            <span class="archive-post-date">07/06</span>
             <a class="archive-post-title" href="/2018/07/05/2019/07/memcached-node-package/">Nodejs memcached 包的基本用法</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">07/03</span>
+            <span class="archive-post-date">07/04</span>
             <a class="archive-post-title" href="/2018/07/03/2019/08/typescript/">TypeScript 学习笔记</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">06/06</span>
+            <span class="archive-post-date">06/07</span>
             <a class="archive-post-title" href="/2018/06/06/2019/07/node-momery/">取消 Node 对内存上限的限制条件</a>
         </li>
     
@@ -3298,7 +3333,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span>
+            <span class="archive-post-date">05/23</span>
             <a class="archive-post-title" href="/2018/05/22/2019/07/babel/">Babel 学习笔记</a>
         </li>
     
@@ -3316,7 +3351,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/21</span>
+            <span class="archive-post-date">05/22</span>
             <a class="archive-post-title" href="/2018/05/21/2019/07/base64-js/">Base64 JavaScript 实现</a>
         </li>
     
@@ -3335,18 +3370,18 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         <li class="archive-post-item">
             <span class="archive-post-date">05/16</span>
-            <a class="archive-post-title" href="/2018/05/16/2019/07/react-nginx/">Nginx 部署 react 项目返回 404</a>
+            <a class="archive-post-title" href="/2018/05/15/2019/07/react-nginx/">Nginx 部署 react 项目返回 404</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/13</span>
+            <span class="archive-post-date">05/14</span>
             <a class="archive-post-title" href="/2018/05/13/2019/07/react-reudx-note-new-md/">React-Redux 笔记 - 其他</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">05/08</span>
+            <span class="archive-post-date">05/09</span>
             <a class="archive-post-title" href="/2018/05/08/2019/07/react-note/">React.js 小书 - 第三阶段 - 学习笔记</a>
         </li>
     
@@ -3364,7 +3399,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/12</span>
+            <span class="archive-post-date">04/13</span>
             <a class="archive-post-title" href="/2018/04/12/2019/07/object-define-properity/">Vue.js 数据绑定原理</a>
         </li>
     
@@ -3376,31 +3411,31 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">04/07</span>
+            <span class="archive-post-date">04/08</span>
             <a class="archive-post-title" href="/2018/04/07/2019/07/nas-ssh-error/">群晖 SFTP 连接失败</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/28</span>
+            <span class="archive-post-date">03/29</span>
             <a class="archive-post-title" href="/2018/03/28/2019/07/static-ip/">Linux 静态 IP 设置</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/18</span>
-            <a class="archive-post-title" href="/2018/03/18/2019/07/unixbench/">使用 Unixbench 测试 CPU 性能</a>
+            <a class="archive-post-title" href="/2018/03/17/2019/07/unixbench/">使用 Unixbench 测试 CPU 性能</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">03/18</span>
-            <a class="archive-post-title" href="/2018/03/18/2019/07/zsh-autosuggestions/">oh-my-zsh 安装 zsh-autosuggestions 插件</a>
+            <a class="archive-post-title" href="/2018/03/17/2019/07/zsh-autosuggestions/">oh-my-zsh 安装 zsh-autosuggestions 插件</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">03/05</span>
+            <span class="archive-post-date">03/06</span>
             <a class="archive-post-title" href="/2018/03/05/2019/07/public-license/">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</a>
         </li>
     
@@ -3412,19 +3447,19 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">02/22</span>
+            <span class="archive-post-date">02/23</span>
             <a class="archive-post-title" href="/2018/02/22/2019/07/openvpn-login-auto/">使用 Expect 自动登录 OpenVPN</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">02/21</span>
+            <span class="archive-post-date">02/22</span>
             <a class="archive-post-title" href="/2018/02/21/2019/07/node-install/">Ubuntu 安装 Node.js 环境</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">02/11</span>
+            <span class="archive-post-date">02/12</span>
             <a class="archive-post-title" href="/2018/02/11/2019/07/auto-restart/">Shell 自动重启进程</a>
         </li>
     
@@ -3445,7 +3480,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/29</span>
+            <span class="archive-post-date">12/30</span>
             <a class="archive-post-title" href="/2017/12/29/2019/07/virtual-dom/">深度剖析：如何实现一个 Virtual DOM 算法(转)</a>
         </li>
     
@@ -3457,13 +3492,13 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/21</span>
+            <span class="archive-post-date">12/22</span>
             <a class="archive-post-title" href="/2017/12/21/2019/07/gulp/">Gulp 常用插件(转)</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/14</span>
+            <span class="archive-post-date">12/15</span>
             <a class="archive-post-title" href="/2017/12/14/2019/07/gulp-autoprefixer/">gulp-autoprefixer 基本使用</a>
         </li>
     
@@ -3475,19 +3510,19 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
+            <span class="archive-post-date">12/10</span>
             <a class="archive-post-title" href="/2017/12/09/2019/07/ali-apt/">Ubuntu APT 更换阿里源</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/09</span>
+            <span class="archive-post-date">12/10</span>
             <a class="archive-post-title" href="/2017/12/09/2019/07/docker/docker-user/">Docker 普通用户操作不用 sudo 权限</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">12/06</span>
+            <span class="archive-post-date">12/07</span>
             <a class="archive-post-title" href="/2017/12/06/2019/07/ubuntu-swap/">Ubuntu 新增 swap</a>
         </li>
     
@@ -3499,31 +3534,31 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">11/21</span>
+            <span class="archive-post-date">11/22</span>
             <a class="archive-post-title" href="/2017/11/21/2019/07/database-install/">常用数据库(缓存)的简单安装配置</a>
         </li>
     
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/20</span>
-            <a class="archive-post-title" href="/2017/11/20/2019/07/inode/">优化 Ext4 分区 inode 占用空间问题</a>
+            <a class="archive-post-title" href="/2017/11/19/2019/07/inode/">优化 Ext4 分区 inode 占用空间问题</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span>
+            <span class="archive-post-date">11/04</span>
             <a class="archive-post-title" href="/2017/11/03/2019/07/mysql-config/">my.cnf 参数解释 & 优化 (转载)</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">11/03</span>
+            <span class="archive-post-date">11/04</span>
             <a class="archive-post-title" href="/2017/11/03/2019/07/gitlab-upgrade-3/">GitLab 推送了更新(三) - Nginx 反向代理</a>
         </li>
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span>
+            <span class="archive-post-date">10/28</span>
             <a class="archive-post-title" href="/2017/10/27/2019/07/gitlab-upgrade-2/">GitLab 推送了更新(二) - 安装 docker GitLab</a>
         </li>
     
@@ -3535,7 +3570,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
         
         <li class="archive-post-item">
-            <span class="archive-post-date">10/23</span>
+            <span class="archive-post-date">10/24</span>
             <a class="archive-post-title" href="/2017/10/23/2019/07/openssl-key-zhuan-huan/">PFX文件提取公钥私钥</a>
         </li>
     
@@ -3928,6 +3963,16 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             <span class="sidebar-tag-name" data-tags="postgresql">
                 <span class="iconfont-archer">&#xe606;</span>
                 postgresql
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="rsync">
+                <span class="iconfont-archer">&#xe606;</span>
+                rsync
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="ssh">
+                <span class="iconfont-archer">&#xe606;</span>
+                ssh
             </span>
         
     </div>
