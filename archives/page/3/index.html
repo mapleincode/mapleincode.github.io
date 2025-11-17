@@ -440,6 +440,276 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2023/04/21/2023/04/ts-is-type/">
+                
+                <span class="abstract-title-text">TypeScript Type 类型判断</span>
+            </a>
+            <div class="abstract-content">
+                TS 中官方支持的方法里，判断 Type 类型的有：
+
+typeof ，但是遗憾的只支持基础类型
+instanceof，只支持类
+
+也就是混合的自定义 Type 而言，官方是没有常见的函数来进行判断。不过 TS 也给了办法。
+先说怎么判断，TS 的类是通过参数字段来判断是否是同一个类型的 Type。也是满足字段类型相同的变量，就可以认为是属于某一个 Type。
+所以可以通过 in 来判断是否包含某个字段。
+初始先定义一些类型：
+123456789101112interface A &#123;  a: string&#125;interface B &#123;  a: number  ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">
+                
+                <span class="abstract-title-text">Python3 安装 mailer 失败</span>
+            </a>
+            <div class="abstract-content">
+                from: https://bobbyhadz.com/blog/python-error-in-package-setup-command-use-2to3-is-invalid
+原因：
+mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认版本过高，导致安装失败。
+解决方案：
+安装低版本 setuptools
+1pip install --upgrade pip &quot;setuptools&lt;58.0&quot;
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python3">python3</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/20/2023/04/ts-class-method-overload/">
+                
+                <span class="abstract-title-text">TypeScript 重载</span>
+            </a>
+            <div class="abstract-content">
+                函数重载
+1234567// 声明和实现写在一起function t1(p: string): number;function t1(p: number): string;function t1(p: string | number) &#123;    return typeof p === &#x27;string&#x27; ? Number(p) : String(p);&#125;
+
+
+
+
+
+类方法重载和函数重载其实是一样的。
+是需要在类的方法上面，写上声明。
+
+之前查询说必须要基于类的声明实现，其实是不需要的。
+不过如果是基于 interface 实现类，那相当于把 inte...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/11/2023/04/rabbitmq/">
+                
+                <span class="abstract-title-text">rabbtmq 笔记 &amp; demo</span>
+            </a>
+            <div class="abstract-content">
+                基本首先熟悉几个概念：
+
+exchange
+交换器，可以认为是消息 publish 的目的地。
+所有消息都是推送到 exchange 的
+
+
+queue
+队列，consume 监听的位置
+queue 其实和 publish 没有任何关系
+只是为了方便多个消费者消费同一个消息
+
+
+流程
+创建 exchange，也可以复用已存在的 exchange。
+如果 exchange 已存在则不创建
+如果已存在的 exchange 的属性与代码配置的不符合则报错
+
+
+consumer 创建 queue
+如果已经存在则改为获取 queue，参数以存在的为准，如果链接的 queue 参数不符合就报错
+
+
+...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/04/04/2023/04/synology-set-code/">
+                
+                <span class="abstract-title-text">黑群晖新引导洗白（转载）</span>
+            </a>
+            <div class="abstract-content">
+                原文
+在前面的文章中，我们利用ARPL引导将黑群晖安装好了。有朋友就问我，ARPL安装的黑群晖洗白和其他的不一样了，该怎么洗白？这篇文章为你解答。
+原理其实洗白的主要就是修改引导里面的 sn 和 mac 地址。 我们只需要找到引导里面的 sn 和 mac 地址就好了。 而 APRL 引导中， sn 和 mac 地址都在 user-config.yml 中。 也就是说，修改这个文件就好了。
+操作知道了原理，操作就简单了。
+第一步，我们需要开启群晖的SSH，这一步相信大家都很熟悉，这里就不累述。
+第二步， SSH 连接上群晖。
+第三步，sudo -i 切换到 root 权限下。
+第四步，创建...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/04</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/03/16/2023/03/python_advance/">
+                
+                <span class="abstract-title-text">廖雪峰 Python 教程笔记</span>
+            </a>
+            <div class="abstract-content">
+                教程地址: https://www.liaoxuefeng.com/wiki/1016959663602400
+生成器和迭代器12345678910111213141516171819202122# 构建生成器def odd():    times = 0    while True:        yield times        times = times + 1        if times &gt; 10:            # break            return &#x27;some value&#x27;# for 循环for t in odd():  ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/03/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/03/07/2023/02/java-object-type/">
                 
                 <span class="abstract-title-text">Java中PO，VO，POJO，DTO，DAO的基本概念</span>
@@ -573,262 +843,6 @@ import export 对于前端而言，最大的优势是异步引入依赖，这样
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/01/03/2023/01/syno-openvpn-timeout/">
-                
-                <span class="abstract-title-text">OpenVPN 存在 ping 超时的问题</span>
-            </a>
-            <div class="abstract-content">
-                场景 在家里有一台 ESXi ，用于创建乱七八糟用于开发的虚拟机。前段时间因为🐑了所以没去上班。今天到公司，按惯例连上家里的 OpenVPN，然后通过 SSH 访问 ESXi 上的一台主机。却发现有明显的卡顿。
-使用 ping 了家里的网关，发现丢包严重，达到了 25%。
-我的 OpenVPN 是基于 Synology  Nas 服务的一个组件。而 Synlogy 搭建于  ESXi。
-分析
-公司网络问题
-首先怀疑的是公司的网络问题。测试办法就是在没有连  vpn 的情况下，ping baidu.com。发现正常没有丢包。
-然后又从家里启动一台基于物理机的 Nas ，连接这个 Nas ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/01/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/12/06/2022/12/bootstrap/">
-                
-                <span class="abstract-title-text">bootstrap.yaml 参数获取</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415import lombok.Data;import org.springframework.stereotype.Component;import org.springframework.beans.factory.annotation.Value;/** * @author maple * @since 2022-12-06 */@Data@Componentpublic class GatewayProperties &#123;    @Value(&quot;$&#123;gateway.host&#125;&quot;)    priv...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/09/27/2022/09/java9-18/">
-                
-                <span class="abstract-title-text">Java9 - Java18 新特性</span>
-            </a>
-            <div class="abstract-content">
-                Java9
-jshell
-接口私有方法
-优化了 try with resource
-不支持 _ 作为变量名
-String 内部从 char 存储改为 byte 存储
-模块分组
-Stream 加强
-集合加强
-List.of()
-Map.of()
-copyOf()
-
-
-
-Java10
-用了 var 来进行自动推导类型
-
-Java 11 (LTS)
-String.strip 用来去除首尾空格，还能除去 unicode 编码的空白字符
-String.isBlank 判断字符串是否为 0 或者空格等空白字符
-String.repeat(n) 字符串重复
-Optional 加强
-InputStrea...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/09/27/2022/09/ts-tools/">
-                
-                <span class="abstract-title-text">TypeScript 的高级类型</span>
-            </a>
-            <div class="abstract-content">
-                Record给若干个参数创建属性
-1234567type Coord = Record&lt;&#x27;x&#x27; | &#x27;y&#x27;, number&gt;;// 等同于type Coord = &#123;	x: number;	y: number;&#125;
-
-Pick选择若干个参数
-1234567891011type Coord = &#123;	x: number;	y: number;&#125;type CoordX = Pick&lt;Coord, x&gt;type CoordX = &#123; 	x: number;&#125;
-
-
-
-
-
-Rea...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/09/26/2022/09/Arraybuffer/">
-                
-                <span class="abstract-title-text">ArrayBuffer，二进制数组</span>
-            </a>
-            <div class="abstract-content">
-                转载：https://zh.javascript.info/arraybuffer-binary-arrays
-ArrayBuffer，二进制数组在 Web 开发中，当我们处理文件时（创建，上传，下载），经常会遇到二进制数据。另一个典型的应用场景是图像处理。
-这些都可以通过 JavaScript 进行处理，而且二进制操作性能更高。
-不过，在 JavaScript 中有很多种二进制数据格式，会有点容易混淆。仅举几个例子：
-
-ArrayBuffer，Uint8Array，DataView，Blob，File 及其他。
-
-与其他语言相比，JavaScript 中的二进制数据是以非标准方式实现的...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/26</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/09/26/2022/09/es/">
-                
-                <span class="abstract-title-text">ES 版本新特性</span>
-            </a>
-            <div class="abstract-content">
-                环境12$ node -vv18.9.1
-
-
-
-ES6 (2015)123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687// classclass Person &#123;  constructor(name) &#123;    this.name = name;  &#125;    payMoneny() ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="JavaScript">JavaScript</a>
     
 </div>
 
@@ -1886,7 +1900,49 @@ ES6 (2015)1234567891011121314151617181920212223242526272829303132333435363738394
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2259,7 +2315,7 @@ ES6 (2015)1234567891011121314151617181920212223242526272829303132333435363738394
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2270,9 +2326,54 @@ ES6 (2015)1234567891011121314151617181920212223242526272829303132333435363738394
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -3839,6 +3940,16 @@ ES6 (2015)1234567891011121314151617181920212223242526272829303132333435363738394
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>

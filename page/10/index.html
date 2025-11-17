@@ -455,6 +455,271 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/07/06/2020/07/HashMap&HashTable/">
+                
+                <span class="abstract-title-text">HashMap和HashTable的区别</span>
+            </a>
+            <div class="abstract-content">
+                HashMap 不是线程安全的HashMap 是 map 接口的实现类，是将键映射到值的对象，其中键和值都是对象，并且不能包含重复键，但可以包含重复值。HashMap 允许 null  key 和 null value，而 HashTable 不允许。
+HashTable 是线程安全 Collection。HashMap 是 HashTable 的轻量级实现，他们都完成了Map 接口，主要区别在于 HashMap 允许 null  key 和 null value,由于非线程安全，效率上可能高于 Hashtable。
+区别如下：
+HashMap允许将 null 作为一个 entry 的 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/06/17/2020/06/ddsm/">
+                
+                <span class="abstract-title-text">esxi 下 DSM 创建 ddsm IP 显示 169.254.x.x 问题解决</span>
+            </a>
+            <div class="abstract-content">
+                群晖在  6.2.x 版本退出了 DDSM，即通过容器 docker 技术虚拟出一个 DSM 来以供特殊需求。
+当然对我们来说，重要的是里面的序列号。
+我在重装 esxi 后，尝试新建 DDSM ，却无一例外的发现 IP 地址显示 169.254.x.x 这个所谓本地保留地址。正常会出现在无法连接路由器 DHCP 服务情况下的电脑上面。
+查阅了谷歌，在论坛上找到解决方案：
+https://xpenology.com/forum/topic/12405-anyone-try-docker-ddsm-in-an-esxi-installation/
+
+Been there, done tha...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/06/16/2020/06/esxi/">
+                
+                <span class="abstract-title-text">esxi 安装</span>
+            </a>
+            <div class="abstract-content">
+                起因因为主板是华南寨板，网卡并非服务器版本。导致 esxi 不识别。我去闲鱼上淘了一张双口的 82576。结果这几天刷软路由，发现一种办法是通过网卡直通给虚拟机的办法，实现 esxi 来支持软路由。
+但是在我的 esxi 硬件那边，发现网卡的直通写了不支持。
+问了店家，店家表示：
+
+网卡肯定是支持的
+如果不支持，可能是主板的问题
+如果不行，可以去 vmware 上找找驱动安装试试
+
+然后我乖巧的去找了驱动，然后安装，重启，就没然后了，原因很简单，我在 100 公里外的老家拼命刷浏览器的回车，却只告诉我 esxi 服务器 503 了。
+老板，你也好歹告诉我下驱动装失败了会进不去吧。
+我就说...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/06/16/2020/06/2020-06-17/">
+                
+                <span class="abstract-title-text">日记</span>
+            </a>
+            <div class="abstract-content">
+                最近的经历和感触
+
+在老家玩了几天，家里 esxi 服务器挂了、路由器也挂了
+路由器挂了之后我一直担心是不是服务器挂了导致出租房起火了，因为这个路由器从买来就没死机过一次
+然后回家后发现是电源坏了，找了商家，商家熟练的发来一个链接。看了下销量敢情这路由器的充电器压根不靠谱啊，还卖 20 + 10 。
+在老家连不上 nas，闲的蛋疼去刷了下知乎，然后发现一个月初的回答居然有 600 赞了，天哪
+在朋友的推荐下买了斐讯 N1盒子，发现斐讯的遗产都好好，无论是蓝牙音箱还是路由器还是这盒子
+发现 N1 盒子可以刷游戏系统，求资源求了半天。之后转念想不求作者（因为我这个是小号，那个作者又感觉很不靠...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/06/17</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="daily">daily</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/05/21/2020/05/ink/">
+                
+                <span class="abstract-title-text">自製鋼筆染料墨水配方[转载]</span>
+            </a>
+            <div class="abstract-content">
+                
+https://www.ptt.cc/bbs/stationery/M.1448639335.A.202.html
+转载自一位弯弯大佬的一篇文章，文章内容很详细。
+短时间应该不会去学做，但是的确蛮有意思的赶脚。
+
+
+原文是繁体，排版依然按照原文
+
+给大家参考
+之前在疫区用这配方卖了两批小赚点钱
+卖剩的自己目前也一直在用
+Safari 写了四五个月没洗笔，状况都很良好
+所以应该是不会伤笔
+另外，测试时使用下水量较小的 78g
+ 加上本人通常是写狂草 (写很快很丑) 
+所以需要下水量大的墨水，调出来黏度偏低
+比例视使用者习惯自行调整，这里只是参考
+第一步先配好甘油水溶液→体积比甘油：水&#...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ink">ink</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/05/18/2020/05/chrome-auto-sign-in/">
+                
+                <span class="abstract-title-text">解决 Chrome 无法自动填充账号密码的问题</span>
+            </a>
+            <div class="abstract-content">
+                前段时间在折腾浏览器的时候，不知道怎么一搞，导致在登录界面，Chrome 不会自动把账户密码填充到登录账户密码栏里。也就是进入一个页面之后，需要手动点击账户栏，选择账户才会填入正确密码。
+我尝试重新登录账户，清除数据，卸载 Chrome 重启等操作均无法解决问题。
+忽然想到，MacOS 拖程序到回收站其实并不算完全卸载，即使删除用户数据，也会存留部分数据在用户数据文件夹。
+
+一般情况我会使用 CleanMyMac 来卸载，没想到这玩意儿也没有完全卸载。
+
+搜索 Google （吐槽重置之后，地址栏输入居然变成了百度）之后，找到了卸载 Chrome 的正确姿势：
+
+在计算机屏幕的底部，右键...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="chrome">chrome</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/05/08/2020/05/zfs/">
                 
                 <span class="abstract-title-text">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</span>
@@ -640,316 +905,6 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/03/10/2020/01/nginx-cache/">
-                
-                <span class="abstract-title-text">Nginx 降低 IO 负荷</span>
-            </a>
-            <div class="abstract-content">
-                V 站上一个帖子提问：
-
-硬盘 io 居高不下， nginx 能利用闲置的内存缓解一下 io 吗？
-https://www.v2ex.com/t/649310#reply8
-
-有大佬回复:
-
-当然可以，nginx 开启缓存功能非常强大。分为 4 级：1，开启客户端 cache，设置 expires 头；2，开启文件系统缓存，open_file_cache 相关；3，开启代理缓存，设置 proxy_cache 相关；4，开启脚本缓存，设置 fastcgi cache 相关；
-
-按照他说的内容分析下这几个 Nginx 配置的功能。
-expires
-开启客户端 cache ，设置 expire...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/10</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/17/2020/01/java/">
-                
-                <span class="abstract-title-text">Java 学习路线</span>
-            </a>
-            <div class="abstract-content">
-                基友推荐的 Java 教程，源地址:
-https://www.bilibili.com/read/cv3560825
-目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
-1. 基础阶段1.1 必选
-Java 语言：https://www.bilibili.com/video/av59529105/
-
-MySQL 数据库：https://www.bilibili.com/video/av59623481/
-
-JDBC：https://www.bilibili.com/video/av59534040/
-
-Java Web：https://www.bilibili...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/17/2020/01/pivpn/">
-                
-                <span class="abstract-title-text">树莓派安装 PIVPN</span>
-            </a>
-            <div class="abstract-content">
-                在树莓派上安装 OpenVPN。
-虽然 OpenVPN 使用繁琐，但是加密程度高，不易被破解。
-核心安装就只有一条命令:
-1curl -L https://install.pivpn.io | bash
-
-
-
-具体过程可以参考
-http://haipeng.me/2017/12/12/raspberry-pi-vpn-remote-access/
-这位大佬安装过程讲解的十分详细 &#x3D; - &#x3D;。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="openvpn">openvpn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/17/2020/01/disable-systemd-resolved/">
-                
-                <span class="abstract-title-text">nameserver 127.0.0.53</span>
-            </a>
-            <div class="abstract-content">
-                Ubuntu 升级到 16.04 还是 18.04 的时候，默认会启动 NetWorkManage 的一个功能，即把 /etc/resolv.conf 的 dns 地址配置成
-1nameserver 127.0.0.53
-
-正常情况下不会有影响，但是如果想要关闭这个功能，设置
-12$ sudo systemctl disable systemd-resolved$ sudo reboot
-
-
-建议正常运作的情况下不需要卸载这个组件
-
-参考: https://www.hiroom2.com/2017/08/24/ubuntu-1610-nameserver-127-0-0-53-en/
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/07/2020/01/km3/">
-                
-                <span class="abstract-title-text">杭州科目三</span>
-            </a>
-            <div class="abstract-content">
-                新系统模拟灯光考试夜间模拟灯光题目
-
-
-行为
-灯光操作
-
-
-
-夜间通过急弯、坡路
-交替使用远近光灯
-
-
-夜间通过坡路、拱桥
-交替使用远近光灯
-
-
-夜间通过急弯、拱桥
-交替使用远近光灯
-
-
-夜间通过拱桥、人行横道
-交替使用远近光灯
-
-
-夜间通过没有交通信号灯控制的路口
-交替使用远近光灯
-
-
-夜间超越前方车辆
-交替使用远近光灯
-
-
-夜间同方向近距离跟车行驶
-使用近光灯
-
-
-夜间与机动车会车
-使用近光灯
-
-
-夜间直行通过路口
-使用近光灯
-
-
-夜间路口左转弯
-近光灯 + 左转向灯
-
-
-夜间路口右转弯
-近光灯 + 右转向灯
-
-
-夜间在有路灯的道路上行驶
-使用近光灯
-
-
-夜间在照明良好的道路上行驶
-...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/12/23/2019/12/rasp-4-ubuntu/">
-                
-                <span class="abstract-title-text">Raspberry4 安装 Ubuntu</span>
-            </a>
-            <div class="abstract-content">
-                
-随着自己年纪越来越大，事情越来越多，而相对的，记忆力却越来越差。
-但是已经安装过一次 Raspberry4 ，但是不到几个月的时间就忘得一干二净，折腾了一整个晚上才完全搞定。
-以此说明，以后应当认真记录一些操作的信息，以供事后参考。
-真怀念自己当初的记忆力
-
-Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取速度，相对于前几代有着本质的差异。我原先使用迅雷下载宝作为小型的 NAS 存储视频监控和正常查看的电视剧，但是下载宝作为低端的性能配置，IO 写入性能不理想，写入速度最高也仅有 30 MB&#x2F;s，在对性能需求愈发高的情况下，我决定用 Raspb...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/24</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
     
 </div>
 
@@ -2086,7 +2041,49 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2459,7 +2456,7 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2470,9 +2467,54 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -4039,6 +4081,16 @@ Raspberry 4 代采用 USB3.0 和千兆网卡，无论是网速还是硬盘读取
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>

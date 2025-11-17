@@ -440,6 +440,281 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2017/12/09/2019/07/docker/docker-user/">
+                
+                <span class="abstract-title-text">Docker 普通用户操作不用 sudo 权限</span>
+            </a>
+            <div class="abstract-content">
+                Docker 的服务本来是要 root 权限或者 docker 组的权限。只要将当前用户加入 docker 组即可以在不使用sudo 的前提下运行 Docker 指令。
+
+新建 docker 组
+
+一般情况下，在安装 Docker 的时候已经创建好了。
+
+
+
+1sudo groupadd docker
+
+
+将当前用户加入 docker 组
+
+1sudo gpasswd -a $&#123;USER&#125; docker
+
+​    或者
+1sudo usermod -aG docker $&#123;USER&#125;
+
+
+退出 ssh 或者重启 docker 服务
+
+1sudo ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/12/06/2019/07/ubuntu-swap/">
+                
+                <span class="abstract-title-text">Ubuntu 新增 swap</span>
+            </a>
+            <div class="abstract-content">
+                更换权限sudo su
+创建 swap 文件fallocate -l 1G /swapfile
+修改访问权限
+12chown root:root /swapfilechmod 0600 /swapfile
+
+启动 swap 分区
+1mkswap /swapfile
+
+返回信息
+12Setting up swapspace version 1, size = 8 GiB (8589930496 bytes)no label, UUID=f1f74673-d41b-4b06-a80c-15a6b449a1fe
+
+激活 swap 分区
+1swapon /swapfile
+
+然后修改开机载入
+1...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/11/24/2019/07/comand-control/">
+                
+                <span class="abstract-title-text">命令执行控制 &amp;&amp; 与 ||(转)</span>
+            </a>
+            <div class="abstract-content">
+                &amp;&amp;方式：command1 &amp;&amp; command2如果 command1 执行成功，则执行 command2。
+||方式：command1 || command2如果 command1 执行失败，则执行 command2。
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="shell">shell</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/11/21/2019/07/database-install/">
+                
+                <span class="abstract-title-text">常用数据库(缓存)的简单安装配置</span>
+            </a>
+            <div class="abstract-content">
+                用于日常代码调试测试开发。如果稳定使用建议 docker 搭建数据库。
+1. 环境树莓派 Ubuntu 16.04
+
+目前版本已经使用了 Ubuntu 22.04
+
+2. MySQL2.1 MySQL 的安装1sudo apt install mysql-server
+
+
+
+2.2 配置MySQL 的配置文件位于 /etc/mysql/。
+一般名称为my.cnf或者mysqld.cnf。
+因为一般开发用的 MySQL 都是外网调用，所以需要修改bind-address。注释或者修改成你所在的局域网的 IP。(如果数据库在公网暴露且有信息存储，请勿注释该代码)。
+2.2.1 MySQL 的...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mongodb">mongodb</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="redis">redis</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="memcache">memcache</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/11/19/2019/07/inode/">
+                
+                <span class="abstract-title-text">优化 Ext4 分区 inode 占用空间问题</span>
+            </a>
+            <div class="abstract-content">
+                
+  去年年底购入了渣雷的下载宝，用  ntfs 格式化后，性能一直不佳(后面发现是因为那个渣系统会索引文件)，后用 ext4 格式，但是格式之后发现居然少了 15G 左右。
+
+inodeinode是指在许多“类Unix文件系统”中的一种数据结构。每个inode保存了文件系统中的一个文件系统对象（包括文件、目录、设备文件、socket、管道, 等等）的元信息数据，但不包括数据内容或者文件名。(from: 维基百科)
+通俗的说，inode 其实就是文件的索引值。
+inode 也会消耗硬盘空间，所以硬盘格式化的时候，操作系统自动将硬盘分成两个区域。一个是数据区，存放文件数据；另一个是 ino...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2017/11/03/2019/07/mysql-config/">
+                
+                <span class="abstract-title-text">my.cnf 参数解释 &amp; 优化 (转载)</span>
+            </a>
+            <div class="abstract-content">
+                my.cnf 参数解析
+转载 From
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021031041051061071081091101111121131141151161171181191201211221231241251261271281...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2017/11/03/2019/07/gitlab-upgrade-3/">
                 
                 <span class="abstract-title-text">GitLab 推送了更新(三) - Nginx 反向代理</span>
@@ -1653,7 +1928,49 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2026,7 +2343,7 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2037,9 +2354,54 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -3606,6 +3968,16 @@ GitLab 8.0朋友推荐是安装到 2G 内存以上的机子，树莓派版本虽
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>

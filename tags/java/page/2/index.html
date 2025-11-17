@@ -440,6 +440,190 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/08/11/2022/08/jvm8/">
+                
+                <span class="abstract-title-text">JVM 8 特有的参数（区别 JVM 7）</span>
+            </a>
+            <div class="abstract-content">
+                JVM 内存模型
+虚拟机栈
+每个线程都有私有的栈
+栈帧
+每个方法会创建一个栈帧
+包含
+局部变量表
+操作数栈
+方法出口
+…
+
+
+StackOverflowError
+
+
+
+
+本地方法栈
+虚拟机的 Native 方法所用的栈
+
+
+PC 寄存器
+线程的程序计数器
+
+
+堆
+堆内存
+所有线程共享部分
+包含所有对象和数组（所有指针型变量？）
+GC 的对象
+
+
+方法区
+物理位置也属于堆
+包含
+存储类的信息
+常量池
+方法数据
+方法代码
+
+
+
+
+
+PermGen 永久代
+jdk 1.7 HotSpot 特有，jdk 1.8 移除
+方法区的具体实现
+
+
+jdk 7 中，存储在永久代的部分数据就已经转移到了J...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/11</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/10/2022/08/gc/">
+                
+                <span class="abstract-title-text">Java GC</span>
+            </a>
+            <div class="abstract-content">
+                
+Serial GC
+
+单线程收集器
+
+需要暂停其他工作线
+
+Client 模式
+
+
+
+Serial Old GC
+
+Serial 老年代版本，Client 版本
+其他功能
+搭配Parallel Scavenge收集器使用。
+做为 CMS 收集器的后备方案，当 CMS 出现 Concurrent Mode Failure 时使用。
+做为 G1 的 fullGC 收集器。这也是我们在使用 G1 的时候需要注意的，G1 应该尽量杜绝FullGC。否则就会退化为串行 GC。
+
+
+
+
+
+
+ParNew GC
+
+Serial 收集器的多线程版本，其他参数方式都一样
+XX:parallelGCThr...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/10</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/08/09/2022/08/jvm7/">
+                
+                <span class="abstract-title-text">jvm7 一份调优参数分析</span>
+            </a>
+            <div class="abstract-content">
+                前几天看文章，看到了一篇文章给了一份 jvm7 的启动调优参数。可以学习下 JVM7 的一些特性。
+1java -server -Xms2G -Xmx2G -XX:MaxPermSize=256M -Xss256K -XX:NewRatio=2 -XX:SurvivorRatio=8 -XX:+UseAdaptiveSizePolicy -XX:+UseParallelGC -XX:+UseParallelOldGC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:../logs/gc.log -XX:+PrintTenuringDi...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="jvm">jvm</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/08/04/2022/08/java-lock/">
                 
                 <span class="abstract-title-text">Java 的 21 种锁</span>
@@ -811,134 +995,10 @@ HashMap允许将 null 作为一个 entry 的 ...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/01/17/2020/01/java/">
-                
-                <span class="abstract-title-text">Java 学习路线</span>
-            </a>
-            <div class="abstract-content">
-                基友推荐的 Java 教程，源地址:
-https://www.bilibili.com/read/cv3560825
-目测侵权，不过实在不喜欢看视频，会尽量选择看文章 or 书本来学习这些技能点。
-1. 基础阶段1.1 必选
-Java 语言：https://www.bilibili.com/video/av59529105/
-
-MySQL 数据库：https://www.bilibili.com/video/av59623481/
-
-JDBC：https://www.bilibili.com/video/av59534040/
-
-Java Web：https://www.bilibili...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2019/02/25/2019/07/mc-server-input-error/">
-                
-                <span class="abstract-title-text">MC 服务器启动之后无法在服务端输入指令</span>
-            </a>
-            <div class="abstract-content">
-                不久前，发现 MC 服务器居然不能输入指令关闭服务器，在启动过程中有报错。
-123456789101112java.io.IOException: Resource temporarily unavailable	at java.io.FileInputStream.readBytes(Native Method)	at java.io.FileInputStream.read(FileInputStream.java:272)	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)	at java.io.Buf...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mc">mc</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/04/13/2019/07/xms/">
-                
-                <span class="abstract-title-text">Xms Xmx PermSize MaxPermSize 的含义</span>
-            </a>
-            <div class="abstract-content">
-                转载
-参数的含义
-
--vmargs -Xms128M -Xmx512M -XX:PermSize&#x3D;64M-XX:MaxPermSize&#x3D;128M-vmargs 说明后面是VM的参数，所以后面的其实都是JVM的参数了-Xms128m JVM初始分配的堆内存-Xmx512m JVM最大允许分配的堆内存，按需分配-XX:PermSize&#x3D;64M JVM初始分配的非堆内存-XX:MaxPermSize&#x3D;128M JVM最大允许分配的非堆内存，按需分配
-
-我们首先了解一下JVM内存管理的机制，然后再解释每个参数代表的含义。
-堆(Heap)和非堆(Non-he...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/tags/java/">&lt; PREV</a><a class="page-number" href="/tags/java/">1</a><span class="page-number current">2</span>
+            <a class="extend prev" rel="prev" href="/tags/java/">&lt; PREV</a><a class="page-number" href="/tags/java/">1</a><span class="page-number current">2</span><a class="page-number" href="/tags/java/page/3/">3</a><a class="extend next" rel="next" href="/tags/java/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1984,7 +2044,49 @@ Java Web：https://www.bilibili...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2357,7 +2459,7 @@ Java Web：https://www.bilibili...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2368,9 +2470,54 @@ Java Web：https://www.bilibili...
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -3937,6 +4084,16 @@ Java Web：https://www.bilibili...
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>

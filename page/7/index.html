@@ -455,6 +455,282 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022/04/iptables/">
+                
+                <span class="abstract-title-text">linux 端口转发 iptables</span>
+            </a>
+            <div class="abstract-content">
+                linux 端口转发 iptablescentos 7 使用 firewalld 服务而不是 iptables，如果 centos7 以上需要注意！！
+1.开启配置  iptables临时修改：
+1$ echo 1 &gt;/proc/sys/net/ipv4/ip_forward
+
+默认值 0 是禁止 ip 转发，修改为 1 即开启 ip 转发功能。
+重启生效:
+修改 &#x2F;etc&#x2F;sysctl.conf 文件:
+1net.ipv4.ip_forward = 1
+
+其他:
+1sysctl -w net.ipv4.ip_forward=1
+
+
+查看路由表:
+netstat...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="liunx">liunx</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="iptables">iptables</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022/04/maven-command/">
+                
+                <span class="abstract-title-text">30 个 Maven 命令</span>
+            </a>
+            <div class="abstract-content">
+                https://www.cnblogs.com/javastack/p/12982472.html
+maven 命令除了常用的几个，大部分经常记不住，整理一下，方便查询。
+maven 命令的格式为 mvn [plugin-name]:[goal-name]，可以接受的参数如下。
+1234567891011-D 指定参数，如 -Dmaven.test.skip=true 跳过单元测试；-P 指定 Profile 配置，可以用于区分环境；-e 显示maven运行出错的信息；-o 离线执行命令,即不去远程仓库更新包；-X 显示maven允许的debug信息；-U 强制去远程更新snapshot...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/07/2022/03/python-3-minutes/">
+                
+                <span class="abstract-title-text">3 分钟学习 (Python)</span>
+            </a>
+            <div class="abstract-content">
+                from https://github.com/adambard/learnxinyminutes-docs/pull/4351
+Python 是由吉多·范罗苏姆(Guido Van Rossum)在 90 年代早期设计。它是如今最常用的编程语言之一。它的语法简洁且优美，几乎就是可执行的伪代码。
+欢迎大家斧正。英文版原作 Louie Dinh @louiedinh邮箱 louiedinh [at] [谷歌的信箱服务]。中文翻译 Geoff Liu。
+注意：这篇教程是基于 Python 3 写的。如果你想学旧版 Python 2，我们特别有另一篇教程。
+123456789101112131...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/07/2022/04/maven-notion/">
+                
+                <span class="abstract-title-text">mvn 笔记精简</span>
+            </a>
+            <div class="abstract-content">
+                Maven 概念from https://segmentfault.com/a/1190000019897882
+Maven 定位
+编译
+部署
+清理
+测试
+报告
+打包
+安装
+
+目录架构约定123456test  / main  		/ java     // 源代码  		resources  // 配置文件  / test  	  / java     // 测试代码
+
+
+
+
+
+配置文件pom.xml 
+配置结构12345678&lt;dependencies&gt;	&lt;dependency&gt;  	&lt;groupId&gt;cn.vmkoo.test&lt;/group...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">
+                
+                <span class="abstract-title-text">记一次 highlight.js 不生效的问题</span>
+            </a>
+            <div class="abstract-content">
+                问题在折腾工作机的时候，惊奇的发现自己的博客的 code 块的语法高亮没了？！当时因为是主题的问题，还更换了 hexo 的主题。直到某一次查询到 csdn 的博客页面，发现博客的语法高亮也出现了相似的问题：字体的颜色显示成黑色。
+
+先说解决方案，问题出在刚安装的 source code pro  字体上，国内某大站下载的字体存在问题，我后面去 google 官网下载了一份就正常了。
+
+
+清理缓存 &amp; 卸载清理页面缓存，强制刷新页面，无法解决。
+使用了隐形标签来测试是否被浏览器插件影响，无法解决。
+清理浏览器缓存，无法解决。
+卸载重装浏览器，无法解决。
+更换电脑，发现别的电脑都是正...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/02/09/2022/01/unrar/">
+                
+                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
+            </a>
+            <div class="abstract-content">
+                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
+方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
+packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
+1pip install zipfile
+
+
+
+存在问题：gbk 文件名乱码
+因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
+有...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2021/09/16/2021/09/synology-drive-icon/">
                 
                 <span class="abstract-title-text">Synolog 群晖 Drive 图标不显示的问题</span>
@@ -627,260 +903,6 @@ Warining注意 vmware tools 的状态
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">
-                
-                <span class="abstract-title-text">k8s mysql demo</span>
-            </a>
-            <div class="abstract-content">
-                
-mysql-rc.yaml
-
-123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/05/24/2021/04/frp/">
-                
-                <span class="abstract-title-text">frp 的使用</span>
-            </a>
-            <div class="abstract-content">
-                [TOC]
-frp 堪称一神器。只要你拥有一台公网服务器，然后开启一个 tcp 端口，即可快乐的玩耍 frp。
-
-个人方案原本是搭建在树莓派 4 上。无奈那玩意儿实在不稳定。
-目前搭建在基于 esxi 的虚拟机上。
-网络环境是普通的家用电信宽带，依赖 ddns 服务实现域名更新。
-
-安装 &amp; 启动在 Release 页面下载对应的文件包，解压。
-主要包含以下文件
-12345678910├── README.md├── frpc # or frpc.exe├── frpc.ini├── frps # or frpc.exe├── frps.ini└── systemd    ├──...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/24</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="frp">frp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/23/2021/04/prisma-connection-urls/">
-                
-                <span class="abstract-title-text">Prisma connection URLs</span>
-            </a>
-            <div class="abstract-content">
-                PostgreSQL12341datasource db &#123;2  provider = &quot;postgresql&quot;3  url      = &quot;postgresql://janedoe:mypassword@localhost:5432/mydb&quot;4&#125;
-
-MySQL12341datasource db &#123;2  provider = &quot;mysql&quot;3  url      = &quot;mysql://janedoe:mypassword@localhost:3306/mydb&quot;4&#125;...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="prisma">prisma</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/23/2021/04/GraphQL/">
-                
-                <span class="abstract-title-text">GraphQL</span>
-            </a>
-            <div class="abstract-content">
-                simple example12345678query &#123;  aman &#123;    id    ago: ago # 年龄    name    sex  &#125;&#125;
-
-
-
-字段 &amp; 别名123456789101112query &#123;  groups &#123;    id    name    apis &#123;      id      name      code: uri    &#125;  &#125;&#125;
-
-
-
-参数1234567891011query &#123;  groups(ids: [100000010...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="graphql">graphql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/12/2021/04/kubernetes/">
-                
-                <span class="abstract-title-text">kubernetes 学习</span>
-            </a>
-            <div class="abstract-content">
-                [TOC]
-kubernetes核心是容器。
-1. 工具 &amp; 环境参考：https://kubernetes.io/zh/docs/tasks/tools/
-
-工具
-kubectl: 管理工具，相当于管理 client 端。
-kubeadm: 相当于 server 端。
-
-
-服务器
-两台 4 核心 4G 的虚拟机
-
-
-
-
-每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)
-
-
-本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。
-
-2. 安...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/08/2021/04/nginx-ws/">
-                
-                <span class="abstract-title-text">Nginx 支持 WebSocket</span>
-            </a>
-            <div class="abstract-content">
-                12345678910111213141516171819202122232425262728293031# 编辑nginx.conf，在http区域内一定要添加下面配置：map $http_upgrade $connection_upgrade &#123;    default upgrade;    &#x27;&#x27; close;&#125; # map指令的作用：# 该作用主要是根据客户端请求中$http_upgrade 的值，来构造改变$connection_upgrade的值，即根据变量$http_upgrade的值创建新的变量$connection_upgrade，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
     
 </div>
 
@@ -2017,7 +2039,49 @@ kubeadm: 相当于 server 端。
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2390,7 +2454,7 @@ kubeadm: 相当于 server 端。
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2401,9 +2465,54 @@ kubeadm: 相当于 server 端。
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -3970,6 +4079,16 @@ kubeadm: 相当于 server 端。
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>

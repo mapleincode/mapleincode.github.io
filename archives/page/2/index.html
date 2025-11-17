@@ -440,6 +440,269 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2024/02/22/2024/01/outline/">
+                
+                <span class="abstract-title-text">通过 docker 来部署 outline</span>
+            </a>
+            <div class="abstract-content">
+                同样是写 traefik 的老哥，他也写了 outline 的教程：
+从零开始使用开源文档&#x2F;Wiki软件 Outline（一）
+需要注意的是，整个项目的部署是基于 traefik 来进行部署的，除此之外教程相当详细。
+为什么要使用域名？域名可以保证使用时候比较舒服，因为所有服务都可以使用同一个 80 端口或者 443 端口，而不需要每个服务单独占用一个独立的非标准端口。
+这样的情况下，http 服务器区分服务的办法，只能以来域名。
+并非一定需要购买域名，例如范例中的 *.lab.com，只需要在 hosts 文件中加入映射即可访问。
+是否一定要使用 httpshttps 取决于...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/02/22</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="outline">outline</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/01/31/2024/01/traefik/">
+                
+                <span class="abstract-title-text">Traefik 使用和配置</span>
+            </a>
+            <div class="abstract-content">
+                Traefik  的作用是基于 Docker 网络来暴露服务，通过域名的方式来分发对容器的请求。
+在网上找到一老哥的介绍，基本已经很完善了。
+Traefik v3.0 Docker 全面使用指南：基础篇
+但是就最后的结果，因为我不想再部署一套 https 证书的申请获取，于是我简化成了纯 http 版本：
+12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/01/31</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="traefik">traefik</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/12/20/2023/12/validation-api/">
+                
+                <span class="abstract-title-text">validation-api</span>
+            </a>
+            <div class="abstract-content">
+                validation-api 内置的 constraints
+
+
+Validation-API
+概述
+
+
+
+@AssertFalse
+被注释的元素必须为 false
+
+
+@AssertTrue
+被注释的元素必须为 true
+
+
+@DecimalMax
+被注释的元素必须是一个数字，其值必须小于等于指定的最大值
+
+
+@DecimalMin
+被注释的元素必须是一个数字，其值必须大于等于指定的最小值
+
+
+@Digits
+被注释的元素必须是一个在可接受范围内的数字
+
+
+@Email
+被注释的元素必须是正确格式的电子邮件地址
+
+
+@Future
+被注释的元素必须是将来的日期
+
+
+@FutureOrP...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/12/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/09/20/2023/09/shutil/">
+                
+                <span class="abstract-title-text">Python shutil 笔记</span>
+            </a>
+            <div class="abstract-content">
+                目录和文件操作shutil.copyfile(src, dst, *, follow_symlinks&#x3D;True)将名为 src 的文件的内容（不包括元数据）拷贝到名为 dst 的文件并以尽可能高效的方式返回 dst。 src 和 dst 均为路径类对象或以字符串形式给出的路径名。
+dst 必须是完整的目标文件名；
+exception shutil.SameFileError此异常会在 copyfile() 中的源和目标为同一文件时被引发。
+shutil.copymode(src, dst, *, follow_symlinks&#x3D;True)从 src 拷贝权限位到 d...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/09/20</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/08/31/2023/08/nestjs-provider/">
+                
+                <span class="abstract-title-text">Nestjs Provider</span>
+            </a>
+            <div class="abstract-content">
+                基础使用12345678910111213// cat.service.tsimport &#123; Injectable &#125; from &#x27;@nestjs/common&#x27;;import &#123; Cat &#125; from &#x27;./interfaces/cat.interface&#x27;;@Injectable()export class CatsService &#123;  private readonly cats: Cat[] = [];  findAll(): Cat[] &#123;    return this.cats;...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/31</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2023/08/03/2023/08/mvn-command/">
+                
+                <span class="abstract-title-text">mvn 命令参数含义</span>
+            </a>
+            <div class="abstract-content">
+                
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/03</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2023/07/26/2023/07/after-poweroff-force/">
                 
                 <span class="abstract-title-text">强关 esxi，数据损坏和修复</span>
@@ -595,276 +858,6 @@ thin 指的是精简置备
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/21/2023/04/ts-is-type/">
-                
-                <span class="abstract-title-text">TypeScript Type 类型判断</span>
-            </a>
-            <div class="abstract-content">
-                TS 中官方支持的方法里，判断 Type 类型的有：
-
-typeof ，但是遗憾的只支持基础类型
-instanceof，只支持类
-
-也就是混合的自定义 Type 而言，官方是没有常见的函数来进行判断。不过 TS 也给了办法。
-先说怎么判断，TS 的类是通过参数字段来判断是否是同一个类型的 Type。也是满足字段类型相同的变量，就可以认为是属于某一个 Type。
-所以可以通过 in 来判断是否包含某个字段。
-初始先定义一些类型：
-123456789101112interface A &#123;  a: string&#125;interface B &#123;  a: number  ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/20/2023/04/pip3-install-mailer-error/">
-                
-                <span class="abstract-title-text">Python3 安装 mailer 失败</span>
-            </a>
-            <div class="abstract-content">
-                from: https://bobbyhadz.com/blog/python-error-in-package-setup-command-use-2to3-is-invalid
-原因：
-mailer 是 Python2 的包。在 Python3 环境安装会因为 setuptools 默认版本过高，导致安装失败。
-解决方案：
-安装低版本 setuptools
-1pip install --upgrade pip &quot;setuptools&lt;58.0&quot;
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/20</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python3">python3</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/20/2023/04/ts-class-method-overload/">
-                
-                <span class="abstract-title-text">TypeScript 重载</span>
-            </a>
-            <div class="abstract-content">
-                函数重载
-1234567// 声明和实现写在一起function t1(p: string): number;function t1(p: number): string;function t1(p: string | number) &#123;    return typeof p === &#x27;string&#x27; ? Number(p) : String(p);&#125;
-
-
-
-
-
-类方法重载和函数重载其实是一样的。
-是需要在类的方法上面，写上声明。
-
-之前查询说必须要基于类的声明实现，其实是不需要的。
-不过如果是基于 interface 实现类，那相当于把 inte...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/20</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/11/2023/04/rabbitmq/">
-                
-                <span class="abstract-title-text">rabbtmq 笔记 &amp; demo</span>
-            </a>
-            <div class="abstract-content">
-                基本首先熟悉几个概念：
-
-exchange
-交换器，可以认为是消息 publish 的目的地。
-所有消息都是推送到 exchange 的
-
-
-queue
-队列，consume 监听的位置
-queue 其实和 publish 没有任何关系
-只是为了方便多个消费者消费同一个消息
-
-
-流程
-创建 exchange，也可以复用已存在的 exchange。
-如果 exchange 已存在则不创建
-如果已存在的 exchange 的属性与代码配置的不符合则报错
-
-
-consumer 创建 queue
-如果已经存在则改为获取 queue，参数以存在的为准，如果链接的 queue 参数不符合就报错
-
-
-...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/04/04/2023/04/synology-set-code/">
-                
-                <span class="abstract-title-text">黑群晖新引导洗白（转载）</span>
-            </a>
-            <div class="abstract-content">
-                原文
-在前面的文章中，我们利用ARPL引导将黑群晖安装好了。有朋友就问我，ARPL安装的黑群晖洗白和其他的不一样了，该怎么洗白？这篇文章为你解答。
-原理其实洗白的主要就是修改引导里面的 sn 和 mac 地址。 我们只需要找到引导里面的 sn 和 mac 地址就好了。 而 APRL 引导中， sn 和 mac 地址都在 user-config.yml 中。 也就是说，修改这个文件就好了。
-操作知道了原理，操作就简单了。
-第一步，我们需要开启群晖的SSH，这一步相信大家都很熟悉，这里就不累述。
-第二步， SSH 连接上群晖。
-第三步，sudo -i 切换到 root 权限下。
-第四步，创建...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/04/04</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/03/16/2023/03/python_advance/">
-                
-                <span class="abstract-title-text">廖雪峰 Python 教程笔记</span>
-            </a>
-            <div class="abstract-content">
-                教程地址: https://www.liaoxuefeng.com/wiki/1016959663602400
-生成器和迭代器12345678910111213141516171819202122# 构建生成器def odd():    times = 0    while True:        yield times        times = times + 1        if times &gt; 10:            # break            return &#x27;some value&#x27;# for 循环for t in odd():  ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/03/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
     
         <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
     
@@ -1924,7 +1917,49 @@ consumer 创建 queue
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2297,7 +2332,7 @@ consumer 创建 queue
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2308,9 +2343,54 @@ consumer 创建 queue
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -3877,6 +3957,16 @@ consumer 创建 queue
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>

@@ -455,6 +455,260 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">
+                
+                <span class="abstract-title-text">k8s mysql demo</span>
+            </a>
+            <div class="abstract-content">
+                
+mysql-rc.yaml
+
+123456789101112131415161718192021apiVersion: v1kind: ReplicationController # 副本控制器 RCmetadata: # 元数据，相当于属性	name: mysql	# RC 的名称，全局唯一spec: # 规范？更像是配置		replicas: 1 # Pod 副本的期待数量		selector:			app: &quot;mysql&quot; # 符合目标的 Pod 拥有此标签 # 用于匹配 Pod		template: # 模版			metadata:				labels:		...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/05/24/2021/04/frp/">
+                
+                <span class="abstract-title-text">frp 的使用</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+frp 堪称一神器。只要你拥有一台公网服务器，然后开启一个 tcp 端口，即可快乐的玩耍 frp。
+
+个人方案原本是搭建在树莓派 4 上。无奈那玩意儿实在不稳定。
+目前搭建在基于 esxi 的虚拟机上。
+网络环境是普通的家用电信宽带，依赖 ddns 服务实现域名更新。
+
+安装 &amp; 启动在 Release 页面下载对应的文件包，解压。
+主要包含以下文件
+12345678910├── README.md├── frpc # or frpc.exe├── frpc.ini├── frps # or frpc.exe├── frps.ini└── systemd    ├──...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/05/24</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="frp">frp</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/23/2021/04/prisma-connection-urls/">
+                
+                <span class="abstract-title-text">Prisma connection URLs</span>
+            </a>
+            <div class="abstract-content">
+                PostgreSQL12341datasource db &#123;2  provider = &quot;postgresql&quot;3  url      = &quot;postgresql://janedoe:mypassword@localhost:5432/mydb&quot;4&#125;
+
+MySQL12341datasource db &#123;2  provider = &quot;mysql&quot;3  url      = &quot;mysql://janedoe:mypassword@localhost:3306/mydb&quot;4&#125;...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="prisma">prisma</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/23/2021/04/GraphQL/">
+                
+                <span class="abstract-title-text">GraphQL</span>
+            </a>
+            <div class="abstract-content">
+                simple example12345678query &#123;  aman &#123;    id    ago: ago # 年龄    name    sex  &#125;&#125;
+
+
+
+字段 &amp; 别名123456789101112query &#123;  groups &#123;    id    name    apis &#123;      id      name      code: uri    &#125;  &#125;&#125;
+
+
+
+参数1234567891011query &#123;  groups(ids: [100000010...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/23</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="graphql">graphql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/12/2021/04/kubernetes/">
+                
+                <span class="abstract-title-text">kubernetes 学习</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+kubernetes核心是容器。
+1. 工具 &amp; 环境参考：https://kubernetes.io/zh/docs/tasks/tools/
+
+工具
+kubectl: 管理工具，相当于管理 client 端。
+kubeadm: 相当于 server 端。
+
+
+服务器
+两台 4 核心 4G 的虚拟机
+
+
+
+
+每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)
+
+
+本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。
+
+2. 安...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/08/2021/04/nginx-ws/">
+                
+                <span class="abstract-title-text">Nginx 支持 WebSocket</span>
+            </a>
+            <div class="abstract-content">
+                12345678910111213141516171819202122232425262728293031# 编辑nginx.conf，在http区域内一定要添加下面配置：map $http_upgrade $connection_upgrade &#123;    default upgrade;    &#x27;&#x27; close;&#125; # map指令的作用：# 该作用主要是根据客户端请求中$http_upgrade 的值，来构造改变$connection_upgrade的值，即根据变量$http_upgrade的值创建新的变量$connection_upgrade，...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2021/02/24/2021/02/baijiu/">
                 
                 <span class="abstract-title-text">中国白酒分类</span>
@@ -636,299 +890,6 @@ libsynon...
     
     
         <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/09/2020/11/syno/">
-                
-                <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
-            </a>
-            <div class="abstract-content">
-                关于 nas 的推荐1. 按照系统
-群晖
-推荐
-扩展多，对硬件要求低，性能可能不如 FreeNAS，对高性能硬件不感冒。
-应用极多，而且包含桌面应用和移动应用
-黑群晖要折腾 &amp; 升级很麻烦，推荐不升级
-白群晖缺点： 贵
-
-
-FreeNAS
-使用不多
-硬件要求相对高一点 &amp; 开源
-UI 还行，现在和 True NAS 合并了
-
-
-Linux &amp; Samba
-就是 Linux 服务器
-
-
-Windows Server
-就是 windows 服务器
-
-
-unraid &amp; vmware
-都是虚拟机，会损耗部分性能。
-
-
-
-2. 按照硬盘数
-2.5 寸 x 1
-ar...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/09</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/10/19/2020/10/zhenglun/">
-                
-                <span class="abstract-title-text">争论的艺术</span>
-            </a>
-            <div class="abstract-content">
-                今天打车，遇到一个很健谈的司机。
-
-好像所有司机都很健谈，而且谈过之后司机的态度就会 MAX
-
-提到关于国产品牌和进口品牌。我想到之前在群里就遇到一个人死顶苹果的摄像头。
-认为苹果的摄像头比华为好。因为苹果的摄像头比较真实，拍出来的人比较丑。
-但是华为的话，通过软硬件对图形进行渲染，拍出来的人虽然好看，但是反而是辣鸡。
-和那个大哥谈论下，基本几分钟就把比较中立的结论给定了下来：
-
-华为的渲染记录也是功能和特性之一。
-即使苹果的拍照渲染程度小，但是和实物，或者哪怕是单反效果相比，都要差的多
-日常生活中，大家拍照，无论是拍人和拍物，本身就是为了纪念，也是为了好看。
-而相反的是，苹果摄像头的特...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/19</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/10/14/2020/10/dash-bash/">
-                
-                <span class="abstract-title-text">set: Illegal option -o pipefail;ubuntu 执行 bash 脚本发生报错</span>
-            </a>
-            <div class="abstract-content">
-                造成原因，Debian 和 Ubuntu 的 &#x2F;bin&#x2F;sh 指向的是 dash 而不是 bash。
-
-Dash Shell 比 Bash Shell 小的多，符合POSIX标准。
-Dash 支持的命令比 Bash 要小
-查看状态: ls &#x2F;bin&#x2F;sh -al
-重新配置: udo dpkg-reconfigure dash
-
-区别主要有
-1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/22/2020/09/raspberry-usb-start/">
-                
-                <span class="abstract-title-text">raspberry 4B Ubuntu 系统 USB 启动</span>
-            </a>
-            <div class="abstract-content">
-                raspberry 4B，现在是觉得坑多于喜。
-为了减少系统盘对性能的影响，所以我们使用外接 USB 系统盘的办法。
-而树莓派默认只支持从 SD 读取。
-
-隔壁 raspbian 已经支持无卡 usb 启动了，ubuntu 啥时候支持下？
-
-早期是通过修改 cmdline.txt 里的 root
-1root=/dev/mmcblk0p2
-
-修改为
-1root=/dev/sda2
-
-也就是在 sda 上所在的系统分区。
-而更新到 18.04.4 之后(大概)，cmdline.txt 改成了 btcmd.txt。而整个启动命令变成了
-1net.ifnames=0 dwc_otg.lpm_en...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/22</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/15/2020/09/raspberry/">
-                
-                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
-            </a>
-            <div class="abstract-content">
-                
-本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
-对于物联网、家用办公等等需求的人而言，毫无意义
-
-第一个树莓派五年前，我入手了树莓派 2。
-作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
-而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
-但是树莓派 2 有若干致命的问题：
-
-usb 只有 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/09/2020/09/lock/">
-                
-                <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
-            </a>
-            <div class="abstract-content">
-                悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
-
-Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
-
-
-适合多写环境
-
-乐观锁
-不上锁
-更新前判断数据是否被更新
-使用版本号机制和 CAS 算法
-适合多读少写环境
-
-
-在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
-
-总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
-
-对于资源竞争较少（线程冲突...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="sql">sql</a>
     
 </div>
 
@@ -2065,7 +2026,49 @@ Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2438,7 +2441,7 @@ Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 184
+        Total : 190
         </div>
         <!-- search  -->
         
@@ -2449,9 +2452,54 @@ Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实�
         
             
             
+            <div class="archive-year"> 2025 </div>
+            <ul class="year-list">
+            
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/17</span>
+            <a class="archive-post-title" href="/2025/11/17/2024/07/mysql-timezone/">MySQL 时区 & 服务时区</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-pom/">Java pom.xml 范例和说明 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/06</span>
+            <a class="archive-post-title" href="/2025/03/06/2025/03/java-maven/">setting.xml 配置 (by deepseek)</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/03</span>
+            <a class="archive-post-title" href="/2025/03/03/2025/01/Java_Mono/">Java Mono 类【转载】</a>
+        </li>
+    
+        
+            
+            
+                
+                </ul>
+            
             <div class="archive-year"> 2024 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/28</span>
+            <a class="archive-post-title" href="/2024/11/28/2024/11/printer-double-print/">使用单页打印机打印双页</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/13</span>
+            <a class="archive-post-title" href="/2024/08/12/2024/08/opensuse-upgrade/">升级 openSUSE Leap 15.3 到 Leap 15.4</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">04/11</span>
@@ -4018,6 +4066,16 @@ Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实�
             <span class="sidebar-tag-name" data-tags="ssh">
                 <span class="iconfont-archer">&#xe606;</span>
                 ssh
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="opensuse">
+                <span class="iconfont-archer">&#xe606;</span>
+                opensuse
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="其他">
+                <span class="iconfont-archer">&#xe606;</span>
+                其他
             </span>
         
     </div>
