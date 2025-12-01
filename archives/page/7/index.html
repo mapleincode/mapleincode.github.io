@@ -440,6 +440,251 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/05/27/2022/04/rabbitmq-client/">
+                
+                <span class="abstract-title-text">RabbitMQ 客户端(nodejs)</span>
+            </a>
+            <div class="abstract-content">
+                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rabbitmq">rabbitmq</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/25/2022/04/gitlab-upgrade-error/">
+                
+                <span class="abstract-title-text">gitlab 升级失败 or gitlab-ctl reconfigure 失败</span>
+            </a>
+            <div class="abstract-content">
+                问题通过 apt 升级 gitlab-ce 发生错误。提示 gitlab-ctl reconfigure 失败。
+1234567Running handlers:There was an error running gitlab-ctl reconfigure:rails_migration[gitlab-rails] (gitlab::database_migrations line 51) had an error: Mixlib::ShellOut::ShellCommandFailed: bash[migrate gitlab-rails database] (/opt/gitl...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022/04/python-pip/">
+                
+                <span class="abstract-title-text">python 更换国内镜像源</span>
+            </a>
+            <div class="abstract-content">
+                临时修改清华源
+
+清华大学的 pip 源，它是官网 pypi 的镜像，每隔5分钟同步一次，推荐使用。
+
+12pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \    --trusted-host pypi.tuna.tsinghua.edu.cn packagename
+
+
+
+豆瓣源
+12pip install -i http://pypi.douban.com/simple \    --trusted-host pypi.douban.com packagename
+
+
+阿里源
+12pip install -i http...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python pip">python pip</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/05/19/2022/04/python-venv/">
+                
+                <span class="abstract-title-text">python venv</span>
+            </a>
+            <div class="abstract-content">
+                venv 是 pyhton 的虚拟环境
+安装1sudo apt install python3.8-venv
+
+
+
+使用1234python3 -m venv pgadmin4 			# 创建 venvsource pgadmin4/bin/activate 	# 激活（进入） venv# ...													# do somethingdeactivate										# 退出 venv
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/05/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/30/2022/04/openstack/">
+                
+                <span class="abstract-title-text">OpenStack 学习</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+关键术语访问密钥&#x2F;安全密钥
+组合使用来访问和与一个计算实例通讯。安全密钥用于加密每次请求。
+
+用户 pub 密钥
+
+可用区域
+云范围内用于对虚拟机提供容错的一组隔离的虚拟层。
+块存储
+存储类型，目的是提供挂在到虚拟机上的持久化存储，它支持卷，卷快照和卷类型管理。
+容器（对象）
+在对象存储中组织和存储对象。
+容器（LXC）
+Linux容器是在单个Linux宿主上运行多个相互隔离的Linux系统的操作系统级别的虚拟环境。Openstack容器服务（Magnum）提供应用容器的管理功能。
+固定&#x2F;静态IP
+相同VM（虚拟机）每次启动的时候关联的IP地址。这可用于管...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/30</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/04/19/2022/04/firewalld/">
+                
+                <span class="abstract-title-text">Centos7 防火墙 firewalld 基本配置与端口转发</span>
+            </a>
+            <div class="abstract-content">
+                Centos7 防火墙 firewalld 基本配置与端口转发转载自 https://cloud.tencent.com/developer/article/1404032
+1. firewalld 基本介绍​    Centos7 开始已经放弃 iptables，转而使用 firewalld。从本质意义上讲，iptables 和 firewalld 是防火墙软件，其实现方式都是调用内核 Netfilter。firewalld 提供了一个动态管理的防火墙，形成网络 “zones” 规则集，具备支持 ipv4 和 ipv6 的能力。firewalld程序提供了图形化的配置工具 firewa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/19</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="centos">centos</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="firewalld">firewalld</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2022/04/19/2022/04/iptables/">
                 
                 <span class="abstract-title-text">linux 端口转发 iptables</span>
@@ -617,289 +862,10 @@ Maven 定位
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">
-                
-                <span class="abstract-title-text">记一次 highlight.js 不生效的问题</span>
-            </a>
-            <div class="abstract-content">
-                问题在折腾工作机的时候，惊奇的发现自己的博客的 code 块的语法高亮没了？！当时因为是主题的问题，还更换了 hexo 的主题。直到某一次查询到 csdn 的博客页面，发现博客的语法高亮也出现了相似的问题：字体的颜色显示成黑色。
-
-先说解决方案，问题出在刚安装的 source code pro  字体上，国内某大站下载的字体存在问题，我后面去 google 官网下载了一份就正常了。
-
-
-清理缓存 &amp; 卸载清理页面缓存，强制刷新页面，无法解决。
-使用了隐形标签来测试是否被浏览器插件影响，无法解决。
-清理浏览器缓存，无法解决。
-卸载重装浏览器，无法解决。
-更换电脑，发现别的电脑都是正...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/02/09/2022/01/unrar/">
-                
-                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
-            </a>
-            <div class="abstract-content">
-                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
-方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
-packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
-1pip install zipfile
-
-
-
-存在问题：gbk 文件名乱码
-因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
-有...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/16/2021/09/synology-drive-icon/">
-                
-                <span class="abstract-title-text">Synolog 群晖 Drive 图标不显示的问题</span>
-            </a>
-            <div class="abstract-content">
-                群晖作为有效生产力工具，对我而言是完全不可能缺少的工具。至少解决了我上下班带电脑的问题。
-Drvie 作为同步工具，虽然速度上不怎么样，但是至少可以实现跨设备同步。尤其是还完美支持了  Ubuntu 上的同步。
-群晖 Drvie 一般情况下会出现两个问题：
-
-同步无权限
-同步状态图标不显示
-
-今天主要解决的是第二个问题。
-原因原因主要是 3 点：
-
-软件自身 BUG
-软件在注册表的路径被破坏。
-软件服务被禁用。
-文件浏览器里任务图标优先级被覆盖。
-
-解决软件 BUG重装。
-说实话比较少见，但是也遇到过。主要是 Mac 端容易出现不稳定的情况。
-注册表路径被破坏修复方案参考知乎大佬
-htt...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/13/2021/09/memcache-lock/">
-                
-                <span class="abstract-title-text">memcached 实现高并发条件下全局锁</span>
-            </a>
-            <div class="abstract-content">
-                在支持 redis 的项目中，我很喜欢用
-1redis.incr();
-
-因为 redis 操作具有原子性，可以通过这个函数实现原子级的同步锁。
-而 memcache 却不能实现这样的效果，我考虑设想了了一个方案。
-123456789101112131415async funciton lock(key) &#123;  const value = uuid.v4();  const expire = 120 * 1000;    const _result = await mem.get(key);  if (_result) return false;  	await mem.set...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/09/13/2021/09/raspberry-watchdog/">
-                
-                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
-            </a>
-            <div class="abstract-content">
-                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
-在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
-然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
-解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
-
-系统:
-
-raspberry 4B
-ubuntu 20.04
-
-
-安装流程
-在 config.txt 从硬件上打开 watchdog 功能
-12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/07/21/2021/07/esxi-copy/">
-                
-                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
-            </a>
-            <div class="abstract-content">
-                修改办法设置 - 高级 - 编辑配置
-添加
-12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
-
-
-
-其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
-
-
-
-Warining注意 vmware tools 的状态
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/6/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/6/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="extend next" rel="next" href="/archives/page/8/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1975,7 +1941,49 @@ Warining注意 vmware tools 的状态
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2360,7 +2368,7 @@ Warining注意 vmware tools 的状态
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2374,6 +2382,42 @@ Warining注意 vmware tools 的状态
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -3995,6 +4039,31 @@ Warining注意 vmware tools 的状态
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

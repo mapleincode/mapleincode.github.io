@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.vvcat.cn/2025/12/01/2025/12/tRPC/</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vvcat.cn/2025/12/01/2025/12/typescript-framework/</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vvcat.cn/2025/12/01/2025/12/hono/</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vvcat.cn/2025/11/25/2025/11/spring-method-signature/</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vvcat.cn/2025/11/25/2025/11/spring-aop/</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vvcat.cn/2025/11/25/2025/11/spring-execution-test/</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
     <loc>https://blog.vvcat.cn/2025/03/06/2025/03/java-maven/</loc>
     <lastmod>2025-11-17</lastmod>
   </url>

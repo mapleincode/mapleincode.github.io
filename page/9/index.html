@@ -455,6 +455,294 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2021/04/12/2021/04/kubernetes/">
+                
+                <span class="abstract-title-text">kubernetes 学习</span>
+            </a>
+            <div class="abstract-content">
+                [TOC]
+kubernetes核心是容器。
+1. 工具 &amp; 环境参考：https://kubernetes.io/zh/docs/tasks/tools/
+
+工具
+kubectl: 管理工具，相当于管理 client 端。
+kubeadm: 相当于 server 端。
+
+
+服务器
+两台 4 核心 4G 的虚拟机
+
+
+
+
+每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)
+
+
+本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。
+
+2. 安...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/04/08/2021/04/nginx-ws/">
+                
+                <span class="abstract-title-text">Nginx 支持 WebSocket</span>
+            </a>
+            <div class="abstract-content">
+                12345678910111213141516171819202122232425262728293031# 编辑nginx.conf，在http区域内一定要添加下面配置：map $http_upgrade $connection_upgrade &#123;    default upgrade;    &#x27;&#x27; close;&#125; # map指令的作用：# 该作用主要是根据客户端请求中$http_upgrade 的值，来构造改变$connection_upgrade的值，即根据变量$http_upgrade的值创建新的变量$connection_upgrade，...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/02/24/2021/02/baijiu/">
+                
+                <span class="abstract-title-text">中国白酒分类</span>
+            </a>
+            <div class="abstract-content">
+                
+
+
+香型
+标准
+制作
+色泽和外观
+香气
+口味口感
+典型代表
+
+
+
+酱香型 Jiang-flavour Chinese spirits
+GB&#x2F;T 26760-2011
+以高粱、小麦、水等为原料，经传统固态法发酵、贮存、勾兑而成[17]
+无色或微黄，清亮透明，无悬浮物，无沉淀
+酱香突出，香气幽雅，空杯留香持久
+酒体醇厚、丰满，诸位协调，余味悠长
+贵州茅台 贵州匀酒 湖南武陵酒 四川郎酒 芦台春 燕岭春
+
+
+浓香型 Strong aromatic Chinese spirits
+GB&#x2F;T 10781.1-2006
+以粮谷为原料，采用浓香大曲为糖化发酵剂，经泥窖固态发酵，固...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/24</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">
+                
+                <span class="abstract-title-text">阿里云 Ubuntu 数据盘格式化和挂载</span>
+            </a>
+            <div class="abstract-content">
+                阿里云数据盘默认挂载之后不会分区、格式化、挂载。需要手动处理这个逻辑。
+也适用于普通 Ubuntu 系统的情况。
+1. 找到磁盘1fdisk -l
+
+查找到所有磁盘和分区信息。
+找到未分区或者未格式化的磁盘编号 /dev/xxx
+2. 对磁盘进行分区输入：
+1fdisk -u /dev/vdb
+
+输入 n 创建一个新的分区输入 p 选择创建分区类型为 primary
+
+BMR 分区表默认只支持 4 个主分区
+
+输入 1 选择仅创建一个分区
+然后选择第一个可用的扇区编号，我们这边直接回车，输入默认的 2048。
+然后是输入最后一个扇区编号，我们这边依然回车，输入默认值。
+然后输入 p 可以...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/23/2020/11/dpkg-bad-inconsistent-state/">
+                
+                <span class="abstract-title-text">Dpkg 包损坏无法安装 &amp; 卸载</span>
+            </a>
+            <div class="abstract-content">
+                卸载时报错：
+12package is in a very bad inconsistent state;you should reinstall it before attempting a removal
+
+
+
+解决方法：
+
+强制卸载
+
+1sudo dpkg --remove --force-remove-reinstreq xxxxxx
+
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/11/13/2020/11/syno-install/">
+                
+                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
+            </a>
+            <div class="abstract-content">
+                1. 准备设备
+nas 电脑设备一台
+其他 PC 设备一台
+启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
+
+2. 准备文件
+DSM_DS918+_25426.pat 
+系统安装文件。
+可以官网直接下载。
+目前时间段最新的系统安装文件(2020-11-13)
+如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
+
+
+DS918+_6.23-25426-1.04b（引导文件）.img
+引导文件
+
+
+DS918-6.23_1.04b的扩展驱动0.13.3.zip
+驱动扩展，用于增强驱动，支持 2.5G 网卡
+
+
+libsynon...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/11/09/2020/11/syno/">
                 
                 <span class="abstract-title-text">黑群辉安装教程 (6.2.3)</span>
@@ -644,286 +932,10 @@ Dash 支持的命令比 Bash 要小
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/15/2020/09/raspberry/">
-                
-                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
-            </a>
-            <div class="abstract-content">
-                
-本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
-对于物联网、家用办公等等需求的人而言，毫无意义
-
-第一个树莓派五年前，我入手了树莓派 2。
-作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
-而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
-但是树莓派 2 有若干致命的问题：
-
-usb 只有 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/09/2020/09/lock/">
-                
-                <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
-            </a>
-            <div class="abstract-content">
-                悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
-
-Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
-
-
-适合多写环境
-
-乐观锁
-不上锁
-更新前判断数据是否被更新
-使用版本号机制和 CAS 算法
-适合多读少写环境
-
-
-在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
-
-总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
-
-对于资源竞争较少（线程冲突...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="sql">sql</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/05/2020/08/redis-cluster/">
-                
-                <span class="abstract-title-text">redis 集群</span>
-            </a>
-            <div class="abstract-content">
-                redis 3.0 引入的新功能。
-
-然后去看了下现在 redis 已经是 6.x 了
-
-逻辑根据 CRC16 把 key 值分到 16383 个槽内。然后把若干个节点设置分别维护若干个槽。实现节点分布式。
-缺点
-不支持多 key 值操作（因为不同 key 值可能属于若干个节点）。
-事务只支持单 key 事务
-支持 0 库
-
-集群搭建
-三节点主从库。
-只记录，未测试
-
-0. redis.conf 相关 cluster 参数
-cluster-enabled: 如果想在特定的Redis实例中启用Redis群集支持就设置为yes。 否则，实例通常作为独立实例启动。
-
-cluster-confi...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/09/05/2020/08/api-gateway/">
-                
-                <span class="abstract-title-text">API 网关功能</span>
-            </a>
-            <div class="abstract-content">
-                网关封装了底层系统并与客户端分离，为客户端提供了与微服务系统进行通信的单个入口点。
-整合 API 网关整合了一些边缘的重复功能，无需让每个微服务都实现它们。它包括如下功能：
-
-认证和授权
-服务发现集成
-缓存响应结果
-重试策略、熔断器、QoS
-限速和节流
-负载均衡
-log 日志、链路追踪、关联
-Header、query 字符串 以及 claims 转义
-IP 白名单
-IAM
-集中式日志管理（服务之间的 transaction ID、错误日志等）
-身份的提供方，验证与授权
-
-from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/08/17/2020/08/jiaohanglaji/">
-                
-                <span class="abstract-title-text">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</span>
-            </a>
-            <div class="abstract-content">
-                1. 接触交行先说下接触交行的原因，起先，我也办理了一张大家都应该推荐的招商信用卡。期间也没什么问题，但是后面习惯了去山姆购物，交行办卡小哥就在山姆门口各种推荐交行信用卡，因为交行信用卡有个卡种，可以支持山姆超市打折，也是这个原因办理了交行的信用卡。
-2. 事情起因再说下本次事情的起源。
-我其实日常信用卡用的也不多，刚好搬家刷了一个 6000 的冰箱，但是因为店家无货所以取消。再加上额外消费了 1000 左右，所以当时需要还的大概是 1200。
-我的还款到期日是 8 月 4 号。请记住这个节点。
-7 月 31 号，我用手机尝试还款一次。当下显示还款中，我因为刚搬家比较忙，就没一直关注。毕...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/18</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/08/13/2020/08/python/">
-                
-                <span class="abstract-title-text">Python &amp; Ubuntu</span>
-            </a>
-            <div class="abstract-content">
-                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
-安装 Python3安装 python3
-1sudo apt install python3
-
-安装 pip3
-1sudo apt install python3-pip
-
-
-
-
-一般 pip 和 pip2 指的都是 python2-pip
-
-pip3 安装依赖1pip3 install flask
-
-这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
-pm2 ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/8/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/10/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -2078,7 +2090,49 @@ pm2 ...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2463,7 +2517,7 @@ pm2 ...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2477,6 +2531,42 @@ pm2 ...
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -4098,6 +4188,31 @@ pm2 ...
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

@@ -455,6 +455,238 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2024/11/28/2024/11/printer-double-print/">
+                
+                <span class="abstract-title-text">使用单页打印机打印双页</span>
+            </a>
+            <div class="abstract-content">
+                针对的是不支持双面打印的打印机，说来可惜，我买两个打印机的时候，碰巧没注意打印机是否支持双面打印。唉。
+打印方式第一步得确认打印机的打印方式。
+一类是下进纸，例如佳能的激光打印机。打印纸从底部进入向上翻滚后出来。打印的纸正面朝下，因此，先打印的是第一页。
+第二类是上进纸 ，例如爱普生的喷墨打印机。打印机从后方上部进入，经过打印部件，直接正面朝上出纸。因为内容正面朝上，所以先打印的是最后一张。
+先说第一类，第一类相对比较简单，首先选择逆序打印偶数页面，例如 1-7 页，会逆序打印，得到页码数为 6 4 2 的纸张。这时候把打印纸背面（未打印的一面）朝上，放入纸盒。
+这样直观的看，纸盒的第一...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/11/17">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/11/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="其他">其他</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/08/12/2024/08/opensuse-upgrade/">
+                
+                <span class="abstract-title-text">升级 openSUSE Leap 15.3 到 Leap 15.4</span>
+            </a>
+            <div class="abstract-content">
+                openSUSE Leap 15.4 已经正式发布有些时候了，今天偶然去用一台给儿子玩的旧笔记本，发现还运行的是 openSUSE Leap 15.2，估计还是写「从 openSUSE Leap 15.1 升级到 Leap 15.2」那篇博文的时候升级的。先给升级到了 15.3，然后紧接着就又给升级到了 15.4。非常高兴，openSUSE Leap 的小版本升级过程越来越轻松了。
+从 openSUSE Leap 15.3 到 Leap 15.4 的过程在 openSUSE 的社区维基有专门说明。虽然维基上也有图形界面的升级过程，但是已经很久没有更新了。既然使用 Linux 还是多多尝试...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/11/17">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/08/12</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="opensuse">opensuse</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/04/10/2024/04/rsync/">
+                
+                <span class="abstract-title-text">rsync 命令参数详解</span>
+            </a>
+            <div class="abstract-content">
+                1rsync -avz /etc/gitlab/gitlab.rb maple@192.168.2.195:~/gitlab_backups/
+
+
+
+常用：
+123456789101112-a, --archive 归档模式，表示以递归方式传输文件，并保持所有文件属性，等于-rlptgo-v, --verbose 详细模式输出-z, --compress 对备份的文件在传输时进行压缩处理 --delete 删除那些 DST 中 SRC 没有的文件-e, --rsh=COMMAND 指定使用rsh、ssh方式进行数据同步#  -e &#x27;ssh -p 2222&#x27; --par...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/06/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/04/10</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rsync">rsync</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/04/10/2024/04/ssh-keygen/">
+                
+                <span class="abstract-title-text">SSH密钥类型</span>
+            </a>
+            <div class="abstract-content">
+                原文地址
+SSH 密钥类型在 SSH 中，常见的密钥类型包括以下几种：
+
+RSA：这是最早的 SSH 密钥类型之一，使用 RSA 加密算法。RSA 密钥在 SSH 中被广泛使用，并且是许多 SSH 工具和协议的默认密钥类型。
+DSA：这是另一种早期的 SSH 密钥类型，使用 DSA 加密算法。DSA 密钥已被广泛使用，但现在已不建议使用。
+ECDSA：这是一种基于椭圆曲线加密算法的 SSH 密钥类型，通常比 RSA 和 DSA 密钥更安全和高效。
+ed25519：这是一种基于椭圆曲线加密算法的公钥加密方案，它被广泛应用于 SSH 密钥认证。ed25519 密钥具有更高的安全性和更好的性能...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/06/04">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/04/10</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ssh">ssh</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/03/14/2024/02/deli/">
+                
+                <span class="abstract-title-text">得力和假货和美工刀和订书钉</span>
+            </a>
+            <div class="abstract-content">
+                事情起因是我闲着无聊在拼多多上买了十把美工刀，得力。
+我手上也有一把得力的，和商品选项上的图片也是一样的，结果还是翻车了。
+结果拿着证据找了拼多多客服，拼多多客服判定店铺违规，并退了钱。
+结果半夜我脑抽，忽然想会不会是店家被误会了，真的有这样长相的一把刀?于是我成功在淘宝旗舰店找到了一把类似的的美工刀，当时心想，我良心道德都没了…
+拿着旗舰店的买家秀对比了半天，确定我还真的没误会这个店家，那丫就是个卖假货的。
+我刚拿到手时，发现有几点不对：
+
+使用的材质不对，得力的美工刀使用的不锈钢材质有拉丝抛光，而这把美工刀使用的不锈钢材质是镜面的。
+美工刀的做工虽然算不上差，但是正面出现不规则的加工...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/14">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/03/14</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2024/03/07/2024/02/postgresql-installation/">
+                
+                <span class="abstract-title-text">PostgreSQL Ubuntu 安装</span>
+            </a>
+            <div class="abstract-content">
+                安装流程安装直接找官网，无脑走流程即可。
+切记不要使用默认 apt 安装，默认 apt 仓库使用的是旧版本的 Postgres。
+官网地址安装教程
+123456789101112# Create the file repository configuration:sudo sh -c &#x27;echo &quot;deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#x27;# Import the ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/03/07">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2024/03/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="postgresql">postgresql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2024/02/22/2024/01/outline/">
                 
                 <span class="abstract-title-text">通过 docker 来部署 outline</span>
@@ -639,254 +871,10 @@ shutil.copymode(src, dst, *, follow_symlinks&#x3D;True)从 src 拷贝权限位�
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/08/31/2023/08/nestjs-provider/">
-                
-                <span class="abstract-title-text">Nestjs Provider</span>
-            </a>
-            <div class="abstract-content">
-                基础使用12345678910111213// cat.service.tsimport &#123; Injectable &#125; from &#x27;@nestjs/common&#x27;;import &#123; Cat &#125; from &#x27;./interfaces/cat.interface&#x27;;@Injectable()export class CatsService &#123;  private readonly cats: Cat[] = [];  findAll(): Cat[] &#123;    return this.cats;...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/31</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/08/03/2023/08/mvn-command/">
-                
-                <span class="abstract-title-text">mvn 命令参数含义</span>
-            </a>
-            <div class="abstract-content">
-                
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/08/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="mvn">mvn</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/07/26/2023/07/after-poweroff-force/">
-                
-                <span class="abstract-title-text">强关 esxi，数据损坏和修复</span>
-            </a>
-            <div class="abstract-content">
-                起因我家里用了一台 x79 平台作为 Esxi。这台机器有一个不算毛病的毛病，就是在大量传输文件的时候，会出现网口堵塞，也就是机器不死机，但是网络却无法访问。
-前几天刚好在备份数据，网络却忽然不通了。因为我人在公司，于是我习惯性的使用米家 APP 去强关机器并重启。
-黑群辉修复我在虚拟机整了一个黑群晖，使用两块机械硬盘和一块虚拟盘组成。因为虚拟盘是基于 SSD，所以相对速度较快，我一般作为主盘，用于安装套件。
-进入群晖之后，显示盘损毁。因为群晖每个分区都会安装系统文件。因为这个原因，即使只剩下一个任意一个盘，也能正常开机。
-尝试通过页面和指令进行修复。修复失败。
-因为群晖的 Basic ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/07/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gitlab">gitlab</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubunutu">ubunutu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/06/12/2023/06/esxi_disk_shrink/">
-                
-                <span class="abstract-title-text">Esxi 磁盘容量收缩</span>
-            </a>
-            <div class="abstract-content">
-                Esxi 支持精简置备和厚置备。对于我们设备容量比较紧缺并且对性能要求不高的个人用户而言。精简置备是首选。
-但是精简置备存在一个问题，一旦跨磁盘移动之后，精简置备的容量会变成满容量。
-所以实用指令进行收缩：
-1vmkfstools -K xxx.vmdk
-
-
-
-这个指令仅支持因为移动虚拟机导致的磁盘增大。
-还有种情况是，一开始选择了厚置备，则可以通过转换的方式了来转成精简置备：
-1vmfstools -i old.vmdk -d thin new.vmdk
-
-
-thin 指的是精简置备
-
-完成转换的的 vmdk 默认就是是压缩过的。
-注意一点，如果虚拟机中途达到过一个容量，再删除内容，这...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/06/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/06/12/2023/05/aligo_walk/">
-                
-                <span class="abstract-title-text">[Untitled Post]</span>
-            </a>
-            <div class="abstract-content">
-                aligo 实现类似 os.walk 的功能。
-实测并不实用，仅当玩具。
-12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210310410510610710810911011111211311411511611711811912012112212...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/06/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="aligo">aligo</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2023/05/09/2023/05/walk/">
-                
-                <span class="abstract-title-text">Nodejs 实现 Python os.walk()</span>
-            </a>
-            <div class="abstract-content">
-                1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950const path = require(&#x27;path&#x27;);const fs = require(&#x27;fs&#x27;).promises;async function done (paths, root) &#123;  const files = await fs.readdir(root);  const endDirs = [];  const endFiles = []; ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2023/05/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/3/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/3/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -2041,7 +2029,49 @@ thin 指的是精简置备
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2426,7 +2456,7 @@ thin 指的是精简置备
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2440,6 +2470,42 @@ thin 指的是精简置备
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -4061,6 +4127,31 @@ thin 指的是精简置备
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

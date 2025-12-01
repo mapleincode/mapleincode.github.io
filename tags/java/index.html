@@ -440,6 +440,128 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2025/11/25/2025/11/spring-execution-test/">
+                
+                <span class="abstract-title-text">Spring execution 测试</span>
+            </a>
+            <div class="abstract-content">
+                12345678910111213141516171819202122// TestService.javaimport java.util.ArrayList;import java.util.List;public class TestService &#123;    public void findUser(String hahah, java.lang.Long id) &#123;&#125;    public void saveUser(String name, int age) &#123;&#125;    public void deleteUser(Long id...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/12/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/11/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="deepseek">deepseek</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="spring">spring</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2025/11/25/2025/11/spring-method-signature/">
+                
+                <span class="abstract-title-text">MethodSignature 详解</span>
+            </a>
+            <div class="abstract-content">
+                非常好！这是一个紧跟上面 AOP 话题的深入问题。
+MethodSignature 是 Spring AOP 中的一个核心接口，它提供了关于被增强（被拦截）方法的详细元信息。
+简单来说，当你的 Advice（如 @Around、@Before）被执行时，Spring AOP 需要告诉你：“你现在正在拦截的是哪个方法？” —— MethodSignature 就是这个问题的详细答案。
+
+核心理解
+它是什么？ 它是 Spring 对 Java 标准库 java.lang.reflect.Method 的扩展，不仅包含了 Method 本身，还包含了方法的返回值类型、参数类型等完整的签名信息。...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/12/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/11/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="deepseek">deepseek</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="spring">spring</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2025/11/25/2025/11/spring-aop/">
+                
+                <span class="abstract-title-text">Spring AOP 中各种 Advice 的实现示例</span>
+            </a>
+            <div class="abstract-content">
+                当然可以！下面我为您详细展示 Spring AOP 中各种 Advice 的实现示例，包括 @Before、@AfterReturning、@AfterThrowing、@After 和 @Around。
+1. @Before - 前置通知在目标方法执行之前执行，适用于参数校验、权限检查、日志记录等场景。
+基础实现1234567891011121314151617181920212223242526272829303132333435363738394041424344@Aspect@Componentpublic class BeforeAdviceExample &#123;    ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/12/01">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2025/11/25</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="deepseek">deepseek</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2025/03/06/2025/03/java-pom/">
                 
                 <span class="abstract-title-text">Java pom.xml 范例和说明 (by deepseek)</span>
@@ -709,172 +831,6 @@ BO：business object业务对象主要作用是把业务逻辑封装为一个对
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: 2024/01/09">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/12/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/09/27/2022/09/java9-18/">
-                
-                <span class="abstract-title-text">Java9 - Java18 新特性</span>
-            </a>
-            <div class="abstract-content">
-                Java9
-jshell
-接口私有方法
-优化了 try with resource
-不支持 _ 作为变量名
-String 内部从 char 存储改为 byte 存储
-模块分组
-Stream 加强
-集合加强
-List.of()
-Map.of()
-copyOf()
-
-
-
-Java10
-用了 var 来进行自动推导类型
-
-Java 11 (LTS)
-String.strip 用来去除首尾空格，还能除去 unicode 编码的空白字符
-String.isBlank 判断字符串是否为 0 或者空格等空白字符
-String.repeat(n) 字符串重复
-Optional 加强
-InputStrea...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/09/27</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/08/11/2022/08/java-history/">
-                
-                <span class="abstract-title-text">Java 发展简史</span>
-            </a>
-            <div class="abstract-content">
-                原链接：
-https://blog.csdn.net/lywstuding/article/details/121117136
-[toc]
-1. C 语言，C++ 的诞生
-这一段和 Java 毫无关系，感觉是作者拿来凑字数的，可以跳过。
-
-Java 的诞生离不开 C 语言和 C++,C++ 是在 C 语言的基础上改造的，后来 Sun 公司又对 C++ 进行改写，产生了 Java。也可以说 Java 源自于 C 和 C++。
-1956 年 FORTRAM 的诞生1956 年，美国计算机科学家约翰・巴克斯带领团队开发出了世界上第一个高级编程语言 FORTRAN。
-FORTRAN 语言是世界上...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/11</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2022/08/11/2022/08/java-conception/">
-                
-                <span class="abstract-title-text">Java 的一系列概念</span>
-            </a>
-            <div class="abstract-content">
-                Java一门编程语言，这个没啥好说的。
-JVMJava Virtual Machine 虚拟机
-例如：
-
-Sun Classic VM 
-JDK 1.0 提供的虚拟机
-
-
-Exact VM
-JDK 1.2 引入，被 HotSpot 替代
-
-
-HotSpot VM
-JDK 1.2 引入
-JDK 1.3 之后默认的虚拟机
-OpenSDK 的默认虚拟机
-
-
-JRockit
-BEA 公司，被 Oracle 收购
-起特性被引入到 OpenSDK 所使用的 HotSpot 
-可以说现在 OpenSDK 使用的 jvm 其实是两者的合体
-
-
-J9
-IBM 家的虚拟机
-
-
-
-JRE
-Java Runti...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/08/11</span>
                 </div>
                 <!-- tags -->
                 
@@ -1969,7 +1925,49 @@ Java Runti...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2354,7 +2352,7 @@ Java Runti...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2368,6 +2366,42 @@ Java Runti...
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -3989,6 +4023,31 @@ Java Runti...
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

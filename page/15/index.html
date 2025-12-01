@@ -455,6 +455,247 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/11/01/2019/07/node-proxy/">
+                
+                <span class="abstract-title-text">JavaScript Proxy 对象</span>
+            </a>
+            <div class="abstract-content">
+                Usage123let target = &#123;&#125;;let handler = &#123;&#125;;let p = new Proxy(target, handler);
+
+target: 目标对象。可以是任何类型的对象，甚至是另一个代理。
+handler: 一个对象，其属性是当实行一个操作是定义代理的行为的函数。
+Example12345678910111213let handler = &#123;    get: function(target, name) &#123;        return name in target ? target[name] ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/11/01</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="javascript">javascript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/10/31/2019/07/kafka-auto-offset-reset/">
+                
+                <span class="abstract-title-text">Kafka auto.offset.reset 值</span>
+            </a>
+            <div class="abstract-content">
+                首先附上别人的文章：
+earliest当各分区下有已提交的 offset 时，从提交的 offset 开始消费；无提交的 offset 时，从头开始消费 
+latest当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
+nonetopic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的 offset，则抛出异常
+
+
+作者：lishuangzhe7047 
+来源：CSDN 
+原文：https://blog.csdn.net/lishuangzhe7047/article/detail...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/31</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="kafka">kafka</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/30/2019/07/iterator/">
+                
+                <span class="abstract-title-text">iterator(迭代器)</span>
+            </a>
+            <div class="abstract-content">
+                Node 版本:
+1234567891011121314151617function * hello(max) &#123;    let count = 0;    let a = 1, b = 1, tmp = 1;    while(count &lt; max) &#123;        yield a;        tmp = a;        a = b;        b = tmp + b;        count ++;    &#125;&#125;for(const i of hello(500)) &#123;    console.log(i);&#12...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/30</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/29/2019/07/python-with-as/">
+                
+                <span class="abstract-title-text">Python with as 的作用</span>
+            </a>
+            <div class="abstract-content">
+                Python with as 的作用这几天在入门 Python，https://learnxinyminutes.com/docs/python3/，看到 with as，这边说了一句
+
+# Instead of try&#x2F;finally to cleanup resources you can use a with statement
+如果不使用 try&#x2F;finally 来清理资源，你可以使用声明这个功能。
+
+123with open(&quot;1.txt&quot;) as f	for line in f:		print(line)
+
+首先说下 with as 的...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/28/2019/07/mysql-ACID/">
+                
+                <span class="abstract-title-text">MySQL 事务</span>
+            </a>
+            <div class="abstract-content">
+                大学上课的时候我想老师基本都讲过事务这件事，就是一旦一件事件涉及多条数据库操作，当一条操作失败时，理应当把之前的操作全部回滚。
+我们最常用的 MySQL 引擎之一的 InnoDB 支持事务。
+事务 ACID 指的是 Atomicity（原子性）、Consistency（稳定性）、Isolation（隔离性）、Durability（可靠性）。
+
+原子性：一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+
+一致性：在事务开始之前和事务...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/29</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="mysql">mysql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/08/27/2019/07/guanchazhe/">
+                
+                <span class="abstract-title-text">Node 和观察者设计模式</span>
+            </a>
+            <div class="abstract-content">
+                观察者设计模式观察者模式（有时又被称为模型-视图（View）模式、源-收听者(Listener)模式或从属者模式）是软件设计模式的一种。在此种模式中，一个目标物件管理所有相依于它的观察者物件，并且在它本身的状态改变时主动发出通知。这通常透过呼叫各观察者所提供的方法来实现。此种模式通常被用来实现事件处理系统。
+总的来说，例如 Node 的事件机制。除非是一个不包含异步的程序(如果没有异步逻辑，那这个程序在执行结束前都不会有事件循环)，否则一般程序在拥有带监听的 IO 事件(或者是网络套接字)的观察者时，就会通过线程层(libuv)不断的是轮询这些事件有没有完成。而系统在完成 IO 之后，将...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/08/27</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/08/26/2019/07/mysql-engines/">
                 
                 <span class="abstract-title-text">MySQL 引擎</span>
@@ -628,240 +869,10 @@ expect &amp; send
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/07/08/2019/07/git-branch-all/">
-                
-                <span class="abstract-title-text">git 拉取所有远程分支</span>
-            </a>
-            <div class="abstract-content">
-                123git branch -r | grep -v &#x27;\-&gt;&#x27; | while read remote; do git branch --track &quot;$&#123;remote#origin/&#125;&quot; &quot;$remote&quot;; donegit fetch --allgit pull --all
-
-来自 Stackoverflow
-链接：http://stackoverflow.com/questions/10312521/how-to-fetch-all-git-branches
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/07/05/2019/07/memcached-node-package/">
-                
-                <span class="abstract-title-text">Nodejs memcached 包的基本用法</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106const Memcached = require(&#x27;memcached&#x27;);const memcached = new Memcached(&#x27;...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/05</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/07/03/2019/08/typescript/">
-                
-                <span class="abstract-title-text">TypeScript 学习笔记</span>
-            </a>
-            <div class="abstract-content">
-                
-首先要弄清楚 TypeScript 可以做什么。
-在一个项目逐渐庞大，各种 API 和函数层出不穷，往往传错一个参数短时间并不会影响什么，但是时间一久就会引发灾难性的问题。
-TypeScript 通过在编译时检查其 Type 来避免类似参数传入错误的问题。同时通过限制参数的类型（包括 类、函数）的结构，避免参数乱传的问题。
-TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们这种 ES6 已经写了大半年的人来说。
-所以更多的是怎么快速的掌握和记住一些 TypeScript 的细节。
-看完手册已经差不多一个月了，这次作为复习也作为笔记。
-
-1. 基础类型
-支持 const...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/07/03</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="typescript">typescript</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019/07/node-momery/">
-                
-                <span class="abstract-title-text">取消 Node 对内存上限的限制条件</span>
-            </a>
-            <div class="abstract-content">
-                123node --max-old-space-size=1700 test.js // 单位为MB// ornode --max-new-space-size=1024 test.js // 单位为KB
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/06/2019/07/node-async/">
-                
-                <span class="abstract-title-text">Node 异步三种方式的对比 Demo</span>
-            </a>
-            <div class="abstract-content">
-                123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127&#x27;use strict&#x27;;c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/06</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2018/06/01/2019/07/xcode-route/">
-                
-                <span class="abstract-title-text">Node.js 安装依赖编译 C++ node-gyp 报错 unknown type name</span>
-            </a>
-            <div class="abstract-content">
-                前段时间更新 Mac OS 的系统，也同样更新了 Xcode。在公司的项目中，用了死月大佬封装 C++ ons 版本得到的 Aliyun ons。在重新安装依赖时，发现在编译 ons 的时候不停爆出unknown type name &#39;uint32_t&#39;这样的错误。
-本以为是 npm 的缓存、c++ 版本、node 版本等原因，当我用另一台 Mac 安装 ons 并成功之后，完全不知道该怎么做。这时碰巧切了一个新的 Node 版本，在编译时报出了一个 Warn: xcode-select: error: tool &#39;xcodebuild&#39; requires...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/06/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nodejs">nodejs</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="c++">c++</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/14/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/16/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/14/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/16/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -2016,7 +2027,49 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2401,7 +2454,7 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2415,6 +2468,42 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -4036,6 +4125,31 @@ TypeScript 手册相对于其他语言来说完全算少，尤其是对于我们
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

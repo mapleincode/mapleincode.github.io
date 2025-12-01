@@ -440,6 +440,282 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2020/09/15/2020/09/raspberry/">
+                
+                <span class="abstract-title-text">我不推荐使用树莓派来当做家用服务器</span>
+            </a>
+            <div class="abstract-content">
+                
+本文，是针对想把树莓派当做家用服务器来使用的同学的一些意见。
+对于物联网、家用办公等等需求的人而言，毫无意义
+
+第一个树莓派五年前，我入手了树莓派 2。
+作为一代的升级版，树莓派 2 在很多方面远远超越了一代。一代树莓派，按照我朋友的描述是：基本没什么用。还不如一台十几年前的奔腾 4 电脑。据说连 SSH 到 server 端都无比的卡顿。
+而树莓派 2 在硬件上有了极大的提升，至少在作为简单的脚本服务的服务器上毫不逊色，我在上面部署了多个 php 、node 服务。作为脚本语言服务器的树莓派，完全可以满足一个家用简单服务器的责任。
+但是树莓派 2 有若干致命的问题：
+
+usb 只有 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/09/2020/09/lock/">
+                
+                <span class="abstract-title-text">悲观锁 &amp; 乐观锁</span>
+            </a>
+            <div class="abstract-content">
+                悲观锁共享资源每次只给一个线程使用，其它线程阻塞，用完后再把资源转让给其它线程
+
+Java中 synchronized 和 ReentrantLock 等独占锁就是悲观锁思想的实现。
+
+
+适合多写环境
+
+乐观锁
+不上锁
+更新前判断数据是否被更新
+使用版本号机制和 CAS 算法
+适合多读少写环境
+
+
+在Java中java.util.concurrent.atomic包下面的原子变量类就是使用了乐观锁的一种实现方式CAS实现的。
+
+总结CAS适用于写比较少的情况下（多读场景，冲突一般较少），synchronized适用于写比较多的情况下（多写场景，冲突一般较多）
+
+对于资源竞争较少（线程冲突...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="sql">sql</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/05/2020/08/redis-cluster/">
+                
+                <span class="abstract-title-text">redis 集群</span>
+            </a>
+            <div class="abstract-content">
+                redis 3.0 引入的新功能。
+
+然后去看了下现在 redis 已经是 6.x 了
+
+逻辑根据 CRC16 把 key 值分到 16383 个槽内。然后把若干个节点设置分别维护若干个槽。实现节点分布式。
+缺点
+不支持多 key 值操作（因为不同 key 值可能属于若干个节点）。
+事务只支持单 key 事务
+支持 0 库
+
+集群搭建
+三节点主从库。
+只记录，未测试
+
+0. redis.conf 相关 cluster 参数
+cluster-enabled: 如果想在特定的Redis实例中启用Redis群集支持就设置为yes。 否则，实例通常作为独立实例启动。
+
+cluster-confi...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/09/05/2020/08/api-gateway/">
+                
+                <span class="abstract-title-text">API 网关功能</span>
+            </a>
+            <div class="abstract-content">
+                网关封装了底层系统并与客户端分离，为客户端提供了与微服务系统进行通信的单个入口点。
+整合 API 网关整合了一些边缘的重复功能，无需让每个微服务都实现它们。它包括如下功能：
+
+认证和授权
+服务发现集成
+缓存响应结果
+重试策略、熔断器、QoS
+限速和节流
+负载均衡
+log 日志、链路追踪、关联
+Header、query 字符串 以及 claims 转义
+IP 白名单
+IAM
+集中式日志管理（服务之间的 transaction ID、错误日志等）
+身份的提供方，验证与授权
+
+from https://www.infoq.cn/article/qXCl87G3fsIUbNVuLKOI
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/09/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="other">other</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/08/17/2020/08/jiaohanglaji/">
+                
+                <span class="abstract-title-text">从一个程序猿角度来分析下，交通银行的系统到底有多么垃圾</span>
+            </a>
+            <div class="abstract-content">
+                1. 接触交行先说下接触交行的原因，起先，我也办理了一张大家都应该推荐的招商信用卡。期间也没什么问题，但是后面习惯了去山姆购物，交行办卡小哥就在山姆门口各种推荐交行信用卡，因为交行信用卡有个卡种，可以支持山姆超市打折，也是这个原因办理了交行的信用卡。
+2. 事情起因再说下本次事情的起源。
+我其实日常信用卡用的也不多，刚好搬家刷了一个 6000 的冰箱，但是因为店家无货所以取消。再加上额外消费了 1000 左右，所以当时需要还的大概是 1200。
+我的还款到期日是 8 月 4 号。请记住这个节点。
+7 月 31 号，我用手机尝试还款一次。当下显示还款中，我因为刚搬家比较忙，就没一直关注。毕...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/18</span>
+                </div>
+                <!-- tags -->
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2020/08/13/2020/08/python/">
+                
+                <span class="abstract-title-text">Python &amp; Ubuntu</span>
+            </a>
+            <div class="abstract-content">
+                关于 Python3 和 Python2相当于两个版本，一般 linux 上预装的都是 python2 ，也不排除预装 python3。目前 linux 在以把 python2 依赖减少以达到放弃。
+安装 Python3安装 python3
+1sudo apt install python3
+
+安装 pip3
+1sudo apt install python3-pip
+
+
+
+
+一般 pip 和 pip2 指的都是 python2-pip
+
+pip3 安装依赖1pip3 install flask
+
+这里重要一点是，安装时不要加 sudo。否则会把依赖安装至系统目录而不是用户目录
+pm2 ...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/08/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2020/07/06/2020/07/HashMap&HashTable/">
                 
                 <span class="abstract-title-text">HashMap和HashTable的区别</span>
@@ -603,305 +879,10 @@ Been there, done tha...
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/21/2020/05/ink/">
-                
-                <span class="abstract-title-text">自製鋼筆染料墨水配方[转载]</span>
-            </a>
-            <div class="abstract-content">
-                
-https://www.ptt.cc/bbs/stationery/M.1448639335.A.202.html
-转载自一位弯弯大佬的一篇文章，文章内容很详细。
-短时间应该不会去学做，但是的确蛮有意思的赶脚。
-
-
-原文是繁体，排版依然按照原文
-
-给大家参考
-之前在疫区用这配方卖了两批小赚点钱
-卖剩的自己目前也一直在用
-Safari 写了四五个月没洗笔，状况都很良好
-所以应该是不会伤笔
-另外，测试时使用下水量较小的 78g
- 加上本人通常是写狂草 (写很快很丑) 
-所以需要下水量大的墨水，调出来黏度偏低
-比例视使用者习惯自行调整，这里只是参考
-第一步先配好甘油水溶液→体积比甘油：水&#...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ink">ink</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/18/2020/05/chrome-auto-sign-in/">
-                
-                <span class="abstract-title-text">解决 Chrome 无法自动填充账号密码的问题</span>
-            </a>
-            <div class="abstract-content">
-                前段时间在折腾浏览器的时候，不知道怎么一搞，导致在登录界面，Chrome 不会自动把账户密码填充到登录账户密码栏里。也就是进入一个页面之后，需要手动点击账户栏，选择账户才会填入正确密码。
-我尝试重新登录账户，清除数据，卸载 Chrome 重启等操作均无法解决问题。
-忽然想到，MacOS 拖程序到回收站其实并不算完全卸载，即使删除用户数据，也会存留部分数据在用户数据文件夹。
-
-一般情况我会使用 CleanMyMac 来卸载，没想到这玩意儿也没有完全卸载。
-
-搜索 Google （吐槽重置之后，地址栏输入居然变成了百度）之后，找到了卸载 Chrome 的正确姿势：
-
-在计算机屏幕的底部，右键...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/18</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="chrome">chrome</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/08/2020/05/zfs/">
-                
-                <span class="abstract-title-text">初学者指南：ZFS 是什么，为什么要使用 ZFS？(转载)</span>
-            </a>
-            <div class="abstract-content">
-                
-原文: https://zhuanlan.zhihu.com/p/45137745
-
-今天，我们来谈论一下 ZFS，一个先进的文件系统。我们将讨论 ZFS 从何而来，它是什么，以及为什么它在科技界和企业界如此受欢迎。
-虽然我是一个美国人，但我更喜欢读成 ZedFS 而不是 ZeeFS，因为前者听起来更酷一些。你可以根据你的个人喜好来发音。
-
-注意：在这篇文章中，你将会看到 ZFS 被提到很多次。当我在谈论特性和安装的时候，我所指的是 OpenZFS 。自从 *甲骨文(Oracle)*公司放弃 OpenSolaris 项目之后，ZFS（由甲骨文公司开发）和 OpenZFS 已经走向了不同...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="zfs">zfs</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/05/01/2020/05/Synology%20Drive/">
-                
-                <span class="abstract-title-text">群晖 Drive 反复同步问题</span>
-            </a>
-            <div class="abstract-content">
-                2020-05-25： 
-Synology 在 5-12 日更新了软件，我尝试去更新了。已经没有之前反复同步的问题了。
-安装完软件之后，只要被新版本更新过之后，就不会被另一台新版本的软件所同步。
-两款 Mac 都需要更新到新版本！！
-Drive 一定会成为你重要的同步软件！！！
-
-群晖作为新手入门必选 NAS，有着丰富的 NAS 功能和软件支持。是认为比较成熟的闭源软件。
-
-但是我作为一个穷逼，实在不敢向老婆要四千块钱去买个 418，去年的网络蚂蚁的矿车很香！
-推荐大家有条件还是去上正版群晖。
-
-Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文件存储器，有配套的软件实...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/05/02</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/04/14/2020/01/java-mode/">
-                
-                <span class="abstract-title-text">类成员的访问控制模式及其允许访问范围</span>
-            </a>
-            <div class="abstract-content">
-                
-
-
-访问控制模式
-在同一个类内
-在同一个包内
-子类
-所有类
-
-
-
-公共模式(public)
-允许访问
-允许访问
-允许访问
-允许访问
-
-
-保护模式(protected)
-允许访问
-允许访问
-允许访问
-
-
-
-默认模式(default)
-允许访问
-允许访问
-
-
-
-
-私有模式(private)
-允许访问
-
-
-
-
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/15</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="java">java</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/03/31/2020/01/wordpress-domain/">
-                
-                <span class="abstract-title-text">WordPress 绑定多域名</span>
-            </a>
-            <div class="abstract-content">
-                WordPress 是基于 PHP 的博客服务。大量配置都是基于 MySQL 进行配置。
-而域名绑定也被写入 SQL，包括 WP_SITEURL 和 WP_HOME 两个参数。
-但是有些时候，WP 可能会拥有多个域名。所以需要对 wp-config.php 进行改动来实现。
-首先找到 wp-config.php配置文件，在define(‘WP_DEBUG’, false);  加入
-12define(&#x27;WP_SITEURL&#x27;, &#x27;http://&#x27; . $_SERVER[&#x27;HTTP_HOST&#x27;]);define(&#x27;WP_...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/04/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="php">php</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/9/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/archives/page/11/">11</a><a class="page-number" href="/archives/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="extend next" rel="next" href="/archives/page/11/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1977,7 +1958,49 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2362,7 +2385,7 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2376,6 +2399,42 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -3997,6 +4056,31 @@ Drive 是从群晖 6.x 推出的新概念，相当于是作为一个云端的文
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

@@ -440,6 +440,285 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2022/04/06/2022/03/hl-js-no-usefull/">
+                
+                <span class="abstract-title-text">记一次 highlight.js 不生效的问题</span>
+            </a>
+            <div class="abstract-content">
+                问题在折腾工作机的时候，惊奇的发现自己的博客的 code 块的语法高亮没了？！当时因为是主题的问题，还更换了 hexo 的主题。直到某一次查询到 csdn 的博客页面，发现博客的语法高亮也出现了相似的问题：字体的颜色显示成黑色。
+
+先说解决方案，问题出在刚安装的 source code pro  字体上，国内某大站下载的字体存在问题，我后面去 google 官网下载了一份就正常了。
+
+
+清理缓存 &amp; 卸载清理页面缓存，强制刷新页面，无法解决。
+使用了隐形标签来测试是否被浏览器插件影响，无法解决。
+清理浏览器缓存，无法解决。
+卸载重装浏览器，无法解决。
+更换电脑，发现别的电脑都是正...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/04/06</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="前端">前端</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2022/02/09/2022/01/unrar/">
+                
+                <span class="abstract-title-text">python 对 zip 和 rar 文件进行解压</span>
+            </a>
+            <div class="abstract-content">
+                背景手上有一大堆文件，其中有很多都是压缩文件，但是因为压缩文件并不是在同一个文件夹，所以查找压缩文件夹解压很繁琐。
+方案使用 python 的脚本性质，通过遍历所有文件夹，并且使用相对的包来实现对文件的解压。
+packagezipfilezip 算法属于公开，所以实现比较简单，加上几乎所有的系统都支持 zip。所以只要安装即可。
+1pip install zipfile
+
+
+
+存在问题：gbk 文件名乱码
+因为 zipfile 是一个外国人写的，他在编码那块没有考虑其他编码的使用。粗暴的使用if utf8 else cp437。所以 gbk 编码的文件名会被转换成 cp437 编码。
+有...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2022/02/09</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="python">python</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="zip">zip</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="rar">rar</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/09/16/2021/09/synology-drive-icon/">
+                
+                <span class="abstract-title-text">Synolog 群晖 Drive 图标不显示的问题</span>
+            </a>
+            <div class="abstract-content">
+                群晖作为有效生产力工具，对我而言是完全不可能缺少的工具。至少解决了我上下班带电脑的问题。
+Drvie 作为同步工具，虽然速度上不怎么样，但是至少可以实现跨设备同步。尤其是还完美支持了  Ubuntu 上的同步。
+群晖 Drvie 一般情况下会出现两个问题：
+
+同步无权限
+同步状态图标不显示
+
+今天主要解决的是第二个问题。
+原因原因主要是 3 点：
+
+软件自身 BUG
+软件在注册表的路径被破坏。
+软件服务被禁用。
+文件浏览器里任务图标优先级被覆盖。
+
+解决软件 BUG重装。
+说实话比较少见，但是也遇到过。主要是 Mac 端容易出现不稳定的情况。
+注册表路径被破坏修复方案参考知乎大佬
+htt...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/16</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/09/13/2021/09/memcache-lock/">
+                
+                <span class="abstract-title-text">memcached 实现高并发条件下全局锁</span>
+            </a>
+            <div class="abstract-content">
+                在支持 redis 的项目中，我很喜欢用
+1redis.incr();
+
+因为 redis 操作具有原子性，可以通过这个函数实现原子级的同步锁。
+而 memcache 却不能实现这样的效果，我考虑设想了了一个方案。
+123456789101112131415async funciton lock(key) &#123;  const value = uuid.v4();  const expire = 120 * 1000;    const _result = await mem.get(key);  if (_result) return false;  	await mem.set...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="memcached">memcached</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/09/13/2021/09/raspberry-watchdog/">
+                
+                <span class="abstract-title-text">树莓派 4B 安装 watchdog 以解决崩溃无响应问题</span>
+            </a>
+            <div class="abstract-content">
+                树莓派 4B 尽管作为服务器来说，性能相当捉急。但是作为保护服务器安全的第一道安全防线，却有着天然的优势。
+在高强度的攻击下，树莓派会直接崩溃挂掉，从而保护通过其作为代理而被保护的服务。
+然而，并不会有人来攻击我的服务，而是我经常因为树莓派意外挂掉，导致无法正常使用我的服务。
+解决方案是安装 watchdog。在系统崩溃时，自动重启服务。
+
+系统:
+
+raspberry 4B
+ubuntu 20.04
+
+
+安装流程
+在 config.txt 从硬件上打开 watchdog 功能
+12sudo echo &#x27;dtparam=watchdog=on&#x27; &gt;&gt; /b...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/09/13</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="raspberry">raspberry</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2021/07/21/2021/07/esxi-copy/">
+                
+                <span class="abstract-title-text">ESXi 支持复制粘贴</span>
+            </a>
+            <div class="abstract-content">
+                修改办法设置 - 高级 - 编辑配置
+添加
+12isolation.tools.copy.disable FALSEisolation.tools.paste.disable FALSE
+
+
+
+其他12isolation.tools.dnd.disable  禁用拖放(drag n drop)isolation.tools.hgfs.disable = FALSE 共享文件夹
+
+
+
+Warining注意 vmware tools 的状态
+
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/07/21</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="esxi">esxi</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2021/05/25/2021/04/k8s-demo-mysql/">
                 
                 <span class="abstract-title-text">k8s mysql demo</span>
@@ -595,298 +874,10 @@ MySQL12341datasource db &#123;2  provider = &quot;mysql&quot;3  url      = &quot
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/12/2021/04/kubernetes/">
-                
-                <span class="abstract-title-text">kubernetes 学习</span>
-            </a>
-            <div class="abstract-content">
-                [TOC]
-kubernetes核心是容器。
-1. 工具 &amp; 环境参考：https://kubernetes.io/zh/docs/tasks/tools/
-
-工具
-kubectl: 管理工具，相当于管理 client 端。
-kubeadm: 相当于 server 端。
-
-
-服务器
-两台 4 核心 4G 的虚拟机
-
-
-
-
-每台机器 2 GB 或更多的 RAM （如果少于这个数字将会影响你应用的运行内存)
-
-
-本地开发推荐 minikube 和 kind 这两个工具来实现本地运行测试和开发 Kubernetes。我因为开发电脑配置偏低，所以采用远程虚拟机的方式进行学习。
-
-2. 安...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/12</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="kubernetes">kubernetes</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/04/08/2021/04/nginx-ws/">
-                
-                <span class="abstract-title-text">Nginx 支持 WebSocket</span>
-            </a>
-            <div class="abstract-content">
-                12345678910111213141516171819202122232425262728293031# 编辑nginx.conf，在http区域内一定要添加下面配置：map $http_upgrade $connection_upgrade &#123;    default upgrade;    &#x27;&#x27; close;&#125; # map指令的作用：# 该作用主要是根据客户端请求中$http_upgrade 的值，来构造改变$connection_upgrade的值，即根据变量$http_upgrade的值创建新的变量$connection_upgrade，...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/04/08</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="nginx">nginx</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2021/02/24/2021/02/baijiu/">
-                
-                <span class="abstract-title-text">中国白酒分类</span>
-            </a>
-            <div class="abstract-content">
-                
-
-
-香型
-标准
-制作
-色泽和外观
-香气
-口味口感
-典型代表
-
-
-
-酱香型 Jiang-flavour Chinese spirits
-GB&#x2F;T 26760-2011
-以高粱、小麦、水等为原料，经传统固态法发酵、贮存、勾兑而成[17]
-无色或微黄，清亮透明，无悬浮物，无沉淀
-酱香突出，香气幽雅，空杯留香持久
-酒体醇厚、丰满，诸位协调，余味悠长
-贵州茅台 贵州匀酒 湖南武陵酒 四川郎酒 芦台春 燕岭春
-
-
-浓香型 Strong aromatic Chinese spirits
-GB&#x2F;T 10781.1-2006
-以粮谷为原料，采用浓香大曲为糖化发酵剂，经泥窖固态发酵，固...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2021/02/24</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/12/01/2020/11/aliyun-data-disk-format/">
-                
-                <span class="abstract-title-text">阿里云 Ubuntu 数据盘格式化和挂载</span>
-            </a>
-            <div class="abstract-content">
-                阿里云数据盘默认挂载之后不会分区、格式化、挂载。需要手动处理这个逻辑。
-也适用于普通 Ubuntu 系统的情况。
-1. 找到磁盘1fdisk -l
-
-查找到所有磁盘和分区信息。
-找到未分区或者未格式化的磁盘编号 /dev/xxx
-2. 对磁盘进行分区输入：
-1fdisk -u /dev/vdb
-
-输入 n 创建一个新的分区输入 p 选择创建分区类型为 primary
-
-BMR 分区表默认只支持 4 个主分区
-
-输入 1 选择仅创建一个分区
-然后选择第一个可用的扇区编号，我们这边直接回车，输入默认的 2048。
-然后是输入最后一个扇区编号，我们这边依然回车，输入默认值。
-然后输入 p 可以...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/01</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/23/2020/11/dpkg-bad-inconsistent-state/">
-                
-                <span class="abstract-title-text">Dpkg 包损坏无法安装 &amp; 卸载</span>
-            </a>
-            <div class="abstract-content">
-                卸载时报错：
-12package is in a very bad inconsistent state;you should reinstall it before attempting a removal
-
-
-
-解决方法：
-
-强制卸载
-
-1sudo dpkg --remove --force-remove-reinstreq xxxxxx
-
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/23</span>
-                </div>
-                <!-- tags -->
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2020/11/13/2020/11/syno-install/">
-                
-                <span class="abstract-title-text">黑群晖 6.2.3 安装指南</span>
-            </a>
-            <div class="abstract-content">
-                1. 准备设备
-nas 电脑设备一台
-其他 PC 设备一台
-启动 U 盘一个，推荐品牌 U 盘 &lt;闪迪 USB2 16，狗东大概 20 左右&gt;
-
-2. 准备文件
-DSM_DS918+_25426.pat 
-系统安装文件。
-可以官网直接下载。
-目前时间段最新的系统安装文件(2020-11-13)
-如果因为官网安装文件更新导致无法安装，则推荐手动下载安装文件用以安装
-
-
-DS918+_6.23-25426-1.04b（引导文件）.img
-引导文件
-
-
-DS918-6.23_1.04b的扩展驱动0.13.3.zip
-驱动扩展，用于增强驱动，支持 2.5G 网卡
-
-
-libsynon...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/11/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/19/">19</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/archives/page/7/">&lt; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="extend next" rel="next" href="/archives/page/9/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -1962,7 +1953,49 @@ libsynon...
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2347,7 +2380,7 @@ libsynon...
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2361,6 +2394,42 @@ libsynon...
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -3982,6 +4051,31 @@ libsynon...
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>

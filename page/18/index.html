@@ -455,6 +455,249 @@
             
         
         <article class="index-post">
+            <a class="abstract-title" href="/2018/04/07/2019/07/nas-ssh-error/">
+                
+                <span class="abstract-title-text">群晖 SFTP 连接失败</span>
+            </a>
+            <div class="abstract-content">
+                群晖系统(Synology DiskStation)可以说是 NAS 系统中最完美的系统（虽然我也就用了他一个）。基本他集成了所有我们所需要的功能，而且性能强大。
+因为需要在局域网内进行文件传输，因为平时都是用 SSH 来通讯的，所以直接用 NAS 用自带 SFTP 服务来传输文件非常方便。
+之前有一次，将局域网里的某个机子重装了之后，在 NAS 上通过 SFTP 服务访问却得到了 链接失败。
+考虑了下，应该是known_hosts捣的鬼。
+常用 SSH 的人，对known_hosts一定很了解，本身它是为了安全而生，访问你访问到一个虚假的系统。通常，如果一个域名或者 IP 的 ssh-...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/04/07</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="synology">synology</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/28/2019/07/static-ip/">
+                
+                <span class="abstract-title-text">Linux 静态 IP 设置</span>
+            </a>
+            <div class="abstract-content">
+                整理虚拟机的 IP。
+路由器原来的 IP 段是192.168.2.0。为了方便管理，想把所有主机的 IP 改成 192.168.1.x。
+子网掩码虽然大学教过但是完全不知道这是什么东西。
+抽空看了一个小时基本理解了他的作用。
+将子网掩码从255.255.255.0改成255.255.252.0，这样就可以接受 192.168.0.x -&gt; 192.168.3.x的 IP 了。
+配置静态 IPUbuntu 下配置 IP 的文件是/etc/network/interfaces。
+默认配置为:
+123# The primary network interfaceauto ens32ifa...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/28</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/17/2019/07/unixbench/">
+                
+                <span class="abstract-title-text">使用 Unixbench 测试 CPU 性能</span>
+            </a>
+            <div class="abstract-content">
+                Unixbench 是 Linux 用来测试 CPU 综合性能的工具。
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950#! /bin/bash#==============================================================##   Description:  Unixbench script                             ##   Author: Teddysun &lt;i@ted...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="linux">linux</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="cpu">cpu</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/17/2019/07/zsh-autosuggestions/">
+                
+                <span class="abstract-title-text">oh-my-zsh 安装 zsh-autosuggestions 插件</span>
+            </a>
+            <div class="abstract-content">
+                zsh-autosuggestions 是 oh-my-zsh 的一个试用插件，可以实现动态显示历史输入记录的效果。
+
+和 oh-my-zsh 一般的内置插件不一样，不能通过光改动~/.zshrc来启动，需要额外配置。
+
+  树莓派上安装这个插件，bash 输入变得十分卡顿，因此对于性能较差的机子(尤其是硬盘速度)，不建议使用这个插件。
+
+安装插件从 GitHub 上 clone 插件。
+1git clone git://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+启动插件1source ~/....
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/18</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="oh-my-zsh">oh-my-zsh</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/03/05/2019/07/public-license/">
+                
+                <span class="abstract-title-text">五种开源协议(GPL,LGPL,BSD,MIT,Apache)(转载)</span>
+            </a>
+            <div class="abstract-content">
+                什么是许可协议？什么是许可，当你为你的产品签发许可，你是在出让自己的权利，不过，你仍然拥有版权和专利（如果申请了的话），许可的目的是，向使用你产品的人提供 一定的权限。
+不管产品是免费向公众分发，还是出售，制定一份许可协议非常有用，否则，对于前者，你相当于放弃了自己所有的权利，任何人都没有义务表明你的原始作 者身份，对于后者，你将不得不花费比开发更多的精力用来逐个处理用户的授权问题。
+而开源许可协议使这些事情变得简单，开发者很容易向一个项目贡献自己的代码，它还可以保护你原始作者的身份，使你 至少获得认可，开源许可协议还可以阻止其它人将某个产品据为己有。以下是开源界的 5 大许可协议。
+G...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2024/01/09">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/03/05</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="license">license</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
+            <a class="abstract-title" href="/2018/02/26/2019/07/san/">
+                
+                <span class="abstract-title-text">生成 SAN 证书并自签</span>
+            </a>
+            <div class="abstract-content">
+                
+生成 SAN 证书。因为群晖的证书生成有个 BUG， 创造多域名证书居然不能输入*。只好网上找资料手动创建多域名证书 SAN certificater(SubjectAltName Certificater)。
+
+工作文件夹12345678910├── ca.srl├── ca│   ├── ca.cer # ca 证书│   └── ca.pem # ca 私钥├── server│   ├── server.cer # server 证书│   ├── ca.csr # ca csr 文件│   ├── server.pem # server 私钥 │   └── server.c...
+            </div>
+            <!-- read more -->
+            
+            <div class="abstract-post-meta">
+                <!-- date -->
+                <div class="abstract-date" title="Last updated: 2025/11/17">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/02/26</span>
+                </div>
+                <!-- tags -->
+                
+                    <div class= abstract-tags >
+    
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="openssl">openssl</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="san">san</a>
+    
+</div>
+
+                
+            </div>
+        </article>
+        <div class="index-post-divider"></div>
+    
+        
+        
+        
+        
+            
+        
+        <article class="index-post">
             <a class="abstract-title" href="/2018/02/22/2019/07/openvpn-login-auto/">
                 
                 <span class="abstract-title-text">使用 Expect 自动登录 OpenVPN</span>
@@ -609,258 +852,10 @@
         </article>
         <div class="index-post-divider"></div>
     
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/29/2019/07/virtual-dom/">
-                
-                <span class="abstract-title-text">深度剖析：如何实现一个 Virtual DOM 算法(转)</span>
-            </a>
-            <div class="abstract-content">
-                作者：戴嘉华
-转载请注明出处并保留原文链接(#13)和作者信息。
-目录：
-1 前言
-2 对前端应用状态管理思考
-3 Virtual DOM 算法
-4 算法实现
-4.1 步骤一：用JS对象模拟DOM树
-4.2 步骤二：比较两棵虚拟DOM树的差异
-4.3 步骤三：把差异应用到真正的DOM树上
-
-
-5 结语
-6 References
-
-1 前言本文会在教你怎么用 300~400 行代码实现一个基本的 Virtual DOM 算法，并且尝试尽量把 Virtual DOM 的算法思路阐述清楚。希望在阅读本文后，能让你深入理解 Virtual DOM 算法，给你现有前端的编程提供一些新的思考。
-本文...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/29</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="dom">dom</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/26/2019/07/git-no-ff/">
-                
-                <span class="abstract-title-text">git merge --no-ff</span>
-            </a>
-            <div class="abstract-content">
-                --no-ff 指的是强行关闭fast-forward方式。
-fast-forward方式就是当条件允许的时候，git 直接把 HEAD 指针指向合并分支的头，完成合并。属于“快进方式”，不过这种情况如果删除分支，则会丢失分支信息。因为在这个过程中没有创建 commit。
-git merge --squash 是用来把一些不必要 commit 进行压缩，比如说，你的 feature 在开发的时候写的 commit 很乱，那么我们合并的时候不希望把这些历史 commit 带过来，于是使用--squash进行合并，此时文件已经同合并后一样了，但不移动 HEAD，不提交。需要进行一次额外的 c...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/26</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/21/2019/07/gulp/">
-                
-                <span class="abstract-title-text">Gulp 常用插件(转)</span>
-            </a>
-            <div class="abstract-content">
-                Gulp 常用插件(转)原文地址
-
-  本文主要展示的是gulp常用插件的使用方法和用途，通过对插件的熟练运用达到精通gulp。不定期更新。可以到github上面下载DEMO。
-
-匹配符 *、**、！、{}1234gulp.src(&#x27;./js/*.js&#x27;)               // * 匹配js文件夹下所有.js格式的文件gulp.src(&#x27;./js/**/*.js&#x27;)            // ** 匹配js文件夹的0个或多个子文件夹gulp.src([&#x27;./js/*.js&#x27;,&#x27;!./js/index.js...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/21</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gulp">gulp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/14/2019/07/gulp-autoprefixer/">
-                
-                <span class="abstract-title-text">gulp-autoprefixer 基本使用</span>
-            </a>
-            <div class="abstract-content">
-                转载传送门
-基本使用
-使用 gulp-autoprefixer 根据设置浏览器版本自动处理浏览器前缀。使用她我们可以很潇洒地写代码，不必考虑各浏览器兼容前缀。
-
-1234567891011121314var gulp = require(&#x27;gulp&#x27;),    autoprefixer = require(&#x27;gulp-autoprefixer&#x27;); gulp.task(&#x27;testAutoFx&#x27;, function () &#123;    gulp.src(&#x27;src/css/index.css&#x27;)      ...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/14</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="gulp">gulp</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/13/2019/07/docker/docker-run/">
-                
-                <span class="abstract-title-text">Docker 启动后直接退出</span>
-            </a>
-            <div class="abstract-content">
-                之前对 docker 的运行问题很不了解，后来根据朋友的解释才理解，容器中的程序应该挂载在容器上，由容器的重启关闭来控制程序的关闭开机。
-那假如运行后台运行的函数呢？
-如果不做处理，在函数进入后台运行后，容易就会直接 exit 结束。
-有一个办法是在运行脚本上加一句:
-1tail -f /dev/null
-
-这样容易就处于执行状态就不会退出了。
-算是歪门邪道吧。
-
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/13</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="docker">docker</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
-        
-        
-        
-        
-            
-        
-        <article class="index-post">
-            <a class="abstract-title" href="/2017/12/09/2019/07/ali-apt/">
-                
-                <span class="abstract-title-text">Ubuntu APT 更换阿里源</span>
-            </a>
-            <div class="abstract-content">
-                备份原 APT 源
-1sudo mv /etc/sources.list /etc/sources.list.bak
-
-重新编辑一份新的sources.list
-16.0412345678910111213141516# deb cdrom:[Ubuntu 16.04 LTS _Xenial Xerus_ - Release amd64 (20160420.1)]/ xenial main restricteddeb-src http://archive.ubuntu.com/ubuntu xenial main restricted #Added by software-propert...
-            </div>
-            <!-- read more -->
-            
-            <div class="abstract-post-meta">
-                <!-- date -->
-                <div class="abstract-date" title="Last updated: 2024/01/09">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/09</span>
-                </div>
-                <!-- tags -->
-                
-                    <div class= abstract-tags >
-    
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="ubuntu">ubuntu</a>
-    
-</div>
-
-                
-            </div>
-        </article>
-        <div class="index-post-divider"></div>
-    
     <!-- paginator  -->
     
         <nav class="page-nav">
-            <a class="extend prev" rel="prev" href="/page/17/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/19/">NEXT &gt;</a>
+            <a class="extend prev" rel="prev" href="/page/17/">&lt; PREV</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/19/">NEXT &gt;</a>
         </nav>
     
 </main>
@@ -2015,7 +2010,49 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
@@ -2400,7 +2437,7 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
     
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 190
+        Total : 196
         </div>
         <!-- search  -->
         
@@ -2414,6 +2451,42 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
             <div class="archive-year"> 2025 </div>
             <ul class="year-list">
             
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/typescript-framework/">基于 typescript 的后端框架</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/hono/">Hono 框架简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/02</span>
+            <a class="archive-post-title" href="/2025/12/01/2025/12/tRPC/">tRPC 简介</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-execution-test/">Spring execution 测试</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-method-signature/">MethodSignature 详解</a>
+        </li>
+    
+        
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/26</span>
+            <a class="archive-post-title" href="/2025/11/25/2025/11/spring-aop/">Spring AOP 中各种 Advice 的实现示例</a>
+        </li>
+    
         
         <li class="archive-post-item">
             <span class="archive-post-date">11/17</span>
@@ -4035,6 +4108,31 @@ git merge --squash 是用来把一些不必要 commit 进行压缩，比如说�
             <span class="sidebar-tag-name" data-tags="其他">
                 <span class="iconfont-archer">&#xe606;</span>
                 其他
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="deepseek">
+                <span class="iconfont-archer">&#xe606;</span>
+                deepseek
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="spring">
+                <span class="iconfont-archer">&#xe606;</span>
+                spring
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="hono">
+                <span class="iconfont-archer">&#xe606;</span>
+                hono
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="typescript. trpc">
+                <span class="iconfont-archer">&#xe606;</span>
+                typescript. trpc
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="framework">
+                <span class="iconfont-archer">&#xe606;</span>
+                framework
             </span>
         
     </div>
